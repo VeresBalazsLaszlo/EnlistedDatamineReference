@@ -1,0 +1,33 @@
+mass:r=0.6
+momentOfInertia:p3=0.04, 0.008, 0.04
+caliber:r=0.04
+speed:r=18.5
+speedPitch:r=5.0
+maxDistance:r=6.0
+physMat:t="grenadeRay"
+useFutureContacts:b=yes
+logCCD:b=no
+noSleepAtTheSlopeCos:r=0.766
+ccdClipVelocityMult:r=0.0
+entityTemplate:t="m24_smoke_grenade_short_time"
+entityPhysTemplate:t="m24_smoke_grenade_short_time_phys"
+
+ccdSpheres{
+  ccd:p4=0.0, 0.02, 0.0, 0.03
+}
+
+detonation{
+  onHit:b=no
+  timer:r=32.0
+}
+
+collisionResource{
+
+  props{
+    volumeBox:t="box"
+  }
+}
+
+visual{
+  template:t="m24_smoke_grenade_short_time_item+item_in_world"
+}

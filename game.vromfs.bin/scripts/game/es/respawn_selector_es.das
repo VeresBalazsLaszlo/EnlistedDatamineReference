@@ -1,0 +1,168 @@
+require ecs
+require game.es.events
+require DagorMath
+require DagorSystem
+require player
+require game.utils.team
+require math
+require math.base
+require app
+require enlisted.events_enlisted
+
+[es(tag=server, on_appear)]
+def respawn_bases_check_group_es(evt : Event; respawnBaseGroup : int)
+  if respawnBaseGroup == -1
+    logerr("respawn base has group (component respawnBaseGroup) but equal -1")
+
+def calc_tm_for_respawn_group_icon(icon_team, icon_group, icon_type, mobile_respawn)
+  var tm = IDENT_TM
+  if mobile_respawn
+    return tm
+  var posSum : float3 = float3()
+  var respawns_count = 0.0
+  ecs::query() <| $ [es(REQUIRE_NOT=aircraftRespbase)] (customRespawnBase : Tag const?;
+                                                        team : int;
+                                                        active : bool;
+                                                        respawnBaseGroup : int;
+                                                        transform : float3x4;
+                                                        temporaryInactive : bool = false;
+                                                        respawnbaseType : string)
+    if (active || customRespawnBase != null || temporaryInactive) && team == icon_team && respawnBaseGroup == icon_group && respawnbaseType == icon_type
+      respawns_count += 1.0
+      posSum += transform[3]
+  if respawns_count == 0.0
+    logerr("Can't find active respawns for icon group: /*{icon_group}*/ type: /*{icon_type}*/")
+    return tm
+  tm[3] = posSum / respawns_count
+  return tm
+
+def create_respawn_icon(active, icon_group, icon_type, icon_tm, icon_team, custom_respawn, mobile_respawn, free_tank_respawn)
+  let isPlayerSpawn = find_query() <| $ [es(REQUIRE=playerRespawnBase)] (team : int; respawnBaseGroup : int; respawnbaseType : string)
+    if team == icon_team && icon_group == respawnBaseGroup && icon_type == respawnbaseType
+      return true
+    return false
+  let iconTemplate = free_tank_respawn ? "free_tank_respawn_point_selector" : mobile_respawn ? "mobile_respawn_point_selector" : custom_respawn ? "respawn_point_selector" : "respawn_point_selector+auto_respawn_point_selector"
+  createEntitySync(iconTemplate) <| $(var init : ComponentsInitializer)
+    set(init, "respawn_icon__active", active)
+    set(init, "transform", icon_tm)
+    set(init, "respawn_icon__position", icon_tm[3])
+    set(init, "selectedGroup", icon_group)
+    set(init, "respawnIconType", icon_type)
+    set(init, "team", icon_team)
+    if isPlayerSpawn
+      set(init, "respawn_icon__isPlayerSpawn", true)
+
+def update_respawn_icon(respawn_base_group, respawn_base_type, respawn_base_team, respawn_base_by_group_active, respawn_base_by_group_temporary_inactive, custom_respawn, mobile_respawn, free_tank_respawn)
+  let isIconExist = find_query() <| $ [es] (eid : EntityId;
+                                            team : int;
+                                            selectedGroup : int;
+                                            respawnIconType : string;
+                                            var respawn_icon__destroyed : bool&;
+                                            var respawn_icon__active : bool&;
+                                            respawn_icon__temporaryInactive : bool = false;
+                                            var transform : float3x4&;
+                                            var respawn_icon__position : float3&)
+    if team == respawn_base_team && selectedGroup == respawn_base_group && respawnIconType == respawn_base_type && !respawn_icon__destroyed
+      respawn_icon__active = respawn_base_by_group_active
+      if !respawn_icon__active && !custom_respawn && !mobile_respawn && !respawn_icon__temporaryInactive
+        destroyEntity(eid)
+        respawn_icon__destroyed = true
+        return true
+      transform = calc_tm_for_respawn_group_icon(team, selectedGroup, respawnIconType, mobile_respawn)
+      respawn_icon__position = transform[3]
+      return true
+    return false
+  if !isIconExist && (respawn_base_by_group_active || custom_respawn || respawn_base_by_group_temporary_inactive)
+    let iconTm = calc_tm_for_respawn_group_icon(respawn_base_team, respawn_base_group, respawn_base_type, mobile_respawn)
+    create_respawn_icon(respawn_base_by_group_active, respawn_base_group, respawn_base_type, iconTm, respawn_base_team, custom_respawn, mobile_respawn, free_tank_respawn)
+
+[es(tag=gameClient, track=respawn_icon__position, REQUIRE=autoRespawnSelector)]
+def respawn_icons_update_position_es(evt : Event; respawn_icon__position : float3; var transform : float3x4&)
+  transform[3] = respawn_icon__position
+
+def has_active_respawns_by_group(respawn_team : int; respawn_group : int; respawn_type; exclude_eid = INVALID_ENTITY_ID) : tuple<bool; bool>
+  var hasActiveRespawnsByGroup = false
+  var hasTemporaryInActiveRespawnsByGroup = false
+  query() <| $ [es] (eid : EntityId; team : int; respawnBaseGroup : int; respawnbaseType : string; active : bool; temporaryInactive : bool const?)
+    if eid != exclude_eid && team == respawn_team && respawnBaseGroup == respawn_group && respawnbaseType == respawn_type
+      if active
+        hasActiveRespawnsByGroup = true
+      elif temporaryInactive ?? false
+        hasTemporaryInActiveRespawnsByGroup = true
+  return (hasActiveRespawnsByGroup, hasTemporaryInActiveRespawnsByGroup)
+
+[es(tag=server, track=(team, active), on_appear, on_event=(EventOnChangeSpawnTeams, UpdateRespawnIcons), REQUIRE_NOT=botsOnlyRespawn)]
+def respawn_bases_selector_group_es(evt : Event; eid : EntityId; respawnBaseGroup : int; team : int; respawnbaseType : string; active : bool)
+  let isCustomRespawn = has(eid, "customRespawnBase")
+  let isMobileRespawn = has(eid, "mobileRespawnTag")
+  let freeTankSpawn = has(eid, "freeTankRespawnTag")
+  var hasActiveRespawnsByGroup = active
+  var hasTemporaryInActiveRespawnsByGroup = false
+  if !active
+    let res = has_active_respawns_by_group(team, respawnBaseGroup, respawnbaseType)
+    hasActiveRespawnsByGroup = res._0
+    hasTemporaryInActiveRespawnsByGroup = res._1
+  update_respawn_icon(respawnBaseGroup, respawnbaseType, team, hasActiveRespawnsByGroup, hasTemporaryInActiveRespawnsByGroup, isCustomRespawn, isMobileRespawn, freeTankSpawn)
+
+[es(tag=server, on_event=(EventEntityDestroyed, EventComponentsDisappear), REQUIRE=(respawnBaseGroup, active), REQUIRE_NOT=botsOnlyRespawn)]
+def respawn_bases_destroy_group_es(evt : Event; eid : EntityId; team : int; respawnBaseGroup : int; respawnbaseType : string)
+  let respawnBaseTeam = team
+  var hasActiveRespawnsByGroup = false
+  var hasTemporaryInActiveRespawnsByGroup = false
+  let res = has_active_respawns_by_group(team, respawnBaseGroup, respawnbaseType, eid)
+  hasActiveRespawnsByGroup = res._0
+  hasTemporaryInActiveRespawnsByGroup = res._1
+  if hasActiveRespawnsByGroup || hasTemporaryInActiveRespawnsByGroup
+    let isCustomRespawn = has(eid, "customRespawnBase")
+    let isMobileRespawn = has(eid, "mobileRespawnTag")
+    let freeTankSpawn = has(eid, "freeTankRespawnTag")
+    update_respawn_icon(respawnBaseGroup, respawnbaseType, team, hasActiveRespawnsByGroup, hasTemporaryInActiveRespawnsByGroup, isCustomRespawn, isMobileRespawn, freeTankSpawn)
+    return
+  find_query() <| $ [es] (eid : EntityId; team : int; selectedGroup : int; respawnIconType : string)
+    if team == respawnBaseTeam && selectedGroup == respawnBaseGroup && respawnIconType == respawnbaseType
+      destroyEntity(eid)
+      return true
+    return false
+
+[es(tag=server, on_event=EventOnChangeSpawnTeams, before=(respawn_bases_selector_group_es, custom_respawn_bases_selector_group_es))]
+def respawn_bases_destroy_icons_on_spawn_team_changed_es(evt : Event)
+  query() <| $ [es(REQUIRE=respawnIconType)] (eid : EntityId; var selectedGroup : int&)
+    selectedGroup = -1
+    destroyEntity(eid)
+
+[es(tag=server, track=(isEnemyAtRespawn, nextSpawnActivateAtTime),
+                        after=respawn_bases_selector_group_es,
+                        on_appear,
+                        on_event=EventOnChangeSpawnTeams)]
+def custom_respawn_bases_selector_group_es(evt : Event;
+                                           respawnBaseGroup : int;
+                                           team : int;
+                                           respawnbaseType : string;
+                                           nextSpawnActivateAtTime : float;
+                                           isEnemyAtRespawn : bool)
+  let baseTeam = team
+  let baseType = respawnbaseType
+  let baseGroup = respawnBaseGroup
+  var groupActivateAtTime = nextSpawnActivateAtTime
+  var allGroupRespawnsNearEnemy = isEnemyAtRespawn
+  query() <| $ [es] (team : int;
+                     respawnBaseGroup : int;
+                     respawnbaseType : string;
+                     nextSpawnActivateAtTime : float;
+                     isEnemyAtRespawn : bool)
+    if team != baseTeam || respawnBaseGroup != baseGroup || respawnbaseType != baseType
+      return
+    if !isEnemyAtRespawn
+      groupActivateAtTime = min(groupActivateAtTime, nextSpawnActivateAtTime)
+    allGroupRespawnsNearEnemy &&= isEnemyAtRespawn
+
+  find_query() <| $ [es] (team : int;
+                          selectedGroup : int;
+                          respawnIconType : string;
+                          var respawn_icon__activateAtTime : float&;
+                          var respawn_icon__isEnemyAtRespawn : bool&)
+    if team == baseTeam && selectedGroup == respawnBaseGroup && respawnIconType == respawnbaseType
+      respawn_icon__activateAtTime = groupActivateAtTime
+      respawn_icon__isEnemyAtRespawn = allGroupRespawnsNearEnemy
+      return true
+    return false

@@ -1,0 +1,1289 @@
+zombie_normal_emissive_dim{
+  _use:t="dynmat_params_base"
+
+  "dynamic_material_channels_arr:array"{
+    _tags:t="render"
+
+    "dynamic_material_channel:object"{
+      dynamic_material_type:t="emissive"
+      dynmat_param__emissive_color:p4=1.0, 0.25, 0.15, 1.0
+      dynmat_param__emission_albedo_mult:r=0.9
+    }
+  }
+}
+
+zombie_stuck_control{
+  zombie_stuck_control__minPositionChange:r=4.0
+  zombie_stuck_control__minPositionChangeTime:r=30.0
+  zombie_stuck_control__lastPositionSaveTime:r=-1.0
+  zombie_stuck_control__lastPosition:p3=0.0, 0.0, 0.0
+}
+
+zombie_rush_zombie_dead_victim{
+  _use:t="zombie_rush_zombie_dead"
+  paid_loot__pointsForKill:i=0
+  paid_loot__pointsPerDamage:r=0.0
+  paid_loot__soulsForKill:i=10
+  paid_loot__soulsPerDamage:r=0.0
+  dontShowKillAward:b=yes
+
+  "noHitMark:tag"{
+  }
+}
+
+dead_enlisted_zombie_soldier_victim{
+  _use:t="dead_enlisted_zombie_soldier"
+  paid_loot__pointsForKill:i=0
+  paid_loot__pointsPerDamage:r=0.0
+  paid_loot__soulsForKill:i=10
+  paid_loot__soulsPerDamage:r=0.0
+  dontShowKillAward:b=yes
+
+  "noHitMark:tag"{
+  }
+}
+
+zombie_walk_zombie_victim{
+  _use:t="zombie_rush_zombie"
+  _use:t="zombie_normal_emissive_dim"
+  _use:t="zombie_stuck_control"
+  entity__recreateToOnDeath:t="zombie_rush_zombie_dead_victim"
+  navmesh_phys__maxWalkSpeed:r=3.2
+  path_corridor_ai__slowDownCoef:r=0.3
+  hitpoints__hp:r=20.0
+  hitpoints__maxHp:r=20.0
+  hitpoints__scaleHp:r=20.0
+  hitpoints__hpThreshold:r=20.0
+  hitpoints__hpRecoverySpd:r=0.0
+  paid_loot__pointsForKill:i=0
+  dontShowKillAward:b=yes
+  paid_loot__pointsPerDamage:r=0.0
+  paid_loot__soulsForKill:i=10
+  paid_loot__soulsPerDamage:r=0.0
+
+  "paid_loot__extraPointsForHeadshot:tag"{
+  }
+
+  "actions__actions:array"{
+
+    "action:object"{
+      name:t="stand_melee"
+      state:t="attack"
+      actionTime:r=0.5
+      applyAt:r=0.6
+      props:t="gamedata/actions_enlisted/zombie_claw.blk"
+      irq:t="claw_attack"
+      varName:t="attack_progress"
+    }
+  }
+}
+
+zombie_rush_zombie_victim{
+  _use:t="zombie_walk_zombie_victim"
+  navmesh_phys__maxWalkSpeed:r=3.8
+}
+
+zombie_rush_zombie_explosive_victim{
+  _use:t="zombie_rush_zombie_explosive"
+  _use:t="zombie_normal_emissive_dim"
+  _use:t="zombie_stuck_control"
+  entity__recreateToOnDeath:t="zombie_rush_zombie_dead_victim"
+  navmesh_phys__maxWalkSpeed:r=4.0
+  path_corridor_ai__slowDownCoef:r=0.3
+  hitpoints__hp:r=8.0
+  hitpoints__maxHp:r=8.0
+  hitpoints__scaleHp:r=8.0
+  hitpoints__hpThreshold:r=8.0
+  hitpoints__hpRecoverySpd:r=0.0
+  paid_loot__pointsForKill:i=0
+  paid_loot__pointsPerDamage:r=0.0
+  dontShowKillAward:b=yes
+  paid_loot__soulsForKill:i=10
+  paid_loot__soulsPerDamage:r=0.0
+
+  "paid_loot__extraPointsForHeadshot:tag"{
+  }
+
+  "actions__actions:array"{
+
+    "action:object"{
+      name:t="stand_melee"
+      state:t="attack"
+      actionTime:r=0.5
+      applyAt:r=0.6
+      props:t="gamedata/actions_enlisted/zombie_claw.blk"
+      irq:t="claw_attack"
+      varName:t="attack_progress"
+    }
+  }
+}
+
+zombie_rush_zombie_phosphor_victim{
+  _use:t="zombie_rush_zombie_phosphor"
+  _use:t="zombie_normal_emissive_dim"
+  _use:t="zombie_stuck_control"
+  entity__recreateToOnDeath:t="zombie_rush_zombie_dead_victim"
+  navmesh_phys__maxWalkSpeed:r=3.7
+  path_corridor_ai__slowDownCoef:r=0.3
+  hitpoints__hp:r=8.0
+  hitpoints__maxHp:r=8.0
+  hitpoints__scaleHp:r=8.0
+  hitpoints__hpThreshold:r=8.0
+  hitpoints__hpRecoverySpd:r=0.0
+  paid_loot__pointsForKill:i=0
+  paid_loot__pointsPerDamage:r=0.0
+  paid_loot__soulsForKill:i=10
+  paid_loot__soulsPerDamage:r=0.0
+  dontShowKillAward:b=yes
+
+  "paid_loot__extraPointsForHeadshot:tag"{
+  }
+
+  "actions__actions:array"{
+
+    "action:object"{
+      name:t="stand_melee"
+      state:t="attack"
+      actionTime:r=0.5
+      applyAt:r=0.6
+      props:t="gamedata/actions_enlisted/zombie_claw.blk"
+      irq:t="claw_attack"
+      varName:t="attack_progress"
+    }
+  }
+}
+
+zombie_elite_zombie_victim{
+  _use:t="zombie_elite_zombie"
+  _use:t="zombie_stuck_control"
+  entity__recreateToOnDeath:t="dead_enlisted_zombie_soldier_victim"
+  navmesh_phys__maxWalkSpeed:r=4.0
+  path_corridor_ai__slowDownCoef:r=0.35
+  paid_loot__pointsForKill:i=0
+  paid_loot__pointsPerDamage:r=0.0
+  paid_loot__soulsForKill:i=40
+  paid_loot__soulsPerDamage:r=0.1
+  hitpoints__hp:r=80.0
+  hitpoints__maxHp:r=80.0
+  hitpoints__scaleHp:r=80.0
+  hitpoints__hpThreshold:r=15.0
+  hitpoints__hpRecoverySpd:r=0.0
+  nPhys__animcharScale:r=1.0
+  dontShowKillAward:b=yes
+
+  "paid_loot__extraPointsForHeadshot:tag"{
+  }
+
+  "actions__actions:array"{
+
+    "action:object"{
+      name:t="stand_melee"
+      state:t="attack"
+      actionTime:r=0.7
+      applyAt:r=0.6
+      props:t="gamedata/actions_enlisted/zombie_middle_claw.blk"
+      irq:t="claw_attack"
+      varName:t="attack_progress"
+    }
+  }
+}
+
+zombie_luger_armored_victim{
+  _use:t="base_zombie_armored_soldier"
+  _use:t="zombie_stuck_control"
+  agent_dangers__ignoreDowned:b=yes
+  entity__recreateToOnDeath:t="dead_enlisted_zombie_soldier_victim"
+  paid_loot__pointsForKill:i=0
+  paid_loot__pointsPerDamage:r=0.0
+  paid_loot__soulsForKill:i=20
+  paid_loot__soulsPerDamage:r=0.0
+  entity_mods__meleeDamageMult:r=0.3
+  dontShowKillAward:b=yes
+  killLogName:t="zombie/uber_armored"
+
+  "paid_loot__extraPointsForHeadshot:tag"{
+  }
+
+  "human_weap__weapTemplates:object"{
+    primary:t="p08_luger_zombie_gun"
+  }
+
+  "human_weap__weapInfo:array"{
+
+    "human_weap__weapInfo:object"{
+      reserveAmmoTemplate:t="p08_luger_magazine"
+      numReserveAmmo:i=100
+    }
+
+    "human_weap__weapInfo:object"{
+    }
+
+    "human_weap__weapInfo:object"{
+    }
+
+    "human_weap__weapInfo:object"{
+    }
+
+    "human_weap__weapInfo:object"{
+    }
+  }
+
+  _group{
+    _tags:t="server"
+
+    "human_weap__template_deps_list:list<t>"{
+      item:t="p08_luger_magazine"
+      item:t="p08_luger_zombie_gun"
+    }
+  }
+
+  "walker_agent__distanceToShootError:shared:array"{
+
+    "error:object"{
+      distance:r=0.0
+      min:p2=0.8, 1.0
+      max:p2=1.0, 1.5
+      maxEnd:p2=0.0, 0.0
+    }
+
+    "error:object"{
+      distance:r=18.0
+      min:p2=1.3, 1.6
+      max:p2=1.5, 2.3
+      maxEnd:p2=0.4, 0.7
+    }
+
+    "error:object"{
+      distance:r=50.0
+      min:p2=1.7, 1.8
+      max:p2=2.0, 4.0
+      maxEnd:p2=1.7, 2.0
+    }
+
+    "error:object"{
+      distance:r=100.0
+      min:p2=2.0, 4.0
+      max:p2=5.0, 6.0
+      maxEnd:p2=3.0, 3.0
+    }
+  }
+}
+
+zombie_mp40_armored_victim{
+  _use:t="base_zombie_armored_soldier"
+  _use:t="zombie_stuck_control"
+  entity__recreateToOnDeath:t="dead_enlisted_zombie_soldier_victim"
+  agent_dangers__ignoreDowned:b=yes
+  paid_loot__pointsForKill:i=0
+  paid_loot__pointsPerDamage:r=0.0
+  paid_loot__soulsForKill:i=20
+  paid_loot__soulsPerDamage:r=0.0
+  entity_mods__meleeDamageMult:r=0.3
+  dontShowKillAward:b=yes
+  killLogName:t="zombie/uber_armored"
+
+  "paid_loot__extraPointsForHeadshot:tag"{
+  }
+
+  "human_weap__weapTemplates:object"{
+    primary:t="mp40_zombie_gun"
+  }
+
+  "human_weap__weapInfo:array"{
+
+    "human_weap__weapInfo:object"{
+      reserveAmmoTemplate:t="mp40_magazine"
+      numReserveAmmo:i=100
+    }
+
+    "human_weap__weapInfo:object"{
+    }
+
+    "human_weap__weapInfo:object"{
+    }
+
+    "human_weap__weapInfo:object"{
+    }
+
+    "human_weap__weapInfo:object"{
+    }
+  }
+
+  _group{
+    _tags:t="server"
+
+    "human_weap__template_deps_list:list<t>"{
+      item:t="mp40_magazine"
+      item:t="mp40_zombie_gun"
+    }
+  }
+
+  "walker_agent__distanceToShootError:shared:array"{
+
+    "error:object"{
+      distance:r=0.0
+      min:p2=0.8, 1.0
+      max:p2=1.0, 1.5
+      maxEnd:p2=0.0, 0.0
+    }
+
+    "error:object"{
+      distance:r=18.0
+      min:p2=1.3, 1.6
+      max:p2=1.5, 2.3
+      maxEnd:p2=0.4, 0.7
+    }
+
+    "error:object"{
+      distance:r=50.0
+      min:p2=1.7, 1.8
+      max:p2=2.0, 4.0
+      maxEnd:p2=1.7, 2.0
+    }
+
+    "error:object"{
+      distance:r=100.0
+      min:p2=2.0, 4.0
+      max:p2=5.0, 6.0
+      maxEnd:p2=3.0, 3.0
+    }
+  }
+}
+
+zombie_stg_44_armored_victim{
+  _use:t="base_zombie_armored_soldier"
+  _use:t="zombie_stuck_control"
+  agent_dangers__ignoreDowned:b=yes
+  entity__recreateToOnDeath:t="dead_enlisted_zombie_soldier_victim"
+  paid_loot__pointsForKill:i=0
+  paid_loot__pointsPerDamage:r=0.0
+  paid_loot__soulsForKill:i=20
+  paid_loot__soulsPerDamage:r=0.0
+  entity_mods__meleeDamageMult:r=0.3
+  dontShowKillAward:b=yes
+  killLogName:t="zombie/uber_armored"
+
+  "paid_loot__extraPointsForHeadshot:tag"{
+  }
+
+  "human_weap__weapTemplates:object"{
+    primary:t="stg_44_zombie_gun"
+  }
+
+  "human_weap__weapInfo:array"{
+
+    "human_weap__weapInfo:object"{
+      reserveAmmoTemplate:t="stg_44_magazine"
+      numReserveAmmo:i=100
+    }
+
+    "human_weap__weapInfo:object"{
+    }
+
+    "human_weap__weapInfo:object"{
+    }
+
+    "human_weap__weapInfo:object"{
+    }
+
+    "human_weap__weapInfo:object"{
+    }
+  }
+
+  _group{
+    _tags:t="server"
+
+    "human_weap__template_deps_list:list<t>"{
+      item:t="stg_44_magazine"
+      item:t="stg_44_zombie_gun"
+    }
+  }
+
+  "walker_agent__distanceToShootError:shared:array"{
+
+    "error:object"{
+      distance:r=0.0
+      min:p2=0.8, 1.0
+      max:p2=1.0, 1.5
+      maxEnd:p2=0.0, 0.0
+    }
+
+    "error:object"{
+      distance:r=18.0
+      min:p2=1.3, 1.6
+      max:p2=1.5, 2.3
+      maxEnd:p2=0.4, 0.7
+    }
+
+    "error:object"{
+      distance:r=50.0
+      min:p2=1.7, 1.8
+      max:p2=2.0, 4.0
+      maxEnd:p2=1.7, 2.0
+    }
+
+    "error:object"{
+      distance:r=100.0
+      min:p2=2.0, 4.0
+      max:p2=5.0, 6.0
+      maxEnd:p2=3.0, 3.0
+    }
+  }
+}
+
+zombie_mp_3008_armored_victim{
+  _use:t="base_zombie_armored_soldier"
+  _use:t="zombie_stuck_control"
+  agent_dangers__ignoreDowned:b=yes
+  entity__recreateToOnDeath:t="dead_enlisted_zombie_soldier_victim"
+  paid_loot__pointsForKill:i=0
+  paid_loot__pointsPerDamage:r=0.0
+  paid_loot__soulsForKill:i=20
+  paid_loot__soulsPerDamage:r=0.0
+  entity_mods__meleeDamageMult:r=0.3
+  dontShowKillAward:b=yes
+  killLogName:t="zombie/uber_armored"
+
+  "paid_loot__extraPointsForHeadshot:tag"{
+  }
+
+  "human_weap__weapTemplates:object"{
+    primary:t="mp_3008_zombie_gun"
+  }
+
+  "human_weap__weapInfo:array"{
+
+    "human_weap__weapInfo:object"{
+      reserveAmmoTemplate:t="mp40_magazine"
+      numReserveAmmo:i=100
+    }
+
+    "human_weap__weapInfo:object"{
+    }
+
+    "human_weap__weapInfo:object"{
+    }
+
+    "human_weap__weapInfo:object"{
+    }
+
+    "human_weap__weapInfo:object"{
+    }
+  }
+
+  _group{
+    _tags:t="server"
+
+    "human_weap__template_deps_list:list<t>"{
+      item:t="mp40_magazine"
+      item:t="mp_3008_zombie_gun"
+    }
+  }
+
+  "walker_agent__distanceToShootError:shared:array"{
+
+    "error:object"{
+      distance:r=0.0
+      min:p2=0.8, 1.0
+      max:p2=1.0, 1.5
+      maxEnd:p2=0.0, 0.0
+    }
+
+    "error:object"{
+      distance:r=18.0
+      min:p2=1.3, 1.6
+      max:p2=1.5, 2.3
+      maxEnd:p2=0.4, 0.7
+    }
+
+    "error:object"{
+      distance:r=50.0
+      min:p2=1.7, 1.8
+      max:p2=2.0, 4.0
+      maxEnd:p2=1.7, 2.0
+    }
+
+    "error:object"{
+      distance:r=100.0
+      min:p2=2.0, 4.0
+      max:p2=5.0, 6.0
+      maxEnd:p2=3.0, 3.0
+    }
+  }
+}
+
+zombie_ppd_armored_victim{
+  _use:t="base_zombie_armored_soldier"
+  _use:t="zombie_stuck_control"
+  entity__recreateToOnDeath:t="dead_enlisted_zombie_soldier_victim"
+  agent_dangers__ignoreDowned:b=yes
+  paid_loot__pointsForKill:i=0
+  paid_loot__pointsPerDamage:r=0.0
+  paid_loot__soulsForKill:i=20
+  paid_loot__soulsPerDamage:r=0.0
+  entity_mods__meleeDamageMult:r=0.3
+  dontShowKillAward:b=yes
+  killLogName:t="zombie/uber_armored"
+
+  "paid_loot__extraPointsForHeadshot:tag"{
+  }
+
+  "human_weap__weapTemplates:object"{
+    primary:t="ppd_40_zombie_gun"
+  }
+
+  "human_weap__weapInfo:array"{
+
+    "human_weap__weapInfo:object"{
+      reserveAmmoTemplate:t="ppsh_drum"
+      numReserveAmmo:i=100
+    }
+
+    "human_weap__weapInfo:object"{
+    }
+
+    "human_weap__weapInfo:object"{
+    }
+
+    "human_weap__weapInfo:object"{
+    }
+
+    "human_weap__weapInfo:object"{
+    }
+  }
+
+  _group{
+    _tags:t="server"
+
+    "human_weap__template_deps_list:list<t>"{
+      item:t="ppsh_drum"
+      item:t="ppd_40_zombie_gun"
+    }
+  }
+
+  "walker_agent__distanceToShootError:shared:array"{
+
+    "error:object"{
+      distance:r=0.0
+      min:p2=0.8, 1.0
+      max:p2=1.0, 1.5
+      maxEnd:p2=0.0, 0.0
+    }
+
+    "error:object"{
+      distance:r=18.0
+      min:p2=1.3, 1.6
+      max:p2=1.5, 2.3
+      maxEnd:p2=0.4, 0.7
+    }
+
+    "error:object"{
+      distance:r=50.0
+      min:p2=1.7, 1.8
+      max:p2=2.0, 4.0
+      maxEnd:p2=1.7, 2.0
+    }
+
+    "error:object"{
+      distance:r=100.0
+      min:p2=2.0, 4.0
+      max:p2=5.0, 6.0
+      maxEnd:p2=3.0, 3.0
+    }
+  }
+}
+
+zombie_flammenwerfer_armored_victim{
+  _use:t="base_zombie_armored_soldier"
+  _use:t="zombie_stuck_control"
+  entity__recreateToOnDeath:t="dead_enlisted_zombie_soldier_victim"
+  agent_dangers__ignoreDowned:b=yes
+  paid_loot__pointsForKill:i=0
+  paid_loot__pointsPerDamage:r=0.0
+  paid_loot__soulsForKill:i=20
+  paid_loot__soulsPerDamage:r=0.0
+  entity_mods__meleeDamageMult:r=0.3
+  dontShowKillAward:b=yes
+  zombie__grenadeTemplate:t="zombie_activated_molotov"
+  killLogName:t="zombie/uber_flammenwerfer"
+
+  "paid_loot__extraPointsForHeadshot:tag"{
+  }
+
+  "allow_friendly_damage:tag"{
+  }
+
+  "human_weap__weapTemplates:object"{
+    primary:t="flammenwerfer_35_zombie_gun"
+  }
+
+  "human_weap__weapInfo:array"{
+
+    "human_weap__weapInfo:object"{
+      reserveAmmoTemplate:t="flamethrower_fuel_tank"
+      numReserveAmmo:i=100
+    }
+
+    "human_weap__weapInfo:object"{
+    }
+
+    "human_weap__weapInfo:object"{
+    }
+
+    "human_weap__weapInfo:object"{
+    }
+
+    "human_weap__weapInfo:object"{
+    }
+  }
+
+  _group{
+    _tags:t="server"
+
+    "human_weap__template_deps_list:list<t>"{
+      item:t="flamethrower_fuel_tank"
+      item:t="flammenwerfer_35_zombie_gun"
+    }
+  }
+
+  "walker_agent__distanceToShootError:shared:array"{
+
+    "error:object"{
+      distance:r=0.0
+      min:p2=1.0, 3.0
+      max:p2=2.0, 5.0
+      maxEnd:p2=0.0, 0.0
+    }
+
+    "error:object"{
+      distance:r=18.0
+      min:p2=2.0, 5.0
+      max:p2=4.0, 6.0
+      maxEnd:p2=0.4, 0.7
+    }
+
+    "error:object"{
+      distance:r=50.0
+      min:p2=2.0, 5.0
+      max:p2=4.0, 6.0
+      maxEnd:p2=1.7, 2.0
+    }
+
+    "error:object"{
+      distance:r=100.0
+      min:p2=2.0, 5.0
+      max:p2=4.0, 6.0
+      maxEnd:p2=3.0, 3.0
+    }
+  }
+}
+
+zombie_sturmpistole_armored_victim{
+  _use:t="base_zombie_armored_soldier"
+  _use:t="zombie_stuck_control"
+  entity__recreateToOnDeath:t="dead_enlisted_zombie_soldier_victim"
+  agent_dangers__ignoreDowned:b=yes
+  paid_loot__pointsForKill:i=0
+  paid_loot__pointsPerDamage:r=0.0
+  paid_loot__soulsForKill:i=20
+  paid_loot__soulsPerDamage:r=0.0
+  entity_mods__meleeDamageMult:r=0.3
+  dontShowKillAward:b=yes
+  killLogName:t="zombie/uber_launcher"
+
+  "paid_loot__extraPointsForHeadshot:tag"{
+  }
+
+  "human_weap__weapTemplates:object"{
+    primary:t="sturmpistole_zombie_gun"
+  }
+
+  "human_weap__weapInfo:array"{
+
+    "human_weap__weapInfo:object"{
+      reserveAmmoTemplate:t="panzerwurfkorper_42_item"
+      numReserveAmmo:i=100
+    }
+
+    "human_weap__weapInfo:object"{
+    }
+
+    "human_weap__weapInfo:object"{
+    }
+
+    "human_weap__weapInfo:object"{
+    }
+
+    "human_weap__weapInfo:object"{
+    }
+  }
+
+  _group{
+    _tags:t="server"
+
+    "human_weap__template_deps_list:list<t>"{
+      item:t="panzerwurfkorper_42_item"
+      item:t="sturmpistole_zombie_gun"
+    }
+  }
+
+  "walker_agent__distanceToShootError:shared:array"{
+
+    "error:object"{
+      distance:r=0.0
+      min:p2=0.8, 1.0
+      max:p2=1.0, 1.5
+      maxEnd:p2=0.0, 0.0
+    }
+
+    "error:object"{
+      distance:r=18.0
+      min:p2=1.3, 1.6
+      max:p2=1.5, 2.3
+      maxEnd:p2=0.4, 0.7
+    }
+
+    "error:object"{
+      distance:r=50.0
+      min:p2=1.7, 1.8
+      max:p2=2.0, 4.0
+      maxEnd:p2=1.7, 2.0
+    }
+
+    "error:object"{
+      distance:r=100.0
+      min:p2=2.0, 4.0
+      max:p2=5.0, 6.0
+      maxEnd:p2=3.0, 3.0
+    }
+  }
+}
+
+zombie_panzerfaust_armored_victim{
+  _use:t="base_zombie_armored_soldier"
+  _use:t="zombie_stuck_control"
+  entity__recreateToOnDeath:t="dead_enlisted_zombie_soldier_victim"
+  agent_dangers__ignoreDowned:b=yes
+  paid_loot__pointsForKill:i=0
+  paid_loot__pointsPerDamage:r=0.0
+  paid_loot__soulsForKill:i=20
+  paid_loot__soulsPerDamage:r=0.0
+  entity_mods__meleeDamageMult:r=0.3
+  dontShowKillAward:b=yes
+  killLogName:t="zombie/uber_launcher"
+
+  "paid_loot__extraPointsForHeadshot:tag"{
+  }
+
+  "human_weap__weapTemplates:object"{
+    primary:t="panzerfaust_60_zombie_gun"
+  }
+
+  "human_weap__weapInfo:array"{
+
+    "human_weap__weapInfo:object"{
+      reserveAmmoTemplate:t="panzerfaust_60_shell_item"
+      numReserveAmmo:i=100
+    }
+
+    "human_weap__weapInfo:object"{
+    }
+
+    "human_weap__weapInfo:object"{
+    }
+
+    "human_weap__weapInfo:object"{
+    }
+
+    "human_weap__weapInfo:object"{
+    }
+  }
+
+  _group{
+    _tags:t="server"
+
+    "human_weap__template_deps_list:list<t>"{
+      item:t="panzerfaust_60_shell_item"
+      item:t="panzerfaust_60_zombie_gun"
+    }
+  }
+
+  "walker_agent__distanceToShootError:shared:array"{
+
+    "error:object"{
+      distance:r=0.0
+      min:p2=0.8, 1.0
+      max:p2=1.0, 1.5
+      maxEnd:p2=0.0, 0.0
+    }
+
+    "error:object"{
+      distance:r=18.0
+      min:p2=1.3, 1.6
+      max:p2=1.5, 2.3
+      maxEnd:p2=0.4, 0.7
+    }
+
+    "error:object"{
+      distance:r=50.0
+      min:p2=1.7, 1.8
+      max:p2=2.0, 4.0
+      maxEnd:p2=1.7, 2.0
+    }
+
+    "error:object"{
+      distance:r=100.0
+      min:p2=2.0, 4.0
+      max:p2=5.0, 6.0
+      maxEnd:p2=3.0, 3.0
+    }
+  }
+}
+
+zombie_sword_armored_victim{
+  _use:t="base_zombie_armored_soldier"
+  _use:t="zombie_stuck_control"
+  entity__recreateToOnDeath:t="dead_enlisted_zombie_soldier_victim"
+  agent_dangers__ignoreDowned:b=yes
+  paid_loot__pointsForKill:i=0
+  paid_loot__pointsPerDamage:r=0.0
+  paid_loot__soulsForKill:i=20
+  paid_loot__soulsPerDamage:r=0.0
+  dontShowKillAward:b=yes
+  killLogName:t="zombie/uber_armored"
+
+  "paid_loot__extraPointsForHeadshot:tag"{
+  }
+
+  "human_weap__weapTemplates:object"{
+    melee:t="german_officer_sword_weapon"
+  }
+
+  "human_weap__weapInfo:array"{
+
+    "human_weap__weapInfo:object"{
+    }
+
+    "human_weap__weapInfo:object"{
+    }
+
+    "human_weap__weapInfo:object"{
+    }
+
+    "human_weap__weapInfo:object"{
+    }
+
+    "human_weap__weapInfo:object"{
+    }
+  }
+
+  _group{
+    _tags:t="server"
+
+    "human_weap__template_deps_list:list<t>"{
+      item:t="german_officer_sword_weapon"
+    }
+  }
+}
+
+zombie_melee_boss_victim{
+  _use:t="base_zombie_armored_soldier_without_mm"
+  _use:t="zombie_stuck_control"
+  agent_dangers__ignoreDowned:b=yes
+  entity__recreateToOnDeath:t="dead_enlisted_zombie_soldier_victim"
+  hitpoints__hp:r=200.0
+  hitpoints__maxHp:r=200.0
+  hitpoints__scaleHp:r=200.0
+  hitpoints__hpThreshold:r=20.0
+  hitpoints__hpRecoverySpd:r=0.0
+  paid_loot__pointsForKill:i=0
+  paid_loot__pointsPerDamage:r=0.0
+  paid_loot__soulsForKill:i=100
+  paid_loot__soulsPerDamage:r=0.1
+  dontShowKillAward:b=yes
+  animchar__res:t="zombie_melee"
+  collres__res:t="zombie_melee_collision"
+  killLogName:t="zombie/uber_elite_melee"
+
+  "paid_loot__extraPointsForHeadshot:tag"{
+  }
+
+  "human_weap__weapTemplates:object"{
+    melee:t="type_95_shin_gunto_weapon"
+  }
+
+  "human_weap__weapInfo:array"{
+
+    "human_weap__weapInfo:object"{
+    }
+
+    "human_weap__weapInfo:object"{
+    }
+
+    "human_weap__weapInfo:object"{
+    }
+
+    "human_weap__weapInfo:object"{
+    }
+
+    "human_weap__weapInfo:object"{
+    }
+  }
+
+  _group{
+    _tags:t="server"
+
+    "human_weap__template_deps_list:list<t>"{
+      item:t="type_95_shin_gunto_weapon"
+    }
+  }
+
+  "walker_agent__distanceToShootError:shared:array"{
+
+    "error:object"{
+      distance:r=0.0
+      max:p2=2.0, 3.0
+      max:p2=3.0, 4.0
+      maxEnd:p2=0.0, 0.0
+    }
+
+    "error:object"{
+      distance:r=18.0
+      min:p2=3.5, 4.0
+      max:p2=4.0, 4.5
+      maxEnd:p2=0.4, 0.7
+    }
+
+    "error:object"{
+      distance:r=50.0
+      min:p2=3.5, 4.0
+      max:p2=4.0, 4.5
+      maxEnd:p2=1.7, 2.0
+    }
+
+    "error:object"{
+      distance:r=100.0
+      min:p2=3.5, 4.0
+      max:p2=4.0, 4.5
+      maxEnd:p2=3.0, 3.0
+    }
+  }
+}
+
+zombie_flamethrower_boss_victim{
+  _use:t="base_zombie_armored_soldier_without_mm"
+  _use:t="zombie_stuck_control"
+  agent_dangers__ignoreDowned:b=yes
+  entity__recreateToOnDeath:t="dead_enlisted_zombie_soldier_victim"
+  hitpoints__hp:r=300.0
+  hitpoints__maxHp:r=300.0
+  hitpoints__scaleHp:r=300.0
+  hitpoints__hpThreshold:r=25.0
+  hitpoints__hpRecoverySpd:r=0.0
+  paid_loot__pointsForKill:i=0
+  paid_loot__pointsPerDamage:r=0.0
+  paid_loot__soulsForKill:i=100
+  paid_loot__soulsPerDamage:r=0.1
+  dontShowKillAward:b=yes
+  animchar__res:t="zombie_flamethrower"
+  collres__res:t="zombie_flamethrower_collision"
+  killLogName:t="zombie/uber_elite_flammenwerfer"
+
+  "paid_loot__extraPointsForHeadshot:tag"{
+  }
+
+  "human_weap__weapTemplates:object"{
+    primary:t="flammenwerfer_35_zombie_gun"
+  }
+
+  "human_weap__weapInfo:array"{
+
+    "human_weap__weapInfo:object"{
+      reserveAmmoTemplate:t="flamethrower_fuel_tank"
+      numReserveAmmo:i=100
+    }
+
+    "human_weap__weapInfo:object"{
+    }
+
+    "human_weap__weapInfo:object"{
+    }
+
+    "human_weap__weapInfo:object"{
+    }
+
+    "human_weap__weapInfo:object"{
+    }
+  }
+
+  _group{
+    _tags:t="server"
+
+    "human_weap__template_deps_list:list<t>"{
+      item:t="flamethrower_fuel_tank"
+      item:t="flammenwerfer_35_zombie_gun"
+    }
+  }
+
+  "walker_agent__distanceToShootError:shared:array"{
+
+    "error:object"{
+      distance:r=0.0
+      max:p2=2.0, 3.0
+      max:p2=3.0, 4.0
+      maxEnd:p2=0.0, 0.0
+    }
+
+    "error:object"{
+      distance:r=18.0
+      min:p2=3.5, 4.0
+      max:p2=4.0, 4.5
+      maxEnd:p2=0.4, 0.7
+    }
+
+    "error:object"{
+      distance:r=50.0
+      min:p2=3.5, 4.0
+      max:p2=4.0, 4.5
+      maxEnd:p2=1.7, 2.0
+    }
+
+    "error:object"{
+      distance:r=100.0
+      min:p2=3.5, 4.0
+      max:p2=4.0, 4.5
+      maxEnd:p2=3.0, 3.0
+    }
+  }
+}
+
+zombie_machinegunner_boss_victim{
+  _use:t="base_zombie_armored_soldier_without_mm"
+  _use:t="zombie_stuck_control"
+  agent_dangers__ignoreDowned:b=yes
+  entity__recreateToOnDeath:t="dead_enlisted_zombie_soldier_victim"
+  hitpoints__hp:r=200.0
+  hitpoints__maxHp:r=200.0
+  hitpoints__scaleHp:r=200.0
+  hitpoints__hpThreshold:r=15.0
+  hitpoints__hpRecoverySpd:r=0.0
+  paid_loot__pointsForKill:i=0
+  paid_loot__pointsPerDamage:r=0.0
+  paid_loot__soulsForKill:i=100
+  paid_loot__soulsPerDamage:r=0.1
+  dontShowKillAward:b=yes
+  human_inventory__dropsLoot:b=no
+  animchar__res:t="zombie_machinegunner"
+  collres__res:t="zombie_machinegunner_collision"
+  killLogName:t="zombie/uber_elite_armored"
+
+  "paid_loot__extraPointsForHeadshot:tag"{
+  }
+
+  "human_weap__weapTemplates:object"{
+    primary:t="blaster_auto_germany_zombie_gun"
+  }
+
+  "human_weap__weapInfo:array"{
+
+    "human_weap__weapInfo:object"{
+      reserveAmmoTemplate:t="infinite_magazine_zombie"
+      numReserveAmmo:i=100
+    }
+
+    "human_weap__weapInfo:object"{
+    }
+
+    "human_weap__weapInfo:object"{
+    }
+
+    "human_weap__weapInfo:object"{
+    }
+
+    "human_weap__weapInfo:object"{
+    }
+  }
+
+  _group{
+    _tags:t="server"
+
+    "human_weap__template_deps_list:list<t>"{
+      item:t="infinite_magazine_zombie"
+      item:t="blaster_auto_germany_zombie_gun"
+    }
+  }
+
+  "walker_agent__distanceToShootError:shared:array"{
+
+    "error:object"{
+      distance:r=0.0
+      max:p2=1.3, 1.8
+      max:p2=1.6, 2.8
+      maxEnd:p2=0.0, 0.0
+    }
+
+    "error:object"{
+      distance:r=18.0
+      min:p2=2.0, 2.6
+      max:p2=2.5, 3.0
+      maxEnd:p2=0.4, 0.7
+    }
+
+    "error:object"{
+      distance:r=50.0
+      min:p2=3.5, 4.0
+      max:p2=4.0, 4.5
+      maxEnd:p2=1.7, 2.0
+    }
+
+    "error:object"{
+      distance:r=100.0
+      min:p2=3.5, 4.0
+      max:p2=4.0, 4.5
+      maxEnd:p2=3.0, 3.0
+    }
+  }
+}
+
+zombie_plazmagunner_boss_victim{
+  _use:t="base_zombie_armored_soldier_without_mm"
+  _use:t="zombie_stuck_control"
+  agent_dangers__ignoreDowned:b=yes
+  entity__recreateToOnDeath:t="dead_enlisted_zombie_soldier_victim"
+  hitpoints__hp:r=200.0
+  hitpoints__maxHp:r=200.0
+  hitpoints__scaleHp:r=200.0
+  hitpoints__hpThreshold:r=15.0
+  hitpoints__hpRecoverySpd:r=0.0
+  paid_loot__pointsForKill:i=0
+  paid_loot__pointsPerDamage:r=0.0
+  paid_loot__soulsForKill:i=100
+  paid_loot__soulsPerDamage:r=0.1
+  dontShowKillAward:b=yes
+  animchar__res:t="zombie_plazmagunner"
+  collres__res:t="zombie_plazmagunner_collision"
+  animchar_fast_phys__res:t="zombie_plazmagunner_fastphys"
+  killLogName:t="zombie/uber_elite_armored"
+
+  "paid_loot__extraPointsForHeadshot:tag"{
+  }
+
+  animchar_fast_phys{
+    _tags:t="gameClient"
+  }
+
+  "allow_friendly_damage:tag"{
+  }
+
+  "human_weap__weapTemplates:object"{
+    primary:t="plasma_cannon_zombie_gun"
+  }
+
+  "human_weap__weapInfo:array"{
+
+    "human_weap__weapInfo:object"{
+      reserveAmmoTemplate:t="infinite_magazine_zombie"
+      numReserveAmmo:i=100
+    }
+
+    "human_weap__weapInfo:object"{
+    }
+
+    "human_weap__weapInfo:object"{
+    }
+
+    "human_weap__weapInfo:object"{
+    }
+
+    "human_weap__weapInfo:object"{
+    }
+  }
+
+  _group{
+    _tags:t="server"
+
+    "human_weap__template_deps_list:list<t>"{
+      item:t="infinite_magazine_zombie"
+      item:t="plasma_cannon_zombie_gun"
+    }
+  }
+
+  "walker_agent__distanceToShootError:shared:array"{
+
+    "error:object"{
+      distance:r=0.0
+      max:p2=2.0, 3.0
+      max:p2=3.0, 4.0
+      maxEnd:p2=0.0, 0.0
+    }
+
+    "error:object"{
+      distance:r=18.0
+      min:p2=3.5, 4.0
+      max:p2=4.0, 4.5
+      maxEnd:p2=0.4, 0.7
+    }
+
+    "error:object"{
+      distance:r=50.0
+      min:p2=3.5, 4.0
+      max:p2=4.0, 4.5
+      maxEnd:p2=1.7, 2.0
+    }
+
+    "error:object"{
+      distance:r=100.0
+      min:p2=3.5, 4.0
+      max:p2=4.0, 4.5
+      maxEnd:p2=3.0, 3.0
+    }
+  }
+}
+
+poly_battle_area_halloween{
+  _use:t="base_battle_area"
+  _use:t="poly_area"
+
+  "battleAreaId:t"{
+    value:t=""
+    _info:t="battleAreaId"
+  }
+
+  "groupName:t"{
+    value:t=""
+    _info:t="groupName"
+  }
+
+  "humanTriggerable:tag"{
+  }
+
+  "invisibleHumanTriggerable:tag"{
+  }
+
+  "battleAreaPoints:list<p2>"{
+  }
+
+  _group{
+    battle_area__deactivateEndTime:r=-1.0
+    battle_area__timeToDamage:r=8.0
+    battle_area__damage:r=2.0
+    battle_area__damageInterval:r=1.0
+    battle_area__noDamageBorderWidth:r=0.0
+    battle_area__timeToWarn:r=30.0
+    battle_area__lastDamageAtTime:r=-1.0
+    _tags:t="server"
+
+    "battle_area__timeToDamageByType:object"{
+      human:r=3.0
+      vehicle:r=12.0
+      aircraft:r=30.0
+    }
+
+    "battle_area__killList:array"{
+    }
+  }
+
+  _info{
+    desc:t="A zone that limits the area of battles and an important component that allows bots to move around the level (within the boundaries of this zone). Can be used to secure spawn points, concentrate fights around one strategic point(s), etc. Custom shaped battle area that you can setup using several points (battle_area_polygon_point)"
+  }
+}

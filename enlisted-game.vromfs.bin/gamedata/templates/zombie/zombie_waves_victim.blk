@@ -1,0 +1,4820 @@
+zombie_spawn_mode_victim_1_gun_flame{
+  _use:t="replicating"
+  _use:t="team_bots_data"
+  zomibe_mode__soulsToScoreMult:i=10
+  team__id:i=3
+  zombie_mode__finishHintShowed:b=no
+  zombie_mode_sessionWaitTime:r=10.0
+  zombie_mode_sessionEndTime:r=-1.0
+  _replicated:t="zombie_mode_sessionEndTime"
+  _replicated:t="entity_spawner__aliveZombiesCount"
+  _replicated:t="entity_spawner__counstSpawnInWave"
+  _replicated:t="entity_spawner__alreadySpawnInWave"
+  _replicated:t="entity_spawner__curWaveId"
+  _replicated:t="entity_spawner__nextWaveAtTime"
+  _tracked:t="zombie_mode_sessionEndTime"
+  _tracked:t="entity_spawner__aliveZombiesCount"
+  _tracked:t="entity_spawner__counstSpawnInWave"
+  _tracked:t="entity_spawner__alreadySpawnInWave"
+  _tracked:t="entity_spawner__curWaveId"
+  _tracked:t="entity_spawner__nextWaveAtTime"
+  entity_spawner__soldierAddTempl:t="zombie_spawner_mode_soldier_victim"
+  entity_spawner__aliveZombiesLimit:i=100
+  entity_spawner__aliveZombiesCount:i=0
+  zombie_mode__sessionFinished:b=no
+  entity_spawner__curTankSpawnId:i=0
+  entity_spawner__counstSpawnInWave:i=-1
+  entity_spawner__alreadySpawnInWave:i=-1
+  entity_spawner__nextSpawnAtTime:r=-1.0
+  entity_spawner__nextSpawnPeriod:r=1.0
+  entity_spawner__curWaveId:i=0
+  entity_spawner__lastWaveMul:r=2.5
+  entity_spawner__genericWavesRepeat:i=37
+  entity_spawner__nextWavePeriod:r=35.0
+  entity_spawner__maxWaveTimeAfterLastSpawned:r=240.0
+  entity_spawner__forceNextWaveAtTime:r=-1.0
+  entity_spawner__briefing:t=""
+  entity_spawner__nextWaveAtTime:r=60.0
+  entity_spawner__nextWavePoints:i=0
+  entity_spawner__winOnWave:i=420
+  entity_spawner__winTeam:i=1
+  zombie_mode__tokenNominal:i=1
+
+  "disableBombCrater:tag"{
+  }
+
+  "zombie_team_ui:tag"{
+  }
+
+  "entity_spawner__waves:array"{
+
+    "wave:object"{
+      zombie_walk_zombie_victim:i=20
+    }
+
+    "wave:object"{
+      zombie_walk_zombie_victim:i=24
+    }
+
+    "wave:object"{
+      zombie_walk_zombie_victim:i=20
+      zombie_rush_zombie_victim:i=8
+    }
+
+    "wave:object"{
+      zombie_walk_zombie_victim:i=12
+      zombie_rush_zombie_victim:i=20
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=12
+      zombie_luger_armored_victim:i=16
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=30
+      zombie_luger_armored_victim:i=6
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=32
+      zombie_luger_armored_victim:i=6
+      zombie_mp_3008_armored_victim:i=2
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=36
+      zombie_mp_3008_armored_victim:i=2
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=18
+      zombie_rush_zombie_phosphor_victim:i=16
+      zombie_mp_3008_armored_victim:i=2
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=36
+      zombie_luger_armored_victim:i=4
+      zombie_mp_3008_armored_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=20
+      zombie_luger_armored_victim:i=10
+      zombie_mp_3008_armored_victim:i=10
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=40
+      zombie_luger_armored_victim:i=4
+      zombie_mp_3008_armored_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=30
+      zombie_machinegunner_boss_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=20
+      zombie_rush_zombie_phosphor_victim:i=16
+      zombie_luger_armored_victim:i=2
+      zombie_mp_3008_armored_victim:i=2
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=40
+      zombie_luger_armored_victim:i=4
+      zombie_mp_3008_armored_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=42
+      zombie_rush_zombie_phosphor_victim:i=2
+      zombie_luger_armored_victim:i=4
+      zombie_mp_3008_armored_victim:i=6
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=26
+      zombie_luger_armored_victim:i=8
+      zombie_mp_3008_armored_victim:i=8
+      zombie_ppd_armored_victim:i=5
+      zombie_mp40_armored_victim:i=5
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=46
+      zombie_rush_zombie_phosphor_victim:i=2
+      zombie_luger_armored_victim:i=2
+      zombie_mp_3008_armored_victim:i=4
+      zombie_ppd_armored_victim:i=2
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=20
+      zombie_rush_zombie_phosphor_victim:i=22
+      zombie_luger_armored_victim:i=3
+      zombie_mp_3008_armored_victim:i=3
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=48
+      zombie_luger_armored_victim:i=2
+      zombie_mp_3008_armored_victim:i=4
+      zombie_mp40_armored_victim:i=2
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=34
+      zombie_rush_zombie_phosphor_victim:i=2
+      zombie_mp_3008_armored_victim:i=2
+      zombie_sword_armored_victim:i=18
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=46
+      zombie_rush_zombie_phosphor_victim:i=2
+      zombie_luger_armored_victim:i=2
+      zombie_mp_3008_armored_victim:i=4
+      zombie_ppd_armored_victim:i=2
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=30
+      zombie_flamethrower_boss_victim:i=3
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=40
+      zombie_rush_zombie_phosphor_victim:i=4
+      zombie_luger_armored_victim:i=2
+      zombie_mp_3008_armored_victim:i=6
+      zombie_mp40_armored_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=32
+      zombie_flammenwerfer_armored:i=12
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=40
+      zombie_rush_zombie_phosphor_victim:i=4
+      zombie_luger_armored_victim:i=2
+      zombie_mp_3008_armored_victim:i=4
+      zombie_mp40_armored_victim:i=2
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=26
+      zombie_luger_armored_victim:i=8
+      zombie_mp_3008_armored_victim:i=10
+      zombie_ppd_armored_victim:i=6
+      zombie_mp40_armored_victim:i=6
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=42
+      zombie_rush_zombie_phosphor_victim:i=2
+      zombie_luger_armored_victim:i=4
+      zombie_mp_3008_armored_victim:i=6
+      zombie_mp40_armored_victim:i=2
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=24
+      zombie_rush_zombie_phosphor_victim:i=24
+      zombie_mp_3008_armored_victim:i=8
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=38
+      zombie_machinegunner_boss_victim:i=4
+      zombie_flamethrower_boss_victim:i=3
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=48
+      zombie_mp_3008_armored_victim:i=4
+      zombie_mp40_armored_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=45
+      zombie_rush_zombie_phosphor_victim:i=3
+      zombie_luger_armored_victim:i=2
+      zombie_mp_3008_armored_victim:i=4
+      zombie_mp40_armored_victim:i=2
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=48
+      zombie_rush_zombie_phosphor_victim:i=4
+      zombie_mp_3008_armored_victim:i=8
+      zombie_mp40_armored_victim:i=8
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=20
+      zombie_rush_zombie_phosphor_victim:i=32
+      zombie_mp_3008_armored_victim:i=6
+      zombie_mp40_armored_victim:i=6
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=44
+      zombie_rush_zombie_phosphor_victim:i=4
+      zombie_mp_3008_armored_victim:i=8
+      zombie_mp40_armored_victim:i=8
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=30
+      zombie_mp_3008_armored_victim:i=10
+      zombie_ppd_armored_victim:i=12
+      zombie_mp40_armored_victim:i=12
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=52
+      zombie_mp_3008_armored_victim:i=8
+      zombie_machinegunner_boss_victim:i=4
+      zombie_flamethrower_boss_victim:i=3
+    }
+  }
+
+  "entity_spawner__aliveHumans:list<eid>"{
+  }
+
+  "entity_spawner__spawns:list<eid>"{
+  }
+
+  "entity_spawner__tankSpawns:list<eid>"{
+  }
+
+  "entity_spawner__wavesTemplates:list<t>"{
+  }
+
+  "entity_spawner__count:list<i>"{
+  }
+
+  "zombieSpawnMode:tag"{
+  }
+
+  "fire_obstacle__disabler:tag"{
+  }
+
+  "zombie_mode__tokenParams:tag"{
+  }
+}
+
+zombie_spawner_mode_soldier_victim{
+  _use:t="zombie_mode_soldier"
+  zombie_mode__maxSelfresCount:i=2
+
+  "zombie_mode_human:tag"{
+  }
+
+  "human_reviver__showRevivedProgress:tag"{
+  }
+}
+
+zombie_spawn_mode_victim_for_one{
+  _use:t="zombie_spawn_mode_victim_1_gun_flame"
+  entity_spawner__nextWavePeriod:r=10.0
+  entity_spawner__nextWaveAtTime:r=10.0
+
+  "entity_spawner__waves:array"{
+
+    "wave:object"{
+      zombie_sword_armored_victim:i=5
+    }
+
+    "wave:object"{
+      zombie_walk_zombie_victim:i=6
+    }
+
+    "wave:object"{
+      zombie_walk_zombie_victim:i=5
+      zombie_rush_zombie_victim:i=1
+      zombie_luger_armored_victim:i=1
+    }
+
+    "wave:object"{
+      zombie_walk_zombie_victim:i=4
+      zombie_rush_zombie_victim:i=3
+      zombie_luger_armored_victim:i=1
+    }
+
+    "wave:object"{
+      zombie_walk_zombie_victim:i=2
+      zombie_rush_zombie_victim:i=5
+      zombie_rush_zombie_explosive_victim:i=1
+      zombie_mp_3008_armored_victim:i=1
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=7
+      zombie_rush_zombie_explosive_victim:i=1
+      zombie_luger_armored_victim:i=1
+      zombie_mp_3008_armored_victim:i=1
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=8
+      zombie_rush_zombie_phosphor_victim:i=1
+      zombie_luger_armored_victim:i=1
+      zombie_mp_3008_armored_victim:i=1
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=8
+      zombie_rush_zombie_explosive_victim:i=1
+      zombie_luger_armored_victim:i=2
+      zombie_mp_3008_armored_victim:i=1
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=9
+      zombie_rush_zombie_explosive_victim:i=1
+      zombie_mp_3008_armored_victim:i=3
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=10
+      zombie_mp_3008_armored_victim:i=2
+      zombie_elite_zombie_victim:i=1
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=10
+      zombie_rush_zombie_explosive_victim:i=1
+      zombie_mp_3008_armored_victim:i=1
+      zombie_flammenwerfer_armored_victim:i=1
+      zombie_sturmpistole_armored_victim:i=1
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=8
+      zombie_rush_zombie_explosive_victim:i=1
+      zombie_mp_3008_armored_victim:i=1
+      zombie_mp40_armored_victim:i=3
+      zombie_sturmpistole_armored_victim:i=1
+      zombie_elite_zombie_victim:i=1
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=9
+      zombie_rush_zombie_explosive_victim:i=1
+      zombie_rush_zombie_phosphor_victim:i=1
+      zombie_mp40_armored_victim:i=3
+      zombie_flammenwerfer_armored_victim:i=1
+      zombie_elite_zombie_victim:i=1
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=51
+      zombie_rush_zombie_explosive_victim:i=2
+      zombie_rush_zombie_phosphor_victim:i=1
+      zombie_mp40_armored_victim:i=8
+      zombie_sturmpistole_armored_victim:i=2
+      zombie_elite_zombie_victim:i=2
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=49
+      zombie_rush_zombie_phosphor_victim:i=1
+      zombie_mp40_armored_victim:i=12
+      zombie_flammenwerfer_armored_victim:i=1
+      zombie_sturmpistole_armored_victim:i=1
+      zombie_elite_zombie_victim:i=6
+    }
+  }
+}
+
+zombie_spawn_mode_victim_melee{
+  _use:t="replicating"
+  _use:t="team_bots_data"
+  _use:t="zombie_spawn_mode_victim_1_gun_flame"
+  team__id:i=3
+
+  "disableBombCrater:tag"{
+  }
+
+  "entity_spawner__waves:array"{
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=30
+      zombie_melee_boss_victim:i=6
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=30
+      zombie_melee_boss_victim:i=6
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=30
+      zombie_melee_boss_victim:i=6
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=30
+      zombie_melee_boss_victim:i=6
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=30
+      zombie_melee_boss_victim:i=6
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=30
+      zombie_melee_boss_victim:i=6
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=30
+      zombie_melee_boss_victim:i=6
+    }
+  }
+}
+
+zombie_spawn_mode_victim_flamethrower{
+  _use:t="replicating"
+  _use:t="team_bots_data"
+  _use:t="zombie_spawn_mode_victim_1_gun_flame"
+  team__id:i=3
+
+  "disableBombCrater:tag"{
+  }
+
+  "entity_spawner__waves:array"{
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=30
+      zombie_flamethrower_boss_victim:i=3
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=30
+      zombie_flamethrower_boss_victim:i=3
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=30
+      zombie_flamethrower_boss_victim:i=3
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=30
+      zombie_flamethrower_boss_victim:i=3
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=30
+      zombie_flamethrower_boss_victim:i=3
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=30
+      zombie_flamethrower_boss_victim:i=3
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=30
+      zombie_flamethrower_boss_victim:i=3
+    }
+  }
+}
+
+zombie_spawn_mode_victim_machinegunner{
+  _use:t="replicating"
+  _use:t="team_bots_data"
+  _use:t="zombie_spawn_mode_victim_1_gun_flame"
+  team__id:i=3
+
+  "disableBombCrater:tag"{
+  }
+
+  "entity_spawner__waves:array"{
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=30
+      zombie_machinegunner_boss_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=30
+      zombie_machinegunner_boss_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=30
+      zombie_machinegunner_boss_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=30
+      zombie_machinegunner_boss_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=30
+      zombie_machinegunner_boss_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=30
+      zombie_machinegunner_boss_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=30
+      zombie_machinegunner_boss_victim:i=4
+    }
+  }
+}
+
+zombie_spawn_mode_victim_plazmagunner{
+  _use:t="replicating"
+  _use:t="team_bots_data"
+  _use:t="zombie_spawn_mode_victim_1_gun_flame"
+  team__id:i=3
+
+  "disableBombCrater:tag"{
+  }
+
+  "entity_spawner__waves:array"{
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=30
+      zombie_plazmagunner_boss_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=30
+      zombie_plazmagunner_boss_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=30
+      zombie_plazmagunner_boss_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=30
+      zombie_plazmagunner_boss_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=30
+      zombie_plazmagunner_boss_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=30
+      zombie_plazmagunner_boss_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=30
+      zombie_plazmagunner_boss_victim:i=4
+    }
+  }
+}
+
+zombie_spawn_mode_victim_2_gun_flame{
+  _use:t="zombie_spawn_mode_victim_1_gun_flame"
+  team__id:i=3
+
+  "disableBombCrater:tag"{
+  }
+
+  "entity_spawner__waves:array"{
+
+    "wave:object"{
+      zombie_walk_zombie_victim:i=20
+    }
+
+    "wave:object"{
+      zombie_walk_zombie_victim:i=24
+    }
+
+    "wave:object"{
+      zombie_walk_zombie_victim:i=20
+      zombie_rush_zombie_victim:i=8
+    }
+
+    "wave:object"{
+      zombie_walk_zombie_victim:i=12
+      zombie_rush_zombie_victim:i=20
+    }
+
+    "wave:object"{
+      zombie_walk_zombie_victim:i=10
+      zombie_rush_zombie_victim:i=26
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=12
+      zombie_luger_armored_victim:i=20
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=20
+      zombie_rush_zombie_phosphor_victim:i=16
+      zombie_mp_3008_armored_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=36
+      zombie_luger_armored_victim:i=6
+      zombie_mp_3008_armored_victim:i=2
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=32
+      zombie_rush_zombie_phosphor_victim:i=2
+      zombie_mp_3008_armored_victim:i=2
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=20
+      zombie_luger_armored_victim:i=14
+      zombie_mp_3008_armored_victim:i=6
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=40
+      zombie_mp_3008_armored_victim:i=8
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=38
+      zombie_rush_zombie_phosphor_victim:i=2
+      zombie_luger_armored_victim:i=4
+      zombie_mp_3008_armored_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=38
+      zombie_rush_zombie_phosphor_victim:i=2
+      zombie_luger_armored_victim:i=3
+      zombie_mp_3008_armored_victim:i=5
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=30
+      zombie_machinegunner_boss_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=32
+      zombie_flammenwerfer_armored:i=12
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=42
+      zombie_rush_zombie_phosphor_victim:i=2
+      zombie_luger_armored_victim:i=6
+      zombie_mp_3008_armored_victim:i=6
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=24
+      zombie_rush_zombie_phosphor_victim:i=18
+      zombie_luger_armored_victim:i=3
+      zombie_mp_3008_armored_victim:i=3
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=46
+      zombie_rush_zombie_phosphor_victim:i=2
+      zombie_luger_armored_victim:i=2
+      zombie_mp_3008_armored_victim:i=4
+      zombie_ppd_armored_victim:i=2
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=38
+      zombie_rush_zombie_phosphor_victim:i=2
+      zombie_mp_3008_armored_victim:i=2
+      zombie_sword_armored_victim:i=18
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=48
+      zombie_luger_armored_victim:i=2
+      zombie_mp_3008_armored_victim:i=6
+      zombie_mp40_armored_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=26
+      zombie_luger_armored_victim:i=6
+      zombie_mp_3008_armored_victim:i=10
+      zombie_ppd_armored_victim:i=9
+      zombie_mp40_armored_victim:i=5
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=30
+      zombie_flamethrower_boss_victim:i=3
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=46
+      zombie_rush_zombie_phosphor_victim:i=2
+      zombie_luger_armored_victim:i=3
+      zombie_mp_3008_armored_victim:i=7
+      zombie_ppd_armored_victim:i=2
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=44
+      zombie_rush_zombie_phosphor_victim:i=4
+      zombie_luger_armored_victim:i=2
+      zombie_mp_3008_armored_victim:i=6
+      zombie_mp40_armored_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=36
+      zombie_rush_zombie_phosphor_victim:i=2
+      zombie_mp_3008_armored_victim:i=2
+      zombie_sword_armored_victim:i=20
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=40
+      zombie_rush_zombie_phosphor_victim:i=4
+      zombie_mp_3008_armored_victim:i=2
+      zombie_mp40_armored_victim:i=6
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=24
+      zombie_rush_zombie_phosphor_victim:i=24
+      zombie_mp_3008_armored_victim:i=6
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=50
+      zombie_rush_zombie_phosphor_victim:i=2
+      zombie_mp_3008_armored_victim:i=4
+      zombie_mp40_armored_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=26
+      zombie_mp_3008_armored_victim:i=10
+      zombie_ppd_armored_victim:i=12
+      zombie_mp40_armored_victim:i=12
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=40
+      zombie_machinegunner_boss_victim:i=4
+      zombie_flamethrower_boss_victim:i=3
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=52
+      zombie_mp_3008_armored_victim:i=4
+      zombie_mp40_armored_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=49
+      zombie_rush_zombie_phosphor_victim:i=3
+      zombie_mp_3008_armored_victim:i=4
+      zombie_mp40_armored_victim:i=8
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=48
+      zombie_rush_zombie_phosphor_victim:i=4
+      zombie_mp_3008_armored_victim:i=8
+      zombie_mp40_armored_victim:i=8
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=20
+      zombie_rush_zombie_phosphor_victim:i=32
+      zombie_mp_3008_armored_victim:i=6
+      zombie_mp40_armored_victim:i=6
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=44
+      zombie_rush_zombie_phosphor_victim:i=4
+      zombie_mp_3008_armored_victim:i=8
+      zombie_mp40_armored_victim:i=8
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=30
+      zombie_mp_3008_armored_victim:i=10
+      zombie_ppd_armored_victim:i=12
+      zombie_mp40_armored_victim:i=12
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=52
+      zombie_mp_3008_armored_victim:i=8
+      zombie_machinegunner_boss_victim:i=4
+      zombie_flamethrower_boss_victim:i=3
+    }
+  }
+}
+
+zombie_spawn_mode_victim_3_gun_flame{
+  _use:t="zombie_spawn_mode_victim_1_gun_flame"
+  team__id:i=3
+
+  "disableBombCrater:tag"{
+  }
+
+  "entity_spawner__waves:array"{
+
+    "wave:object"{
+      zombie_walk_zombie_victim:i=20
+    }
+
+    "wave:object"{
+      zombie_walk_zombie_victim:i=24
+    }
+
+    "wave:object"{
+      zombie_walk_zombie_victim:i=20
+      zombie_rush_zombie_victim:i=8
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=12
+      zombie_luger_armored_victim:i=20
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=12
+      zombie_rush_zombie_victim:i=20
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=30
+      zombie_luger_armored_victim:i=6
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=32
+      zombie_luger_armored_victim:i=6
+      zombie_mp_3008_armored_victim:i=2
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=20
+      zombie_rush_zombie_phosphor_victim:i=16
+      zombie_luger_armored_victim:i=2
+      zombie_mp_3008_armored_victim:i=2
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=38
+      zombie_rush_zombie_phosphor_victim:i=2
+      zombie_luger_armored_victim:i=2
+      zombie_mp_3008_armored_victim:i=2
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=40
+      zombie_luger_armored_victim:i=4
+      zombie_mp_3008_armored_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=22
+      zombie_rush_zombie_phosphor_victim:i=18
+      zombie_mp_3008_armored_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=30
+      zombie_machinegunner_boss_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=40
+      zombie_luger_armored_victim:i=4
+      zombie_mp_3008_armored_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=38
+      zombie_rush_zombie_phosphor_victim:i=2
+      zombie_luger_armored_victim:i=4
+      zombie_mp_3008_armored_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=32
+      zombie_mp_3008_armored_victim:i=2
+      zombie_sword_armored_victim:i=16
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=26
+      zombie_luger_armored_victim:i=6
+      zombie_mp_3008_armored_victim:i=10
+      zombie_ppd_armored_victim:i=9
+      zombie_mp40_armored_victim:i=5
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=42
+      zombie_rush_zombie_phosphor_victim:i=2
+      zombie_luger_armored_victim:i=2
+      zombie_mp_3008_armored_victim:i=3
+      zombie_ppd_armored_victim:i=1
+      zombie_mp40_armored_victim:i=2
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=32
+      zombie_flammenwerfer_armored:i=12
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=42
+      zombie_rush_zombie_phosphor_victim:i=2
+      zombie_luger_armored_victim:i=2
+      zombie_mp_3008_armored_victim:i=4
+      zombie_mp40_armored_victim:i=2
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=48
+      zombie_luger_armored_victim:i=3
+      zombie_mp_3008_armored_victim:i=3
+      zombie_mp40_armored_victim:i=6
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=25
+      zombie_rush_zombie_phosphor_victim:i=25
+      zombie_mp_3008_armored_victim:i=6
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=46
+      zombie_rush_zombie_phosphor_victim:i=2
+      zombie_luger_armored_victim:i=2
+      zombie_mp_3008_armored_victim:i=4
+      zombie_ppd_armored_victim:i=2
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=44
+      zombie_rush_zombie_phosphor_victim:i=4
+      zombie_mp_3008_armored_victim:i=4
+      zombie_mp40_armored_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=30
+      zombie_flamethrower_boss_victim:i=3
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=26
+      zombie_luger_armored_victim:i=6
+      zombie_mp_3008_armored_victim:i=10
+      zombie_ppd_armored_victim:i=12
+      zombie_mp40_armored_victim:i=6
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=40
+      zombie_rush_zombie_phosphor_victim:i=4
+      zombie_mp_3008_armored_victim:i=6
+      zombie_mp40_armored_victim:i=6
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=40
+      zombie_mp_3008_armored_victim:i=2
+      zombie_flammenwerfer_armored:i=14
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=46
+      zombie_rush_zombie_phosphor_victim:i=2
+      zombie_luger_armored_victim:i=2
+      zombie_mp_3008_armored_victim:i=8
+      zombie_mp40_armored_victim:i=2
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=34
+      zombie_rush_zombie_phosphor_victim:i=2
+      zombie_mp40_armored_victim:i=2
+      zombie_sword_armored_victim:i=22
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=40
+      zombie_machinegunner_boss_victim:i=4
+      zombie_flamethrower_boss_victim:i=3
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=52
+      zombie_mp_3008_armored_victim:i=4
+      zombie_mp40_armored_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=45
+      zombie_rush_zombie_phosphor_victim:i=3
+      zombie_mp_3008_armored_victim:i=8
+      zombie_mp40_armored_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=48
+      zombie_rush_zombie_phosphor_victim:i=4
+      zombie_mp_3008_armored_victim:i=8
+      zombie_mp40_armored_victim:i=8
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=20
+      zombie_rush_zombie_phosphor_victim:i=32
+      zombie_mp_3008_armored_victim:i=6
+      zombie_mp40_armored_victim:i=6
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=44
+      zombie_rush_zombie_phosphor_victim:i=4
+      zombie_mp_3008_armored_victim:i=8
+      zombie_mp40_armored_victim:i=8
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=30
+      zombie_mp_3008_armored_victim:i=10
+      zombie_ppd_armored_victim:i=12
+      zombie_mp40_armored_victim:i=12
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=52
+      zombie_mp_3008_armored_victim:i=8
+      zombie_machinegunner_boss_victim:i=4
+      zombie_flamethrower_boss_victim:i=3
+    }
+  }
+}
+
+zombie_spawn_mode_victim_1_plazma_gun{
+  _use:t="zombie_spawn_mode_victim_1_gun_flame"
+  team__id:i=3
+
+  "disableBombCrater:tag"{
+  }
+
+  "entity_spawner__waves:array"{
+
+    "wave:object"{
+      zombie_walk_zombie_victim:i=20
+    }
+
+    "wave:object"{
+      zombie_walk_zombie_victim:i=24
+    }
+
+    "wave:object"{
+      zombie_walk_zombie_victim:i=20
+      zombie_rush_zombie_victim:i=8
+    }
+
+    "wave:object"{
+      zombie_walk_zombie_victim:i=12
+      zombie_rush_zombie_victim:i=20
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=12
+      zombie_luger_armored_victim:i=16
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=30
+      zombie_luger_armored_victim:i=6
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=32
+      zombie_luger_armored_victim:i=6
+      zombie_mp_3008_armored_victim:i=2
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=36
+      zombie_mp_3008_armored_victim:i=2
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=18
+      zombie_rush_zombie_phosphor_victim:i=16
+      zombie_mp_3008_armored_victim:i=2
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=36
+      zombie_luger_armored_victim:i=4
+      zombie_mp_3008_armored_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=20
+      zombie_luger_armored_victim:i=10
+      zombie_mp_3008_armored_victim:i=10
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=30
+      zombie_plazmagunner_boss_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=40
+      zombie_luger_armored_victim:i=4
+      zombie_mp_3008_armored_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=20
+      zombie_rush_zombie_phosphor_victim:i=16
+      zombie_luger_armored_victim:i=2
+      zombie_mp_3008_armored_victim:i=2
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=40
+      zombie_luger_armored_victim:i=4
+      zombie_mp_3008_armored_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=42
+      zombie_rush_zombie_phosphor_victim:i=2
+      zombie_luger_armored_victim:i=4
+      zombie_mp_3008_armored_victim:i=6
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=26
+      zombie_luger_armored_victim:i=8
+      zombie_mp_3008_armored_victim:i=8
+      zombie_ppd_armored_victim:i=5
+      zombie_mp40_armored_victim:i=5
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=46
+      zombie_rush_zombie_phosphor_victim:i=2
+      zombie_luger_armored_victim:i=2
+      zombie_mp_3008_armored_victim:i=4
+      zombie_ppd_armored_victim:i=2
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=20
+      zombie_rush_zombie_phosphor_victim:i=22
+      zombie_luger_armored_victim:i=3
+      zombie_mp_3008_armored_victim:i=3
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=48
+      zombie_luger_armored_victim:i=2
+      zombie_mp_3008_armored_victim:i=4
+      zombie_mp40_armored_victim:i=2
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=34
+      zombie_rush_zombie_phosphor_victim:i=2
+      zombie_mp_3008_armored_victim:i=2
+      zombie_sword_armored_victim:i=18
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=46
+      zombie_rush_zombie_phosphor_victim:i=2
+      zombie_luger_armored_victim:i=2
+      zombie_mp_3008_armored_victim:i=4
+      zombie_ppd_armored_victim:i=2
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=30
+      zombie_machinegunner_boss_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=40
+      zombie_rush_zombie_phosphor_victim:i=4
+      zombie_luger_armored_victim:i=2
+      zombie_mp_3008_armored_victim:i=6
+      zombie_mp40_armored_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=32
+      zombie_flammenwerfer_armored:i=12
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=40
+      zombie_rush_zombie_phosphor_victim:i=4
+      zombie_luger_armored_victim:i=2
+      zombie_mp_3008_armored_victim:i=4
+      zombie_mp40_armored_victim:i=2
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=26
+      zombie_luger_armored_victim:i=8
+      zombie_mp_3008_armored_victim:i=10
+      zombie_ppd_armored_victim:i=6
+      zombie_mp40_armored_victim:i=6
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=42
+      zombie_rush_zombie_phosphor_victim:i=2
+      zombie_luger_armored_victim:i=4
+      zombie_mp_3008_armored_victim:i=6
+      zombie_mp40_armored_victim:i=2
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=24
+      zombie_rush_zombie_phosphor_victim:i=24
+      zombie_mp_3008_armored_victim:i=8
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=38
+      zombie_machinegunner_boss_victim:i=4
+      zombie_plazmagunner_boss_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=48
+      zombie_mp_3008_armored_victim:i=4
+      zombie_mp40_armored_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=45
+      zombie_rush_zombie_phosphor_victim:i=3
+      zombie_luger_armored_victim:i=2
+      zombie_mp_3008_armored_victim:i=4
+      zombie_mp40_armored_victim:i=2
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=48
+      zombie_rush_zombie_phosphor_victim:i=4
+      zombie_mp_3008_armored_victim:i=8
+      zombie_mp40_armored_victim:i=8
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=20
+      zombie_rush_zombie_phosphor_victim:i=32
+      zombie_mp_3008_armored_victim:i=6
+      zombie_mp40_armored_victim:i=6
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=44
+      zombie_rush_zombie_phosphor_victim:i=4
+      zombie_mp_3008_armored_victim:i=8
+      zombie_mp40_armored_victim:i=8
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=30
+      zombie_mp_3008_armored_victim:i=10
+      zombie_ppd_armored_victim:i=12
+      zombie_mp40_armored_victim:i=12
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=52
+      zombie_mp_3008_armored_victim:i=8
+      zombie_machinegunner_boss_victim:i=4
+      zombie_plazmagunner_boss_victim:i=2
+    }
+  }
+}
+
+zombie_spawn_mode_victim_2_plazma_gun{
+  _use:t="zombie_spawn_mode_victim_1_gun_flame"
+  team__id:i=3
+
+  "disableBombCrater:tag"{
+  }
+
+  "entity_spawner__waves:array"{
+
+    "wave:object"{
+      zombie_walk_zombie_victim:i=20
+    }
+
+    "wave:object"{
+      zombie_walk_zombie_victim:i=24
+    }
+
+    "wave:object"{
+      zombie_walk_zombie_victim:i=20
+      zombie_rush_zombie_victim:i=8
+    }
+
+    "wave:object"{
+      zombie_walk_zombie_victim:i=12
+      zombie_rush_zombie_victim:i=20
+    }
+
+    "wave:object"{
+      zombie_walk_zombie_victim:i=10
+      zombie_rush_zombie_victim:i=26
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=12
+      zombie_luger_armored_victim:i=20
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=20
+      zombie_rush_zombie_phosphor_victim:i=16
+      zombie_mp_3008_armored_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=36
+      zombie_luger_armored_victim:i=6
+      zombie_mp_3008_armored_victim:i=2
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=32
+      zombie_rush_zombie_phosphor_victim:i=2
+      zombie_mp_3008_armored_victim:i=2
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=20
+      zombie_luger_armored_victim:i=14
+      zombie_mp_3008_armored_victim:i=6
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=40
+      zombie_mp_3008_armored_victim:i=8
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=38
+      zombie_rush_zombie_phosphor_victim:i=2
+      zombie_luger_armored_victim:i=4
+      zombie_mp_3008_armored_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=38
+      zombie_rush_zombie_phosphor_victim:i=2
+      zombie_luger_armored_victim:i=3
+      zombie_mp_3008_armored_victim:i=5
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=30
+      zombie_plazmagunner_boss_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=32
+      zombie_flammenwerfer_armored:i=12
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=42
+      zombie_rush_zombie_phosphor_victim:i=2
+      zombie_luger_armored_victim:i=6
+      zombie_mp_3008_armored_victim:i=6
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=24
+      zombie_rush_zombie_phosphor_victim:i=18
+      zombie_luger_armored_victim:i=3
+      zombie_mp_3008_armored_victim:i=3
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=46
+      zombie_rush_zombie_phosphor_victim:i=2
+      zombie_luger_armored_victim:i=2
+      zombie_mp_3008_armored_victim:i=4
+      zombie_ppd_armored_victim:i=2
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=38
+      zombie_rush_zombie_phosphor_victim:i=2
+      zombie_mp_3008_armored_victim:i=2
+      zombie_sword_armored_victim:i=18
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=48
+      zombie_luger_armored_victim:i=2
+      zombie_mp_3008_armored_victim:i=6
+      zombie_mp40_armored_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=26
+      zombie_luger_armored_victim:i=6
+      zombie_mp_3008_armored_victim:i=10
+      zombie_ppd_armored_victim:i=9
+      zombie_mp40_armored_victim:i=5
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=46
+      zombie_rush_zombie_phosphor_victim:i=2
+      zombie_luger_armored_victim:i=3
+      zombie_mp_3008_armored_victim:i=7
+      zombie_ppd_armored_victim:i=2
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=44
+      zombie_rush_zombie_phosphor_victim:i=4
+      zombie_luger_armored_victim:i=2
+      zombie_mp_3008_armored_victim:i=6
+      zombie_mp40_armored_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=30
+      zombie_machinegunner_boss_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=36
+      zombie_rush_zombie_phosphor_victim:i=2
+      zombie_mp_3008_armored_victim:i=2
+      zombie_sword_armored_victim:i=20
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=40
+      zombie_rush_zombie_phosphor_victim:i=4
+      zombie_mp_3008_armored_victim:i=2
+      zombie_mp40_armored_victim:i=6
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=24
+      zombie_rush_zombie_phosphor_victim:i=24
+      zombie_mp_3008_armored_victim:i=6
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=50
+      zombie_rush_zombie_phosphor_victim:i=2
+      zombie_mp_3008_armored_victim:i=4
+      zombie_mp40_armored_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=26
+      zombie_mp_3008_armored_victim:i=10
+      zombie_ppd_armored_victim:i=12
+      zombie_mp40_armored_victim:i=12
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=40
+      zombie_machinegunner_boss_victim:i=4
+      zombie_plazmagunner_boss_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=52
+      zombie_mp_3008_armored_victim:i=4
+      zombie_mp40_armored_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=49
+      zombie_rush_zombie_phosphor_victim:i=3
+      zombie_mp_3008_armored_victim:i=4
+      zombie_mp40_armored_victim:i=8
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=48
+      zombie_rush_zombie_phosphor_victim:i=4
+      zombie_mp_3008_armored_victim:i=8
+      zombie_mp40_armored_victim:i=8
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=20
+      zombie_rush_zombie_phosphor_victim:i=32
+      zombie_mp_3008_armored_victim:i=6
+      zombie_mp40_armored_victim:i=6
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=44
+      zombie_rush_zombie_phosphor_victim:i=4
+      zombie_mp_3008_armored_victim:i=8
+      zombie_mp40_armored_victim:i=8
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=30
+      zombie_mp_3008_armored_victim:i=10
+      zombie_ppd_armored_victim:i=12
+      zombie_mp40_armored_victim:i=12
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=52
+      zombie_mp_3008_armored_victim:i=8
+      zombie_machinegunner_boss_victim:i=4
+      zombie_plazmagunner_boss_victim:i=2
+    }
+  }
+}
+
+zombie_spawn_mode_victim_3_plazma_gun{
+  _use:t="zombie_spawn_mode_victim_1_gun_flame"
+  team__id:i=3
+
+  "disableBombCrater:tag"{
+  }
+
+  "entity_spawner__waves:array"{
+
+    "wave:object"{
+      zombie_walk_zombie_victim:i=20
+    }
+
+    "wave:object"{
+      zombie_walk_zombie_victim:i=24
+    }
+
+    "wave:object"{
+      zombie_walk_zombie_victim:i=20
+      zombie_rush_zombie_victim:i=8
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=12
+      zombie_luger_armored_victim:i=20
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=12
+      zombie_rush_zombie_victim:i=20
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=30
+      zombie_luger_armored_victim:i=6
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=32
+      zombie_luger_armored_victim:i=6
+      zombie_mp_3008_armored_victim:i=2
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=20
+      zombie_rush_zombie_phosphor_victim:i=16
+      zombie_luger_armored_victim:i=2
+      zombie_mp_3008_armored_victim:i=2
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=38
+      zombie_rush_zombie_phosphor_victim:i=2
+      zombie_luger_armored_victim:i=2
+      zombie_mp_3008_armored_victim:i=2
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=40
+      zombie_luger_armored_victim:i=4
+      zombie_mp_3008_armored_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=22
+      zombie_rush_zombie_phosphor_victim:i=18
+      zombie_mp_3008_armored_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=30
+      zombie_plazmagunner_boss_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=40
+      zombie_luger_armored_victim:i=4
+      zombie_mp_3008_armored_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=38
+      zombie_rush_zombie_phosphor_victim:i=2
+      zombie_luger_armored_victim:i=4
+      zombie_mp_3008_armored_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=32
+      zombie_mp_3008_armored_victim:i=2
+      zombie_sword_armored_victim:i=16
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=26
+      zombie_luger_armored_victim:i=6
+      zombie_mp_3008_armored_victim:i=10
+      zombie_ppd_armored_victim:i=9
+      zombie_mp40_armored_victim:i=5
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=42
+      zombie_rush_zombie_phosphor_victim:i=2
+      zombie_luger_armored_victim:i=2
+      zombie_mp_3008_armored_victim:i=3
+      zombie_ppd_armored_victim:i=1
+      zombie_mp40_armored_victim:i=2
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=32
+      zombie_flammenwerfer_armored:i=12
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=42
+      zombie_rush_zombie_phosphor_victim:i=2
+      zombie_luger_armored_victim:i=2
+      zombie_mp_3008_armored_victim:i=4
+      zombie_mp40_armored_victim:i=2
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=48
+      zombie_luger_armored_victim:i=3
+      zombie_mp_3008_armored_victim:i=3
+      zombie_mp40_armored_victim:i=6
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=25
+      zombie_rush_zombie_phosphor_victim:i=25
+      zombie_mp_3008_armored_victim:i=6
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=30
+      zombie_machinegunner_boss_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=46
+      zombie_rush_zombie_phosphor_victim:i=2
+      zombie_luger_armored_victim:i=2
+      zombie_mp_3008_armored_victim:i=4
+      zombie_ppd_armored_victim:i=2
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=44
+      zombie_rush_zombie_phosphor_victim:i=4
+      zombie_mp_3008_armored_victim:i=4
+      zombie_mp40_armored_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=26
+      zombie_luger_armored_victim:i=6
+      zombie_mp_3008_armored_victim:i=10
+      zombie_ppd_armored_victim:i=12
+      zombie_mp40_armored_victim:i=6
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=40
+      zombie_rush_zombie_phosphor_victim:i=4
+      zombie_mp_3008_armored_victim:i=6
+      zombie_mp40_armored_victim:i=6
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=40
+      zombie_mp_3008_armored_victim:i=2
+      zombie_flammenwerfer_armored:i=14
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=46
+      zombie_rush_zombie_phosphor_victim:i=2
+      zombie_luger_armored_victim:i=2
+      zombie_mp_3008_armored_victim:i=8
+      zombie_mp40_armored_victim:i=2
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=34
+      zombie_rush_zombie_phosphor_victim:i=2
+      zombie_mp40_armored_victim:i=2
+      zombie_sword_armored_victim:i=22
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=36
+      zombie_machinegunner_boss_victim:i=4
+      zombie_plazmagunner_boss_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=52
+      zombie_mp_3008_armored_victim:i=4
+      zombie_mp40_armored_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=45
+      zombie_rush_zombie_phosphor_victim:i=3
+      zombie_mp_3008_armored_victim:i=8
+      zombie_mp40_armored_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=48
+      zombie_rush_zombie_phosphor_victim:i=4
+      zombie_mp_3008_armored_victim:i=8
+      zombie_mp40_armored_victim:i=8
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=20
+      zombie_rush_zombie_phosphor_victim:i=32
+      zombie_mp_3008_armored_victim:i=6
+      zombie_mp40_armored_victim:i=6
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=44
+      zombie_rush_zombie_phosphor_victim:i=4
+      zombie_mp_3008_armored_victim:i=8
+      zombie_mp40_armored_victim:i=8
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=30
+      zombie_mp_3008_armored_victim:i=10
+      zombie_ppd_armored_victim:i=12
+      zombie_mp40_armored_victim:i=12
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=52
+      zombie_mp_3008_armored_victim:i=8
+      zombie_machinegunner_boss_victim:i=4
+      zombie_plazmagunner_boss_victim:i=2
+    }
+  }
+}
+
+zombie_spawn_mode_victim_1_melee_gun{
+  _use:t="zombie_spawn_mode_victim_1_gun_flame"
+  team__id:i=3
+
+  "disableBombCrater:tag"{
+  }
+
+  "entity_spawner__waves:array"{
+
+    "wave:object"{
+      zombie_walk_zombie_victim:i=20
+    }
+
+    "wave:object"{
+      zombie_walk_zombie_victim:i=24
+    }
+
+    "wave:object"{
+      zombie_walk_zombie_victim:i=20
+      zombie_rush_zombie_victim:i=8
+    }
+
+    "wave:object"{
+      zombie_walk_zombie_victim:i=12
+      zombie_rush_zombie_victim:i=20
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=12
+      zombie_luger_armored_victim:i=16
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=30
+      zombie_luger_armored_victim:i=6
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=32
+      zombie_luger_armored_victim:i=6
+      zombie_mp_3008_armored_victim:i=2
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=36
+      zombie_mp_3008_armored_victim:i=2
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=18
+      zombie_rush_zombie_phosphor_victim:i=16
+      zombie_mp_3008_armored_victim:i=2
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=36
+      zombie_luger_armored_victim:i=4
+      zombie_mp_3008_armored_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=20
+      zombie_luger_armored_victim:i=10
+      zombie_mp_3008_armored_victim:i=10
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=40
+      zombie_luger_armored_victim:i=4
+      zombie_mp_3008_armored_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=20
+      zombie_rush_zombie_phosphor_victim:i=16
+      zombie_luger_armored_victim:i=2
+      zombie_mp_3008_armored_victim:i=2
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=30
+      zombie_melee_boss_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=40
+      zombie_luger_armored_victim:i=4
+      zombie_mp_3008_armored_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=42
+      zombie_rush_zombie_phosphor_victim:i=2
+      zombie_luger_armored_victim:i=4
+      zombie_mp_3008_armored_victim:i=6
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=26
+      zombie_luger_armored_victim:i=8
+      zombie_mp_3008_armored_victim:i=8
+      zombie_ppd_armored_victim:i=5
+      zombie_mp40_armored_victim:i=5
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=46
+      zombie_rush_zombie_phosphor_victim:i=2
+      zombie_luger_armored_victim:i=2
+      zombie_mp_3008_armored_victim:i=4
+      zombie_ppd_armored_victim:i=2
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=20
+      zombie_rush_zombie_phosphor_victim:i=22
+      zombie_luger_armored_victim:i=3
+      zombie_mp_3008_armored_victim:i=3
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=48
+      zombie_luger_armored_victim:i=2
+      zombie_mp_3008_armored_victim:i=4
+      zombie_mp40_armored_victim:i=2
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=34
+      zombie_rush_zombie_phosphor_victim:i=2
+      zombie_mp_3008_armored_victim:i=2
+      zombie_sword_armored_victim:i=18
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=46
+      zombie_rush_zombie_phosphor_victim:i=2
+      zombie_luger_armored_victim:i=2
+      zombie_mp_3008_armored_victim:i=4
+      zombie_ppd_armored_victim:i=2
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=30
+      zombie_machinegunner_boss_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=40
+      zombie_rush_zombie_phosphor_victim:i=4
+      zombie_luger_armored_victim:i=2
+      zombie_mp_3008_armored_victim:i=6
+      zombie_mp40_armored_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=32
+      zombie_flammenwerfer_armored:i=12
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=40
+      zombie_rush_zombie_phosphor_victim:i=4
+      zombie_luger_armored_victim:i=2
+      zombie_mp_3008_armored_victim:i=4
+      zombie_mp40_armored_victim:i=2
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=26
+      zombie_luger_armored_victim:i=8
+      zombie_mp_3008_armored_victim:i=10
+      zombie_ppd_armored_victim:i=6
+      zombie_mp40_armored_victim:i=6
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=42
+      zombie_rush_zombie_phosphor_victim:i=2
+      zombie_luger_armored_victim:i=4
+      zombie_mp_3008_armored_victim:i=6
+      zombie_mp40_armored_victim:i=2
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=24
+      zombie_rush_zombie_phosphor_victim:i=24
+      zombie_mp_3008_armored_victim:i=8
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=38
+      zombie_machinegunner_boss_victim:i=4
+      zombie_melee_boss_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=48
+      zombie_mp_3008_armored_victim:i=4
+      zombie_mp40_armored_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=45
+      zombie_rush_zombie_phosphor_victim:i=3
+      zombie_luger_armored_victim:i=2
+      zombie_mp_3008_armored_victim:i=4
+      zombie_mp40_armored_victim:i=2
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=48
+      zombie_rush_zombie_phosphor_victim:i=4
+      zombie_mp_3008_armored_victim:i=8
+      zombie_mp40_armored_victim:i=8
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=20
+      zombie_rush_zombie_phosphor_victim:i=32
+      zombie_mp_3008_armored_victim:i=6
+      zombie_mp40_armored_victim:i=6
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=44
+      zombie_rush_zombie_phosphor_victim:i=4
+      zombie_mp_3008_armored_victim:i=8
+      zombie_mp40_armored_victim:i=8
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=30
+      zombie_mp_3008_armored_victim:i=10
+      zombie_ppd_armored_victim:i=12
+      zombie_mp40_armored_victim:i=12
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=52
+      zombie_mp_3008_armored_victim:i=8
+      zombie_machinegunner_boss_victim:i=4
+      zombie_melee_boss_victim:i=4
+    }
+  }
+}
+
+zombie_spawn_mode_victim_2_melee_gun{
+  _use:t="zombie_spawn_mode_victim_1_gun_flame"
+  team__id:i=3
+
+  "disableBombCrater:tag"{
+  }
+
+  "entity_spawner__waves:array"{
+
+    "wave:object"{
+      zombie_walk_zombie_victim:i=20
+    }
+
+    "wave:object"{
+      zombie_walk_zombie_victim:i=24
+    }
+
+    "wave:object"{
+      zombie_walk_zombie_victim:i=20
+      zombie_rush_zombie_victim:i=8
+    }
+
+    "wave:object"{
+      zombie_walk_zombie_victim:i=12
+      zombie_rush_zombie_victim:i=20
+    }
+
+    "wave:object"{
+      zombie_walk_zombie_victim:i=10
+      zombie_rush_zombie_victim:i=26
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=12
+      zombie_luger_armored_victim:i=20
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=20
+      zombie_rush_zombie_phosphor_victim:i=16
+      zombie_mp_3008_armored_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=36
+      zombie_luger_armored_victim:i=6
+      zombie_mp_3008_armored_victim:i=2
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=32
+      zombie_rush_zombie_phosphor_victim:i=2
+      zombie_mp_3008_armored_victim:i=2
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=20
+      zombie_luger_armored_victim:i=14
+      zombie_mp_3008_armored_victim:i=6
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=40
+      zombie_mp_3008_armored_victim:i=8
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=30
+      zombie_melee_boss_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=38
+      zombie_rush_zombie_phosphor_victim:i=2
+      zombie_luger_armored_victim:i=4
+      zombie_mp_3008_armored_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=38
+      zombie_rush_zombie_phosphor_victim:i=2
+      zombie_luger_armored_victim:i=3
+      zombie_mp_3008_armored_victim:i=5
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=32
+      zombie_flammenwerfer_armored:i=12
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=42
+      zombie_rush_zombie_phosphor_victim:i=2
+      zombie_luger_armored_victim:i=6
+      zombie_mp_3008_armored_victim:i=6
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=24
+      zombie_rush_zombie_phosphor_victim:i=18
+      zombie_luger_armored_victim:i=3
+      zombie_mp_3008_armored_victim:i=3
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=46
+      zombie_rush_zombie_phosphor_victim:i=2
+      zombie_luger_armored_victim:i=2
+      zombie_mp_3008_armored_victim:i=4
+      zombie_ppd_armored_victim:i=2
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=38
+      zombie_rush_zombie_phosphor_victim:i=2
+      zombie_mp_3008_armored_victim:i=2
+      zombie_sword_armored_victim:i=18
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=48
+      zombie_luger_armored_victim:i=2
+      zombie_mp_3008_armored_victim:i=6
+      zombie_mp40_armored_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=26
+      zombie_luger_armored_victim:i=6
+      zombie_mp_3008_armored_victim:i=10
+      zombie_ppd_armored_victim:i=9
+      zombie_mp40_armored_victim:i=5
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=30
+      zombie_machinegunner_boss_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=46
+      zombie_rush_zombie_phosphor_victim:i=2
+      zombie_luger_armored_victim:i=3
+      zombie_mp_3008_armored_victim:i=7
+      zombie_ppd_armored_victim:i=2
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=44
+      zombie_rush_zombie_phosphor_victim:i=4
+      zombie_luger_armored_victim:i=2
+      zombie_mp_3008_armored_victim:i=6
+      zombie_mp40_armored_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=36
+      zombie_rush_zombie_phosphor_victim:i=2
+      zombie_mp_3008_armored_victim:i=2
+      zombie_sword_armored_victim:i=20
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=40
+      zombie_rush_zombie_phosphor_victim:i=4
+      zombie_mp_3008_armored_victim:i=2
+      zombie_mp40_armored_victim:i=6
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=24
+      zombie_rush_zombie_phosphor_victim:i=24
+      zombie_mp_3008_armored_victim:i=6
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=50
+      zombie_rush_zombie_phosphor_victim:i=2
+      zombie_mp_3008_armored_victim:i=4
+      zombie_mp40_armored_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=26
+      zombie_mp_3008_armored_victim:i=10
+      zombie_ppd_armored_victim:i=12
+      zombie_mp40_armored_victim:i=12
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=40
+      zombie_machinegunner_boss_victim:i=4
+      zombie_melee_boss_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=52
+      zombie_mp_3008_armored_victim:i=4
+      zombie_mp40_armored_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=49
+      zombie_rush_zombie_phosphor_victim:i=3
+      zombie_mp_3008_armored_victim:i=4
+      zombie_mp40_armored_victim:i=8
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=48
+      zombie_rush_zombie_phosphor_victim:i=4
+      zombie_mp_3008_armored_victim:i=8
+      zombie_mp40_armored_victim:i=8
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=20
+      zombie_rush_zombie_phosphor_victim:i=32
+      zombie_mp_3008_armored_victim:i=6
+      zombie_mp40_armored_victim:i=6
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=44
+      zombie_rush_zombie_phosphor_victim:i=4
+      zombie_mp_3008_armored_victim:i=8
+      zombie_mp40_armored_victim:i=8
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=30
+      zombie_mp_3008_armored_victim:i=10
+      zombie_ppd_armored_victim:i=12
+      zombie_mp40_armored_victim:i=12
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=52
+      zombie_mp_3008_armored_victim:i=8
+      zombie_machinegunner_boss_victim:i=4
+      zombie_melee_boss_victim:i=4
+    }
+  }
+}
+
+zombie_spawn_mode_victim_3_melee_gun{
+  _use:t="zombie_spawn_mode_victim_1_gun_flame"
+  team__id:i=3
+
+  "disableBombCrater:tag"{
+  }
+
+  "entity_spawner__waves:array"{
+
+    "wave:object"{
+      zombie_walk_zombie_victim:i=20
+    }
+
+    "wave:object"{
+      zombie_walk_zombie_victim:i=24
+    }
+
+    "wave:object"{
+      zombie_walk_zombie_victim:i=20
+      zombie_rush_zombie_victim:i=8
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=12
+      zombie_luger_armored_victim:i=20
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=12
+      zombie_rush_zombie_victim:i=20
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=30
+      zombie_luger_armored_victim:i=6
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=32
+      zombie_luger_armored_victim:i=6
+      zombie_mp_3008_armored_victim:i=2
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=20
+      zombie_rush_zombie_phosphor_victim:i=16
+      zombie_luger_armored_victim:i=2
+      zombie_mp_3008_armored_victim:i=2
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=38
+      zombie_rush_zombie_phosphor_victim:i=2
+      zombie_luger_armored_victim:i=2
+      zombie_mp_3008_armored_victim:i=2
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=40
+      zombie_luger_armored_victim:i=4
+      zombie_mp_3008_armored_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=22
+      zombie_rush_zombie_phosphor_victim:i=18
+      zombie_mp_3008_armored_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=40
+      zombie_luger_armored_victim:i=4
+      zombie_mp_3008_armored_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=30
+      zombie_melee_boss_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=38
+      zombie_rush_zombie_phosphor_victim:i=2
+      zombie_luger_armored_victim:i=4
+      zombie_mp_3008_armored_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=32
+      zombie_mp_3008_armored_victim:i=2
+      zombie_sword_armored_victim:i=16
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=26
+      zombie_luger_armored_victim:i=6
+      zombie_mp_3008_armored_victim:i=10
+      zombie_ppd_armored_victim:i=9
+      zombie_mp40_armored_victim:i=5
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=42
+      zombie_rush_zombie_phosphor_victim:i=2
+      zombie_luger_armored_victim:i=2
+      zombie_mp_3008_armored_victim:i=3
+      zombie_ppd_armored_victim:i=1
+      zombie_mp40_armored_victim:i=2
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=32
+      zombie_flammenwerfer_armored:i=12
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=42
+      zombie_rush_zombie_phosphor_victim:i=2
+      zombie_luger_armored_victim:i=2
+      zombie_mp_3008_armored_victim:i=4
+      zombie_mp40_armored_victim:i=2
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=48
+      zombie_luger_armored_victim:i=3
+      zombie_mp_3008_armored_victim:i=3
+      zombie_mp40_armored_victim:i=6
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=25
+      zombie_rush_zombie_phosphor_victim:i=25
+      zombie_mp_3008_armored_victim:i=6
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=46
+      zombie_rush_zombie_phosphor_victim:i=2
+      zombie_luger_armored_victim:i=2
+      zombie_mp_3008_armored_victim:i=4
+      zombie_ppd_armored_victim:i=2
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=30
+      zombie_machinegunner_boss_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=44
+      zombie_rush_zombie_phosphor_victim:i=4
+      zombie_mp_3008_armored_victim:i=4
+      zombie_mp40_armored_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=26
+      zombie_luger_armored_victim:i=6
+      zombie_mp_3008_armored_victim:i=10
+      zombie_ppd_armored_victim:i=12
+      zombie_mp40_armored_victim:i=6
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=40
+      zombie_rush_zombie_phosphor_victim:i=4
+      zombie_mp_3008_armored_victim:i=6
+      zombie_mp40_armored_victim:i=6
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=40
+      zombie_mp_3008_armored_victim:i=2
+      zombie_flammenwerfer_armored:i=14
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=46
+      zombie_rush_zombie_phosphor_victim:i=2
+      zombie_luger_armored_victim:i=2
+      zombie_mp_3008_armored_victim:i=8
+      zombie_mp40_armored_victim:i=2
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=34
+      zombie_rush_zombie_phosphor_victim:i=2
+      zombie_mp40_armored_victim:i=2
+      zombie_sword_armored_victim:i=22
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=36
+      zombie_machinegunner_boss_victim:i=4
+      zombie_melee_boss_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=52
+      zombie_mp_3008_armored_victim:i=4
+      zombie_mp40_armored_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=45
+      zombie_rush_zombie_phosphor_victim:i=3
+      zombie_mp_3008_armored_victim:i=8
+      zombie_mp40_armored_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=48
+      zombie_rush_zombie_phosphor_victim:i=4
+      zombie_mp_3008_armored_victim:i=8
+      zombie_mp40_armored_victim:i=8
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=20
+      zombie_rush_zombie_phosphor_victim:i=32
+      zombie_mp_3008_armored_victim:i=6
+      zombie_mp40_armored_victim:i=6
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=44
+      zombie_rush_zombie_phosphor_victim:i=4
+      zombie_mp_3008_armored_victim:i=8
+      zombie_mp40_armored_victim:i=8
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=30
+      zombie_mp_3008_armored_victim:i=10
+      zombie_ppd_armored_victim:i=12
+      zombie_mp40_armored_victim:i=12
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=52
+      zombie_mp_3008_armored_victim:i=8
+      zombie_machinegunner_boss_victim:i=4
+      zombie_melee_boss_victim:i=4
+    }
+  }
+}
+
+zombie_spawn_mode_victim_1_melee_plazma{
+  _use:t="zombie_spawn_mode_victim_1_gun_flame"
+  team__id:i=3
+
+  "disableBombCrater:tag"{
+  }
+
+  "entity_spawner__waves:array"{
+
+    "wave:object"{
+      zombie_walk_zombie_victim:i=20
+    }
+
+    "wave:object"{
+      zombie_walk_zombie_victim:i=24
+    }
+
+    "wave:object"{
+      zombie_walk_zombie_victim:i=20
+      zombie_rush_zombie_victim:i=8
+    }
+
+    "wave:object"{
+      zombie_walk_zombie_victim:i=12
+      zombie_rush_zombie_victim:i=20
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=12
+      zombie_luger_armored_victim:i=16
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=30
+      zombie_luger_armored_victim:i=6
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=32
+      zombie_luger_armored_victim:i=6
+      zombie_mp_3008_armored_victim:i=2
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=36
+      zombie_mp_3008_armored_victim:i=2
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=18
+      zombie_rush_zombie_phosphor_victim:i=16
+      zombie_mp_3008_armored_victim:i=2
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=36
+      zombie_luger_armored_victim:i=4
+      zombie_mp_3008_armored_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=20
+      zombie_luger_armored_victim:i=10
+      zombie_mp_3008_armored_victim:i=10
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=40
+      zombie_luger_armored_victim:i=4
+      zombie_mp_3008_armored_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=30
+      zombie_melee_boss_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=20
+      zombie_rush_zombie_phosphor_victim:i=16
+      zombie_luger_armored_victim:i=2
+      zombie_mp_3008_armored_victim:i=2
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=40
+      zombie_luger_armored_victim:i=4
+      zombie_mp_3008_armored_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=42
+      zombie_rush_zombie_phosphor_victim:i=2
+      zombie_luger_armored_victim:i=4
+      zombie_mp_3008_armored_victim:i=6
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=26
+      zombie_luger_armored_victim:i=8
+      zombie_mp_3008_armored_victim:i=8
+      zombie_ppd_armored_victim:i=5
+      zombie_mp40_armored_victim:i=5
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=46
+      zombie_rush_zombie_phosphor_victim:i=2
+      zombie_luger_armored_victim:i=2
+      zombie_mp_3008_armored_victim:i=4
+      zombie_ppd_armored_victim:i=2
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=20
+      zombie_rush_zombie_phosphor_victim:i=22
+      zombie_luger_armored_victim:i=3
+      zombie_mp_3008_armored_victim:i=3
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=48
+      zombie_luger_armored_victim:i=2
+      zombie_mp_3008_armored_victim:i=4
+      zombie_mp40_armored_victim:i=2
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=34
+      zombie_rush_zombie_phosphor_victim:i=2
+      zombie_mp_3008_armored_victim:i=2
+      zombie_sword_armored_victim:i=18
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=30
+      zombie_plazmagunner_boss_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=46
+      zombie_rush_zombie_phosphor_victim:i=2
+      zombie_luger_armored_victim:i=2
+      zombie_mp_3008_armored_victim:i=4
+      zombie_ppd_armored_victim:i=2
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=40
+      zombie_rush_zombie_phosphor_victim:i=4
+      zombie_luger_armored_victim:i=2
+      zombie_mp_3008_armored_victim:i=6
+      zombie_mp40_armored_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=32
+      zombie_flammenwerfer_armored:i=12
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=40
+      zombie_rush_zombie_phosphor_victim:i=4
+      zombie_luger_armored_victim:i=2
+      zombie_mp_3008_armored_victim:i=4
+      zombie_mp40_armored_victim:i=2
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=26
+      zombie_luger_armored_victim:i=8
+      zombie_mp_3008_armored_victim:i=10
+      zombie_ppd_armored_victim:i=6
+      zombie_mp40_armored_victim:i=6
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=42
+      zombie_rush_zombie_phosphor_victim:i=2
+      zombie_luger_armored_victim:i=4
+      zombie_mp_3008_armored_victim:i=6
+      zombie_mp40_armored_victim:i=2
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=24
+      zombie_rush_zombie_phosphor_victim:i=24
+      zombie_mp_3008_armored_victim:i=8
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=36
+      zombie_plazmagunner_boss_victim:i=4
+      zombie_melee_boss_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=48
+      zombie_mp_3008_armored_victim:i=4
+      zombie_mp40_armored_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=45
+      zombie_rush_zombie_phosphor_victim:i=3
+      zombie_luger_armored_victim:i=2
+      zombie_mp_3008_armored_victim:i=4
+      zombie_mp40_armored_victim:i=2
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=48
+      zombie_rush_zombie_phosphor_victim:i=4
+      zombie_mp_3008_armored_victim:i=8
+      zombie_mp40_armored_victim:i=8
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=20
+      zombie_rush_zombie_phosphor_victim:i=32
+      zombie_mp_3008_armored_victim:i=6
+      zombie_mp40_armored_victim:i=6
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=44
+      zombie_rush_zombie_phosphor_victim:i=4
+      zombie_mp_3008_armored_victim:i=8
+      zombie_mp40_armored_victim:i=8
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=30
+      zombie_mp_3008_armored_victim:i=10
+      zombie_ppd_armored_victim:i=12
+      zombie_mp40_armored_victim:i=12
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=52
+      zombie_mp_3008_armored_victim:i=8
+      zombie_plazmagunner_boss_victim:i=4
+      zombie_melee_boss_victim:i=4
+    }
+  }
+}
+
+zombie_spawn_mode_victim_2_melee_plazma{
+  _use:t="zombie_spawn_mode_victim_1_gun_flame"
+  team__id:i=3
+
+  "disableBombCrater:tag"{
+  }
+
+  "entity_spawner__waves:array"{
+
+    "wave:object"{
+      zombie_walk_zombie_victim:i=20
+    }
+
+    "wave:object"{
+      zombie_walk_zombie_victim:i=24
+    }
+
+    "wave:object"{
+      zombie_walk_zombie_victim:i=20
+      zombie_rush_zombie_victim:i=8
+    }
+
+    "wave:object"{
+      zombie_walk_zombie_victim:i=12
+      zombie_rush_zombie_victim:i=20
+    }
+
+    "wave:object"{
+      zombie_walk_zombie_victim:i=10
+      zombie_rush_zombie_victim:i=26
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=12
+      zombie_luger_armored_victim:i=20
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=20
+      zombie_rush_zombie_phosphor_victim:i=16
+      zombie_mp_3008_armored_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=36
+      zombie_luger_armored_victim:i=6
+      zombie_mp_3008_armored_victim:i=2
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=32
+      zombie_rush_zombie_phosphor_victim:i=2
+      zombie_mp_3008_armored_victim:i=2
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=20
+      zombie_luger_armored_victim:i=14
+      zombie_mp_3008_armored_victim:i=6
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=40
+      zombie_mp_3008_armored_victim:i=8
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=38
+      zombie_rush_zombie_phosphor_victim:i=2
+      zombie_luger_armored_victim:i=4
+      zombie_mp_3008_armored_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=30
+      zombie_melee_boss_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=38
+      zombie_rush_zombie_phosphor_victim:i=2
+      zombie_luger_armored_victim:i=3
+      zombie_mp_3008_armored_victim:i=5
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=32
+      zombie_flammenwerfer_armored:i=12
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=42
+      zombie_rush_zombie_phosphor_victim:i=2
+      zombie_luger_armored_victim:i=6
+      zombie_mp_3008_armored_victim:i=6
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=24
+      zombie_rush_zombie_phosphor_victim:i=18
+      zombie_luger_armored_victim:i=3
+      zombie_mp_3008_armored_victim:i=3
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=46
+      zombie_rush_zombie_phosphor_victim:i=2
+      zombie_luger_armored_victim:i=2
+      zombie_mp_3008_armored_victim:i=4
+      zombie_ppd_armored_victim:i=2
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=38
+      zombie_rush_zombie_phosphor_victim:i=2
+      zombie_mp_3008_armored_victim:i=2
+      zombie_sword_armored_victim:i=18
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=48
+      zombie_luger_armored_victim:i=2
+      zombie_mp_3008_armored_victim:i=6
+      zombie_mp40_armored_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=26
+      zombie_luger_armored_victim:i=6
+      zombie_mp_3008_armored_victim:i=10
+      zombie_ppd_armored_victim:i=9
+      zombie_mp40_armored_victim:i=5
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=46
+      zombie_rush_zombie_phosphor_victim:i=2
+      zombie_luger_armored_victim:i=3
+      zombie_mp_3008_armored_victim:i=7
+      zombie_ppd_armored_victim:i=2
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=30
+      zombie_plazmagunner_boss_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=44
+      zombie_rush_zombie_phosphor_victim:i=4
+      zombie_luger_armored_victim:i=2
+      zombie_mp_3008_armored_victim:i=6
+      zombie_mp40_armored_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=36
+      zombie_rush_zombie_phosphor_victim:i=2
+      zombie_mp_3008_armored_victim:i=2
+      zombie_sword_armored_victim:i=20
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=40
+      zombie_rush_zombie_phosphor_victim:i=4
+      zombie_mp_3008_armored_victim:i=2
+      zombie_mp40_armored_victim:i=6
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=24
+      zombie_rush_zombie_phosphor_victim:i=24
+      zombie_mp_3008_armored_victim:i=6
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=50
+      zombie_rush_zombie_phosphor_victim:i=2
+      zombie_mp_3008_armored_victim:i=4
+      zombie_mp40_armored_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=26
+      zombie_mp_3008_armored_victim:i=10
+      zombie_ppd_armored_victim:i=12
+      zombie_mp40_armored_victim:i=12
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=36
+      zombie_plazmagunner_boss_victim:i=4
+      zombie_melee_boss_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=52
+      zombie_mp_3008_armored_victim:i=4
+      zombie_mp40_armored_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=49
+      zombie_rush_zombie_phosphor_victim:i=3
+      zombie_mp_3008_armored_victim:i=4
+      zombie_mp40_armored_victim:i=8
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=48
+      zombie_rush_zombie_phosphor_victim:i=4
+      zombie_mp_3008_armored_victim:i=8
+      zombie_mp40_armored_victim:i=8
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=20
+      zombie_rush_zombie_phosphor_victim:i=32
+      zombie_mp_3008_armored_victim:i=6
+      zombie_mp40_armored_victim:i=6
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=44
+      zombie_rush_zombie_phosphor_victim:i=4
+      zombie_mp_3008_armored_victim:i=8
+      zombie_mp40_armored_victim:i=8
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=30
+      zombie_mp_3008_armored_victim:i=10
+      zombie_ppd_armored_victim:i=12
+      zombie_mp40_armored_victim:i=12
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=52
+      zombie_mp_3008_armored_victim:i=8
+      zombie_plazmagunner_boss_victim:i=4
+      zombie_melee_boss_victim:i=4
+    }
+  }
+}
+
+zombie_spawn_mode_victim_3_melee_plazma{
+  _use:t="zombie_spawn_mode_victim_1_gun_flame"
+  team__id:i=3
+
+  "disableBombCrater:tag"{
+  }
+
+  "entity_spawner__waves:array"{
+
+    "wave:object"{
+      zombie_walk_zombie_victim:i=20
+    }
+
+    "wave:object"{
+      zombie_walk_zombie_victim:i=24
+    }
+
+    "wave:object"{
+      zombie_walk_zombie_victim:i=20
+      zombie_rush_zombie_victim:i=8
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=12
+      zombie_luger_armored_victim:i=20
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=12
+      zombie_rush_zombie_victim:i=20
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=30
+      zombie_luger_armored_victim:i=6
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=32
+      zombie_luger_armored_victim:i=6
+      zombie_mp_3008_armored_victim:i=2
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=20
+      zombie_rush_zombie_phosphor_victim:i=16
+      zombie_luger_armored_victim:i=2
+      zombie_mp_3008_armored_victim:i=2
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=38
+      zombie_rush_zombie_phosphor_victim:i=2
+      zombie_luger_armored_victim:i=2
+      zombie_mp_3008_armored_victim:i=2
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=40
+      zombie_luger_armored_victim:i=4
+      zombie_mp_3008_armored_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=22
+      zombie_rush_zombie_phosphor_victim:i=18
+      zombie_mp_3008_armored_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=30
+      zombie_melee_boss_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=40
+      zombie_luger_armored_victim:i=4
+      zombie_mp_3008_armored_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=38
+      zombie_rush_zombie_phosphor_victim:i=2
+      zombie_luger_armored_victim:i=4
+      zombie_mp_3008_armored_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=32
+      zombie_mp_3008_armored_victim:i=2
+      zombie_sword_armored_victim:i=16
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=26
+      zombie_luger_armored_victim:i=6
+      zombie_mp_3008_armored_victim:i=10
+      zombie_ppd_armored_victim:i=9
+      zombie_mp40_armored_victim:i=5
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=42
+      zombie_rush_zombie_phosphor_victim:i=2
+      zombie_luger_armored_victim:i=2
+      zombie_mp_3008_armored_victim:i=3
+      zombie_ppd_armored_victim:i=1
+      zombie_mp40_armored_victim:i=2
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=32
+      zombie_flammenwerfer_armored:i=12
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=42
+      zombie_rush_zombie_phosphor_victim:i=2
+      zombie_luger_armored_victim:i=2
+      zombie_mp_3008_armored_victim:i=4
+      zombie_mp40_armored_victim:i=2
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=48
+      zombie_luger_armored_victim:i=3
+      zombie_mp_3008_armored_victim:i=3
+      zombie_mp40_armored_victim:i=6
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=25
+      zombie_rush_zombie_phosphor_victim:i=25
+      zombie_mp_3008_armored_victim:i=6
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=46
+      zombie_rush_zombie_phosphor_victim:i=2
+      zombie_luger_armored_victim:i=2
+      zombie_mp_3008_armored_victim:i=4
+      zombie_ppd_armored_victim:i=2
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=44
+      zombie_rush_zombie_phosphor_victim:i=4
+      zombie_mp_3008_armored_victim:i=4
+      zombie_mp40_armored_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=30
+      zombie_plazmagunner_boss_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=26
+      zombie_luger_armored_victim:i=6
+      zombie_mp_3008_armored_victim:i=10
+      zombie_ppd_armored_victim:i=12
+      zombie_mp40_armored_victim:i=6
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=40
+      zombie_rush_zombie_phosphor_victim:i=4
+      zombie_mp_3008_armored_victim:i=6
+      zombie_mp40_armored_victim:i=6
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=40
+      zombie_mp_3008_armored_victim:i=2
+      zombie_flammenwerfer_armored:i=14
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=46
+      zombie_rush_zombie_phosphor_victim:i=2
+      zombie_luger_armored_victim:i=2
+      zombie_mp_3008_armored_victim:i=8
+      zombie_mp40_armored_victim:i=2
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=34
+      zombie_rush_zombie_phosphor_victim:i=2
+      zombie_mp40_armored_victim:i=2
+      zombie_sword_armored_victim:i=22
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=36
+      zombie_plazmagunner_boss_victim:i=4
+      zombie_melee_boss_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=52
+      zombie_mp_3008_armored_victim:i=4
+      zombie_mp40_armored_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=45
+      zombie_rush_zombie_phosphor_victim:i=3
+      zombie_mp_3008_armored_victim:i=8
+      zombie_mp40_armored_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=48
+      zombie_rush_zombie_phosphor_victim:i=4
+      zombie_mp_3008_armored_victim:i=8
+      zombie_mp40_armored_victim:i=8
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=20
+      zombie_rush_zombie_phosphor_victim:i=32
+      zombie_mp_3008_armored_victim:i=6
+      zombie_mp40_armored_victim:i=6
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=44
+      zombie_rush_zombie_phosphor_victim:i=4
+      zombie_mp_3008_armored_victim:i=8
+      zombie_mp40_armored_victim:i=8
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=30
+      zombie_mp_3008_armored_victim:i=10
+      zombie_ppd_armored_victim:i=12
+      zombie_mp40_armored_victim:i=12
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=52
+      zombie_mp_3008_armored_victim:i=8
+      zombie_plazmagunner_boss_victim:i=4
+      zombie_melee_boss_victim:i=4
+    }
+  }
+}
+
+zombie_spawn_mode_victim_1_melee_flame{
+  _use:t="zombie_spawn_mode_victim_1_gun_flame"
+  team__id:i=3
+
+  "disableBombCrater:tag"{
+  }
+
+  "entity_spawner__waves:array"{
+
+    "wave:object"{
+      zombie_walk_zombie_victim:i=20
+    }
+
+    "wave:object"{
+      zombie_walk_zombie_victim:i=24
+    }
+
+    "wave:object"{
+      zombie_walk_zombie_victim:i=20
+      zombie_rush_zombie_victim:i=8
+    }
+
+    "wave:object"{
+      zombie_walk_zombie_victim:i=12
+      zombie_rush_zombie_victim:i=20
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=12
+      zombie_luger_armored_victim:i=16
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=30
+      zombie_luger_armored_victim:i=6
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=32
+      zombie_luger_armored_victim:i=6
+      zombie_mp_3008_armored_victim:i=2
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=36
+      zombie_mp_3008_armored_victim:i=2
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=18
+      zombie_rush_zombie_phosphor_victim:i=16
+      zombie_mp_3008_armored_victim:i=2
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=36
+      zombie_luger_armored_victim:i=4
+      zombie_mp_3008_armored_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=20
+      zombie_luger_armored_victim:i=10
+      zombie_mp_3008_armored_victim:i=10
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=40
+      zombie_luger_armored_victim:i=4
+      zombie_mp_3008_armored_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=30
+      zombie_melee_boss_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=20
+      zombie_rush_zombie_phosphor_victim:i=16
+      zombie_luger_armored_victim:i=2
+      zombie_mp_3008_armored_victim:i=2
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=40
+      zombie_luger_armored_victim:i=4
+      zombie_mp_3008_armored_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=42
+      zombie_rush_zombie_phosphor_victim:i=2
+      zombie_luger_armored_victim:i=4
+      zombie_mp_3008_armored_victim:i=6
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=26
+      zombie_luger_armored_victim:i=8
+      zombie_mp_3008_armored_victim:i=8
+      zombie_ppd_armored_victim:i=5
+      zombie_mp40_armored_victim:i=5
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=46
+      zombie_rush_zombie_phosphor_victim:i=2
+      zombie_luger_armored_victim:i=2
+      zombie_mp_3008_armored_victim:i=4
+      zombie_ppd_armored_victim:i=2
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=20
+      zombie_rush_zombie_phosphor_victim:i=22
+      zombie_luger_armored_victim:i=3
+      zombie_mp_3008_armored_victim:i=3
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=48
+      zombie_luger_armored_victim:i=2
+      zombie_mp_3008_armored_victim:i=4
+      zombie_mp40_armored_victim:i=2
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=34
+      zombie_rush_zombie_phosphor_victim:i=2
+      zombie_mp_3008_armored_victim:i=2
+      zombie_sword_armored_victim:i=18
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=46
+      zombie_rush_zombie_phosphor_victim:i=2
+      zombie_luger_armored_victim:i=2
+      zombie_mp_3008_armored_victim:i=4
+      zombie_ppd_armored_victim:i=2
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=30
+      zombie_flamethrower_boss_victim:i=3
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=40
+      zombie_rush_zombie_phosphor_victim:i=4
+      zombie_luger_armored_victim:i=2
+      zombie_mp_3008_armored_victim:i=6
+      zombie_mp40_armored_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=32
+      zombie_flammenwerfer_armored:i=12
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=40
+      zombie_rush_zombie_phosphor_victim:i=4
+      zombie_luger_armored_victim:i=2
+      zombie_mp_3008_armored_victim:i=4
+      zombie_mp40_armored_victim:i=2
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=26
+      zombie_luger_armored_victim:i=8
+      zombie_mp_3008_armored_victim:i=10
+      zombie_ppd_armored_victim:i=6
+      zombie_mp40_armored_victim:i=6
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=42
+      zombie_rush_zombie_phosphor_victim:i=2
+      zombie_luger_armored_victim:i=4
+      zombie_mp_3008_armored_victim:i=6
+      zombie_mp40_armored_victim:i=2
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=24
+      zombie_rush_zombie_phosphor_victim:i=24
+      zombie_mp_3008_armored_victim:i=8
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=36
+      zombie_flamethrower_boss_victim:i=3
+      zombie_melee_boss_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=48
+      zombie_mp_3008_armored_victim:i=4
+      zombie_mp40_armored_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=45
+      zombie_rush_zombie_phosphor_victim:i=3
+      zombie_luger_armored_victim:i=2
+      zombie_mp_3008_armored_victim:i=4
+      zombie_mp40_armored_victim:i=2
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=48
+      zombie_rush_zombie_phosphor_victim:i=4
+      zombie_mp_3008_armored_victim:i=8
+      zombie_mp40_armored_victim:i=8
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=20
+      zombie_rush_zombie_phosphor_victim:i=32
+      zombie_mp_3008_armored_victim:i=6
+      zombie_mp40_armored_victim:i=6
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=44
+      zombie_rush_zombie_phosphor_victim:i=4
+      zombie_mp_3008_armored_victim:i=8
+      zombie_mp40_armored_victim:i=8
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=30
+      zombie_mp_3008_armored_victim:i=10
+      zombie_ppd_armored_victim:i=12
+      zombie_mp40_armored_victim:i=12
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=52
+      zombie_mp_3008_armored_victim:i=8
+      zombie_flamethrower_boss_victim:i=3
+      zombie_melee_boss_victim:i=4
+    }
+  }
+}
+
+zombie_spawn_mode_victim_2_melee_flame{
+  _use:t="zombie_spawn_mode_victim_1_gun_flame"
+  team__id:i=3
+
+  "disableBombCrater:tag"{
+  }
+
+  "entity_spawner__waves:array"{
+
+    "wave:object"{
+      zombie_walk_zombie_victim:i=20
+    }
+
+    "wave:object"{
+      zombie_walk_zombie_victim:i=24
+    }
+
+    "wave:object"{
+      zombie_walk_zombie_victim:i=20
+      zombie_rush_zombie_victim:i=8
+    }
+
+    "wave:object"{
+      zombie_walk_zombie_victim:i=12
+      zombie_rush_zombie_victim:i=20
+    }
+
+    "wave:object"{
+      zombie_walk_zombie_victim:i=10
+      zombie_rush_zombie_victim:i=26
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=12
+      zombie_luger_armored_victim:i=20
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=20
+      zombie_rush_zombie_phosphor_victim:i=16
+      zombie_mp_3008_armored_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=36
+      zombie_luger_armored_victim:i=6
+      zombie_mp_3008_armored_victim:i=2
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=32
+      zombie_rush_zombie_phosphor_victim:i=2
+      zombie_mp_3008_armored_victim:i=2
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=20
+      zombie_luger_armored_victim:i=14
+      zombie_mp_3008_armored_victim:i=6
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=40
+      zombie_mp_3008_armored_victim:i=8
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=30
+      zombie_melee_boss_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=38
+      zombie_rush_zombie_phosphor_victim:i=2
+      zombie_luger_armored_victim:i=4
+      zombie_mp_3008_armored_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=38
+      zombie_rush_zombie_phosphor_victim:i=2
+      zombie_luger_armored_victim:i=3
+      zombie_mp_3008_armored_victim:i=5
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=32
+      zombie_flammenwerfer_armored:i=12
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=42
+      zombie_rush_zombie_phosphor_victim:i=2
+      zombie_luger_armored_victim:i=6
+      zombie_mp_3008_armored_victim:i=6
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=24
+      zombie_rush_zombie_phosphor_victim:i=18
+      zombie_luger_armored_victim:i=3
+      zombie_mp_3008_armored_victim:i=3
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=46
+      zombie_rush_zombie_phosphor_victim:i=2
+      zombie_luger_armored_victim:i=2
+      zombie_mp_3008_armored_victim:i=4
+      zombie_ppd_armored_victim:i=2
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=38
+      zombie_rush_zombie_phosphor_victim:i=2
+      zombie_mp_3008_armored_victim:i=2
+      zombie_sword_armored_victim:i=18
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=48
+      zombie_luger_armored_victim:i=2
+      zombie_mp_3008_armored_victim:i=6
+      zombie_mp40_armored_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=26
+      zombie_luger_armored_victim:i=6
+      zombie_mp_3008_armored_victim:i=10
+      zombie_ppd_armored_victim:i=9
+      zombie_mp40_armored_victim:i=5
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=46
+      zombie_rush_zombie_phosphor_victim:i=2
+      zombie_luger_armored_victim:i=3
+      zombie_mp_3008_armored_victim:i=7
+      zombie_ppd_armored_victim:i=2
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=44
+      zombie_rush_zombie_phosphor_victim:i=4
+      zombie_luger_armored_victim:i=2
+      zombie_mp_3008_armored_victim:i=6
+      zombie_mp40_armored_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=30
+      zombie_flamethrower_boss_victim:i=3
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=36
+      zombie_rush_zombie_phosphor_victim:i=2
+      zombie_mp_3008_armored_victim:i=2
+      zombie_sword_armored_victim:i=20
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=40
+      zombie_rush_zombie_phosphor_victim:i=4
+      zombie_mp_3008_armored_victim:i=2
+      zombie_mp40_armored_victim:i=6
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=24
+      zombie_rush_zombie_phosphor_victim:i=24
+      zombie_mp_3008_armored_victim:i=6
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=50
+      zombie_rush_zombie_phosphor_victim:i=2
+      zombie_mp_3008_armored_victim:i=4
+      zombie_mp40_armored_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=26
+      zombie_mp_3008_armored_victim:i=10
+      zombie_ppd_armored_victim:i=12
+      zombie_mp40_armored_victim:i=12
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=36
+      zombie_flamethrower_boss_victim:i=3
+      zombie_melee_boss_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=52
+      zombie_mp_3008_armored_victim:i=4
+      zombie_mp40_armored_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=49
+      zombie_rush_zombie_phosphor_victim:i=3
+      zombie_mp_3008_armored_victim:i=4
+      zombie_mp40_armored_victim:i=8
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=48
+      zombie_rush_zombie_phosphor_victim:i=4
+      zombie_mp_3008_armored_victim:i=8
+      zombie_mp40_armored_victim:i=8
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=20
+      zombie_rush_zombie_phosphor_victim:i=32
+      zombie_mp_3008_armored_victim:i=6
+      zombie_mp40_armored_victim:i=6
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=44
+      zombie_rush_zombie_phosphor_victim:i=4
+      zombie_mp_3008_armored_victim:i=8
+      zombie_mp40_armored_victim:i=8
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=30
+      zombie_mp_3008_armored_victim:i=10
+      zombie_ppd_armored_victim:i=12
+      zombie_mp40_armored_victim:i=12
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=52
+      zombie_mp_3008_armored_victim:i=8
+      zombie_flamethrower_boss_victim:i=3
+      zombie_melee_boss_victim:i=4
+    }
+  }
+}
+
+zombie_spawn_mode_victim_3_melee_flame{
+  _use:t="zombie_spawn_mode_victim_1_gun_flame"
+  team__id:i=3
+
+  "disableBombCrater:tag"{
+  }
+
+  "entity_spawner__waves:array"{
+
+    "wave:object"{
+      zombie_walk_zombie_victim:i=20
+    }
+
+    "wave:object"{
+      zombie_walk_zombie_victim:i=24
+    }
+
+    "wave:object"{
+      zombie_walk_zombie_victim:i=20
+      zombie_rush_zombie_victim:i=8
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=12
+      zombie_luger_armored_victim:i=20
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=12
+      zombie_rush_zombie_victim:i=20
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=30
+      zombie_luger_armored_victim:i=6
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=32
+      zombie_luger_armored_victim:i=6
+      zombie_mp_3008_armored_victim:i=2
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=20
+      zombie_rush_zombie_phosphor_victim:i=16
+      zombie_luger_armored_victim:i=2
+      zombie_mp_3008_armored_victim:i=2
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=38
+      zombie_rush_zombie_phosphor_victim:i=2
+      zombie_luger_armored_victim:i=2
+      zombie_mp_3008_armored_victim:i=2
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=40
+      zombie_luger_armored_victim:i=4
+      zombie_mp_3008_armored_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=22
+      zombie_rush_zombie_phosphor_victim:i=18
+      zombie_mp_3008_armored_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=40
+      zombie_luger_armored_victim:i=4
+      zombie_mp_3008_armored_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=30
+      zombie_melee_boss_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=38
+      zombie_rush_zombie_phosphor_victim:i=2
+      zombie_luger_armored_victim:i=4
+      zombie_mp_3008_armored_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=32
+      zombie_mp_3008_armored_victim:i=2
+      zombie_sword_armored_victim:i=16
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=26
+      zombie_luger_armored_victim:i=6
+      zombie_mp_3008_armored_victim:i=10
+      zombie_ppd_armored_victim:i=9
+      zombie_mp40_armored_victim:i=5
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=42
+      zombie_rush_zombie_phosphor_victim:i=2
+      zombie_luger_armored_victim:i=2
+      zombie_mp_3008_armored_victim:i=3
+      zombie_ppd_armored_victim:i=1
+      zombie_mp40_armored_victim:i=2
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=32
+      zombie_flammenwerfer_armored:i=12
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=42
+      zombie_rush_zombie_phosphor_victim:i=2
+      zombie_luger_armored_victim:i=2
+      zombie_mp_3008_armored_victim:i=4
+      zombie_mp40_armored_victim:i=2
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=48
+      zombie_luger_armored_victim:i=3
+      zombie_mp_3008_armored_victim:i=3
+      zombie_mp40_armored_victim:i=6
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=25
+      zombie_rush_zombie_phosphor_victim:i=25
+      zombie_mp_3008_armored_victim:i=6
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=30
+      zombie_flamethrower_boss_victim:i=3
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=46
+      zombie_rush_zombie_phosphor_victim:i=2
+      zombie_luger_armored_victim:i=2
+      zombie_mp_3008_armored_victim:i=4
+      zombie_ppd_armored_victim:i=2
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=44
+      zombie_rush_zombie_phosphor_victim:i=4
+      zombie_mp_3008_armored_victim:i=4
+      zombie_mp40_armored_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=26
+      zombie_luger_armored_victim:i=6
+      zombie_mp_3008_armored_victim:i=10
+      zombie_ppd_armored_victim:i=12
+      zombie_mp40_armored_victim:i=6
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=40
+      zombie_rush_zombie_phosphor_victim:i=4
+      zombie_mp_3008_armored_victim:i=6
+      zombie_mp40_armored_victim:i=6
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=40
+      zombie_mp_3008_armored_victim:i=2
+      zombie_flammenwerfer_armored:i=14
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=46
+      zombie_rush_zombie_phosphor_victim:i=2
+      zombie_luger_armored_victim:i=2
+      zombie_mp_3008_armored_victim:i=8
+      zombie_mp40_armored_victim:i=2
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=34
+      zombie_rush_zombie_phosphor_victim:i=2
+      zombie_mp40_armored_victim:i=2
+      zombie_sword_armored_victim:i=22
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=36
+      zombie_flamethrower_boss_victim:i=3
+      zombie_melee_boss_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=52
+      zombie_mp_3008_armored_victim:i=4
+      zombie_mp40_armored_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=45
+      zombie_rush_zombie_phosphor_victim:i=3
+      zombie_mp_3008_armored_victim:i=8
+      zombie_mp40_armored_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=48
+      zombie_rush_zombie_phosphor_victim:i=4
+      zombie_mp_3008_armored_victim:i=8
+      zombie_mp40_armored_victim:i=8
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=20
+      zombie_rush_zombie_phosphor_victim:i=32
+      zombie_mp_3008_armored_victim:i=6
+      zombie_mp40_armored_victim:i=6
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=44
+      zombie_rush_zombie_phosphor_victim:i=4
+      zombie_mp_3008_armored_victim:i=8
+      zombie_mp40_armored_victim:i=8
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=30
+      zombie_mp_3008_armored_victim:i=10
+      zombie_ppd_armored_victim:i=12
+      zombie_mp40_armored_victim:i=12
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=52
+      zombie_mp_3008_armored_victim:i=8
+      zombie_flamethrower_boss_victim:i=3
+      zombie_melee_boss_victim:i=4
+    }
+  }
+}
+
+zombie_spawn_mode_victim_1_plazma_flame{
+  _use:t="zombie_spawn_mode_victim_1_gun_flame"
+  team__id:i=3
+
+  "disableBombCrater:tag"{
+  }
+
+  "entity_spawner__waves:array"{
+
+    "wave:object"{
+      zombie_walk_zombie_victim:i=20
+    }
+
+    "wave:object"{
+      zombie_walk_zombie_victim:i=24
+    }
+
+    "wave:object"{
+      zombie_walk_zombie_victim:i=20
+      zombie_rush_zombie_victim:i=8
+    }
+
+    "wave:object"{
+      zombie_walk_zombie_victim:i=12
+      zombie_rush_zombie_victim:i=20
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=12
+      zombie_luger_armored_victim:i=16
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=30
+      zombie_luger_armored_victim:i=6
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=32
+      zombie_luger_armored_victim:i=6
+      zombie_mp_3008_armored_victim:i=2
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=36
+      zombie_mp_3008_armored_victim:i=2
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=18
+      zombie_rush_zombie_phosphor_victim:i=16
+      zombie_mp_3008_armored_victim:i=2
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=36
+      zombie_luger_armored_victim:i=4
+      zombie_mp_3008_armored_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=20
+      zombie_luger_armored_victim:i=10
+      zombie_mp_3008_armored_victim:i=10
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=30
+      zombie_plazmagunner_boss_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=40
+      zombie_luger_armored_victim:i=4
+      zombie_mp_3008_armored_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=20
+      zombie_rush_zombie_phosphor_victim:i=16
+      zombie_luger_armored_victim:i=2
+      zombie_mp_3008_armored_victim:i=2
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=40
+      zombie_luger_armored_victim:i=4
+      zombie_mp_3008_armored_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=42
+      zombie_rush_zombie_phosphor_victim:i=2
+      zombie_luger_armored_victim:i=4
+      zombie_mp_3008_armored_victim:i=6
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=26
+      zombie_luger_armored_victim:i=8
+      zombie_mp_3008_armored_victim:i=8
+      zombie_ppd_armored_victim:i=5
+      zombie_mp40_armored_victim:i=5
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=46
+      zombie_rush_zombie_phosphor_victim:i=2
+      zombie_luger_armored_victim:i=2
+      zombie_mp_3008_armored_victim:i=4
+      zombie_ppd_armored_victim:i=2
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=20
+      zombie_rush_zombie_phosphor_victim:i=22
+      zombie_luger_armored_victim:i=3
+      zombie_mp_3008_armored_victim:i=3
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=48
+      zombie_luger_armored_victim:i=2
+      zombie_mp_3008_armored_victim:i=4
+      zombie_mp40_armored_victim:i=2
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=34
+      zombie_rush_zombie_phosphor_victim:i=2
+      zombie_mp_3008_armored_victim:i=2
+      zombie_sword_armored_victim:i=18
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=46
+      zombie_rush_zombie_phosphor_victim:i=2
+      zombie_luger_armored_victim:i=2
+      zombie_mp_3008_armored_victim:i=4
+      zombie_ppd_armored_victim:i=2
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=30
+      zombie_flamethrower_boss_victim:i=3
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=40
+      zombie_rush_zombie_phosphor_victim:i=4
+      zombie_luger_armored_victim:i=2
+      zombie_mp_3008_armored_victim:i=6
+      zombie_mp40_armored_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=32
+      zombie_flammenwerfer_armored:i=12
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=40
+      zombie_rush_zombie_phosphor_victim:i=4
+      zombie_luger_armored_victim:i=2
+      zombie_mp_3008_armored_victim:i=4
+      zombie_mp40_armored_victim:i=2
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=26
+      zombie_luger_armored_victim:i=8
+      zombie_mp_3008_armored_victim:i=10
+      zombie_ppd_armored_victim:i=6
+      zombie_mp40_armored_victim:i=6
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=42
+      zombie_rush_zombie_phosphor_victim:i=2
+      zombie_luger_armored_victim:i=4
+      zombie_mp_3008_armored_victim:i=6
+      zombie_mp40_armored_victim:i=2
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=24
+      zombie_rush_zombie_phosphor_victim:i=24
+      zombie_mp_3008_armored_victim:i=8
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=36
+      zombie_plazmagunner_boss_victim:i=4
+      zombie_flamethrower_boss_victim:i=3
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=48
+      zombie_mp_3008_armored_victim:i=4
+      zombie_mp40_armored_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=45
+      zombie_rush_zombie_phosphor_victim:i=3
+      zombie_luger_armored_victim:i=2
+      zombie_mp_3008_armored_victim:i=4
+      zombie_mp40_armored_victim:i=2
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=48
+      zombie_rush_zombie_phosphor_victim:i=4
+      zombie_mp_3008_armored_victim:i=8
+      zombie_mp40_armored_victim:i=8
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=20
+      zombie_rush_zombie_phosphor_victim:i=32
+      zombie_mp_3008_armored_victim:i=6
+      zombie_mp40_armored_victim:i=6
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=44
+      zombie_rush_zombie_phosphor_victim:i=4
+      zombie_mp_3008_armored_victim:i=8
+      zombie_mp40_armored_victim:i=8
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=30
+      zombie_mp_3008_armored_victim:i=10
+      zombie_ppd_armored_victim:i=12
+      zombie_mp40_armored_victim:i=12
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=52
+      zombie_mp_3008_armored_victim:i=8
+      zombie_plazmagunner_boss_victim:i=4
+      zombie_flamethrower_boss_victim:i=3
+    }
+  }
+}
+
+zombie_spawn_mode_victim_2_plazma_flame{
+  _use:t="zombie_spawn_mode_victim_1_gun_flame"
+  team__id:i=3
+
+  "disableBombCrater:tag"{
+  }
+
+  "entity_spawner__waves:array"{
+
+    "wave:object"{
+      zombie_walk_zombie_victim:i=20
+    }
+
+    "wave:object"{
+      zombie_walk_zombie_victim:i=24
+    }
+
+    "wave:object"{
+      zombie_walk_zombie_victim:i=20
+      zombie_rush_zombie_victim:i=8
+    }
+
+    "wave:object"{
+      zombie_walk_zombie_victim:i=12
+      zombie_rush_zombie_victim:i=20
+    }
+
+    "wave:object"{
+      zombie_walk_zombie_victim:i=10
+      zombie_rush_zombie_victim:i=26
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=12
+      zombie_luger_armored_victim:i=20
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=20
+      zombie_rush_zombie_phosphor_victim:i=16
+      zombie_mp_3008_armored_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=36
+      zombie_luger_armored_victim:i=6
+      zombie_mp_3008_armored_victim:i=2
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=32
+      zombie_rush_zombie_phosphor_victim:i=2
+      zombie_mp_3008_armored_victim:i=2
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=20
+      zombie_luger_armored_victim:i=14
+      zombie_mp_3008_armored_victim:i=6
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=40
+      zombie_mp_3008_armored_victim:i=8
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=38
+      zombie_rush_zombie_phosphor_victim:i=2
+      zombie_luger_armored_victim:i=4
+      zombie_mp_3008_armored_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=30
+      zombie_plazmagunner_boss_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=38
+      zombie_rush_zombie_phosphor_victim:i=2
+      zombie_luger_armored_victim:i=3
+      zombie_mp_3008_armored_victim:i=5
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=32
+      zombie_flammenwerfer_armored:i=12
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=42
+      zombie_rush_zombie_phosphor_victim:i=2
+      zombie_luger_armored_victim:i=6
+      zombie_mp_3008_armored_victim:i=6
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=24
+      zombie_rush_zombie_phosphor_victim:i=18
+      zombie_luger_armored_victim:i=3
+      zombie_mp_3008_armored_victim:i=3
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=46
+      zombie_rush_zombie_phosphor_victim:i=2
+      zombie_luger_armored_victim:i=2
+      zombie_mp_3008_armored_victim:i=4
+      zombie_ppd_armored_victim:i=2
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=38
+      zombie_rush_zombie_phosphor_victim:i=2
+      zombie_mp_3008_armored_victim:i=2
+      zombie_sword_armored_victim:i=18
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=48
+      zombie_luger_armored_victim:i=2
+      zombie_mp_3008_armored_victim:i=6
+      zombie_mp40_armored_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=26
+      zombie_luger_armored_victim:i=6
+      zombie_mp_3008_armored_victim:i=10
+      zombie_ppd_armored_victim:i=9
+      zombie_mp40_armored_victim:i=5
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=30
+      zombie_flamethrower_boss_victim:i=3
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=46
+      zombie_rush_zombie_phosphor_victim:i=2
+      zombie_luger_armored_victim:i=3
+      zombie_mp_3008_armored_victim:i=7
+      zombie_ppd_armored_victim:i=2
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=44
+      zombie_rush_zombie_phosphor_victim:i=4
+      zombie_luger_armored_victim:i=2
+      zombie_mp_3008_armored_victim:i=6
+      zombie_mp40_armored_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=36
+      zombie_rush_zombie_phosphor_victim:i=2
+      zombie_mp_3008_armored_victim:i=2
+      zombie_sword_armored_victim:i=20
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=40
+      zombie_rush_zombie_phosphor_victim:i=4
+      zombie_mp_3008_armored_victim:i=2
+      zombie_mp40_armored_victim:i=6
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=24
+      zombie_rush_zombie_phosphor_victim:i=24
+      zombie_mp_3008_armored_victim:i=6
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=50
+      zombie_rush_zombie_phosphor_victim:i=2
+      zombie_mp_3008_armored_victim:i=4
+      zombie_mp40_armored_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=26
+      zombie_mp_3008_armored_victim:i=10
+      zombie_ppd_armored_victim:i=12
+      zombie_mp40_armored_victim:i=12
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=36
+      zombie_flamethrower_boss_victim:i=3
+      zombie_plazmagunner_boss_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=52
+      zombie_mp_3008_armored_victim:i=4
+      zombie_mp40_armored_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=49
+      zombie_rush_zombie_phosphor_victim:i=3
+      zombie_mp_3008_armored_victim:i=4
+      zombie_mp40_armored_victim:i=8
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=48
+      zombie_rush_zombie_phosphor_victim:i=4
+      zombie_mp_3008_armored_victim:i=8
+      zombie_mp40_armored_victim:i=8
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=20
+      zombie_rush_zombie_phosphor_victim:i=32
+      zombie_mp_3008_armored_victim:i=6
+      zombie_mp40_armored_victim:i=6
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=44
+      zombie_rush_zombie_phosphor_victim:i=4
+      zombie_mp_3008_armored_victim:i=8
+      zombie_mp40_armored_victim:i=8
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=30
+      zombie_mp_3008_armored_victim:i=10
+      zombie_ppd_armored_victim:i=12
+      zombie_mp40_armored_victim:i=12
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=52
+      zombie_mp_3008_armored_victim:i=8
+      zombie_flamethrower_boss_victim:i=3
+      zombie_plazmagunner_boss_victim:i=4
+    }
+  }
+}
+
+zombie_spawn_mode_victim_3_plazma_flame{
+  _use:t="zombie_spawn_mode_victim_1_gun_flame"
+  team__id:i=3
+
+  "disableBombCrater:tag"{
+  }
+
+  "entity_spawner__waves:array"{
+
+    "wave:object"{
+      zombie_walk_zombie_victim:i=20
+    }
+
+    "wave:object"{
+      zombie_walk_zombie_victim:i=24
+    }
+
+    "wave:object"{
+      zombie_walk_zombie_victim:i=20
+      zombie_rush_zombie_victim:i=8
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=12
+      zombie_luger_armored_victim:i=20
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=12
+      zombie_rush_zombie_victim:i=20
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=30
+      zombie_luger_armored_victim:i=6
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=32
+      zombie_luger_armored_victim:i=6
+      zombie_mp_3008_armored_victim:i=2
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=20
+      zombie_rush_zombie_phosphor_victim:i=16
+      zombie_luger_armored_victim:i=2
+      zombie_mp_3008_armored_victim:i=2
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=38
+      zombie_rush_zombie_phosphor_victim:i=2
+      zombie_luger_armored_victim:i=2
+      zombie_mp_3008_armored_victim:i=2
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=40
+      zombie_luger_armored_victim:i=4
+      zombie_mp_3008_armored_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=22
+      zombie_rush_zombie_phosphor_victim:i=18
+      zombie_mp_3008_armored_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=40
+      zombie_luger_armored_victim:i=4
+      zombie_mp_3008_armored_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=38
+      zombie_rush_zombie_phosphor_victim:i=2
+      zombie_luger_armored_victim:i=4
+      zombie_mp_3008_armored_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=30
+      zombie_plazmagunner_boss_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=32
+      zombie_mp_3008_armored_victim:i=2
+      zombie_sword_armored_victim:i=16
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=26
+      zombie_luger_armored_victim:i=6
+      zombie_mp_3008_armored_victim:i=10
+      zombie_ppd_armored_victim:i=9
+      zombie_mp40_armored_victim:i=5
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=42
+      zombie_rush_zombie_phosphor_victim:i=2
+      zombie_luger_armored_victim:i=2
+      zombie_mp_3008_armored_victim:i=3
+      zombie_ppd_armored_victim:i=1
+      zombie_mp40_armored_victim:i=2
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=32
+      zombie_flammenwerfer_armored:i=12
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=42
+      zombie_rush_zombie_phosphor_victim:i=2
+      zombie_luger_armored_victim:i=2
+      zombie_mp_3008_armored_victim:i=4
+      zombie_mp40_armored_victim:i=2
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=48
+      zombie_luger_armored_victim:i=3
+      zombie_mp_3008_armored_victim:i=3
+      zombie_mp40_armored_victim:i=6
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=25
+      zombie_rush_zombie_phosphor_victim:i=25
+      zombie_mp_3008_armored_victim:i=6
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=46
+      zombie_rush_zombie_phosphor_victim:i=2
+      zombie_luger_armored_victim:i=2
+      zombie_mp_3008_armored_victim:i=4
+      zombie_ppd_armored_victim:i=2
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=30
+      zombie_flamethrower_boss_victim:i=3
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=44
+      zombie_rush_zombie_phosphor_victim:i=4
+      zombie_mp_3008_armored_victim:i=4
+      zombie_mp40_armored_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=26
+      zombie_luger_armored_victim:i=6
+      zombie_mp_3008_armored_victim:i=10
+      zombie_ppd_armored_victim:i=12
+      zombie_mp40_armored_victim:i=6
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=40
+      zombie_rush_zombie_phosphor_victim:i=4
+      zombie_mp_3008_armored_victim:i=6
+      zombie_mp40_armored_victim:i=6
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=40
+      zombie_mp_3008_armored_victim:i=2
+      zombie_flammenwerfer_armored:i=14
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=46
+      zombie_rush_zombie_phosphor_victim:i=2
+      zombie_luger_armored_victim:i=2
+      zombie_mp_3008_armored_victim:i=8
+      zombie_mp40_armored_victim:i=2
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=34
+      zombie_rush_zombie_phosphor_victim:i=2
+      zombie_mp40_armored_victim:i=2
+      zombie_sword_armored_victim:i=22
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=36
+      zombie_flamethrower_boss_victim:i=3
+      zombie_plazmagunner_boss_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=52
+      zombie_mp_3008_armored_victim:i=4
+      zombie_mp40_armored_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=45
+      zombie_rush_zombie_phosphor_victim:i=3
+      zombie_mp_3008_armored_victim:i=8
+      zombie_mp40_armored_victim:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=48
+      zombie_rush_zombie_phosphor_victim:i=4
+      zombie_mp_3008_armored_victim:i=8
+      zombie_mp40_armored_victim:i=8
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=20
+      zombie_rush_zombie_phosphor_victim:i=32
+      zombie_mp_3008_armored_victim:i=6
+      zombie_mp40_armored_victim:i=6
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=44
+      zombie_rush_zombie_phosphor_victim:i=4
+      zombie_mp_3008_armored_victim:i=8
+      zombie_mp40_armored_victim:i=8
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=30
+      zombie_mp_3008_armored_victim:i=10
+      zombie_ppd_armored_victim:i=12
+      zombie_mp40_armored_victim:i=12
+    }
+
+    "wave:object"{
+      zombie_rush_zombie_victim:i=52
+      zombie_mp_3008_armored_victim:i=8
+      zombie_flamethrower_boss_victim:i=3
+      zombie_plazmagunner_boss_victim:i=4
+    }
+  }
+}

@@ -1,0 +1,135 @@
+ship_vehicle_horn_sound{
+  _use:t="vehicle_horn_sound"
+
+  "vehicle_horn_sound__path:shared:object"{
+    _tags:t="sound"
+    path:t="enemy/vehicle/boat/horns/default/horn"
+  }
+}
+
+ship_sound_phys_vars{
+
+  _group{
+    _tags:t="sound"
+    ship_sound_phys_vars__waterTimer:r=0.0
+  }
+}
+
+ship_vehicle_collision_sound{
+  _use:t="vehicle_collision_sound"
+
+  "vehicle_collision_sound__paths:shared:object"{
+    _tags:t="sound"
+
+    "collScrape:object"{
+      watched:t="player/vehicle/boat/collision/scrape"
+    }
+
+    "collGeneric:object"{
+      path:t="enemy/vehicle/boat/collision/generic"
+    }
+
+    "collTree:object"{
+      path:t="enemy/vehicle/boat/collision/generic"
+    }
+
+    "collMetal:object"{
+      path:t="enemy/vehicle/boat/collision/generic"
+    }
+
+    "collWood:object"{
+      path:t="enemy/vehicle/boat/collision/generic"
+    }
+
+    "collConcrete:object"{
+      path:t="enemy/vehicle/boat/collision/generic"
+    }
+
+    "collBush:object"{
+      path:t="enemy/vehicle/boat/collision/generic"
+    }
+  }
+
+  _group{
+    _tags:t="sound"
+    vehicle_collision_sound__scrapeMinMax:p2=0.0, 1.0
+  }
+}
+
+ship_tracks_sound{
+  _use:t="vehicle_tracks_sound"
+
+  _group{
+    _tags:t="sound"
+    vehicle_tracks_sound__speedMul:r=10.0
+    vehicle_tracks_sound__speedThreshold:r=0.0
+    vehicle_tracks_sound__speedToTurnMul:p4=0.0, 0.0, 1.0, 1.0
+  }
+
+  "vehicle_tracks_sound__path:shared:object"{
+    _tags:t="sound"
+    watched:t="player/vehicle/boat/small_motor/tracks"
+    other:t="enemy/vehicle/boat/small_motor/tracks"
+  }
+}
+
+ship_engine_sound{
+  _use:t="vehicle_engine_sound"
+
+  _group{
+    _tags:t="sound"
+
+    "vehicle_engine_sound__path:shared:object"{
+      watched:t="player/vehicle/boat/small_motor/engine"
+      other:t="enemy/vehicle/boat/small_motor/engine"
+    }
+
+    "vehicle_engine_sound__startPath:shared:object"{
+      watched:t="player/vehicle/boat/small_motor/engine_start"
+      other:t="enemy/vehicle/boat/small_motor/engine_start"
+    }
+
+    "vehicle_engine_sound__stopPath:shared:object"{
+      watched:t="player/vehicle/boat/small_motor/engine_stop"
+      other:t="enemy/vehicle/boat/small_motor/engine_stop"
+    }
+  }
+}
+
+ship_engine_sound_seat_start_stop{
+
+  _group{
+    _tags:t="sound"
+    ship_engine_sound_seat_start_stop:b=no
+  }
+}
+
+ship_sound_subtemplate{
+  _use:t="base_vehicle_sound_subtemplate"
+  _use:t="vehicle_engine_sound_subtemplate"
+  _use:t="vehicle_tracks_sound_subtemplate"
+  _use:t="vehicle_horn_sound_subtemplate"
+}
+
+ship_sound{
+  _use:t="watchable_vehicle_sound"
+  _use:t="sound_control"
+  _use:t="sound_event_group"
+  _use:t="sound_player_components"
+  _use:t="ship_tracks_sound"
+  _use:t="ship_engine_sound"
+  _use:t="vehicle_sound_phys"
+  _use:t="ship_sound_phys_vars"
+  _use:t="ship_vehicle_collision_sound"
+  _use:t="ship_vehicle_horn_sound"
+  _use:t="vehicle_horn_note_E5"
+
+  "shipSound:tag"{
+  }
+
+  _group{
+    _tags:t="sound"
+    sound_control__range:r=160.0
+    sound_control__subtemplate:t="ship_sound_subtemplate"
+  }
+}

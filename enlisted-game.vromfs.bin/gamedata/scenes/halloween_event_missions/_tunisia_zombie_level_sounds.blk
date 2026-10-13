@@ -1,0 +1,32 @@
+import{
+  scene:t="gamedata/scenes/_common_sounds.blk"
+}
+
+entity{
+  _template:t="water_sound_field"
+  water_sound_field__worldAABB:p4=-1600.0, -2000.0, 1500.0, 1500.0
+  water_sound_field__cellSize:r=10.0
+}
+
+entity{
+  _template:t="battle_music_with_spawn_waves"
+  battle_music__intro:t="events/z/music/z_tunisia_battle_start"
+  battle_music__waveStartPath:t="events/z/music/z_wave_new"
+  battle_music__waveEndPath:t="events/z/music/z_wave_end"
+}
+
+entity{
+  _template:t="europe_winter_ambient_sound"
+}
+
+entity{
+  _template:t="zombie_scene_net_sounds"
+}
+
+entity{
+  _template:t="zombie_battle_music_param"
+}
+
+entity{
+  _template:t="zombie_near_battle_music_trigger"
+}

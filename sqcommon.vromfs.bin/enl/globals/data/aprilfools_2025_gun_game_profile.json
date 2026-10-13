@@ -1,0 +1,238 @@
+{
+  "usa": {
+    "armyId": "usa",
+    "boosters": [],
+    "campaignId": "common",
+    "classBonus": {
+      "rifle": 1.0,
+      "uk_rifle": 1.0
+    },
+    "country": "usa",
+    "curSquadId": "usa_normandy_rifle_3",
+    "disableAnyTeamBonus": false,
+    "exp": 0,
+    "expExchangeRate": 0.019999999552965164,
+    "expHeroAwardsLimit": 5,
+    "expPerHeroAward": 100,
+    "expToLevel": [
+      0,
+      800,
+      1600,
+      3200,
+      6400,
+      12800
+    ],
+    "globalData": {
+      "globalGiftsCfg": [
+        {
+          "army": "common_army",
+          "basetpl": "enlisted_silver",
+          "loopCount": 5,
+          "loopExp": 47,
+          "startCount": 5,
+          "startExp": 47
+        }
+      ]
+    },
+    "growthExp": 0,
+    "growthProgress": {
+      "exp": 0,
+      "growthCfg": {
+        "expRequired": 5000,
+        "id": "m50_reising",
+        "reward": {
+          "armyId": "usa",
+          "itemTemplate": "m50_reising",
+          "squadId": "allies_pacific_medic_1"
+        }
+      },
+      "item": {
+        "gametemplate": "m50_reising_gun",
+        "growthTier": 1,
+        "itemsubtype": "m50_reising",
+        "itemtype": "submgun"
+      },
+      "status": 1
+    },
+    "isFakeSquads": false,
+    "isFirstBattleExp": true,
+    "level": 0,
+    "offerGuid": "",
+    "squads": [
+      {
+        "artilleryCooldownMul": 1.0,
+        "artilleryTypeUnlocks": [],
+        "curVehicle": null,
+        "enableSquadRotationWithVehicle": false,
+        "engineerUnlocks": [],
+        "exp": 0,
+        "expBonus": 0.5,
+        "hasAllArtillery": false,
+        "hasRocketArtillery": false,
+        "isParatroopers": false,
+        "isRented": false,
+        "level": 2,
+        "paratrooperBoxUnlocks": [],
+        "spawnWithoutVehicleAvailable": false,
+        "squad": [
+          {
+            "bodyScale": {
+              "height": 1.0700000524520874,
+              "width": 1.0800000429153442
+            },
+            "callname": "",
+            "country": "ussr",
+            "equipment": {
+              "bag_l": {
+                "gametemplate": "attachable_wear_gasmask_01_ussr_winter_item",
+                "slot": "bag_l"
+              },
+              "belt_1": {
+                "gametemplate": "attachable_wear_belt_1_04_ussr_winter_item",
+                "slot": "belt_1"
+              },
+              "belt_2": {
+                "gametemplate": "attachable_wear_belt_2_01_ussr_winter_item",
+                "slot": "belt_2"
+              },
+              "face": {
+                "gametemplate": "hero_head_ussr_halloween_2024",
+                "slot": "face"
+              },
+              "flask_r": {
+                "gametemplate": "attachable_wear_flask_01_ussr_winter_item",
+                "slot": "flask_r"
+              },
+              "gloves": {
+                "gametemplate": "attachable_wear_gloves_01_ussr_winter_item",
+                "slot": "gloves"
+              },
+              "pants": {
+                "gametemplate": "attachable_wear_hw_event_padded_pants_item",
+                "slot": "pants"
+              },
+              "rear_belt_l": {
+                "gametemplate": "attachable_wear_officer_tablet_01_ussr_winter_item",
+                "slot": "rear_belt_l"
+              },
+              "skined_helmet": {
+                "gametemplate": "event_ushanka_item",
+                "slot": "skined_helmet"
+              },
+              "tunic": {
+                "gametemplate": "attachable_wear_hw_event_padded_jacket_item",
+                "slot": "tunic"
+              }
+            },
+            "exp": 0,
+            "gametemplate": "ussr_base_soldier",
+            "guid": "13384615793114872",
+            "heroExpBonus": 0.20000000298023224,
+            "human_weap__weapInfo": [
+              {
+                "gunSlots": {
+                  "scope": "scope_pe_mosin_4x_item"
+                },
+                "numReserveAmmo": 5,
+                "reserveAmmoTemplate": "mosin_magazine"
+              },
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 0,
+                "reserveAmmoTemplate": ""
+              },
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 0,
+                "reserveAmmoTemplate": ""
+              },
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 0,
+                "reserveAmmoTemplate": ""
+              },
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 0,
+                "reserveAmmoTemplate": ""
+              }
+            ],
+            "human_weap__weapInitialComponents": [
+              {},
+              {},
+              {},
+              {},
+              {}
+            ],
+            "human_weap__weapTemplates": {
+              "grenade": "grenade_thrower",
+              "melee": "knife_weapon",
+              "primary": "mosin_m91_bramit_gun",
+              "secondary": "",
+              "tertiary": ""
+            },
+            "id": 0,
+            "inventory": [
+              {
+                "gametemplate": "ussr_medkit_item"
+              },
+              {
+                "gametemplate": "ussr_medkit_item"
+              }
+            ],
+            "isHero": true,
+            "isPremium": true,
+            "level": 5,
+            "maxLevel": 5,
+            "name": "Emelyan",
+            "perkPoints": {
+              "speed": 7,
+              "vitality": 19,
+              "weapon": 28
+            },
+            "perks": [
+              {
+                "name": "run_speed",
+                "stats": [
+                  {
+                    "statKey": "run_speed",
+                    "statValue": 0.10000000149011612
+                  }
+                ]
+              },
+              {
+                "name": "sprint_speed",
+                "stats": [
+                  {
+                    "statKey": "sprint_speed",
+                    "statValue": 0.15000000596046448
+                  }
+                ]
+              },
+              {
+                "name": "heal_speed",
+                "stats": [
+                  {
+                    "statKey": "heal_speed",
+                    "statValue": 0.75
+                  }
+                ]
+              }
+            ],
+            "sClass": "assault_2_event_halloween_2024",
+            "sKind": "assault",
+            "surname": "Barykin",
+            "tier": 5,
+            "weaponPreset": ""
+          }
+        ],
+        "squadId": "allies_pacific_rifle_1",
+        "squadType": "rifle",
+        "toLevelExp": 1980,
+        "vehicleType": ""
+      }
+    ],
+    "wallPosters": [],
+    "wallPostersCount": 3
+  }
+}

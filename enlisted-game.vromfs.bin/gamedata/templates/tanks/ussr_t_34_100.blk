@@ -1,0 +1,579 @@
+ussr_t_34_100_premium{
+  _use:t="ussr_t_34_100_common"
+  _use:t="vehicle_damage_decals_decor"
+
+  "turrets__initAmmoDistribution:array"{
+
+    "ammo:object"{
+      slot:i=0
+      fill:b=yes
+    }
+
+    "ammo:object"{
+      slot:i=1
+      fill:b=yes
+    }
+
+    "ammo:object"{
+      slot:i=2
+      count:i=4
+    }
+  }
+
+  _group{
+    _tags:t="render"
+
+    "damage_decals_decor__shrapnelDecalLocalNormal:list<p3>"{
+      item:p3=0.560827, 0.620728, 0.547878
+      item:p3=0.0855666, 0.709112, 0.699885
+      item:p3=0.500008, 3.69037e-07, 0.866021
+      item:p3=0.0104562, 0.173639, 0.984754
+      item:p3=0.500008, 2.8871e-07, 0.866021
+      item:p3=0.49999, 5.61122e-08, 0.866031
+      item:p3=-0.000268955, 0.999992, -0.00412898
+      item:p3=-0.000268955, 0.999992, -0.00412898
+      item:p3=0.72776, -0.28735, -0.622732
+      item:p3=0.49999, 4.95929e-08, 0.866031
+      item:p3=0.0193138, -0.00902855, 0.999773
+      item:p3=0.0176568, -0.0116896, 0.999776
+      item:p3=0.0104543, -0.939641, 0.342001
+      item:p3=0.53579, -0.844351, 2.32831e-10
+      item:p3=0.500368, 0.000213398, 0.865813
+      item:p3=-0.00129464, 0.999999, -0.000299639
+      item:p3=0.901311, -0.410638, -0.137891
+      item:p3=0.010466, -0.939641, -0.342001
+      item:p3=0.500368, 0.000213398, 0.865813
+      item:p3=0.500577, -0.00316052, 0.865686
+      item:p3=0.918495, -0.355863, -0.17242
+      item:p3=0.500198, -2.15136e-07, 0.865911
+      item:p3=0.00389326, -0.999952, 0.00903225
+      item:p3=-0.999994, 8.35862e-07, 0.00339254
+      item:p3=0.467876, -0.883792, -0.00154011
+      item:p3=0.344258, -0.938874, -0.0015149
+      item:p3=0.0821442, 0.99662, -0.000219349
+      item:p3=-6.29755e-07, -0.000504827, 1.0
+      item:p3=0.0763316, 0.0, 0.997082
+      item:p3=0.374047, 0.276299, -0.885295
+      item:p3=0.0267003, 0.999173, 0.0306683
+      item:p3=-0.29632, 0.202157, 0.933449
+      item:p3=0.00113377, 0.998815, -0.0486489
+      item:p3=-1.95112e-06, -0.663495, 0.748181
+      item:p3=-0.00122762, -0.000551879, 0.999999
+      item:p3=-0.18801, 0.254119, 0.948723
+      item:p3=-0.000268955, 0.999991, -0.00412898
+      item:p3=0.000890402, -0.761088, 0.648649
+      item:p3=-6.24641e-09, -0.00219135, 0.999998
+      item:p3=-3.81392e-06, -0.00547888, 0.999985
+      item:p3=2.8871e-08, -0.382684, 0.923879
+    }
+
+    "damage_decals_decor__projectileHitLocalNormal:list<p3>"{
+      item:p3=0.758106, 0.0503283, 0.650186
+      item:p3=0.49999, 4.93601e-08, 0.866031
+      item:p3=0.500008, -1.37836e-07, 0.866021
+      item:p3=0.404837, 0.332293, -0.851873
+      item:p3=0.457318, 0.146135, 0.877214
+      item:p3=0.238954, 0.28056, -0.929617
+      item:p3=0.500008, -4.10015e-07, 0.866021
+      item:p3=0.500008, 3.67407e-07, 0.866021
+      item:p3=1.0, -4.65661e-10, -3.16504e-10
+      item:p3=0.000890402, -0.761088, 0.648648
+      item:p3=-0.282209, 0.223663, 0.932916
+      item:p3=0.170257, 0.978541, 0.116059
+    }
+
+    "damage_decals_decor__projectileHitCaliber:list<r>"{
+      item:r=0.0762
+      item:r=0.0762
+      item:r=0.0762
+      item:r=0.0762
+      item:r=0.0762
+      item:r=0.0762
+      item:r=0.0762
+      item:r=0.0762
+      item:r=0.0762
+      item:r=0.0762
+      item:r=0.0762
+      item:r=0.0762
+    }
+
+    "damage_decals_decor__shrapnelDecalCollNodeName:list<t>"{
+      item:t="turret_front"
+      item:t="gun_mask"
+      item:t="superstructure_front"
+      item:t="gun_barrel"
+      item:t="superstructure_front"
+      item:t="superstructure_front"
+      item:t="ex_decor_r_06"
+      item:t="ex_decor_r_06"
+      item:t="turret_front"
+      item:t="superstructure_front"
+      item:t="ex_decor_l_01"
+      item:t="ex_decor_l_01"
+      item:t="gun_barrel"
+      item:t="turret_front"
+      item:t="body_front_hatch"
+      item:t="ex_decor_r_01"
+      item:t="gun_mask"
+      item:t="gun_barrel"
+      item:t="body_front_hatch"
+      item:t="body_front_hatch"
+      item:t="turret_front"
+      item:t="body_front_hatch"
+      item:t="ex_decor_l_01"
+      item:t="track_l"
+      item:t="gun_mask"
+      item:t="gun_mask"
+      item:t="turret_top"
+      item:t="ex_decor_l_06"
+      item:t="turret_bottom"
+      item:t="turret_side"
+      item:t="turret_top"
+      item:t="turret_back"
+      item:t="ex_decor_r_02"
+      item:t="ex_decor_r_02"
+      item:t="turret_01_side"
+      item:t="turret_side"
+      item:t="ex_decor_r_06"
+      item:t="superstructure_side"
+      item:t="ex_decor_r_02"
+      item:t="superstructure_top"
+      item:t="ex_decor_r_07"
+    }
+
+    "damage_decals_decor__projectileHitLocalPos:list<p3>"{
+      item:p3=1.20775, -0.0964125, 0.481079
+      item:p3=2.49379, 0.211234, 0.932048
+      item:p3=1.84615, -0.229794, 1.30597
+      item:p3=0.829666, 0.104654, -0.681037
+      item:p3=0.654572, -0.0787613, 0.831775
+      item:p3=0.138, -0.066167, -1.03794
+      item:p3=1.81525, -0.615916, 1.32381
+      item:p3=1.6283, 0.823609, 1.43174
+      item:p3=0.497757, 0.0718887, -0.00246263
+      item:p3=1.00438, -1.09143, 1.31097
+      item:p3=-0.467361, -0.0223457, 1.03254
+      item:p3=0.83754, 0.227539, 0.487832
+    }
+
+    "damage_decals_decor__shrapnelDecalLocalPos:list<p3>"{
+      item:p3=1.12746, 0.13817, 0.444654
+      item:p3=0.362564, 0.0836194, 0.143576
+      item:p3=1.95784, -0.642929, 1.24148
+      item:p3=0.610703, -0.517237, 0.133486
+      item:p3=1.78625, -1.04162, 1.34056
+      item:p3=2.40628, -0.790732, 0.982567
+      item:p3=-0.488815, 0.144836, -0.0520782
+      item:p3=0.465393, 0.144613, -0.169842
+      item:p3=1.11795, -0.231679, -0.554559
+      item:p3=2.57076, -0.0939502, 0.887614
+      item:p3=-0.45195, -0.31815, -0.121323
+      item:p3=-0.0794983, -0.34109, -0.128634
+      item:p3=0.883713, -0.587384, 0.0861692
+      item:p3=1.09253, -0.386255, -0.405528
+      item:p3=0.185394, -0.0725008, -0.109614
+      item:p3=-0.153854, 0.25124, -0.0201948
+      item:p3=0.333786, -0.0936105, -0.278652
+      item:p3=1.56137, -0.584399, 0.00935817
+      item:p3=0.185074, 0.26171, -0.109514
+      item:p3=0.0404663, -0.258417, -0.0259688
+      item:p3=1.24501, -0.217196, -0.384892
+      item:p3=-0.0263977, 0.103982, 0.0127459
+      item:p3=-0.0875092, -0.468648, -0.378095
+      item:p3=2.8502, 1.00954, 0.711491
+      item:p3=0.224442, -0.226016, 0.271595
+      item:p3=0.172592, -0.248959, 0.0330318
+      item:p3=0.522125, 0.24579, -0.557121
+      item:p3=-0.443436, -0.0139751, -0.00183821
+      item:p3=-0.0760498, 0.368046, -0.000786901
+      item:p3=0.47876, -0.052319, -0.902415
+      item:p3=0.778152, 0.224912, -0.388597
+      item:p3=-0.570206, 0.24251, 0.936683
+      item:p3=-0.339981, -0.165598, 0.00887847
+      item:p3=-0.0215454, 0.0829939, 0.00692511
+      item:p3=-0.61319, -0.783139, 1.60684
+      item:p3=-0.468079, 0.229705, 0.970364
+      item:p3=-0.168152, 0.144637, -0.121813
+      item:p3=-0.0505371, -1.05394, 1.35641
+      item:p3=-0.613495, -0.0915166, 0.000669956
+      item:p3=-0.584152, -0.86984, 1.52049
+      item:p3=0.349625, -0.0834944, 0.178164
+    }
+
+    "damage_decals_decor__projectileHitLocalDir:list<p3>"{
+      item:p3=-0.983151, 0.096883, -0.155012
+      item:p3=-0.946062, 0.309899, -0.0944978
+      item:p3=-0.979468, 0.20072, -0.018826
+      item:p3=-0.85073, 0.198176, 0.486811
+      item:p3=-0.966009, 0.166993, 0.19733
+      item:p3=-0.991105, 0.104685, 0.0821681
+      item:p3=-0.792813, -0.539646, 0.28325
+      item:p3=-0.849845, 0.416719, 0.322659
+      item:p3=-0.993197, -0.0453443, 0.107256
+      item:p3=-0.993987, 0.10665, -0.0248268
+      item:p3=-0.581505, 0.153788, -0.798875
+      item:p3=-0.907772, -0.0240016, 0.418776
+    }
+
+    "damage_decals_decor__shrapnelDecalLocalDir:list<p3>"{
+      item:p3=-0.898939, -0.170459, -0.403551
+      item:p3=0.28763, -0.431419, -0.855071
+      item:p3=0.109353, -0.167056, -0.979865
+      item:p3=0.627389, -0.492634, -0.603071
+      item:p3=-0.0644059, -0.549424, -0.833058
+      item:p3=0.406259, -0.226872, -0.885146
+      item:p3=-0.60687, -0.515434, -0.605009
+      item:p3=-0.0114257, -0.604868, -0.796244
+      item:p3=-0.717879, 0.60971, -0.336011
+      item:p3=0.176471, -0.708318, -0.683478
+      item:p3=-0.185832, 0.976778, -0.106633
+      item:p3=0.245937, 0.962261, -0.116487
+      item:p3=-0.0112579, 0.91031, 0.413773
+      item:p3=-0.831447, 0.513194, -0.212901
+      item:p3=-0.997451, -0.055948, -0.0442898
+      item:p3=0.157927, -0.982771, -0.0960238
+      item:p3=-0.643243, 0.761699, -0.0777955
+      item:p3=0.694749, 0.68188, 0.228833
+      item:p3=-0.762279, 0.646375, -0.03361
+      item:p3=-0.921167, -0.370065, 0.120431
+      item:p3=-0.676226, 0.710778, -0.193681
+      item:p3=-0.951268, 0.254979, 0.173421
+      item:p3=0.251679, 0.865455, -0.43318
+      item:p3=0.358149, 0.804345, -0.474087
+      item:p3=-0.122302, 0.958135, 0.258882
+      item:p3=-0.289341, 0.531774, -0.795926
+      item:p3=-0.881927, -0.311196, 0.354066
+      item:p3=-0.40643, 0.474375, -0.780886
+      item:p3=-0.132044, -0.935079, -0.328923
+      item:p3=-0.60481, -0.699522, -0.380624
+      item:p3=-0.161909, -0.400238, 0.901995
+      item:p3=-0.730435, 0.104547, -0.674933
+      item:p3=0.332208, -0.373608, -0.866057
+      item:p3=0.539596, -0.178997, -0.822676
+      item:p3=-0.74686, 0.235856, -0.621749
+      item:p3=-0.0265918, 0.0329219, -0.999104
+      item:p3=0.667847, -0.177314, -0.722869
+      item:p3=-0.242724, -0.0227873, -0.969828
+      item:p3=0.137403, -0.339792, -0.930409
+      item:p3=-0.706794, 0.151178, -0.691077
+      item:p3=-0.629015, -0.303447, -0.715723
+    }
+
+    "damage_decals_decor__projectileHitDamageType:list<t>"{
+      item:t="explosive_non_penetration"
+      item:t="explosive_non_penetration_angled"
+      item:t="explosive_non_penetration_angled"
+      item:t="explosive_non_penetration_angled"
+      item:t="kinetic_ricochet"
+      item:t="kinetic_ricochet"
+      item:t="kinetic_ricochet"
+      item:t="kinetic_ricochet"
+      item:t="kinetic_penetration"
+      item:t="kinetic_ricochet"
+      item:t="explosive_non_penetration_angled"
+      item:t="kinetic_ricochet"
+    }
+
+    "damage_decals_decor__projectileHitCollNodeName:list<t>"{
+      item:t="turret_front"
+      item:t="superstructure_front"
+      item:t="superstructure_front"
+      item:t="turret_front"
+      item:t="turret_side"
+      item:t="turret_side"
+      item:t="superstructure_front"
+      item:t="superstructure_front"
+      item:t="ex_decor_r_07"
+      item:t="superstructure_side"
+      item:t="turret_side"
+      item:t="turret_front"
+    }
+  }
+}
+
+t_34_100_turret_01_100mm_lb1{
+  _override:b=yes
+
+  "gun__ammoSetsInfo:shared:array"{
+
+    "defaultSet:array"{
+
+      "shell:object"{
+        blk:t="gamedata/gen/weapons/shells/100mm_lb1_100mm_ussr_aphe.blk"
+        name:t="100mm_br_412b"
+        type:t="aphebc_tank"
+      }
+    }
+
+    "100mm_ussr_HE:array"{
+
+      "shell:object"{
+        blk:t="gamedata/gen/weapons/shells/100mm_lb1_100mm_ussr_he.blk"
+        name:t="100mm_of_412"
+        type:t="he_frag_tank"
+      }
+    }
+
+    "100mm_ussr_Smoke:array"{
+
+      "shell:object"{
+        blk:t="gamedata/gen/weapons/shells/100mm_lb1_100mm_ussr_smoke.blk"
+        name:t="100mm_3d3"
+        type:t="smoke_tank"
+      }
+    }
+  }
+}
+
+ussr_t_34_100_common{
+  _use:t="base_t_34_100"
+  _use:t="ussr_t_34_85_d_5t_vehicle_sound"
+  commanderCockpitFpsCamMaxAngle:p2=40.0, 5.0
+  gunner_cam_limit__useCockpitDir:b=yes
+  item__iconOffset:p2=0.1, -0.0
+  item__iconScale:r=1.15
+  armorThicknessHull:p3=45.0, 45.0, 45.0
+  armorThicknessTurret:p3=54.0, 54.0, 54.0
+  armorThicknessTopBottom:p2=20.0, 20.0
+
+  "vehicle_seats__effectors:array"{
+  }
+
+  "vehicle_seats__seatsProvideOrder:tag"{
+  }
+
+  "vehicle_seats__seats:shared:array"{
+
+    "seats:object"{
+      name:t="commander"
+      nextSeat:t="main_gunner"
+      locName:t="vehicle_seats/commander"
+      attachNode:t="commander"
+      shouldHideOwner:b=yes
+      hatchRotationAxis:p3=1.5, 0.0, 0.0
+      ignoreAttachNodeRotation:b=yes
+      attachTm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-0.3, -0.25, 0.4]]
+      seatComponent:t="isDriver"
+      receiveDamageFromDMPart:t="commander"
+      cameraNodeName:t="bone_turret"
+      cockpitTemplate:t="ussr_t_34_100_commander_cockpit"
+      seatAnimUpper:t="drive_driver"
+      seatAnimLower:t="drive_driver"
+
+      "hatchNodes:array"{
+        node:t="hatch_01"
+      }
+
+      "effectors:object"{
+
+        "l.hand:object"{
+          rel_tm:m=[[0.391598, 0.751458, -0.531] [0.409445, -0.659117, -0.630811] [-0.824018, 0.0296089, -0.565788] [-0.302147, 1.20024, -0.316559]]
+          node:t="commander"
+        }
+
+        "r.hand:object"{
+          rel_tm:m=[[0.314163, 0.593487, -0.740996] [0.0276859, -0.78591, -0.617722] [-0.948964, 0.17355, -0.263334] [-0.0855331, 1.19989, -0.206207]]
+          node:t="commander"
+        }
+      }
+    }
+
+    "seats:object"{
+      name:t="main_gunner"
+      nextSeat:t="driver"
+      locName:t="vehicle_seats/gunner"
+      attachNode:t="gunner"
+      shouldHideOwner:b=yes
+      ignoreAttachNodeRotation:b=yes
+      attachTm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-0.3, -0.25, 0.4]]
+      seatComponent:t="isGunner"
+      receiveDamageFromDMPart:t="gunner"
+      cameraNodeName:t="bone_turret"
+      cockpitTemplate:t="ussr_t_34_100_gunner_cockpit"
+
+      "turretNames:array"{
+        turret:t="turret_01"
+        turret:t="turret_02"
+      }
+    }
+
+    "seats:object"{
+      name:t="driver"
+      locName:t="vehicle_seats/driver"
+      seatOwnsEntityControl:b=yes
+      attachNode:t="driver"
+      ignoreAttachNodeRotation:b=yes
+      attachTm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-0.25, -0.25, 0.0]]
+      seatComponent:t="isDriver"
+      shouldHideOwner:b=yes
+      receiveDamageFromDMPart:t="driver"
+      cameraNodeName:t="bone_camera_driver"
+      cockpitTemplate:t="ussr_t_34_100_driver_cockpit"
+    }
+
+    "seats:object"{
+      name:t="loader"
+      canPlaceManually:b=no
+      locName:t="vehicle_seats/loader"
+      attachNode:t="loader"
+      ignoreAttachNodeRotation:b=yes
+      attachTm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-0.25, -0.5, 0.0]]
+      seatComponent:t="isPassenger"
+      shouldHideOwner:b=yes
+      receiveDamageFromDMPart:t="loader"
+
+      "loaderTurretNames:array"{
+        turret:t="turret_01"
+      }
+    }
+  }
+}
+
+ussr_t_34_100_driver_cockpit{
+  _use:t="base_driver_cockpit"
+  animchar__res:t="kv_1_driver_char"
+  cockpit__offset:p3=-0.2, -0.0, -0.0
+
+  "cockpit__visibleVehicleNodeNames:list<t>"{
+    node:t="gun_barrel"
+  }
+
+  "cockpit__slitForwardOffset:list<r>"{
+    slit:r=0.07
+  }
+}
+
+ussr_t_34_100_gunner_cockpit{
+  _use:t="base_gunner_cockpit"
+  animchar__res:t="t_26_1940_gunner_char"
+  cockpit__minForwardOffset:r=0.01
+  cockpit__offset:p3=-0.0, -0.0, -0.0
+
+  "cockpit__cockpitOffsetBySlit:list<p3>"{
+    item:p3=-0.0, -0.040123, 0.194089
+    item:p3=0.1, 0.25, 0.42
+  }
+
+  "cockpit__attachNodeNames:list<t>"{
+    node:t="bone_camera_gunner"
+    node:t="bone_turret"
+  }
+
+  "cockpit__attachNodeIndices:list<i>"{
+  }
+
+  "cockpit__visibleVehicleNodeNames:list<t>"{
+    node:t="gun_barrel"
+    node:t="bone_turret"
+    node:t="bone_gun"
+  }
+
+  "cockpit__slitNodeNames:list<t>"{
+    slit:t="cam_front_right"
+    slit:t="cam_front"
+  }
+
+  "cockpit__slitForwardOffset:list<r>"{
+    slit:r=0.19
+    slit:r=0.21
+  }
+
+  "cockpit__slitIsGun:list<b>"{
+    slit:b=yes
+    slit:b=no
+  }
+
+  "cockpit__periscopeLimits:list<p4>"{
+    slit:p4=-0.0, 0.0, 0.0, 0.0
+    slit:p4=-45.0, 45.0, -0.0, 25.0
+  }
+
+  "cockpit__periscopeSpeed:list<p2>"{
+    slit:p2=-1.0, -1.0
+    slit:p2=35.0, 35.0
+  }
+
+  "cockpit__slitZoom:array"{
+
+    "slit:list<r>"{
+      zoom:r=3.5
+      zoom:r=4.0
+    }
+
+    "slit:list<r>"{
+      zoom:r=1.44
+    }
+  }
+
+  "cockpit__slitZoomTime:list<r>"{
+    slit:r=0.05
+    slit:r=0.0
+  }
+
+  "cockpit__slitTemplates:list<t>"{
+    slit:t="ussr_tsh_19"
+    slit:t="default_periscope"
+  }
+
+  "cockpit__slitEids:list<eid>"{
+  }
+}
+
+ussr_t_34_100_commander_cockpit{
+  _use:t="base_commander_cockpit_no_slits"
+  animchar__res:t="t_26_1940_commander_char"
+  cockpit__offset:p3=-0.5, 0.55, 0.4
+  cockpit__minForwardOffset:r=-0.0
+
+  "cockpit__cockpitOffsetBySlit:list<p3>"{
+    slit:p3=0.0, 0.0, 0.0
+  }
+
+  "cockpit__visibleVehicleNodeNames:list<t>"{
+    node:t="gun_barrel"
+    node:t="bone_turret"
+    node:t="bone_gun"
+    node:t="hatch_02"
+    node:t="hatch_03"
+    node:t="hatch_04"
+    node:t="@root"
+  }
+
+  "cockpit__slitForwardOffset:list<r>"{
+    slit:r=0.16
+  }
+
+  "cockpit__slitIsGun:list<b>"{
+    slit:b=yes
+  }
+
+  "cockpit__slitNodeNames:list<t>"{
+    slit:t="cam_front"
+  }
+
+  "cockpit__periscopeLimits:list<p4>"{
+    slit:p4=-90.0, 90.0, -5.0, 25.0
+  }
+
+  "cockpit__periscopeSpeed:list<p2>"{
+    slit:p2=35.0, 35.0
+  }
+
+  "cockpit__slitZoom:array"{
+
+    "slit:list<r>"{
+      zoom:r=1.44
+    }
+  }
+
+  "cockpit__slitZoomTime:list<r>"{
+    slit:r=0.0
+  }
+
+  "cockpit__slitTemplates:list<t>"{
+    slit:t="default_periscope"
+  }
+
+  "cockpit__slitEids:list<eid>"{
+  }
+}

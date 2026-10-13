@@ -1,0 +1,191 @@
+from "%ui/style/fontsStyle.nut" import fontHeading2, fontSub
+from "%ui/style/designConst.nut" import defTxtColor, noteTxtColor, midPadding, textBgBlurColor, smallPadding, hoverBgColor, defBgColor
+  , hoverTxtColor, activeTxtColor
+from "%ui/ui_library.nut" import *
+
+let txt = @(text) {
+  rendObj = ROBJ_TEXT
+  color = defTxtColor
+}.__update(typeof text != "table" ? { text = text } : text, fontSub)
+
+let note = @(text) {
+  rendObj = ROBJ_TEXT
+  color = noteTxtColor
+}.__update(typeof text != "table" ? { text = text } : text, fontSub)
+
+let noteTextArea = @(text) {
+  size = FLEX_H
+  rendObj = ROBJ_TEXTAREA
+  behavior = Behaviors.TextArea
+  color = noteTxtColor
+}.__update(typeof text != "table" ? { text } : text, fontSub)
+
+function bigTextWithNote(noteText, mainText) {
+  let mainTextParams = (typeof mainText == "table") ? mainText : { text = mainText }
+  return {
+    flow = FLOW_HORIZONTAL
+    children = [
+      note(noteText)
+      {
+        rendObj = ROBJ_TEXT
+        color = defTxtColor
+        margin = [0, midPadding]
+      }.__update(fontHeading2, mainTextParams)
+    ]
+  }
+}
+
+let sceneHeaderText = @(text) {
+  rendObj = ROBJ_TEXT
+  text
+  color = defTxtColor
+}.__update(fontHeading2)
+
+let sceneHeader = @(text) {
+  rendObj = ROBJ_WORLD_BLUR_PANEL
+  color = textBgBlurColor
+  padding = [0, smallPadding]
+  children = sceneHeaderText(text)
+}
+
+function btn(params){
+  let sFlags = params?.stateFlags ?? Watched(0)
+  let group = params?.group ?? ElemGroup()
+  let text = params?.text
+  let fillColorCtr = params?.fillColorCtr ?? @(flags) flags & S_HOVER ? hoverBgColor : defBgColor
+  let colorCtr = params?.colorCtr ?? @(flags) flags & S_HOVER ? hoverTxtColor : defTxtColor
+  return @() {
+    watch = [sFlags]
+    onElemState = @(sf) sFlags.set(sf)
+    group = group
+    rendObj = ROBJ_BOX
+    size = SIZE_TO_CONTENT
+    padding = hdpx(2)
+    children = {
+      color = colorCtr(sFlags.get())
+      rendObj = ROBJ_TEXT text=text
+    }
+    fillColor = fillColorCtr(sFlags.get())
+    borderWidth = 0
+    behavior = [Behaviors.Button]
+    halign = ALIGN_CENTER
+  }.__update(params)
+}
+
+
+function mCtor(ctor, selCtor, watch, checkSelected=@(_opt, idx, watched) watched.value==idx, onSelect=null, clickHandler = null, dblClickHandler = null){
+  return function (opt, idx) {
+    let group = ElemGroup()
+    let stateFlags = Watched(0)
+    onSelect = onSelect ?? @(_opt, i) watch(i)
+    clickHandler = clickHandler ?? @(_opt, _idx) null
+    dblClickHandler = dblClickHandler ?? @(_opt, _idx) null
+    return @(){
+      children = checkSelected(opt,idx,watch) ? selCtor(opt, idx, group, stateFlags) : ctor(opt, idx, group, stateFlags)
+      size = SIZE_TO_CONTENT
+      behavior = Behaviors.Button
+      onElemState=@(sf) stateFlags.set(sf)
+      watch = stateFlags
+      onClick = @() onSelect(opt, idx) || clickHandler(opt, idx)
+      onDoubleClick = @() dblClickHandler(opt,idx)
+    }
+  }
+}
+
+function genericSelList(params = {}){
+  
+  
+  let watch = params.watch
+  let options = params.options
+  let ctor = params.ctor
+  let selCtor = params?.selCtor ?? ctor
+  let checkSelected = params?.checkSelected ?? @(_opt, idx, obs) obs.value==idx
+  let onSelect = params?.onSelect
+  return function(){
+    let ct = mCtor(ctor, selCtor, watch, checkSelected, onSelect, params?.clickHandler, params?.dblClickHandler)
+    return {
+      flow = FLOW_HORIZONTAL
+      children = options.map(ct)
+      gap = hdpx(1)
+      size = SIZE_TO_CONTENT
+      watch = watch
+    }.__update(params?.style ?? {})
+  }
+}
+
+function select(watch, options, objStyle = {flow=FLOW_HORIZONTAL, gap=hdpx(5) rendObj=ROBJ_SOLID color=Color(0,0,0,50)}){
+  return genericSelList({
+    watch=watch, options=options, style = objStyle
+    checkSelected = @(opt, _idx, watched) watched.value==opt
+    ctor = @(opt, idx, _group, _stateFlags) txt({text=opt, key=idx})
+    selCtor = @(opt, idx, _group, _stateFlags) txt({text=opt color = Color(255,255,255), key=idx})
+    onSelect = @(opt, _idx) watch(opt)
+  })
+}
+
+function autoscrollText(allParams) {
+  let { text, size = FLEX_H, group = null, color = null, vplace = null, textParams = {}, params = {} } = allParams
+  return {
+    size
+    group
+    vplace
+    clipChildren = true
+    children = {
+      size
+      behavior = group ? Behaviors.Marquee : [Behaviors.Marquee, Behaviors.Button]
+      skipDirPadNav = group == null
+      group
+      scrollOnHover = true
+      children = txt({ text, color }.__update(textParams))
+    }.__merge(params)
+  }
+}
+
+let progressBar = kwarg(function(value, height = hdpx(7), width = FLEX,
+  color = activeTxtColor, bgColor = defBgColor, addValue = 0,
+  addValueColor = activeTxtColor, addValueAnimations = null, customStyle = {}
+) {
+  let valueProgress = clamp(100.0 * value, 0, 100)
+  return {
+    rendObj = ROBJ_BOX
+    size = [width, height]
+    flow = FLOW_HORIZONTAL
+    margin = [smallPadding, 0]
+    fillColor = bgColor
+    borderColor = color
+    borderWidth = hdpx(1)
+    children = [
+      {
+        rendObj = ROBJ_SOLID
+        size = [pw(valueProgress), FLEX]
+        color = color
+      }
+      addValue > 0
+        ? {
+            rendObj = ROBJ_SOLID
+            size = [pw(clamp(100.0 * addValue, 0, 100 - valueProgress)), FLEX]
+            color = addValueColor
+            transform = { pivot = [0, 0] }
+            animations = addValueAnimations
+          }
+        : null
+    ]
+  }.__update(customStyle)
+})
+
+return {
+  txt
+  note
+  noteTextArea
+  autoscrollText
+  bigTextWithNote
+  sceneHeader
+  sceneHeaderText
+  btn
+  horSelect = @(watch, options, style={gap=hdpx(5) rendObj=ROBJ_SOLID color=Color(0,0,0,50)})
+    select(watch, options, style.__merge({flow=FLOW_HORIZONTAL}))
+  verSelect = @(watch, options, style={gap=hdpx(5) rendObj=ROBJ_SOLID color=Color(0,0,0,50)})
+    select(watch, options, style.__merge({flow=FLOW_VERTICAL}))
+  select = genericSelList
+  progressBar
+}

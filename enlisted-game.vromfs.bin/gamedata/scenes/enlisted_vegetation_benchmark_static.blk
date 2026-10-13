@@ -1,0 +1,118 @@
+import{
+  scene:t="gamedata/scenes/_normandy_sounds.blk"
+}
+
+import{
+  scene:t="gamedata/scenes/_normandy_shore_sound.blk"
+}
+
+import{
+  scene:t="gamedata/scenes/_normandy_coastal_area_fx.blk"
+}
+
+entity{
+  _template:t="door_mult_ent_generator"
+  ri_extra_gen__blk:t="gamedata/normandy_doors.blk"
+}
+
+entity{
+  _template:t="shaderVars"
+
+  "shader_vars__vars:object"{
+    hmap_displacement_up:r=0.3
+    ocean1:c=67, 65, 42, 0
+    ocean0:c=51, 45, 18, 0
+    ocean_density:r=1.0
+    land_selfillum_worldscale:r=0.9
+    river1:c=67, 65, 42, 0
+    river0:c=51, 45, 18, 0
+    hmap_displacement_down:r=-0.15
+    autodetect_land_selfillum_color:p4=0.53, 0.0, 0.0, 0.16
+    paint_details_tex:t="normandy_wall_color_tex_palette*"
+    puddle_increase:r=0.01
+    land_selfillum_strength:r=32.0
+    water_color_noise_size:r=71.0
+    river_density:r=1.0
+  }
+}
+
+entity{
+  _template:t="postfx_color_grading_tonemap_death_alive_enlisted"
+}
+
+entity{
+  _template:t="bloom"
+}
+
+entity{
+  _template:t="postfx_roundctrl"
+}
+
+entity{
+  _template:t="level"
+  level__blk:t="levels/normandy_coastal_area_1x1.blk"
+  level__timeRange:p2=5.0, 19.2
+  level__day:i=9
+  level__month:i=6
+
+  "level__weatherChoice:object"{
+    weather_clear_a:r=1.0
+  }
+
+  "level__timeVec:array"{
+    level__timeVec:r=16.5
+  }
+}
+
+entity{
+  _template:t="volfog_nbs"
+  volfog_nbs__rootGraph:t="fog_normandy_coastal_area.json"
+}
+
+entity{
+  _template:t="volfog_nbs"
+  volfog_nbs__rootGraph:t="fog_normandy_coastal_area.json"
+}
+
+entity{
+  _template:t="envi_cover_nbs"
+  envi_cover_nbs__rootGraph:t="envi_cover_manchuria.json"
+}
+
+entity{
+  _template:t="water"
+  water__strength:r=0.27
+}
+
+entity{
+  _template:t="wind"
+  wind__strength:r=2.0
+}
+
+entity{
+  _template:t="screen_fade_anim"
+  screen_fade:r=0.9
+  anim_track_on:b=yes
+}
+
+entity{
+  _template:t="benchmark"
+  benchmark_name:t="normandy"
+
+  "camera_tracks:array"{
+
+    "camera_tracks:object"{
+      from_fov:r=90.0
+      from_pos:p3=239.379, 7.54842, -41.2043
+      to_dir:p3=0.736488, 0.0, -0.676451
+      duration:r=10000.0
+      to_pos:p3=239.379, 7.54842, -41.2043
+      to_fov:r=90.0
+      from_dir:p3=0.736488, 0.0, -0.676451
+    }
+  }
+}
+
+entity{
+  _template:t="ui_disabled"
+}

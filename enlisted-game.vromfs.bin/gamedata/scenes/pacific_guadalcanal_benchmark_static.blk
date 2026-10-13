@@ -1,0 +1,44 @@
+import{
+  scene:t="gamedata/scenes/_pacific_guadalcanal_benchmark_common.blk"
+}
+
+entity{
+  _template:t="screen_fade_anim"
+  screen_fade:r=0.9
+  anim_track_on:b=yes
+}
+
+entity{
+  _template:t="ui_disabled"
+}
+
+entity{
+  _template:t="benchmark"
+  benchmark_name:t="pacific_guadalcanal"
+
+  "camera_tracks:array"{
+
+    "camera_tracks:object"{
+      from_fov:r=90.0
+      from_pos:p3=-639.175, 46.2693, 45.7224
+      to_dir:p3=0.804491, 0.0, -0.593965
+      duration:r=10000.0
+      to_pos:p3=-639.175, 46.2693, 45.7224
+      to_fov:r=90.0
+      from_dir:p3=0.804491, 0.0, -0.593965
+    }
+  }
+}
+
+entity{
+  _template:t="artillery_strike_requester"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-594.257, 24.2603, -42.9584]]
+  artillery__baseInterval:r=30.0
+  artillery__baseSpawnDelay:r=45.0
+  artillery__interval:r=60.0
+  artillery__missionStartDelay:r=15.0
+  artillery__spawnDelay:r=15.0
+  artillery__lastShotInTime:r=130.069
+  artilleryStrikeSpawnPeriod:r=60.0
+  artilleryStrikeSpawnTime:r=30.0
+}

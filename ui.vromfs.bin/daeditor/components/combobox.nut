@@ -1,0 +1,249 @@
+from "%darg/ui_imports.nut" import *
+from "types" import Table
+let comboStyle = require("combobox.style.nut")
+let {setTooltip} = require("cursors.nut")
+
+local ComboPopupLayer = 1
+if ("Layers" in getconsttable()) {
+  ComboPopupLayer = getconsttable()?["Layers"].ComboPopup ?? 1
+}
+
+let popupContentAnim = [
+  { prop=AnimProp.opacity, from=0, to=1, duration=0.12, play=true, easing=InOutQuad }
+  { prop=AnimProp.scale, from=[1,0], to=[1,1], duration=0.12, play=true, easing=InOutQuad }
+]
+
+let popupWrapperAnim = [
+  { prop=AnimProp.opacity, from=1, to=0, duration=0.15, playFadeOut=true}
+  { prop=AnimProp.scale, from=[1,1], to=[1,0], duration=0.15, playFadeOut=true, easing=OutQuad}
+]
+
+
+function itemToOption(item, wdata){
+  let tp = type(item)
+  local value
+  local text
+  local isCurrent
+  if (tp == "array") {
+    value = item[0]
+    text  = item[1]
+    isCurrent = wdata.get()==value
+  } else if (tp == "instance") {
+    value = item.get()
+    text  = item.tostring()
+    isCurrent = item.isCurrent()
+  } else if (item == null) {
+    value = null
+    text = "NULL"
+    isCurrent = false
+  } else {
+    value = item
+    text = value.tostring()
+    isCurrent = wdata.get()==value
+  }
+  return {
+    value
+    isCurrent
+    text
+  }
+}
+
+
+function findCurOption(opts, wdata){
+  local found
+  foreach (item in opts) {
+    let f = itemToOption(item, wdata)
+    let {value, isCurrent} = f
+    if (wdata.get() == value || isCurrent) {
+      found = f
+      break
+    }
+  }
+  return found!=null ? found : itemToOption(opts?[0], wdata)
+}
+
+
+function setValueByOptions(opts, wdata, wupdate){
+  wupdate(findCurOption(opts, wdata).value)
+}
+
+
+function popupWrapper(popupContent, dropDirDown) {
+  let align = dropDirDown ? ALIGN_TOP : ALIGN_BOTTOM
+  let children = [
+    {size = const [flex(), ph(100)]}
+    {size = const [flex(), hdpx(2)]}
+    popupContent
+  ]
+
+  if (!dropDirDown)
+    children.reverse()
+
+  return {
+    size = flex()
+    flow = FLOW_VERTICAL
+    vplace = align
+    valign = align
+    
+    
+    children
+  }
+}
+
+
+function dropdownBgOverlay(onClick) {
+  return {
+    pos = const [-9000, -9000]
+    size = const [19999, 19999]
+    behavior = Behaviors.ComboPopup
+    eventPassThrough = true
+    onClick
+  }
+}
+
+
+function combobox(watches, options, tooltip=null, combo_style=comboStyle) {
+  if (type(options)!="instance")
+    options = Watched(options)
+
+  let comboOpen = Watched(false)
+  let group = ElemGroup()
+  let stateFlags = Watched(0)
+  let doClose = @() comboOpen.set(false)
+  local wdata, wdisable, wupdate
+  let dropDirDown = combo_style?.dropDir != "up"
+  let itemHeight = options.get().len() > 0 ? calc_comp_size(combo_style.listItem(options.get()[0], @() null, false))[1] : sh(5)
+  let itemGapHt = calc_comp_size(combo_style?.itemGap)[1]
+  local changeVarOnListUpdate = true
+  let xmbNode = combo_style?.xmbNode ?? XmbNode()
+
+  if (watches instanceof Table) {
+    wdata = watches.value
+    wdisable = watches?.disable ?? Watched(false)
+    wupdate = watches?.update ?? @(v) wdata.set(v)
+    changeVarOnListUpdate = watches?.changeVarOnListUpdate ?? changeVarOnListUpdate
+  } else {
+    wdata = watches
+    wdisable = Watched(false)
+    wupdate = @(v) wdata.set(v)
+  }
+
+
+  local onAttachRoot, onDetachRoot
+  if (changeVarOnListUpdate) {
+    function inputWatchesChangeListener(_) {
+      setValueByOptions(options.get(), wdata, wupdate)
+    }
+
+    onAttachRoot = function onAttachRootImpl() {
+      options.subscribe_with_nasty_disregard_of_frp_update(inputWatchesChangeListener)
+      wdata.subscribe_with_nasty_disregard_of_frp_update(inputWatchesChangeListener)
+    }
+
+    onDetachRoot = function onDetachRootImpl() {
+      options.unsubscribe(inputWatchesChangeListener)
+      wdata.unsubscribe(inputWatchesChangeListener)
+    }
+  }
+
+
+  function dropdownList() {
+    let xmbNodes = options.get().map(@(_) XmbNode())
+    local curXmbNode = xmbNodes?[0]
+    let children = options.get().map(function(item, idx) {
+      let {value, text, isCurrent} = itemToOption(item, wdata)
+      if (isCurrent)
+        curXmbNode = xmbNodes[idx]
+
+      function handler() {
+        wupdate(value)
+        comboOpen.set(false)
+      }
+      return combo_style.listItem(text, handler, isCurrent, { xmbNode = xmbNodes[idx] })
+    })
+
+    local onAttachPopup = null
+    local onDetachPopup = null
+    if (combo_style?.onOpenDropDown)
+      onAttachPopup = @() combo_style.onOpenDropDown(curXmbNode)
+    if (combo_style?.onCloseDropDown)
+      onDetachPopup = @() combo_style.onCloseDropDown(xmbNode)
+
+    let popupContent = {
+      size = FLEX_H
+      rendObj = ROBJ_BOX
+      fillColor = combo_style?.popupBgColor ?? Color(10,10,10)
+      borderColor = combo_style?.popupBdColor ?? Color(80,80,80)
+      borderWidth = combo_style?.popupBorderWidth ?? 0
+      padding = combo_style?.popupBorderWidth ?? 0
+      stopMouse = true
+      clipChildren = true
+      xmbNode = XmbContainer({scrollToEdge=true})
+      children = {
+        behavior = Behaviors.WheelScroll
+        joystickScroll = true
+        flow = FLOW_VERTICAL
+        children
+        gap = combo_style?.itemGap
+        size = FLEX_H
+        maxHeight = itemHeight*10.5 + itemGapHt*9 
+        
+      }
+
+      transform = {
+        pivot = [0.5, dropDirDown ? 0 : 1]
+      }
+      animations = popupContentAnim
+      onAttach = onAttachPopup
+      onDetach = onDetachPopup
+    }
+
+
+    return {
+      zOrder = ComboPopupLayer
+      size = flex()
+      watch = options
+      children = [
+        dropdownBgOverlay(doClose)
+        combo_style.closeButton(doClose)
+        popupWrapper(popupContent, dropDirDown)
+      ]
+      transform = { pivot=[0.5, dropDirDown ? 1.1 : -0.1]}
+      animations = popupWrapperAnim
+    }
+  }
+
+  let key = {} 
+
+  return function combo() {
+    let labelText = findCurOption(options.get(), wdata).text
+    let showDropdown = comboOpen.get() && !wdisable.get()
+    let children = [
+      combo_style.boxCtor({group, stateFlags, disabled=wdisable.get(), comboOpen, text=labelText}),
+      showDropdown ? dropdownList : null
+    ]
+
+    let onClick = wdisable.get() ? null : @() comboOpen.set(!comboOpen.get())
+
+    return (combo_style?.rootBaseStyle ?? {}).__merge({
+      key
+      size = flex()
+      
+      behavior = Behaviors.Button
+      watch = [comboOpen, watches?.disable, wdata, options]
+      group
+      onElemState = @(sf) stateFlags.set(sf)
+
+      children
+      onClick
+      xmbNode
+
+      onAttach = onAttachRoot
+      onDetach = onDetachRoot
+      onHover = tooltip != null ? @(on) setTooltip(on ? tooltip : null) : null
+    })
+  }
+}
+
+
+return combobox

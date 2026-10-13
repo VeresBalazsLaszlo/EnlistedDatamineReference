@@ -1,0 +1,273 @@
+require ecs
+require ecs.common
+require vehicle
+require game.es.input.input_events
+require DagorInput
+require DngInputControls
+require enlisted.events_enlisted
+require common_shooter.es.input.turret_input_common
+require PhysVars
+
+enum PlaneTrigger : int
+  MACHINE_GUNS
+  CANNONS
+  BOMBS
+  ROCKETS
+  ADDITIONAL_GUNS
+
+
+
+def init(var plane_input__bomb : int&;
+         var plane_input__rocket : int&;
+         var plane_input__aim : int&;
+         var plane_input__zoomToggle : int&;
+         var plane_input__shoot : int&;
+         var plane_input__shootCannons : int&;
+         var plane_input__shootAdditionalGuns : int&;
+         var plane_input__bomberCockpitToggle : int&)
+  plane_input__bomb                = int(get_action_handle("Plane.Bomb", TYPEGRP_DIGITAL))
+  plane_input__rocket              = int(get_action_handle("Plane.Rocket", TYPEGRP_DIGITAL))
+  plane_input__aim                 = int(get_action_handle("Plane.Aim", TYPEGRP_STICK))
+  plane_input__zoomToggle          = int(get_action_handle("Plane.ZoomToggle", TYPEGRP_DIGITAL))
+  plane_input__shoot               = int(get_action_handle("Plane.Shoot", TYPEGRP_DIGITAL))
+  plane_input__shootCannons        = int(get_action_handle("Plane.ShootCannons", TYPEGRP_DIGITAL))
+  plane_input__shootAdditionalGuns = int(get_action_handle("Plane.ShootAdditionalGuns", TYPEGRP_DIGITAL))
+  plane_input__bomberCockpitToggle = int(get_action_handle("Plane.BomberCockpitToggle", TYPEGRP_DIGITAL))
+
+
+
+def reset(var plane_input__bomb : int&;
+          var plane_input__rocket : int&;
+          var plane_input__aim : int&;
+          var plane_input__zoomToggle : int&;
+          var plane_input__shoot : int&;
+          var plane_input__shootCannons : int&;
+          var plane_input__shootAdditionalGuns : int&;
+          var plane_input__bomberCockpitToggle : int&)
+  plane_input__bomb                = int(BAD_ACTION_HANDLE)
+  plane_input__rocket              = int(BAD_ACTION_HANDLE)
+  plane_input__aim                 = int(BAD_ACTION_HANDLE)
+  plane_input__zoomToggle          = int(BAD_ACTION_HANDLE)
+  plane_input__shoot               = int(BAD_ACTION_HANDLE)
+  plane_input__shootCannons        = int(BAD_ACTION_HANDLE)
+  plane_input__shootAdditionalGuns = int(BAD_ACTION_HANDLE)
+  plane_input__bomberCockpitToggle = int(BAD_ACTION_HANDLE)
+
+[es(tag=input, on_appear)]
+def plane_turret_input_appear(evt : Event;
+                              var plane_input__bomb : int&;
+                              var plane_input__rocket : int&;
+                              var plane_input__aim : int&;
+                              var plane_input__zoomToggle : int&;
+                              var plane_input__shoot : int&;
+                              var plane_input__shootCannons : int&;
+                              var plane_input__shootAdditionalGuns : int&;
+                              var plane_input__bomberCockpitToggle : int&)
+  init(plane_input__bomb, plane_input__rocket, plane_input__aim, plane_input__zoomToggle,
+       plane_input__shoot, plane_input__shootCannons, plane_input__shootAdditionalGuns,
+       plane_input__bomberCockpitToggle)
+
+[es(tag=input, on_disappear)]
+def plane_turret_input_disappear(evt : Event;
+                                 var plane_input__bomb : int&;
+                                 var plane_input__rocket : int&;
+                                 var plane_input__aim : int&;
+                                 var plane_input__zoomToggle : int&;
+                                 var plane_input__shoot : int&;
+                                 var plane_input__shootCannons : int&;
+                                 var plane_input__shootAdditionalGuns : int&;
+                                 var plane_input__bomberCockpitToggle : int&)
+  reset(plane_input__bomb, plane_input__rocket, plane_input__aim, plane_input__zoomToggle,
+        plane_input__shoot, plane_input__shootCannons, plane_input__shootAdditionalGuns,
+        plane_input__bomberCockpitToggle)
+
+[es(tag=input)]
+def plane_turret_input_init_reset(evt : EventDaInputInit;
+                                  var plane_input__bomb : int&;
+                                  var plane_input__rocket : int&;
+                                  var plane_input__aim : int&;
+                                  var plane_input__zoomToggle : int&;
+                                  var plane_input__shoot : int&;
+                                  var plane_input__shootCannons : int&;
+                                  var plane_input__shootAdditionalGuns : int&;
+                                  var plane_input__bomberCockpitToggle : int&)
+  if evt.init
+    init(plane_input__bomb, plane_input__rocket, plane_input__aim, plane_input__zoomToggle,
+         plane_input__shoot, plane_input__shootCannons, plane_input__shootAdditionalGuns,
+         plane_input__bomberCockpitToggle)
+  else
+    reset(plane_input__bomb, plane_input__rocket, plane_input__aim, plane_input__zoomToggle,
+          plane_input__shoot, plane_input__shootCannons, plane_input__shootAdditionalGuns,
+          plane_input__bomberCockpitToggle)
+
+
+[es(on_appear, REQUIRE=resolvedTurret)]
+def plane_turret_init_triggers(evt : Event;
+                               turret__owner : EntityId;
+                               turret__id : int;
+                               var turret__triggerGroup : int&)
+  query(turret__owner) <| $ [es(REQUIRE=airplane)] (@shared_comp turret_control__turretInfo : Array)
+    let obj = get_ecs_object(turret_control__turretInfo[turret__id])
+    let trigger = get_string(obj, "trigger", "")
+    turret__triggerGroup = int(
+      trigger == "additional_guns" ? PlaneTrigger.ADDITIONAL_GUNS :
+      trigger == "cannons" ? PlaneTrigger.CANNONS :
+      trigger == "bombs" ? PlaneTrigger.BOMBS :
+      trigger == "rockets" ? PlaneTrigger.ROCKETS :
+      PlaneTrigger.MACHINE_GUNS
+    )
+
+[es(tag=input)]
+def plane_input_gunner_es(info : ParallelUpdateFrameDelayed;
+                          input__enabled : bool;
+                          phys_vars : PhysVars;
+                          plane_input__shoot : int;
+                          plane_input__shootCannons : int;
+                          plane_input__shootAdditionalGuns : int;
+                          turret_control__gunEids : EidList;
+                          bomber_cockpit__active : bool = false)
+  if !input__enabled
+    return
+  for gunEid in turret_control__gunEids
+    query(gunEid) <| $ [es(REQUIRE=resolvedTurret)] (turret__triggerGroup : int; var turret_input__shootFlag : bool&)
+      if bomber_cockpit__active && turret__triggerGroup != int(PlaneTrigger.BOMBS)
+        turret_input__shootFlag = false
+        return
+
+      var shootAction = int(BAD_ACTION_HANDLE)
+      if turret__triggerGroup == int(PlaneTrigger.MACHINE_GUNS)
+        shootAction = plane_input__shoot
+      elif turret__triggerGroup == int(PlaneTrigger.CANNONS)
+        shootAction = plane_input__shootCannons
+      elif turret__triggerGroup == int(PlaneTrigger.ADDITIONAL_GUNS)
+        shootAction = plane_input__shootAdditionalGuns
+
+      if shootAction != int(BAD_ACTION_HANDLE) && get_digital_action_state(uint16(shootAction)).bActive
+        turret_input__shootFlag = get_digital_action_state(uint16(shootAction)).bState
+
+      query(gunEid) <| $ [es] (turret__curYawVarId : int; turret__curPitchVarId : int; turret__limitsDeadzone : Point4List)
+        for deadZone in turret__limitsDeadzone
+          let curPitch = getVar(phys_vars, turret__curPitchVarId)
+          let curYaw = getVar(phys_vars, turret__curYawVarId)
+          if ((curYaw > deadZone.x && curYaw < deadZone.y) &&
+            (curPitch > deadZone.z && curPitch < deadZone.w))
+            turret_input__shootFlag = false
+            break
+
+[es(tag=input, track=bomber_cockpit__active)]
+def plane_input_bomber_cockpit_stop_non_bomb_weapons_es(evt : Event;
+                                                        bomber_cockpit__active : bool;
+                                                        turret_control__gunEids : EidList)
+  if !bomber_cockpit__active
+    return
+  stop_weapons(turret_control__gunEids, int(PlaneTrigger.MACHINE_GUNS))
+  stop_weapons(turret_control__gunEids, int(PlaneTrigger.CANNONS))
+  stop_weapons(turret_control__gunEids, int(PlaneTrigger.ADDITIONAL_GUNS))
+  stop_weapons(turret_control__gunEids, int(PlaneTrigger.ROCKETS))
+
+[es(tag=input)]
+def plane_input_zoom_triggered(evt : EventDaInputActionTriggered;
+                               input__enabled : bool;
+                               plane_input__zoomToggle : int;
+                               var vehicle_input__isZoom : bool&)
+  if input__enabled && int(evt.action) == plane_input__zoomToggle
+    vehicle_input__isZoom = true
+
+[es(tag=input)]
+def plane_input_zoom_terminated(evt : EventDaInputActionTerminated;
+                                input__enabled : bool;
+                                plane_input__zoomToggle : int;
+                                var vehicle_input__isZoom : bool&)
+  if input__enabled && int(evt.action) == plane_input__zoomToggle
+    vehicle_input__isZoom = false
+
+[es(tag=input, after=plane_input_gunner_es)]
+def plane_input_gunner_aim(info : ParallelUpdateFrameDelayed;
+                           input__enabled : bool;
+                           turret_control__gunEids : EidList;
+                           plane_input__aim : int)
+  if !input__enabled
+    return
+  var aAim = get_analog_stick_action_state(uint16(plane_input__aim))
+  assume sens_scale = get_sens_scale()
+  aAim.x *= sens_scale.vehicleCam
+  aAim.y *= sens_scale.vehicleCam
+
+  apply_turret_input(turret_control__gunEids, aAim)
+
+[es(tag=input)]
+def plane_input_sight_zoom_triggered(evt : EventDaInputActionTriggered;
+                                     cockpit__eid : EntityId;
+                                     input__enabled : bool;
+                                     plane_input__zoomToggle : int;
+                                     var plane_input__mouseAimLimitYaw : float2&;
+                                     var plane_input__mouseAimLimitPitch : float2&)
+  if input__enabled && int(evt.action) == plane_input__zoomToggle
+    toggle_telesight_zoom(cockpit__eid, plane_input__zoomToggle,
+                          plane_input__mouseAimLimitYaw, plane_input__mouseAimLimitPitch)
+
+[es(tag=input)]
+def plane_input_sight_zoom_terminated(evt : EventDaInputActionTerminated;
+                                      cockpit__eid : EntityId;
+                                      input__enabled : bool;
+                                      plane_input__zoomToggle : int;
+                                      var plane_input__mouseAimLimitYaw : float2&;
+                                      var plane_input__mouseAimLimitPitch : float2&)
+  if input__enabled && int(evt.action) == plane_input__zoomToggle
+    toggle_telesight_zoom(cockpit__eid, plane_input__zoomToggle,
+                          plane_input__mouseAimLimitYaw, plane_input__mouseAimLimitPitch)
+
+[es(tag=input)]
+def plane_input_bomb_input_triggered(evt : EventDaInputActionTriggered;
+                                     input__enabled : bool;
+                                     plane_input__bomb : int;
+                                     turret_control__gunEids : EidList;
+                                     turret_control__bombsSalvoSize : int)
+  if input__enabled && int(evt.action) == plane_input__bomb
+    let triggerState = get_digital_action_state(uint16(plane_input__bomb)).bState
+    release_weapon(turret_control__gunEids, triggerState, int(PlaneTrigger.BOMBS), turret_control__bombsSalvoSize)
+
+[es(tag=input)]
+def plane_input_bomb_input_terminate(evt : EventDaInputActionTerminated;
+                                     input__enabled : bool;
+                                     plane_input__bomb : int;
+                                     turret_control__gunEids : EidList)
+  if input__enabled && int(evt.action) == plane_input__bomb
+    stop_weapons(turret_control__gunEids, int(PlaneTrigger.BOMBS))
+
+[es(tag=input)]
+def plane_input_rocket_input_triggered(evt : EventDaInputActionTriggered;
+                                       input__enabled : bool;
+                                       plane_input__rocket : int;
+                                       turret_control__gunEids : EidList;
+                                       turret_control__rocketsSalvoSize : int;
+                                       bomber_cockpit__active : bool = false)
+  if input__enabled && !bomber_cockpit__active && int(evt.action) == plane_input__rocket
+    let triggerState = get_digital_action_state(uint16(plane_input__rocket)).bState
+    release_weapon(turret_control__gunEids, triggerState, int(PlaneTrigger.ROCKETS), turret_control__rocketsSalvoSize)
+
+[es(tag=input)]
+def plane_input_rocket_input_terminate(evt : EventDaInputActionTerminated;
+                                       input__enabled : bool;
+                                       plane_input__rocket : int;
+                                       turret_control__gunEids : EidList)
+  if input__enabled && int(evt.action) == plane_input__rocket
+    stop_weapons(turret_control__gunEids, int(PlaneTrigger.ROCKETS))
+
+[es(tag=input)]
+def plane_input_bomber_cockpit_triggered(evt : EventDaInputActionTriggered;
+                                         input__enabled : bool;
+                                         plane_input__bomberCockpitToggle : int;
+                                         vehicleCameraType : int;
+                                         bomber_cockpit__impactCalcInited : bool;
+                                         bomber_cockpit__hasLoadedBombs : bool;
+                                         var bomber_cockpit__active : bool&)
+  if !input__enabled || int(evt.action) != plane_input__bomberCockpitToggle
+    return
+  if !bomber_cockpit__impactCalcInited
+    return
+  if vehicleCameraType != int(VehicleCameraType.VEHICLE_CAMERA_DRIVER) && vehicleCameraType != int(VehicleCameraType.VEHICLE_CAMERA_BOMBER_COCKPIT)
+    return
+  if vehicleCameraType == int(VehicleCameraType.VEHICLE_CAMERA_DRIVER) && !bomber_cockpit__hasLoadedBombs
+    return
+  bomber_cockpit__active = !bomber_cockpit__active

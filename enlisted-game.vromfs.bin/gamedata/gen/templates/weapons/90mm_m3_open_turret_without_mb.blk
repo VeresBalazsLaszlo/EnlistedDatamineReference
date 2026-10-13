@@ -1,0 +1,61 @@
+base_90mm_m3_open_turret_without_mb{
+  item__name:t="guns/90mm_m3_open_turret_without_mb"
+  gun__blk:t="gamedata/gen/weapons/90mm_m3_open_turret_without_mb.blk"
+  gun__shotFreq:r=0.1334
+  gun__locName:t="90mm_m3_open_turret_without_mb"
+
+  "gun__ammoSetsInfo:shared:array"{
+
+    "defaultSet:array"{
+
+      "shell:object"{
+        blk:t="gamedata/gen/weapons/shells/90mm_m3_open_turret_without_mb_defaultset.blk"
+        name:t="90mm_m77"
+        type:t="ap_tank"
+      }
+    }
+
+    "90mm_us_M71_HE:array"{
+
+      "shell:object"{
+        blk:t="gamedata/gen/weapons/shells/90mm_m3_open_turret_without_mb_90mm_us_m71_he.blk"
+        name:t="90mm_m71"
+        type:t="he_frag_tank"
+      }
+    }
+
+    "90mm_us_M82_APCBC:array"{
+
+      "shell:object"{
+        blk:t="gamedata/gen/weapons/shells/90mm_m3_open_turret_without_mb_90mm_us_m82_apcbc.blk"
+        name:t="90mm_m82"
+        type:t="apcbc_tank"
+      }
+    }
+
+    "90mm_us_M304_APCR:array"{
+
+      "shell:object"{
+        blk:t="gamedata/gen/weapons/shells/90mm_m3_open_turret_without_mb_90mm_us_m304_apcr.blk"
+        name:t="90mm_m304"
+        type:t="apcr_tank"
+      }
+    }
+
+    "90mm_us_M313_Smoke:array"{
+
+      "shell:object"{
+        blk:t="gamedata/gen/weapons/shells/90mm_m3_open_turret_without_mb_90mm_us_m313_smoke.blk"
+        name:t="90mm_m313"
+        type:t="smoke_tank"
+      }
+    }
+  }
+}
+
+tankgun_90mm_m3_open_turret_without_mb{
+  _use:t="tankgun"
+  _use:t="base_tankgun_cannon"
+  _use:t="base_90mm_m3_open_turret_without_mb"
+  turret__triggerGroup:i=0
+}

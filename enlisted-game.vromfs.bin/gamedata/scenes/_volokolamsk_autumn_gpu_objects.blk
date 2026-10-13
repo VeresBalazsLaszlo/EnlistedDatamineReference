@@ -1,0 +1,175 @@
+entity{
+  _template:t="dagdp_level_settings"
+  dagdp__max_objects:i=10000
+}
+
+entity{
+  _template:t="dagdp_object_group_riex"
+  dagdp__name:t="leaves"
+
+  "dagdp__params:object"{
+    scale:p2=0.925, 0.225
+    orientation:t="normal"
+  }
+
+  "dagdp__assets:object"{
+
+    "autumn_leaf_pile_a:object"{
+      weight:r=1.0
+    }
+
+    "autumn_leaf_pile_b:object"{
+      weight:r=1.0
+    }
+
+    "autumn_leaf_pile_c:object"{
+      weight:r=1.0
+    }
+
+    "autumn_leaf_pile_d:object"{
+      weight:r=1.0
+    }
+
+    "autumn_leaf_pile_e:object"{
+      weight:r=1.0
+    }
+  }
+}
+
+entity{
+  _template:t="dagdp_object_group_riex"
+  dagdp__name:t="branches"
+
+  "dagdp__params:object"{
+    scale:p2=0.825, 0.225
+    orientation:t="normal"
+  }
+
+  "dagdp__assets:object"{
+
+    "tree_dry_branches_a:object"{
+      weight:r=1.0
+    }
+
+    "tree_dry_branches_b:object"{
+      weight:r=1.0
+    }
+
+    "tree_dry_branches_c:object"{
+      weight:r=1.0
+    }
+
+    "tree_branches_small_a:object"{
+      weight:r=0.33
+    }
+
+    "tree_branches_small_b:object"{
+      weight:r=0.33
+    }
+
+    "tree_branches_small_c:object"{
+      weight:r=0.33
+    }
+
+    "tree_branches_small_d:object"{
+      weight:r=0.33
+    }
+  }
+}
+
+entity{
+  _template:t="dagdp_placer_heightmap"
+  dagdp__name:t="forest_branches_biomes"
+  dagdp__density:r=0.035
+
+  "dagdp__object_groups:list<t>"{
+    item:t="branches"
+  }
+
+  "dagdp__biomes:list<i>"{
+    item:i=20
+    item:i=21
+    item:i=22
+  }
+}
+
+entity{
+  _template:t="dagdp_placer_heightmap"
+  dagdp__name:t="forest_leaves_biomes"
+  dagdp__density:r=4.0
+
+  "dagdp__object_groups:list<t>"{
+    item:t="leaves"
+  }
+
+  "dagdp__biomes:list<i>"{
+    item:i=20
+  }
+}
+
+entity{
+  _template:t="dagdp_object_group_riex"
+  dagdp__name:t="rocks"
+
+  "dagdp__params:object"{
+    scale:p2=0.875, 0.375
+    orientation:t="normal"
+  }
+
+  "dagdp__assets:object"{
+
+    "desert_stone_small_a:object"{
+      weight:r=1.0
+    }
+
+    "desert_stone_small_b:object"{
+      weight:r=1.0
+    }
+
+    "desert_stone_small_c:object"{
+      weight:r=1.0
+    }
+
+    "desert_stone_small_d:object"{
+      weight:r=1.0
+    }
+
+    "desert_stone_small_e:object"{
+      weight:r=1.0
+    }
+
+    "desert_stone_small_f:object"{
+      weight:r=1.0
+    }
+  }
+}
+
+entity{
+  _template:t="dagdp_placer_heightmap"
+  dagdp__name:t="quarry_rocky_slope_biomes"
+  dagdp__density:r=0.12
+
+  "dagdp__object_groups:list<t>"{
+    item:t="rocks"
+  }
+
+  "dagdp__biomes:list<i>"{
+    item:i=6
+    item:i=7
+    item:i=15
+  }
+}
+
+entity{
+  _template:t="dagdp_placer_heightmap"
+  dagdp__name:t="quarry_rocky_slope_bottom_biomes"
+  dagdp__density:r=1.0
+
+  "dagdp__object_groups:list<t>"{
+    item:t="rocks"
+  }
+
+  "dagdp__biomes:list<i>"{
+    item:i=9
+  }
+}

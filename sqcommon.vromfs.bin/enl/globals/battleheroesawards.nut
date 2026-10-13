@@ -1,0 +1,293 @@
+from "%sqstd/underscore.nut" import partition
+
+const WINNING_TEAM_BATTLE_HEROES_COUNT = 4
+const LOSING_TEAM_BATTLE_HEROES_COUNT = 3
+
+const SQUAD_COMMAND_MIN_NUM_SQUADS = 2
+const SQUAD_COMMAND_MAX_NUM_SQUADS = 3
+
+enum BattleHeroesAward {
+  TOP_PLACE = "top_place"
+  TOP_VEHICLE_SQUAD = "top_vehicle_squad"
+  TOP_INFANTRY_SQUAD = "top_infantry_squad"
+  TOP_KIND_RIFLE = "top_kind_rifle"
+  TOP_KIND_ASSAULT = "top_kind_assault"
+  TOP_KIND_MGUN = "top_kind_mgun"
+  TOP_KIND_ENGINEER = "top_kind_engineer"
+  TOP_KIND_FLAMETROOPER = "top_kind_flametrooper"
+  TOP_KIND_PILOT_ASSAULTER = "top_kind_pilot_assaulter"
+  TOP_KIND_PILOT_FIGHTER = "top_kind_pilot_fighter"
+  TOP_KIND_MORTARMAN = "top_kind_mortarman"
+  TOP_KIND_RADIOMAN = "top_kind_radioman"
+  TOP_KIND_TANKER = "top_kind_tanker"
+  TOP_KIND_ANTI_TANK = "top_kind_anti_tank"
+  TOP_KIND_APC_DRIVER = "top_kind_apc_driver"
+  TOP_KIND_PARTISAN = "top_kind_partisan"
+  TOP_KIND_SABOTEUR = "top_kind_saboteur"
+  TOP_KIND_SNIPER = "top_kind_sniper"
+  TOP_KIND_MEDIC = "top_kind_medic"
+  TOP_KIND_BIKER = "top_kind_biker"
+  TOP_KIND_PARATROOPER = "top_kind_paratrooper"
+  TOP_VEHICLES_DESTROYED = "top_vehicles_destroyed"
+  TOP_MELEE_KILLS = "top_melee_kills"
+  TOP_GRENADE_KILLS = "top_grenade_kills"
+  TOP_LONG_RANGE_KILLS = "top_long_range_kills"
+  TOP_ENGINEER_BUILDER = "top_engineer_builder"
+  BERSERK = "berserk"
+  FURIOUS = "furious"
+  CONTRIBUTION_TO_VICTORY = "contribution_to_victory"
+  PARATROOPER = "paratrooper"
+  TACTICIAN = "tactician"
+  UNIVERSAL = "universal"
+  SQUAD_COMMAND = "squad_command"
+  MULTISPECIALIST = "multispecialist"
+  BATTLE_HEROES_CARD = "battle_heroes_card"
+  PLAYER_BATTLE_HERO = "player_battle_hero"
+}
+
+let soldierKindAwards = {
+  [BattleHeroesAward.TOP_KIND_RIFLE] = true,
+  [BattleHeroesAward.TOP_KIND_ASSAULT] = true,
+  [BattleHeroesAward.TOP_KIND_MGUN] = true,
+  [BattleHeroesAward.TOP_KIND_ENGINEER] = true,
+  [BattleHeroesAward.TOP_KIND_FLAMETROOPER] = true,
+  [BattleHeroesAward.TOP_KIND_PILOT_ASSAULTER] = true,
+  [BattleHeroesAward.TOP_KIND_PILOT_FIGHTER] = true,
+  [BattleHeroesAward.TOP_KIND_MORTARMAN] = true,
+  [BattleHeroesAward.TOP_KIND_RADIOMAN] = true,
+  [BattleHeroesAward.TOP_KIND_TANKER] = true,
+  [BattleHeroesAward.TOP_KIND_ANTI_TANK] = true,
+  [BattleHeroesAward.TOP_KIND_SNIPER] = true,
+  [BattleHeroesAward.TOP_KIND_MEDIC] = true,
+  [BattleHeroesAward.TOP_KIND_BIKER] = true,
+  [BattleHeroesAward.TOP_KIND_PARATROOPER] = true,
+  [BattleHeroesAward.TOP_KIND_APC_DRIVER] = true,
+  [BattleHeroesAward.TOP_KIND_PARTISAN] = true,
+  [BattleHeroesAward.TOP_KIND_SABOTEUR] = true,
+}
+
+let soldierAwards = soldierKindAwards.__merge({
+  [BattleHeroesAward.TOP_VEHICLES_DESTROYED] = true,
+  [BattleHeroesAward.TOP_MELEE_KILLS] = true,
+  [BattleHeroesAward.TOP_GRENADE_KILLS] = true,
+  [BattleHeroesAward.TOP_LONG_RANGE_KILLS] = true,
+  [BattleHeroesAward.TOP_ENGINEER_BUILDER] = true,
+  [BattleHeroesAward.BERSERK] = true,
+  [BattleHeroesAward.FURIOUS] = true,
+  [BattleHeroesAward.CONTRIBUTION_TO_VICTORY] = true,
+  [BattleHeroesAward.PARATROOPER] = true,
+  [BattleHeroesAward.TACTICIAN] = true,
+  [BattleHeroesAward.UNIVERSAL] = true,
+})
+
+let topSquadAwards = {
+  [BattleHeroesAward.TOP_VEHICLE_SQUAD] = true,
+  [BattleHeroesAward.TOP_INFANTRY_SQUAD] = true,
+}
+
+let isSoldierKindAward = @(award) soldierKindAwards?[award] ?? false
+let isSoldierAward = @(award) soldierAwards?[award] ?? false
+let isTopSquadAward = @(award) topSquadAwards?[award] ?? false
+
+let awardPriority = {
+  
+  [BattleHeroesAward.TOP_PLACE] = 3,
+  [BattleHeroesAward.TOP_VEHICLE_SQUAD] = 2,
+  [BattleHeroesAward.TOP_INFANTRY_SQUAD] = 2,
+  [BattleHeroesAward.UNIVERSAL] = 1,
+  [BattleHeroesAward.SQUAD_COMMAND] = 1,
+  bigAward = 1,
+  
+  [BattleHeroesAward.TOP_KIND_RIFLE] = 0,
+  [BattleHeroesAward.TOP_KIND_ASSAULT] = 0,
+  [BattleHeroesAward.TOP_KIND_MGUN] = 0,
+  [BattleHeroesAward.TOP_KIND_ENGINEER] = 0,
+  [BattleHeroesAward.TOP_KIND_FLAMETROOPER] = 0,
+  [BattleHeroesAward.TOP_KIND_PILOT_ASSAULTER] = 0,
+  [BattleHeroesAward.TOP_KIND_PILOT_FIGHTER] = 0,
+  [BattleHeroesAward.TOP_KIND_MORTARMAN] = 0,
+  [BattleHeroesAward.TOP_KIND_RADIOMAN] = 0,
+  [BattleHeroesAward.TOP_KIND_TANKER] = 0,
+  [BattleHeroesAward.TOP_KIND_ANTI_TANK] = 0,
+  [BattleHeroesAward.TOP_KIND_SNIPER] = 0,
+  [BattleHeroesAward.TOP_KIND_MEDIC] = 0,
+  [BattleHeroesAward.TOP_KIND_BIKER] = 0,
+  [BattleHeroesAward.TOP_KIND_PARATROOPER] = 0,
+  [BattleHeroesAward.TOP_KIND_APC_DRIVER] = 0,
+  [BattleHeroesAward.TOP_KIND_PARTISAN] = 0,
+  [BattleHeroesAward.TOP_KIND_SABOTEUR] = 0,
+  [BattleHeroesAward.TOP_VEHICLES_DESTROYED] = 0,
+  [BattleHeroesAward.TOP_MELEE_KILLS] = 0,
+  [BattleHeroesAward.TOP_GRENADE_KILLS] = 0,
+  [BattleHeroesAward.TOP_LONG_RANGE_KILLS] = 0,
+  [BattleHeroesAward.TOP_ENGINEER_BUILDER] = 0,
+  [BattleHeroesAward.BERSERK] = 0,
+  [BattleHeroesAward.FURIOUS] = 0,
+  [BattleHeroesAward.CONTRIBUTION_TO_VICTORY] = 0,
+  [BattleHeroesAward.PARATROOPER] = 0,
+  [BattleHeroesAward.TACTICIAN] = 0,
+}
+
+let isBigAward = @(award) awardPriority[award] >= awardPriority.bigAward
+
+let requiredValueTable = {
+  [BattleHeroesAward.TOP_VEHICLES_DESTROYED] = 3,
+  [BattleHeroesAward.TOP_MELEE_KILLS] = 3,
+  [BattleHeroesAward.TOP_GRENADE_KILLS] = 7,
+  [BattleHeroesAward.TOP_LONG_RANGE_KILLS] = 5,
+  [BattleHeroesAward.TOP_ENGINEER_BUILDER] = 250,
+  [BattleHeroesAward.BERSERK] = 10,
+  [BattleHeroesAward.FURIOUS] = 3,
+  [BattleHeroesAward.CONTRIBUTION_TO_VICTORY] = 250,
+  [BattleHeroesAward.PARATROOPER] = 5,
+}
+
+let requiredScoreTable = {
+  [BattleHeroesAward.TOP_PLACE] = {
+    domination    = { withBots = 0, noBots = 0 }
+    invasion      = { withBots = 0, noBots = 0 }
+    confrontation = { withBots = 0, noBots = 0 }
+    assault       = { withBots = 0, noBots = 0 }
+    destruction   = { withBots = 0, noBots = 0 }
+    escort        = { withBots = 0, noBots = 0 }
+    gun_game      = { withBots = 0, noBots = 0 }
+    no_mode       = { withBots = 0, noBots = 0 }
+    zombie_mode   = { withBots = 0, noBots = 0 }
+    WW1           = { withBots = 0, noBots = 0 }
+  },
+  [BattleHeroesAward.TOP_VEHICLE_SQUAD] = {
+    domination    = { withBots = 800,  noBots = 400 }
+    invasion      = { withBots = 1200, noBots = 500 }
+    confrontation = { withBots = 1200, noBots = 500 }
+    assault       = { withBots = 1200, noBots = 500 }
+    destruction   = { withBots = 1200, noBots = 500 }
+    escort        = { withBots = 1200, noBots = 500 }
+    gun_game      = { withBots = 800,  noBots = 400 }
+    no_mode       = { withBots = 1200, noBots = 500 }
+    zombie_mode   = { withBots = 800,  noBots = 400 }
+    WW1           = { withBots = 1200, noBots = 500 }
+  },
+  [BattleHeroesAward.TOP_INFANTRY_SQUAD] = {
+    domination    = { withBots = 800,  noBots = 400 }
+    invasion      = { withBots = 1200, noBots = 500 }
+    confrontation = { withBots = 1200, noBots = 500 }
+    assault       = { withBots = 1200, noBots = 500 }
+    destruction   = { withBots = 1200, noBots = 500 }
+    escort        = { withBots = 1200, noBots = 500 }
+    gun_game      = { withBots = 800, noBots =  400 }
+    no_mode       = { withBots = 1200, noBots = 500 }
+    zombie_mode   = { withBots = 800,  noBots = 400 }
+    WW1           = { withBots = 1200, noBots = 500 }
+  },
+  [BattleHeroesAward.SQUAD_COMMAND] = { 
+    domination    = { withBots = 800,  noBots = 400 }
+    invasion      = { withBots = 1200, noBots = 500 }
+    confrontation = { withBots = 1200, noBots = 500 }
+    assault       = { withBots = 1200, noBots = 500 }
+    destruction   = { withBots = 1200, noBots = 500 }
+    escort        = { withBots = 1200, noBots = 500 }
+    gun_game      = { withBots = 800, noBots =  400 }
+    no_mode       = { withBots = 1200, noBots = 500 }
+    zombie_mode   = { withBots = 800,  noBots = 400 }
+    WW1           = { withBots = 1200, noBots = 500 }
+  },
+}
+
+let awardScoreStats = {
+  [BattleHeroesAward.TACTICIAN] = {
+    attackKills = true
+    defenseKills = true
+    captures = true
+    builtStructures = true
+    builtGunKills = true
+    builtGunKillAssists = true
+    builtGunTankKills = true
+    builtGunTankKillAssists = true
+    builtGunApcKills = true
+    builtGunApcKillAssists = true
+    builtGunBikeKills = true
+    builtGunBikeKillAssists = true
+    builtGunPlaneKills = true
+    builtGunAiPlaneKills = true
+    builtGunPlaneKillAssists = true
+    builtGunAiPlaneKillAssists = true
+    builtBarbwireActivations = true
+    builtCapzoneFortificationActivations = true
+    builtAmmoBoxRefills = true
+    builtRallyPointUses = true
+    ownedMobileSpawnUses = true
+  }
+}
+
+let tacticianStats = {
+  statsA = ["scoring_player__captures"]
+  requiredA = 2
+  statsB = ["scoring_player__attackKills", "scoring_player__defenseKills"]
+  requiredB = 10
+  statsA2 = [
+    "scoring_player__builtStructures",
+    "scoring_player__builtGunKills",
+    "scoring_player__builtGunKillAssists",
+    "scoring_player__builtGunTankKills",
+    "scoring_player__builtGunTankKillAssists",
+    "scoring_player__builtGunApcKills",
+    "scoring_player__builtGunApcKillAssists",
+    "scoring_player__builtGunBikeKills",
+    "scoring_player__builtGunBikeKillAssists",
+    "scoring_player__builtGunPlaneKills",
+    "scoring_player__builtGunAiPlaneKills",
+    "scoring_player__builtGunPlaneKillAssists",
+    "scoring_player__builtGunAiPlaneKillAssists",
+    "scoring_player__builtBarbwireActivations",
+    "scoring_player__builtCapzoneFortificationActivations",
+    "scoring_player__builtAmmoBoxRefills",
+    "scoring_player__builtRallyPointUses",
+    "scoring_player__ownedMobileSpawnUses",
+  ]
+  requiredA2 = 10
+}
+
+let requiredSoldierKindScoreTable = {
+  domination    = { withBots = 300, noBots = 250 }
+  invasion      = { withBots = 450, noBots = 350 }
+  confrontation = { withBots = 450, noBots = 350 }
+  assault       = { withBots = 450, noBots = 350 }
+  destruction   = { withBots = 450, noBots = 350 }
+  escort        = { withBots = 450, noBots = 350 }
+  gun_game      = { withBots = 300, noBots = 250 }
+  no_mode       = { withBots = 450, noBots = 350 }
+  zombie_mode   = { withBots = 450, noBots = 350 }
+  WW1           = { withBots = 450, noBots = 350 }
+}
+
+function getAwardBySoldierKind(kind) {
+  let award = $"top_kind_{kind}"
+  return (award in soldierKindAwards) ? award : null
+}
+
+function combineMultispecialistAward(awards) {
+  let [kindAwards, otherAwards] = partition(awards, isSoldierKindAward)
+  return otherAwards.extend(kindAwards.len() > 1
+    ? [{id=BattleHeroesAward.MULTISPECIALIST, value=kindAwards.len()}]
+    : kindAwards)
+}
+
+return freeze({
+  BattleHeroesAward
+  awardPriority
+  requiredScoreTable
+  requiredValueTable
+  requiredSoldierKindScoreTable
+  getAwardBySoldierKind
+  isSoldierKindAward
+  isSoldierAward
+  isTopSquadAward
+  combineMultispecialistAward
+  tacticianStats
+  awardScoreStats
+  isBigAward
+  WINNING_TEAM_BATTLE_HEROES_COUNT
+  LOSING_TEAM_BATTLE_HEROES_COUNT
+  SQUAD_COMMAND_MIN_NUM_SQUADS
+  SQUAD_COMMAND_MAX_NUM_SQUADS
+})

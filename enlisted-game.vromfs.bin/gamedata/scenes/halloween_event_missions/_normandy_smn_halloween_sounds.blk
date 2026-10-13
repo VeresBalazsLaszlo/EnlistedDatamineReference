@@ -1,0 +1,89 @@
+import{
+  scene:t="gamedata/scenes/_common_sounds.blk"
+}
+
+entity{
+  _template:t="battle_music_with_spawn_waves"
+  battle_music__intro:t="events/z/music/z_normandy_battle_start"
+  battle_music__waveStartPath:t="events/z/music/z_wave_new"
+  battle_music__waveEndPath:t="events/z/music/z_wave_end"
+}
+
+entity{
+  _template:t="zombie_scene_net_sounds"
+}
+
+entity{
+  _template:t="zombie_battle_music_param"
+}
+
+entity{
+  _template:t="zombie_near_battle_music_trigger"
+}
+
+entity{
+  _template:t="sound_effect_generator"
+  ri_extra_gen__blk:t="gamedata/normandy_sounds_ri_extra_gen.blk"
+}
+
+entity{
+  _template:t="europe_summer_beach_ambient_sound"
+}
+
+entity{
+  _template:t="compound_ambient_sound_type"
+  compound_ambient_sound_type__soundType:t="factory_small"
+  compound_ambient_sound_type__path:t="ambient/positioned/factory_small"
+}
+
+entity{
+  _template:t="compound_ambient_sound_type"
+  compound_ambient_sound_type__soundType:t="gradieren"
+  compound_ambient_sound_type__path:t="ambient/positioned/gradieren"
+}
+
+entity{
+  _template:t="compound_ambient_sound_type"
+  compound_ambient_sound_type__soundType:t="pump_station"
+  compound_ambient_sound_type__path:t="ambient/positioned/pump_station"
+}
+
+entity{
+  _template:t="compound_ambient_sound_type"
+  compound_ambient_sound_type__soundType:t="blast_furnace"
+  compound_ambient_sound_type__path:t="ambient/positioned/blast_furnace"
+}
+
+entity{
+  _template:t="compound_ambient_sound_type"
+  compound_ambient_sound_type__soundType:t="plant"
+  compound_ambient_sound_type__path:t="ambient/positioned/plant"
+}
+
+entity{
+  _template:t="compound_ambient_sound_controller"
+
+  "compound_ambient_sound_controller__soundTypes:list<t>"{
+    name:t="factory_small"
+    name:t="gradieren"
+    name:t="pump_station"
+    name:t="blast_furnace"
+    name:t="plant"
+  }
+}
+
+entity{
+  _template:t="pipes_sound+game_object_spline_sound_generator"
+  game_object_spline_sound_generator__pointRadiusMul:r=0.0
+
+  "game_object_spline_sound_generator__gameObjects:list<t>"{
+    gameObject:t="pipes_sound_spline_a"
+    gameObject:t="pipes_sound_spline_b"
+    gameObject:t="pipes_sound_spline_c"
+    gameObject:t="pipes_sound_spline_d"
+    gameObject:t="pipes_sound_spline_e"
+    gameObject:t="pipes_sound_spline_f"
+    gameObject:t="pipes_sound_spline_g"
+    gameObject:t="pipes_sound_spline_h"
+  }
+}

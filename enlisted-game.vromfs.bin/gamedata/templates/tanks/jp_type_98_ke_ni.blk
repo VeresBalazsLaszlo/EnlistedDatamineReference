@@ -1,0 +1,173 @@
+jp_type_98_ke_ni_pacific{
+  _use:t="jp_type_98_ke_ni_common"
+}
+
+jp_type_98_ke_ni_common{
+  _use:t="base_type_98_ke_ni"
+  _use:t="jp_type_98_ke_ni_common_vehicle_sound"
+  item__iconOffset:p2=0.0, -0.1
+  item__iconScale:r=0.95
+  commanderCockpitFpsCamMaxAngle:p2=40.0, 5.0
+  gunner_cam_limit__useCockpitDir:b=yes
+
+  "vehicle_seats__seatsProvideOrder:tag"{
+  }
+
+  "vehicle_seats__seats:shared:array"{
+
+    "seats:object"{
+      name:t="main_gunner"
+      locName:t="vehicle_seats/gunner"
+      attachNode:t="commander"
+      ignoreAttachNodeRotation:b=yes
+      attachTm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-0.3, -0.715, -0.27]]
+      seatComponent:t="isGunner"
+      nextSeat:t="driver"
+      shouldHideOwner:b=yes
+      receiveDamageFromDMPart:t="commander"
+      cameraNodeName:t="bone_camera_gunner"
+      cockpitTemplate:t="jp_type_98_ke_ni_gunner_cockpit"
+      hatchRotationAxis:p3=1.7, 0.0, 0.0
+
+      "turretNames:array"{
+        turretNames:t="turret_01"
+        turretNames:t="turret_02"
+      }
+
+      "hatchNodes:array"{
+        node:t="hatch_04"
+      }
+
+      "loaderTurretNames:array"{
+        turret:t="turret_01"
+      }
+    }
+
+    "seats:object"{
+      name:t="driver"
+      locName:t="vehicle_seats/driver"
+      seatOwnsEntityControl:b=yes
+      attachNode:t="driver"
+      ignoreAttachNodeRotation:b=yes
+      attachTm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-0.25, -0.25, 0.0]]
+      seatComponent:t="isDriver"
+      shouldHideOwner:b=yes
+      receiveDamageFromDMPart:t="driver"
+      cameraNodeName:t="bone_camera_driver"
+      cameraOffset:p3=0.15, -0.0, -0.0
+      cockpitTemplate:t="jp_type_98_ke_ni_driver_cockpit"
+    }
+
+    "seats:object"{
+      name:t="loader"
+      canPlaceManually:b=no
+      locName:t="vehicle_seats/loader"
+      attachNode:t="loader"
+      shouldHideOwner:b=yes
+      ignoreAttachNodeRotation:b=yes
+      attachTm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-0.25, -0.25, -0.15]]
+      seatComponent:t="isDriver"
+      receiveDamageFromDMPart:t="loader"
+
+      "loaderTurretNames:array"{
+        turret:t="turret_01"
+      }
+    }
+  }
+
+  "turrets__initAmmoDistribution:array"{
+
+    "ammo:object"{
+      slot:i=0
+      fill:b=yes
+    }
+
+    "ammo:object"{
+      slot:i=1
+      fill:b=yes
+    }
+  }
+
+  _group{
+    _tags:t="gameClient"
+
+    "vehicle_attach__bodyParts:list<t>"{
+      part:t="turret_04_side"
+      part:t="turret_02_back"
+    }
+  }
+}
+
+jp_type_98_ke_ni_driver_cockpit{
+  _use:t="base_driver_cockpit_no_slits"
+  animchar__res:t="bt_7_driver_char"
+  cockpit__offset:p3=0.0171255, -0.403643, 0.0111413
+
+  "cockpit__visibleVehicleNodeNames:list<t>"{
+    node:t="track_l"
+    node:t="track_r"
+    node:t="ex_decor_l_01"
+    node:t="ex_decor_r_01"
+    node:t="gun_barrel"
+  }
+
+  "cockpit__slitForwardOffset:list<r>"{
+    slit:r=0.06
+  }
+
+  "cockpit__slitIsGun:list<b>"{
+    slit:b=no
+  }
+
+  "cockpit__slitNodeNames:list<t>"{
+    slit:t="cam_front"
+  }
+}
+
+jp_type_98_ke_ni_gunner_cockpit{
+  _use:t="base_gunner_cockpit"
+  animchar__res:t="ba_11_gunner_char"
+  cockpit__offset:p3=-0.553624, -0.00353403, 0.269308
+
+  "cockpit__visibleVehicleNodeNames:list<t>"{
+    node:t="gun_barrel"
+  }
+
+  "cockpit__slitNodeNames:list<t>"{
+    slit:t="cam_front_right"
+  }
+
+  "cockpit__slitForwardOffset:list<r>"{
+    slit:r=0.21
+  }
+
+  "cockpit__slitIsGun:list<b>"{
+    slit:b=yes
+  }
+
+  "cockpit__attachNodeNames:list<t>"{
+    node:t="bone_camera_gunner"
+  }
+
+  "cockpit__attachNodeIndices:list<i>"{
+  }
+
+  "cockpit__slitZoom:array"{
+
+    "slit:list<r>"{
+      zoom:r=1.9
+      zoom:r=3.5
+    }
+  }
+
+  "cockpit__slitZoomTime:list<r>"{
+    slit:r=0.05
+  }
+
+  "cockpit__slitTemplates:list<t>"{
+    slit:t="jp_37mm_94"
+  }
+
+  "cockpit__slitEids:list<eid>"{
+  }
+}

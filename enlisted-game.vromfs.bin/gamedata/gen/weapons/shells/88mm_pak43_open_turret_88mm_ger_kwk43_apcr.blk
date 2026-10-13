@@ -1,0 +1,92 @@
+bulletCount:i=10
+mass:r=7.3
+caliber:r=0.088
+damageMass:r=2.0
+damageCaliber:r=0.035
+ballisticCaliber:r=0.088
+speed:r=1130.0
+Cx:r=0.28
+maxDistance:r=10000.0
+normalizationPreset:t="apcr"
+ricochetPreset:t="apcr"
+groundRicochetPreset:t="apcr_ground"
+secondaryShattersPreset:t="apcr"
+stabilityThreshold:r=0.05
+stabilityCaliberToArmorThreshold:r=5.0
+stabilityReductionAfterRicochet:r=0.5
+stabilityReductionAfterPenetration:r=0.0
+stucking:r=0.7
+stuckingAngle:r=45.0
+bulletType:t="apcr_tank"
+slopeEffectPreset:t="apcr"
+fresnel:p3=0.23, 0.1, 2.0
+modelName:t="tank_shell_apbc"
+gbufferModelName:t="tank_shell_hvap"
+penetratorModelName:t="tank_shell_apds_su_deform"
+bulletName:t="88mm_pzrg_40_43"
+breakingArmorThicknessEffective:b=yes
+breakingArmorThickness:p2=10.0, 300.0
+breakingCriticalSpeed:r=1000.0
+breakingDistance:r=0.05
+relativeVelHitShift:p2=300.0, 1000.0
+relativeVelArmorShift:p2=200.0, 1000.0
+waterRicochetEffect:t="hit_59_80mm_water"
+groundRicochetEffect:t="hit_59_80mm_dirt_ap"
+rendinstDamageRadius:r=0.0
+
+stabilityRicochetModifier{
+  mod1:p2=0.0, 0.2
+  mod2:p2=20.0, 0.45
+  mod3:p2=30.0, 0.6
+  mod4:p2=50.0, 1.0
+}
+
+hitpower{
+  HitPower0m:p2=1.0, 300.0
+  HitPower1000m:p2=0.7, 1000.0
+  HitPower1500m:p2=0.6, 1500.0
+  HitPower2500m:p2=0.6, 2500.0
+  HitPower10000m:p2=0.5, 10000.0
+}
+
+damage{
+
+  kinetic{
+    damageType:t="generic"
+    demarrePenetrationK:r=0.65
+    demarreSpeedPow:r=1.43
+    demarreMassPow:r=0.71
+    demarreCaliberPow:r=1.07
+  }
+
+  breakingScaleByArmor{
+    mod0:p2=5.0, 1.0
+    mod1:p2=10.0, 0.8
+    mod2:p2=40.0, 0.5
+  }
+
+  breakingScaleByAir{
+    mod0:p2=0.05, 1.0
+    mod1:p2=0.2, 0.7
+    mod2:p2=0.5, 0.5
+  }
+}
+
+visual{
+  range_percent_of_ammo:p2=100.0, 0.0
+  traceFreq:i=1
+  tracer:t="76mmPink"
+  trail:t="black"
+}
+
+kineticDamage{
+  damageType:t="generic"
+}
+
+tracer{
+  headColor:c=255, 236, 248, 200
+  smokeColor:c=80, 80, 80, 186
+  startHeadColor:c=255, 248, 60, 120
+  startTime:r=0.025
+  smokeRadius:r=0.09
+}

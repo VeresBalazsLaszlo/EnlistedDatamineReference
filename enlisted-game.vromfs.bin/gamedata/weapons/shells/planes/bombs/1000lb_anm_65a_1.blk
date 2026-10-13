@@ -1,0 +1,35 @@
+mass:r=500.76
+explosiveType:t="tritonal"
+explosiveMass:r=269.9
+bombType:t="he_bomb"
+bulletType:t="he_bomb"
+bombName:t="1000lb_anm_65a_1"
+dragCx:r=0.042
+caliber:r=0.477
+length:r=1.765
+distFromCmToStab:r=1.05
+sound:t="weapon.bomb_std"
+hitPowerMult:r=1.0
+explodeArmorPower:r=160.0
+nearHitPower:p2=1.0, 50.0
+explodeRadius:p2=10.0, 25.0
+midHitPower:p2=0.9, 400.0
+farHitPower:p2=0.1, 1000.0
+explosionPatchHeightScale:r=0.15
+endHitPower:p2=0.01, 1500.0
+rendinstDamageRadius:r=29.0
+relativeVelHitShift:p2=300.0, 1000.0
+nearArmorPower:p2=10.0, 50.0
+shutterDamage:b=yes
+midArmorPower:p2=7.0, 400.0
+shutterDamageRadius:r=120.0
+farArmorPower:p2=0.2, 700.0
+shutterAmount:i=3000
+relativeVelArmorShift:p2=200.0, 1000.0
+shutterArmorPower:r=15.0
+entityTemplate:t="1000lb_anm_65a_1_bomb_projectile"
+entityPhysTemplate:t=""
+
+pressureDamage{
+  damageType:t="pressure"
+}

@@ -1,0 +1,237 @@
+sequencer{
+  name:t="cinematic_ai_attack_target_beh"
+
+  wait{
+    rangeParam:t="step1_waitTime"
+    resetable:b=yes
+    range:p2=1.0, 1.0
+  }
+
+  wait{
+    rangeParam:t="step5_waitTime"
+    resetable:b=yes
+    range:p2=1.0, 1.0
+  }
+
+  orderedSelector{
+
+    sequencer{
+
+      findNamedAIPoint{
+        pointNameParam:t="step2_moveToPointName"
+        posOutParam:t="wishPosition"
+      }
+
+      detachFromStationaryGun{
+      }
+
+      moveToPos{
+        posParam:t="wishPosition"
+        sprintTimerRange:p2=5.0, 10.0
+        minDistToSprint:r=5.0
+        distThreshold:r=1.0
+        rotateDistThreshold:r=0.5
+        rotateFactors:p4=0.5, 0.3, 0.3, 0.1
+        rotateStartTime:r=0.5
+        avoidAiObstacles:b=no
+        timeToStuck:r=5.0
+        incLadders:b=yes
+        strafeNearDist:r=2.0
+        jumpDownTraceCheck:p3=0.4, 1.0, 0.15
+      }
+
+      wait{
+        rangeParam:t="step3_waitTime"
+        resetable:b=yes
+        range:p2=1.0, 1.0
+      }
+    }
+
+    continue{
+    }
+  }
+
+  parallel{
+
+    wait{
+      rangeParam:t="step4_attackTime"
+      resetable:b=yes
+      range:p2=2.0, 2.0
+    }
+
+    success{
+
+      repeat{
+
+        findNamedAITarget{
+          targetNameParam:t="step4_attackTargetName"
+          targetEidOutParam:t="shootEnemy"
+        }
+
+        getRandomPointNearTarget{
+          targetUnitParam:t="shootEnemy"
+          posParam:t="posNearTarget"
+          useGenerationByY:b=no
+        }
+
+        detachFromStationaryGun{
+        }
+
+        orderedSelector{
+
+          isLookingToPos{
+            posParam:t="posNearTarget"
+            offAngle:r=15.0
+          }
+
+          rotateToPoint{
+            posParam:t="posNearTarget"
+          }
+        }
+
+        checkFriendlyFire{
+          targetUnitParam:t="shootEnemy"
+        }
+
+        shootAtUnit{
+          targetUnitParam:t="shootEnemy"
+          minStanceParam:t="step4_attackMinStance"
+          shootCycles:i=3
+          tryToSaveCurrentStance:b=no
+          minStanceChance:r=1.5
+          shootTime:p2=0.2, 1.0
+          cooldownTime:p2=0.2, 0.9
+          minAimTime:p2=0.1, 0.4
+          maxStanceParam:t="step4_attackMaxStance"
+          alwaysAiming:b=yes
+          chooseStance:b=no
+        }
+      }
+    }
+  }
+
+  switchAIBehavior{
+    addTemplateParam:t="step6_addTemplate"
+    delTemplateParam:t="step6_delTemplate"
+  }
+}
+
+sequencer{
+  name:t="cinematic_ai_attack_target_mortar_beh"
+
+  wait{
+    rangeParam:t="step1_waitTime"
+    resetable:b=yes
+    range:p2=1.0, 1.0
+  }
+
+  wait{
+    rangeParam:t="step5_waitTime"
+    resetable:b=yes
+    range:p2=1.0, 1.0
+  }
+
+  orderedSelector{
+
+    sequencer{
+
+      findNamedAIPoint{
+        pointNameParam:t="step2_moveToPointName"
+        posOutParam:t="wishPosition"
+      }
+
+      detachFromStationaryGun{
+      }
+
+      moveToPos{
+        posParam:t="wishPosition"
+        sprintTimerRange:p2=5.0, 10.0
+        minDistToSprint:r=5.0
+        distThreshold:r=1.0
+        rotateDistThreshold:r=0.5
+        rotateFactors:p4=0.5, 0.3, 0.3, 0.1
+        rotateStartTime:r=0.5
+        avoidAiObstacles:b=no
+        timeToStuck:r=5.0
+        incLadders:b=yes
+        strafeNearDist:r=2.0
+        jumpDownTraceCheck:p3=0.4, 1.0, 0.15
+      }
+
+      wait{
+        rangeParam:t="step3_waitTime"
+        resetable:b=yes
+        range:p2=1.0, 1.0
+      }
+    }
+
+    continue{
+    }
+  }
+
+  success{
+
+    sequencer{
+
+      findNamedAITarget{
+        targetNameParam:t="step4_attackTargetName"
+        targetEidOutParam:t="shootEnemy"
+      }
+
+      getRandomPointNearTarget{
+        targetUnitParam:t="shootEnemy"
+        posParam:t="posNearTarget"
+        useGenerationByY:b=no
+      }
+
+      detachFromStationaryGun{
+      }
+
+      orderedSelector{
+
+        isLookingToPos{
+          posParam:t="posNearTarget"
+          offAngle:r=15.0
+        }
+
+        rotateToPoint{
+          posParam:t="posNearTarget"
+        }
+      }
+
+      setIntVar{
+        to:t="mortarAttack"
+        value:i=0
+      }
+
+      getAgentAIPos{
+        outPosParam:t="mortarAttackFromPos"
+      }
+
+      copyPoint3Var{
+        from:t="posNearTarget"
+        to:t="mortarAttackToPos"
+      }
+
+      randIntVarRange{
+        from:t="step4_attackNumShots"
+        to:t="mortarAttackShots"
+      }
+
+      subTree{
+        name:t=""
+        treeName:t="sub.mortarAttackReq"
+      }
+    }
+  }
+
+  setIntVar{
+    to:t="mortarAttack"
+    value:i=0
+  }
+
+  switchAIBehavior{
+    addTemplateParam:t="step6_addTemplate"
+    delTemplateParam:t="step6_delTemplate"
+  }
+}

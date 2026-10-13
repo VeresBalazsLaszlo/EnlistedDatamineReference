@@ -1,0 +1,44 @@
+from "%dngscripts/platform.nut" import is_sony, is_gdk
+from "%ui/ui_library.nut" import *
+
+let { steam_is_running = @() false } = require_optional("steam")
+
+local uid2console = Watched({})
+local console2uid = Watched({})
+
+
+local updateUids = @(...) null
+
+if (is_gdk) {
+  let { xbox2uid, uid2xbox, updateUidsMapping } = require("%ui/gdk/userIds.nut")
+  uid2console = uid2xbox
+  console2uid = xbox2uid
+  updateUids = updateUidsMapping
+}
+else if (is_sony) {
+  let { uid2psn, psn2uid, psnUids, psnUidsUpdate } = require("%ui/sony/psn_state.nut")
+  uid2console = uid2psn
+  console2uid = psn2uid
+
+  updateUids = function(psn2UidNewList) {
+    let res = clone psnUids.get()
+    res.psn2uid = res.psn2uid.__merge(psn2UidNewList)
+    let newUid2psn = {}
+    foreach (k,v in psn2UidNewList)
+      newUid2psn[v] <- k
+    res.uid2psn = res.uid2psn.__merge(newUid2psn)
+    psnUidsUpdate(res)
+  }
+}
+else if (steam_is_running()) {
+  let { steam2uid, uid2steam, steamUidsUpdate } = require("%ui/steam/steamUserIds.nut")
+  uid2console = uid2steam
+  console2uid = steam2uid
+  updateUids = steamUidsUpdate
+}
+
+return {
+  uid2console
+  console2uid
+  updateUids
+}

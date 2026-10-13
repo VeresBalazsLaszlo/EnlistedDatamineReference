@@ -1,0 +1,917 @@
+entity{
+  _template:t="box_battle_area"
+  transform:m=[[9380.94, 0.0, 6126.52] [0.0, 8000.03, -0.0] [-6195.73, 0.0, 9486.91] [49.5369, 331.507, 40.5401]]
+  battle_area__team:i=-1
+}
+
+entity{
+  _template:t="aircraft_box_battle_area"
+  transform:m=[[9380.94, 0.0, 6126.52] [0.0, 8000.03, -0.0] [-6195.73, 0.0, 9486.91] [49.5369, 331.507, 40.5401]]
+  battle_area__team:i=-1
+}
+
+entity{
+  _template:t="static_cam"
+  camera__active:b=yes
+  transform:m=[[-0.16252, -3.72529e-09, 0.986706] [-0.104358, 0.99439, -0.0171888] [-0.981171, -0.105764, -0.161608] [310.965, 22.8604, 107.33]]
+}
+
+entity{
+  _template:t="respawn_camera"
+  respawnCameraForTeam:i=2
+  moveCameraToHeight:r=200.0
+  respawnSelectorDistanceMult:r=1.2
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-616.634, 317.064, 400.939]]
+}
+
+entity{
+  _template:t="respawn_camera"
+  respawnCameraForTeam:i=1
+  moveCameraToHeight:r=200.0
+  respawnSelectorDistanceMult:r=1.2
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-606.564, 323.692, 1001.26]]
+}
+
+entity{
+  _template:t="briefing_invasion"
+  mission_name:t="ardennes_forest_inv"
+  mission_campaign:t="ardennes"
+
+  "loading_images:list<t>"{
+    item:t="ui/normandy_hills_inv_03.avif"
+    item:t="ui/normandy_hills_inv_05.avif"
+    item:t="ui/normandy_hills_inv_06.avif"
+  }
+}
+
+entity{
+  _template:t="team_germany+team_narrator_invasion_defence+respawn_creators_team"
+  team__countAdd:r=0.5
+  team__memberCount:r=0.5
+  team__scoreCap:r=5000.0
+  team__capturePenalty:r=1001.0
+  team__score:r=5000.0
+  team__id:i=2
+  team__briefing:t="invasion/defenders_goals"
+  team__winSubtitle:t="debriefing/won_defence_subtitle"
+  team__loseSubtitle:t="debriefing/lost_defence_subtitle"
+  team__winTitle:t="debriefing/axis_won_defence"
+  team__spawnBotArmy:t="ardennes_axis"
+}
+
+entity{
+  _template:t="team_usa+team_narrator_invasion_attack+respawn_creators_team"
+  team__memberCount:r=0.0
+  team__scoreCap:r=2000.0
+  team__score:r=2000.0
+  team__squadSpawnCost:i=250
+  team__firstSpawnCostMul:r=0.0
+  team__zeroScoreFailTimer:r=60.0
+  team__id:i=1
+  team__briefing:t="invasion/attackers_goals"
+  team__winSubtitle:t="debriefing/won_invasion_subtitle"
+  team__loseSubtitle:t="debriefing/lost_invasion_subtitle"
+  team__winTitle:t="debriefing/allies_won_invasion"
+  team__spawnBotArmy:t="ardennes_allies"
+}
+
+entity{
+  _template:t="resupply_in_air_zone"
+  transform:m=[[-0.999999, 0.0, -0.000445871] [0.0, 1.0, 0.0] [0.000445871, 0.0, -0.999999] [-2442.88, 369.882, 1150.82]]
+  resupply_zone__team:i=2
+}
+
+entity{
+  _template:t="respAircraftInAir"
+  respawnbaseType:t="aircraft_fighter"
+  transform:m=[[-0.992777, 0.0, 0.119971] [0.0, 1.0, 0.0] [-0.119971, 0.0, -0.992777] [3958.06, 424.188, -241.662]]
+  team:i=1
+  maxVehicleOnSpawn:i=1
+  respTime:i=120
+}
+
+entity{
+  _template:t="respAircraftInAir"
+  respawnbaseType:t="aircraft_assault"
+  transform:m=[[-0.996608, 0.0, 0.0823091] [0.0, 1.0, 0.0] [-0.0823091, 0.0, -0.996608] [3997.76, 280.735, -68.9432]]
+  team:i=1
+  maxVehicleOnSpawn:i=1
+  respTime:i=120
+}
+
+entity{
+  _template:t="respAircraftInAir"
+  respawnbaseType:t="aircraft_fighter"
+  transform:m=[[-0.995763, 0.0, 0.0919693] [0.0, 1.0, 0.0] [-0.0919693, 0.0, -0.995762] [3964.0, 424.188, -85.5305]]
+  team:i=1
+  maxVehicleOnSpawn:i=1
+  respTime:i=120
+}
+
+entity{
+  _template:t="respAircraftInAir"
+  respawnbaseType:t="aircraft_assault"
+  transform:m=[[-0.991249, 0.0, 0.132004] [0.0, 1.0, 0.0] [-0.132004, 0.0, -0.991249] [3958.06, 280.735, -241.662]]
+  team:i=1
+  maxVehicleOnSpawn:i=1
+  respTime:i=120
+}
+
+entity{
+  _template:t="resupply_in_air_zone"
+  transform:m=[[-0.982312, 0.0, -0.187255] [0.0, 1.0, 0.0] [0.187255, 0.0, -0.982312] [3040.93, 330.252, -1090.11]]
+  resupply_zone__team:i=1
+}
+
+entity{
+  _template:t="respAircraftInAir"
+  respawnbaseType:t="aircraft_fighter"
+  transform:m=[[0.993741, 0.0, -0.11172] [0.0, 1.0, 0.0] [0.11172, -0.0, 0.993741] [-3253.89, 453.997, 536.273]]
+  team:i=2
+  maxVehicleOnSpawn:i=1
+  respTime:i=120
+}
+
+entity{
+  _template:t="respAircraftInAir"
+  respawnbaseType:t="aircraft_assault"
+  transform:m=[[0.990836, 0.0, -0.135071] [0.0, 1.0, 0.0] [0.135071, -0.0, 0.990836] [-3253.89, 321.867, 536.273]]
+  team:i=2
+  maxVehicleOnSpawn:i=1
+  respTime:i=120
+}
+
+entity{
+  _template:t="respAircraftInAir"
+  respawnbaseType:t="aircraft_fighter"
+  transform:m=[[0.99819, 0.0, -0.0601313] [0.0, 1.0, 0.0] [0.0601313, -0.0, 0.99819] [-3267.42, 453.997, 386.294]]
+  team:i=2
+  maxVehicleOnSpawn:i=1
+  respTime:i=120
+}
+
+entity{
+  _template:t="respAircraftInAir"
+  respawnbaseType:t="aircraft_assault"
+  transform:m=[[0.997901, 0.0, -0.0647749] [0.0, 1.0, 0.0] [0.0647749, -0.0, 0.9979] [-3306.9, 321.867, 365.373]]
+  team:i=2
+  maxVehicleOnSpawn:i=1
+  respTime:i=120
+}
+
+entity{
+  _template:t="respawnChooser+respTeam1"
+  transform:m=[[0.889141, 0.00045583, -0.457636] [-0.00156727, 0.999997, -0.00204901] [0.457633, 0.00253909, 0.889139] [-663.82, 34.5451, -235.892]]
+  respawnBaseGroup:i=1
+}
+
+entity{
+  _template:t="respawnChooser+respVehicle+vehicle_resp_soft_ground_collision"
+  transform:m=[[0.892088, 0.0544332, -0.44857] [-0.0562433, 0.998374, 0.00929779] [0.448346, 0.0169346, 0.893699] [-661.339, 34.737, -233.623]]
+  team:i=1
+  maxVehicleOnSpawn:i=2
+  respTime:i=120
+  respawnBaseGroup:i=1
+}
+
+entity{
+  _template:t="respawnChooser+respMotorcycle"
+  transform:m=[[0.890934, 0.0444203, -0.451954] [-0.0485661, 0.998817, 0.00243067] [0.451528, 0.0197841, 0.892037] [-661.873, 34.2768, -237.422]]
+  team:i=1
+  respawnBaseGroup:i=1
+}
+
+entity{
+  _template:t="resupply_for_ground_vehicle_zone"
+  transform:m=[[0.477066, 4.66336e-11, 0.643634] [0.000710469, 1.0, -0.000526605] [-0.643634, 0.000708507, 0.477066] [-665.084, 34.8038, -234.275]]
+  resupply_zone__team:i=1
+}
+
+entity{
+  _template:t="respawnChooser+respTeam2"
+  transform:m=[[-0.34804, 0.000968764, 0.937479] [0.00257857, 0.999997, -7.60697e-05] [-0.937476, 0.00239088, -0.348041] [-513.133, 26.8966, -305.926]]
+  respawnBaseGroup:i=1
+}
+
+entity{
+  _template:t="resupply_for_ground_vehicle_zone"
+  transform:m=[[-0.33148, -9.50604e-05, 0.943462] [0.000798008, 1.0, 0.000381133] [-0.943463, 0.000879229, -0.33148] [-510.236, 27.3185, -304.742]]
+  resupply_zone__team:i=2
+}
+
+entity{
+  _template:t="respawnChooser+respMotorcycle"
+  transform:m=[[-0.992434, 2.52088e-05, 0.12279] [6.29835e-06, 1.0, -0.000154394] [-0.12279, -0.000152452, -0.992434] [-511.286, 27.2164, -305.488]]
+  team:i=2
+  respawnBaseGroup:i=1
+}
+
+entity{
+  _template:t="respawnChooser+respVehicle+vehicle_resp_soft_ground_collision"
+  transform:m=[[-0.985116, -0.000340674, 0.171889] [1.85286e-05, 0.999998, 0.00208813] [-0.171889, 0.00206024, -0.985114] [-511.398, 27.2216, -305.183]]
+  team:i=2
+  maxVehicleOnSpawn:i=2
+  respTime:i=120
+  respawnBaseGroup:i=1
+}
+
+entity{
+  _template:t="defend_zone_chained_poly+defend_zone_respawnbase"
+  capzone__capRewardPartCap:r=1.125
+  capzone__onlyTeamCanCapture:i=1
+  capzone__curTeamCapturingZone:i=-1
+  groupName:t="sector_1_a"
+  capzone__capTime:r=60.0
+  capzone__capTeam:i=-1
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-34.3185, 6.44595, -149.055]]
+  active:b=no
+  capzone__decapTime:r=6000.0
+  ui_order:i=0
+  capzone__capReward:r=250.0
+  capzone__icon:t="AAA"
+  capzone__caption:t="capzone/apartments"
+  capzone__iconOffsetY:r=3.0
+  capzone__deactivateAfterTimeout:r=25.0
+  capzone__spawnAtZoneTimeout:r=25.0
+  capzone__createRespawnBaseForTeam:i=2
+  capzone__createRespawnBase:t="respawnBaseGroupActivator"
+  capzone__createdRespawnBaseGroup:i=8
+  capzone__areaId:t="caparea_1_a"
+
+  "capzone__activateChoice:object"{
+    sector_2_a:r=1.0
+  }
+
+  "poly_area__points:list<p3>"{
+    item:p3=-548.196, 30.5581, -231.282
+    item:p3=-551.854, 30.6832, -227.297
+    item:p3=-577.389, 30.7502, -244.194
+    item:p3=-611.534, 31.1554, -222.427
+    item:p3=-611.858, 31.4116, -215.176
+    item:p3=-609.891, 31.7893, -197.876
+    item:p3=-630.625, 31.7423, -194.306
+    item:p3=-638.5, 32.6445, -211.911
+    item:p3=-636.891, 32.391, -236.19
+    item:p3=-624.464, 31.8154, -243.614
+    item:p3=-618.69, 31.9008, -246.177
+    item:p3=-610.266, 31.9656, -251.717
+    item:p3=-602.364, 31.9054, -257.422
+    item:p3=-595.735, 31.6817, -262.62
+    item:p3=-588.24, 31.8162, -267.664
+    item:p3=-579.109, 31.9335, -273.382
+    item:p3=-554.198, 33.555, -256.119
+    item:p3=-550.729, 31.9018, -248.284
+    item:p3=-548.417, 31.9159, -241.162
+  }
+}
+
+entity{
+  _template:t="defend_zone_chained_sphere+defend_zone_respawnbase"
+  capzone__capRewardPartCap:r=1.0
+  capzone__onlyTeamCanCapture:i=1
+  capzone__curTeamCapturingZone:i=-1
+  groupName:t="sector_1_a"
+  capzone__capTime:r=60.0
+  capzone__capTeam:i=-1
+  transform:m=[[1.50541, 0.0, -0.730802] [0.0, 1.3156, 0.0] [0.574538, -0.0, 1.18351] [-595.494, 35.9155, -232.129]]
+  active:b=no
+  capzone__decapTime:r=6000.0
+  ui_order:i=3
+  capzone__capReward:r=250.0
+  capzone__icon:t="AAA"
+  capzone__caption:t="capzone/church"
+  capzone__deactivateAfterTimeout:r=25.0
+  capzone__spawnAtZoneTimeout:r=25.0
+  capzone__createRespawnBaseForTeam:i=2
+  capzone__createRespawnBase:t="respawnBaseGroupActivator"
+  capzone__createdRespawnBaseGroup:i=9
+  capzone__iconOffsetY:r=3.0
+  decal__height:r=50.0
+  decal__thickness:r=1.0
+  sphere_zone__radius:r=45.0
+}
+
+entity{
+  _template:t="defend_zone_chained_sphere+defend_zone_respawnbase"
+  capzone__capRewardPartCap:r=1.0
+  capzone__onlyTeamCanCapture:i=1
+  capzone__curTeamCapturingZone:i=-1
+  groupName:t="sector_1_a"
+  capzone__capTime:r=60.0
+  capzone__capTeam:i=-1
+  transform:m=[[0.899601, 0.0, -0.436712] [0.0, 1.0, 0.0] [0.436712, -0.0, 0.899601] [-599.544, 35.9155, -241.56]]
+  active:b=no
+  capzone__decapTime:r=6000.0
+  ui_order:i=3
+  capzone__capReward:r=250.0
+  capzone__icon:t="AAA"
+  capzone__caption:t="capzone/church"
+  capzone__deactivateAfterTimeout:r=25.0
+  capzone__spawnAtZoneTimeout:r=25.0
+  capzone__createRespawnBaseForTeam:i=2
+  capzone__createRespawnBase:t="respawnBaseGroupActivator"
+  capzone__createdRespawnBaseGroup:i=9
+  capzone__iconOffsetY:r=3.0
+  decal__height:r=50.0
+  decal__thickness:r=1.0
+  sphere_zone__radius:r=160.0
+}
+
+entity{
+  _template:t="defend_zone_chained_poly+defend_zone_respawnbase"
+  capzone__capRewardPartCap:r=1.125
+  capzone__onlyTeamCanCapture:i=1
+  capzone__curTeamCapturingZone:i=-1
+  groupName:t="sector_1_b"
+  capzone__capTime:r=60.0
+  capzone__capTeam:i=-1
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-34.3185, 6.44595, -149.055]]
+  active:b=no
+  capzone__decapTime:r=6000.0
+  ui_order:i=0
+  capzone__capReward:r=250.0
+  capzone__icon:t="AAA"
+  capzone__caption:t="capzone/apartments"
+  capzone__iconOffsetY:r=3.0
+  capzone__deactivateAfterTimeout:r=25.0
+  capzone__spawnAtZoneTimeout:r=25.0
+  capzone__createRespawnBaseForTeam:i=2
+  capzone__createRespawnBase:t="respawnBaseGroupActivator"
+  capzone__createdRespawnBaseGroup:i=8
+  capzone__areaId:t="caparea_1_b"
+
+  "capzone__activateChoice:object"{
+    sector_2_a:r=1.0
+  }
+
+  "poly_area__points:list<p3>"{
+    item:p3=-564.969, 34.2226, -319.275
+    item:p3=-570.315, 34.811, -308.696
+    item:p3=-575.708, 35.3566, -305.639
+    item:p3=-582.262, 34.9973, -302.503
+    item:p3=-587.765, 34.4705, -300.983
+    item:p3=-592.469, 34.211, -300.464
+    item:p3=-596.479, 34.4683, -301.813
+    item:p3=-601.068, 34.8852, -303.122
+    item:p3=-606.287, 35.0114, -304.503
+    item:p3=-610.325, 34.9563, -306.178
+    item:p3=-614.052, 35.1745, -308.395
+    item:p3=-620.611, 35.1006, -314.142
+    item:p3=-629.556, 35.1342, -324.393
+    item:p3=-632.733, 39.9291, -332.791
+    item:p3=-625.5, 35.3964, -340.169
+    item:p3=-615.963, 35.7078, -333.229
+    item:p3=-607.442, 35.1371, -326.701
+    item:p3=-591.079, 35.1839, -325.341
+    item:p3=-572.378, 35.3971, -338.606
+    item:p3=-557.794, 35.3167, -345.394
+    item:p3=-548.805, 33.939, -332.185
+  }
+}
+
+entity{
+  _template:t="defend_zone_chained_sphere+defend_zone_respawnbase"
+  capzone__capRewardPartCap:r=1.0
+  capzone__onlyTeamCanCapture:i=1
+  capzone__curTeamCapturingZone:i=-1
+  groupName:t="sector_1_b"
+  capzone__capTime:r=60.0
+  capzone__capTeam:i=-1
+  transform:m=[[1.48319, 0.0, -0.115139] [0.0, 1.0, 0.0] [0.0773963, -0.0, 0.997] [-591.085, 35.9155, -324.225]]
+  active:b=no
+  capzone__decapTime:r=6000.0
+  ui_order:i=3
+  capzone__capReward:r=250.0
+  capzone__icon:t="AAA"
+  capzone__caption:t="capzone/church"
+  capzone__deactivateAfterTimeout:r=25.0
+  capzone__spawnAtZoneTimeout:r=25.0
+  capzone__createRespawnBaseForTeam:i=2
+  capzone__createRespawnBase:t="respawnBaseGroupActivator"
+  capzone__createdRespawnBaseGroup:i=9
+  capzone__iconOffsetY:r=3.0
+  decal__height:r=50.0
+  decal__thickness:r=1.0
+  sphere_zone__radius:r=45.0
+}
+
+entity{
+  _template:t="defend_zone_chained_sphere+defend_zone_respawnbase"
+  capzone__capRewardPartCap:r=1.0
+  capzone__onlyTeamCanCapture:i=1
+  capzone__curTeamCapturingZone:i=-1
+  groupName:t="sector_1_b"
+  capzone__capTime:r=60.0
+  capzone__capTeam:i=-1
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-593.824, 35.9155, -319.825]]
+  active:b=no
+  capzone__decapTime:r=6000.0
+  ui_order:i=3
+  capzone__capReward:r=250.0
+  capzone__icon:t="AAA"
+  capzone__caption:t="capzone/church"
+  capzone__deactivateAfterTimeout:r=25.0
+  capzone__spawnAtZoneTimeout:r=25.0
+  capzone__createRespawnBaseForTeam:i=2
+  capzone__createRespawnBase:t="respawnBaseGroupActivator"
+  capzone__createdRespawnBaseGroup:i=9
+  capzone__iconOffsetY:r=3.0
+  decal__height:r=50.0
+  decal__thickness:r=1.0
+  sphere_zone__radius:r=160.0
+}
+
+entity{
+  _template:t="defend_zone_chained_poly+defend_zone_respawnbase"
+  capzone__capRewardPartCap:r=1.25
+  capzone__onlyTeamCanCapture:i=1
+  capzone__curTeamCapturingZone:i=-1
+  groupName:t="sector_2_a"
+  capzone__capTime:r=60.0
+  capzone__capTeam:i=-1
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-34.3185, 6.44595, -149.055]]
+  active:b=no
+  capzone__decapTime:r=6000.0
+  ui_order:i=0
+  capzone__capReward:r=250.0
+  capzone__icon:t="AAA"
+  capzone__caption:t="capzone/apartments"
+  capzone__iconOffsetY:r=3.0
+  capzone__deactivateAfterTimeout:r=25.0
+  capzone__spawnAtZoneTimeout:r=25.0
+  capzone__createRespawnBaseForTeam:i=2
+  capzone__createRespawnBase:t="respawnBaseGroupActivator"
+  capzone__createdRespawnBaseGroup:i=8
+  capzone__areaId:t="caparea_2_a"
+
+  "capzone__activateChoice:object"{
+    sector_2_a:r=1.0
+  }
+
+  "poly_area__points:list<p3>"{
+    item:p3=-441.26, 23.1411, -281.484
+    item:p3=-460.717, 23.4012, -267.985
+    item:p3=-476.14, 28.7166, -263.533
+    item:p3=-481.56, 30.9152, -268.134
+    item:p3=-489.532, 31.5899, -273.144
+    item:p3=-499.546, 30.6331, -278.977
+    item:p3=-508.369, 30.7914, -283.633
+    item:p3=-515.453, 31.8997, -286.055
+    item:p3=-535.898, 32.4626, -285.477
+    item:p3=-537.08, 30.814, -288.886
+    item:p3=-533.245, 28.9505, -305.036
+    item:p3=-526.303, 29.8349, -322.157
+    item:p3=-519.057, 32.1336, -326.34
+    item:p3=-511.859, 32.1384, -323.894
+    item:p3=-499.169, 31.453, -323.505
+    item:p3=-482.974, 30.895, -326.666
+    item:p3=-468.535, 28.8904, -320.206
+    item:p3=-468.688, 29.609, -316.92
+    item:p3=-471.952, 29.8068, -311.49
+    item:p3=-472.013, 29.644, -303.611
+    item:p3=-457.392, 28.4603, -293.191
+    item:p3=-441.703, 27.4762, -288.695
+  }
+}
+
+entity{
+  _template:t="defend_zone_chained_sphere+defend_zone_respawnbase"
+  capzone__capRewardPartCap:r=1.0
+  capzone__onlyTeamCanCapture:i=1
+  capzone__curTeamCapturingZone:i=-1
+  groupName:t="sector_2_a"
+  capzone__capTime:r=60.0
+  capzone__capTeam:i=-1
+  transform:m=[[1.47171, 0.0, 0.729943] [0.0, 1.0, -0.0] [-0.444332, 0.0, 0.895862] [-489.673, 28.5592, -295.491]]
+  active:b=no
+  capzone__decapTime:r=6000.0
+  ui_order:i=3
+  capzone__capReward:r=250.0
+  capzone__icon:t="AAA"
+  capzone__caption:t="capzone/church"
+  capzone__deactivateAfterTimeout:r=25.0
+  capzone__spawnAtZoneTimeout:r=25.0
+  capzone__createRespawnBaseForTeam:i=2
+  capzone__createRespawnBase:t="respawnBaseGroupActivator"
+  capzone__createdRespawnBaseGroup:i=9
+  capzone__iconOffsetY:r=3.0
+  decal__height:r=50.0
+  decal__thickness:r=1.0
+  sphere_zone__radius:r=45.0
+}
+
+entity{
+  _template:t="defend_zone_chained_sphere+defend_zone_respawnbase"
+  capzone__capRewardPartCap:r=1.0
+  capzone__onlyTeamCanCapture:i=1
+  capzone__curTeamCapturingZone:i=-1
+  groupName:t="sector_2_a"
+  capzone__capTime:r=60.0
+  capzone__capTeam:i=-1
+  transform:m=[[0.895862, 0.0, 0.444332] [0.0, 1.0, -0.0] [-0.444332, 0.0, 0.895862] [-490.763, 28.5592, -296.161]]
+  active:b=no
+  capzone__decapTime:r=6000.0
+  ui_order:i=3
+  capzone__capReward:r=250.0
+  capzone__icon:t="AAA"
+  capzone__caption:t="capzone/church"
+  capzone__deactivateAfterTimeout:r=25.0
+  capzone__spawnAtZoneTimeout:r=25.0
+  capzone__createRespawnBaseForTeam:i=2
+  capzone__createRespawnBase:t="respawnBaseGroupActivator"
+  capzone__createdRespawnBaseGroup:i=9
+  capzone__iconOffsetY:r=3.0
+  decal__height:r=50.0
+  decal__thickness:r=1.0
+  sphere_zone__radius:r=160.0
+}
+
+entity{
+  _template:t="defend_zone_chained_box+defend_zone_respawnbase"
+  capzone__capRewardPartCap:r=1.0
+  capzone__onlyTeamCanCapture:i=1
+  capzone__curTeamCapturingZone:i=-1
+  groupName:t="sector_3_a"
+  capzone__capTime:r=60.0
+  capzone__capTeam:i=-1
+  transform:m=[[42.2396, 0.0, 0.00311325] [0.0, 6.96186, -0.0] [-0.00200792, 0.0, 27.2426] [-358.22, 21.8724, -193.684]]
+  active:b=no
+  capzone__decapTime:r=6000.0
+  ui_order:i=0
+  capzone__capReward:r=250.0
+  capzone__icon:t="AAA"
+  capzone__caption:t="capzone/railway_station"
+  capzone__deactivateAfterTimeout:r=25.0
+  capzone__spawnAtZoneTimeout:r=25.0
+  capzone__createRespawnBaseForTeam:i=2
+  decal__thickness:r=0.15
+  decal__height:r=0.3
+  capzone__createRespawnBase:t="respawnBaseGroupActivator"
+  capzone__createdRespawnBaseGroup:i=9
+}
+
+entity{
+  _template:t="defend_zone_chained_sphere+defend_zone_respawnbase"
+  capzone__capRewardPartCap:r=1.0
+  capzone__onlyTeamCanCapture:i=1
+  capzone__curTeamCapturingZone:i=-1
+  groupName:t="sector_3_a"
+  capzone__capTime:r=60.0
+  capzone__capTeam:i=-1
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-357.18, 27.9902, -193.202]]
+  active:b=no
+  capzone__decapTime:r=6000.0
+  ui_order:i=3
+  capzone__capReward:r=250.0
+  capzone__icon:t="AAA"
+  capzone__caption:t="capzone/church"
+  capzone__deactivateAfterTimeout:r=25.0
+  capzone__spawnAtZoneTimeout:r=25.0
+  capzone__createRespawnBaseForTeam:i=2
+  capzone__createRespawnBase:t="respawnBaseGroupActivator"
+  capzone__createdRespawnBaseGroup:i=9
+  capzone__iconOffsetY:r=3.0
+  decal__height:r=50.0
+  decal__thickness:r=1.0
+  sphere_zone__radius:r=45.0
+}
+
+entity{
+  _template:t="defend_zone_chained_sphere+defend_zone_respawnbase"
+  capzone__capRewardPartCap:r=1.0
+  capzone__onlyTeamCanCapture:i=1
+  capzone__curTeamCapturingZone:i=-1
+  groupName:t="sector_3_a"
+  capzone__capTime:r=60.0
+  capzone__capTeam:i=-1
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-356.964, 27.9902, -192.812]]
+  active:b=no
+  capzone__decapTime:r=6000.0
+  ui_order:i=3
+  capzone__capReward:r=250.0
+  capzone__icon:t="AAA"
+  capzone__caption:t="capzone/church"
+  capzone__deactivateAfterTimeout:r=25.0
+  capzone__spawnAtZoneTimeout:r=25.0
+  capzone__createRespawnBaseForTeam:i=2
+  capzone__createRespawnBase:t="respawnBaseGroupActivator"
+  capzone__createdRespawnBaseGroup:i=9
+  capzone__iconOffsetY:r=3.0
+  decal__height:r=50.0
+  decal__thickness:r=1.0
+  sphere_zone__radius:r=160.0
+}
+
+entity{
+  _template:t="defend_zone_chained_box+defend_zone_respawnbase"
+  capzone__capRewardPartCap:r=1.0
+  capzone__onlyTeamCanCapture:i=1
+  capzone__curTeamCapturingZone:i=-1
+  groupName:t="sector_3_b"
+  capzone__capTime:r=60.0
+  capzone__capTeam:i=-1
+  transform:m=[[31.7723, 0.0, -2.41913] [0.0, 8.70184, 0.0] [3.7928, -0.0, 49.8139] [-330.245, 17.874, -308.584]]
+  active:b=no
+  capzone__decapTime:r=6000.0
+  ui_order:i=0
+  capzone__capReward:r=250.0
+  capzone__icon:t="AAA"
+  capzone__caption:t="capzone/railway_station"
+  capzone__deactivateAfterTimeout:r=25.0
+  capzone__spawnAtZoneTimeout:r=25.0
+  capzone__createRespawnBaseForTeam:i=2
+  decal__thickness:r=0.15
+  decal__height:r=0.3
+  capzone__createRespawnBase:t="respawnBaseGroupActivator"
+  capzone__createdRespawnBaseGroup:i=9
+}
+
+entity{
+  _template:t="defend_zone_chained_sphere+defend_zone_respawnbase"
+  capzone__capRewardPartCap:r=1.0
+  capzone__onlyTeamCanCapture:i=1
+  capzone__curTeamCapturingZone:i=-1
+  groupName:t="sector_3_b"
+  capzone__capTime:r=60.0
+  capzone__capTeam:i=-1
+  transform:m=[[0.999405, 0.0, -0.0344985] [0.0, 1.0, 0.0] [0.0393406, -0.0, 1.13968] [-331.81, 22.455, -308.846]]
+  active:b=no
+  capzone__decapTime:r=6000.0
+  ui_order:i=3
+  capzone__capReward:r=250.0
+  capzone__icon:t="AAA"
+  capzone__caption:t="capzone/church"
+  capzone__deactivateAfterTimeout:r=25.0
+  capzone__spawnAtZoneTimeout:r=25.0
+  capzone__createRespawnBaseForTeam:i=2
+  capzone__createRespawnBase:t="respawnBaseGroupActivator"
+  capzone__createdRespawnBaseGroup:i=9
+  capzone__iconOffsetY:r=3.0
+  decal__height:r=50.0
+  decal__thickness:r=1.0
+  sphere_zone__radius:r=45.0
+}
+
+entity{
+  _template:t="defend_zone_chained_sphere+defend_zone_respawnbase"
+  capzone__capRewardPartCap:r=1.0
+  capzone__onlyTeamCanCapture:i=1
+  capzone__curTeamCapturingZone:i=-1
+  groupName:t="sector_3_b"
+  capzone__capTime:r=60.0
+  capzone__capTeam:i=-1
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-331.594, 22.455, -308.457]]
+  active:b=no
+  capzone__decapTime:r=6000.0
+  ui_order:i=3
+  capzone__capReward:r=250.0
+  capzone__icon:t="AAA"
+  capzone__caption:t="capzone/church"
+  capzone__deactivateAfterTimeout:r=25.0
+  capzone__spawnAtZoneTimeout:r=25.0
+  capzone__createRespawnBaseForTeam:i=2
+  capzone__createRespawnBase:t="respawnBaseGroupActivator"
+  capzone__createdRespawnBaseGroup:i=9
+  capzone__iconOffsetY:r=3.0
+  decal__height:r=50.0
+  decal__thickness:r=1.0
+  sphere_zone__radius:r=160.0
+}
+
+entity{
+  _template:t="defend_zone_chained_sphere+defend_zone_respawnbase"
+  capzone__capRewardPartCap:r=1.0
+  capzone__onlyTeamCanCapture:i=1
+  capzone__curTeamCapturingZone:i=-1
+  groupName:t="sector_4_a"
+  capzone__capTime:r=60.0
+  capzone__capTeam:i=-1
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-230.943, 6.41739, -204.055]]
+  active:b=no
+  capzone__decapTime:r=6000.0
+  ui_order:i=3
+  capzone__capReward:r=250.0
+  capzone__icon:t="AAA"
+  capzone__caption:t="capzone/church"
+  capzone__deactivateAfterTimeout:r=25.0
+  capzone__spawnAtZoneTimeout:r=25.0
+  capzone__createRespawnBaseForTeam:i=2
+  capzone__createRespawnBase:t="respawnBaseGroupActivator"
+  capzone__createdRespawnBaseGroup:i=9
+  capzone__iconOffsetY:r=3.0
+  decal__height:r=50.0
+  decal__thickness:r=1.0
+  sphere_zone__radius:r=160.0
+}
+
+entity{
+  _template:t="defend_zone_chained_sphere+defend_zone_respawnbase"
+  capzone__capRewardPartCap:r=1.0
+  capzone__onlyTeamCanCapture:i=1
+  capzone__curTeamCapturingZone:i=-1
+  groupName:t="sector_4_a"
+  capzone__capTime:r=60.0
+  capzone__capTeam:i=-1
+  transform:m=[[0.996516, 0.0, 0.0834008] [0.0, 1.0, -0.0] [-0.137926, 0.0, 1.64801] [-230.916, 6.78992, -204.561]]
+  active:b=no
+  capzone__decapTime:r=6000.0
+  ui_order:i=3
+  capzone__capReward:r=250.0
+  capzone__icon:t="AAA"
+  capzone__caption:t="capzone/church"
+  capzone__deactivateAfterTimeout:r=25.0
+  capzone__spawnAtZoneTimeout:r=25.0
+  capzone__createRespawnBaseForTeam:i=2
+  capzone__createRespawnBase:t="respawnBaseGroupActivator"
+  capzone__createdRespawnBaseGroup:i=9
+  capzone__iconOffsetY:r=3.0
+  decal__height:r=50.0
+  decal__thickness:r=1.0
+  sphere_zone__radius:r=20.0
+}
+
+entity{
+  _template:t="defend_zone_chained_sphere+defend_zone_respawnbase"
+  capzone__capRewardPartCap:r=1.0
+  capzone__onlyTeamCanCapture:i=1
+  capzone__curTeamCapturingZone:i=-1
+  groupName:t="sector_4_a"
+  capzone__capTime:r=60.0
+  capzone__capTeam:i=-1
+  transform:m=[[0.999323, 0.0, 0.0367854] [0.0, 1.0, -0.0] [-0.0463208, 0.0, 1.25837] [-231.159, 6.78992, -204.445]]
+  active:b=no
+  capzone__decapTime:r=6000.0
+  ui_order:i=3
+  capzone__capReward:r=250.0
+  capzone__icon:t="AAA"
+  capzone__caption:t="capzone/church"
+  capzone__deactivateAfterTimeout:r=25.0
+  capzone__spawnAtZoneTimeout:r=25.0
+  capzone__createRespawnBaseForTeam:i=2
+  capzone__createRespawnBase:t="respawnBaseGroupActivator"
+  capzone__createdRespawnBaseGroup:i=9
+  capzone__iconOffsetY:r=3.0
+  decal__height:r=50.0
+  decal__thickness:r=1.0
+  sphere_zone__radius:r=45.0
+}
+
+entity{
+  _template:t="defend_zone_chained_sphere+defend_zone_respawnbase"
+  capzone__capRewardPartCap:r=1.0
+  capzone__onlyTeamCanCapture:i=1
+  capzone__curTeamCapturingZone:i=-1
+  groupName:t="sector_4_b"
+  capzone__capTime:r=60.0
+  capzone__capTeam:i=-1
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-195.784, 6.33588, -315.715]]
+  active:b=no
+  capzone__decapTime:r=6000.0
+  ui_order:i=3
+  capzone__capReward:r=250.0
+  capzone__icon:t="AAA"
+  capzone__caption:t="capzone/church"
+  capzone__deactivateAfterTimeout:r=25.0
+  capzone__spawnAtZoneTimeout:r=25.0
+  capzone__createRespawnBaseForTeam:i=2
+  capzone__createRespawnBase:t="respawnBaseGroupActivator"
+  capzone__createdRespawnBaseGroup:i=9
+  capzone__iconOffsetY:r=3.0
+  decal__height:r=50.0
+  decal__thickness:r=1.0
+  sphere_zone__radius:r=160.0
+}
+
+entity{
+  _template:t="defend_zone_chained_sphere+defend_zone_respawnbase"
+  capzone__capRewardPartCap:r=1.0
+  capzone__onlyTeamCanCapture:i=1
+  capzone__curTeamCapturingZone:i=-1
+  groupName:t="sector_4_b"
+  capzone__capTime:r=60.0
+  capzone__capTeam:i=-1
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-195.758, 6.7899, -316.221]]
+  active:b=no
+  capzone__decapTime:r=6000.0
+  ui_order:i=3
+  capzone__capReward:r=250.0
+  capzone__icon:t="AAA"
+  capzone__caption:t="capzone/church"
+  capzone__deactivateAfterTimeout:r=25.0
+  capzone__spawnAtZoneTimeout:r=25.0
+  capzone__createRespawnBaseForTeam:i=2
+  capzone__createRespawnBase:t="respawnBaseGroupActivator"
+  capzone__createdRespawnBaseGroup:i=9
+  capzone__iconOffsetY:r=3.0
+  decal__height:r=50.0
+  decal__thickness:r=1.0
+  sphere_zone__radius:r=16.0
+}
+
+entity{
+  _template:t="defend_zone_chained_sphere+defend_zone_respawnbase"
+  capzone__capRewardPartCap:r=1.0
+  capzone__onlyTeamCanCapture:i=1
+  capzone__curTeamCapturingZone:i=-1
+  groupName:t="sector_4_b"
+  capzone__capTime:r=60.0
+  capzone__capTeam:i=-1
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-196.0, 6.7899, -316.105]]
+  active:b=no
+  capzone__decapTime:r=6000.0
+  ui_order:i=3
+  capzone__capReward:r=250.0
+  capzone__icon:t="AAA"
+  capzone__caption:t="capzone/church"
+  capzone__deactivateAfterTimeout:r=25.0
+  capzone__spawnAtZoneTimeout:r=25.0
+  capzone__createRespawnBaseForTeam:i=2
+  capzone__createRespawnBase:t="respawnBaseGroupActivator"
+  capzone__createdRespawnBaseGroup:i=9
+  capzone__iconOffsetY:r=3.0
+  decal__height:r=50.0
+  decal__thickness:r=1.0
+  sphere_zone__radius:r=40.0
+}
+
+entity{
+  _template:t="defend_zone_chained_sphere+defend_zone_respawnbase"
+  capzone__capRewardPartCap:r=1.0
+  capzone__onlyTeamCanCapture:i=1
+  capzone__curTeamCapturingZone:i=-1
+  groupName:t="sector_5_a"
+  capzone__capTime:r=60.0
+  capzone__capTeam:i=-1
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-102.186, 10.4932, -229.972]]
+  active:b=no
+  capzone__decapTime:r=6000.0
+  ui_order:i=3
+  capzone__capReward:r=250.0
+  capzone__icon:t="AAA"
+  capzone__caption:t="capzone/church"
+  capzone__deactivateAfterTimeout:r=25.0
+  capzone__spawnAtZoneTimeout:r=25.0
+  capzone__createRespawnBaseForTeam:i=2
+  capzone__createRespawnBase:t="respawnBaseGroupActivator"
+  capzone__createdRespawnBaseGroup:i=9
+  capzone__iconOffsetY:r=3.0
+  decal__height:r=50.0
+  decal__thickness:r=1.0
+  sphere_zone__radius:r=20.0
+}
+
+entity{
+  _template:t="defend_zone_chained_sphere+defend_zone_respawnbase"
+  capzone__capRewardPartCap:r=1.0
+  capzone__onlyTeamCanCapture:i=1
+  capzone__curTeamCapturingZone:i=-1
+  groupName:t="sector_5_a"
+  capzone__capTime:r=60.0
+  capzone__capTeam:i=-1
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-102.429, 10.4932, -229.856]]
+  active:b=no
+  capzone__decapTime:r=6000.0
+  ui_order:i=3
+  capzone__capReward:r=250.0
+  capzone__icon:t="AAA"
+  capzone__caption:t="capzone/church"
+  capzone__deactivateAfterTimeout:r=25.0
+  capzone__spawnAtZoneTimeout:r=25.0
+  capzone__createRespawnBaseForTeam:i=2
+  capzone__createRespawnBase:t="respawnBaseGroupActivator"
+  capzone__createdRespawnBaseGroup:i=9
+  capzone__iconOffsetY:r=3.0
+  decal__height:r=50.0
+  decal__thickness:r=1.0
+  sphere_zone__radius:r=45.0
+}
+
+entity{
+  _template:t="defend_zone_chained_sphere+defend_zone_respawnbase"
+  capzone__capRewardPartCap:r=1.0
+  capzone__onlyTeamCanCapture:i=1
+  capzone__curTeamCapturingZone:i=-1
+  groupName:t="sector_5_a"
+  capzone__capTime:r=60.0
+  capzone__capTeam:i=-1
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-102.213, 10.4932, -229.466]]
+  active:b=no
+  capzone__decapTime:r=6000.0
+  ui_order:i=3
+  capzone__capReward:r=250.0
+  capzone__icon:t="AAA"
+  capzone__caption:t="capzone/church"
+  capzone__deactivateAfterTimeout:r=25.0
+  capzone__spawnAtZoneTimeout:r=25.0
+  capzone__createRespawnBaseForTeam:i=2
+  capzone__createRespawnBase:t="respawnBaseGroupActivator"
+  capzone__createdRespawnBaseGroup:i=9
+  capzone__iconOffsetY:r=3.0
+  decal__height:r=50.0
+  decal__thickness:r=1.0
+  sphere_zone__radius:r=160.0
+}
+
+import{
+  scene:t="gamedata/scenes/_normandy_ardennes_winter_common.blk"
+}

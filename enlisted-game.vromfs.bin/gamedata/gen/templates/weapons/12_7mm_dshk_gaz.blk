@@ -1,0 +1,107 @@
+base_12_7mm_dshk_gaz{
+  item__name:t="guns/12_7mm_dshk_gaz"
+  gun__blk:t="gamedata/gen/weapons/12_7mm_dshk_gaz.blk"
+  gun__shotFreq:r=10.0
+  gun__reloadTime:r=8.0
+  gun__maxAmmo:i=50
+  gun__locName:t="12_7mm_dshk_gaz"
+
+  "gun__firingModes:array"{
+
+    "mode:object"{
+      modeType:t="automatic"
+    }
+  }
+
+  "gun__firingModeNames:array"{
+    mode:t="automatic"
+  }
+
+  "gun__ammoSetsInfo:shared:array"{
+
+    "defaultSet:array"{
+
+      "shell:object"{
+        blk:t="gamedata/gen/weapons/shells/12_7mm_dshk_gaz_defaultset_bullet_1.blk"
+        type:t="ap_i_ball"
+      }
+
+      "shell:object"{
+        blk:t="gamedata/gen/weapons/shells/12_7mm_dshk_gaz_defaultset_bullet_2.blk"
+        type:t="t_ball"
+      }
+
+      "shell:object"{
+        blk:t="gamedata/gen/weapons/shells/12_7mm_dshk_gaz_defaultset_bullet_3.blk"
+        type:t="he_i_ball"
+      }
+    }
+
+    "12mm_ussr_dshk_API:array"{
+
+      "shell:object"{
+        blk:t="gamedata/gen/weapons/shells/12_7mm_dshk_gaz_12mm_ussr_dshk_api_bullet_1.blk"
+        type:t="apcr_i_ball_bs41"
+      }
+
+      "shell:object"{
+        blk:t="gamedata/gen/weapons/shells/12_7mm_dshk_gaz_12mm_ussr_dshk_api_bullet_2.blk"
+        type:t="ap_i_t_ball"
+      }
+
+      "shell:object"{
+        blk:t="gamedata/gen/weapons/shells/12_7mm_dshk_gaz_12mm_ussr_dshk_api_bullet_3.blk"
+        type:t="apcr_i_ball_bs41"
+      }
+
+      "shell:object"{
+        blk:t="gamedata/gen/weapons/shells/12_7mm_dshk_gaz_12mm_ussr_dshk_api_bullet_4.blk"
+        type:t="ap_i_t_ball"
+      }
+    }
+
+    "12mm_ussr_dshk_AP:array"{
+
+      "shell:object"{
+        blk:t="gamedata/gen/weapons/shells/12_7mm_dshk_gaz_12mm_ussr_dshk_ap_bullet_1.blk"
+        type:t="apcr_i_ball_bs41"
+      }
+
+      "shell:object"{
+        blk:t="gamedata/gen/weapons/shells/12_7mm_dshk_gaz_12mm_ussr_dshk_ap_bullet_2.blk"
+        type:t="apcr_i_ball_bs41"
+      }
+
+      "shell:object"{
+        blk:t="gamedata/gen/weapons/shells/12_7mm_dshk_gaz_12mm_ussr_dshk_ap_bullet_3.blk"
+        type:t="ap_i_t_ball"
+      }
+    }
+
+    "12mm_ussr_dshk_APIT:array"{
+
+      "shell:object"{
+        blk:t="gamedata/gen/weapons/shells/12_7mm_dshk_gaz_12mm_ussr_dshk_apit_bullet_1.blk"
+        type:t="ap_i_t_ball"
+      }
+
+      "shell:object"{
+        blk:t="gamedata/gen/weapons/shells/12_7mm_dshk_gaz_12mm_ussr_dshk_apit_bullet_2.blk"
+        type:t="ap_i_t_ball"
+      }
+
+      "shell:object"{
+        blk:t="gamedata/gen/weapons/shells/12_7mm_dshk_gaz_12mm_ussr_dshk_apit_bullet_3.blk"
+        type:t="apcr_i_ball_bs41"
+      }
+    }
+  }
+}
+
+tankgun_12_7mm_dshk_gaz{
+  _use:t="tankgun"
+  _use:t="base_tankgun_autocannon"
+  _use:t="base_12_7mm_dshk_gaz"
+  _use:t="gunsound_12_7mm_dshk_gaz"
+  turret__triggerGroup:i=0
+}

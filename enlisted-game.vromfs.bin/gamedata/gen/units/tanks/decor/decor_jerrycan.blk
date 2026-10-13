@@ -1,0 +1,99 @@
+DamagePartsDefault{
+
+  default{
+    physMaterial:t="steel"
+    vital:b=no
+    hitTestType:t="armor"
+    malfunctionDamage:r=0.7
+    stopChanceOnDeadPart:r=1.0
+    castOnKillAfterTankPartDead:b=yes
+    fireProtectionHp:r=-1.0
+    externalArmor:b=no
+    minRelHpSelfRepair:r=0.5
+    maxRelHpSelfRepair:r=0.5
+    selfRepairDelay:r=0.0
+    selfRepairTime:r=-1.0
+    ignoreDeadWithSplash:b=no
+  }
+
+  default_v1{
+    vital:b=no
+    hitTestType:t="armor"
+    malfunctionDamage:r=0.7
+    stopChanceOnDeadPart:r=1.0
+    castOnKillAfterTankPartDead:b=yes
+    fireProtectionHp:r=-1.0
+    externalArmor:b=no
+    minRelHpSelfRepair:r=0.5
+    maxRelHpSelfRepair:r=0.5
+    selfRepairDelay:r=0.0
+    selfRepairTime:r=-1.0
+    ignoreDeadWithSplash:b=no
+    slopeMinCaliber:r=29.0
+    simpleRicochet:b=yes
+    checkFuseRelDamageThreshold:b=no
+    createSecondaryShatters:b=no
+  }
+}
+
+DamageParts{
+  formatVersion:i=2
+
+  ex_armor_cls_01{
+    hitTestType:t="exclude"
+    malfunctionDamage:r=0.7
+    stopChanceOnDeadPart:r=1.0
+    castOnKillAfterTankPartDead:b=no
+    fireProtectionHp:r=-1.0
+    externalArmor:b=no
+    minRelHpSelfRepair:r=0.5
+    maxRelHpSelfRepair:r=0.5
+    selfRepairDelay:r=0.0
+    selfRepairTime:r=-1.0
+    ignoreDeadWithSplash:b=no
+    useForSeriousHit:b=yes
+    splashPenetrationToArmorThreshold:r=0.33
+    pressureDamageMult:r=0.0
+    napalmDamageMult:r=0.0
+    sonicDamageMult:r=0.0
+    vital:b=yes
+    movement:b=yes
+    armorClass:t="tank_structural_steel"
+    hp:r=100.0
+    allowRicochet:b=yes
+    armorThickness:r=1.0
+    armorEffectiveThicknessMax:r=5.0
+    genericEffectiveThicknessMax:r=5.0
+    genericDamageMult:r=0.8
+    cumulativeDamageMult:r=0.8
+  }
+
+  ex_armor_cls{
+    hitTestType:t="exclude"
+    malfunctionDamage:r=0.7
+    stopChanceOnDeadPart:r=1.0
+    castOnKillAfterTankPartDead:b=no
+    fireProtectionHp:r=-1.0
+    externalArmor:b=no
+    minRelHpSelfRepair:r=0.5
+    maxRelHpSelfRepair:r=0.5
+    selfRepairDelay:r=0.0
+    selfRepairTime:r=-1.0
+    ignoreDeadWithSplash:b=no
+    useForSeriousHit:b=yes
+    splashPenetrationToArmorThreshold:r=0.33
+    pressureDamageMult:r=0.0
+    napalmDamageMult:r=0.0
+    sonicDamageMult:r=0.0
+    vital:b=yes
+    movement:b=yes
+    armorClass:t="tank_structural_steel"
+    hp:r=100.0
+    allowRicochet:b=yes
+    armorThickness:r=1.0
+    armorEffectiveThicknessMax:r=5.0
+    genericEffectiveThicknessMax:r=5.0
+    genericDamageMult:r=0.8
+    cumulativeDamageMult:r=0.8
+  }
+}

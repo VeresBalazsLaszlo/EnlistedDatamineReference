@@ -1,0 +1,695 @@
+global_track_fx_info{
+  _singleton:b=yes
+
+  "global_track_fx__materialToGroupMap:object"{
+  }
+
+  "global_track_fx__materialGroups:object"{
+
+    "wood:list<t>"{
+      value:t="wood"
+      value:t="wood_solid"
+      value:t="wood_railway"
+      value:t="window_wood"
+      value:t="softWoodDoor"
+    }
+
+    "stone:list<t>"{
+      value:t="concrete"
+      value:t="stone"
+      value:t="rocks"
+      value:t="rocksSlippery"
+      value:t="gravel"
+      value:t="ceramic"
+    }
+
+    "water:list<t>"{
+      value:t="water"
+      value:t="water3d"
+    }
+
+    "mud:list<t>"{
+      value:t="mud"
+      value:t="roadmud"
+    }
+
+    "dirt:list<t>"{
+      value:t="soil"
+      value:t="hard_soil"
+      value:t="roadSoil"
+      value:t="dirt"
+    }
+
+    "sand:list<t>"{
+      value:t="sand"
+      value:t="sand_slope"
+      value:t="quickSand"
+      value:t="roadSand"
+      value:t="quarrySand"
+      value:t="moon_sand"
+    }
+
+    "metal:list<t>"{
+      value:t="steel"
+      value:t="metal"
+      value:t="train"
+      value:t="barbwire"
+      value:t="softSteelDoor"
+      value:t="steel_bullet_transparent"
+    }
+
+    "snow:list<t>"{
+      value:t="snow"
+      value:t="ice"
+      value:t="snowLower"
+      value:t="roadSnow"
+    }
+  }
+}
+
+vehicle_effect_base{
+  _use:t="ecs_no_debug"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, 0.0, 0.0]]
+
+  _group{
+    _tags:t="render"
+    vehicle_effect__type:i=-1
+    vehicle_effect__vehicleFxId:i=-1
+    vehicle_effect__emitterLocalPos:p3=0.0, 0.0, 0.0
+    vehicle_effect__nodeId:i=-1
+    vehicle_effect__emitterPos:p3=0.0, 0.0, 0.0
+    vehicle_effect__minDistSqToUpdateEmitterTm:r=0.01
+
+    effect{
+    }
+
+    "vehicle_effect__vehicleEid:eid"{
+    }
+  }
+
+  "vehicleEffect:tag"{
+  }
+
+  "staticEffect:tag"{
+  }
+
+  "autodeleteEffectEntity:tag"{
+  }
+}
+
+vehicle_sound_effect_base{
+  _use:t="dynamic_sound_effect"
+
+  _group{
+    _tags:t="sound"
+    sound_effect__path:t="empty vehicle_sound_effect_base"
+    sound_effect__abandonOnReset:b=yes
+  }
+}
+
+vehicle_effect_oriented_attached{
+  _tags:t="render"
+  vehicle_effect__emitterLocalTm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, 0.0, 0.0]]
+}
+
+vehicle_fire_small_managed_sound_effect{
+  _use:t="fire_small_managed_sound_effect"
+  _use:t="dynamic_sound_effect_tag"
+}
+
+vehicle_fire_vehicle_managed_sound_effect{
+  _use:t="fire_small_managed_sound_effect"
+  _use:t="dynamic_sound_effect_tag"
+
+  _group{
+    _tags:t="sound"
+    sound_effect__path:t="env_effects/fire/fire_vehicle"
+  }
+}
+
+pv_broken_exhaust_base_template{
+  _use:t="vehicle_effect_base"
+
+  _group{
+    _tags:t="render"
+    effect__name:t="pv_broken_exhaust_base_fx"
+  }
+}
+
+tank_engine_fire_template{
+  _use:t="vehicle_effect_base"
+  _use:t="vehicle_fire_vehicle_managed_sound_effect"
+
+  _group{
+    _tags:t="render"
+    effect__name:t="fire_tank_small_cmps_fx"
+  }
+}
+
+tank_engine_smoke_template{
+  _use:t="vehicle_effect_base"
+
+  _group{
+    _tags:t="render"
+    effect__name:t="fire_tank_smoke_small_cmps_fx"
+  }
+}
+
+tank_smoke_big_template{
+  _use:t="vehicle_effect_base"
+  game_effect__timeToDestroy:r=20.0
+  game_effect__destroyAt:r=0.0
+
+  _group{
+    _tags:t="render"
+    effect__name:t="fire_tank_smoke_big_cmps_fx"
+  }
+}
+
+tank_smoke_medium_template{
+  _use:t="vehicle_effect_base"
+  _use:t="vehicle_fire_small_managed_sound_effect"
+
+  _group{
+    _tags:t="render"
+    effect__name:t="fire_tank_smoke_medium_cmps_fx"
+  }
+}
+
+tank_smoke_medium_destroyed_template{
+  _use:t="tank_smoke_medium_template"
+  game_effect__timeToDestroy:r=10.0
+  game_effect__destroyAt:r=0.0
+}
+
+tank_smoke_small_template{
+  _use:t="vehicle_effect_base"
+  _use:t="vehicle_fire_small_managed_sound_effect"
+
+  _group{
+    _tags:t="render"
+    effect__name:t="fire_tank_smoke_small_cmps_fx"
+  }
+}
+
+tank_smoke_small_late_template{
+  _use:t="tank_smoke_small_template"
+  game_effect__timeToDestroy:r=30.0
+  game_effect__destroyAt:r=0.0
+}
+
+tank_fire_big_template{
+  _use:t="vehicle_effect_base"
+  _use:t="vehicle_fire_vehicle_managed_sound_effect"
+
+  _group{
+    _tags:t="render"
+    effect__name:t="fire_tank_big_cmps_fx"
+  }
+}
+
+tank_fire_big_static_template{
+  _use:t="environment_effect_base"
+  _use:t="vehicle_fire_vehicle_managed_sound_effect"
+
+  _group{
+    _tags:t="render"
+    effect__name:t="fire_tank_big_cmps_fx"
+  }
+}
+
+tank_fire_medium_template{
+  _use:t="vehicle_effect_base"
+  _use:t="vehicle_fire_vehicle_managed_sound_effect"
+
+  _group{
+    _tags:t="render"
+    effect__name:t="fire_tank_medium_cmps_fx"
+  }
+}
+
+tank_fire_small_template{
+  _use:t="vehicle_effect_base"
+  _use:t="vehicle_fire_small_managed_sound_effect"
+
+  _group{
+    _tags:t="render"
+    effect__name:t="fire_tank_small_cmps_fx"
+  }
+}
+
+explosion_tank_ammo_smoke_template{
+  _use:t="vehicle_effect_base"
+  _use:t="vehicle_sound_effect_base"
+
+  _group{
+    _tags:t="render"
+    effect__name:t="explosion_tank_ammo_smoke_cmps_fx"
+  }
+
+  _group{
+    _tags:t="sound"
+    sound_effect__path:t="impact/explode_ammo"
+  }
+}
+
+tank_ammo_fire_template{
+  _use:t="vehicle_effect_base"
+
+  _group{
+    _tags:t="render"
+    effect__name:t="explosion_tank_ammo_cmps_fx"
+  }
+}
+
+tank_ammo_fire_turret_small_template{
+  _use:t="vehicle_effect_base"
+
+  _group{
+    _tags:t="render"
+    effect__name:t="explosion_tank_ammo_turret_small_cmps_fx"
+  }
+}
+
+tank_ammo_fire_turret_big_template{
+  _use:t="vehicle_effect_base"
+
+  _group{
+    _tags:t="render"
+    effect__name:t="explosion_tank_ammo_turret_big_cmps_fx"
+  }
+}
+
+tank_ammo_fire_barrel_small_template{
+  _use:t="vehicle_effect_base"
+
+  _group{
+    _tags:t="render"
+    effect__name:t="explosion_tank_ammo_barrel_small_cmps_fx"
+  }
+}
+
+tank_ammo_fire_barrel_big_template{
+  _use:t="vehicle_effect_base"
+
+  _group{
+    _tags:t="render"
+    effect__name:t="explosion_tank_ammo_barrel_big_cmps_fx"
+  }
+}
+
+tank_ammo_fire_turret_trail_template{
+  _use:t="vehicle_effect_base"
+
+  _group{
+    _tags:t="render"
+    effect__name:t="explosion_tank_ammo_turret_trail_cmps_fx"
+  }
+}
+
+tank_ammo_fire_barrel_trail_template{
+  _use:t="vehicle_effect_base"
+
+  _group{
+    _tags:t="render"
+    effect__name:t="explosion_tank_ammo_barrel_trail_cmps_fx"
+  }
+}
+
+tank_explosion_template{
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, 0.0, 0.0]]
+  _use:t="hit_env_affect_fx"
+  wind_emitter__radius:r=5.0
+  wind_emitter__duration:r=4.0
+  wind_emitter__strength:r=7.0
+  wind_emitter__phaseSin:b=yes
+  wind_emitter__numWaves:i=6
+  wind_emitter__phaseAttack:b=yes
+
+  "wind_emitter__omni:tag"{
+  }
+
+  _group{
+    _tags:t="render"
+    effect__environmentDestructionRadius:r=10.0
+    effect__name:t="explosion_tank_base_cmps_fx"
+
+    effect{
+    }
+
+    "vehicle_effect__vehicleEid:eid"{
+    }
+  }
+
+  "vehicleEffect:tag"{
+  }
+
+  "staticEffect:tag"{
+  }
+
+  "autodeleteEffectEntity:tag"{
+  }
+}
+
+tank_skeleton_explosion_template{
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, 0.0, 0.0]]
+
+  _group{
+    _tags:t="render"
+    effect__name:t="explosion_tank_skeleton_cmps_fx"
+
+    effect{
+    }
+  }
+
+  "staticEffect:tag"{
+  }
+
+  "autodeleteEffectEntity:tag"{
+  }
+}
+
+tank_smoke_destroyed_template{
+  _use:t="vehicle_effect_base"
+  _use:t="vehicle_fire_small_managed_sound_effect"
+  game_effect__timeToDestroy:r=60.0
+  game_effect__destroyAt:r=0.0
+
+  _group{
+    _tags:t="render"
+    effect__name:t="fire_tank_destroyed_cmps_fx"
+  }
+}
+
+tank_exhaust_template{
+  _use:t="base_effect"
+  _use:t="range_pauseable_effect"
+  effect__emit_range_limit:r=140.0
+  _tracked:t="effect__velocity"
+  _tracked:t="effect__distance_scale"
+
+  _group{
+    _tags:t="render"
+    effect__name:t="smoke_tank_exhaust_cmps_fx"
+    effect__velocity:p3=0.0, 0.0, 0.0
+    effect__distance_scale:r=1.0
+  }
+
+  _group{
+    _track:b=yes
+    effect__scale:r=1.0
+    effect__spawnRate:r=0.0
+    effect__colorMult:c=255, 255, 255, 255
+  }
+}
+
+tank_broken_exhaust_template{
+  _use:t="tank_exhaust_template"
+  _use:t="range_pauseable_effect"
+  effect__emit_range_limit:r=140.0
+
+  _group{
+    _tags:t="render"
+    effect__name:t="smoke_tank_exhaust_broken_cmps_fx"
+  }
+}
+
+car_exhaust_template{
+  _use:t="base_effect"
+  _use:t="range_pauseable_effect"
+  effect__emit_range_limit:r=100.0
+  _tracked:t="effect__velocity"
+  _tracked:t="effect__distance_scale"
+
+  _group{
+    _tags:t="render"
+    effect__name:t="smoke_car_exhaust_cmps_fx"
+    effect__velocity:p3=0.0, 0.0, 0.0
+    effect__distance_scale:r=1.0
+  }
+
+  _group{
+    _track:b=yes
+    effect__scale:r=1.0
+    effect__spawnRate:r=0.0
+    effect__colorMult:c=255, 255, 255, 255
+  }
+}
+
+car_broken_exhaust_template{
+  _use:t="car_exhaust_template"
+  _use:t="range_pauseable_effect"
+  effect__emit_range_limit:r=140.0
+
+  _group{
+    _tags:t="render"
+    effect__name:t="smoke_car_exhaust_broken_cmps_fx"
+  }
+}
+
+motorcycle_exhaust_template{
+  _use:t="base_effect"
+  _use:t="range_pauseable_effect"
+  effect__emit_range_limit:r=80.0
+  _tracked:t="effect__velocity"
+  _tracked:t="effect__distance_scale"
+
+  _group{
+    _tags:t="render"
+    effect__name:t="smoke_motorcycle_exhaust_cmps_fx"
+    effect__velocity:p3=0.0, 0.0, 0.0
+    effect__distance_scale:r=1.0
+  }
+
+  _group{
+    _track:b=yes
+    effect__scale:r=1.0
+    effect__spawnRate:r=0.0
+    effect__colorMult:c=255, 255, 255, 255
+  }
+}
+
+motorcycle_broken_exhaust_template{
+  _use:t="motorcycle_exhaust_template"
+  _use:t="range_pauseable_effect"
+  effect__emit_range_limit:r=80.0
+
+  _group{
+    _tags:t="render"
+    effect__name:t="smoke_motorcycle_exhaust_broken_cmps_fx"
+  }
+}
+
+track_effect_base{
+  _use:t="ecs_no_debug"
+  paint_from_biome:b=no
+  paint_color:p4=1.0, 1.0, 1.0, 0.5
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, 0.0, 0.0]]
+  effect__spawnRate:r=0.0
+  _tracked:t="effect__velocity"
+  _tracked:t="effect__spawnRate"
+
+  _group{
+    _tags:t="render"
+    effect__name:t="tank_tracks_sand_top"
+    effect__velocity:p3=0.0, 0.0, 0.0
+
+    effect{
+    }
+  }
+}
+
+tank_tracks_sand_top{
+  _use:t="track_effect_base"
+  _use:t="range_pauseable_effect"
+  paint_from_biome:b=yes
+  effect__emit_range_limit:r=60.0
+
+  _group{
+    _tags:t="render"
+    effect__name:t="misc_tank_tracks_sand_top_cmps_fx"
+  }
+}
+
+tank_track_sand_bottom{
+  _use:t="track_effect_base"
+  _use:t="range_pauseable_effect"
+  paint_from_biome:b=yes
+  effect__emit_range_limit:r=60.0
+
+  _group{
+    _tags:t="render"
+    effect__name:t="misc_tank_tracks_sand_bottom_cmps_fx"
+  }
+}
+
+tank_tracks_dirt_top{
+  _use:t="track_effect_base"
+  _use:t="range_pauseable_effect"
+  paint_from_biome:b=yes
+  effect__emit_range_limit:r=60.0
+
+  _group{
+    _tags:t="render"
+    effect__name:t="misc_tank_tracks_dirt_top_cmps_fx"
+  }
+}
+
+tank_track_dirt_bottom{
+  _use:t="track_effect_base"
+  _use:t="range_pauseable_effect"
+  paint_from_biome:b=yes
+  effect__emit_range_limit:r=60.0
+
+  _group{
+    _tags:t="render"
+    effect__name:t="misc_tank_tracks_dirt_bottom_cmps_fx"
+  }
+}
+
+tank_tracks_snow_top{
+  _use:t="track_effect_base"
+  _use:t="range_pauseable_effect"
+  paint_from_biome:b=yes
+  effect__emit_range_limit:r=60.0
+
+  _group{
+    _tags:t="render"
+    effect__name:t="misc_tank_tracks_snow_top_cmps_fx"
+  }
+}
+
+tank_track_snow_bottom{
+  _use:t="track_effect_base"
+  _use:t="range_pauseable_effect"
+  paint_from_biome:b=yes
+  effect__emit_range_limit:r=60.0
+
+  _group{
+    _tags:t="render"
+    effect__name:t="misc_tank_tracks_snow_bottom_cmps_fx"
+  }
+}
+
+tank_tracks_mud_top{
+  _use:t="track_effect_base"
+  _use:t="range_pauseable_effect"
+  paint_from_biome:b=yes
+  effect__emit_range_limit:r=60.0
+
+  _group{
+    _tags:t="render"
+    effect__name:t="misc_tank_tracks_mud_top_cmps_fx"
+  }
+}
+
+tank_track_mud_bottom{
+  _use:t="track_effect_base"
+  _use:t="range_pauseable_effect"
+  paint_from_biome:b=yes
+  effect__emit_range_limit:r=60.0
+
+  _group{
+    _tags:t="render"
+    effect__name:t="misc_tank_tracks_mud_bottom_cmps_fx"
+  }
+}
+
+tank_tracks_water_top{
+  _use:t="track_effect_base"
+  _use:t="range_pauseable_effect"
+  paint_from_biome:b=no
+  effect__emit_range_limit:r=60.0
+
+  _group{
+    _tags:t="render"
+    effect__name:t="misc_tank_tracks_water_top_cmps_fx"
+  }
+}
+
+tank_track_water_bottom{
+  _use:t="track_effect_base"
+  _use:t="range_pauseable_effect"
+  paint_from_biome:b=no
+  effect__emit_range_limit:r=60.0
+
+  _group{
+    _tags:t="render"
+    effect__name:t="misc_tank_tracks_water_bottom_cmps_fx"
+  }
+}
+
+hit_track_fx_group{
+
+  "track_fx__info:object"{
+
+    "track:object"{
+
+      "group__dirt:object"{
+        fx_bottom:t="tank_track_dirt_bottom"
+        fx_top:t="tank_tracks_dirt_top"
+      }
+
+      "group__mud:object"{
+        fx_bottom:t="tank_track_mud_bottom"
+        fx_top:t="tank_tracks_mud_top"
+      }
+
+      "group__sand:object"{
+        fx_bottom:t="tank_track_sand_bottom"
+        fx_top:t="tank_tracks_sand_top"
+      }
+
+      "group__snow:object"{
+        fx_bottom:t="tank_track_snow_bottom"
+        fx_top:t="tank_tracks_snow_top"
+      }
+
+      "group__water:object"{
+        fx_bottom:t="tank_track_water_bottom"
+        fx_top:t="tank_tracks_water_top"
+      }
+    }
+
+    "wheel:object"{
+
+      "group__dirt:object"{
+        fx_bottom:t="tank_track_dirt_bottom"
+        fx_top:t="tank_tracks_dirt_top"
+      }
+
+      "group__mud:object"{
+        fx_bottom:t="tank_track_mud_bottom"
+        fx_top:t="tank_tracks_mud_top"
+      }
+
+      "group__sand:object"{
+        fx_bottom:t="tank_track_sand_bottom"
+        fx_top:t="tank_tracks_sand_top"
+      }
+
+      "group__snow:object"{
+        fx_bottom:t="tank_track_snow_bottom"
+        fx_top:t="tank_tracks_snow_top"
+      }
+
+      "group__water:object"{
+        fx_bottom:t="tank_track_water_bottom"
+        fx_top:t="tank_tracks_water_top"
+      }
+    }
+  }
+
+  "track_fx__default:object"{
+
+    "track:object"{
+      fx_bottom:t="tank_track_sand_bottom"
+      fx_top:t="tank_tracks_sand_top"
+    }
+
+    "wheel:object"{
+      fx_bottom:t="tank_track_sand_bottom"
+      fx_top:t="tank_tracks_sand_top"
+    }
+  }
+}

@@ -1,0 +1,252 @@
+entity{
+  _template:t="render_settings"
+}
+
+entity{
+  _template:t="blood_decals_render_manager"
+}
+
+entity{
+  _template:t="capture_zone_decals_manager"
+}
+
+entity{
+  _template:t="blood_settings"
+}
+
+entity{
+  _template:t="ssss"
+}
+
+entity{
+  _template:t="muzzle_flash_manager"
+}
+
+entity{
+  _template:t="caustics"
+}
+
+entity{
+  _template:t="underwater_postfx"
+}
+
+entity{
+  _template:t="flash_blind_renderer"
+}
+
+entity{
+  _template:t="camera_underwater_template"
+}
+
+entity{
+  _template:t="screen_droplets"
+}
+
+entity{
+  _template:t="screen_droplets_settings"
+}
+
+entity{
+  _template:t="vehicle_trails_manager"
+}
+
+entity{
+  _template:t="heat_source_decals_renderer"
+}
+
+entity{
+  _template:t="semi_trans_render"
+}
+
+entity{
+  _template:t="distant_haze_manager"
+}
+
+entity{
+  _template:t="hero_cockpit_renderer"
+}
+
+entity{
+  _template:t="adaptation_manager"
+}
+
+entity{
+  _template:t="adaptation"
+}
+
+entity{
+  _template:t="puddles_manager"
+}
+
+entity{
+  _template:t="blurred_ui"
+}
+
+entity{
+  _template:t="scope_full_deferred_renderer"
+}
+
+entity{
+  _template:t="scope_additional_data"
+}
+
+entity{
+  _template:t="close_geometry_occlusion_data"
+}
+
+entity{
+  _template:t="heat_haze_renderer"
+}
+
+entity{
+  _template:t="weaponry_render"
+}
+
+entity{
+  _template:t="dagdp_manager"
+}
+
+entity{
+  _template:t="dynamic_hair_renderer"
+}
+
+entity{
+  _template:t="local_tone_mapping"
+  local_tone_mapping__hq_enabled:b=yes
+  local_tone_mapping__hq_highlights_multiplier:r=2.25
+  local_tone_mapping__hq_shadows_multiplier:r=0.25
+  local_tone_mapping__hq_sigma:r=0.2
+  local_tone_mapping__lq_highlights_multiplier:r=2.5
+  local_tone_mapping__lq_shadows_multiplier:r=0.75
+  local_tone_mapping__lq_display_mip:i=3
+  local_tone_mapping__lq_sigma:r=0.2
+  local_tone_mapping__middle_luminance:r=0.1
+  local_tone_mapping__display_mip:i=4
+}
+
+entity{
+  _template:t="bvh"
+}
+
+entity{
+  _template:t="dynamic_lighting"
+}
+
+entity{
+  _template:t="object_motion_blur"
+}
+
+entity{
+  _template:t="rendinst_shatter_decals_params"
+}
+
+entity{
+  _template:t="glass_decals_renderer"
+}
+
+entity{
+  _template:t="blood_on_screen_settings"
+}
+
+entity{
+  _template:t="screen_snowflakes_settings"
+}
+
+entity{
+  _template:t="screen_mud_settings"
+  enabled:b=no
+  screen_mud__baseSplashSize:r=0.8
+  screen_mud__minSplashSize:r=0.4
+  screen_mud_albedo_value:p4=0.088, 0.056, 0.024, 0.0
+  screen_mud_albedo2_value:p4=0.08, 0.04, 0.008, 0.0
+  screen_mud_translucency_value:p4=0.045, 0.025, 0.008, 0.0
+  screen_mud_tc_mul_value:r=1.75
+  screen_mud_cutoff_threshold_value:r=0.6
+  screen_mud_tc_mul2_value:r=5.0
+  screen_mud_cutoff_threshold2_value:r=0.6
+}
+
+entity{
+  _template:t="lens_flare_sun_settings"
+}
+
+entity{
+  _template:t="sun_lens_flare"
+  sun_flare_provider__flare_config:t="lens_flares_sun_cinematic"
+}
+
+entity{
+  _template:t="lens_flare_dynamic_lights_settings"
+}
+
+entity{
+  _template:t="dynamic_light_lens_flare"
+  dynamic_light_lens_flare__flare_config:t="lens_flares_dynamic_lights_cinematic"
+}
+
+entity{
+  _template:t="lens_glow_config"
+  enabled:b=yes
+  lens_glow_config__bloom_offset:r=-0.0001
+  lens_glow_config__bloom_multiplier:r=0.25
+  lens_glow_config__lens_flare_offset:r=-0.0001
+  lens_glow_config__lens_flare_multiplier:r=10.0
+  lens_glow_config__texture_intensity_multiplier:r=10.0
+  lens_glow_config__texture_tint:p3=1.0, 1.0, 1.0
+
+  "lens_glow_config__texture_variants:array"{
+
+    "texture_variant:object"{
+      target_res:ip2=1920, 1080
+      texture:t="lens_glow_tex"
+    }
+  }
+}
+
+entity{
+  _template:t="cache_thrashing_detector"
+}
+
+entity{
+  _template:t="burnt_tank_camo_holder"
+}
+
+entity{
+  _template:t="biome_fx_color_replacement"
+}
+
+entity{
+  _template:t="glass_gbuffer_renderer"
+}
+
+entity{
+  _template:t="water_ripples_settings"
+}
+
+entity{
+  _template:t="tree_burning_manager"
+  tree_burning__bark_burnt_tex_d_res:t="tree_bark_burnt_a_tex_d"
+  tree_burning__bark_burnt_tex_n_res:t="tree_bark_burnt_a_tex_n"
+  tree_burning__bark_emissive_tex_d_res:t="tree_bark_burnt_a_emissive_tex_d"
+
+  "tree_burning__burnableRiExtra:list<t>"{
+    riex:t="corn_field_bunch_corner_a"
+    riex:t=".*_ivy.*"
+  }
+}
+
+entity{
+  _template:t="light_switcher"
+}
+
+entity{
+  _template:t="beam_tracer_projectile_render_settings"
+}
+
+entity{
+  _template:t="ui_nodes"
+}
+
+entity{
+  _template:t="film_grain_lut"
+}

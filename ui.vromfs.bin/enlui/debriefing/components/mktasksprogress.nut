@@ -1,0 +1,93 @@
+from "%dngscripts/sound_system.nut" import sound_play
+from "%ui/style/fontsStyle.nut" import fontSub
+from "%ui/style/designConst.nut" import midPadding, smallPadding
+from "%ui/components/unlocksText.nut" import getDescription
+from "%ui/components/defcomps.nut" import progressBar
+from "%ui/ui_library.nut" import *
+
+const trigger = "content_anim"
+
+const taskColor = Color(220, 220, 220)
+
+function debriefingTaskHeader(unlockDesc, progress){
+  let { required = 0, current = 0 } = unlockDesc
+  let unlockTxt = getDescription(unlockDesc, progress, unlockDesc?.locParams ?? {})
+  return{
+    flow = FLOW_VERTICAL
+    size = FLEX_H
+    gap = smallPadding
+    children = [
+      {
+        rendObj = ROBJ_TEXTAREA
+        size = const [pw(75), SIZE_TO_CONTENT]
+        behavior = Behaviors.TextArea
+        text = unlockTxt
+        color = taskColor
+      }.__update(fontSub)
+      required == 0 ? null
+        : {
+            rendObj = ROBJ_TEXT
+            text = $"({current}/{required})"
+            color = taskColor
+          }
+    ]
+  }
+}
+
+function mkDebriefingDailyTask(unlockDesc, appearAnimations, animDelay, onFinish) {
+  let progress = {
+    current = unlockDesc.current
+    required = unlockDesc.required
+    wasCurrent = unlockDesc.wasCurrent
+    isFinished = unlockDesc.isFinished
+    isCompleted = unlockDesc.isCompleted
+  }
+  let value = progress.wasCurrent.tofloat() / progress.required
+  let addValue = (progress.current - progress.wasCurrent).tofloat() / progress.required
+  let children = [
+    {
+      size = FLEX_H
+      margin = [smallPadding, midPadding]
+      valign = ALIGN_CENTER
+      children = debriefingTaskHeader(unlockDesc, progress)
+    }
+    progressBar({
+      value
+      addValue
+      color = Color(150, 150, 150)
+      customStyle = { margin = smallPadding }
+      addValueAnimations = [
+        { prop = AnimProp.scale, from = [0, 1], to = [0, 1], play = true,
+          duration = animDelay + 0.6, trigger }
+        { prop = AnimProp.scale, from = [0, 1], to = [1, 1], play = true,
+          duration = 0.6, easing = OutCubic, delay = animDelay + 0.6,
+          onFinish, trigger }
+      ]
+    })
+  ]
+  return {
+    size = FLEX_H
+    flow = FLOW_VERTICAL
+    children
+    gap = smallPadding
+    transform = true
+    animations = appearAnimations(animDelay, @() sound_play("ui/debriefing/new_equip"))
+  }
+}
+
+function mkTasksProgress(dailyTasksProgress, appearAnimations, onFinishCb) {
+  if (dailyTasksProgress.len() == 0)
+    return null
+
+  return {
+    size = const [hdpx(600), SIZE_TO_CONTENT]
+    flow = FLOW_VERTICAL
+    gap = smallPadding
+    children = dailyTasksProgress.map(function(unlockDesc, idx) {
+      let onFinish = idx < dailyTasksProgress.len() - 1 ? null : onFinishCb
+      return mkDebriefingDailyTask(unlockDesc, appearAnimations, 0.5 + idx, onFinish)
+    })
+  }
+}
+
+return mkTasksProgress

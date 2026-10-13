@@ -1,0 +1,24 @@
+esm_ambient_occlusion{
+  _singleton:b=yes
+  _tags:t="render"
+  esm_ao__resolution:i=32
+  esm_ao__maxDecalsDistance:r=100.0
+
+  _group{
+    _track:b=yes
+    esm_ao__frustumSize:p3=8.0, 8.0, 2.0
+    esm_ao__esmExp:r=8.0
+  }
+
+  "esm_ao__manager:EsmAoManager"{
+  }
+
+  "esm_ao__targetTex:UniqueTexWithShaderVar"{
+  }
+
+  "esm_ao__curRenderedLods:list<i>"{
+  }
+
+  "esm_ao__node:dafg::NodeHandle"{
+  }
+}

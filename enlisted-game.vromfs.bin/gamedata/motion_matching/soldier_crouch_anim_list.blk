@@ -1,0 +1,571 @@
+clips{
+  default_animation_mask:t="soldier_lower_nodemask"
+  default_tags:t="crouch,melee_weapon,heavy_weapon,default_weapon"
+  features_normalization_group:t="crouch"
+
+  aim_pose_crouchstill_mm{
+    nextClip:t="aim_pose_crouchstill_mm"
+
+    use_foot_ik_locker{
+      always_locked:b=yes
+    }
+  }
+
+  lower_crouchmove_0_mm{
+    play_speed_multiplier_range:p2=0.5, 2.0
+    nextClip:t="lower_crouchmove_0_mm"
+
+    use_foot_ik_locker{
+    }
+  }
+
+  lower_crouchmove_45_mm{
+    play_speed_multiplier_range:p2=0.5, 2.0
+    nextClip:t="lower_crouchmove_45_mm"
+
+    use_foot_ik_locker{
+    }
+  }
+
+  lower_crouchmove_90_mm{
+    play_speed_multiplier_range:p2=0.5, 2.0
+    nextClip:t="lower_crouchmove_90_mm"
+
+    use_foot_ik_locker{
+    }
+  }
+
+  lower_crouchmove_135_mm{
+    play_speed_multiplier_range:p2=0.5, 2.0
+    nextClip:t="lower_crouchmove_135_mm"
+
+    use_foot_ik_locker{
+    }
+  }
+
+  lower_crouchmove_180_mm{
+    play_speed_multiplier_range:p2=0.5, 2.0
+    nextClip:t="lower_crouchmove_180_mm"
+
+    use_foot_ik_locker{
+    }
+  }
+
+  lower_crouchmove_225_mm{
+    play_speed_multiplier_range:p2=0.5, 2.0
+    nextClip:t="lower_crouchmove_225_mm"
+
+    use_foot_ik_locker{
+    }
+  }
+
+  lower_crouchmove_270_mm{
+    play_speed_multiplier_range:p2=0.5, 2.0
+    nextClip:t="lower_crouchmove_270_mm"
+
+    use_foot_ik_locker{
+    }
+  }
+
+  lower_crouchmove_315_mm{
+    play_speed_multiplier_range:p2=0.5, 2.0
+    nextClip:t="lower_crouchmove_315_mm"
+
+    use_foot_ik_locker{
+    }
+  }
+
+  lower_crouchmove_circle_right_0_140{
+    play_speed_multiplier_range:p2=0.5, 2.0
+    nextClip:t="lower_crouchmove_circle_right_0_140"
+
+    use_foot_ik_locker{
+    }
+  }
+
+  lower_crouchmove_circle_left_0_140{
+    play_speed_multiplier_range:p2=0.5, 2.0
+    nextClip:t="lower_crouchmove_circle_left_0_140"
+
+    use_foot_ik_locker{
+    }
+  }
+
+  lower_crouchmove_circle_left_0_70{
+    play_speed_multiplier_range:p2=0.5, 2.0
+    nextClip:t="lower_crouchmove_circle_left_0_70"
+
+    use_foot_ik_locker{
+    }
+  }
+
+  lower_crouchmove_circle_right_0_70{
+    play_speed_multiplier_range:p2=0.5, 2.0
+    nextClip:t="lower_crouchmove_circle_right_0_70"
+
+    use_foot_ik_locker{
+    }
+  }
+
+  lower_crouchmove_circle_left_45_50{
+    play_speed_multiplier_range:p2=0.5, 2.0
+    nextClip:t="lower_crouchmove_circle_left_45_50"
+
+    use_foot_ik_locker{
+    }
+  }
+
+  lower_crouchmove_circle_left_90_50{
+    play_speed_multiplier_range:p2=0.5, 2.0
+    nextClip:t="lower_crouchmove_circle_left_90_50"
+
+    use_foot_ik_locker{
+    }
+  }
+
+  lower_crouchmove_circle_left_135_50{
+    play_speed_multiplier_range:p2=0.5, 2.0
+    nextClip:t="lower_crouchmove_circle_left_135_50"
+
+    use_foot_ik_locker{
+    }
+  }
+
+  lower_crouchmove_circle_left_180_50{
+    play_speed_multiplier_range:p2=0.5, 2.0
+    nextClip:t="lower_crouchmove_circle_left_180_50"
+
+    use_foot_ik_locker{
+    }
+  }
+
+  lower_crouchmove_circle_left_270_50{
+    play_speed_multiplier_range:p2=0.5, 2.0
+    nextClip:t="lower_crouchmove_circle_left_270_50"
+
+    use_foot_ik_locker{
+    }
+  }
+
+  lower_crouchmove_circle_left_315_50{
+    play_speed_multiplier_range:p2=0.5, 2.0
+    nextClip:t="lower_crouchmove_circle_left_315_50"
+
+    use_foot_ik_locker{
+    }
+  }
+
+  lower_crouchmove_circle_right_45_50{
+    play_speed_multiplier_range:p2=0.5, 2.0
+    nextClip:t="lower_crouchmove_circle_right_45_50"
+
+    use_foot_ik_locker{
+    }
+  }
+
+  lower_crouchmove_circle_right_90_50{
+    play_speed_multiplier_range:p2=0.5, 2.0
+    nextClip:t="lower_crouchmove_circle_right_90_50"
+
+    use_foot_ik_locker{
+    }
+  }
+
+  lower_crouchmove_circle_right_135_50{
+    play_speed_multiplier_range:p2=0.5, 2.0
+    nextClip:t="lower_crouchmove_circle_right_135_50"
+
+    use_foot_ik_locker{
+    }
+  }
+
+  lower_crouchmove_circle_right_180_50{
+    play_speed_multiplier_range:p2=0.5, 2.0
+    nextClip:t="lower_crouchmove_circle_right_180_50"
+
+    use_foot_ik_locker{
+    }
+  }
+
+  lower_crouchmove_circle_right_270_50{
+    play_speed_multiplier_range:p2=0.5, 2.0
+    nextClip:t="lower_crouchmove_circle_right_270_50"
+
+    use_foot_ik_locker{
+    }
+  }
+
+  lower_crouchmove_circle_right_315_50{
+    play_speed_multiplier_range:p2=0.5, 2.0
+    nextClip:t="lower_crouchmove_circle_right_315_50"
+
+    use_foot_ik_locker{
+    }
+  }
+
+  crouch_turn_left_45_mm{
+    nextClip:t="aim_pose_crouchstill_mm"
+
+    use_foot_ik_locker{
+    }
+  }
+
+  crouch_turn_left_60_mm{
+    nextClip:t="aim_pose_crouchstill_mm"
+
+    use_foot_ik_locker{
+    }
+  }
+
+  crouch_turn_left_90_mm{
+    nextClip:t="aim_pose_crouchstill_mm"
+
+    use_foot_ik_locker{
+    }
+  }
+
+  crouch_turn_left_135_mm{
+    nextClip:t="aim_pose_crouchstill_mm"
+
+    use_foot_ik_locker{
+    }
+  }
+
+  crouch_turn_right_45_mm{
+    nextClip:t="aim_pose_crouchstill_mm"
+
+    use_foot_ik_locker{
+    }
+  }
+
+  crouch_turn_right_60_mm{
+    nextClip:t="aim_pose_crouchstill_mm"
+
+    use_foot_ik_locker{
+    }
+  }
+
+  crouch_turn_right_90_mm{
+    nextClip:t="aim_pose_crouchstill_mm"
+
+    use_foot_ik_locker{
+    }
+  }
+
+  crouch_turn_right_135_mm{
+    nextClip:t="aim_pose_crouchstill_mm"
+
+    use_foot_ik_locker{
+    }
+  }
+
+  crouchstill_to_lower_crouchmove_0_start{
+
+    use_foot_ik_locker{
+    }
+
+    extrapolate_trajectory{
+      use_border_frames:b=yes
+    }
+  }
+
+  crouchstill_to_lower_crouchmove_45_start{
+
+    use_foot_ik_locker{
+    }
+
+    extrapolate_trajectory{
+      use_border_frames:b=yes
+    }
+  }
+
+  crouchstill_to_lower_crouchmove_90_start{
+
+    use_foot_ik_locker{
+    }
+
+    extrapolate_trajectory{
+      use_border_frames:b=yes
+    }
+  }
+
+  crouchstill_to_lower_crouchmove_135_start{
+
+    use_foot_ik_locker{
+    }
+
+    extrapolate_trajectory{
+      use_border_frames:b=yes
+    }
+  }
+
+  crouchstill_to_lower_crouchmove_180_start{
+
+    use_foot_ik_locker{
+    }
+
+    extrapolate_trajectory{
+      use_border_frames:b=yes
+    }
+  }
+
+  crouchstill_to_lower_crouchmove_225_start{
+
+    use_foot_ik_locker{
+    }
+
+    extrapolate_trajectory{
+      use_border_frames:b=yes
+    }
+  }
+
+  crouchstill_to_lower_crouchmove_270_start{
+
+    use_foot_ik_locker{
+    }
+
+    extrapolate_trajectory{
+      use_border_frames:b=yes
+    }
+  }
+
+  crouchstill_to_lower_crouchmove_315_start{
+
+    use_foot_ik_locker{
+    }
+
+    extrapolate_trajectory{
+      use_border_frames:b=yes
+    }
+  }
+
+  lower_crouchmove_to_crouchstill_0_01{
+
+    use_foot_ik_locker{
+    }
+
+    extrapolate_trajectory{
+      use_border_frames:b=yes
+    }
+  }
+
+  lower_crouchmove_to_crouchstill_0_02{
+
+    use_foot_ik_locker{
+    }
+
+    extrapolate_trajectory{
+      use_border_frames:b=yes
+    }
+  }
+
+  lower_crouchmove_to_crouchstill_0_03{
+
+    use_foot_ik_locker{
+    }
+
+    extrapolate_trajectory{
+      use_border_frames:b=yes
+    }
+  }
+
+  lower_crouchmove_to_crouchstill_45_01{
+
+    use_foot_ik_locker{
+    }
+
+    extrapolate_trajectory{
+      use_border_frames:b=yes
+    }
+  }
+
+  lower_crouchmove_to_crouchstill_45_02{
+
+    use_foot_ik_locker{
+    }
+
+    extrapolate_trajectory{
+      use_border_frames:b=yes
+    }
+  }
+
+  lower_crouchmove_to_crouchstill_45_03{
+
+    use_foot_ik_locker{
+    }
+
+    extrapolate_trajectory{
+      use_border_frames:b=yes
+    }
+  }
+
+  lower_crouchmove_to_crouchstill_90_01{
+
+    use_foot_ik_locker{
+    }
+
+    extrapolate_trajectory{
+      use_border_frames:b=yes
+    }
+  }
+
+  lower_crouchmove_to_crouchstill_90_02{
+
+    use_foot_ik_locker{
+    }
+
+    extrapolate_trajectory{
+      use_border_frames:b=yes
+    }
+  }
+
+  lower_crouchmove_to_crouchstill_90_03{
+
+    use_foot_ik_locker{
+    }
+
+    extrapolate_trajectory{
+      use_border_frames:b=yes
+    }
+  }
+
+  lower_crouchmove_to_crouchstill_135_01{
+
+    use_foot_ik_locker{
+    }
+
+    extrapolate_trajectory{
+      use_border_frames:b=yes
+    }
+  }
+
+  lower_crouchmove_to_crouchstill_135_02{
+
+    use_foot_ik_locker{
+    }
+
+    extrapolate_trajectory{
+      use_border_frames:b=yes
+    }
+  }
+
+  lower_crouchmove_to_crouchstill_135_03{
+
+    use_foot_ik_locker{
+    }
+
+    extrapolate_trajectory{
+      use_border_frames:b=yes
+    }
+  }
+
+  lower_crouchmove_to_crouchstill_180_01{
+
+    use_foot_ik_locker{
+    }
+
+    extrapolate_trajectory{
+      use_border_frames:b=yes
+    }
+  }
+
+  lower_crouchmove_to_crouchstill_180_02{
+
+    use_foot_ik_locker{
+    }
+
+    extrapolate_trajectory{
+      use_border_frames:b=yes
+    }
+  }
+
+  lower_crouchmove_to_crouchstill_180_03{
+
+    use_foot_ik_locker{
+    }
+
+    extrapolate_trajectory{
+      use_border_frames:b=yes
+    }
+  }
+
+  lower_crouchmove_to_crouchstill_225_01{
+
+    use_foot_ik_locker{
+    }
+
+    extrapolate_trajectory{
+      use_border_frames:b=yes
+    }
+  }
+
+  lower_crouchmove_to_crouchstill_225_02{
+
+    use_foot_ik_locker{
+    }
+
+    extrapolate_trajectory{
+      use_border_frames:b=yes
+    }
+  }
+
+  lower_crouchmove_to_crouchstill_225_03{
+
+    use_foot_ik_locker{
+    }
+
+    extrapolate_trajectory{
+      use_border_frames:b=yes
+    }
+  }
+
+  lower_crouchmove_to_crouchstill_270_01{
+
+    use_foot_ik_locker{
+    }
+
+    extrapolate_trajectory{
+      use_border_frames:b=yes
+    }
+  }
+
+  lower_crouchmove_to_crouchstill_270_02{
+
+    use_foot_ik_locker{
+    }
+
+    extrapolate_trajectory{
+      use_border_frames:b=yes
+    }
+  }
+
+  lower_crouchmove_to_crouchstill_315_01{
+
+    use_foot_ik_locker{
+    }
+
+    extrapolate_trajectory{
+      use_border_frames:b=yes
+    }
+  }
+
+  lower_crouchmove_to_crouchstill_315_02{
+
+    use_foot_ik_locker{
+    }
+
+    extrapolate_trajectory{
+      use_border_frames:b=yes
+    }
+  }
+
+  lower_crouchmove_to_crouchstill_315_03{
+
+    use_foot_ik_locker{
+    }
+
+    extrapolate_trajectory{
+      use_border_frames:b=yes
+    }
+  }
+}

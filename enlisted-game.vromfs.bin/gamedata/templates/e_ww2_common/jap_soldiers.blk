@@ -1,0 +1,60 @@
+jap_human_voice{
+
+  _group{
+    _tags:t="sound"
+    human_speech__locale:t="jp"
+  }
+}
+
+jap_soldier_no_sound{
+  engineer__isMenuOpen:b=no
+  _tracked:t="engineer__isMenuOpen"
+  _use:t="shooter_human"
+  _use:t="human_breath"
+  _use:t="human_bush_collision_effects"
+  _use:t="squad_member_ai"
+  _use:t="enlisted_human_marker"
+  _use:t="base_human_actions"
+  _use:t="human_hide_slots_in_scope"
+  beh_tree__blackboard__enemyRadius:r=90.0
+}
+
+jap_soldier_sound{
+  _use:t="base_human_sound"
+  _use:t="possessable_human_sound"
+  _use:t="human_loot_sound"
+  _use:t="human_voice_effect_burning"
+  _use:t="human_voice_effect_coughing"
+  _use:t="human_voice_effect_drinking"
+  _use:t="human_voice_effect_hold_breath"
+  _use:t="human_voice_effect_underwater"
+  _use:t="human_voice_effect_fallcry"
+  _use:t="human_sound_paths"
+  _use:t="human_steps_sound_paths"
+  _use:t="projectile_hit_human_fx_sound"
+  _use:t="human_hit_sound_paths"
+  _use:t="human_voice_sound_paths"
+  _use:t="human_melee_sound_paths"
+  _use:t="human_weapon_change_sound"
+  _use:t="human_net_sound"
+  _use:t="en_human_speech"
+  _use:t="jap_human_voice"
+  _use:t="human_hooray_speech"
+  _use:t="human_gun_sounds_preload"
+  _use:t="human_torn_wound_sound"
+}
+
+jap_soldier{
+  _use:t="jap_soldier_no_sound"
+  _use:t="jap_soldier_sound"
+}
+
+jap_base_soldier{
+  _use:t="jap_soldier"
+  _use:t="enlisted_base_soldier"
+}
+
+ai_aircraft_crew_jap_soldier{
+  _use:t="ai_aircraft_crew_soldier_base"
+  _use:t="ger_summer_2"
+}

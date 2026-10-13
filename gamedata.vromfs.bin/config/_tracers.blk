@@ -1,0 +1,2714 @@
+tracers{
+  headFadeTime:r=4.0
+  headSpeedScale:p4=400.0, 900.0, 0.1, 1.0
+  headNoiseFreq:r=0.7
+  headNoiseScale:r=0.04
+  headNoiseViewScale:r=50.0
+  headArrowLen:r=0.05
+  headNoiseSmoothLen:r=0.03
+  headFadeLen:r=0.5
+  headHdrMultiplier:r=15.0
+  headHdrMultiplierCompatibility:r=2.0
+  headVibratingRate:r=30.0
+  headLenScale:r=1.0
+  headRadiusScale:r=1.0
+  headMinPixelRadius:r=2.0
+  headBorderPixelRadius:r=1.0
+  numTailParticles:i=1000
+  numTailLods:i=6
+  tailFartherLodDist:r=800.0
+  tailLengthMeters:r=1100.0
+  tailParticleExtension:r=1.5
+  tailFadeInDistance:r=10.0
+  tailNoisePeriodMeters:r=20.0
+  tailDirectionalScale:r=0.4
+  numHeadMeshes:i=3
+  hdrMultiplier:r=3.0
+  headMinimumOpacity:r=0.7
+  headMinimumOpacityProjection:r=0.0
+}
+
+tracerColors{
+
+  m230{
+    halfSize:r=10.0
+    distScaleStart:r=100.0
+    distScaleEnd:r=2000.0
+    distScale:r=6.0
+    color1:c=255, 36, 0, 250
+    color2:c=204, 27, 0, 240
+    startTime:r=0.05
+  }
+
+  fake_rpg{
+    halfSize:r=5.0
+    distScaleStart:r=100.0
+    distScaleEnd:r=2000.0
+    distScale:r=5.0
+    color1:c=255, 36, 0, 250
+    color2:c=204, 27, 0, 240
+    startTime:r=0.05
+  }
+
+  fake_ak_47{
+    halfSize:r=1.5
+    distScaleStart:r=100.0
+    distScaleEnd:r=2000.0
+    distScale:r=5.0
+    color1:c=255, 236, 248, 200
+    color2:c=255, 65, 154, 200
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  7mmRed{
+    halfSize:r=3.0
+    distScaleStart:r=50.0
+    distScaleEnd:r=1500.0
+    distScale:r=4.0
+    radius:r=0.02
+    color1:c=255, 15, 15, 255
+    color2:c=230, 0, 0, 255
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  12mmRed{
+    halfSize:r=3.0
+    distScaleStart:r=50.0
+    distScaleEnd:r=2000.0
+    distScale:r=3.5
+    radius:r=0.035
+    color1:c=255, 15, 15, 255
+    color2:c=230, 0, 0, 255
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  20mmRed{
+    halfSize:r=3.5
+    distScaleStart:r=50.0
+    distScaleEnd:r=2000.0
+    distScale:r=3.0
+    radius:r=0.04
+    color1:c=255, 15, 15, 255
+    color2:c=230, 0, 0, 255
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  30mmRed{
+    halfSize:r=3.5
+    distScaleStart:r=100.0
+    distScaleEnd:r=2000.0
+    distScale:r=2.5
+    radius:r=0.05
+    color1:c=255, 15, 15, 255
+    color2:c=230, 0, 0, 255
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  37mmRed{
+    halfSize:r=4.0
+    distScaleStart:r=50.0
+    distScaleEnd:r=2000.0
+    distScale:r=2.5
+    radius:r=0.06
+    color1:c=255, 15, 15, 255
+    color2:c=230, 0, 0, 255
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  50mmRed{
+    halfSize:r=4.0
+    distScaleStart:r=50.0
+    distScaleEnd:r=2000.0
+    distScale:r=2.0
+    radius:r=0.08
+    color1:c=255, 15, 15, 255
+    color2:c=230, 0, 0, 255
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  76mmRed{
+    halfSize:r=4.0
+    distScaleStart:r=20.0
+    distScaleEnd:r=3000.0
+    distScale:r=2.0
+    radius:r=0.09
+    color1:c=255, 15, 15, 255
+    color2:c=230, 0, 0, 255
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  76mmRedShip{
+    halfSize:r=12.0
+    distScaleStart:r=500.0
+    distScaleEnd:r=5000.0
+    distScale:r=0.4
+    radius:r=0.14
+    hdrK:r=1.8
+    minPixelSize:r=2.2
+    color1:c=255, 15, 15, 255
+    color2:c=230, 0, 0, 255
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  100mmRed{
+    halfSize:r=4.0
+    distScaleStart:r=20.0
+    distScaleEnd:r=4000.0
+    distScale:r=2.0
+    radius:r=0.12
+    color1:c=255, 15, 15, 255
+    color2:c=230, 0, 0, 255
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  100mmRedShip{
+    halfSize:r=14.0
+    distScaleStart:r=1000.0
+    distScaleEnd:r=10000.0
+    distScale:r=0.32
+    radius:r=0.15
+    hdrK:r=2.0
+    minPixelSize:r=2.8
+    color1:c=255, 15, 15, 255
+    color2:c=230, 0, 0, 255
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  152mmRed{
+    halfSize:r=5.0
+    distScaleStart:r=1000.0
+    distScaleEnd:r=7000.0
+    distScale:r=4.0
+    radius:r=0.17
+    color1:c=255, 15, 15, 255
+    color2:c=230, 0, 0, 255
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  200mmRedShip{
+    halfSize:r=18.0
+    distScaleStart:r=1000.0
+    distScaleEnd:r=15000.0
+    distScale:r=0.26
+    radius:r=0.17
+    hdrK:r=2.2
+    minPixelSize:r=3.1
+    color1:c=255, 15, 15, 255
+    color2:c=230, 0, 0, 255
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  300mmRedShip{
+    halfSize:r=20.0
+    distScaleStart:r=1000.0
+    distScaleEnd:r=15000.0
+    distScale:r=0.22
+    radius:r=0.19
+    hdrK:r=2.4
+    minPixelSize:r=3.3
+    color1:c=255, 15, 15, 255
+    color2:c=230, 0, 0, 255
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  rocketRed{
+    halfSize:r=20.0
+    distScaleStart:r=500.0
+    distScaleEnd:r=2000.0
+    distScale:r=1.0
+    color1:c=255, 71, 54, 180
+    color2:c=255, 36, 0, 180
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  7mmDarkRed{
+    halfSize:r=3.0
+    distScaleStart:r=50.0
+    distScaleEnd:r=1500.0
+    distScale:r=4.0
+    radius:r=0.02
+    color1:c=234, 25, 25, 255
+    color2:c=245, 0, 0, 245
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  12mmDarkRed{
+    halfSize:r=3.0
+    distScaleStart:r=50.0
+    distScaleEnd:r=2000.0
+    distScale:r=3.5
+    radius:r=0.035
+    color1:c=234, 25, 25, 255
+    color2:c=245, 0, 0, 245
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  20mmDarkRed{
+    halfSize:r=3.5
+    distScaleStart:r=50.0
+    distScaleEnd:r=2000.0
+    distScale:r=3.0
+    radius:r=0.04
+    color1:c=234, 25, 25, 255
+    color2:c=245, 0, 0, 245
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  30mmDarkRed{
+    halfSize:r=3.5
+    distScaleStart:r=100.0
+    distScaleEnd:r=2000.0
+    distScale:r=2.5
+    radius:r=0.05
+    color1:c=234, 25, 25, 255
+    color2:c=245, 0, 0, 245
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  37mmDarkRed{
+    halfSize:r=4.0
+    distScaleStart:r=50.0
+    distScaleEnd:r=2000.0
+    distScale:r=2.5
+    radius:r=0.06
+    color1:c=234, 25, 25, 255
+    color2:c=245, 0, 0, 245
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  50mmDarkRed{
+    halfSize:r=4.0
+    distScaleStart:r=50.0
+    distScaleEnd:r=2000.0
+    distScale:r=2.0
+    radius:r=0.08
+    color1:c=234, 25, 25, 255
+    color2:c=245, 0, 0, 245
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  76mmDarkRed{
+    halfSize:r=4.0
+    distScaleStart:r=20.0
+    distScaleEnd:r=3000.0
+    distScale:r=2.0
+    radius:r=0.09
+    color1:c=234, 25, 25, 255
+    color2:c=245, 0, 0, 245
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  76mmDarkRedShip{
+    halfSize:r=12.0
+    distScaleStart:r=500.0
+    distScaleEnd:r=5000.0
+    distScale:r=0.4
+    radius:r=0.14
+    hdrK:r=1.8
+    minPixelSize:r=2.2
+    color1:c=234, 25, 25, 255
+    color2:c=245, 0, 0, 245
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  100mmDarkRed{
+    halfSize:r=4.0
+    distScaleStart:r=20.0
+    distScaleEnd:r=4000.0
+    distScale:r=2.0
+    radius:r=0.12
+    color1:c=234, 25, 25, 255
+    color2:c=245, 0, 0, 245
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  100mmDarkRedShip{
+    halfSize:r=14.0
+    distScaleStart:r=1000.0
+    distScaleEnd:r=10000.0
+    distScale:r=0.32
+    radius:r=0.15
+    hdrK:r=2.0
+    minPixelSize:r=2.8
+    color1:c=234, 25, 25, 255
+    color2:c=245, 0, 0, 245
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  152mmDarkRed{
+    halfSize:r=5.0
+    distScaleStart:r=1000.0
+    distScaleEnd:r=7000.0
+    distScale:r=4.0
+    radius:r=0.17
+    color1:c=234, 25, 25, 255
+    color2:c=245, 0, 0, 245
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  200mmDarkRedShip{
+    halfSize:r=18.0
+    distScaleStart:r=1000.0
+    distScaleEnd:r=15000.0
+    distScale:r=0.26
+    radius:r=0.17
+    hdrK:r=2.2
+    minPixelSize:r=3.1
+    color1:c=234, 25, 25, 255
+    color2:c=245, 0, 0, 245
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  300mmDarkRedShip{
+    halfSize:r=20.0
+    distScaleStart:r=1000.0
+    distScaleEnd:r=15000.0
+    distScale:r=0.22
+    radius:r=0.19
+    hdrK:r=2.4
+    minPixelSize:r=3.3
+    color1:c=234, 25, 25, 255
+    color2:c=245, 0, 0, 245
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  7mmBrightRed{
+    halfSize:r=3.0
+    distScaleStart:r=50.0
+    distScaleEnd:r=1500.0
+    distScale:r=4.0
+    radius:r=0.02
+    color1:c=255, 71, 54, 180
+    color2:c=255, 36, 0, 180
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  12mmBrightRed{
+    halfSize:r=3.0
+    distScaleStart:r=50.0
+    distScaleEnd:r=2000.0
+    distScale:r=3.5
+    radius:r=0.035
+    color1:c=255, 71, 54, 180
+    color2:c=255, 36, 0, 180
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  20mmBrightRed{
+    halfSize:r=3.5
+    distScaleStart:r=50.0
+    distScaleEnd:r=2000.0
+    distScale:r=3.0
+    radius:r=0.04
+    color1:c=255, 71, 54, 180
+    color2:c=255, 36, 0, 180
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  30mmBrightRed{
+    halfSize:r=3.5
+    distScaleStart:r=100.0
+    distScaleEnd:r=2000.0
+    distScale:r=2.5
+    radius:r=0.05
+    color1:c=255, 71, 54, 180
+    color2:c=255, 36, 0, 180
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  37mmBrightRed{
+    halfSize:r=4.0
+    distScaleStart:r=50.0
+    distScaleEnd:r=2000.0
+    distScale:r=2.5
+    radius:r=0.06
+    color1:c=255, 71, 54, 180
+    color2:c=255, 36, 0, 180
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  50mmBrightRed{
+    halfSize:r=4.0
+    distScaleStart:r=50.0
+    distScaleEnd:r=2000.0
+    distScale:r=2.0
+    radius:r=0.08
+    color1:c=255, 71, 54, 180
+    color2:c=255, 36, 0, 180
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  76mmBrightRed{
+    halfSize:r=4.0
+    distScaleStart:r=20.0
+    distScaleEnd:r=3000.0
+    distScale:r=2.0
+    radius:r=0.09
+    color1:c=255, 71, 54, 180
+    color2:c=255, 36, 0, 180
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  76mmBrightRedShip{
+    halfSize:r=12.0
+    distScaleStart:r=500.0
+    distScaleEnd:r=5000.0
+    distScale:r=0.4
+    radius:r=0.14
+    hdrK:r=1.8
+    minPixelSize:r=2.2
+    color1:c=255, 71, 54, 180
+    color2:c=255, 36, 0, 180
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  100mmBrightRed{
+    halfSize:r=4.0
+    distScaleStart:r=20.0
+    distScaleEnd:r=4000.0
+    distScale:r=2.0
+    radius:r=0.12
+    color1:c=255, 71, 54, 180
+    color2:c=255, 36, 0, 180
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  100mmBrightRedShip{
+    halfSize:r=14.0
+    distScaleStart:r=1000.0
+    distScaleEnd:r=10000.0
+    distScale:r=0.32
+    radius:r=0.15
+    hdrK:r=2.0
+    minPixelSize:r=2.8
+    color1:c=255, 71, 54, 180
+    color2:c=255, 36, 0, 180
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  152mmBrightRed{
+    halfSize:r=5.0
+    distScaleStart:r=1000.0
+    distScaleEnd:r=7000.0
+    distScale:r=4.0
+    radius:r=0.17
+    color1:c=255, 71, 54, 180
+    color2:c=255, 36, 0, 180
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  200mmBrightRedShip{
+    halfSize:r=18.0
+    distScaleStart:r=1000.0
+    distScaleEnd:r=15000.0
+    distScale:r=0.26
+    radius:r=0.17
+    hdrK:r=2.2
+    minPixelSize:r=3.1
+    color1:c=255, 71, 54, 180
+    color2:c=255, 36, 0, 180
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  300mmBrightRedShip{
+    halfSize:r=20.0
+    distScaleStart:r=1000.0
+    distScaleEnd:r=15000.0
+    distScale:r=0.22
+    radius:r=0.19
+    hdrK:r=2.4
+    minPixelSize:r=3.3
+    color1:c=255, 71, 54, 180
+    color2:c=255, 36, 0, 180
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  7mmWhite{
+    halfSize:r=3.0
+    distScaleStart:r=50.0
+    distScaleEnd:r=1500.0
+    distScale:r=4.0
+    radius:r=0.02
+    color1:c=255, 255, 255, 120
+    color2:c=213, 237, 255, 50
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  12mmWhite{
+    halfSize:r=3.0
+    distScaleStart:r=50.0
+    distScaleEnd:r=2000.0
+    distScale:r=3.5
+    radius:r=0.035
+    color1:c=255, 255, 255, 120
+    color2:c=213, 237, 255, 50
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  20mmWhite{
+    halfSize:r=3.5
+    distScaleStart:r=50.0
+    distScaleEnd:r=2000.0
+    distScale:r=3.0
+    radius:r=0.04
+    color1:c=255, 255, 255, 120
+    color2:c=213, 237, 255, 50
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  30mmWhite{
+    halfSize:r=3.5
+    distScaleStart:r=50.0
+    distScaleEnd:r=2000.0
+    distScale:r=3.0
+    radius:r=0.04
+    color1:c=255, 255, 255, 120
+    color2:c=213, 237, 255, 50
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  37mmWhite{
+    halfSize:r=4.0
+    distScaleStart:r=50.0
+    distScaleEnd:r=2000.0
+    distScale:r=2.5
+    radius:r=0.06
+    color1:c=255, 255, 255, 120
+    color2:c=213, 237, 255, 50
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  50mmWhite{
+    halfSize:r=4.0
+    distScaleStart:r=50.0
+    distScaleEnd:r=2000.0
+    distScale:r=2.0
+    radius:r=0.08
+    color1:c=255, 255, 255, 120
+    color2:c=213, 237, 255, 50
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  76mmWhite{
+    halfSize:r=4.0
+    distScaleStart:r=20.0
+    distScaleEnd:r=3000.0
+    distScale:r=2.0
+    radius:r=0.09
+    color1:c=255, 255, 255, 120
+    color2:c=213, 237, 255, 50
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  76mmWhiteShip{
+    halfSize:r=12.0
+    distScaleStart:r=500.0
+    distScaleEnd:r=5000.0
+    distScale:r=0.4
+    radius:r=0.14
+    hdrK:r=1.8
+    minPixelSize:r=2.2
+    color1:c=255, 255, 255, 120
+    color2:c=213, 237, 255, 50
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  100mmWhite{
+    halfSize:r=4.0
+    distScaleStart:r=20.0
+    distScaleEnd:r=4000.0
+    distScale:r=2.0
+    radius:r=0.12
+    color1:c=255, 255, 255, 120
+    color2:c=213, 237, 255, 50
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  100mmWhiteShip{
+    halfSize:r=14.0
+    distScaleStart:r=1000.0
+    distScaleEnd:r=10000.0
+    distScale:r=0.32
+    radius:r=0.15
+    hdrK:r=2.0
+    minPixelSize:r=2.8
+    color1:c=255, 255, 255, 120
+    color2:c=213, 237, 255, 50
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  152mmWhite{
+    halfSize:r=5.0
+    distScaleStart:r=1000.0
+    distScaleEnd:r=7000.0
+    distScale:r=4.0
+    radius:r=0.17
+    color1:c=255, 255, 255, 120
+    color2:c=213, 237, 255, 50
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  200mmWhiteShip{
+    halfSize:r=18.0
+    distScaleStart:r=1000.0
+    distScaleEnd:r=15000.0
+    distScale:r=0.26
+    radius:r=0.17
+    hdrK:r=2.2
+    minPixelSize:r=3.1
+    color1:c=255, 255, 255, 120
+    color2:c=213, 237, 255, 50
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  300mmWhiteShip{
+    halfSize:r=20.0
+    distScaleStart:r=1000.0
+    distScaleEnd:r=15000.0
+    distScale:r=0.22
+    radius:r=0.19
+    hdrK:r=2.4
+    minPixelSize:r=3.3
+    color1:c=255, 255, 255, 120
+    color2:c=213, 237, 255, 50
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  7mmPaleWhite{
+    halfSize:r=3.0
+    distScaleStart:r=50.0
+    distScaleEnd:r=1500.0
+    distScale:r=4.0
+    radius:r=0.02
+    color1:c=255, 255, 255, 40
+    color2:c=213, 237, 255, 80
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  12mmPaleWhite{
+    halfSize:r=3.0
+    distScaleStart:r=50.0
+    distScaleEnd:r=2000.0
+    distScale:r=3.5
+    radius:r=0.035
+    color1:c=255, 255, 255, 40
+    color2:c=213, 237, 255, 80
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  20mmPaleWhite{
+    halfSize:r=3.5
+    distScaleStart:r=50.0
+    distScaleEnd:r=2000.0
+    distScale:r=3.0
+    radius:r=0.04
+    color1:c=255, 255, 255, 40
+    color2:c=213, 237, 255, 80
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  30mmPaleWhite{
+    halfSize:r=3.5
+    distScaleStart:r=100.0
+    distScaleEnd:r=2000.0
+    distScale:r=2.5
+    radius:r=0.05
+    color1:c=255, 255, 255, 40
+    color2:c=213, 237, 255, 80
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  37mmPaleWhite{
+    halfSize:r=4.0
+    distScaleStart:r=50.0
+    distScaleEnd:r=2000.0
+    distScale:r=2.5
+    radius:r=0.06
+    color1:c=255, 255, 255, 40
+    color2:c=213, 237, 255, 80
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  50mmPaleWhite{
+    halfSize:r=4.0
+    distScaleStart:r=50.0
+    distScaleEnd:r=2000.0
+    distScale:r=2.0
+    radius:r=0.08
+    color1:c=255, 255, 255, 40
+    color2:c=213, 237, 255, 80
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  76mmPaleWhite{
+    halfSize:r=4.0
+    distScaleStart:r=20.0
+    distScaleEnd:r=3000.0
+    distScale:r=2.0
+    radius:r=0.09
+    color1:c=255, 255, 255, 40
+    color2:c=213, 237, 255, 80
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  76mmPaleWhiteShip{
+    halfSize:r=12.0
+    distScaleStart:r=500.0
+    distScaleEnd:r=5000.0
+    distScale:r=0.4
+    radius:r=0.14
+    hdrK:r=1.8
+    minPixelSize:r=2.2
+    color1:c=255, 255, 255, 40
+    color2:c=213, 237, 255, 80
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  100mmPaleWhite{
+    halfSize:r=4.0
+    distScaleStart:r=20.0
+    distScaleEnd:r=4000.0
+    distScale:r=2.0
+    radius:r=0.12
+    color1:c=255, 255, 255, 40
+    color2:c=213, 237, 255, 80
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  100mmPaleWhiteShip{
+    halfSize:r=14.0
+    distScaleStart:r=1000.0
+    distScaleEnd:r=10000.0
+    distScale:r=0.32
+    radius:r=0.15
+    hdrK:r=2.0
+    minPixelSize:r=2.8
+    color1:c=255, 255, 255, 40
+    color2:c=213, 237, 255, 80
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  200mmPaleWhiteShip{
+    halfSize:r=18.0
+    distScaleStart:r=1000.0
+    distScaleEnd:r=15000.0
+    distScale:r=0.26
+    radius:r=0.17
+    hdrK:r=2.2
+    minPixelSize:r=3.1
+    color1:c=255, 255, 255, 40
+    color2:c=213, 237, 255, 80
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  300mmPaleWhiteShip{
+    halfSize:r=20.0
+    distScaleStart:r=1000.0
+    distScaleEnd:r=15000.0
+    distScale:r=0.22
+    radius:r=0.19
+    hdrK:r=2.4
+    minPixelSize:r=3.3
+    color1:c=255, 255, 255, 40
+    color2:c=213, 237, 255, 80
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  7mmLightRed{
+    halfSize:r=3.0
+    distScaleStart:r=50.0
+    distScaleEnd:r=1500.0
+    distScale:r=4.0
+    radius:r=0.02
+    color1:c=255, 247, 212, 200
+    color2:c=255, 144, 132, 200
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  12mmLightRed{
+    halfSize:r=3.0
+    distScaleStart:r=50.0
+    distScaleEnd:r=2000.0
+    distScale:r=3.5
+    radius:r=0.035
+    color1:c=255, 247, 212, 200
+    color2:c=255, 144, 132, 200
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  20mmLightRed{
+    halfSize:r=3.5
+    distScaleStart:r=50.0
+    distScaleEnd:r=2000.0
+    distScale:r=3.0
+    radius:r=0.04
+    color1:c=255, 247, 212, 200
+    color2:c=255, 144, 132, 200
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  30mmLightRed{
+    halfSize:r=3.5
+    distScaleStart:r=100.0
+    distScaleEnd:r=2000.0
+    distScale:r=2.5
+    radius:r=0.05
+    color1:c=255, 247, 212, 200
+    color2:c=255, 144, 132, 200
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  37mmLightRed{
+    halfSize:r=4.0
+    distScaleStart:r=50.0
+    distScaleEnd:r=2000.0
+    distScale:r=2.5
+    radius:r=0.06
+    color1:c=255, 247, 212, 200
+    color2:c=255, 144, 132, 200
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  50mmLightRed{
+    halfSize:r=4.0
+    distScaleStart:r=50.0
+    distScaleEnd:r=2000.0
+    distScale:r=2.0
+    radius:r=0.08
+    color1:c=255, 247, 212, 200
+    color2:c=255, 144, 132, 200
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  76mmLightRed{
+    halfSize:r=4.0
+    distScaleStart:r=20.0
+    distScaleEnd:r=3000.0
+    distScale:r=2.0
+    radius:r=0.09
+    color1:c=255, 247, 212, 200
+    color2:c=255, 144, 132, 200
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  76mmLightRedShip{
+    halfSize:r=12.0
+    distScaleStart:r=500.0
+    distScaleEnd:r=5000.0
+    distScale:r=0.4
+    radius:r=0.14
+    hdrK:r=1.8
+    minPixelSize:r=2.2
+    color1:c=255, 247, 212, 200
+    color2:c=255, 144, 132, 200
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  100mmLightRed{
+    halfSize:r=4.0
+    distScaleStart:r=20.0
+    distScaleEnd:r=4000.0
+    distScale:r=2.0
+    radius:r=0.12
+    color1:c=255, 247, 212, 200
+    color2:c=255, 144, 132, 200
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  100mmLightRedShip{
+    halfSize:r=14.0
+    distScaleStart:r=1000.0
+    distScaleEnd:r=10000.0
+    distScale:r=0.32
+    radius:r=0.15
+    hdrK:r=2.0
+    minPixelSize:r=2.8
+    color1:c=255, 247, 212, 200
+    color2:c=255, 144, 132, 200
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  200mmLightRedShip{
+    halfSize:r=18.0
+    distScaleStart:r=1000.0
+    distScaleEnd:r=15000.0
+    distScale:r=0.26
+    radius:r=0.17
+    hdrK:r=2.2
+    minPixelSize:r=3.1
+    color1:c=255, 247, 212, 200
+    color2:c=255, 144, 132, 200
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  300mmLightRedShip{
+    halfSize:r=20.0
+    distScaleStart:r=1000.0
+    distScaleEnd:r=15000.0
+    distScale:r=0.22
+    radius:r=0.19
+    hdrK:r=2.4
+    minPixelSize:r=3.3
+    color1:c=255, 247, 212, 200
+    color2:c=255, 144, 132, 200
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  noColor{
+    color1:c=0, 0, 0, 0
+    color2:c=0, 0, 0, 0
+    halfSize:r=1.5
+  }
+
+  7mmGreenBlue{
+    halfSize:r=3.0
+    distScaleStart:r=50.0
+    distScaleEnd:r=1500.0
+    distScale:r=4.0
+    radius:r=0.02
+    color1:c=195, 255, 253, 200
+    color2:c=52, 255, 171, 200
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  12mmGreenBlue{
+    halfSize:r=3.0
+    distScaleStart:r=50.0
+    distScaleEnd:r=2000.0
+    distScale:r=3.5
+    radius:r=0.035
+    color1:c=195, 255, 253, 200
+    color2:c=52, 255, 171, 200
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  20mmGreenBlue{
+    halfSize:r=3.5
+    distScaleStart:r=50.0
+    distScaleEnd:r=2000.0
+    distScale:r=3.0
+    radius:r=0.04
+    color1:c=195, 255, 253, 200
+    color2:c=52, 255, 171, 200
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  30mmGreenBlue{
+    halfSize:r=3.5
+    distScaleStart:r=100.0
+    distScaleEnd:r=2000.0
+    distScale:r=2.5
+    radius:r=0.05
+    color1:c=195, 255, 253, 200
+    color2:c=52, 255, 171, 200
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  37mmGreenBlue{
+    halfSize:r=4.0
+    distScaleStart:r=50.0
+    distScaleEnd:r=2000.0
+    distScale:r=2.5
+    radius:r=0.06
+    color1:c=195, 255, 253, 200
+    color2:c=52, 255, 171, 200
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  50mmGreenBlue{
+    halfSize:r=4.0
+    distScaleStart:r=50.0
+    distScaleEnd:r=2000.0
+    distScale:r=2.0
+    radius:r=0.08
+    color1:c=195, 255, 253, 200
+    color2:c=52, 255, 171, 200
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  76mmGreenBlue{
+    halfSize:r=4.0
+    distScaleStart:r=20.0
+    distScaleEnd:r=3000.0
+    distScale:r=2.0
+    radius:r=0.09
+    color1:c=195, 255, 253, 200
+    color2:c=52, 255, 171, 200
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  76mmGreenBlueShip{
+    halfSize:r=12.0
+    distScaleStart:r=500.0
+    distScaleEnd:r=5000.0
+    distScale:r=0.4
+    radius:r=0.14
+    hdrK:r=1.8
+    minPixelSize:r=2.2
+    color1:c=195, 255, 253, 200
+    color2:c=52, 255, 171, 200
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  100mmGreenBlue{
+    halfSize:r=4.0
+    distScaleStart:r=20.0
+    distScaleEnd:r=4000.0
+    distScale:r=2.0
+    radius:r=0.12
+    color1:c=195, 255, 253, 200
+    color2:c=52, 255, 171, 200
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  100mmGreenBlueShip{
+    halfSize:r=14.0
+    distScaleStart:r=1000.0
+    distScaleEnd:r=10000.0
+    distScale:r=0.32
+    radius:r=0.15
+    hdrK:r=2.0
+    minPixelSize:r=2.8
+    color1:c=195, 255, 253, 200
+    color2:c=52, 255, 171, 200
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  152mmGreenBlue{
+    halfSize:r=5.0
+    distScaleStart:r=1000.0
+    distScaleEnd:r=7000.0
+    distScale:r=4.0
+    radius:r=0.17
+    color1:c=195, 255, 253, 200
+    color2:c=52, 255, 171, 200
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  200mmGreenBlueShip{
+    halfSize:r=18.0
+    distScaleStart:r=1000.0
+    distScaleEnd:r=15000.0
+    distScale:r=0.26
+    radius:r=0.17
+    hdrK:r=2.2
+    minPixelSize:r=3.1
+    color1:c=195, 255, 253, 200
+    color2:c=52, 255, 171, 200
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  300mmGreenBlueShip{
+    halfSize:r=20.0
+    distScaleStart:r=1000.0
+    distScaleEnd:r=15000.0
+    distScale:r=0.22
+    radius:r=0.19
+    hdrK:r=2.4
+    minPixelSize:r=3.3
+    color1:c=195, 255, 253, 200
+    color2:c=52, 255, 171, 200
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  7mmYellow{
+    halfSize:r=3.0
+    distScaleStart:r=50.0
+    distScaleEnd:r=1500.0
+    distScale:r=4.0
+    radius:r=0.02
+    color1:c=255, 248, 60, 120
+    color2:c=255, 248, 50, 70
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  12mmYellow{
+    halfSize:r=3.0
+    distScaleStart:r=50.0
+    distScaleEnd:r=2000.0
+    distScale:r=3.5
+    radius:r=0.035
+    color1:c=255, 248, 60, 120
+    color2:c=255, 248, 50, 70
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  20mmYellow{
+    halfSize:r=3.5
+    distScaleStart:r=50.0
+    distScaleEnd:r=2000.0
+    distScale:r=3.0
+    radius:r=0.04
+    color1:c=255, 248, 60, 120
+    color2:c=255, 248, 50, 70
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  30mmYellow{
+    halfSize:r=3.5
+    distScaleStart:r=100.0
+    distScaleEnd:r=2000.0
+    distScale:r=2.5
+    radius:r=0.05
+    color1:c=255, 248, 60, 120
+    color2:c=255, 248, 50, 70
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  37mmYellow{
+    halfSize:r=4.0
+    distScaleStart:r=50.0
+    distScaleEnd:r=2000.0
+    distScale:r=2.5
+    radius:r=0.06
+    color1:c=255, 248, 60, 120
+    color2:c=255, 248, 50, 70
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  50mmYellow{
+    halfSize:r=4.0
+    distScaleStart:r=50.0
+    distScaleEnd:r=2000.0
+    distScale:r=2.0
+    radius:r=0.08
+    color1:c=255, 248, 60, 120
+    color2:c=255, 248, 50, 70
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  76mmYellow{
+    halfSize:r=4.0
+    distScaleStart:r=20.0
+    distScaleEnd:r=3000.0
+    distScale:r=2.0
+    radius:r=0.09
+    color1:c=255, 248, 60, 120
+    color2:c=255, 248, 50, 70
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  76mmYellowShip{
+    halfSize:r=12.0
+    distScaleStart:r=500.0
+    distScaleEnd:r=5000.0
+    distScale:r=0.4
+    radius:r=0.14
+    hdrK:r=1.8
+    minPixelSize:r=2.2
+    color1:c=255, 248, 60, 120
+    color2:c=255, 248, 50, 70
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  100mmYellow{
+    halfSize:r=4.0
+    distScaleStart:r=20.0
+    distScaleEnd:r=4000.0
+    distScale:r=2.0
+    radius:r=0.12
+    color1:c=255, 248, 60, 120
+    color2:c=255, 248, 50, 70
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  100mmYellowShip{
+    halfSize:r=14.0
+    distScaleStart:r=1000.0
+    distScaleEnd:r=10000.0
+    distScale:r=0.32
+    radius:r=0.15
+    hdrK:r=2.0
+    minPixelSize:r=2.8
+    color1:c=255, 248, 60, 120
+    color2:c=255, 248, 50, 70
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  152mmYellow{
+    halfSize:r=5.0
+    distScaleStart:r=1000.0
+    distScaleEnd:r=7000.0
+    distScale:r=4.0
+    radius:r=0.17
+    color1:c=255, 248, 60, 120
+    color2:c=255, 248, 50, 70
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  200mmYellowShip{
+    halfSize:r=18.0
+    distScaleStart:r=1000.0
+    distScaleEnd:r=15000.0
+    distScale:r=0.26
+    radius:r=0.17
+    hdrK:r=2.2
+    minPixelSize:r=3.1
+    color1:c=255, 248, 60, 120
+    color2:c=255, 248, 50, 70
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  300mmYellowShip{
+    halfSize:r=20.0
+    distScaleStart:r=1000.0
+    distScaleEnd:r=15000.0
+    distScale:r=0.22
+    radius:r=0.19
+    hdrK:r=2.4
+    minPixelSize:r=3.3
+    color1:c=255, 248, 60, 120
+    color2:c=255, 248, 50, 70
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  7mmBlue{
+    halfSize:r=3.0
+    distScaleStart:r=50.0
+    distScaleEnd:r=1500.0
+    distScale:r=4.0
+    radius:r=0.02
+    color1:c=219, 231, 255, 200
+    color2:c=21, 98, 255, 200
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  12mmBlue{
+    halfSize:r=3.0
+    distScaleStart:r=50.0
+    distScaleEnd:r=2000.0
+    distScale:r=3.5
+    radius:r=0.035
+    color1:c=219, 231, 255, 200
+    color2:c=21, 98, 255, 200
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  20mmBlue{
+    halfSize:r=3.5
+    distScaleStart:r=50.0
+    distScaleEnd:r=2000.0
+    distScale:r=3.0
+    radius:r=0.04
+    color1:c=219, 231, 255, 200
+    color2:c=21, 98, 255, 200
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  30mmBlue{
+    halfSize:r=3.5
+    distScaleStart:r=100.0
+    distScaleEnd:r=2000.0
+    distScale:r=2.5
+    radius:r=0.05
+    color1:c=219, 231, 255, 200
+    color2:c=21, 98, 255, 200
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  37mmBlue{
+    halfSize:r=4.0
+    distScaleStart:r=50.0
+    distScaleEnd:r=2000.0
+    distScale:r=2.5
+    radius:r=0.06
+    color1:c=219, 231, 255, 200
+    color2:c=21, 98, 255, 200
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  50mmBlue{
+    halfSize:r=4.0
+    distScaleStart:r=50.0
+    distScaleEnd:r=2000.0
+    distScale:r=2.0
+    radius:r=0.08
+    color1:c=219, 231, 255, 200
+    color2:c=21, 98, 255, 200
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  76mmBlue{
+    halfSize:r=4.0
+    distScaleStart:r=20.0
+    distScaleEnd:r=3000.0
+    distScale:r=2.0
+    radius:r=0.09
+    color1:c=219, 231, 255, 200
+    color2:c=21, 98, 255, 200
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  76mmBlueShip{
+    halfSize:r=12.0
+    distScaleStart:r=500.0
+    distScaleEnd:r=5000.0
+    distScale:r=0.4
+    radius:r=0.14
+    hdrK:r=1.8
+    minPixelSize:r=2.2
+    color1:c=219, 231, 255, 200
+    color2:c=21, 98, 255, 200
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  100mmBlue{
+    halfSize:r=4.0
+    distScaleStart:r=20.0
+    distScaleEnd:r=4000.0
+    distScale:r=2.0
+    radius:r=0.12
+    color1:c=219, 231, 255, 200
+    color2:c=21, 98, 255, 200
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  100mmBlueShip{
+    halfSize:r=14.0
+    distScaleStart:r=1000.0
+    distScaleEnd:r=10000.0
+    distScale:r=0.32
+    radius:r=0.15
+    hdrK:r=2.0
+    minPixelSize:r=2.8
+    color1:c=219, 231, 255, 200
+    color2:c=21, 98, 255, 200
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  200mmBlueShip{
+    halfSize:r=18.0
+    distScaleStart:r=1000.0
+    distScaleEnd:r=15000.0
+    distScale:r=0.26
+    radius:r=0.17
+    hdrK:r=2.2
+    minPixelSize:r=3.1
+    color1:c=219, 231, 255, 200
+    color2:c=21, 98, 255, 200
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  300mmBlueShip{
+    halfSize:r=20.0
+    distScaleStart:r=1000.0
+    distScaleEnd:r=15000.0
+    distScale:r=0.22
+    radius:r=0.19
+    hdrK:r=2.4
+    minPixelSize:r=3.3
+    color1:c=219, 231, 255, 200
+    color2:c=21, 98, 255, 200
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  7mmDark_Blue{
+    halfSize:r=3.0
+    distScaleStart:r=50.0
+    distScaleEnd:r=1500.0
+    distScale:r=4.0
+    radius:r=0.02
+    color1:c=150, 150, 255, 220
+    color2:c=0, 0, 255, 220
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  12mmDark_Blue{
+    halfSize:r=3.0
+    distScaleStart:r=50.0
+    distScaleEnd:r=2000.0
+    distScale:r=3.5
+    radius:r=0.035
+    color1:c=150, 150, 255, 220
+    color2:c=0, 0, 255, 220
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  20mmDark_Blue{
+    halfSize:r=3.5
+    distScaleStart:r=50.0
+    distScaleEnd:r=2000.0
+    distScale:r=3.0
+    radius:r=0.04
+    color1:c=150, 150, 255, 220
+    color2:c=0, 0, 255, 220
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  30mmDark_Blue{
+    halfSize:r=3.5
+    distScaleStart:r=100.0
+    distScaleEnd:r=2000.0
+    distScale:r=2.5
+    radius:r=0.05
+    color1:c=150, 150, 255, 220
+    color2:c=0, 0, 255, 220
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  37mmDark_Blue{
+    halfSize:r=4.0
+    distScaleStart:r=50.0
+    distScaleEnd:r=2000.0
+    distScale:r=2.5
+    radius:r=0.06
+    color1:c=150, 150, 255, 220
+    color2:c=0, 0, 255, 220
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  50mmDark_Blue{
+    halfSize:r=4.0
+    distScaleStart:r=50.0
+    distScaleEnd:r=2000.0
+    distScale:r=2.0
+    radius:r=0.08
+    color1:c=150, 150, 255, 220
+    color2:c=0, 0, 255, 220
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  76mmDark_Blue{
+    halfSize:r=4.0
+    distScaleStart:r=20.0
+    distScaleEnd:r=3000.0
+    distScale:r=2.0
+    radius:r=0.09
+    color1:c=150, 150, 255, 220
+    color2:c=0, 0, 255, 220
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  76mmDark_BlueShip{
+    halfSize:r=12.0
+    distScaleStart:r=500.0
+    distScaleEnd:r=5000.0
+    distScale:r=0.4
+    radius:r=0.14
+    hdrK:r=1.8
+    minPixelSize:r=2.2
+    color1:c=150, 150, 255, 220
+    color2:c=0, 0, 255, 220
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  100mmDark_Blue{
+    halfSize:r=4.0
+    distScaleStart:r=20.0
+    distScaleEnd:r=4000.0
+    distScale:r=2.0
+    radius:r=0.12
+    color1:c=150, 150, 255, 220
+    color2:c=0, 0, 255, 220
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  100mmDark_BlueShip{
+    halfSize:r=14.0
+    distScaleStart:r=1000.0
+    distScaleEnd:r=10000.0
+    distScale:r=0.32
+    radius:r=0.15
+    hdrK:r=2.0
+    minPixelSize:r=2.8
+    color1:c=150, 150, 255, 220
+    color2:c=0, 0, 255, 220
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  200mmDark_BlueShip{
+    halfSize:r=18.0
+    distScaleStart:r=1000.0
+    distScaleEnd:r=15000.0
+    distScale:r=0.26
+    radius:r=0.17
+    hdrK:r=2.2
+    minPixelSize:r=3.1
+    color1:c=150, 150, 255, 220
+    color2:c=0, 0, 255, 220
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  300mmDark_BlueShip{
+    halfSize:r=20.0
+    distScaleStart:r=1000.0
+    distScaleEnd:r=15000.0
+    distScale:r=0.22
+    radius:r=0.19
+    hdrK:r=2.4
+    minPixelSize:r=3.3
+    color1:c=150, 150, 255, 220
+    color2:c=0, 0, 255, 220
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  7mmPink{
+    halfSize:r=3.0
+    distScaleStart:r=50.0
+    distScaleEnd:r=1500.0
+    distScale:r=4.0
+    radius:r=0.02
+    color1:c=255, 236, 248, 200
+    color2:c=255, 65, 154, 200
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  12mmPink{
+    halfSize:r=3.0
+    distScaleStart:r=50.0
+    distScaleEnd:r=2000.0
+    distScale:r=3.5
+    radius:r=0.035
+    color1:c=255, 236, 248, 200
+    color2:c=255, 65, 154, 200
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  20mmPink{
+    halfSize:r=3.5
+    distScaleStart:r=50.0
+    distScaleEnd:r=2000.0
+    distScale:r=3.0
+    radius:r=0.04
+    color1:c=255, 236, 248, 200
+    color2:c=255, 65, 154, 200
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  30mmPink{
+    halfSize:r=3.5
+    distScaleStart:r=100.0
+    distScaleEnd:r=2000.0
+    distScale:r=2.5
+    radius:r=0.05
+    color1:c=255, 236, 248, 200
+    color2:c=255, 65, 154, 200
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  37mmPink{
+    halfSize:r=4.0
+    distScaleStart:r=50.0
+    distScaleEnd:r=2000.0
+    distScale:r=2.5
+    radius:r=0.06
+    color1:c=255, 236, 248, 200
+    color2:c=255, 65, 154, 200
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  50mmPink{
+    halfSize:r=4.0
+    distScaleStart:r=50.0
+    distScaleEnd:r=2000.0
+    distScale:r=2.0
+    radius:r=0.08
+    color1:c=255, 236, 248, 200
+    color2:c=255, 65, 154, 200
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  76mmPink{
+    halfSize:r=4.0
+    distScaleStart:r=20.0
+    distScaleEnd:r=3000.0
+    distScale:r=2.0
+    radius:r=0.09
+    color1:c=255, 236, 248, 200
+    color2:c=255, 65, 154, 200
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  76mmPinkShip{
+    halfSize:r=12.0
+    distScaleStart:r=500.0
+    distScaleEnd:r=5000.0
+    distScale:r=0.4
+    radius:r=0.14
+    hdrK:r=1.8
+    minPixelSize:r=2.2
+    color1:c=255, 236, 248, 200
+    color2:c=255, 65, 154, 200
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  100mmPink{
+    halfSize:r=4.0
+    distScaleStart:r=20.0
+    distScaleEnd:r=4000.0
+    distScale:r=2.0
+    radius:r=0.12
+    color1:c=255, 236, 248, 200
+    color2:c=255, 65, 154, 200
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  100mmPinkShip{
+    halfSize:r=14.0
+    distScaleStart:r=1000.0
+    distScaleEnd:r=10000.0
+    distScale:r=0.32
+    radius:r=0.15
+    hdrK:r=2.0
+    minPixelSize:r=2.8
+    color1:c=255, 236, 248, 200
+    color2:c=255, 65, 154, 200
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  200mmPinkShip{
+    halfSize:r=18.0
+    distScaleStart:r=1000.0
+    distScaleEnd:r=15000.0
+    distScale:r=0.26
+    radius:r=0.17
+    hdrK:r=2.2
+    minPixelSize:r=3.1
+    color1:c=255, 236, 248, 200
+    color2:c=255, 65, 154, 200
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  300mmPinkShip{
+    halfSize:r=20.0
+    distScaleStart:r=1000.0
+    distScaleEnd:r=15000.0
+    distScale:r=0.22
+    radius:r=0.19
+    hdrK:r=2.4
+    minPixelSize:r=3.3
+    color1:c=255, 236, 248, 200
+    color2:c=255, 65, 154, 200
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  7mmOrange{
+    halfSize:r=3.0
+    distScaleStart:r=50.0
+    distScaleEnd:r=1500.0
+    distScale:r=4.0
+    radius:r=0.02
+    color1:c=255, 36, 0, 250
+    color2:c=204, 27, 0, 240
+    startTime:r=0.05
+  }
+
+  12mmOrange{
+    halfSize:r=3.0
+    distScaleStart:r=50.0
+    distScaleEnd:r=2000.0
+    distScale:r=3.5
+    radius:r=0.035
+    color1:c=255, 36, 0, 250
+    color2:c=204, 27, 0, 240
+    startTime:r=0.05
+  }
+
+  20mmOrange{
+    halfSize:r=3.5
+    distScaleStart:r=50.0
+    distScaleEnd:r=2000.0
+    distScale:r=3.0
+    radius:r=0.04
+    color1:c=255, 36, 0, 250
+    color2:c=204, 27, 0, 240
+    startTime:r=0.05
+  }
+
+  30mmOrange{
+    halfSize:r=3.5
+    distScaleStart:r=100.0
+    distScaleEnd:r=2000.0
+    distScale:r=2.5
+    radius:r=0.05
+    color1:c=255, 36, 0, 250
+    color2:c=204, 27, 0, 240
+    startTime:r=0.05
+  }
+
+  37mmOrange{
+    halfSize:r=4.0
+    distScaleStart:r=50.0
+    distScaleEnd:r=2000.0
+    distScale:r=2.5
+    radius:r=0.06
+    color1:c=255, 36, 0, 250
+    color2:c=204, 27, 0, 240
+    startTime:r=0.05
+  }
+
+  50mmOrange{
+    halfSize:r=4.0
+    distScaleStart:r=50.0
+    distScaleEnd:r=2000.0
+    distScale:r=2.0
+    radius:r=0.08
+    color1:c=255, 36, 0, 250
+    color2:c=204, 27, 0, 240
+    startTime:r=0.05
+  }
+
+  76mmOrange{
+    halfSize:r=4.0
+    distScaleStart:r=20.0
+    distScaleEnd:r=3000.0
+    distScale:r=2.0
+    radius:r=0.09
+    color1:c=255, 36, 0, 250
+    color2:c=204, 27, 0, 240
+    startTime:r=0.05
+  }
+
+  76mmOrangeShip{
+    halfSize:r=12.0
+    distScaleStart:r=500.0
+    distScaleEnd:r=5000.0
+    distScale:r=0.4
+    radius:r=0.14
+    hdrK:r=1.8
+    minPixelSize:r=2.2
+    color1:c=255, 36, 0, 250
+    color2:c=204, 27, 0, 240
+    startTime:r=0.05
+  }
+
+  100mmOrange{
+    halfSize:r=4.0
+    distScaleStart:r=20.0
+    distScaleEnd:r=4000.0
+    distScale:r=2.0
+    radius:r=0.12
+    color1:c=255, 36, 0, 250
+    color2:c=204, 27, 0, 240
+    startTime:r=0.05
+  }
+
+  100mmOrangeShip{
+    halfSize:r=14.0
+    distScaleStart:r=1000.0
+    distScaleEnd:r=10000.0
+    distScale:r=0.32
+    radius:r=0.15
+    hdrK:r=2.0
+    minPixelSize:r=2.8
+    color1:c=255, 36, 0, 250
+    color2:c=204, 27, 0, 240
+    startTime:r=0.05
+  }
+
+  152mmOrange{
+    halfSize:r=5.0
+    distScaleStart:r=1000.0
+    distScaleEnd:r=7000.0
+    distScale:r=4.0
+    radius:r=0.17
+    color1:c=255, 36, 0, 250
+    color2:c=204, 27, 0, 240
+    startTime:r=0.05
+  }
+
+  200mmOrangeShip{
+    halfSize:r=18.0
+    distScaleStart:r=1000.0
+    distScaleEnd:r=15000.0
+    distScale:r=0.26
+    radius:r=0.17
+    hdrK:r=2.2
+    minPixelSize:r=3.1
+    color1:c=255, 36, 0, 250
+    color2:c=204, 27, 0, 240
+    startTime:r=0.05
+  }
+
+  300mmOrangeShip{
+    halfSize:r=20.0
+    distScaleStart:r=1000.0
+    distScaleEnd:r=15000.0
+    distScale:r=0.22
+    radius:r=0.19
+    hdrK:r=2.4
+    minPixelSize:r=3.3
+    color1:c=255, 36, 0, 250
+    color2:c=204, 27, 0, 240
+    startTime:r=0.05
+  }
+
+  7mmGreen{
+    halfSize:r=3.0
+    distScaleStart:r=50.0
+    distScaleEnd:r=1500.0
+    distScale:r=4.0
+    radius:r=0.02
+    color1:c=102, 255, 102, 220
+    color2:c=0, 255, 0, 220
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  12mmGreen{
+    halfSize:r=3.0
+    distScaleStart:r=50.0
+    distScaleEnd:r=2000.0
+    distScale:r=3.5
+    radius:r=0.035
+    color1:c=102, 255, 102, 220
+    color2:c=0, 255, 0, 220
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  20mmGreen{
+    halfSize:r=3.5
+    distScaleStart:r=50.0
+    distScaleEnd:r=2000.0
+    distScale:r=3.0
+    radius:r=0.04
+    color1:c=102, 255, 102, 220
+    color2:c=0, 255, 0, 220
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  30mmGreen{
+    halfSize:r=3.5
+    distScaleStart:r=100.0
+    distScaleEnd:r=2000.0
+    distScale:r=2.5
+    radius:r=0.05
+    color1:c=102, 255, 102, 220
+    color2:c=0, 255, 0, 220
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  37mmGreen{
+    halfSize:r=4.0
+    distScaleStart:r=50.0
+    distScaleEnd:r=2000.0
+    distScale:r=2.5
+    radius:r=0.06
+    color1:c=102, 255, 102, 220
+    color2:c=0, 255, 0, 220
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  50mmGreen{
+    halfSize:r=4.0
+    distScaleStart:r=50.0
+    distScaleEnd:r=2000.0
+    distScale:r=2.0
+    radius:r=0.08
+    color1:c=102, 255, 102, 220
+    color2:c=0, 255, 0, 220
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  76mmGreen{
+    halfSize:r=4.0
+    distScaleStart:r=20.0
+    distScaleEnd:r=3000.0
+    distScale:r=2.0
+    radius:r=0.09
+    color1:c=102, 255, 102, 220
+    color2:c=0, 255, 0, 220
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  76mmGreenShip{
+    halfSize:r=12.0
+    distScaleStart:r=500.0
+    distScaleEnd:r=5000.0
+    distScale:r=0.4
+    radius:r=0.14
+    hdrK:r=1.8
+    minPixelSize:r=2.2
+    color1:c=102, 255, 102, 220
+    color2:c=0, 255, 0, 220
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  100mmGreen{
+    halfSize:r=4.0
+    distScaleStart:r=20.0
+    distScaleEnd:r=4000.0
+    distScale:r=2.0
+    radius:r=0.12
+    color1:c=102, 255, 102, 220
+    color2:c=0, 255, 0, 220
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  100mmGreenShip{
+    halfSize:r=14.0
+    distScaleStart:r=1000.0
+    distScaleEnd:r=10000.0
+    distScale:r=0.32
+    radius:r=0.15
+    hdrK:r=2.0
+    minPixelSize:r=2.8
+    color1:c=102, 255, 102, 220
+    color2:c=0, 255, 0, 220
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  152mmGreen{
+    halfSize:r=5.0
+    distScaleStart:r=1000.0
+    distScaleEnd:r=7000.0
+    distScale:r=4.0
+    radius:r=0.17
+    color1:c=102, 255, 102, 220
+    color2:c=0, 255, 0, 220
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  200mmGreenShip{
+    halfSize:r=18.0
+    distScaleStart:r=1000.0
+    distScaleEnd:r=15000.0
+    distScale:r=0.26
+    radius:r=0.17
+    hdrK:r=2.2
+    minPixelSize:r=3.1
+    color1:c=102, 255, 102, 220
+    color2:c=0, 255, 0, 220
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  300mmGreenShip{
+    halfSize:r=20.0
+    distScaleStart:r=1000.0
+    distScaleEnd:r=15000.0
+    distScale:r=0.22
+    radius:r=0.19
+    hdrK:r=2.4
+    minPixelSize:r=3.3
+    color1:c=102, 255, 102, 220
+    color2:c=0, 255, 0, 220
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  7mmWhiteGreen{
+    halfSize:r=3.0
+    distScaleStart:r=50.0
+    distScaleEnd:r=1500.0
+    distScale:r=4.0
+    radius:r=0.02
+    color1:c=208, 255, 191, 200
+    color2:c=20, 255, 20, 200
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  12mmWhiteGreen{
+    halfSize:r=3.0
+    distScaleStart:r=50.0
+    distScaleEnd:r=2000.0
+    distScale:r=3.5
+    radius:r=0.035
+    color1:c=208, 255, 191, 200
+    color2:c=20, 255, 20, 200
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  20mmWhiteGreen{
+    halfSize:r=3.5
+    distScaleStart:r=50.0
+    distScaleEnd:r=2000.0
+    distScale:r=3.0
+    radius:r=0.04
+    color1:c=208, 255, 191, 200
+    color2:c=20, 255, 20, 200
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  30mmWhiteGreen{
+    halfSize:r=3.5
+    distScaleStart:r=100.0
+    distScaleEnd:r=2000.0
+    distScale:r=2.5
+    radius:r=0.05
+    color1:c=208, 255, 191, 200
+    color2:c=20, 255, 20, 200
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  37mmWhiteGreen{
+    halfSize:r=4.0
+    distScaleStart:r=50.0
+    distScaleEnd:r=2000.0
+    distScale:r=2.5
+    radius:r=0.06
+    color1:c=208, 255, 191, 200
+    color2:c=20, 255, 20, 200
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  50mmWhiteGreen{
+    halfSize:r=4.0
+    distScaleStart:r=50.0
+    distScaleEnd:r=2000.0
+    distScale:r=2.0
+    radius:r=0.08
+    color1:c=208, 255, 191, 200
+    color2:c=20, 255, 20, 200
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  76mmWhiteGreen{
+    halfSize:r=4.0
+    distScaleStart:r=20.0
+    distScaleEnd:r=3000.0
+    distScale:r=2.0
+    radius:r=0.09
+    color1:c=208, 255, 191, 200
+    color2:c=20, 255, 20, 200
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  76mmWhiteGreenShip{
+    halfSize:r=12.0
+    distScaleStart:r=500.0
+    distScaleEnd:r=5000.0
+    distScale:r=0.4
+    radius:r=0.14
+    hdrK:r=1.8
+    minPixelSize:r=2.2
+    color1:c=208, 255, 191, 200
+    color2:c=20, 255, 20, 200
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  100mmWhiteGreen{
+    halfSize:r=4.0
+    distScaleStart:r=20.0
+    distScaleEnd:r=4000.0
+    distScale:r=2.0
+    radius:r=0.12
+    color1:c=208, 255, 191, 200
+    color2:c=20, 255, 20, 200
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  100mmWhiteGreenShip{
+    halfSize:r=14.0
+    distScaleStart:r=1000.0
+    distScaleEnd:r=10000.0
+    distScale:r=0.32
+    radius:r=0.15
+    hdrK:r=2.0
+    minPixelSize:r=2.8
+    color1:c=208, 255, 191, 200
+    color2:c=20, 255, 20, 200
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  152mmWhiteGreen{
+    halfSize:r=5.0
+    distScaleStart:r=1000.0
+    distScaleEnd:r=7000.0
+    distScale:r=4.0
+    radius:r=0.17
+    color1:c=208, 255, 191, 200
+    color2:c=20, 255, 20, 200
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  200mmWhiteGreenShip{
+    halfSize:r=18.0
+    distScaleStart:r=1000.0
+    distScaleEnd:r=15000.0
+    distScale:r=0.26
+    radius:r=0.17
+    hdrK:r=2.2
+    minPixelSize:r=3.1
+    color1:c=208, 255, 191, 200
+    color2:c=20, 255, 20, 200
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  300mmWhiteGreenShip{
+    halfSize:r=20.0
+    distScaleStart:r=1000.0
+    distScaleEnd:r=15000.0
+    distScale:r=0.22
+    radius:r=0.19
+    hdrK:r=2.4
+    minPixelSize:r=3.3
+    color1:c=208, 255, 191, 200
+    color2:c=20, 255, 20, 200
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  7mmGold{
+    halfSize:r=3.0
+    distScaleStart:r=50.0
+    distScaleEnd:r=1500.0
+    distScale:r=4.0
+    radius:r=0.02
+    color1:c=255, 224, 132, 200
+    color2:c=255, 156, 43, 200
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  12mmGold{
+    halfSize:r=3.0
+    distScaleStart:r=50.0
+    distScaleEnd:r=2000.0
+    distScale:r=3.5
+    radius:r=0.035
+    color1:c=255, 224, 132, 200
+    color2:c=255, 156, 43, 200
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  20mmGold{
+    halfSize:r=3.5
+    distScaleStart:r=50.0
+    distScaleEnd:r=2000.0
+    distScale:r=3.0
+    radius:r=0.04
+    color1:c=255, 224, 132, 200
+    color2:c=255, 156, 43, 200
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  30mmGold{
+    halfSize:r=3.5
+    distScaleStart:r=100.0
+    distScaleEnd:r=2000.0
+    distScale:r=2.5
+    radius:r=0.05
+    color1:c=255, 224, 132, 200
+    color2:c=255, 156, 43, 200
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  37mmGold{
+    halfSize:r=4.0
+    distScaleStart:r=50.0
+    distScaleEnd:r=2000.0
+    distScale:r=2.5
+    radius:r=0.06
+    color1:c=255, 224, 132, 200
+    color2:c=255, 156, 43, 200
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  50mmGold{
+    halfSize:r=4.0
+    distScaleStart:r=50.0
+    distScaleEnd:r=2000.0
+    distScale:r=2.0
+    radius:r=0.08
+    color1:c=255, 224, 132, 200
+    color2:c=255, 156, 43, 200
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  76mmGold{
+    halfSize:r=4.0
+    distScaleStart:r=20.0
+    distScaleEnd:r=3000.0
+    distScale:r=2.0
+    radius:r=0.09
+    color1:c=255, 224, 132, 200
+    color2:c=255, 156, 43, 200
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  76mmGoldShip{
+    halfSize:r=12.0
+    distScaleStart:r=500.0
+    distScaleEnd:r=5000.0
+    distScale:r=0.4
+    radius:r=0.14
+    hdrK:r=1.8
+    minPixelSize:r=2.2
+    color1:c=255, 224, 132, 200
+    color2:c=255, 156, 43, 200
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  100mmGold{
+    halfSize:r=4.0
+    distScaleStart:r=20.0
+    distScaleEnd:r=4000.0
+    distScale:r=2.0
+    radius:r=0.12
+    color1:c=255, 224, 132, 200
+    color2:c=255, 156, 43, 200
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  100mmGoldShip{
+    halfSize:r=14.0
+    distScaleStart:r=1000.0
+    distScaleEnd:r=10000.0
+    distScale:r=0.32
+    radius:r=0.15
+    hdrK:r=2.0
+    minPixelSize:r=2.8
+    color1:c=255, 224, 132, 200
+    color2:c=255, 156, 43, 200
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  200mmGoldShip{
+    halfSize:r=18.0
+    distScaleStart:r=1000.0
+    distScaleEnd:r=15000.0
+    distScale:r=0.26
+    radius:r=0.17
+    hdrK:r=2.2
+    minPixelSize:r=3.1
+    color1:c=255, 224, 132, 200
+    color2:c=255, 156, 43, 200
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  300mmGoldShip{
+    halfSize:r=20.0
+    distScaleStart:r=1000.0
+    distScaleEnd:r=15000.0
+    distScale:r=0.22
+    radius:r=0.19
+    hdrK:r=2.4
+    minPixelSize:r=3.3
+    color1:c=255, 224, 132, 200
+    color2:c=255, 156, 43, 200
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  12mmYellowAAgun{
+    halfSize:r=3.0
+    distScaleStart:r=100.0
+    distScaleEnd:r=4000.0
+    distScale:r=5.0
+    color1:c=255, 248, 60, 120
+    color2:c=255, 248, 50, 70
+    startColor1:c=255, 248, 60, 120
+    startColor2:c=255, 248, 50, 70
+    startTime:r=0.025
+  }
+
+  beamGreen{
+    halfSize:r=4.0
+    distScaleStart:r=50.0
+    distScaleEnd:r=3000.0
+    distScale:r=2.5
+    radius:r=1.0
+    beam:b=yes
+    color1:c=100, 200, 255, 220
+    color2:c=0, 0, 255, 220
+    hdrK:r=5.0
+  }
+
+  beamRed{
+    halfSize:r=4.0
+    distScaleStart:r=50.0
+    distScaleEnd:r=3000.0
+    distScale:r=2.5
+    radius:r=0.1
+    beam:b=yes
+    color1:c=250, 120, 120, 250
+    color2:c=255, 0, 0, 200
+    hdrK:r=5.0
+  }
+}
+
+tracerTrails{
+
+  thin{
+    particleHalfSizeFrom:r=0.03
+    particleHalfSizeTo:r=0.6
+    color:c=128, 128, 128, 128
+    deviation:r=15.0
+  }
+
+  curved{
+    particleHalfSizeFrom:r=0.03
+    particleHalfSizeTo:r=0.3
+    color:c=158, 158, 158, 158
+    deviation:r=10.0
+  }
+
+  noTrail{
+    particleHalfSizeFrom:r=0.0
+    particleHalfSizeTo:r=0.0
+    color:c=0, 0, 0, 0
+    deviation:r=2.0
+  }
+
+  black{
+    particleHalfSizeFrom:r=0.03
+    particleHalfSizeTo:r=0.15
+    color:c=80, 80, 80, 186
+    deviation:r=3.0
+  }
+
+  black_rpg{
+    particleHalfSizeFrom:r=0.1
+    particleHalfSizeTo:r=0.2
+    color:c=80, 80, 80, 255
+    deviation:r=0.0
+  }
+
+  smallTrail{
+    particleHalfSizeFrom:r=0.02
+    particleHalfSizeTo:r=0.08
+    color:c=228, 228, 228, 228
+    deviation:r=5.0
+  }
+}

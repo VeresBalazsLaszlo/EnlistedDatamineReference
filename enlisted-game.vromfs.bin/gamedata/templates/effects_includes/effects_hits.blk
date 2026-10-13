@@ -1,0 +1,2536 @@
+hit_effect_base{
+  _use:t="ecs_no_debug"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, 0.0, 0.0]]
+  paint_from_biome:b=no
+  paint_color:p4=1.0, 1.0, 1.0, 0.5
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_6_8mm_ap_metal_cmps_fx"
+
+    effect{
+    }
+  }
+
+  "autodeleteEffectEntity:tag"{
+  }
+
+  "staticEffect:tag"{
+  }
+}
+
+hit_basic_glass_effect{
+  _use:t="hit_effect_base"
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_basic_glass_cmps_fx"
+  }
+}
+
+hit_basic_fabric_effect{
+  _use:t="hit_effect_base"
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_basic_fabric_cmps_fx"
+  }
+}
+
+hit_basic_paper_effect{
+  _use:t="hit_effect_base"
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_basic_paper_cmps_fx"
+  }
+}
+
+hit_basic_hay_effect{
+  _use:t="hit_effect_base"
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_basic_hay_cmps_fx"
+  }
+}
+
+hit_basic_rubber_effect{
+  _use:t="hit_effect_base"
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_basic_rubber_cmps_fx"
+  }
+}
+
+hit_basic_hole_water_effect{
+  _use:t="hit_effect_base"
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_basic_flow_water_cmps_fx"
+  }
+}
+
+hit_basic_hole_mud_effect{
+  _use:t="hit_effect_base"
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_basic_flow_mud_cmps_fx"
+  }
+}
+
+hit_basic_steam_effect{
+  _use:t="hit_effect_base"
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_basic_steam_cmps_fx"
+  }
+}
+
+hit_basic_vegitables_effect{
+  _use:t="hit_effect_base"
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_basic_bush_green_cmps_fx"
+  }
+}
+
+hit_basic_bush_green_effect{
+  _use:t="hit_effect_base"
+
+  _group{
+    _tags:t="render"
+    effect__lowestFxQuality:i=1
+    usePaintColor:b=yes
+    paintFromLevelRiColors:b=yes
+    effect__riPoolUsedForColoring:i=-1
+    effect__name:t="hit_basic_bush_green_cmps_fx"
+  }
+}
+
+hit_basic_bush_fall_effect{
+  _use:t="hit_effect_base"
+
+  _group{
+    _tags:t="render"
+    effect__lowestFxQuality:i=1
+    usePaintColor:b=yes
+    paintFromLevelRiColors:b=yes
+    effect__riPoolUsedForColoring:i=-1
+    effect__name:t="hit_basic_bush_fall_cmps_fx"
+  }
+}
+
+hit_basic_bush_dead_effect{
+  _use:t="hit_effect_base"
+
+  _group{
+    _tags:t="render"
+    effect__lowestFxQuality:i=1
+    effect__name:t="hit_basic_bush_dead_cmps_fx"
+  }
+}
+
+hit_basic_bush_snow_effect{
+  _use:t="hit_effect_base"
+
+  _group{
+    _tags:t="render"
+    effect__lowestFxQuality:i=1
+    effect__name:t="hit_basic_bush_snow_cmps_fx"
+  }
+}
+
+hit_basic_bush_needles_effect{
+  _use:t="hit_effect_base"
+
+  _group{
+    _tags:t="render"
+    effect__lowestFxQuality:i=1
+    effect__name:t="hit_basic_bush_needles_cmps_fx"
+  }
+}
+
+hit_basic_bush_needles_snow_effect{
+  _use:t="hit_effect_base"
+
+  _group{
+    _tags:t="render"
+    effect__lowestFxQuality:i=1
+    effect__name:t="hit_basic_bush_needles_snow_cmps_fx"
+  }
+}
+
+hit_basic_bush_palm_effect{
+  _use:t="hit_effect_base"
+
+  _group{
+    _tags:t="render"
+    effect__lowestFxQuality:i=1
+    usePaintColor:b=yes
+    paintFromLevelRiColors:b=yes
+    effect__riPoolUsedForColoring:i=-1
+    effect__name:t="hit_basic_bush_palm_cmps_fx"
+  }
+}
+
+hit_basic_cactus_effect{
+  _use:t="hit_effect_base"
+
+  _group{
+    _tags:t="render"
+    effect__lowestFxQuality:i=1
+    effect__name:t="hit_basic_cactus_cmps_fx"
+  }
+}
+
+hit_ricochet_big_effect{
+  _use:t="hit_effect_base"
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_ricochet_big_cmps_fx"
+  }
+}
+
+hit_ricochet_big_sand_effect{
+  _use:t="hit_effect_base"
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_ricochet_big_sand_cmps_fx"
+  }
+}
+
+hit_ricochet_big_dirt_effect{
+  _use:t="hit_effect_base"
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_ricochet_big_dirt_cmps_fx"
+  }
+}
+
+hit_ricochet_big_stone_effect{
+  _use:t="hit_effect_base"
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_ricochet_big_stone_cmps_fx"
+  }
+}
+
+hit_ricochet_big_water_effect{
+  _use:t="hit_effect_base"
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_ricochet_big_water_cmps_fx"
+  }
+}
+
+hit_ricochet_med_effect{
+  _use:t="hit_effect_base"
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_ricochet_medium_cmps_fx"
+  }
+}
+
+hit_ricochet_med_sand_effect{
+  _use:t="hit_effect_base"
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_ricochet_medium_sand_cmps_fx"
+  }
+}
+
+hit_ricochet_med_dirt_effect{
+  _use:t="hit_effect_base"
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_ricochet_medium_dirt_cmps_fx"
+  }
+}
+
+hit_ricochet_med_stone_effect{
+  _use:t="hit_effect_base"
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_ricochet_medium_stone_cmps_fx"
+  }
+}
+
+hit_ricochet_med_water_effect{
+  _use:t="hit_effect_base"
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_ricochet_medium_water_cmps_fx"
+  }
+}
+
+hit_ricochet_small_effect{
+  _use:t="hit_effect_base"
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_ricochet_small_cmps_fx"
+  }
+}
+
+hit_ricochet_small_sand_effect{
+  _use:t="hit_effect_base"
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_ricochet_small_sand_cmps_fx"
+  }
+}
+
+hit_ricochet_small_dirt_effect{
+  _use:t="hit_effect_base"
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_ricochet_small_dirt_cmps_fx"
+  }
+}
+
+hit_ricochet_small_stone_effect{
+  _use:t="hit_effect_base"
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_ricochet_small_stone_cmps_fx"
+  }
+}
+
+hit_ricochet_small_water_effect{
+  _use:t="hit_effect_base"
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_ricochet_small_water_cmps_fx"
+  }
+}
+
+hit_ricochet_tiny_effect{
+  _use:t="hit_effect_base"
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_ricochet_tiny_cmps_fx"
+  }
+}
+
+hit_ricochet_helmet_effect{
+  _use:t="hit_effect_base"
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_ricochet_helmet_cmps_fx"
+  }
+}
+
+hit_handgun_tiny_ap_default_effect{
+  _use:t="hit_effect_base"
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_handgun_tiny_ap_default_cmps_fx"
+  }
+}
+
+hit_handgun_tiny_ap_metal_effect{
+  _use:t="hit_effect_base"
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_handgun_tiny_ap_metal_cmps_fx"
+  }
+}
+
+hit_handgun_tiny_ap_sand_effect{
+  _use:t="hit_effect_base"
+  paint_from_biome:b=yes
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_handgun_tiny_ap_sand_cmps_fx"
+  }
+}
+
+hit_handgun_tiny_ap_mud_effect{
+  _use:t="hit_effect_base"
+  paint_from_biome:b=yes
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_handgun_tiny_ap_mud_cmps_fx"
+  }
+}
+
+hit_handgun_tiny_ap_snow_effect{
+  _use:t="hit_effect_base"
+  paint_from_biome:b=yes
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_handgun_tiny_ap_snow_cmps_fx"
+  }
+}
+
+hit_handgun_tiny_ap_stone_effect{
+  _use:t="hit_effect_base"
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_handgun_tiny_ap_stone_cmps_fx"
+  }
+}
+
+hit_handgun_tiny_ap_brick_red_effect{
+  _use:t="hit_effect_base"
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_handgun_tiny_ap_brick_red_cmps_fx"
+  }
+}
+
+hit_handgun_tiny_ap_wood_effect{
+  _use:t="hit_effect_base"
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_handgun_tiny_ap_wood_cmps_fx"
+  }
+}
+
+hit_handgun_small_ap_default_effect{
+  _use:t="hit_effect_base"
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_handgun_small_ap_default_cmps_fx"
+  }
+}
+
+hit_handgun_small_ap_metal_effect{
+  _use:t="hit_effect_base"
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_handgun_small_ap_metal_cmps_fx"
+  }
+}
+
+hit_handgun_small_ap_sand_effect{
+  _use:t="hit_effect_base"
+  paint_from_biome:b=yes
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_handgun_small_ap_sand_cmps_fx"
+  }
+}
+
+hit_handgun_small_ap_mud_effect{
+  _use:t="hit_effect_base"
+  paint_from_biome:b=yes
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_handgun_small_ap_mud_cmps_fx"
+  }
+}
+
+hit_handgun_small_ap_snow_effect{
+  _use:t="hit_effect_base"
+  paint_from_biome:b=yes
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_handgun_small_ap_snow_cmps_fx"
+  }
+}
+
+hit_handgun_small_ap_stone_effect{
+  _use:t="hit_effect_base"
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_handgun_small_ap_stone_cmps_fx"
+  }
+}
+
+hit_handgun_small_ap_brick_red_effect{
+  _use:t="hit_effect_base"
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_handgun_small_ap_brick_red_cmps_fx"
+  }
+}
+
+hit_handgun_small_ap_wood_effect{
+  _use:t="hit_effect_base"
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_handgun_small_ap_wood_cmps_fx"
+  }
+}
+
+hit_handgun_med_ap_default_effect{
+  _use:t="hit_effect_base"
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_handgun_med_ap_default_cmps_fx"
+  }
+}
+
+hit_handgun_med_ap_metal_effect{
+  _use:t="hit_effect_base"
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_handgun_med_ap_metal_cmps_fx"
+  }
+}
+
+hit_handgun_med_ap_sand_effect{
+  _use:t="hit_effect_base"
+  paint_from_biome:b=yes
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_handgun_med_ap_sand_cmps_fx"
+  }
+}
+
+hit_handgun_med_ap_mud_effect{
+  _use:t="hit_effect_base"
+  paint_from_biome:b=yes
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_handgun_med_ap_mud_cmps_fx"
+  }
+}
+
+hit_handgun_med_ap_snow_effect{
+  _use:t="hit_effect_base"
+  paint_from_biome:b=yes
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_handgun_med_ap_snow_cmps_fx"
+  }
+}
+
+hit_handgun_med_ap_stone_effect{
+  _use:t="hit_effect_base"
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_handgun_med_ap_stone_cmps_fx"
+  }
+}
+
+hit_handgun_med_ap_brick_red_effect{
+  _use:t="hit_effect_base"
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_handgun_med_ap_brick_red_cmps_fx"
+  }
+}
+
+hit_handgun_med_ap_wood_effect{
+  _use:t="hit_effect_base"
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_handgun_med_ap_wood_cmps_fx"
+  }
+}
+
+hit_handgun_med_he_default_effect{
+  _use:t="hit_effect_base"
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_handgun_med_he_default_cmps_fx"
+  }
+}
+
+hit_handgun_med_he_metal_effect{
+  _use:t="hit_effect_base"
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_handgun_med_he_metal_cmps_fx"
+  }
+}
+
+hit_handgun_med_he_sand_effect{
+  _use:t="hit_effect_base"
+  paint_from_biome:b=yes
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_handgun_med_he_sand_cmps_fx"
+  }
+}
+
+hit_handgun_med_he_mud_effect{
+  _use:t="hit_effect_base"
+  paint_from_biome:b=yes
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_handgun_med_he_mud_cmps_fx"
+  }
+}
+
+hit_handgun_med_he_snow_effect{
+  _use:t="hit_effect_base"
+  paint_from_biome:b=yes
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_handgun_med_he_snow_cmps_fx"
+  }
+}
+
+hit_handgun_med_he_stone_effect{
+  _use:t="hit_effect_base"
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_handgun_med_he_stone_cmps_fx"
+  }
+}
+
+hit_handgun_med_he_brick_red_effect{
+  _use:t="hit_effect_base"
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_handgun_med_he_brick_red_cmps_fx"
+  }
+}
+
+hit_handgun_med_he_wood_effect{
+  _use:t="hit_effect_base"
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_handgun_med_he_wood_cmps_fx"
+  }
+}
+
+hit_handgun_big_ap_default_effect{
+  _use:t="hit_effect_base"
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_handgun_big_ap_default_cmps_fx"
+  }
+}
+
+hit_handgun_big_damage_effect{
+  _use:t="hit_effect_base"
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_handgun_big_damage_cmps_fx"
+  }
+}
+
+hit_handgun_big_ap_metal_effect{
+  _use:t="hit_effect_base"
+  _use:t="hit_env_affect_fx"
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_handgun_big_ap_metal_cmps_fx"
+  }
+}
+
+hit_handgun_big_ap_sand_effect{
+  _use:t="hit_effect_base"
+  paint_from_biome:b=yes
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_handgun_big_ap_sand_cmps_fx"
+  }
+}
+
+hit_handgun_big_ap_mud_effect{
+  _use:t="hit_effect_base"
+  paint_from_biome:b=yes
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_handgun_big_ap_mud_cmps_fx"
+  }
+}
+
+hit_handgun_big_ap_snow_effect{
+  _use:t="hit_effect_base"
+  paint_from_biome:b=yes
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_handgun_big_ap_snow_cmps_fx"
+  }
+}
+
+hit_handgun_big_ap_stone_effect{
+  _use:t="hit_effect_base"
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_handgun_big_ap_stone_cmps_fx"
+  }
+}
+
+hit_handgun_big_ap_brick_red_effect{
+  _use:t="hit_effect_base"
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_handgun_big_ap_brick_red_cmps_fx"
+  }
+}
+
+hit_handgun_big_ap_wood_effect{
+  _use:t="hit_effect_base"
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_handgun_big_ap_wood_cmps_fx"
+  }
+}
+
+hit_handgun_big_he_default_effect{
+  _use:t="hit_effect_base"
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_handgun_big_he_default_cmps_fx"
+  }
+}
+
+hit_handgun_big_he_metal_effect{
+  _use:t="hit_effect_base"
+  _use:t="hit_env_affect_fx"
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_handgun_big_he_metal_cmps_fx"
+  }
+}
+
+hit_handgun_big_he_sand_effect{
+  _use:t="hit_effect_base"
+  paint_from_biome:b=yes
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_handgun_big_he_sand_cmps_fx"
+  }
+}
+
+hit_handgun_big_he_mud_effect{
+  _use:t="hit_effect_base"
+  paint_from_biome:b=yes
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_handgun_big_he_mud_cmps_fx"
+  }
+}
+
+hit_handgun_big_he_snow_effect{
+  _use:t="hit_effect_base"
+  paint_from_biome:b=yes
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_handgun_big_he_snow_cmps_fx"
+  }
+}
+
+hit_handgun_big_he_stone_effect{
+  _use:t="hit_effect_base"
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_handgun_big_he_stone_cmps_fx"
+  }
+}
+
+hit_handgun_big_he_brick_red_effect{
+  _use:t="hit_effect_base"
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_handgun_big_he_brick_red_cmps_fx"
+  }
+}
+
+hit_handgun_big_he_wood_effect{
+  _use:t="hit_effect_base"
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_handgun_big_he_wood_cmps_fx"
+  }
+}
+
+hit_20_26mm_damage_effect{
+  _use:t="hit_effect_base"
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_20_26mm_damage_cmps_fx"
+  }
+}
+
+hit_20_26mm_ap_metal_effect{
+  _use:t="hit_effect_base"
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_20_26mm_ap_metal_cmps_fx"
+  }
+}
+
+hit_20_26mm_ap_sand_effect{
+  _use:t="hit_effect_base"
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_20_26mm_ap_sand_cmps_fx"
+  }
+}
+
+hit_20_26mm_ap_dirt_effect{
+  _use:t="hit_effect_base"
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_20_26mm_ap_dirt_cmps_fx"
+  }
+}
+
+hit_20_26mm_ap_snow_effect{
+  _use:t="hit_effect_base"
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_20_26mm_ap_snow_cmps_fx"
+  }
+}
+
+hit_20_26mm_ap_wood_effect{
+  _use:t="hit_effect_base"
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_20_26mm_ap_wood_cmps_fx"
+  }
+}
+
+hit_20_26mm_ap_stone_effect{
+  _use:t="hit_effect_base"
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_20_26mm_ap_stone_cmps_fx"
+  }
+}
+
+hit_20_26mm_he_metal_effect{
+  _use:t="hit_effect_base"
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_20_26mm_he_metal_cmps_fx"
+  }
+}
+
+hit_20_26mm_he_sand_effect{
+  _use:t="hit_effect_base"
+  paint_from_biome:b=yes
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_20_26mm_he_sand_cmps_fx"
+  }
+}
+
+hit_20_26mm_he_dirt_effect{
+  _use:t="hit_effect_base"
+  paint_from_biome:b=yes
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_20_26mm_he_dirt_cmps_fx"
+  }
+}
+
+hit_20_26mm_he_snow_effect{
+  _use:t="hit_effect_base"
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_20_26mm_he_snow_cmps_fx"
+  }
+}
+
+hit_20_26mm_he_wood_effect{
+  _use:t="hit_effect_base"
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_20_26mm_he_wood_cmps_fx"
+  }
+}
+
+hit_20_26mm_he_stone_effect{
+  _use:t="hit_effect_base"
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_20_26mm_he_stone_cmps_fx"
+  }
+}
+
+hit_27_60mm_damage_effect{
+  _use:t="hit_effect_base"
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_27_60mm_damage_cmps_fx"
+  }
+}
+
+hit_27_60mm_ap_metal_effect{
+  _use:t="hit_effect_base"
+  _use:t="hit_env_affect_fx"
+  wind_emitter__radius:r=1.0
+  wind_emitter__duration:r=2.0
+  wind_emitter__strength:r=1.0
+  wind_emitter__phaseSin:b=yes
+  wind_emitter__numWaves:i=3
+  wind_emitter__phaseAttack:b=yes
+
+  "wind_emitter__omni:tag"{
+  }
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_27_60mm_ap_metal_cmps_fx"
+    effect__environmentDestructionRadius:r=3.0
+  }
+}
+
+hit_27_60mm_ap_sand_effect{
+  _use:t="hit_effect_base"
+  _use:t="hit_env_affect_fx"
+  wind_emitter__radius:r=1.0
+  wind_emitter__duration:r=2.0
+  wind_emitter__strength:r=1.0
+  wind_emitter__phaseSin:b=yes
+  wind_emitter__numWaves:i=3
+  wind_emitter__phaseAttack:b=yes
+
+  "wind_emitter__omni:tag"{
+  }
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_27_60mm_ap_sand_cmps_fx"
+    effect__environmentDestructionRadius:r=3.0
+  }
+}
+
+hit_27_60mm_ap_dirt_effect{
+  _use:t="hit_effect_base"
+  _use:t="hit_env_affect_fx"
+  wind_emitter__radius:r=1.0
+  wind_emitter__duration:r=2.0
+  wind_emitter__strength:r=1.0
+  wind_emitter__phaseSin:b=yes
+  wind_emitter__numWaves:i=3
+  wind_emitter__phaseAttack:b=yes
+
+  "wind_emitter__omni:tag"{
+  }
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_27_60mm_ap_dirt_cmps_fx"
+    effect__environmentDestructionRadius:r=3.0
+  }
+}
+
+hit_27_60mm_ap_snow_effect{
+  _use:t="hit_effect_base"
+  _use:t="hit_env_affect_fx"
+  wind_emitter__radius:r=1.0
+  wind_emitter__duration:r=2.0
+  wind_emitter__strength:r=1.0
+  wind_emitter__phaseSin:b=yes
+  wind_emitter__numWaves:i=3
+  wind_emitter__phaseAttack:b=yes
+
+  "wind_emitter__omni:tag"{
+  }
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_27_60mm_ap_snow_cmps_fx"
+    effect__environmentDestructionRadius:r=3.0
+  }
+}
+
+hit_27_60mm_ap_stone_effect{
+  _use:t="hit_effect_base"
+  _use:t="hit_env_affect_fx"
+  wind_emitter__radius:r=1.0
+  wind_emitter__duration:r=2.0
+  wind_emitter__strength:r=1.0
+  wind_emitter__phaseSin:b=yes
+  wind_emitter__numWaves:i=3
+  wind_emitter__phaseAttack:b=yes
+
+  "wind_emitter__omni:tag"{
+  }
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_27_60mm_ap_stone_cmps_fx"
+    effect__environmentDestructionRadius:r=3.0
+  }
+}
+
+hit_27_60mm_ap_wood_effect{
+  _use:t="hit_effect_base"
+  _use:t="hit_env_affect_fx"
+  wind_emitter__radius:r=1.0
+  wind_emitter__duration:r=2.0
+  wind_emitter__strength:r=1.0
+  wind_emitter__phaseSin:b=yes
+  wind_emitter__numWaves:i=3
+  wind_emitter__phaseAttack:b=yes
+
+  "wind_emitter__omni:tag"{
+  }
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_27_60mm_ap_wood_cmps_fx"
+    effect__environmentDestructionRadius:r=3.0
+  }
+}
+
+hit_27_60mm_he_metal_effect{
+  _use:t="hit_effect_base"
+  _use:t="hit_env_affect_fx"
+  wind_emitter__radius:r=1.0
+  wind_emitter__duration:r=2.0
+  wind_emitter__strength:r=1.0
+  wind_emitter__phaseSin:b=yes
+  wind_emitter__numWaves:i=3
+  wind_emitter__phaseAttack:b=yes
+
+  "wind_emitter__omni:tag"{
+  }
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_27_60mm_he_metal_cmps_fx"
+    effect__environmentDestructionRadius:r=4.0
+  }
+}
+
+hit_27_60mm_he_sand_effect{
+  _use:t="hit_effect_base"
+  _use:t="hit_env_affect_fx"
+  wind_emitter__radius:r=1.0
+  wind_emitter__duration:r=2.0
+  wind_emitter__strength:r=1.0
+  wind_emitter__phaseSin:b=yes
+  wind_emitter__numWaves:i=3
+  wind_emitter__phaseAttack:b=yes
+
+  "wind_emitter__omni:tag"{
+  }
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_27_60mm_he_sand_cmps_fx"
+    effect__environmentDestructionRadius:r=4.0
+  }
+}
+
+hit_27_60mm_he_dirt_effect{
+  _use:t="hit_effect_base"
+  _use:t="hit_env_affect_fx"
+  wind_emitter__radius:r=1.0
+  wind_emitter__duration:r=2.0
+  wind_emitter__strength:r=1.0
+  wind_emitter__phaseSin:b=yes
+  wind_emitter__numWaves:i=3
+  wind_emitter__phaseAttack:b=yes
+
+  "wind_emitter__omni:tag"{
+  }
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_27_60mm_he_dirt_cmps_fx"
+    effect__environmentDestructionRadius:r=4.0
+  }
+}
+
+hit_27_60mm_he_snow_effect{
+  _use:t="hit_effect_base"
+  _use:t="hit_env_affect_fx"
+  wind_emitter__radius:r=1.0
+  wind_emitter__duration:r=2.0
+  wind_emitter__strength:r=1.0
+  wind_emitter__phaseSin:b=yes
+  wind_emitter__numWaves:i=3
+  wind_emitter__phaseAttack:b=yes
+
+  "wind_emitter__omni:tag"{
+  }
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_27_60mm_he_snow_cmps_fx"
+    effect__environmentDestructionRadius:r=4.0
+  }
+}
+
+hit_27_60mm_he_stone_effect{
+  _use:t="hit_effect_base"
+  _use:t="hit_env_affect_fx"
+  wind_emitter__radius:r=1.0
+  wind_emitter__duration:r=2.0
+  wind_emitter__strength:r=1.0
+  wind_emitter__phaseSin:b=yes
+  wind_emitter__numWaves:i=3
+  wind_emitter__phaseAttack:b=yes
+
+  "wind_emitter__omni:tag"{
+  }
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_27_60mm_he_stone_cmps_fx"
+    effect__environmentDestructionRadius:r=4.0
+  }
+}
+
+hit_27_60mm_he_wood_effect{
+  _use:t="hit_effect_base"
+  _use:t="hit_env_affect_fx"
+  wind_emitter__radius:r=1.0
+  wind_emitter__duration:r=2.0
+  wind_emitter__strength:r=1.0
+  wind_emitter__phaseSin:b=yes
+  wind_emitter__numWaves:i=3
+  wind_emitter__phaseAttack:b=yes
+
+  "wind_emitter__omni:tag"{
+  }
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_27_60mm_he_wood_cmps_fx"
+    effect__environmentDestructionRadius:r=4.0
+  }
+}
+
+hit_60_100mm_damage_effect{
+  _use:t="hit_effect_base"
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_60_100mm_damage_cmps_fx"
+  }
+}
+
+hit_60_100mm_ap_metal_effect{
+  _use:t="hit_effect_base"
+  _use:t="hit_env_affect_fx"
+  wind_emitter__radius:r=2.0
+  wind_emitter__duration:r=3.0
+  wind_emitter__strength:r=2.0
+  wind_emitter__phaseSin:b=yes
+  wind_emitter__numWaves:i=5
+  wind_emitter__phaseAttack:b=yes
+
+  "wind_emitter__omni:tag"{
+  }
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_60_100mm_ap_metal_cmps_fx"
+    effect__environmentDestructionRadius:r=4.0
+  }
+}
+
+hit_60_100mm_ap_sand_effect{
+  _use:t="hit_effect_base"
+  _use:t="hit_env_affect_fx"
+  wind_emitter__radius:r=2.0
+  wind_emitter__duration:r=3.0
+  wind_emitter__strength:r=2.0
+  wind_emitter__phaseSin:b=yes
+  wind_emitter__numWaves:i=5
+  wind_emitter__phaseAttack:b=yes
+
+  "wind_emitter__omni:tag"{
+  }
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_60_100mm_ap_sand_cmps_fx"
+    effect__environmentDestructionRadius:r=4.0
+  }
+}
+
+hit_60_100mm_ap_dirt_effect{
+  _use:t="hit_effect_base"
+  _use:t="hit_env_affect_fx"
+  wind_emitter__radius:r=2.0
+  wind_emitter__duration:r=3.0
+  wind_emitter__strength:r=2.0
+  wind_emitter__phaseSin:b=yes
+  wind_emitter__numWaves:i=5
+  wind_emitter__phaseAttack:b=yes
+
+  "wind_emitter__omni:tag"{
+  }
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_60_100mm_ap_dirt_cmps_fx"
+    effect__environmentDestructionRadius:r=4.0
+  }
+}
+
+hit_60_100mm_ap_snow_effect{
+  _use:t="hit_effect_base"
+  _use:t="hit_env_affect_fx"
+  wind_emitter__radius:r=2.0
+  wind_emitter__duration:r=3.0
+  wind_emitter__strength:r=2.0
+  wind_emitter__phaseSin:b=yes
+  wind_emitter__numWaves:i=5
+  wind_emitter__phaseAttack:b=yes
+
+  "wind_emitter__omni:tag"{
+  }
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_60_100mm_ap_snow_cmps_fx"
+    effect__environmentDestructionRadius:r=4.0
+  }
+}
+
+hit_60_100mm_ap_stone_effect{
+  _use:t="hit_effect_base"
+  _use:t="hit_env_affect_fx"
+  wind_emitter__radius:r=2.0
+  wind_emitter__duration:r=3.0
+  wind_emitter__strength:r=2.0
+  wind_emitter__phaseSin:b=yes
+  wind_emitter__numWaves:i=5
+  wind_emitter__phaseAttack:b=yes
+
+  "wind_emitter__omni:tag"{
+  }
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_60_100mm_ap_stone_cmps_fx"
+    effect__environmentDestructionRadius:r=4.0
+  }
+}
+
+hit_60_100mm_ap_wood_effect{
+  _use:t="hit_effect_base"
+  _use:t="hit_env_affect_fx"
+  wind_emitter__radius:r=2.0
+  wind_emitter__duration:r=3.0
+  wind_emitter__strength:r=2.0
+  wind_emitter__phaseSin:b=yes
+  wind_emitter__numWaves:i=5
+  wind_emitter__phaseAttack:b=yes
+
+  "wind_emitter__omni:tag"{
+  }
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_60_100mm_ap_wood_cmps_fx"
+    effect__environmentDestructionRadius:r=4.0
+  }
+}
+
+hit_60_100mm_he_metal_effect{
+  _use:t="hit_effect_base"
+  _use:t="hit_env_affect_fx"
+  wind_emitter__radius:r=2.0
+  wind_emitter__duration:r=3.0
+  wind_emitter__strength:r=2.0
+  wind_emitter__phaseSin:b=yes
+  wind_emitter__numWaves:i=5
+  wind_emitter__phaseAttack:b=yes
+
+  "wind_emitter__omni:tag"{
+  }
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_60_100mm_he_metal_cmps_fx"
+    effect__environmentDestructionRadius:r=5.0
+  }
+}
+
+hit_60_100mm_he_sand_effect{
+  _use:t="hit_effect_base"
+  _use:t="hit_env_affect_fx"
+  wind_emitter__radius:r=2.0
+  wind_emitter__duration:r=3.0
+  wind_emitter__strength:r=2.0
+  wind_emitter__phaseSin:b=yes
+  wind_emitter__numWaves:i=5
+  wind_emitter__phaseAttack:b=yes
+
+  "wind_emitter__omni:tag"{
+  }
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_60_100mm_he_sand_cmps_fx"
+    effect__environmentDestructionRadius:r=5.0
+  }
+}
+
+hit_60_100mm_he_dirt_effect{
+  _use:t="hit_effect_base"
+  _use:t="hit_env_affect_fx"
+  wind_emitter__radius:r=2.0
+  wind_emitter__duration:r=3.0
+  wind_emitter__strength:r=2.0
+  wind_emitter__phaseSin:b=yes
+  wind_emitter__numWaves:i=5
+  wind_emitter__phaseAttack:b=yes
+
+  "wind_emitter__omni:tag"{
+  }
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_60_100mm_he_dirt_cmps_fx"
+    effect__environmentDestructionRadius:r=5.0
+  }
+}
+
+hit_60_100mm_he_snow_effect{
+  _use:t="hit_effect_base"
+  _use:t="hit_env_affect_fx"
+  wind_emitter__radius:r=2.0
+  wind_emitter__duration:r=3.0
+  wind_emitter__strength:r=2.0
+  wind_emitter__phaseSin:b=yes
+  wind_emitter__numWaves:i=5
+  wind_emitter__phaseAttack:b=yes
+
+  "wind_emitter__omni:tag"{
+  }
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_60_100mm_he_snow_cmps_fx"
+    effect__environmentDestructionRadius:r=5.0
+  }
+}
+
+hit_60_100mm_he_stone_effect{
+  _use:t="hit_effect_base"
+  _use:t="hit_env_affect_fx"
+  wind_emitter__radius:r=2.0
+  wind_emitter__duration:r=3.0
+  wind_emitter__strength:r=2.0
+  wind_emitter__phaseSin:b=yes
+  wind_emitter__numWaves:i=5
+  wind_emitter__phaseAttack:b=yes
+
+  "wind_emitter__omni:tag"{
+  }
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_60_100mm_he_stone_cmps_fx"
+    effect__environmentDestructionRadius:r=5.0
+  }
+}
+
+hit_60_100mm_he_wood_effect{
+  _use:t="hit_effect_base"
+  _use:t="hit_env_affect_fx"
+  wind_emitter__radius:r=2.0
+  wind_emitter__duration:r=3.0
+  wind_emitter__strength:r=2.0
+  wind_emitter__phaseSin:b=yes
+  wind_emitter__numWaves:i=5
+  wind_emitter__phaseAttack:b=yes
+
+  "wind_emitter__omni:tag"{
+  }
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_60_100mm_he_wood_cmps_fx"
+    effect__environmentDestructionRadius:r=5.0
+  }
+}
+
+hit_100_150mm_damage_effect{
+  _use:t="hit_effect_base"
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_100_150mm_damage_cmps_fx"
+  }
+}
+
+hit_100_150mm_ap_metal_effect{
+  _use:t="hit_effect_base"
+  _use:t="hit_env_affect_fx"
+  wind_emitter__radius:r=2.0
+  wind_emitter__duration:r=3.0
+  wind_emitter__strength:r=3.0
+  wind_emitter__phaseSin:b=yes
+  wind_emitter__numWaves:i=5
+  wind_emitter__phaseAttack:b=yes
+
+  "wind_emitter__omni:tag"{
+  }
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_100_150mm_ap_metal_cmps_fx"
+    effect__environmentDestructionRadius:r=5.0
+  }
+}
+
+hit_100_150mm_ap_sand_effect{
+  _use:t="hit_effect_base"
+  _use:t="hit_env_affect_fx"
+  wind_emitter__radius:r=2.0
+  wind_emitter__duration:r=3.0
+  wind_emitter__strength:r=3.0
+  wind_emitter__phaseSin:b=yes
+  wind_emitter__numWaves:i=5
+  wind_emitter__phaseAttack:b=yes
+
+  "wind_emitter__omni:tag"{
+  }
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_100_150mm_ap_sand_cmps_fx"
+    effect__environmentDestructionRadius:r=5.0
+  }
+}
+
+hit_100_150mm_ap_dirt_effect{
+  _use:t="hit_effect_base"
+  _use:t="hit_env_affect_fx"
+  wind_emitter__radius:r=2.0
+  wind_emitter__duration:r=3.0
+  wind_emitter__strength:r=3.0
+  wind_emitter__phaseSin:b=yes
+  wind_emitter__numWaves:i=5
+  wind_emitter__phaseAttack:b=yes
+
+  "wind_emitter__omni:tag"{
+  }
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_100_150mm_ap_dirt_cmps_fx"
+    effect__environmentDestructionRadius:r=5.0
+  }
+}
+
+hit_100_150mm_ap_snow_effect{
+  _use:t="hit_effect_base"
+  _use:t="hit_env_affect_fx"
+  wind_emitter__radius:r=2.0
+  wind_emitter__duration:r=3.0
+  wind_emitter__strength:r=3.0
+  wind_emitter__phaseSin:b=yes
+  wind_emitter__numWaves:i=5
+  wind_emitter__phaseAttack:b=yes
+
+  "wind_emitter__omni:tag"{
+  }
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_100_150mm_ap_snow_cmps_fx"
+    effect__environmentDestructionRadius:r=5.0
+  }
+}
+
+hit_100_150mm_ap_stone_effect{
+  _use:t="hit_effect_base"
+  _use:t="hit_env_affect_fx"
+  wind_emitter__radius:r=2.0
+  wind_emitter__duration:r=3.0
+  wind_emitter__strength:r=3.0
+  wind_emitter__phaseSin:b=yes
+  wind_emitter__numWaves:i=5
+  wind_emitter__phaseAttack:b=yes
+
+  "wind_emitter__omni:tag"{
+  }
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_100_150mm_ap_stone_cmps_fx"
+    effect__environmentDestructionRadius:r=5.0
+  }
+}
+
+hit_100_150mm_ap_wood_effect{
+  _use:t="hit_effect_base"
+  _use:t="hit_env_affect_fx"
+  wind_emitter__radius:r=2.0
+  wind_emitter__duration:r=3.0
+  wind_emitter__strength:r=3.0
+  wind_emitter__phaseSin:b=yes
+  wind_emitter__numWaves:i=5
+  wind_emitter__phaseAttack:b=yes
+
+  "wind_emitter__omni:tag"{
+  }
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_100_150mm_ap_wood_cmps_fx"
+    effect__environmentDestructionRadius:r=5.0
+  }
+}
+
+hit_100_150mm_he_metal_effect{
+  _use:t="hit_effect_base"
+  _use:t="hit_env_affect_fx"
+  wind_emitter__radius:r=2.0
+  wind_emitter__duration:r=3.0
+  wind_emitter__strength:r=3.0
+  wind_emitter__phaseSin:b=yes
+  wind_emitter__numWaves:i=5
+  wind_emitter__phaseAttack:b=yes
+
+  "wind_emitter__omni:tag"{
+  }
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_100_150mm_he_metal_cmps_fx"
+    effect__environmentDestructionRadius:r=6.0
+  }
+}
+
+hit_100_150mm_he_sand_effect{
+  _use:t="hit_effect_base"
+  _use:t="hit_env_affect_fx"
+  wind_emitter__radius:r=2.0
+  wind_emitter__duration:r=3.0
+  wind_emitter__strength:r=3.0
+  wind_emitter__phaseSin:b=yes
+  wind_emitter__numWaves:i=5
+  wind_emitter__phaseAttack:b=yes
+
+  "wind_emitter__omni:tag"{
+  }
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_100_150mm_he_sand_cmps_fx"
+    effect__environmentDestructionRadius:r=6.0
+  }
+}
+
+hit_100_150mm_he_dirt_effect{
+  _use:t="hit_effect_base"
+  _use:t="hit_env_affect_fx"
+  wind_emitter__radius:r=2.0
+  wind_emitter__duration:r=3.0
+  wind_emitter__strength:r=3.0
+  wind_emitter__phaseSin:b=yes
+  wind_emitter__numWaves:i=5
+  wind_emitter__phaseAttack:b=yes
+
+  "wind_emitter__omni:tag"{
+  }
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_100_150mm_he_dirt_cmps_fx"
+    effect__environmentDestructionRadius:r=6.0
+  }
+}
+
+hit_100_150mm_he_snow_effect{
+  _use:t="hit_effect_base"
+  _use:t="hit_env_affect_fx"
+  wind_emitter__radius:r=2.0
+  wind_emitter__duration:r=3.0
+  wind_emitter__strength:r=3.0
+  wind_emitter__phaseSin:b=yes
+  wind_emitter__numWaves:i=5
+  wind_emitter__phaseAttack:b=yes
+
+  "wind_emitter__omni:tag"{
+  }
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_100_150mm_he_snow_cmps_fx"
+    effect__environmentDestructionRadius:r=6.0
+  }
+}
+
+hit_100_150mm_he_stone_effect{
+  _use:t="hit_effect_base"
+  _use:t="hit_env_affect_fx"
+  wind_emitter__radius:r=2.0
+  wind_emitter__duration:r=3.0
+  wind_emitter__strength:r=3.0
+  wind_emitter__phaseSin:b=yes
+  wind_emitter__numWaves:i=5
+  wind_emitter__phaseAttack:b=yes
+
+  "wind_emitter__omni:tag"{
+  }
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_100_150mm_he_stone_cmps_fx"
+    effect__environmentDestructionRadius:r=6.0
+  }
+}
+
+hit_100_150mm_he_wood_effect{
+  _use:t="hit_effect_base"
+  _use:t="hit_env_affect_fx"
+  wind_emitter__radius:r=2.0
+  wind_emitter__duration:r=3.0
+  wind_emitter__strength:r=3.0
+  wind_emitter__phaseSin:b=yes
+  wind_emitter__numWaves:i=5
+  wind_emitter__phaseAttack:b=yes
+
+  "wind_emitter__omni:tag"{
+  }
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_100_150mm_he_wood_cmps_fx"
+    effect__environmentDestructionRadius:r=6.0
+  }
+}
+
+hit_fire_projectile_small_effect{
+  _use:t="hit_effect_base"
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_fire_projectile_small_cmps_fx"
+  }
+}
+
+hit_fire_projectile_medium_effect{
+  _use:t="hit_effect_base"
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_fire_projectile_med_cmps_fx"
+  }
+}
+
+hit_fire_projectile_big_effect{
+  _use:t="hit_effect_base"
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_fire_projectile_big_cmps_fx"
+  }
+}
+
+hit_footstep_dirt_effect{
+  _use:t="hit_effect_base"
+  paint_from_biome:b=yes
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_footstep_dirt_cmps_fx"
+  }
+}
+
+hit_footstep_mud_effect{
+  _use:t="hit_effect_base"
+  paint_from_biome:b=yes
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_footstep_mud_cmps_fx"
+  }
+}
+
+hit_footstep_sand_effect{
+  _use:t="hit_effect_base"
+  paint_from_biome:b=yes
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_footstep_sand_cmps_fx"
+  }
+}
+
+hit_footstep_snow_effect{
+  _use:t="hit_effect_base"
+  paint_from_biome:b=yes
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_footstep_snow_cmps_fx"
+  }
+}
+
+hit_footstep_stone_effect{
+  _use:t="hit_effect_base"
+  paint_from_biome:b=no
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_footstep_stone_cmps_fx"
+  }
+}
+
+hit_footstep_puddle_splash_effect{
+  _use:t="hit_effect_base"
+  paint_from_biome:b=yes
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_footstep_puddle_cmps_fx"
+  }
+}
+
+hit_footstep_big_dirt_effect{
+  _use:t="hit_effect_base"
+  paint_from_biome:b=yes
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_footstep_big_dirt_cmps_fx"
+  }
+}
+
+hit_footstep_big_mud_effect{
+  _use:t="hit_effect_base"
+  paint_from_biome:b=yes
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_footstep_big_mud_cmps_fx"
+  }
+}
+
+hit_footstep_big_sand_effect{
+  _use:t="hit_effect_base"
+  paint_from_biome:b=yes
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_footstep_big_sand_cmps_fx"
+  }
+}
+
+hit_footstep_big_snow_effect{
+  _use:t="hit_effect_base"
+  paint_from_biome:b=no
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_footstep_big_snow_cmps_fx"
+  }
+}
+
+hit_footstep_big_stone_effect{
+  _use:t="hit_effect_base"
+  paint_from_biome:b=no
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_footstep_big_stone_cmps_fx"
+  }
+}
+
+hit_tank_turret_effect{
+  _use:t="hit_effect_base"
+  _use:t="sound_effect"
+  paint_from_biome:b=yes
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_tank_turret_cmps_fx"
+  }
+
+  _group{
+    _tags:t="sound"
+    sound_effect__path:t="env_effects/object_crash/tank_turret_fall"
+    sound_effect__abandonOnReset:b=yes
+  }
+}
+
+hit_blood_handgun_tiny_entry_effect{
+  _use:t="hit_blood_entry_effect"
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_blood_entry_tiny_cmps_fx"
+  }
+}
+
+hit_blood_handgun_tiny_exit_effect{
+  _use:t="hit_blood_entry_effect"
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_blood_exit_tiny_cmps_fx"
+  }
+}
+
+hit_blood_handgun_small_entry_effect{
+  _use:t="hit_blood_entry_effect"
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_blood_entry_small_cmps_fx"
+  }
+}
+
+hit_blood_handgun_small_exit_effect{
+  _use:t="hit_blood_entry_effect"
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_blood_exit_small_cmps_fx"
+  }
+}
+
+hit_blood_handgun_medium_entry_effect{
+  _use:t="hit_blood_entry_effect"
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_blood_entry_medium_cmps_fx"
+  }
+}
+
+hit_blood_handgun_medium_exit_effect{
+  _use:t="hit_blood_entry_effect"
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_blood_exit_medium_cmps_fx"
+  }
+}
+
+hit_blood_handgun_big_entry_effect{
+  _use:t="hit_blood_entry_effect"
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_blood_entry_big_cmps_fx"
+  }
+}
+
+hit_blood_handgun_big_exit_effect{
+  _use:t="hit_blood_entry_effect"
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_blood_exit_big_cmps_fx"
+  }
+}
+
+hit_blood_entry_effect{
+  _use:t="hit_effect_base"
+  effect__colorMult:c=255, 255, 255, 255
+  entity_binded_effect__collNodeId:i=-1
+  entity_binded_effect__localEmitter:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, 0.0, 0.0]]
+
+  "entity_binded_effect__entity:eid"{
+  }
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_blood_entry_cmps_fx"
+  }
+}
+
+hit_blood_entry_effect_longer{
+  _use:t="hit_blood_entry_effect"
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_blood_entry_cmps_fx"
+  }
+}
+
+hit_blood_exit_effect{
+  _use:t="hit_blood_entry_effect"
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_blood_exit_cmps_fx"
+  }
+}
+
+hit_blood_exit_effect_longer{
+  _use:t="hit_blood_entry_effect"
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_blood_exit_cmps_fx"
+  }
+}
+
+hit_blood_flow_heavy_effect{
+  _use:t="hit_blood_entry_effect"
+  _use:t="dynamic_sound_effect"
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_blood_flow_heavy_cmps_fx"
+    gun_flash_fx__timeToDestroy:r=0.2
+  }
+
+  _group{
+    _tags:t="sound"
+    sound_effect__path:t="env_effects/blood"
+    sound_effect__abandonOnReset:b=yes
+  }
+}
+
+hit_blood_flow_light_effect{
+  _use:t="hit_blood_entry_effect"
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_blood_flow_light_cmps_fx"
+    gun_flash_fx__timeToDestroy:r=0.2
+  }
+}
+
+hit_blood_flow_light_effect_longer{
+  _use:t="hit_blood_entry_effect"
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_blood_flow_light_cmps_fx"
+    gun_flash_fx__timeToDestroy:r=0.4
+  }
+}
+
+hit_blood_ground_effect{
+  _use:t="hit_effect_base"
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_blood_ground_cmps_fx"
+  }
+}
+
+hit_blood_limb_effect{
+  _use:t="hit_effect_base"
+  effect__colorMult:c=255, 255, 255, 255
+  entity_binded_effect__collNodeId:i=-1
+  entity_binded_effect__localEmitter:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, 0.0, 0.0]]
+
+  "entity_binded_effect__entity:eid"{
+  }
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_blood_limb_cmps_fx"
+  }
+}
+
+hit_blood_explosion_effect{
+  _use:t="hit_effect_base"
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_blood_explosion_cmps_fx"
+  }
+}
+
+hit_footstep_group{
+  human_footstep_fx__default:t="hit_footstep_stone_effect"
+  human_footstep_fx__puddle:t="hit_footstep_puddle_splash_effect"
+
+  "human_footsteps_fx__materials:object"{
+    group__mud:t="hit_footstep_mud_effect"
+    group__dirt:t="hit_footstep_dirt_effect"
+    group__sand:t="hit_footstep_sand_effect"
+    group__snow:t="hit_footstep_snow_effect"
+    group__stone:t="hit_footstep_stone_effect"
+  }
+
+  "human_footsteps_fx__matTemplates:list<t>"{
+  }
+}
+
+hit_melee_metal_effect{
+  _use:t="hit_effect_base"
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_melee_metal_cmps_fx"
+  }
+}
+
+hit_melee_sand_effect{
+  _use:t="hit_effect_base"
+  paint_from_biome:b=yes
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_melee_sand_cmps_fx"
+  }
+}
+
+hit_melee_mud_effect{
+  _use:t="hit_effect_base"
+  paint_from_biome:b=yes
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_melee_mud_cmps_fx"
+  }
+}
+
+hit_melee_snow_effect{
+  _use:t="hit_effect_base"
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_melee_snow_cmps_fx"
+  }
+}
+
+hit_melee_stone_effect{
+  _use:t="hit_effect_base"
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_melee_stone_cmps_fx"
+  }
+}
+
+hit_melee_wood_effect{
+  _use:t="hit_effect_base"
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_melee_wood_cmps_fx"
+  }
+}
+
+hit_human_blood_effect{
+  _use:t="hit_effect_base"
+  effect__colorMult:c=255, 255, 255, 255
+  entity_binded_effect__collNodeId:i=-1
+  entity_binded_effect__localEmitter:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, 0.0, 0.0]]
+
+  "entity_binded_effect__entity:eid"{
+  }
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_blood_entry_cmps_fx"
+  }
+}
+
+hit_human_blood_kill_effect{
+  _use:t="hit_human_blood_effect"
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_blood_entry_cmps_fx"
+  }
+}
+
+hit_human_blood_side_effect{
+  _use:t="hit_human_blood_effect"
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_blood_flow_light_cmps_fx"
+    gun_flash_fx__timeToDestroy:r=0.2
+  }
+}
+
+hit_human_blood_exit_effect{
+  _use:t="hit_human_blood_effect"
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_blood_exit_cmps_fx"
+  }
+}
+
+hit_human_blood_kill_side_effect{
+  _use:t="hit_human_blood_effect"
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_blood_flow_light_cmps_fx"
+    gun_flash_fx__timeToDestroy:r=0.2
+  }
+}
+
+hit_human_blood_kill_exit_effect{
+  _use:t="hit_human_blood_effect"
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_blood_exit_cmps_fx"
+  }
+}
+
+hit_water_ripple_effect{
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, 0.0, 0.0]]
+  water_ripple__requireStart:b=yes
+  water_ripple__mass:r=1.0
+  water_ripple__radius:r=1.0
+}
+
+hit_water_bullet_effect{
+  _use:t="hit_effect_base"
+  _use:t="hit_water_ripple_effect"
+  water_ripple__mass:r=1.0
+  water_ripple__radius:r=0.3
+
+  _group{
+    _tags:t="render"
+    effect__name:t="water_hit_bullet_cmps_fx"
+  }
+}
+
+hit_water_tiny_effect{
+  _use:t="hit_effect_base"
+  _use:t="hit_water_ripple_effect"
+  water_ripple__mass:r=1.0
+  water_ripple__radius:r=0.3
+
+  _group{
+    _tags:t="render"
+    effect__name:t="water_hit_tiny_cmps_fx"
+  }
+}
+
+hit_water_small_effect{
+  _use:t="hit_effect_base"
+  _use:t="hit_water_ripple_effect"
+  water_ripple__mass:r=1.5
+  water_ripple__radius:r=0.3
+
+  _group{
+    _tags:t="render"
+    effect__name:t="water_hit_small_cmps_fx"
+  }
+}
+
+hit_water_medium_effect{
+  _use:t="hit_effect_base"
+  _use:t="hit_water_ripple_effect"
+  water_ripple__mass:r=3.0
+  water_ripple__radius:r=0.3
+
+  _group{
+    _tags:t="render"
+    effect__name:t="water_hit_medium_cmps_fx"
+  }
+}
+
+hit_water_medium_big_effect{
+  _use:t="hit_effect_base"
+  _use:t="hit_water_ripple_effect"
+  water_ripple__mass:r=4.5
+  water_ripple__radius:r=0.5
+
+  _group{
+    _tags:t="render"
+    effect__name:t="water_hit_med_big_cmps_fx"
+  }
+}
+
+hit_water_big_effect{
+  _use:t="hit_effect_base"
+  _use:t="hit_water_ripple_effect"
+  water_ripple__mass:r=4.5
+  water_ripple__radius:r=0.8
+
+  _group{
+    _tags:t="render"
+    effect__name:t="water_hit_big_cmps_fx"
+  }
+}
+
+hit_water_massive_effect{
+  _use:t="hit_effect_base"
+  _use:t="hit_water_ripple_effect"
+  water_ripple__mass:r=10.0
+  water_ripple__radius:r=1.0
+
+  _group{
+    _tags:t="render"
+    effect__name:t="water_hit_massive_cmps_fx"
+  }
+}
+
+hit_water_splash_swimming_effect{
+  _use:t="hit_effect_base"
+  _use:t="hit_water_ripple_effect"
+
+  _group{
+    _tags:t="render"
+    effect__name:t="water_hit_swimming_cmps_fx"
+  }
+}
+
+hit_artillery_flame{
+  _use:t="molotov_fire"
+  fire_effect__verticalEffectName:t="fire_spot_2m_cmps_fx"
+  fire_source__spreadTime:r=0.5
+  fire_source__fullForceTime:r=10.0
+  fire_source__maxFullForceTime:r=15.0
+  fire_source__fadeTime:r=5.0
+
+  "attached_riexHandle:u64"{
+    value:i64=-1
+  }
+
+  _group{
+    _tags:t="render"
+    effect__name:t="fire_spot_2m_cmps_fx"
+  }
+
+  "on_appear__randomizeFloatCompNames:list<t>"{
+    name:t="fire_source__fullForceTime"
+  }
+
+  "on_appear__randomizeFloatCompRanges:list<p2>"{
+    range:p2=10.0, 15.0
+  }
+}
+
+hit_artillery_dirt_effect{
+  _use:t="hit_effect_base"
+  _use:t="hit_env_affect_fx"
+  wind_emitter__radius:r=2.0
+  wind_emitter__duration:r=3.0
+  wind_emitter__strength:r=3.0
+  wind_emitter__phaseSin:b=yes
+  wind_emitter__numWaves:i=5
+  wind_emitter__phaseAttack:b=yes
+
+  "wind_emitter__omni:tag"{
+  }
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_artillery_dirt_cmps_fx"
+    effect__environmentDestructionRadius:r=7.0
+  }
+}
+
+hit_artillery_snow_effect{
+  _use:t="hit_effect_base"
+  _use:t="hit_env_affect_fx"
+  wind_emitter__radius:r=2.0
+  wind_emitter__duration:r=3.0
+  wind_emitter__strength:r=3.0
+  wind_emitter__phaseSin:b=yes
+  wind_emitter__numWaves:i=5
+  wind_emitter__phaseAttack:b=yes
+
+  "wind_emitter__omni:tag"{
+  }
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_artillery_snow_cmps_fx"
+    effect__environmentDestructionRadius:r=7.0
+  }
+}
+
+hit_artillery_sand_effect{
+  _use:t="hit_effect_base"
+  _use:t="hit_env_affect_fx"
+  wind_emitter__radius:r=2.0
+  wind_emitter__duration:r=3.0
+  wind_emitter__strength:r=3.0
+  wind_emitter__phaseSin:b=yes
+  wind_emitter__numWaves:i=5
+  wind_emitter__phaseAttack:b=yes
+
+  "wind_emitter__omni:tag"{
+  }
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_artillery_sand_cmps_fx"
+    effect__environmentDestructionRadius:r=7.0
+  }
+}
+
+hit_artillery_stone_effect{
+  _use:t="hit_effect_base"
+  _use:t="hit_env_affect_fx"
+  wind_emitter__radius:r=2.0
+  wind_emitter__duration:r=3.0
+  wind_emitter__strength:r=3.0
+  wind_emitter__phaseSin:b=yes
+  wind_emitter__numWaves:i=5
+  wind_emitter__phaseAttack:b=yes
+
+  "wind_emitter__omni:tag"{
+  }
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_artillery_stone_cmps_fx"
+    effect__environmentDestructionRadius:r=7.0
+  }
+}
+
+hit_ground_wave_big_dirt_effect{
+  _use:t="hit_effect_base"
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_ground_wave_big_dirt_cmps_fx"
+    effect__lowestFxQuality:i=1
+  }
+}
+
+hit_ground_wave_big_sand_effect{
+  _use:t="hit_effect_base"
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_ground_wave_big_sand_cmps_fx"
+    effect__lowestFxQuality:i=1
+  }
+}
+
+hit_ground_wave_big_snow_effect{
+  _use:t="hit_effect_base"
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_ground_wave_big_snow_cmps_fx"
+    effect__lowestFxQuality:i=1
+  }
+}
+
+hit_ground_wave_big_stone_effect{
+  _use:t="hit_effect_base"
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_ground_wave_big_stone_cmps_fx"
+    effect__lowestFxQuality:i=1
+  }
+}
+
+hit_ground_wave_big_grass_effect{
+  _use:t="hit_effect_base"
+  paint_from_biome:b=yes
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_ground_wave_big_grass_cmps_fx"
+    effect__lowestFxQuality:i=2
+  }
+}
+
+hit_ground_wave_big_leaves_effect{
+  _use:t="hit_effect_base"
+  paint_from_biome:b=yes
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_ground_wave_big_leaves_cmps_fx"
+    effect__lowestFxQuality:i=2
+  }
+}
+
+hit_ground_wave_medium_dirt_effect{
+  _use:t="hit_effect_base"
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_ground_wave_med_dirt_cmps_fx"
+    effect__lowestFxQuality:i=1
+  }
+}
+
+hit_ground_wave_medium_sand_effect{
+  _use:t="hit_effect_base"
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_ground_wave_med_sand_cmps_fx"
+    effect__lowestFxQuality:i=1
+  }
+}
+
+hit_ground_wave_medium_snow_effect{
+  _use:t="hit_effect_base"
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_ground_wave_med_snow_cmps_fx"
+    effect__lowestFxQuality:i=1
+  }
+}
+
+hit_ground_wave_medium_stone_effect{
+  _use:t="hit_effect_base"
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_ground_wave_med_stone_cmps_fx"
+    effect__lowestFxQuality:i=1
+  }
+}
+
+hit_ground_wave_medium_grass_effect{
+  _use:t="hit_effect_base"
+  paint_from_biome:b=yes
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_ground_wave_med_grass_cmps_fx"
+    effect__lowestFxQuality:i=2
+  }
+}
+
+hit_ground_wave_medium_leaves_effect{
+  _use:t="hit_effect_base"
+  paint_from_biome:b=yes
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_ground_wave_med_leaves_cmps_fx"
+    effect__lowestFxQuality:i=2
+  }
+}
+
+hit_ground_wave_dust_surface_effect{
+  _use:t="hit_effect_base"
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_ground_wave_dust_surface_cmps_fx"
+    effect__lowestFxQuality:i=1
+  }
+}
+
+hit_ground_wave_small_dirt_effect{
+  _use:t="hit_effect_base"
+  paint_from_biome:b=yes
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_ground_wave_small_dirt_cmps_fx"
+    effect__lowestFxQuality:i=1
+  }
+}
+
+hit_ground_wave_small_sand_effect{
+  _use:t="hit_effect_base"
+  paint_from_biome:b=yes
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_ground_wave_small_sand_cmps_fx"
+    effect__lowestFxQuality:i=1
+  }
+}
+
+hit_ground_wave_small_snow_effect{
+  _use:t="hit_effect_base"
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_ground_wave_small_snow_cmps_fx"
+    effect__lowestFxQuality:i=1
+  }
+}
+
+hit_ground_wave_small_stone_effect{
+  _use:t="hit_effect_base"
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_ground_wave_small_stone_cmps_fx"
+    effect__lowestFxQuality:i=1
+  }
+}
+
+hit_ground_wave_small_misc_effect{
+  _use:t="hit_effect_base"
+  paint_from_biome:b=yes
+
+  _group{
+    _tags:t="render"
+    effect__name:t="hit_ground_wave_small_misc_cmps_fx"
+    effect__lowestFxQuality:i=1
+  }
+}

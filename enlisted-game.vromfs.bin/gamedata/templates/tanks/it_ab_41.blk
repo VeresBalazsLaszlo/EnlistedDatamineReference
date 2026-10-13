@@ -1,0 +1,273 @@
+it_ab_41{
+  _use:t="it_ab_41_common"
+
+  "animchar__objTexReplace:object"{
+    "it_camo_olive_green*":t="it_camo_desert_yellow*"
+  }
+}
+
+it_ab_41_common{
+  _use:t="base_ab_41"
+  _use:t="vehicle_steering_assist"
+  _use:t="it_ab_41_common_vehicle_sound"
+  commanderCockpitFpsCamMaxAngle:p2=40.0, 5.0
+  gunner_cam_limit__useCockpitDir:b=yes
+  item__iconOffset:p2=0.0, -0.0
+  item__iconScale:r=1.1
+
+  _group{
+    _tags:t="render"
+    exhaust_fx__fx:t="car_exhaust_template"
+    exhaust_fx__brokenFx:t="car_broken_exhaust_template"
+  }
+
+  "dm_parts_repair_names:list<t>"{
+    part:t="part:t="
+    part:t="drive_turret_h"
+    part:t="drive_turret_v"
+    part:t="cannon_breech"
+    part:t="engine"
+    part:t="transmission"
+    part:t="gun_barrel"
+    part:t="gun_barrel_01"
+    part:t="gun_barrel_02"
+    part:t="gun_barrel_03"
+    part:t="gun_barrel_04"
+    part:t="gun_barrel_05"
+    part:t="track_r"
+    part:t="track_l"
+    part:t="track_r_01"
+    part:t="track_l_01"
+    part:t="wheel_l_back"
+    part:t="wheel_l_front"
+    part:t="wheel_l_drive"
+    part:t="wheel_r_back"
+    part:t="wheel_r_front"
+    part:t="wheel_r_drive"
+    part:t="wheel_r_01"
+    part:t="wheel_r_02"
+    part:t="wheel_r_03"
+    part:t="wheel_r_04"
+    part:t="wheel_r_05"
+    part:t="wheel_r_06"
+    part:t="wheel_r_07"
+    part:t="wheel_r_08"
+    part:t="wheel_l_01"
+    part:t="wheel_l_02"
+    part:t="wheel_l_03"
+    part:t="wheel_l_04"
+    part:t="wheel_l_05"
+    part:t="wheel_l_06"
+    part:t="wheel_l_07"
+    part:t="wheel_l_08"
+  }
+
+  "heat_source__turretInfo:shared:array"{
+    _tags:t="render"
+
+    "turretInfo:object"{
+      turretName:t="turret_01"
+      offset:p3=-0.15, 0.0, -0.0
+      scale:p3=0.5, 0.8, 0.8
+      radMult:r=0.3
+    }
+  }
+
+  "vehicle_seats__effectors:array"{
+  }
+
+  "dm_parts__repairGroups:object"{
+  }
+
+  "vehicle_seats__seatsProvideOrder:tag"{
+  }
+
+  "vehicle_seats__seats:shared:array"{
+
+    "seats:object"{
+      name:t="main_gunner"
+      locName:t="vehicle_seats/gunner"
+      attachNode:t="commander"
+      ignoreAttachNodeRotation:b=yes
+      attachTm:m=[[0.9, 0.0, 0.0] [0.0, 0.9, 0.0] [0.0, 0.0, 0.9] [-0.2, -0.5, 0.0]]
+      seatComponent:t="isGunner"
+      nextSeat:t="driver"
+      shouldHideOwner:b=yes
+      receiveDamageFromDMPart:t="commander"
+      cameraNodeName:t="bone_camera_gunner"
+      cockpitTemplate:t="it_ab_41_gunner_cockpit"
+      hatchRotationAxis:p3=1.9, 0.0, 0.0
+      seatAnimUpper:t="drive_driver"
+      seatAnimLower:t="drive_driver"
+
+      "hatchNodes:array"{
+        node:t="hatch_02"
+      }
+
+      "turretNames:array"{
+        turretNames:t="turret_01"
+        turretNames:t="turret_02"
+      }
+
+      "effectors:object"{
+
+        "l.hand:object"{
+          rel_tm:m=[[0.8001963, 0.4425495, 0.4047641] [0.5187383, -0.8494399, -0.09678058] [0.3009921, 0.2874097, -0.9092848] [0.02767944, 0.8801594, -0.1270142]]
+          node:t="commander"
+        }
+
+        "r.hand:object"{
+          rel_tm:m=[[0.9032881, 0.428924, -0.009784942] [0.4289261, -0.9023052, 0.04324541] [0.009719931, -0.04326002, -0.9990151] [0.0992794, 0.8517971, 0.2705994]]
+          node:t="commander"
+        }
+      }
+    }
+
+    "seats:object"{
+      name:t="driver"
+      locName:t="vehicle_seats/driver"
+      seatOwnsEntityControl:b=yes
+      attachNode:t="driver"
+      ignoreAttachNodeRotation:b=yes
+      attachTm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-0.25, -0.25, 0.0]]
+      seatComponent:t="isDriver"
+      shouldHideOwner:b=yes
+      receiveDamageFromDMPart:t="driver"
+      cameraNodeName:t="bone_camera_driver"
+      cockpitTemplate:t="it_ab_41_driver_cockpit"
+    }
+
+    "seats:object"{
+      name:t="loader"
+      canPlaceManually:b=no
+      locName:t="vehicle_seats/loader"
+      attachNode:t="machine_gunner_02"
+      ignoreAttachNodeRotation:b=yes
+      attachTm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-0.25, -0.5, 0.0]]
+      seatComponent:t="isPassenger"
+      shouldHideOwner:b=yes
+      receiveDamageFromDMPart:t="loader"
+
+      "loaderTurretNames:array"{
+        turret:t="turret_01"
+      }
+    }
+
+    "seats:object"{
+      locName:t="vehicle_seats/radioman"
+      attachNode:t="machine_gunner_01"
+      ignoreAttachNodeRotation:b=yes
+      attachTm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-0.25, -0.5, 0.0]]
+      seatComponent:t="isPassenger"
+      shouldHideOwner:b=yes
+      receiveDamageFromDMPart:t="machine_gunner"
+    }
+  }
+
+  "dm_phys_parts__wheelsPartIds:list<i>"{
+  }
+}
+
+it_ab_41_driver_cockpit{
+  _use:t="base_driver_cockpit"
+  animchar__res:t="kv_1_driver_char"
+  cockpit__offset:p3=0.15, -0.25, -0.0
+
+  "cockpit__visibleVehicleNodeNames:list<t>"{
+    node:t="wheel_l_01"
+    node:t="wheel_r_01"
+    node:t="ex_armor_l_01"
+    node:t="ex_armor_r_01"
+    node:t="@root"
+    node:t="bone_gun"
+    node:t="gun_barrel"
+  }
+
+  "cockpit__slitForwardOffset:list<r>"{
+    slit:r=0.1
+  }
+}
+
+it_ab_41_gunner_cockpit{
+  _use:t="base_gunner_cockpit"
+  animchar__res:t="bt_7_gunner_char"
+  cockpit__offset:p3=-0.0, -0.0, 0.0
+
+  "cockpit__attachNodeNames:list<t>"{
+    node:t="bone_camera_gunner"
+  }
+
+  "cockpit__cockpitOffsetBySlit:list<p3>"{
+    slit:p3=-0.48, -0.04, 0.23
+    slit:p3=-1.4, 0.47, 0.537
+  }
+
+  "cockpit__attachNodeIndices:list<i>"{
+  }
+
+  "cockpit__visibleVehicleNodeNames:list<t>"{
+    node:t="gun_barrel"
+  }
+
+  "cockpit__slitNodeNames:list<t>"{
+    slit:t="cam_front_right"
+    slit:t="cam_front"
+  }
+
+  "cockpit__slitForwardOffset:list<r>"{
+    slit:r=0.22
+    slit:r=0.18
+  }
+
+  "cockpit__slitIsGun:list<b>"{
+    slit:b=yes
+    slit:b=no
+  }
+
+  "cockpit__periscopeLimits:list<p4>"{
+    slit:p4=-0.0, 0.0, 0.0, 0.0
+    slit:p4=-45.0, 45.0, -5.0, 25.0
+  }
+
+  "cockpit__periscopeSpeed:list<p2>"{
+    slit:p2=-1.0, -1.0
+    slit:p2=35.0, 35.0
+  }
+
+  "cockpit__slitZoomTime:list<r>"{
+    slit:r=0.05
+    slit:r=0.0
+  }
+
+  "cockpit__slitZoom:array"{
+
+    "slit:list<r>"{
+      zoom:r=1.9
+      zoom:r=3.5
+    }
+
+    "slit:list<r>"{
+      zoom:r=1.44
+    }
+  }
+
+  "cockpit__slitTemplates:list<t>"{
+    slit:t="it_se_75_18"
+    slit:t="default_periscope"
+  }
+
+  "cockpit__slitEids:list<eid>"{
+  }
+}
+
+it_ab_41_15th_battlepass_premium{
+  _use:t="it_ab_41"
+  item__name:t="items/it_ab_41_15th_battlepass_premium"
+
+  "animchar__objTexSet:object"{
+
+    "ab_41_body_c*:object"{
+      "ab_41_15th_body_c*":t="camo_skin_tex"
+    }
+  }
+}

@@ -1,0 +1,1402 @@
+gun_smoke_none{
+
+  _group{
+    _tags:t="render"
+    gun_smoke_fx__amount:r=0.0
+    gun_smoke_fx__incAmountPerShot:r=0.2
+    gun_smoke_fx__halfLife:r=4.0
+    gun_smoke_fx__thresholdDistSq:r=30.0
+
+    "gun_smoke_fx__fxEids:list<eid>"{
+    }
+
+    "gun_smoke_fx__nodeIds:list<i>"{
+    }
+
+    "gun_smoke_fx__nodes:shared:list<t>"{
+    }
+
+    "gun_smoke_fx__template:shared:list<t>"{
+    }
+
+    "gun_smoke_fx__scale:shared:list<r>"{
+    }
+
+    "gun_smoke_fx__opacityMult:shared:list<r>"{
+    }
+
+    "gun_smoke_fx__visibleAmountThreshold:shared:list<r>"{
+    }
+  }
+}
+
+gun_smoke_small{
+
+  _group{
+    _tags:t="render"
+    gun_smoke_fx__amount:r=0.0
+    gun_smoke_fx__incAmountPerShot:r=0.2
+    gun_smoke_fx__halfLife:r=4.0
+    gun_smoke_fx__thresholdDistSq:r=30.0
+
+    "gun_smoke_fx__fxEids:list<eid>"{
+    }
+
+    "gun_smoke_fx__nodeIds:list<i>"{
+    }
+
+    "gun_smoke_fx__nodes:shared:list<t>"{
+      node:t="gunFx_main"
+    }
+
+    "gun_smoke_fx__template:shared:list<t>"{
+      fx:t="smoke_gun_small_effect"
+    }
+
+    "gun_smoke_fx__scale:shared:list<r>"{
+      scale:r=1.0
+    }
+
+    "gun_smoke_fx__opacityMult:shared:list<r>"{
+      opacityMult:r=1.0
+    }
+
+    "gun_smoke_fx__visibleAmountThreshold:shared:list<r>"{
+      threshold:r=0.1
+    }
+  }
+}
+
+gun_smoke_medium{
+
+  _group{
+    _tags:t="render"
+    gun_smoke_fx__amount:r=0.0
+    gun_smoke_fx__incAmountPerShot:r=0.07
+    gun_smoke_fx__halfLife:r=2.0
+    gun_smoke_fx__thresholdDistSq:r=30.0
+
+    "gun_smoke_fx__fxEids:list<eid>"{
+    }
+
+    "gun_smoke_fx__nodeIds:list<i>"{
+    }
+
+    "gun_smoke_fx__nodes:shared:list<t>"{
+      node:t="gunFx_main"
+    }
+
+    "gun_smoke_fx__template:shared:list<t>"{
+      fx:t="smoke_gun_medium_effect"
+    }
+
+    "gun_smoke_fx__scale:shared:list<r>"{
+      scale:r=1.0
+    }
+
+    "gun_smoke_fx__opacityMult:shared:list<r>"{
+      opacityMult:r=1.0
+    }
+
+    "gun_smoke_fx__visibleAmountThreshold:shared:list<r>"{
+      threshold:r=0.1
+    }
+  }
+}
+
+gun_smoke_medium_rapid{
+
+  _group{
+    _tags:t="render"
+    gun_smoke_fx__amount:r=0.0
+    gun_smoke_fx__incAmountPerShot:r=0.04
+    gun_smoke_fx__halfLife:r=2.0
+    gun_smoke_fx__thresholdDistSq:r=30.0
+
+    "gun_smoke_fx__fxEids:list<eid>"{
+    }
+
+    "gun_smoke_fx__nodeIds:list<i>"{
+    }
+
+    "gun_smoke_fx__nodes:shared:list<t>"{
+      node:t="gunFx_main"
+    }
+
+    "gun_smoke_fx__template:shared:list<t>"{
+      fx:t="smoke_gun_medium_effect"
+    }
+
+    "gun_smoke_fx__scale:shared:list<r>"{
+      scale:r=1.0
+    }
+
+    "gun_smoke_fx__opacityMult:shared:list<r>"{
+      opacityMult:r=1.0
+    }
+
+    "gun_smoke_fx__visibleAmountThreshold:shared:list<r>"{
+      threshold:r=0.1
+    }
+  }
+}
+
+gun_smoke_big{
+
+  _group{
+    _tags:t="render"
+    gun_smoke_fx__amount:r=0.0
+    gun_smoke_fx__incAmountPerShot:r=0.5
+    gun_smoke_fx__halfLife:r=2.0
+    gun_smoke_fx__thresholdDistSq:r=50.0
+
+    "gun_smoke_fx__fxEids:list<eid>"{
+    }
+
+    "gun_smoke_fx__nodeIds:list<i>"{
+    }
+
+    "gun_smoke_fx__nodes:shared:list<t>"{
+      node:t="gunFx_main"
+    }
+
+    "gun_smoke_fx__template:shared:list<t>"{
+      fx:t="smoke_gun_big_effect"
+    }
+
+    "gun_smoke_fx__scale:shared:list<r>"{
+      scale:r=1.0
+    }
+
+    "gun_smoke_fx__opacityMult:shared:list<r>"{
+      opacityMult:r=1.0
+    }
+
+    "gun_smoke_fx__visibleAmountThreshold:shared:list<r>"{
+      threshold:r=0.1
+    }
+  }
+}
+
+tankgun_smoke_small{
+
+  _group{
+    _tags:t="render"
+    gun_smoke_fx__amount:r=0.0
+    gun_smoke_fx__incAmountPerShot:r=0.5
+    gun_smoke_fx__halfLife:r=2.0
+    gun_smoke_fx__thresholdDistSq:r=50.0
+    gun_smoke_fx__offsetMultRadius:r=1.0
+
+    "gun_smoke_fx__fxEids:list<eid>"{
+    }
+
+    "gun_smoke_fx__nodeIds:list<i>"{
+    }
+
+    "gun_smoke_fx__fxOffsets:list<p3>"{
+    }
+
+    "gun_smoke_fx__nodes:shared:list<t>"{
+      node:t="emtr_gun_flame"
+    }
+
+    "gun_smoke_fx__template:shared:list<t>"{
+      fx:t="smoke_tankgun_small_effect"
+    }
+
+    "gun_smoke_fx__scale:shared:list<r>"{
+      scale:r=1.0
+    }
+
+    "gun_smoke_fx__opacityMult:shared:list<r>"{
+      opacityMult:r=1.0
+    }
+
+    "gun_smoke_fx__visibleAmountThreshold:shared:list<r>"{
+      threshold:r=0.1
+    }
+  }
+}
+
+tankgun_smoke_medium{
+
+  _group{
+    _tags:t="render"
+    gun_smoke_fx__amount:r=0.0
+    gun_smoke_fx__incAmountPerShot:r=0.5
+    gun_smoke_fx__halfLife:r=2.0
+    gun_smoke_fx__thresholdDistSq:r=50.0
+    gun_smoke_fx__offsetMultRadius:r=1.0
+
+    "gun_smoke_fx__fxEids:list<eid>"{
+    }
+
+    "gun_smoke_fx__nodeIds:list<i>"{
+    }
+
+    "gun_smoke_fx__fxOffsets:list<p3>"{
+    }
+
+    "gun_smoke_fx__nodes:shared:list<t>"{
+      node:t="emtr_gun_flame"
+    }
+
+    "gun_smoke_fx__template:shared:list<t>"{
+      fx:t="smoke_tankgun_medium_effect"
+    }
+
+    "gun_smoke_fx__scale:shared:list<r>"{
+      scale:r=1.0
+    }
+
+    "gun_smoke_fx__opacityMult:shared:list<r>"{
+      opacityMult:r=1.0
+    }
+
+    "gun_smoke_fx__visibleAmountThreshold:shared:list<r>"{
+      threshold:r=0.1
+    }
+  }
+}
+
+tankgun_smoke_big{
+
+  _group{
+    _tags:t="render"
+    gun_smoke_fx__amount:r=0.0
+    gun_smoke_fx__incAmountPerShot:r=0.5
+    gun_smoke_fx__halfLife:r=2.0
+    gun_smoke_fx__thresholdDistSq:r=50.0
+    gun_smoke_fx__offsetMultRadius:r=1.0
+
+    "gun_smoke_fx__fxEids:list<eid>"{
+    }
+
+    "gun_smoke_fx__nodeIds:list<i>"{
+    }
+
+    "gun_smoke_fx__fxOffsets:list<p3>"{
+    }
+
+    "gun_smoke_fx__template:shared:list<t>"{
+      fx:t="smoke_tankgun_big_effect"
+    }
+
+    "gun_smoke_fx__scale:shared:list<r>"{
+      scale:r=1.0
+    }
+
+    "gun_smoke_fx__opacityMult:shared:list<r>"{
+      opacityMult:r=1.0
+    }
+
+    "gun_smoke_fx__visibleAmountThreshold:shared:list<r>"{
+      threshold:r=0.1
+    }
+  }
+}
+
+common_muzzle{
+
+  _group{
+    _tags:t="render"
+
+    "gun_flash_fx__nodeIds:list<i>"{
+    }
+
+    "gun_flash_fx__nodes:shared:list<t>"{
+      node:t="gunFx_main"
+      node:t="gunFx_add_1"
+      node:t="gunFx_add_2"
+      node:t="gunFx_add_3"
+      node:t="gunFx_add_bolt"
+    }
+
+    "gun_flash_fx__template:shared:list<t>"{
+      fx:t="muzzle_rifle_flash_effect"
+      fx:t="muzzle_side_flash_rifle_effect"
+      fx:t="muzzle_side_flash_rifle_effect"
+      fx:t="muzzle_side_flash_rifle_effect"
+      fx:t="smoke_extractor_effect"
+    }
+
+    "gun_flash_fx__scale:shared:list<r>"{
+      scale:r=3.0
+      scale:r=3.0
+      scale:r=3.0
+      scale:r=3.0
+      scale:r=3.0
+    }
+  }
+}
+
+rifle_muzzle_preset{
+  _use:t="gun_smoke_medium"
+
+  _group{
+    _tags:t="render"
+
+    "gun_flash_fx__nodeIds:list<i>"{
+    }
+
+    "gun_flash_fx__nodes:shared:list<t>"{
+      node:t="gunFx_main"
+      node:t="gunFx_add_bolt"
+    }
+
+    "gun_flash_fx__template:shared:list<t>"{
+      fx:t="muzzle_rifle_flash_effect"
+      fx:t="smoke_extractor_effect"
+    }
+
+    "gun_flash_fx__scale:shared:list<r>"{
+      scale:r=1.0
+      scale:r=1.0
+    }
+  }
+}
+
+rifle_carbine_muzzle_preset{
+  _use:t="gun_smoke_medium"
+
+  _group{
+    _tags:t="render"
+
+    "gun_flash_fx__nodeIds:list<i>"{
+    }
+
+    "gun_flash_fx__nodes:shared:list<t>"{
+      node:t="gunFx_main"
+      node:t="gunFx_add_bolt"
+    }
+
+    "gun_flash_fx__template:shared:list<t>"{
+      fx:t="muzzle_carbine_flash_effect"
+      fx:t="smoke_extractor_effect"
+    }
+
+    "gun_flash_fx__scale:shared:list<r>"{
+      scale:r=1.0
+      scale:r=1.0
+    }
+  }
+}
+
+rifle_muzzle_break_2_preset{
+  _use:t="gun_smoke_medium"
+
+  _group{
+    _tags:t="render"
+
+    "gun_flash_fx__nodeIds:list<i>"{
+    }
+
+    "gun_flash_fx__nodes:shared:list<t>"{
+      node:t="gunFx_main"
+      node:t="gunFx_add_1"
+      node:t="gunFx_add_2"
+      node:t="gunFx_add_bolt"
+    }
+
+    "gun_flash_fx__template:shared:list<t>"{
+      fx:t="muzzle_rifle_automatic_flash_effect"
+      fx:t="muzzle_side_flash_rifle_effect"
+      fx:t="muzzle_side_flash_rifle_effect"
+      fx:t="smoke_extractor_effect"
+    }
+
+    "gun_flash_fx__scale:shared:list<r>"{
+      scale:r=1.0
+      scale:r=1.0
+      scale:r=1.0
+      scale:r=1.0
+    }
+  }
+}
+
+rifle_rapid_muzzle_preset{
+  _use:t="gun_smoke_medium"
+
+  _group{
+    _tags:t="render"
+
+    "gun_flash_fx__nodeIds:list<i>"{
+    }
+
+    "gun_flash_fx__nodes:shared:list<t>"{
+      node:t="gunFx_main"
+      node:t="gunFx_add_bolt"
+    }
+
+    "gun_flash_fx__template:shared:list<t>"{
+      fx:t="muzzle_rifle_automatic_flash_effect"
+      fx:t="smoke_extractor_effect"
+    }
+
+    "gun_flash_fx__scale:shared:list<r>"{
+      scale:r=1.0
+      scale:r=1.0
+    }
+  }
+}
+
+rifle_rapid_muzzle_break_2_preset{
+  _use:t="gun_smoke_medium"
+
+  _group{
+    _tags:t="render"
+
+    "gun_flash_fx__nodeIds:list<i>"{
+    }
+
+    "gun_flash_fx__nodes:shared:list<t>"{
+      node:t="gunFx_main"
+      node:t="gunFx_add_1"
+      node:t="gunFx_add_2"
+      node:t="gunFx_add_bolt"
+    }
+
+    "gun_flash_fx__template:shared:list<t>"{
+      fx:t="muzzle_rifle_automatic_flash_effect"
+      fx:t="muzzle_side_flash_rifle_effect"
+      fx:t="muzzle_side_flash_rifle_effect"
+      fx:t="smoke_extractor_effect"
+    }
+
+    "gun_flash_fx__scale:shared:list<r>"{
+      scale:r=1.0
+      scale:r=1.0
+      scale:r=1.0
+      scale:r=1.0
+    }
+  }
+}
+
+blackpowder_rifle_muzzle_preset{
+  _use:t="gun_smoke_medium"
+
+  _group{
+    _tags:t="render"
+
+    "gun_flash_fx__nodeIds:list<i>"{
+    }
+
+    "gun_flash_fx__nodes:shared:list<t>"{
+      node:t="gunFx_main"
+    }
+
+    "gun_flash_fx__template:shared:list<t>"{
+      fx:t="smoke_burst_tiny_effect"
+    }
+
+    "gun_flash_fx__scale:shared:list<r>"{
+      scale:r=1.0
+    }
+  }
+}
+
+assault_rifle_rapid_muzzle_preset{
+  _use:t="gun_smoke_medium_rapid"
+
+  _group{
+    _tags:t="render"
+
+    "gun_flash_fx__nodeIds:list<i>"{
+    }
+
+    "gun_flash_fx__nodes:shared:list<t>"{
+      node:t="gunFx_main"
+      node:t="gunFx_add_bolt"
+    }
+
+    "gun_flash_fx__template:shared:list<t>"{
+      fx:t="muzzle_rifle_assault_flash_effect"
+      fx:t="smoke_extractor_effect"
+    }
+
+    "gun_flash_fx__scale:shared:list<r>"{
+      scale:r=1.0
+      scale:r=1.0
+    }
+  }
+}
+
+assault_rifle_rapid_muzzle_break_2_preset{
+  _use:t="gun_smoke_medium_rapid"
+
+  _group{
+    _tags:t="render"
+
+    "gun_flash_fx__nodeIds:list<i>"{
+    }
+
+    "gun_flash_fx__nodes:shared:list<t>"{
+      node:t="gunFx_main"
+      node:t="gunFx_add_1"
+      node:t="gunFx_add_2"
+      node:t="gunFx_add_bolt"
+    }
+
+    "gun_flash_fx__template:shared:list<t>"{
+      fx:t="muzzle_rifle_assault_flash_effect"
+      fx:t="muzzle_side_flash_rifle_effect"
+      fx:t="muzzle_side_flash_rifle_effect"
+      fx:t="smoke_extractor_effect"
+    }
+
+    "gun_flash_fx__scale:shared:list<r>"{
+      scale:r=1.0
+      scale:r=1.0
+      scale:r=1.0
+      scale:r=1.0
+    }
+  }
+}
+
+rifle_silenced_muzzle_preset{
+  _use:t="gun_smoke_medium"
+
+  _group{
+    _tags:t="render"
+
+    "gun_flash_fx__nodeIds:list<i>"{
+    }
+
+    "gun_flash_fx__nodes:shared:list<t>"{
+      node:t="gunFx_main"
+      node:t="gunFx_add_bolt"
+    }
+
+    "gun_flash_fx__template:shared:list<t>"{
+      fx:t="muzzle_rifle_no_flash_effect"
+      fx:t="smoke_extractor_effect"
+    }
+
+    "gun_flash_fx__scale:shared:list<r>"{
+      scale:r=1.0
+      scale:r=1.0
+    }
+  }
+}
+
+mg_rapid_muzzle_preset{
+  _use:t="gun_smoke_medium_rapid"
+
+  _group{
+    _tags:t="render"
+
+    "gun_flash_fx__nodeIds:list<i>"{
+    }
+
+    "gun_flash_fx__nodes:shared:list<t>"{
+      node:t="gunFx_main"
+      node:t="gunFx_add_bolt"
+    }
+
+    "gun_flash_fx__template:shared:list<t>"{
+      fx:t="muzzle_rapid_flash_effect"
+      fx:t="smoke_extractor_effect"
+    }
+
+    "gun_flash_fx__scale:shared:list<r>"{
+      scale:r=1.0
+      scale:r=1.0
+    }
+  }
+}
+
+mg_rapid_double_muzzle_preset{
+  _use:t="gun_smoke_medium_rapid"
+
+  _group{
+    _tags:t="render"
+
+    "gun_flash_fx__nodeIds:list<i>"{
+    }
+
+    "gun_flash_fx__nodes:shared:list<t>"{
+      node:t="gunFx_main"
+      node:t="gunFx_main_1"
+      node:t="gunFx_add_bolt"
+    }
+
+    "gun_flash_fx__template:shared:list<t>"{
+      fx:t="muzzle_rapid_flash_effect"
+      fx:t="muzzle_rapid_flash_effect"
+      fx:t="smoke_extractor_effect"
+    }
+
+    "gun_flash_fx__scale:shared:list<r>"{
+      scale:r=1.0
+      scale:r=1.0
+      scale:r=1.0
+    }
+  }
+}
+
+mg_rapid_muzzle_brake_2_preset{
+  _use:t="gun_smoke_medium_rapid"
+
+  _group{
+    _tags:t="render"
+
+    "gun_flash_fx__nodeIds:list<i>"{
+    }
+
+    "gun_flash_fx__nodes:shared:list<t>"{
+      node:t="gunFx_main"
+      node:t="gunFx_add_1"
+      node:t="gunFx_add_2"
+      node:t="gunFx_add_bolt"
+    }
+
+    "gun_flash_fx__template:shared:list<t>"{
+      fx:t="muzzle_rapid_flash_effect"
+      fx:t="muzzle_side_flash_rifle_effect"
+      fx:t="muzzle_side_flash_rifle_effect"
+      fx:t="smoke_extractor_effect"
+    }
+
+    "gun_flash_fx__scale:shared:list<r>"{
+      scale:r=1.0
+      scale:r=1.0
+      scale:r=1.0
+      scale:r=1.0
+    }
+  }
+}
+
+mg_rapid_muzzle_brake_3_preset{
+  _use:t="gun_smoke_medium_rapid"
+
+  _group{
+    _tags:t="render"
+
+    "gun_flash_fx__nodeIds:list<i>"{
+    }
+
+    "gun_flash_fx__nodes:shared:list<t>"{
+      node:t="gunFx_main"
+      node:t="gunFx_add_1"
+      node:t="gunFx_add_2"
+      node:t="gunFx_add_3"
+      node:t="gunFx_add_bolt"
+    }
+
+    "gun_flash_fx__template:shared:list<t>"{
+      fx:t="muzzle_rapid_flash_effect"
+      fx:t="muzzle_side_flash_rifle_effect"
+      fx:t="muzzle_side_flash_rifle_effect"
+      fx:t="muzzle_side_flash_rifle_effect"
+      fx:t="smoke_extractor_effect"
+    }
+
+    "gun_flash_fx__scale:shared:list<r>"{
+      scale:r=1.0
+      scale:r=1.0
+      scale:r=1.0
+      scale:r=1.0
+      scale:r=1.0
+    }
+  }
+}
+
+ampulomet_muzzle_preset{
+  _use:t="gun_smoke_medium_rapid"
+
+  _group{
+    _tags:t="render"
+
+    "gun_flash_fx__nodeIds:list<i>"{
+    }
+
+    "gun_flash_fx__nodes:shared:list<t>"{
+      node:t="gunFx_main"
+      node:t="gunFx_add_bolt"
+    }
+
+    "gun_flash_fx__template:shared:list<t>"{
+      fx:t="smoke_burst_tiny_effect"
+      fx:t="smoke_extractor_effect"
+    }
+
+    "gun_flash_fx__scale:shared:list<r>"{
+      scale:r=1.0
+      scale:r=1.0
+    }
+  }
+}
+
+pistol_muzzle_preset{
+  _use:t="gun_smoke_small"
+
+  _group{
+    _tags:t="render"
+
+    "gun_flash_fx__nodeIds:list<i>"{
+    }
+
+    "gun_flash_fx__nodes:shared:list<t>"{
+      node:t="gunFx_main"
+      node:t="gunFx_add_bolt"
+    }
+
+    "gun_flash_fx__template:shared:list<t>"{
+      fx:t="muzzle_pistol_flash_effect"
+      fx:t="smoke_extractor_effect"
+    }
+
+    "gun_flash_fx__scale:shared:list<r>"{
+      scale:r=1.0
+      scale:r=1.0
+    }
+  }
+}
+
+pistol_big_muzzle_preset{
+  _use:t="gun_smoke_small"
+
+  _group{
+    _tags:t="render"
+
+    "gun_flash_fx__nodeIds:list<i>"{
+    }
+
+    "gun_flash_fx__nodes:shared:list<t>"{
+      node:t="gunFx_main"
+      node:t="gunFx_add_bolt"
+    }
+
+    "gun_flash_fx__template:shared:list<t>"{
+      fx:t="muzzle_revolver_flash_effect"
+      fx:t="smoke_extractor_effect"
+    }
+
+    "gun_flash_fx__scale:shared:list<r>"{
+      scale:r=1.0
+      scale:r=1.0
+    }
+  }
+}
+
+pistol_small_muzzle_preset{
+  _use:t="gun_smoke_small"
+
+  _group{
+    _tags:t="render"
+
+    "gun_flash_fx__nodeIds:list<i>"{
+    }
+
+    "gun_flash_fx__nodes:shared:list<t>"{
+      node:t="gunFx_main"
+      node:t="gunFx_add_bolt"
+    }
+
+    "gun_flash_fx__template:shared:list<t>"{
+      fx:t="muzzle_pistol_small_flash_effect"
+      fx:t="smoke_extractor_effect"
+    }
+
+    "gun_flash_fx__scale:shared:list<r>"{
+      scale:r=1.0
+      scale:r=1.0
+    }
+  }
+}
+
+pistol_silenced_muzzle_preset{
+  _use:t="gun_smoke_small"
+
+  _group{
+    _tags:t="render"
+
+    "gun_flash_fx__nodeIds:list<i>"{
+    }
+
+    "gun_flash_fx__nodes:shared:list<t>"{
+      node:t="gunFx_main"
+      node:t="gunFx_add_bolt"
+    }
+
+    "gun_flash_fx__template:shared:list<t>"{
+      fx:t="muzzle_pistol_no_flash_effect"
+      fx:t="smoke_extractor_effect"
+    }
+
+    "gun_flash_fx__scale:shared:list<r>"{
+      scale:r=1.0
+      scale:r=1.0
+    }
+  }
+}
+
+smg_muzzle_preset{
+  _use:t="gun_smoke_medium_rapid"
+
+  _group{
+    _tags:t="render"
+
+    "gun_flash_fx__nodeIds:list<i>"{
+    }
+
+    "gun_flash_fx__nodes:shared:list<t>"{
+      node:t="gunFx_main"
+      node:t="gunFx_add_bolt"
+    }
+
+    "gun_flash_fx__template:shared:list<t>"{
+      fx:t="muzzle_smg_flash_effect"
+      fx:t="smoke_extractor_effect"
+    }
+
+    "gun_flash_fx__scale:shared:list<r>"{
+      scale:r=1.0
+      scale:r=1.0
+    }
+  }
+}
+
+smg_muzzle_break_preset{
+  _use:t="gun_smoke_medium_rapid"
+
+  _group{
+    _tags:t="render"
+
+    "gun_flash_fx__nodeIds:list<i>"{
+    }
+
+    "gun_flash_fx__nodes:shared:list<t>"{
+      node:t="gunFx_main"
+      node:t="gunFx_add_1"
+      node:t="gunFx_add_bolt"
+    }
+
+    "gun_flash_fx__template:shared:list<t>"{
+      fx:t="muzzle_smg_flash_effect"
+      fx:t="muzzle_side_flash_smg_effect"
+      fx:t="smoke_extractor_effect"
+    }
+
+    "gun_flash_fx__scale:shared:list<r>"{
+      scale:r=1.0
+      scale:r=1.0
+      scale:r=1.0
+    }
+  }
+}
+
+smg_muzzle_break_2_preset{
+  _use:t="gun_smoke_medium_rapid"
+
+  _group{
+    _tags:t="render"
+
+    "gun_flash_fx__nodeIds:list<i>"{
+    }
+
+    "gun_flash_fx__nodes:shared:list<t>"{
+      node:t="gunFx_main"
+      node:t="gunFx_add_1"
+      node:t="gunFx_add_2"
+      node:t="gunFx_add_bolt"
+    }
+
+    "gun_flash_fx__template:shared:list<t>"{
+      fx:t="muzzle_smg_flash_effect"
+      fx:t="muzzle_side_flash_smg_effect"
+      fx:t="muzzle_side_flash_smg_effect"
+      fx:t="smoke_extractor_effect"
+    }
+
+    "gun_flash_fx__scale:shared:list<r>"{
+      scale:r=1.0
+      scale:r=1.0
+      scale:r=1.0
+      scale:r=1.0
+    }
+  }
+}
+
+smg_muzzle_break_3_preset{
+  _use:t="gun_smoke_medium_rapid"
+
+  _group{
+    _tags:t="render"
+
+    "gun_flash_fx__nodeIds:list<i>"{
+    }
+
+    "gun_flash_fx__nodes:shared:list<t>"{
+      node:t="gunFx_main"
+      node:t="gunFx_add_1"
+      node:t="gunFx_add_2"
+      node:t="gunFx_add_3"
+      node:t="gunFx_add_bolt"
+    }
+
+    "gun_flash_fx__template:shared:list<t>"{
+      fx:t="muzzle_smg_flash_effect"
+      fx:t="muzzle_side_flash_smg_effect"
+      fx:t="muzzle_side_flash_smg_effect"
+      fx:t="muzzle_side_flash_smg_effect"
+      fx:t="smoke_extractor_effect"
+    }
+
+    "gun_flash_fx__scale:shared:list<r>"{
+      scale:r=1.0
+      scale:r=1.0
+      scale:r=1.0
+      scale:r=1.0
+      scale:r=1.0
+    }
+  }
+}
+
+smg_rapid_muzzle_preset{
+  _use:t="gun_smoke_medium_rapid"
+
+  _group{
+    _tags:t="render"
+
+    "gun_flash_fx__nodeIds:list<i>"{
+    }
+
+    "gun_flash_fx__nodes:shared:list<t>"{
+      node:t="gunFx_main"
+      node:t="gunFx_add_bolt"
+    }
+
+    "gun_flash_fx__template:shared:list<t>"{
+      fx:t="muzzle_smg_flash_effect"
+      fx:t="smoke_extractor_effect"
+    }
+
+    "gun_flash_fx__scale:shared:list<r>"{
+      scale:r=1.0
+      scale:r=1.0
+    }
+  }
+}
+
+smg_rapid_muzzle_break_preset{
+  _use:t="gun_smoke_medium_rapid"
+
+  _group{
+    _tags:t="render"
+
+    "gun_flash_fx__nodeIds:list<i>"{
+    }
+
+    "gun_flash_fx__nodes:shared:list<t>"{
+      node:t="gunFx_main"
+      node:t="gunFx_add_1"
+      node:t="gunFx_add_bolt"
+    }
+
+    "gun_flash_fx__template:shared:list<t>"{
+      fx:t="muzzle_smg_rapid_flash_effect"
+      fx:t="muzzle_side_flash_smg_effect"
+      fx:t="smoke_extractor_effect"
+    }
+
+    "gun_flash_fx__scale:shared:list<r>"{
+      scale:r=1.0
+      scale:r=1.0
+      scale:r=1.0
+    }
+  }
+}
+
+smg_rapid_muzzle_break_2_preset{
+  _use:t="gun_smoke_medium_rapid"
+
+  _group{
+    _tags:t="render"
+
+    "gun_flash_fx__nodeIds:list<i>"{
+    }
+
+    "gun_flash_fx__nodes:shared:list<t>"{
+      node:t="gunFx_main"
+      node:t="gunFx_add_1"
+      node:t="gunFx_add_2"
+      node:t="gunFx_add_bolt"
+    }
+
+    "gun_flash_fx__template:shared:list<t>"{
+      fx:t="muzzle_smg_rapid_flash_effect"
+      fx:t="muzzle_side_flash_smg_effect"
+      fx:t="muzzle_side_flash_smg_effect"
+      fx:t="smoke_extractor_effect"
+    }
+
+    "gun_flash_fx__scale:shared:list<r>"{
+      scale:r=1.0
+      scale:r=1.0
+      scale:r=1.0
+      scale:r=1.0
+    }
+  }
+}
+
+smg_rapid_muzzle_break_3_preset{
+  _use:t="gun_smoke_medium_rapid"
+
+  _group{
+    _tags:t="render"
+
+    "gun_flash_fx__nodeIds:list<i>"{
+    }
+
+    "gun_flash_fx__nodes:shared:list<t>"{
+      node:t="gunFx_main"
+      node:t="gunFx_add_1"
+      node:t="gunFx_add_2"
+      node:t="gunFx_add_3"
+      node:t="gunFx_add_bolt"
+    }
+
+    "gun_flash_fx__template:shared:list<t>"{
+      fx:t="muzzle_smg_rapid_flash_effect"
+      fx:t="muzzle_side_flash_smg_effect"
+      fx:t="muzzle_side_flash_smg_effect"
+      fx:t="muzzle_side_flash_smg_effect"
+      fx:t="smoke_extractor_effect"
+    }
+
+    "gun_flash_fx__scale:shared:list<r>"{
+      scale:r=1.0
+      scale:r=1.0
+      scale:r=1.0
+      scale:r=1.0
+      scale:r=1.0
+    }
+  }
+}
+
+smg_silenced_muzzle_preset{
+  _use:t="gun_smoke_medium_rapid"
+
+  _group{
+    _tags:t="render"
+
+    "gun_flash_fx__nodeIds:list<i>"{
+    }
+
+    "gun_flash_fx__nodes:shared:list<t>"{
+      node:t="gunFx_main"
+      node:t="gunFx_add_bolt"
+    }
+
+    "gun_flash_fx__template:shared:list<t>"{
+      fx:t="muzzle_smg_no_flash_effect"
+      fx:t="smoke_extractor_effect"
+    }
+
+    "gun_flash_fx__scale:shared:list<r>"{
+      scale:r=1.0
+      scale:r=1.0
+    }
+  }
+}
+
+high_caliber_muzzle_preset{
+  _use:t="gun_smoke_big"
+
+  _group{
+    _tags:t="render"
+    gun_flash_fx__spawnGroundWave:b=yes
+    gun_flash_fx__shellImpulse:r=15.0
+
+    "gun_flash_fx__nodeIds:list<i>"{
+    }
+
+    "gun_flash_fx__nodes:shared:list<t>"{
+      node:t="gunFx_main"
+      node:t="gunFx_add_bolt"
+    }
+
+    "gun_flash_fx__template:shared:list<t>"{
+      fx:t="muzzle_high_caliber_flash_effect"
+      fx:t="smoke_extractor_effect"
+    }
+
+    "gun_flash_fx__scale:shared:list<r>"{
+      scale:r=1.0
+      scale:r=1.0
+    }
+  }
+}
+
+high_caliber_muzzle_brake_2_preset{
+  _use:t="gun_smoke_big"
+
+  _group{
+    _tags:t="render"
+    gun_flash_fx__spawnGroundWave:b=yes
+    gun_flash_fx__shellImpulse:r=15.0
+
+    "gun_flash_fx__nodeIds:list<i>"{
+    }
+
+    "gun_flash_fx__nodes:shared:list<t>"{
+      node:t="gunFx_main"
+      node:t="gunFx_add_1"
+      node:t="gunFx_add_2"
+      node:t="gunFx_add_bolt"
+    }
+
+    "gun_flash_fx__template:shared:list<t>"{
+      fx:t="muzzle_high_caliber_flash_effect"
+      fx:t="muzzle_side_flash_high_effect"
+      fx:t="muzzle_side_flash_high_effect"
+      fx:t="smoke_extractor_effect"
+    }
+
+    "gun_flash_fx__scale:shared:list<r>"{
+      scale:r=1.0
+      scale:r=1.0
+      scale:r=1.0
+      scale:r=1.0
+    }
+  }
+}
+
+high_caliber_muzzle_brake_3_preset{
+  _use:t="gun_smoke_big"
+
+  _group{
+    _tags:t="render"
+    gun_flash_fx__spawnGroundWave:b=yes
+    gun_flash_fx__shellImpulse:r=15.0
+
+    "gun_flash_fx__nodeIds:list<i>"{
+    }
+
+    "gun_flash_fx__nodes:shared:list<t>"{
+      node:t="gunFx_main"
+      node:t="gunFx_add_1"
+      node:t="gunFx_add_2"
+      node:t="gunFx_add_3"
+      node:t="gunFx_add_bolt"
+    }
+
+    "gun_flash_fx__template:shared:list<t>"{
+      fx:t="muzzle_high_caliber_flash_effect"
+      fx:t="muzzle_side_flash_high_effect"
+      fx:t="muzzle_side_flash_high_effect"
+      fx:t="muzzle_side_flash_high_effect"
+      fx:t="smoke_extractor_effect"
+    }
+
+    "gun_flash_fx__scale:shared:list<r>"{
+      scale:r=1.0
+      scale:r=1.0
+      scale:r=1.0
+      scale:r=1.0
+      scale:r=1.0
+    }
+  }
+}
+
+high_caliber_rapid_muzzle_preset{
+  _use:t="gun_smoke_big"
+
+  _group{
+    _tags:t="render"
+
+    "gun_flash_fx__nodeIds:list<i>"{
+    }
+
+    "gun_flash_fx__nodes:shared:list<t>"{
+      node:t="gunFx_main"
+      node:t="gunFx_add_bolt"
+    }
+
+    "gun_flash_fx__template:shared:list<t>"{
+      fx:t="muzzle_high_caliber_rapid_flash_effect"
+      fx:t="smoke_extractor_effect"
+    }
+
+    "gun_flash_fx__scale:shared:list<r>"{
+      scale:r=1.0
+      scale:r=1.0
+    }
+  }
+}
+
+high_caliber_rapid_dshk_muzzle_brake_preset{
+  _use:t="gun_smoke_big"
+
+  _group{
+    _tags:t="render"
+
+    "gun_flash_fx__nodeIds:list<i>"{
+    }
+
+    "gun_flash_fx__nodes:shared:list<t>"{
+      node:t="gunFx_main"
+      node:t="gunFx_add_1"
+      node:t="gunFx_add_3"
+      node:t="gunFx_add_bolt"
+    }
+
+    "gun_flash_fx__template:shared:list<t>"{
+      fx:t="muzzle_high_caliber_rapid_flash_effect"
+      fx:t="muzzle_side_flash_high_effect"
+      fx:t="muzzle_side_flash_high_effect"
+      fx:t="smoke_extractor_effect"
+    }
+
+    "gun_flash_fx__scale:shared:list<r>"{
+      scale:r=1.0
+      scale:r=1.0
+      scale:r=1.0
+      scale:r=1.0
+    }
+  }
+}
+
+shotgun_muzzle_preset{
+  _use:t="gun_smoke_medium"
+
+  _group{
+    _tags:t="render"
+
+    "gun_flash_fx__nodeIds:list<i>"{
+    }
+
+    "gun_flash_fx__nodes:shared:list<t>"{
+      node:t="gunFx_main"
+      node:t="gunFx_add_bolt"
+    }
+
+    "gun_flash_fx__template:shared:list<t>"{
+      fx:t="muzzle_shotgun_flash_effect"
+      fx:t="smoke_extractor_effect"
+    }
+
+    "gun_flash_fx__scale:shared:list<r>"{
+      scale:r=1.0
+      scale:r=1.0
+    }
+  }
+}
+
+grenade_launcher_muzzle_preset{
+
+  _group{
+    _tags:t="render"
+
+    "gun_flash_fx__nodeIds:list<i>"{
+    }
+
+    "gun_flash_fx__nodes:shared:list<t>"{
+      node:t="gunFx_main"
+    }
+
+    "gun_flash_fx__template:shared:list<t>"{
+      fx:t="smoke_burst_tiny_effect"
+    }
+
+    "gun_flash_fx__scale:shared:list<r>"{
+      scale:r=0.6
+    }
+  }
+}
+
+antitank_launcher_muzzle_preset{
+
+  _group{
+    _tags:t="render"
+    gun_flash_fx__spawnGroundWave:b=yes
+    gun_flash_fx__shellImpulse:r=15.0
+
+    "gun_flash_fx__nodeIds:list<i>"{
+    }
+
+    "gun_flash_fx__nodes:shared:list<t>"{
+      node:t="gunFx_main"
+      node:t="gunFx_add_bolt"
+    }
+
+    "gun_flash_fx__template:shared:list<t>"{
+      fx:t="smoke_burst_big_effect"
+      fx:t="smoke_burst_small_effect"
+    }
+
+    "gun_flash_fx__scale:shared:list<r>"{
+      scale:r=1.0
+      scale:r=1.0
+    }
+  }
+}
+
+mortar_muzzle_preset{
+
+  _group{
+    _tags:t="render"
+    gun_flash_fx__spawnGroundWave:b=yes
+
+    "gun_flash_fx__nodeIds:list<i>"{
+    }
+
+    "gun_flash_fx__nodes:shared:list<t>"{
+      node:t="gunFx_main"
+    }
+
+    "gun_flash_fx__template:shared:list<t>"{
+      fx:t="smoke_burst_big_effect"
+    }
+
+    "gun_flash_fx__scale:shared:list<r>"{
+      scale:r=1.0
+    }
+  }
+}
+
+space_blaster_muzzle_preset{
+
+  _group{
+    _tags:t="render"
+
+    "gun_flash_fx__nodeIds:list<i>"{
+    }
+
+    "gun_flash_fx__nodes:shared:list<t>"{
+      node:t="gunFx_main"
+    }
+
+    "gun_flash_fx__template:shared:list<t>"{
+      fx:t="event_foolmoon_blaster_muzzle_effect"
+    }
+
+    "gun_flash_fx__scale:shared:list<r>"{
+      scale:r=0.8
+    }
+  }
+}
+
+space_sniper_muzzle_preset{
+
+  _group{
+    _tags:t="render"
+
+    "gun_flash_fx__nodeIds:list<i>"{
+    }
+
+    "gun_flash_fx__nodes:shared:list<t>"{
+      node:t="gunFx_main"
+    }
+
+    "gun_flash_fx__template:shared:list<t>"{
+      fx:t="event_foolmoon_sniper_muzzle"
+    }
+
+    "gun_flash_fx__scale:shared:list<r>"{
+      scale:r=0.8
+    }
+  }
+}

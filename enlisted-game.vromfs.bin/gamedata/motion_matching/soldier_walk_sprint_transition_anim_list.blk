@@ -1,0 +1,46 @@
+clips{
+  default_animation_mask:t="soldier_sprint_nodemask"
+  default_tags:t="stand,walk,sprint,melee_weapon,default_weapon"
+
+  sprint_forward_stop_middle_01{
+
+    use_foot_ik_locker{
+    }
+
+    extrapolate_trajectory{
+      start_velocity:p3=0.0, 0.0, -5.0
+    }
+  }
+
+  sprint_forward_stop_middle_02{
+
+    use_foot_ik_locker{
+    }
+
+    extrapolate_trajectory{
+      start_velocity:p3=0.0, 0.0, -5.0
+    }
+  }
+
+  sprint_to_crouchstill_01{
+    tags:t="crouch"
+
+    use_foot_ik_locker{
+    }
+
+    extrapolate_trajectory{
+      use_border_frames:b=yes
+    }
+  }
+
+  sprint_to_crouchstill_02{
+    tags:t="crouch"
+
+    use_foot_ik_locker{
+    }
+
+    extrapolate_trajectory{
+      use_border_frames:b=yes
+    }
+  }
+}

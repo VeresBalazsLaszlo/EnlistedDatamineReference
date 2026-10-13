@@ -1,0 +1,368 @@
+us_m36_slugger{
+  _use:t="us_m36_slugger_common"
+
+  "disableDMParts:list<t>"{
+    part:t="ex_decor_turret_01"
+    part:t="ex_decor_turret_02"
+    part:t="ex_decor_turret_03"
+    part:t="ex_decor_01"
+    part:t="ex_decor_03"
+    part:t="ex_decor_04"
+    part:t="ex_decor_05"
+    part:t="ex_decor_06"
+    part:t="ex_decor_07"
+  }
+
+  "turrets__initAmmoDistribution:array"{
+
+    "ammo:object"{
+      slot:i=0
+      fill:b=yes
+    }
+
+    "ammo:object"{
+      slot:i=1
+      fill:b=yes
+    }
+
+    "ammo:object"{
+      slot:i=3
+      count:i=7
+    }
+
+    "ammo:object"{
+      slot:i=4
+      count:i=7
+    }
+  }
+}
+
+us_m36_slugger_common{
+  _use:t="base_m36_slugger"
+  _use:t="us_m10_wolverine_common_vehicle_sound"
+  commanderCockpitFpsCamMaxAngle:p2=40.0, 5.0
+  gunner_cam_limit__useCockpitDir:b=yes
+  item__iconOffset:p2=0.05, 0.1
+  item__iconScale:r=1.3
+  armorThicknessHull:p3=51.0, 25.0, 25.0
+  armorThicknessTurret:p3=57.15, 25.4, 25.4
+
+  "disableDMParts:list<t>"{
+    part:t="gunner"
+    part:t="loader"
+    part:t="commander"
+    part:t="machine_gunner"
+    part:t="driver"
+  }
+
+  "vehicle_seats__effectors:array"{
+  }
+
+  "vehicle_seats__seatsProvideOrder:tag"{
+  }
+
+  "vehicle_seats__seats:shared:array"{
+
+    "seats:object"{
+      name:t="commander"
+      nextSeat:t="main_gunner"
+      locName:t="vehicle_seats/commander"
+      attachNode:t="commander"
+      shouldHideOwner:b=no
+      ignoreAttachNodeRotation:b=yes
+      attachTm:m=[[0.9, 0.0, 0.0] [0.0, 0.9, 0.0] [0.0, 0.0, 0.9] [0.1, -0.25, 0.1]]
+      maxPosWithOpenHatch:r=0.25
+      seatComponent:t="isDriver"
+      receiveDamageFromDMPart:t="commander"
+      cockpitTemplate:t="us_m36_slugger_commander_cockpit"
+      hatchRotationAxis:p3=0.0, 0.0, 0.0
+      seatAnimUpper:t="drive_passenger"
+      seatAnimLower:t="drive_passenger"
+      isHoldGunModeAllowed:b=yes
+      useHatchEffectors:b=yes
+
+      "hatchNodes:array"{
+        node:t="bone_camera_gunner"
+      }
+
+      "hatchTurretNames:array"{
+        turret:t="turret_02"
+      }
+
+      "effectors:object"{
+
+        "l.hand:object"{
+          rel_tm:m=[[0.889347, 0.4572331, 4.880332e-05] [0.4537024, -0.8824664, -0.124127] [-0.05671192, 0.1104141, -0.9922665] [-1.135712, 0.266116, 0.2682902]]
+          node:t="bone_gun"
+        }
+
+        "r.hand:object"{
+          rel_tm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-0.0, -0.1, 0.0]]
+          node:t="righthand_5"
+        }
+
+        "l.foot:object"{
+          rel_tm:m=[[0.976712, 0.2092979, 0.04720168] [-0.2093799, 0.9778291, -0.003262321] [-0.04683803, -0.006696315, 0.9988798] [0.136795, -0.3024445, 0.01590729]]
+          node:t="pedal_lfoot_5"
+        }
+
+        "r.foot:object"{
+          rel_tm:m=[[0.9573256, 0.2559304, -0.1342653] [-0.2133129, 0.939155, 0.2692309] [0.1950004, -0.2291013, 0.9536706] [0.003883362, -0.1033173, 0.02885818]]
+          node:t="pedal_rfoot_5"
+        }
+      }
+    }
+
+    "seats:object"{
+      name:t="main_gunner"
+      locName:t="vehicle_seats/gunner"
+      attachNode:t="gunner"
+      ignoreAttachNodeRotation:b=yes
+      attachTm:m=[[0.8058422, -0.07844018, -0.3930208] [0.07050207, 0.8965752, -0.0343849] [0.3945221, 2.849847e-08, 0.8089204] [-0.16, -0.27, 0.05]]
+      seatComponent:t="isGunner"
+      nextSeat:t="driver"
+      shouldHideOwner:b=no
+      receiveDamageFromDMPart:t="gunner"
+      cameraNodeName:t="bone_camera_gunner"
+      cockpitTemplate:t="us_m36_slugger_gunner_cockpit"
+      isHoldGunModeAllowed:b=no
+
+      "turretNames:array"{
+        turretNames:t="turret_01"
+      }
+
+      "effectors:object"{
+        r.hand:t="righthand_2"
+        l.hand:t="lefthand_2"
+        r.foot:t="pedal_rfoot_2"
+        l.foot:t="pedal_lfoot_2"
+      }
+    }
+
+    "seats:object"{
+      name:t="driver"
+      locName:t="vehicle_seats/driver"
+      seatOwnsEntityControl:b=yes
+      attachNode:t="driver"
+      ignoreAttachNodeRotation:b=yes
+      attachTm:m=[[0.9, -0.292366, -0.0] [0.292366, 0.9, 0.0] [0.0, -0.0, 0.9] [-0.12, -0.27, -0.06]]
+      seatComponent:t="isDriver"
+      shouldHideOwner:b=no
+      receiveDamageFromDMPart:t="driver"
+      cameraNodeName:t="bone_camera_driver"
+      cockpitTemplate:t="us_m36_slugger_driver_cockpit"
+      isHoldGunModeAllowed:b=no
+      seatAnimUpper:t="drive_passenger"
+      seatAnimLower:t="drive_passenger"
+
+      "effectors:object"{
+        r.hand:t="righthand_4"
+        l.hand:t="lefthand_4"
+        r.foot:t="pedal_rfoot_4"
+        l.foot:t="pedal_lfoot_4"
+      }
+    }
+
+    "seats:object"{
+      name:t="loader"
+      attachNode:t="loader"
+      locName:t="vehicle_seats/loader"
+      ignoreAttachNodeRotation:b=yes
+      attachTm:m=[[0.04533684, -0.2781299, -0.8548409] [-0.110497, 0.8476619, -0.2816545] [0.8921507, 0.1191382, 0.008552903] [-0.03, -0.17, 0.14]]
+      seatComponent:t="isPassenger"
+      shouldHideOwner:b=no
+      receiveDamageFromDMPart:t="loader"
+      cameraNodeName:t="bone_camera_driver"
+      isHoldGunModeAllowed:b=no
+      seatAnimUpper:t="drive_passenger"
+      seatAnimLower:t="drive_passenger"
+      canPlaceManually:b=no
+
+      "loaderTurretNames:array"{
+        turret:t="turret_01"
+      }
+
+      "effectors:object"{
+        r.hand:t="righthand_1"
+
+        "l.hand:object"{
+          rel_tm:m=[[0.2188121, 0.8838832, 0.4133662] [-0.1416497, -0.3903713, 0.9096955] [0.9654312, -0.2576056, 0.03978385] [-0.8597412, 0.1977646, -0.4632378]]
+          node:t="bone_gun"
+        }
+
+        "r.foot:object"{
+          rel_tm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, -0.0, 0.0]]
+          node:t="pedal_rfoot_1"
+        }
+
+        "l.foot:object"{
+          rel_tm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, -0.0, 0.0]]
+          node:t="pedal_lfoot_1"
+        }
+      }
+    }
+
+    "seats:object"{
+      attachNode:t="machine_gunner"
+      locName:t="vehicle_seats/radioman"
+      ignoreAttachNodeRotation:b=yes
+      attachTm:m=[[0.8509673, -0.2930092, -2.557953e-14] [0.2930092, 0.8509673, 9.548986e-08] [-3.108758e-08, -9.028572e-08, 0.8999817] [0.0, -0.25, 0.0]]
+      seatComponent:t="isPassenger"
+      shouldHideOwner:b=no
+      receiveDamageFromDMPart:t="machine_gunner"
+      cameraNodeName:t="bone_camera_driver"
+      isHoldGunModeAllowed:b=no
+      seatAnimUpper:t="drive_passenger"
+      seatAnimLower:t="drive_passenger"
+
+      "effectors:object"{
+        r.hand:t="righthand_3"
+        l.hand:t="lefthand_3"
+        r.foot:t="pedal_rfoot_3"
+        l.foot:t="pedal_lfoot_3"
+      }
+    }
+  }
+}
+
+us_m36_slugger_driver_cockpit{
+  _use:t="base_driver_cockpit"
+  animchar__res:t="ba_11_driver_char"
+  cockpit__offset:p3=-0.4, -0.25, 0.18
+
+  "cockpit__slitForwardOffset:list<r>"{
+    slit:r=-0.05
+  }
+
+  "cockpit__visibleVehicleNodeNames:list<t>"{
+    node:t="gun_barrel"
+  }
+}
+
+us_m36_slugger_commander_cockpit{
+  _use:t="base_commander_cockpit_no_slits"
+  animchar__res:t="t_26_1940_gunner_char"
+  cockpit__offset:p3=0.0, 0.0, 0.0
+  cockpit__forwardOffsetDuration:r=0.33
+  cockpit__minForwardOffset:r=0.0
+
+  "cockpit__cockpitOffsetBySlit:list<p3>"{
+    item:p3=0.0, 0.9, -0.339313
+  }
+
+  "cockpit__attachNodeNames:list<t>"{
+    node:t="bone_turret"
+  }
+
+  "cockpit__attachNodeIndices:list<i>"{
+  }
+
+  "cockpit__visibleVehicleNodeNames:list<t>"{
+    node:t="gun_barrel"
+    node:t="bone_turret"
+    node:t="bone_gun"
+    node:t="ex_decor_turret_04"
+    node:t="@root"
+    node:t="hatch_03"
+    node:t="hatch_04"
+    node:t="ex_lantern_b_01"
+    node:t="ex_lantern_b_02"
+    node:t="ex_decor_09"
+    node:t="ex_decor_12"
+    node:t="ex_decor_11"
+  }
+
+  "cockpit__slitNodeNames:list<t>"{
+    slit:t="cam_front_right"
+  }
+
+  "cockpit__slitForwardOffset:list<r>"{
+    slit:r=0.23
+  }
+
+  "cockpit__slitIsGun:list<b>"{
+    slit:b=yes
+  }
+
+  "cockpit__periscopeLimits:list<p4>"{
+    slit:p4=-90.0, 90.0, -5.0, 25.0
+  }
+
+  "cockpit__periscopeSpeed:list<p2>"{
+    slit:p2=35.0, 35.0
+  }
+
+  "cockpit__slitZoom:array"{
+
+    "slit:list<r>"{
+      zoom:r=1.44
+    }
+  }
+
+  "cockpit__slitZoomTime:list<r>"{
+    slit:r=0.0
+  }
+
+  "cockpit__slitTemplates:list<t>"{
+    slit:t="default_periscope"
+  }
+
+  "cockpit__slitEids:list<eid>"{
+  }
+}
+
+us_m36_slugger_gunner_cockpit{
+  _use:t="base_gunner_cockpit"
+  animchar__res:t="ba_11_gunner_char"
+  cockpit__offset:p3=-0.65, -0.06, 0.23
+
+  "cockpit__visibleVehicleNodeNames:list<t>"{
+    node:t="gun_barrel"
+    node:t="@root"
+    node:t="hatch_03"
+    node:t="hatch_04"
+    node:t="ex_lantern_b_01"
+    node:t="ex_lantern_b_02"
+    node:t="ex_decor_09"
+    node:t="ex_decor_12"
+    node:t="ex_decor_11"
+  }
+
+  "cockpit__slitNodeNames:list<t>"{
+    slit:t="cam_front_right"
+  }
+
+  "cockpit__slitForwardOffset:list<r>"{
+    slit:r=0.21
+  }
+
+  "cockpit__slitIsGun:list<b>"{
+    slit:b=yes
+  }
+
+  "cockpit__cockpit__attachNodeNames:list<t>"{
+    node:t="bone_camera_gunner"
+  }
+
+  "cockpit__cockpit__attachNodeIndices:list<i>"{
+  }
+
+  "cockpit__slitZoom:array"{
+
+    "slit:list<r>"{
+      zoom:r=1.9
+      zoom:r=3.5
+    }
+  }
+
+  "cockpit__slitZoomTime:list<r>"{
+    slit:r=0.05
+  }
+
+  "cockpit__slitTemplates:list<t>"{
+    slit:t="us_m70g"
+  }
+
+  "cockpit__slitEids:list<eid>"{
+  }
+}

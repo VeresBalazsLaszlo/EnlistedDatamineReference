@@ -1,0 +1,36 @@
+texturePrefix:t=""
+textureMainSuffix:t="main"
+textureTrailSuffix:t="trail"
+textureDiffuseSuffix:t="tex_d"
+textureNormalSuffix:t="tex_n"
+FootprintTypeNames:t="dirt"
+FootprintTypeNames:t="sand"
+FootprintTypeNames:t="mud"
+footprintsSize:r=0.25
+trailingFootprintsUntilFadingNum:i=20
+
+PhysmatFootprintTypes{
+  default:t="dirt"
+  soil:t="dirt"
+  hard_soil:t="dirt"
+  leaves:t="dirt"
+  mud:t="mud"
+  dirt:t="dirt"
+  roadSoil:t="dirt"
+  roadmud:t="mud"
+  sand:t="sand"
+  moon_sand:t="sand"
+  quarrySand:t="sand"
+  sand_slope:t="sand"
+  roadSand:t="sand"
+  quickSand:t="sand"
+  snow:t="dirt"
+  hardSnow:t="dirt"
+  ice:t="mud"
+  snowLower:t="dirt"
+  roadSnow:t="mud"
+}
+
+EnviCoverFootprintType{
+  snow:t="dirt"
+}

@@ -1,0 +1,69 @@
+mass:r=0.0091
+caliber:r=0.0077
+speed:r=920.0
+Cx:r=0.38
+maxDistance:r=2000.0
+onHitChanceMultFire:r=5.0
+normalizationPreset:t="default"
+ricochetPreset:t="default"
+groundRicochetPreset:t="he_small_caliber_ground"
+stabilityThreshold:r=0.0
+stabilityCaliberToArmorThreshold:r=5.0
+stabilityReductionAfterRicochet:r=0.01
+stabilityReductionAfterPenetration:r=0.01
+bulletType:t="i_t_ball"
+slopeEffectPreset:t="ap"
+explodeTreshold:r=3.0
+explodeHitPower:r=5.5
+explodeArmorPower:r=2.5
+explodeRadius:p2=0.03, 0.035
+relativeVelArmorShift:p2=200.0, 1000.0
+hitPowerMult:r=2.5
+waterRicochetEffect:t="hit_8_11mm_water"
+groundRicochetEffect:t="hit_8_11mm_dirt_ap"
+secondaryShattersPreset:t="ap"
+
+stabilityRicochetModifier{
+  mod1:p2=0.0, 0.05
+  mod2:p2=20.0, 0.1
+  mod3:p2=30.0, 0.2
+  mod3:p2=45.0, 0.3
+}
+
+hitpower{
+  HitPower10m:p2=1.45, 10.0
+  HitPower100m:p2=1.43, 100.0
+  HitPower200m:p2=1.37, 300.0
+  HitPower400m:p2=1.2, 400.0
+  HitPower600m:p2=1.1, 600.0
+  HitPower1000m:p2=0.2, 1000.0
+  HitPower1500m:p2=0.01, 1500.0
+}
+
+armorpower{
+  ArmorPower0m:p2=3.5, 5.0
+  ArmorPower100m:p2=3.3, 100.0
+  ArmorPower500m:p2=3.2, 500.0
+  ArmorPower1000m:p2=3.0, 1000.0
+  ArmorPower1450m:p2=0.1, 1450.0
+  ArmorPower1500m:p2=0.0, 1500.0
+}
+
+visual{
+  range_percent_of_ammo:p2=100.0, 0.0
+  traceFreq:i=1
+  tracer:t="7mmWhite"
+  trail:t="noTrail"
+}
+
+kineticDamage{
+  damageType:t="generic"
+}
+
+tracer{
+  headColor:c=255, 255, 255, 120
+  smokeColor:c=0, 0, 0, 0
+  startHeadColor:c=255, 248, 60, 120
+  startTime:r=0.025
+  smokeRadius:r=0.03
+}

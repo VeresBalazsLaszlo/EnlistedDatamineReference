@@ -1,0 +1,403 @@
+us_m4a1_76w_sherman{
+  _use:t="us_m4a1_76w_sherman_common"
+}
+
+us_m4a1_76w_sherman_common{
+  _use:t="base_m4a1_76w_sherman"
+  _use:t="us_m4a1_76w_sherman_common_vehicle_sound"
+  commanderCockpitFpsCamMaxAngle:p2=40.0, 5.0
+  gunner_cam_limit__useCockpitDir:b=yes
+  item__iconOffset:p2=0.05, 0.12
+  item__iconScale:r=1.37
+
+  "turrets__initAmmoDistribution:array"{
+
+    "ammo:object"{
+      slot:i=0
+      fill:b=yes
+    }
+
+    "ammo:object"{
+      slot:i=1
+      fill:b=yes
+    }
+
+    "ammo:object"{
+      slot:i=4
+      count:i=7
+    }
+  }
+
+  "vehicle_seats__seatsProvideOrder:tag"{
+  }
+
+  "vehicle_seats__effectors:array"{
+  }
+
+  "vehicle_seats__seats:shared:array"{
+
+    "seats:object"{
+      name:t="commander"
+      nextSeat:t="main_gunner"
+      locName:t="vehicle_seats/commander"
+      attachNode:t="commander"
+      shouldHideOwner:b=yes
+      hatchRotationAxis:p3=2.1, 0.0, 0.0
+      maxPosWithOpenHatch:r=0.4
+      ignoreAttachNodeRotation:b=yes
+      attachTm:m=[[0.9, 0.0, 0.0] [0.0, 0.9, 0.0] [0.0, 0.0, 0.9] [-0.03, -0.22, -0.05]]
+      seatComponent:t="isDriver"
+      receiveDamageFromDMPart:t="commander"
+      cameraNodeName:t="bone_turret"
+      cockpitTemplate:t="us_m4a1_76w_sherman_commander_cockpit"
+      isHoldGunModeAllowed:b=yes
+
+      "hatchNodes:array"{
+        node:t="hatch_01"
+      }
+
+      "hatchTurretNames:array"{
+        turret:t="turret_03"
+      }
+
+      "effectors:object"{
+
+        "l.hand:object"{
+          rel_tm:m=[[0.2267619, -0.3866661, 0.8939065] [0.970772, 0.1638544, -0.1753844] [-0.07865522, 0.9075478, 0.4125195] [0.2053223, -0.01998138, 0.6811358]]
+          node:t="commander"
+        }
+
+        "r.hand:object"{
+          rel_tm:m=[[0.04430401, -0.05905623, 0.9972722] [0.8344584, -0.5466837, -0.06944438] [0.5492907, 0.8352544, 0.02505947] [0.1238556, -0.2862816, 0.6634582]]
+          node:t="commander"
+        }
+      }
+    }
+
+    "seats:object"{
+      name:t="main_gunner"
+      locName:t="vehicle_seats/gunner"
+      attachNode:t="gunner"
+      ignoreAttachNodeRotation:b=yes
+      attachTm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-0.25, -0.5, 0.0]]
+      seatComponent:t="isGunner"
+      nextSeat:t="driver"
+      shouldHideOwner:b=yes
+      receiveDamageFromDMPart:t="gunner"
+      cameraNodeName:t="bone_camera_gunner"
+      cockpitTemplate:t="us_m4a1_76w_sherman_gunner_cockpit"
+
+      "turretNames:array"{
+        turretNames:t="turret_01"
+        turretNames:t="turret_02"
+      }
+    }
+
+    "seats:object"{
+      name:t="driver"
+      locName:t="vehicle_seats/driver"
+      seatOwnsEntityControl:b=yes
+      attachNode:t="driver"
+      ignoreAttachNodeRotation:b=yes
+      attachTm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-0.25, -0.25, 0.0]]
+      seatComponent:t="isDriver"
+      nextSeat:t="machinegunner"
+      shouldHideOwner:b=yes
+      receiveDamageFromDMPart:t="driver"
+      cameraNodeName:t="bone_camera_driver"
+      cockpitTemplate:t="us_m4a1_76w_sherman_driver_cockpit"
+    }
+
+    "seats:object"{
+      name:t="loader"
+      canPlaceManually:b=no
+      attachNode:t="loader"
+      locName:t="vehicle_seats/loader"
+      ignoreAttachNodeRotation:b=yes
+      attachTm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-0.25, -0.5, 0.0]]
+      seatComponent:t="isPassenger"
+      shouldHideOwner:b=yes
+      receiveDamageFromDMPart:t="loader"
+      cameraNodeName:t="bone_camera_driver"
+
+      "loaderTurretNames:array"{
+        turret:t="turret_01"
+      }
+    }
+
+    "seats:object"{
+      name:t="machinegunner"
+      canPlaceManually:b=yes
+      locName:t="vehicle_seats/radioman"
+      attachNode:t="machine_gunner"
+      ignoreAttachNodeRotation:b=yes
+      attachTm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-0.25, -0.5, 0.0]]
+      seatComponent:t="isGunner"
+      shouldHideOwner:b=yes
+      receiveDamageFromDMPart:t="machine_gunner"
+      cameraNodeName:t="root"
+      cockpitTemplate:t="us_m4a1_76w_sherman_machinegunner_cockpit"
+
+      "turretNames:array"{
+        turret:t="turret_04"
+      }
+    }
+  }
+}
+
+us_m4a1_76w_sherman_machinegunner_cockpit{
+  _use:t="base_gunner_cockpit"
+  animchar__res:t="bt_7_driver_char"
+  cockpit__offset:p3=0.35, -0.45, -0.9
+
+  "cockpit__visibleVehicleNodeNames:list<t>"{
+    node:t="gun_barrel"
+    node:t="ex_lantern_02"
+  }
+
+  "cockpit__slitNodeNames:list<t>"{
+    slit:t="cam_front"
+  }
+
+  "cockpit__slitForwardOffset:list<r>"{
+    slit:r=0.08
+  }
+
+  "cockpit__slitIsGun:list<b>"{
+    slit:b=yes
+  }
+
+  "cockpit__attachNodeNames:list<t>"{
+    node:t="bone_camera_driver"
+  }
+
+  "cockpit__attachNodeIndices:list<i>"{
+  }
+
+  "cockpit__slitZoom:array"{
+
+    "slit:list<r>"{
+      zoom:r=1.2
+    }
+  }
+
+  "cockpit__slitZoomTime:list<r>"{
+    slit:r=0.05
+  }
+
+  "cockpit__slitTemplates:list<t>"{
+    slit:t="m4_gunner_sight"
+  }
+
+  "cockpit__slitEids:list<eid>"{
+  }
+}
+
+us_m4a1_76w_sherman_commander_cockpit{
+  _use:t="base_commander_cockpit_no_slits"
+  animchar__res:t="t_26_1940_commander_char"
+  cockpit__minForwardOffset:r=-0.05
+  cockpit__offset:p3=-0.0, 0.0, -0.0
+
+  "cockpit__cockpitOffsetBySlit:list<p3>"{
+    slit:p3=-0.5, 1.0, -0.45
+  }
+
+  "cockpit__slitForwardOffset:list<r>"{
+    slit:r=0.15
+  }
+
+  "cockpit__slitIsGun:list<b>"{
+    slit:b=yes
+  }
+
+  "cockpit__slitNodeNames:list<t>"{
+    slit:t="cam_front"
+  }
+
+  "cockpit__visibleVehicleNodeNames:list<t>"{
+    node:t="gun_barrel"
+    node:t="bone_gun"
+    node:t="bone_turret"
+    node:t="bone_mg_aa_h_01"
+    node:t="bone_mg_aa_v_01"
+    node:t="hatch_02"
+    node:t="hatch_03"
+  }
+
+  "cockpit__periscopeLimits:list<p4>"{
+    slit:p4=-90.0, 90.0, -5.0, 25.0
+  }
+
+  "cockpit__periscopeSpeed:list<p2>"{
+    slit:p2=35.0, 35.0
+  }
+
+  "cockpit__slitZoom:array"{
+
+    "slit:list<r>"{
+      zoom:r=1.44
+    }
+  }
+
+  "cockpit__slitZoomTime:list<r>"{
+    slit:r=0.0
+  }
+
+  "cockpit__slitTemplates:list<t>"{
+    slit:t="default_periscope"
+  }
+
+  "cockpit__slitEids:list<eid>"{
+  }
+}
+
+us_m4a1_76w_sherman_driver_cockpit{
+  _use:t="base_driver_cockpit"
+  animchar__res:t="ba_11_driver_char"
+  cockpit__offset:p3=-0.37, -0.3, 0.23
+  cockpit__minForwardOffset:r=-0.0
+
+  "cockpit__visibleVehicleNodeNames:list<t>"{
+    node:t="gun_barrel"
+    node:t="bone_gun"
+    node:t="root"
+  }
+
+  "cockpit__slitForwardOffset:list<r>"{
+    slit:r=-0.05
+  }
+
+  "cockpit__periscopeLimits:list<p4>"{
+    slit:p4=-45.0, 45.0, -0.0, 0.0
+  }
+
+  "cockpit__periscopeSpeed:list<p2>"{
+    slit:p2=35.0, 35.0
+  }
+
+  "cockpit__slitZoom:array"{
+
+    "slit:list<r>"{
+      zoom:r=1.44
+    }
+  }
+
+  "cockpit__slitZoomTime:list<r>"{
+    slit:r=0.0
+  }
+}
+
+us_m4a1_76w_sherman_gunner_cockpit{
+  _use:t="base_gunner_cockpit"
+  animchar__res:t="ba_11_gunner_char"
+  cockpit__offset:p3=0.0, 0.0, 0.0
+
+  "cockpit__cockpitOffsetBySlit:list<p3>"{
+    slit:p3=-0.75, -0.064, 0.236
+    slit:p3=-0.0, 0.8, -0.38
+  }
+
+  "cockpit__visibleVehicleNodeNames:list<t>"{
+    node:t="gun_barrel"
+  }
+
+  "cockpit__slitNodeNames:list<t>"{
+    slit:t="cam_front_right"
+    slit:t="cam_front"
+  }
+
+  "cockpit__slitForwardOffset:list<r>"{
+    slit:r=0.15
+    slit:r=0.16
+  }
+
+  "cockpit__slitIsGun:list<b>"{
+    slit:b=yes
+    slit:b=yes
+  }
+
+  "cockpit__attachNodeNames:list<t>"{
+    node:t="bone_camera_gunner"
+    node:t="bone_turret"
+  }
+
+  "cockpit__attachNodeIndices:list<i>"{
+  }
+
+  "cockpit__periscopeLimits:list<p4>"{
+    slit:p4=-0.0, 0.0, 0.0, 0.0
+    slit:p4=-0.0, 0.0, -8.0, 25.0
+  }
+
+  "cockpit__periscopeSpeed:list<p2>"{
+    slit:p2=-1.0, -1.0
+    slit:p2=35.0, 35.0
+  }
+
+  "cockpit__slitZoom:array"{
+
+    "slit:list<r>"{
+      zoom:r=5.0
+    }
+
+    "slit:list<r>"{
+      zoom:r=1.44
+    }
+  }
+
+  "cockpit__slitZoomTime:list<r>"{
+    slit:r=0.05
+    slit:r=0.0
+  }
+
+  "cockpit__slitTemplates:list<t>"{
+    slit:t="us_m71d"
+    slit:t="default_periscope"
+  }
+
+  "cockpit__slitEids:list<eid>"{
+  }
+}
+
+us_m4a1_76w_sherman_in_the_mood_battlepass_premium{
+  _use:t="us_m4a1_76w_sherman_common"
+  item__name:t="items/us_m4a1_76w_sherman_in_the_mood_battlepass_premium"
+
+  "disableDMParts:list<t>"{
+    part:t="ex_armor_body_l_01"
+    part:t="ex_armor_body_l_02"
+    part:t="ex_armor_body_l_03"
+    part:t="ex_armor_body_l_04"
+    part:t="ex_armor_body_l_05"
+    part:t="ex_armor_body_l_06"
+    part:t="ex_armor_body_l_07"
+    part:t="ex_armor_body_r_01"
+    part:t="ex_armor_body_r_02"
+    part:t="ex_armor_body_r_03"
+    part:t="ex_armor_body_r_04"
+    part:t="ex_armor_body_r_05"
+    part:t="ex_armor_body_r_06"
+    part:t="ex_armor_body_r_07"
+    part:t="ex_armor_turret_l_01"
+    part:t="ex_armor_turret_l_02"
+    part:t="ex_armor_turret_r_01"
+    part:t="ex_armor_turret_r_02"
+    part:t="ex_armor_turret_r_03"
+  }
+
+  "animchar__objTexSet:object"{
+
+    "m4a1_76w_sherman_body_c*:object"{
+      "m4a1_76w_sherman_in_the_mood_body_c*":t="camo_skin_tex"
+    }
+
+    "m4a1_76w_sherman_turret_c*:object"{
+      "m4a1_76w_sherman_in_the_mood_turret_c*":t="camo_skin_tex"
+    }
+  }
+
+  "animchar__objTexReplace:object"{
+    "us_camo_olive*":t="us_camo_bicolor_green_black*"
+  }
+}

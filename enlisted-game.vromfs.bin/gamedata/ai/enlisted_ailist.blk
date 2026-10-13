@@ -1,0 +1,138 @@
+repeat{
+  name:t="squad_member"
+
+  setDebugSym{
+    beh:t="I1"
+  }
+
+  sequencer{
+
+    onceUntilReset{
+    }
+
+    repeat{
+      count:i=1
+
+      stopAim{
+      }
+
+      sequencer{
+
+        findWeaponSlotWithTag{
+          tag:t="buildingTool"
+          toParam:t="weaponSlot"
+        }
+
+        isWeaponSlotSelected{
+          slotParam:t="weaponSlot"
+        }
+
+        chooseBestWeapon{
+        }
+
+        wait{
+          range:p2=1.0, 1.0
+          resetable:b=yes
+        }
+      }
+
+      sequencer{
+
+        findWeaponSlotWithTag{
+          tag:t="mortar"
+          toParam:t="weaponSlot"
+        }
+
+        isWeaponSlotSelected{
+          slotParam:t="weaponSlot"
+        }
+
+        chooseBestWeapon{
+        }
+
+        wait{
+          range:p2=0.6, 1.2
+          resetable:b=yes
+        }
+      }
+
+      sequencer{
+
+        isGrenadeSelected{
+        }
+
+        chooseBestWeapon{
+        }
+
+        wait{
+          range:p2=1.0, 1.0
+          resetable:b=yes
+        }
+      }
+    }
+  }
+
+  orderedSelector{
+
+    isVarsIntEqual{
+      lhs:t="forceMove"
+      rhs_value:i=0
+    }
+
+    success{
+
+      sequencer{
+
+        setDebugSym{
+          beh:t="I2"
+        }
+
+        setIntVar{
+          to:t="forceMove"
+          value:i=0
+        }
+
+        wait{
+          range:p2=0.5, 1.0
+          resetable:b=yes
+        }
+
+        wait{
+          range:p2=0.1, 0.5
+          resetable:b=yes
+        }
+
+        detachFromStationaryGun{
+        }
+
+        parallel{
+
+          moveToPos{
+            posParam:t="forceMovePos"
+            sprintTimerRange:p2=10.0, 20.0
+            minDistToSprint:r=3.0
+            lookVisc:r=0.1
+            tryClimbing:b=no
+            maxStanceParam:t="maxStance"
+            stuckDirParam:t="stuckDir"
+            timeToStuck:r=0.5
+            incObstacles:b=yes
+            avoidAiObstacles:b=no
+            distThreshold:r=1.0
+            jumpDownTraceCheck:p3=0.4, 1.0, 0.15
+          }
+
+          wait{
+            range:p2=0.5, 1.0
+            resetable:b=yes
+          }
+        }
+      }
+    }
+  }
+
+  subTree{
+    name:t=""
+    refId:t="behaviour"
+  }
+}

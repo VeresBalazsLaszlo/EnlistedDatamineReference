@@ -1,0 +1,80 @@
+clips{
+  default_animation_mask:t="soldier_lower_nodemask"
+  default_tags:t="walk,melee_weapon,heavy_weapon,default_weapon"
+
+  lower_run{
+    tags:t="walk,heavy_weapon,default_weapon"
+    play_speed_multiplier_range:p2=0.5, 2.0
+    nextClip:t="lower_run"
+
+    in_place_animation{
+      velocity_magnitude:r=3.5
+    }
+
+    use_foot_ik_locker{
+      velocity_threshold:r=0.45
+    }
+
+    set_anim_tree_timer{
+      timer_name:t=":run_timer"
+      timer_cycle:r=0.66
+    }
+  }
+
+  lower_run_45{
+    play_speed_multiplier_range:p2=0.5, 2.0
+    nextClip:t="lower_run_45"
+
+    in_place_animation{
+      velocity_direction:r=45.0
+      velocity_magnitude:r=4.0
+    }
+
+    use_foot_ik_locker{
+      velocity_threshold:r=0.45
+    }
+
+    set_anim_tree_timer{
+      timer_name:t=":run_timer"
+      timer_cycle:r=0.66
+    }
+  }
+
+  lower_run_315{
+    play_speed_multiplier_range:p2=0.5, 2.0
+    nextClip:t="lower_run_315"
+
+    in_place_animation{
+      velocity_direction:r=315.0
+      velocity_magnitude:r=4.0
+    }
+
+    use_foot_ik_locker{
+      velocity_threshold:r=0.45
+    }
+
+    set_anim_tree_timer{
+      timer_name:t=":run_timer"
+      timer_cycle:r=0.66
+    }
+  }
+
+  lower_run_knife{
+    tags:t="walk,melee_weapon"
+    play_speed_multiplier_range:p2=0.5, 2.0
+    nextClip:t="lower_run_knife"
+
+    in_place_animation{
+      velocity_magnitude:r=3.5
+    }
+
+    use_foot_ik_locker{
+      velocity_threshold:r=0.45
+    }
+
+    set_anim_tree_timer{
+      timer_name:t=":run_timer"
+      timer_cycle:r=0.66
+    }
+  }
+}

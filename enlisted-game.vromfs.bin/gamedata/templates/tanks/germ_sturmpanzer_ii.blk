@@ -1,0 +1,232 @@
+germ_sturmpanzer_ii{
+  _use:t="base_sturmpanzer_ii"
+  _use:t="germ_sturmpanzer_ii_vehicle_sound"
+  commanderCockpitFpsCamMaxAngle:p2=40.0, 5.0
+  gunner_cam_limit__useCockpitDir:b=yes
+  gunnerFpsCamMaxAngle:p2=8.0, 5.0
+  item__iconOffset:p2=0.0, 0.35
+  item__iconScale:r=1.4
+
+  "disableDMParts:list<t>"{
+    part:t="gunner"
+    part:t="loader"
+    part:t="commander"
+    part:t="machine_gunner"
+    part:t="driver"
+  }
+
+  _group{
+    _tags:t="render"
+    animchar_camera_target__node_name:t="bone_camera_gunner"
+    animchar_camera_target__node_offset:p3=0.0, 1.0, 0.0
+    animchar_camera_target__nodeIndex:i=-1
+  }
+
+  "onlyRootDecorAttach:tag"{
+  }
+
+  "vehicle_seats__seatsProvideOrder:tag"{
+  }
+
+  "vehicle_seats__seats:shared:array"{
+
+    "seats:object"{
+      name:t="commander"
+      nextSeat:t="main_gunner"
+      locName:t="vehicle_seats/commander"
+      attachNode:t="commander"
+      shouldHideOwner:b=no
+      maxPosWithOpenHatch:r=0.4
+      ignoreAttachNodeRotation:b=yes
+      attachTm:m=[[0.7517973, -0.2023889, -0.4516975] [0.1489863, 0.8758439, -0.1444631] [0.4719976, 0.04589418, 0.7650211] [-0.24, 0.12, 0.21]]
+      cameraType:t="commander"
+      seatComponent:t="isDriver"
+      receiveDamageFromDMPart:t="commander"
+      cameraOffset:p3=-0.3, -0.3, -0.0
+      isHoldGunModeAllowed:b=no
+
+      "effectors:object"{
+        r.foot:t="pedal_rfoot_2"
+        l.foot:t="pedal_lfoot_2"
+
+        "r.hand:object"{
+          rel_tm:m=[[0.4081217, 0.2528128, 0.877225] [0.4339165, -0.899132, 0.05725024] [0.8032139, 0.3572771, -0.4766546] [0.3317432, 0.3641083, -0.3115387]]
+          node:t="bone_turret"
+        }
+
+        "l.hand:object"{
+          rel_tm:m=[[-0.304136, -0.8545545, 0.421] [0.03322987, 0.4321484, 0.9011894] [-0.9520485, 0.2880738, -0.1030349] [-0.1952972, -0.258625, 0.02395248]]
+          node:t="lefthand_2"
+        }
+      }
+    }
+
+    "seats:object"{
+      name:t="main_gunner"
+      locName:t="vehicle_seats/gunner"
+      attachNode:t="gunner"
+      ignoreAttachNodeRotation:b=yes
+      attachTm:m=[[0.3986033, -0.3660256, -0.7190502] [0.1774582, 0.8221241, -0.320121] [0.7870999, 0.0, 0.4363266] [-0.22, 0.11, 0.25]]
+      seatComponent:t="isGunner"
+      nextSeat:t="driver"
+      shouldHideOwner:b=no
+      receiveDamageFromDMPart:t="gunner"
+      cameraNodeName:t="bone_camera_gunner"
+      cockpitTemplate:t="germ_sturmpanzer_ii_gunner_cockpit"
+      isHoldGunModeAllowed:b=no
+
+      "turretNames:array"{
+        turret:t="turret_01"
+      }
+
+      "effectors:object"{
+        r.foot:t="pedal_rfoot_3"
+        l.foot:t="pedal_lfoot_3"
+
+        "l.hand:object"{
+          rel_tm:m=[[0.1495023, 0.3569149, 0.9220966] [-0.795433, -0.5105268, 0.326575] [0.5873134, -0.7822884, 0.2075765] [1.539879, 0.6712663, -0.46315]]
+          node:t="bone_turret"
+        }
+
+        "r.hand:object"{
+          rel_tm:m=[[-0.008065722, 0.3542458, 0.9351182] [0.0144261, -0.9350091, 0.354329] [0.9998632, 0.01634802, 0.002431126] [1.104332, 0.6589398, -0.5390167]]
+          node:t="bone_turret"
+        }
+      }
+    }
+
+    "seats:object"{
+      name:t="driver"
+      locName:t="vehicle_seats/driver"
+      seatOwnsEntityControl:b=yes
+      attachNode:t="driver"
+      ignoreAttachNodeRotation:b=yes
+      attachTm:m=[[0.9, 0.0, 0.0] [0.0, 0.9, 0.0] [0.0, 0.0, 0.9] [-0.25, -0.3, 0.0]]
+      seatComponent:t="isDriver"
+      shouldHideOwner:b=no
+      receiveDamageFromDMPart:t="driver"
+      cameraNodeName:t="bone_camera_driver"
+      cockpitTemplate:t="germ_sturmpanzer_ii_driver_cockpit"
+      seatAnimUpper:t="drive_passenger"
+      seatAnimLower:t="drive_passenger"
+      isHoldGunModeAllowed:b=no
+
+      "effectors:object"{
+        r.hand:t="righthand_1"
+        l.hand:t="lefthand_1"
+        r.foot:t="pedal_rfoot_1"
+        l.foot:t="pedal_lfoot_1"
+      }
+    }
+
+    "seats:object"{
+      name:t="loader"
+      canPlaceManually:b=no
+      locName:t="vehicle_seats/loader"
+      attachNode:t="loader"
+      ignoreAttachNodeRotation:b=yes
+      attachTm:m=[[0.4514491, -0.4362338, 0.6446794] [0.250212, 0.7869791, 0.3573076] [-0.7372143, 3.620977e-07, 0.5162486] [-0.11, -0.01, -0.42]]
+      seatComponent:t="isPassenger"
+      shouldHideOwner:b=no
+      receiveDamageFromDMPart:t="loader"
+      cameraNodeName:t="bone_camera_driver"
+      isHoldGunModeAllowed:b=no
+
+      "loaderTurretNames:array"{
+        turret:t="turret_01"
+      }
+
+      "effectors:object"{
+        r.foot:t="pedal_rfoot_4"
+        l.foot:t="pedal_lfoot_4"
+
+        "r.hand:object"{
+          rel_tm:m=[[0.04515766, 0.510923, -0.8584408] [0.1173158, -0.8560828, -0.5033481] [-0.9920669, -0.07797854, -0.0985979] [1.399591, 0.7267692, 0.3452148]]
+          node:t="bone_turret"
+        }
+
+        "l.hand:object"{
+          rel_tm:m=[[0.01927977, 0.6875519, -0.7258801] [0.2311358, -0.7094128, -0.6658148] [-0.97273, -0.15494, -0.172595] [1.118037, 0.5585148, 0.3401642]]
+          node:t="bone_turret"
+        }
+      }
+    }
+  }
+}
+
+germ_sturmpanzer_ii_gunner_cockpit{
+  _use:t="base_gunner_cockpit"
+  animchar__res:t="t_26_1940_gunner_char"
+  cockpit__offset:p3=-1.32982, 0.479557, 0.728512
+
+  "cockpit__cockpitOffsetBySlit:list<p3>"{
+    item:p3=-0.1, -0.1, -0.1
+  }
+
+  "cockpit__slitForwardOffset:list<r>"{
+    slit:r=0.15
+  }
+
+  "cockpit__attachNodeNames:list<t>"{
+    node:t="bone_gun_barrel"
+  }
+
+  "cockpit__attachNodeIndices:list<i>"{
+  }
+
+  "cockpit__visibleVehicleNodeNames:list<t>"{
+    node:t="gun_barrel"
+    node:t="bone_gun"
+    node:t="bone_turret"
+  }
+
+  "cockpit__slitNodeNames:list<t>"{
+    slit:t="cam_front_right"
+  }
+
+  "cockpit__slitIsGun:list<b>"{
+    slit:b=yes
+  }
+
+  "cockpit__slitZoom:array"{
+
+    "slit:list<r>"{
+      zoom:r=4.5
+      zoom:r=5.0
+    }
+  }
+
+  "cockpit__slitZoomTime:list<r>"{
+    slit:r=0.05
+  }
+
+  "cockpit__slitTemplates:list<t>"{
+    slit:t="germ_sfl_zf_1a"
+  }
+
+  "cockpit__slitEids:list<eid>"{
+  }
+}
+
+germ_sturmpanzer_ii_driver_cockpit{
+  _use:t="base_driver_cockpit_no_slits"
+  animchar__res:t="pzkpfw_iii_e_driver_char"
+  cockpit__offset:p3=-0.330518, -0.183788, -0.0599079
+
+  "cockpit__visibleVehicleNodeNames:list<t>"{
+    node:t="track_l"
+    node:t="track_r"
+  }
+
+  "cockpit__slitForwardOffset:list<r>"{
+    slit:r=-0.05
+  }
+
+  "cockpit__slitIsGun:list<b>"{
+    slit:b=no
+  }
+
+  "cockpit__slitNodeNames:list<t>"{
+    slit:t="cam_front"
+  }
+}

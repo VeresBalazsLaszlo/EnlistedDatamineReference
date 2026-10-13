@@ -1,0 +1,48 @@
+mass:r=0.33
+caliber:r=0.03
+speed:r=500.0
+Cx:r=0.6938
+maxDistance:r=2500.0
+normalizationPreset:t="default"
+modelName:t="tank_bullet_he"
+ricochetPreset:t="defaultExt"
+groundRicochetPreset:t="defaultExt"
+hitPowerMult:r=15.0
+secondaryShattersPreset:t="ap"
+onHitChanceMultFire:r=3.0
+stabilityThreshold:r=0.05
+onHitChanceMultExplFuel:r=4500.0
+stabilityReductionAfterRicochet:r=0.5
+stabilityReductionAfterPenetration:r=0.15
+relativeVelHitShift:p2=300.0, 1000.0
+bulletType:t="i"
+relativeVelArmorShift:p2=200.0, 1000.0
+fuseDelayDist:r=1.0
+explodeTreshold:r=0.4
+explodeHitPower:r=18.0
+explodeArmorPower:r=6.0
+explodeRadius:p2=0.037, 0.26
+shutterDamage:b=yes
+shutterDamageRadius:r=0.4
+shutterAmount:i=13
+shutterArmorPower:r=6.0
+shutterHit:r=3.0
+
+stabilityRicochetModifier{
+  mod1:p2=0.0, 0.05
+  mod2:p2=20.0, 0.1
+  mod3:p2=30.0, 0.2
+  mod3:p2=45.0, 0.3
+}
+
+hitpower{
+  HitPower10m:p2=1.0, 50.0
+  HitPower1000m:p2=0.9, 300.0
+  HitPower1500m:p2=0.1, 700.0
+  HitPower2000m:p2=0.008, 1500.0
+}
+
+tracer{
+  headColor:c=0, 0, 0, 0
+  smokeColor:c=0, 0, 0, 0
+}

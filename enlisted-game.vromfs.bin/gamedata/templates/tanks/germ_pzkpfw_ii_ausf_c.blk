@@ -1,0 +1,240 @@
+germ_pzkpfw_II_ausf_C{
+  _use:t="germ_pzkpfw_II_ausf_C_common"
+}
+
+germ_pzkpfw_II_ausf_C_common{
+  _use:t="base_pzkpfw_ii_ausf_c"
+  _use:t="germ_pzkpfw_II_ausf_C_common_vehicle_sound"
+  vehicle_net_phys__blk:t="gamedata/units/tanks/pzkpfw_II_ausf_C.blk:VehiclePhys"
+  damage_model__blk:t="gamedata/units/tanks/pzkpfw_II_ausf_C.blk"
+  item__iconOffset:p2=0.0, 0.3
+  item__iconScale:r=1.55
+  commanderCockpitFpsCamMaxAngle:p2=40.0, 5.0
+  gunner_cam_limit__useCockpitDir:b=yes
+
+  "vehicle_seats__effectors:array"{
+  }
+
+  "vehicle_seats__seatsProvideOrder:tag"{
+  }
+
+  "vehicle_seats__seats:shared:array"{
+
+    "seats:object"{
+      name:t="main_gunner"
+      locName:t="vehicle_seats/gunner"
+      attachNode:t="commander"
+      ignoreAttachNodeRotation:b=yes
+      attachTm:m=[[0.9, 0.0, 0.0] [0.0, 0.9, 0.0] [0.0, 0.0, 0.9] [-0.14, -0.7, 0.13]]
+      seatComponent:t="isGunner"
+      nextSeat:t="driver"
+      shouldHideOwner:b=yes
+      receiveDamageFromDMPart:t="commander"
+      cameraNodeName:t="bone_camera_gunner"
+      cockpitTemplate:t="germ_pzkpfw_II_ausf_C_gunner_cockpit"
+      hatchRotationAxis:p3=1.7, 0.0, 0.0
+      seatAnimUpper:t="drive_driver"
+      seatAnimLower:t="drive_driver"
+
+      "turretNames:array"{
+        turret:t="turret_01"
+        turret:t="turret_02"
+      }
+
+      "hatchNodes:array"{
+        node:t="hatch_01"
+      }
+
+      "effectors:object"{
+
+        "l.hand:object"{
+          rel_tm:m=[[0.09712002, 0.2593739, 0.9608809] [0.7552139, 0.6096138, -0.240888] [-0.648245, 0.749064, -0.136677] [-0.01873779, 0.1982863, 0.7120686]]
+          node:t="commander"
+        }
+
+        "r.hand:object"{
+          rel_tm:m=[[0.4396184, -0.03540846, 0.8974868] [0.7937933, -0.4522344, -0.4066678] [0.4202723, 0.8911944, -0.1707025] [0.01731873, -0.04792458, 0.7507153]]
+          node:t="commander"
+        }
+      }
+    }
+
+    "seats:object"{
+      name:t="driver"
+      locName:t="vehicle_seats/driver"
+      seatOwnsEntityControl:b=yes
+      attachNode:t="driver"
+      ignoreAttachNodeRotation:b=yes
+      attachTm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-0.25, -0.25, 0.0]]
+      seatComponent:t="isDriver"
+      shouldHideOwner:b=yes
+      receiveDamageFromDMPart:t="driver"
+      cameraNodeName:t="bone_camera_driver"
+      cameraOffset:p3=0.15, -0.0, -0.0
+      cockpitTemplate:t="germ_pzkpfw_II_ausf_C_driver_cockpit"
+    }
+
+    "seats:object"{
+      name:t="loader"
+      canPlaceManually:b=no
+      attachNode:t="bone_turret"
+      shouldHideOwner:b=yes
+      locName:t="vehicle_seats/loader"
+      ignoreAttachNodeRotation:b=yes
+      hatchRotationAxis:p3=1.7, 0.0, 0.0
+      attachTm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-0.2, -0.65, -0.0]]
+      seatComponent:t="isDriver"
+      receiveDamageFromDMPart:t="loader"
+      cameraNodeName:t="bone_turret"
+
+      "loaderTurretNames:array"{
+        turret:t="turret_01"
+      }
+    }
+  }
+
+  "disableDMParts:list<t>"{
+    part:t="ex_armor_01"
+  }
+}
+
+germ_pzkpfw_II_ausf_C_driver_cockpit{
+  _use:t="base_driver_cockpit_no_slits"
+  animchar__res:t="pz_2c_driver_char"
+  cockpit__offset:p3=-1.0, -0.5, -0.2
+
+  "cockpit__visibleVehicleNodeNames:list<t>"{
+  }
+
+  "cockpit__slitForwardOffset:list<r>"{
+    slit:r=-0.08
+    slit:r=-0.05
+    slit:r=-0.05
+    slit:r=-0.05
+  }
+
+  "cockpit__slitIsGun:list<b>"{
+    slit:b=no
+    slit:b=no
+    slit:b=no
+    slit:b=no
+  }
+
+  "cockpit__slitNodeNames:list<t>"{
+    slit:t="cam_front"
+    slit:t="cam_left"
+    slit:t="cam_back"
+    slit:t="cam_right"
+  }
+}
+
+germ_pzkpfw_II_ausf_C_gunner_cockpit{
+  _use:t="base_gunner_cockpit"
+  animchar__res:t="pz_2c_commander_char"
+  cockpit__offset:p3=-0.0, -0.0, -0.0
+
+  "cockpit__attachNodeNames:list<t>"{
+    node:t="bone_camera_gunner"
+    node:t="bone_turret"
+    node:t="bone_turret"
+  }
+
+  "cockpit__cockpitOffsetBySlit:list<p3>"{
+    slit:p3=-0.7, 0.0, 0.0
+    slit:p3=0.0, 0.3, 0.0
+    slit:p3=0.0, 0.3, 0.0
+  }
+
+  "cockpit__attachNodeIndices:list<i>"{
+  }
+
+  "cockpit__visibleVehicleNodeNames:list<t>"{
+    node:t="@root"
+    node:t="track_l"
+    node:t="track_r"
+    node:t="ex_decor_l_01"
+    node:t="ex_decor_r_01"
+    node:t="ex_decor_r_02"
+    node:t="ex_lantern_l_01"
+    node:t="ex_lantern_l_02"
+    node:t="ex_lantern_r_01"
+    node:t="ex_armor_02"
+    node:t="hatch_06"
+    node:t="hatch_07"
+    node:t="ex_decor_r_06"
+    node:t="ex_decor_r_05"
+    node:t="ex_decor_l_06"
+    node:t="ex_decor_l_05"
+    node:t="ex_decor_l_04"
+    node:t="antenna"
+    node:t="gun_barrel"
+  }
+
+  "cockpit__slitForwardOffset:list<r>"{
+    slit:r=0.32
+    slit:r=0.0
+    slit:r=0.0
+  }
+
+  "cockpit__slitNodeNames:list<t>"{
+    slit:t="cam_front"
+    slit:t="cam_right"
+    slit:t="cam_back"
+  }
+
+  "cockpit__slitIsGun:list<b>"{
+    slit:b=yes
+    slit:b=no
+    slit:b=no
+  }
+
+  "cockpit__slitZoom:array"{
+
+    "slit:list<r>"{
+      zoom:r=1.9
+      zoom:r=3.5
+    }
+
+    "slit:list<r>"{
+      zoom:r=1.0
+    }
+
+    "slit:list<r>"{
+      zoom:r=1.0
+    }
+  }
+
+  "cockpit__slitZoomTime:list<r>"{
+    slit:r=0.05
+    slit:r=0.0
+    slit:r=0.0
+  }
+
+  "cockpit__slitTemplates:list<t>"{
+    slit:t="germ_tzf4"
+  }
+
+  "cockpit__slitEids:list<eid>"{
+  }
+}
+
+germ_pzkpfw_II_ausf_C_commander_cockpit{
+  _use:t="base_commander_cockpit_no_slits"
+  animchar__res:t="pz_2c_commander_char"
+  cockpit__offset:p3=0.0, 0.35, -0.0
+
+  "cockpit__slitForwardOffset:list<r>"{
+    slit:r=-0.05
+    slit:r=-0.05
+  }
+
+  "cockpit__slitIsGun:list<b>"{
+    slit:b=no
+    slit:b=no
+  }
+
+  "cockpit__slitNodeNames:list<t>"{
+    slit:t="cam_right"
+    slit:t="cam_back"
+  }
+}

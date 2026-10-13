@@ -1,0 +1,334 @@
+ussr_su_122{
+  _use:t="ussr_su_122_common"
+}
+
+ussr_su_122_common{
+  _use:t="base_su_122"
+  _use:t="ussr_t_34_85_zis_53_vehicle_sound"
+  commanderCockpitFpsCamMaxAngle:p2=40.0, 5.0
+  gunner_cam_limit__useCockpitDir:b=yes
+  item__iconOffset:p2=0.1, 0.0
+  item__iconScale:r=1.2
+
+  "turrets__initAmmoDistribution:array"{
+
+    "ammo:object"{
+      slot:i=0
+      count:i=10
+    }
+
+    "ammo:object"{
+      slot:i=1
+      fill:b=yes
+    }
+
+    "ammo:object"{
+      slot:i=2
+      count:i=7
+    }
+  }
+
+  "onlyRootDecorAttach:tag"{
+  }
+
+  "vehicle_seats__seatsProvideOrder:tag"{
+  }
+
+  "vehicle_seats__effectors:array"{
+  }
+
+  "vehicle_seats__seats:shared:array"{
+
+    "seats:object"{
+      name:t="commander"
+      nextSeat:t="main_gunner"
+      locName:t="vehicle_seats/commander"
+      attachNode:t="commander"
+      shouldHideOwner:b=yes
+      maxPosWithOpenHatch:r=0.2
+      hatchRotationAxis:p3=1.4, 0.0, 0.0
+      ignoreAttachNodeRotation:b=yes
+      attachTm:m=[[0.9, 0.0, 0.0] [0.0, 0.9, 0.0] [0.0, 0.0, 0.9] [-0.95, 0.6, 0.365]]
+      seatComponent:t="isDriver"
+      receiveDamageFromDMPart:t="commander"
+      cameraNodeName:t="bone_turret"
+      cockpitTemplate:t="ussr_su_122_commander_cockpit"
+      isHoldGunModeAllowed:b=no
+
+      "hatchNodes:array"{
+        node:t="hatch_01"
+      }
+
+      "loaderTurretNames:array"{
+        turret:t="turret_01"
+      }
+
+      "effectors:object"{
+
+        "l.hand:object"{
+          rel_tm:m=[[0.5578673, 0.8274784, 0.0637378] [0.8259726, -0.561061, 0.05464125] [0.08097493, 0.02216303, -0.9964685] [0.758655, 2.443319, 0.06442261]]
+          node:t="root"
+        }
+
+        "r.hand:object"{
+          rel_tm:m=[[0.3651407, 0.9229212, 0.1220178] [0.9211082, -0.3771747, 0.09644844] [0.1350359, 0.07717406, -0.987829] [0.779204, 2.42325, 0.5077209]]
+          node:t="root"
+        }
+      }
+    }
+
+    "seats:object"{
+      name:t="main_gunner"
+      locName:t="vehicle_seats/gunner"
+      attachNode:t="gunner"
+      ignoreAttachNodeRotation:b=yes
+      attachTm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-0.25, -0.5, 0.0]]
+      seatComponent:t="isGunner"
+      nextSeat:t="driver"
+      shouldHideOwner:b=yes
+      receiveDamageFromDMPart:t="gunner"
+      cameraNodeName:t="bone_camera_gunner"
+      cockpitTemplate:t="ussr_su_122_gunner_cockpit"
+
+      "turretNames:array"{
+        turret:t="turret_01"
+      }
+    }
+
+    "seats:object"{
+      name:t="driver"
+      locName:t="vehicle_seats/driver"
+      seatOwnsEntityControl:b=yes
+      attachNode:t="driver"
+      ignoreAttachNodeRotation:b=yes
+      attachTm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-0.25, -0.25, 0.0]]
+      seatComponent:t="isDriver"
+      shouldHideOwner:b=yes
+      receiveDamageFromDMPart:t="driver"
+      cameraNodeName:t="bone_camera_driver"
+      cameraOffset:p3=0.15, -0.0, -0.0
+      cockpitTemplate:t="ussr_su_122_driver_cockpit"
+    }
+
+    "seats:object"{
+      locName:t="vehicle_seats/loader"
+      attachNode:t="loader"
+      ignoreAttachNodeRotation:b=yes
+      attachTm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-0.25, -0.5, 0.0]]
+      seatComponent:t="isPassenger"
+      shouldHideOwner:b=yes
+      receiveDamageFromDMPart:t="loader"
+      cameraNodeName:t="bone_camera_driver"
+
+      "loaderTurretNames:array"{
+        turret:t="turret_01"
+      }
+    }
+
+    "seats:object"{
+      locName:t="vehicle_seats/loader"
+      attachNode:t="loader_01"
+      ignoreAttachNodeRotation:b=yes
+      attachTm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-0.25, -0.5, 0.0]]
+      seatComponent:t="isPassenger"
+      shouldHideOwner:b=yes
+      receiveDamageFromDMPart:t="loader_01"
+      cameraNodeName:t="bone_camera_driver"
+
+      "loaderTurretNames:array"{
+        turret:t="turret_01"
+      }
+    }
+  }
+}
+
+ussr_su_122_gunner_cockpit{
+  _use:t="base_gunner_cockpit"
+  animchar__res:t="t_26_1940_gunner_char"
+  cockpit__minForwardOffset:r=-0.0
+  cockpit__offset:p3=0.0, 0.0, 0.0
+
+  "cockpit__cockpitOffsetBySlit:list<p3>"{
+    item:p3=-0.3, -0.05, 0.2
+  }
+
+  "cockpit__attachNodeNames:list<t>"{
+    node:t="bone_camera_gunner"
+  }
+
+  "cockpit__attachNodeIndices:list<i>"{
+  }
+
+  "cockpit__visibleVehicleNodeNames:list<t>"{
+    node:t="bone_gun"
+    node:t="gun_barrel"
+    node:t="@root"
+  }
+
+  "cockpit__slitNodeNames:list<t>"{
+    slit:t="cam_front_right"
+  }
+
+  "cockpit__slitForwardOffset:list<r>"{
+    slit:r=0.19
+  }
+
+  "cockpit__slitIsGun:list<b>"{
+    slit:b=yes
+  }
+
+  "cockpit__slitZoom:array"{
+
+    "slit:list<r>"{
+      zoom:r=3.5
+      zoom:r=4.0
+    }
+  }
+
+  "cockpit__slitZoomTime:list<r>"{
+    slit:r=0.05
+  }
+
+  "cockpit__slitTemplates:list<t>"{
+    slit:t="ussr_tsh_19"
+  }
+
+  "cockpit__slitEids:list<eid>"{
+  }
+
+  "cockpit__periscopeLimits:list<p4>"{
+    slit:p4=-0.0, 0.0, -5.0, 25.0
+  }
+
+  "cockpit__periscopeSpeed:list<p2>"{
+    slit:p2=15.0, 15.0
+  }
+}
+
+ussr_su_122_driver_cockpit{
+  _use:t="base_driver_cockpit_no_slits"
+  animchar__res:t="bt_7_driver_char"
+  cockpit__offset:p3=2.1, 1.1, 0.54
+  cockpit__minForwardOffset:r=-0.0
+
+  "cockpit__visibleVehicleNodeNames:list<t>"{
+    node:t="bone_gun"
+    node:t="gun_barrel"
+    node:t="@root"
+  }
+
+  "cockpit__slitForwardOffset:list<r>"{
+    slit:r=0.1
+  }
+
+  "cockpit__slitIsGun:list<b>"{
+    slit:b=no
+  }
+
+  "cockpit__slitNodeNames:list<t>"{
+    slit:t="cam_front"
+  }
+
+  "cockpit__attachNodeNames:list<t>"{
+    node:t="root"
+  }
+
+  "cockpit__attachNodeIndices:list<i>"{
+  }
+}
+
+ussr_su_122_commander_cockpit{
+  _use:t="base_commander_cockpit_no_slits"
+  animchar__res:t="t_26_1940_commander_char"
+  cockpit__offset:p3=1.0, 2.15, -0.76
+  cockpit__minForwardOffset:r=-0.0
+
+  "cockpit__cockpitOffsetBySlit:list<p3>"{
+    slit:p3=0.0, 0.0, 0.0
+  }
+
+  "cockpit__visibleVehicleNodeNames:list<t>"{
+    node:t="bone_gun"
+    node:t="gun_barrel"
+    node:t="@root"
+  }
+
+  "cockpit__attachNodeNames:list<t>"{
+    node:t="root"
+  }
+
+  "cockpit__attachNodeIndices:list<i>"{
+  }
+
+  "cockpit__slitForwardOffset:list<r>"{
+    slit:r=0.16
+  }
+
+  "cockpit__slitIsGun:list<b>"{
+    slit:b=yes
+  }
+
+  "cockpit__slitNodeNames:list<t>"{
+    slit:t="cam_front"
+  }
+
+  "cockpit__periscopeLimits:list<p4>"{
+    slit:p4=-90.0, 90.0, -5.0, 25.0
+  }
+
+  "cockpit__periscopeSpeed:list<p2>"{
+    slit:p2=35.0, 35.0
+  }
+
+  "cockpit__slitZoom:array"{
+
+    "slit:list<r>"{
+      zoom:r=1.44
+    }
+  }
+
+  "cockpit__slitZoomTime:list<r>"{
+    slit:r=0.0
+  }
+
+  "cockpit__slitTemplates:list<t>"{
+    slit:t="default_periscope"
+  }
+
+  "cockpit__slitEids:list<eid>"{
+  }
+}
+
+su_122_turret_01_122mm_m30{
+  _override:b=yes
+
+  "gun__ammoSetsInfo:shared:array"{
+
+    "122mm_ussr_HEAT:array"{
+
+      "shell:object"{
+        blk:t="gamedata/gen/weapons/shells/122mm_m30_122mm_ussr_heat.blk"
+        name:t="122mm_bp_462"
+        type:t="heat_tank"
+      }
+    }
+
+    "defaultSet:array"{
+
+      "shell:object"{
+        blk:t="gamedata/gen/weapons/shells/122mm_m30_defaultset.blk"
+        name:t="122mm_of_462"
+        type:t="he_frag_tank"
+      }
+    }
+
+    "122mm_ussr_Smoke:array"{
+
+      "shell:object"{
+        blk:t="gamedata/gen/weapons/shells/122mm_m30_122mm_ussr_smoke.blk"
+        name:t="122mm_d462a"
+        type:t="smoke_tank"
+      }
+    }
+  }
+}

@@ -1,0 +1,34 @@
+base_57mm_maxim_nordenfelt{
+  item__name:t="guns/57mm_maxim_nordenfelt"
+  gun__blk:t="gamedata/gen/weapons/april_event/57mm_maxim_nordenfelt.blk"
+  gun__shotFreq:r=0.25
+  gun__locName:t="57mm_maxim_nordenfelt"
+
+  "gun__ammoSetsInfo:shared:array"{
+
+    "defaultSet:array"{
+
+      "shell:object"{
+        blk:t="gamedata/gen/weapons/shells/april_event/57mm_maxim_nordenfelt_defaultset.blk"
+        name:t="57mm_gr_p"
+        type:t="aphe_tank"
+      }
+    }
+
+    "50mm_ger_HE:array"{
+
+      "shell:object"{
+        blk:t="gamedata/gen/weapons/shells/april_event/57mm_maxim_nordenfelt_50mm_ger_he.blk"
+        name:t="57mm_gr"
+        type:t="he_frag_tank"
+      }
+    }
+  }
+}
+
+tankgun_57mm_maxim_nordenfelt{
+  _use:t="tankgun"
+  _use:t="base_tankgun_cannon"
+  _use:t="base_57mm_maxim_nordenfelt"
+  turret__triggerGroup:i=0
+}

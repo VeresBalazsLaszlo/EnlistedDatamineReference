@@ -1,0 +1,64 @@
+human_speech{
+
+  _group{
+    _tags:t="sound"
+    human_speech__curPhraseIdx:i=-1
+    human_speech__queue:ip2=-1, -1
+    human_speech__queuedPreferredLanguage:t=""
+    human_speech__voiceIdx:i=0
+    human_speech__locale:t="_"
+
+    "human_speech__event:SoundEvent"{
+    }
+  }
+
+  _group{
+    _tags:t="server"
+    human_net_speech__defaultRcptFRange:r=40.0
+    human_net_speech__defaultRcptFRangeEnemy:r=40.0
+
+    "human_net_speech__lastNextTime:list<p2>"{
+    }
+  }
+
+  "human_speech__voices:array"{
+    _tags:t="sound"
+  }
+
+  "human_speech__speeches:shared:array"{
+  }
+
+  "human_speech__localeMap:shared:object"{
+    _tags:t="sound"
+    English:t="en"
+    Russian:t="ru"
+    German:t="de"
+    French:t="fr"
+    Spanish:t="es"
+    Italian:t="it"
+    Japanese:t="ja"
+    Korean:t="ko"
+    Chinese:t="zh"
+    TChinese:t="zh"
+    HChinese:t="zh"
+    Polish:t="pl"
+    Turkish:t="tr"
+    Portuguese:t="pt"
+    Czech:t="cs"
+    Ukrainian:t="uk"
+    Hungarian:t="hu"
+    Serbian:t="sr"
+    Romanian:t="ro"
+    Vietnamese:t="vi"
+    Thai:t="th"
+  }
+
+  "humanNetSpeech:tag"{
+  }
+}
+
+human_speech_disable{
+
+  "humanSpeechDisable:tag"{
+  }
+}

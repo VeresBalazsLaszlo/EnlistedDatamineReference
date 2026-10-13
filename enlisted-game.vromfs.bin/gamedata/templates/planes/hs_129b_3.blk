@@ -1,0 +1,271 @@
+hs_129b_3{
+  _use:t="hs_129b_3_base"
+  _use:t="squad_controlled_plane"
+  _use:t="hs_129b_2_plane_sound"
+  item__name:t="items/hs_129b_3"
+
+  "plane_glassCanopyNodes:list<t>"{
+    name:t="cover2_dm"
+  }
+
+  "vehicle_seats__seats:shared:array"{
+
+    "seats:object"{
+      name:t="driver"
+      locName:t="vehicle_seats/pilot"
+      seatOwnsEntityControl:b=yes
+      attachNode:t="pilot1"
+      ignoreAttachNodeRotation:b=yes
+      attachTm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-0.22, 0.07, -0.19]]
+      seatComponent:t="isDriver"
+      receiveDamageFromDMPart:t="pilot_dm"
+      cameraNodeName:t=""
+      cameraOffset:p3=0.8, 0.483, -0.031
+      cockpitTemplate:t="hs_129b_3_driver_cockpit"
+      roomSpace:i=0
+
+      "turretNames:array"{
+        turret:t="turret_01"
+        turret:t="turret_02"
+        turret:t="turret_03"
+      }
+
+      "cockpitEffectors:object"{
+        r.hand:t="stick_rhand_1"
+        l.hand:t="throttle_lhand_1"
+        r.foot:t="pedal_rfoot_1"
+        l.foot:t="pedal_lfoot_1"
+      }
+    }
+  }
+
+  "turret_control__emitterNodes:shared:array"{
+    node:t="flare1"
+    node:t="flare2"
+    node:t="flare6"
+  }
+
+  "turret_control__animVars:shared:array"{
+
+    "vars:object"{
+      curYawParamName:t="weapon_01_yaw"
+      curPitchParamName:t="weapon_01_pitch"
+    }
+
+    "vars:object"{
+      curYawParamName:t="weapon_02_yaw"
+      curPitchParamName:t="weapon_02_pitch"
+    }
+
+    "vars:object"{
+      curYawParamName:t="weapon_03_yaw"
+      curPitchParamName:t="weapon_03_pitch"
+    }
+  }
+
+  "turret_control__turretInfo:shared:array"{
+
+    "turretInfo:object"{
+      turretName:t="turret_01"
+      turretGroup:t="main_turrets"
+      trigger:t="machine_guns"
+      gun:t="planegun_hs_129b_3_7_92mm_mg17_01"
+    }
+
+    "turretInfo:object"{
+      turretName:t="turret_02"
+      turretGroup:t="main_turrets"
+      trigger:t="machine_guns"
+      gun:t="planegun_hs_129b_3_7_92mm_mg17_02"
+    }
+
+    "turretInfo:object"{
+      turretName:t="turret_03"
+      turretGroup:t="cannon_turrets"
+      trigger:t="cannons"
+      gun:t="planegun_hs_129b_3_75mm_bk75_01"
+    }
+  }
+
+  "turret_gun_flash_fx__flashNodes:shared:array"{
+    node:t="flare1"
+    node:t="flare2"
+    node:t="flare6"
+  }
+
+  "turret_gun_flash_fx__flashFx:shared:array"{
+    fx:t="muzzle_air_8mm"
+    fx:t="muzzle_air_8mm"
+    fx:t="muzzle_air_50mm"
+  }
+
+  "turret_gun_flash_fx__flashFxScale:shared:array"{
+    scale:r=1.0
+    scale:r=1.0
+    scale:r=1.0
+  }
+
+  "disableDMParts:list<t>"{
+    part:t="mk103"
+    part:t="flare5"
+    part:t="gun_37mm"
+    part:t="37mm_bk"
+    part:t="flare7"
+    part:t="gunsight"
+    part:t="flare3"
+    part:t="flare4"
+    part:t="cannon1_dm"
+    part:t="cannon2_dm"
+    part:t="cannon3_dm"
+    part:t="cannon4_dm"
+    part:t="cover4_dm"
+  }
+}
+
+base_hs_129b_3_7_92mm_mg17{
+  item__name:t="guns/gunmg17"
+  gun__blk:t="gamedata/weapons/planes/hs_129b_3/7_92mm_mg17.blk"
+  gun__shotFreq:r=20.0
+  gun__locName:t="gunmg17"
+  gun__shootNodeName:t="bone_mg_gun_twin"
+  gun__maxAmmo:i=1000
+
+  "gun__firingModes:array"{
+
+    "mode:object"{
+      modeType:t="automatic"
+    }
+  }
+
+  "gun__firingModeNames:array"{
+    mode:t="automatic"
+  }
+
+  "gun__shellsAmmo:array"{
+    ammo:i=1000
+  }
+
+  "gun__ammoSetsInfo:shared:array"{
+
+    "default:array"{
+
+      "shell:object"{
+        blk:t="gamedata/weapons/shells/planes/bullets/7_92mm_smk_l_spur_v_bullet.blk"
+        name:t="v"
+        type:t="ap_t_ball"
+      }
+
+      "shell:object"{
+        blk:t="gamedata/weapons/shells/planes/bullets/7_92mm_pmk_v_bullet.blk"
+        name:t="v"
+        type:t="ap_i_ball"
+      }
+
+      "shell:object"{
+        blk:t="gamedata/weapons/shells/planes/bullets/7_92mm_b_patrone_v_bullet.blk"
+        name:t="v"
+        type:t="he_ball"
+      }
+    }
+  }
+}
+
+base_hs_129b_3_75mm_bk75{
+  item__name:t="guns/cannonbk75"
+  gun__blk:t="gamedata/weapons/planes/hs_129b_3/75mm_bk75.blk"
+  gun__shotFreq:r=0.66
+  gun__locName:t="cannonbk75"
+  gun__shootNodeName:t="bone_mg_gun_twin"
+  gun__maxAmmo:i=13
+
+  "gun__firingModes:array"{
+
+    "mode:object"{
+      modeType:t="automatic"
+    }
+  }
+
+  "gun__firingModeNames:array"{
+    mode:t="automatic"
+  }
+
+  "gun__shellsAmmo:array"{
+    ammo:i=13
+  }
+
+  "gun__ammoSetsInfo:shared:array"{
+
+    "default:array"{
+
+      "shell:object"{
+        blk:t="gamedata/weapons/shells/planes/bullets/75mm_bk75_pzgr_39_apcbc_bullet.blk"
+        name:t="apcbc"
+        type:t="apcbc_tank"
+      }
+    }
+  }
+}
+
+planegun_hs_129b_3_7_92mm_mg17_01{
+  _use:t="tankgun"
+  _use:t="base_plane_machinegun"
+  _use:t="base_hs_129b_3_7_92mm_mg17"
+  _use:t="gunsound_7_92mm_mg17_aircraft"
+  gun__shootNodeName:t="flare1"
+  gun__maxAmmo:i=1000
+}
+
+planegun_hs_129b_3_7_92mm_mg17_02{
+  _use:t="tankgun"
+  _use:t="base_plane_machinegun"
+  _use:t="base_hs_129b_3_7_92mm_mg17"
+  _use:t="gunsound_7_92mm_mg17_aircraft"
+  gun__shootNodeName:t="flare2"
+  gun__maxAmmo:i=1000
+}
+
+planegun_hs_129b_3_75mm_bk75_01{
+  _use:t="tankgun"
+  _use:t="base_plane_machinegun"
+  _use:t="base_hs_129b_3_75mm_bk75"
+  _use:t="gunsound_45mm_ns45_aircraft"
+  gun__shootNodeName:t="flare6"
+  gun__maxAmmo:i=13
+}
+
+hs_129b_3_driver_cockpit{
+  _use:t="base_plane_cockpit"
+  _use:t="plane_telesight"
+  gunmod__maxZoom:r=4.0
+  gunmod__cameraOffset:p3=0.3, -0.053, 0.0008960776
+  cockpit__offset:p3=0.0, 0.0, 0.0
+  cockpit__angles:p3=0.0, 0.0, 0.0
+  cockpit__scale:p3=1.0, 1.0, 1.0
+  animchar__res:t="hs_129b_3_cockpit_char"
+  plane_anim__blk:t="gamedata/units/hs_129b_3.blk"
+  plane_sight__blk:t="gamedata/units/hs_129b_3.blk"
+  gunmod__reticleTex_res:t="zfr_4a_telesight"
+
+  "gunmod__drawScopeTrans:tag"{
+  }
+
+  "move_cockpit_node__nodeName:list<t>"{
+    node:t="stick_rhand_1"
+    node:t="throttle_lhand_1"
+  }
+
+  "move_cockpit_node__nodeId:list<i>"{
+    nodeId:i=-1
+    nodeId:i=-1
+  }
+
+  "move_cockpit_node__offset:list<p3>"{
+    item:p3=-0.0005, -0.018, 0.019
+    item:p3=0.032, -0.0225, -0.0315
+  }
+
+  "move_cockpit_node__rotation:list<p2>"{
+    item:p2=21.6, -7.8
+    item:p2=-27.3, -19.9
+  }
+}

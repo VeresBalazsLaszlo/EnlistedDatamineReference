@@ -1,0 +1,821 @@
+require ecs
+require ecs.common
+require ecs.safe
+require math
+require math.base
+require math.easing
+require math.ang
+require vehicle
+require player
+require AnimV20
+require GeomNodeTree
+require DagorMath
+require DagorSystem
+require DagorMath
+require DagorMathUtils
+require WorldRenderer
+require game.es.vehicle.vehicle_events
+require game.es.vehicle.vehicle_seats_common
+require enlisted.events_enlisted
+require dm
+require DngDm
+require strings
+
+let
+  quat_ident = float4(0.f, 0.f, 0.f, 1.f)
+
+[es(on_appear, after=(vehicle_seats_update_animchar_camera_target, vehicle_seats_update_animchar_camera_target_type_changed), on_event=(EventHeroChanged, EventOnSeatOwnersChanged), track=(vehicleCameraType, cockpit__eid, isTpsView), tag=render, REQUIRE=(vehicleCameraType, vehicleWithWatched, cockpit__eid))]
+def vehicle_change_cockpit_es(evt : Event;
+                              eid : EntityId;
+                              @shared_comp vehicle_seats__seats : Array;
+                              vehicle_seats__seatEids : EidList;
+                              vehicleCameraType : int;
+                              isTpsView : bool = false;
+                              var vehicle_sight__opacity : float&;
+                              animchar__objTexReplace : Object const?)
+  if isTpsView
+    return
+
+  if (vehicleCameraType == int(VehicleCameraType.VEHICLE_CAMERA_COMMANDER) ||
+      vehicleCameraType == int(VehicleCameraType.VEHICLE_CAMERA_DEAD) ||
+      vehicleCameraType == int(VehicleCameraType.VEHICLE_CAMERA_BOMBER_COCKPIT))
+    return
+
+  let heroSeatIdx = vehicle_get_watched_seat_idx(vehicle_seats__seatEids)
+  if heroSeatIdx < 0
+    return
+
+  let hasCockpit = find_query() <| $ [es] (cockpit__vehicleEid : EntityId)
+    return cockpit__vehicleEid == eid
+
+  if hasCockpit
+    return
+
+  let attachNodeIndex = get_int(vehicle_seats__seatEids[heroSeatIdx], "seat__cameraNodeNo") ?? -1
+  if attachNodeIndex < 0
+    return
+
+  let seat = get_ecs_object(vehicle_seats__seats[heroSeatIdx])
+  let cockpitTemplate = get_string(seat, "cockpitTemplate", "")
+  if cockpitTemplate == ""
+    return
+
+  let cockpitEffectors = get_ecs_object(seat, "cockpitEffectors")
+
+  vehicle_sight__opacity = 0.f
+
+  createEntitySync(cockpitTemplate) <| $(var init : ComponentsInitializer)
+    set(init, "cockpit__attachNodeIndex", attachNodeIndex)
+    set(init, "cockpit__vehicleEid", eid)
+    set(init, "cockpit__seatNo", heroSeatIdx)
+    set(init, "cockpit__cameraTime", 1.f)
+    set(init, "cockpit__forwardOffsetTime", 0.f)
+    set(init, "cockpit__isAttached", true)
+    if cockpitEffectors != null
+      set(init, "cockpit__effectorsInfo", *cockpitEffectors)
+    if animchar__objTexReplace != null
+      set(init, "animchar__objTexReplace", *animchar__objTexReplace)
+
+[es(track=animchar__objTexReplace)]
+def cockpit_tex_replace_changed(evt : Event;
+                                animchar__objTexReplace aka base_animchar__objTexReplace : Object;
+                                cockpit__eid : EntityId)
+  query(cockpit__eid) <| $ [es] (var animchar__objTexReplace aka cokpit_animchar__objTexReplace : Object)
+    cokpit_animchar__objTexReplace := base_animchar__objTexReplace
+
+[es(on_appear)]
+def cockpit_attach_nodes_init(evt : Event;
+                              cockpit__vehicleEid : EntityId;
+                              cockpit__attachNodeIndex : int;
+                              cockpit__attachNodeNames : StringList;
+                              cockpit__slitNodeNames : StringList;
+                              var cockpit__attachNodeIndices : IntList)
+  ecs::query(cockpit__vehicleEid) <| $ [es] (animchar : AnimcharBaseComponent)
+    let slitNodesCount = length(cockpit__slitNodeNames)
+    let attachNodesCount = length(cockpit__attachNodeNames)
+    let commonNodesCount = min(slitNodesCount, attachNodesCount)
+    resize(cockpit__attachNodeIndices, slitNodesCount)
+    for i in range(0, commonNodesCount)
+      let nodeName = string(cockpit__attachNodeNames[i])
+      cockpit__attachNodeIndices[i] = geomtree_findNodeIndex(*animchar.nodeTree, nodeName)
+    for i in range(commonNodesCount, slitNodesCount)
+      cockpit__attachNodeIndices[i] = cockpit__attachNodeIndex
+
+[es(tag=gameClient, on_appear, on_disappear, on_event=EventOnSeatOwnersChanged, REQUIRE=vehicleWithWatched)]
+def vehicle_is_cockpit_seat(evt : Event;
+                            @shared_comp vehicle_seats__seats : Array;
+                            vehicle_seats__seatEids : EidList;
+                            var cockpit__isHeroInCockpit : bool&)
+  let heroSeatIdx = vehicle_get_watched_seat_idx(vehicle_seats__seatEids)
+  if heroSeatIdx < 0
+    cockpit__isHeroInCockpit = false
+    return
+  let seat = get_ecs_object(vehicle_seats__seats[heroSeatIdx])
+  let cockpitTemplate = get_string(seat, "cockpitTemplate", "")
+  cockpit__isHeroInCockpit = cockpitTemplate != ""
+
+def reset_all_nodes_filter(var filter : UInt8List; animchar_render : AnimcharRendComponent; baseValue : uint8 = uint8(~0))
+  let nodesCount = length(filter)
+  for nodeId in range(0, nodesCount)
+    if animchar_render.sceneInstance |> scene_instance_is_node_visible(nodeId)
+      filter[nodeId] = baseValue
+    else
+      filter[nodeId] = uint8(0)
+
+def filter_update_hidden(var filter : UInt8List; animchar_render : AnimcharRendComponent)
+  let nodesCount = length(filter)
+  for nodeId in range(0, nodesCount)
+    if !animchar_render.sceneInstance |> scene_instance_is_node_visible(nodeId)
+      filter[nodeId] = uint8(0)
+    elif filter[nodeId] == uint8(0)
+      filter[nodeId] = uint8(~0)
+
+[es(tag=render, after=after_animchar_update_sync, REQUIRE_NOT=cockpit__binocular)]
+def vehicle_attach_cockpit_es(info : ParallelUpdateFrameDelayed;
+                              var transform : float3x4;
+                              var cockpit__isAttached : bool&;
+                              var cockpit__attachNodeIndex : int&;
+                              cockpit__attachNodeIndices : IntList const?;
+                              cockpit__currentSlit : int;
+                              cockpit__cockpitOffsetBySlit : Point3List const?;
+                              cockpit__offset : float3;
+                              cockpit__vehicleEid : EntityId;
+                              cockpit__seatNo : int;
+                              cockpit__angles : float3 const?;
+                              cockpit__scale = float3(1.0, 1.0, -1.0);
+                              cockpit__showInDeadVehicle : bool = false;
+                              cockpit__isBomberCockpit : bool = false)
+  cockpit__isAttached = false
+  query(cockpit__vehicleEid) <| $ [es(REQUIRE=vehicleWithWatched)] (animchar : AnimcharBaseComponent;
+                                                                    vehicle_seats__seatEids : EidList;
+                                                                    vehicleCameraType : int;
+                                                                    isTpsView : bool = false;
+                                                                    isAlive, isExploded : bool)
+
+    if (!cockpit__showInDeadVehicle && (!isAlive || isExploded)) || isTpsView
+      return
+
+    let bomberMode = vehicleCameraType == int(VehicleCameraType.VEHICLE_CAMERA_BOMBER_COCKPIT)
+    if bomberMode != cockpit__isBomberCockpit
+      return
+
+    if (vehicleCameraType == int(VehicleCameraType.VEHICLE_CAMERA_COMMANDER) ||
+       (vehicleCameraType == int(VehicleCameraType.VEHICLE_CAMERA_DEAD) && !cockpit__showInDeadVehicle))
+      return
+
+    let heroSeatNo = vehicle_get_watched_seat_idx(vehicle_seats__seatEids)
+    if heroSeatNo < 0 || heroSeatNo != cockpit__seatNo
+      return
+
+    if cockpit__attachNodeIndices != null
+      cockpit__attachNodeIndex = (*cockpit__attachNodeIndices)[cockpit__currentSlit]
+    cockpit__isAttached = true
+
+    var offset = cockpit__offset
+    if cockpit__cockpitOffsetBySlit != null
+      offset += (*cockpit__cockpitOffsetBySlit)[cockpit__currentSlit]
+
+    geomtree_getNodeWtmScalar(*animchar.nodeTree, cockpit__attachNodeIndex, transform)
+    transform[0] = transform[0] * cockpit__scale.x
+    transform[1] = transform[1] * cockpit__scale.y
+    transform[2] = transform[2] * cockpit__scale.z
+
+    transform[3] = transform * offset
+
+    if cockpit__angles != null
+      transform = transform * make_rot_cw_zyx(*cockpit__angles * DEG_TO_RAD)
+
+[es(tag=render, after=vehicle_attach_cockpit_es, REQUIRE_NOT=cockpit__binocular)]
+def vehicle_destroy_cockpit_es(info : UpdateStageInfoAct;
+                               eid : EntityId;
+                               cockpit__isAttached : bool;
+                               var animchar_render__enabled : bool&)
+  if !cockpit__isAttached
+    animchar_render__enabled = false
+    destroyEntity(eid)
+
+[es(tag=render, on_appear, before=(sync_human_cockpit_with_vehicle_es), track=cockpit__isAttached)]
+def vehicle_cockpit_slits_init(evt : Event;
+                               eid : EntityId;
+                               animchar : AnimcharBaseComponent;
+                               cockpit__isAttached : bool;
+                               cockpit__slitNodeNames : StringList;
+                               cockpit__slitAngles : FloatList const?;
+                               cockpit__cockpitOffsetBySlit : Point3List const?;
+                               cockpit__offset : float3;
+                               transform : float3x4;
+                               var cockpit__slitNodes : IntList;
+                               var cockpit__slitCameraOffsets : Point3List;
+                               var cockpit__slotRelToCockpitOffset : Point3List;
+                               var cockpit__slitCameraDirs : Point3List;
+                               var cockpit__periscopeAngles : Point2List)
+  if !cockpit__isAttached
+    return
+
+  let nodesCount = length(cockpit__slitNodeNames)
+  resize(cockpit__slitNodes, nodesCount)
+  resize(cockpit__slitCameraOffsets, nodesCount)
+  resize(cockpit__slotRelToCockpitOffset, nodesCount)
+  resize(cockpit__slitCameraDirs, nodesCount)
+  resize(cockpit__periscopeAngles, nodesCount)
+
+  var cockpitTm := transform
+  cockpitTm[2] = -cockpitTm[2]
+  let cockpitItm = inverse(cockpitTm)
+
+  for i in range(0, nodesCount)
+    let slitNodeId = geomtree_findNodeIndex(*animchar.nodeTree, string(cockpit__slitNodeNames[i]))
+    cockpit__slitNodes[i] = slitNodeId
+    if slitNodeId < 0
+      logerr("Cockpit node /*{cockpit__slitNodeNames[i]}*/ not found. Vehicle /*{eid}*/ /*{getEntityTemplateName(eid)}*/")
+      continue
+
+    var slitNodeWtm : float3x4
+    geomtree_getNodeWtmScalar(*animchar.nodeTree, slitNodeId, slitNodeWtm)
+
+    var offset = cockpit__offset
+    if cockpit__cockpitOffsetBySlit != null
+      offset += (*cockpit__cockpitOffsetBySlit)[i]
+    offset[2] = -offset[2]
+
+    let slitRelToCockpitTm = cockpitItm * slitNodeWtm
+    cockpit__slitCameraOffsets[i] = slitRelToCockpitTm[3] + offset
+    cockpit__slotRelToCockpitOffset[i] = slitRelToCockpitTm[3]
+
+    if cockpit__slitAngles != null
+      let angle = deg_to_rad((*cockpit__slitAngles)[i])
+      cockpit__slitCameraDirs[i] = float3(cos(angle), 0.f, sin(angle))
+    else
+      cockpit__slitCameraDirs[i] = normalize(slitRelToCockpitTm[0])
+
+[es(tag=render, on_appear, after=disable_animchar_nodes_es)]
+def nodes_filter_init(evt : Event;
+                      animchar_render : AnimcharRendComponent;
+                      var animchar_render__nodeVisibleStgFilters : UInt8List)
+  let renderNodesCount = int((*animchar_render.sceneInstance).nodeCount)
+  resize(animchar_render__nodeVisibleStgFilters, renderNodesCount)
+  reset_all_nodes_filter(animchar_render__nodeVisibleStgFilters, animchar_render)
+
+// We set the filter to RenderPass.RENDER_SHADOW to render the cockpit only in shadows.
+// This also prevents rendering inside main_dynamic_pass, since it has already been rendered in the vehicle cockpit prepass.
+[es(tag=render, on_appear, after=nodes_filter_init, REQUIRE=cockpit__isAttached)]
+def cockpit_nodes_filter_init(evt : Event;
+                              animchar_render : AnimcharRendComponent;
+                              var animchar_render__nodeVisibleStgFilters : UInt8List)
+  reset_all_nodes_filter(animchar_render__nodeVisibleStgFilters, animchar_render,
+                         uint8(int(RenderPass.RENDER_SHADOW)))
+
+[es(tag=render, on_appear, before=disable_animchar_nodes_es)]
+def cockpit_copy_disabled_parts(evt : Event; cockpit__vehicleEid : EntityId; var disableDMParts aka cockpit_disableDMParts : StringList&)
+  query(cockpit__vehicleEid) <| $ [es] (disableDMParts aka parent_disableDMParts : StringList)
+    cockpit_disableDMParts := parent_disableDMParts
+
+[es(tag=render, on_disappear)]
+def vehicle_cockpit_visible_nodes_destroy(evt : Event;
+                                          cockpit__vehicleEid : EntityId)
+  ecs::query(cockpit__vehicleEid) <| $ [es] (var animchar_render__nodeVisibleStgFilters : UInt8List;
+                                             animchar_render : AnimcharRendComponent)
+    reset_all_nodes_filter(animchar_render__nodeVisibleStgFilters, animchar_render)
+
+[es(tag=render, on_appear, track=cockpit__isAttached)]
+def vehicle_cockpit_visible_nodes_init(evt : Event;
+                                       cockpit__isAttached : bool;
+                                       cockpit__vehicleEid : EntityId;
+                                       cockpit__visibleVehicleNodeNames : StringList)
+  ecs::query(cockpit__vehicleEid) <| $ [es] (animchar_render : AnimcharRendComponent;
+                                             var animchar_render__nodeVisibleStgFilters : UInt8List)
+    let renderNodesCount = int((*animchar_render.sceneInstance).nodeCount)
+    if length(animchar_render__nodeVisibleStgFilters) != renderNodesCount
+      resize(animchar_render__nodeVisibleStgFilters, renderNodesCount)
+      reset_all_nodes_filter(animchar_render__nodeVisibleStgFilters, animchar_render)
+    if cockpit__isAttached
+      let nodesCount = length(cockpit__visibleVehicleNodeNames)
+      reset_all_nodes_filter(animchar_render__nodeVisibleStgFilters, animchar_render,
+                             uint8(int(RenderPass.RENDER_SHADOW)))
+      for i in range(0, nodesCount)
+        let nodeName = string(cockpit__visibleVehicleNodeNames[i])
+        let nodeId = ronamemapex_get_name_id((*(*animchar_render.sceneInstance).lodsResource).names.node, nodeName)
+        if nodeId < 0
+          logerr("Node /*{nodeName}*/ from component cockpit.visibleVehicleNodeNames not found in vehicle /*{cockpit__vehicleEid}*/ /*{getEntityTemplateName(cockpit__vehicleEid)}*/")
+          continue
+        if nodeId >= renderNodesCount
+          continue
+        if animchar_render.sceneInstance |> scene_instance_is_node_visible(nodeId)
+          animchar_render__nodeVisibleStgFilters[nodeId] = uint8(~0)
+    else
+      reset_all_nodes_filter(animchar_render__nodeVisibleStgFilters, animchar_render)
+
+[es(tag=render, on_event=NodesVisibilityWasUpdated, REQUIRE=(damage_part_alive, dmg_animchar__renderable))]
+def damage_parts_update_filter(evt : Event;
+                               animchar_render : AnimcharRendComponent;
+                               var animchar_render__nodeVisibleStgFilters : UInt8List)
+  filter_update_hidden(animchar_render__nodeVisibleStgFilters, animchar_render)
+
+[es(tag=render, on_appear, REQUIRE_NOT=animchar_render__nodeVisibleStgFilters)]
+def vehicle_cockpit_hide_parent_on_create(evt : Event;
+                                          cockpit__vehicleEid : EntityId)
+  query(cockpit__vehicleEid) <| $ [es(REQUIRE_NOT=animchar_render__nodeVisibleStgFilters)] (var animchar_render__enabled : bool&)
+    animchar_render__enabled = false
+
+[es(tag=render, on_disappear, REQUIRE_NOT=animchar_render__nodeVisibleStgFilters)]
+def vehicle_cockpit_show_parent_on_destroy(evt : Event;
+                                           cockpit__vehicleEid : EntityId)
+  query(cockpit__vehicleEid) <| $ [es(REQUIRE_NOT=animchar_render__nodeVisibleStgFilters)] (var animchar_render__enabled : bool&)
+    animchar_render__enabled = true
+
+def cockpit_set_cut_parts(cockpit_eid : EntityId; cut_parts : BoolList)
+  query(cockpit_eid) <| $ [es] (cockpit__partToAnimcharNodeMap : IntList;
+                                var animchar_render : AnimcharRendComponent&)
+    for partId, isPartCut in iter_range(cut_parts), cut_parts
+      let nodeId = cockpit__partToAnimcharNodeMap?[partId] ?? -1
+      if nodeId >= 0
+        animchar_render.sceneInstance |> scene_instance_show_node(nodeId, !isPartCut)
+
+[es(tag=render, on_appear, track=(cockpit__eid, plane_cutting__smallPartsCut))]
+def plane_cockpit_cut_parts(evt : Event; cockpit__eid : EntityId; plane_cutting__smallPartsCut : BoolList)
+  cockpit_set_cut_parts(cockpit__eid, plane_cutting__smallPartsCut)
+
+[es(tag=render, on_appear, REQUIRE=vehicleWithWatched, track=(cockpit__eid, plane_cutting__cutting, plane_cutting__planes, plane_cutting__largePartsCut))]
+def cockpit_copy_cut_planes(evt : Event;
+                            cockpit__eid : EntityId;
+                            plane_cutting__cutting aka parent_plane_cutting__cutting : bool;
+                            plane_cutting__planes aka parent_plane_cutting__planes : Point4List;
+                            plane_cutting__largePartsCut aka parent_plane_cutting__largePartsCut : BoolList)
+  query(cockpit__eid) <| $ [es] (var plane_cutting__cutting : bool&;
+                                 var plane_cutting__planes : Point4List&;
+                                 var plane_cutting__largePartsCut : BoolList&)
+    plane_cutting__cutting = parent_plane_cutting__cutting
+    plane_cutting__planes := parent_plane_cutting__planes
+    plane_cutting__largePartsCut := parent_plane_cutting__largePartsCut
+
+[es(tag=render, on_appear)]
+def vehicle_cockpit_on_attach_dm_parts_map_init(evt : Event;
+                                                cockpit__vehicleEid : EntityId;
+                                                animchar_render : AnimcharRendComponent;
+                                                var cockpit__partToAnimcharNodeMap : IntList)
+  query(cockpit__vehicleEid) <| $ [es] (damage_model : DamageModel)
+    for partId in range(get_damage_part_props_count(damage_model.dmData))
+      let nodeNameDm = get_part_name(damage_model.dmData, partId)
+      var nodeId = -1
+      if nodeNameDm |> ends_with("_dm")
+        let nodeName = chop(nodeNameDm, 0, length(nodeNameDm) - 3)
+        nodeId = ronamemapex_get_name_id((*(*animchar_render.sceneInstance).lodsResource).names.node, nodeName)
+      cockpit__partToAnimcharNodeMap |> push(nodeId)
+
+def get_relative_to_slit_coords(pos : float3;
+                                animchar : AnimcharBaseComponent;
+                                cockpit__attachNodeIndices : IntList const?;
+                                from_slit : int;
+                                to_slit : int) : float3
+  if cockpit__attachNodeIndices == null
+    return pos
+  let node_from = (*cockpit__attachNodeIndices)[from_slit]
+  let node_to = (*cockpit__attachNodeIndices)[to_slit]
+  var fromTm, toTm : float3x4
+  geomtree_getNodeWtmScalar(*animchar.nodeTree, node_from, fromTm)
+  fromTm[2] = -fromTm[2]
+  geomtree_getNodeWtmScalar(*animchar.nodeTree, node_to, toTm)
+  toTm[2] = -toTm[2]
+  return inverse(toTm) * fromTm * pos
+
+[es(tag=render, track=cockpit__nextSlit)]
+def vehicle_cockpit_on_slit_change(evt : Event;
+                                   cockpit__prevSlit : int;
+                                   cockpit__nextSlit : int;
+                                   cockpit__slitCameraDirs : Point3List;
+                                   cockpit__slitCameraOffsets : Point3List;
+                                   cockpit__attachNodeIndices : IntList const?;
+                                   cockpit__minForwardOffset : float;
+                                   cockpit__seatNo : int;
+                                   cockpit__vehicleEid : EntityId;
+                                   var cockpit__cameraTime : float&;
+                                   var cockpit__startCameraPos : float3&;
+                                   var cockpit__endCameraPos : float3&)
+
+  let prevCameraOffset = cockpit__slitCameraOffsets[cockpit__prevSlit]
+  let prevCameraDir    = cockpit__slitCameraDirs[cockpit__prevSlit]
+  let prevOffset       = prevCameraDir * cockpit__minForwardOffset
+
+  let cameraOffset = cockpit__slitCameraOffsets[cockpit__nextSlit]
+  let cameraDir    = cockpit__slitCameraDirs[cockpit__nextSlit]
+  let offset       = cameraDir * cockpit__minForwardOffset
+
+  var endPos = cameraOffset + offset
+  query(cockpit__vehicleEid) <| $ [es] (animchar : AnimcharBaseComponent; vehicle_seats__seatEids : EidList)
+    setOptional(vehicle_seats__seatEids[cockpit__seatNo], "seat__canControlTurrets", false)
+    endPos[2] = -endPos[2]
+    endPos = get_relative_to_slit_coords(endPos, animchar, cockpit__attachNodeIndices, cockpit__nextSlit, cockpit__prevSlit)
+    endPos[2] = -endPos[2]
+
+  cockpit__startCameraPos = prevCameraOffset + prevOffset
+  cockpit__endCameraPos   = endPos
+  cockpit__cameraTime     = 0.f
+
+def init_transition(camera_dir : float3; cockpit_tm : float3x4; owner_eid : EntityId; var start_dir : float3&; var end_orient : float4&)
+  query(owner_eid) <| $ [es] (human_input__aimAngle : float2)
+    let endDir = rotate(cockpit_tm, camera_dir)
+    start_dir = angles_to_dir(human_input__aimAngle)
+    end_orient = float4(quat_rotation_arc(start_dir, endDir))
+
+def init_cockpit_transition(cur_attach_tm : float3x4;
+                            next_attach_tm : float3x4;
+                            var out_orient_x : float4&;
+                            var out_orient_y : float4&)
+  out_orient_x = float4(quat_rotation_arc(cur_attach_tm[0], next_attach_tm[0]))
+  out_orient_y = float4(quat_rotation_arc(cur_attach_tm[1], next_attach_tm[1]))
+
+def get_cockpit_offset_for_slit(cockpit__offset : float3;
+                                cockpit__cockpitOffsetBySlit : Point3List const?;
+                                current_slit : int) : float3
+  if cockpit__cockpitOffsetBySlit == null
+    return cockpit__offset
+  let currentPos = (*cockpit__cockpitOffsetBySlit)[current_slit]
+  return cockpit__offset + currentPos
+
+def get_cockpit_transition_offset(cockpit__offset : float3;
+                                  animchar : AnimcharBaseComponent;
+                                  cockpit__attachNodeIndices : IntList const?;
+                                  cockpit__cockpitOffsetBySlit : Point3List const?;
+                                  current_slit : int;
+                                  next_slit : int;
+                                  t : float) : float3
+  let fromPos = get_cockpit_offset_for_slit(cockpit__offset, cockpit__cockpitOffsetBySlit, current_slit)
+  var toPos = get_cockpit_offset_for_slit(cockpit__offset, cockpit__cockpitOffsetBySlit, next_slit)
+  toPos = get_relative_to_slit_coords(toPos, animchar, cockpit__attachNodeIndices, next_slit, current_slit)
+  return lerp(fromPos, toPos, float3(t))
+
+def set_cockpit_transition_rotation(cockpit__endOrientX : float4;
+                                    cockpit__endOrientY : float4;
+                                    t : float;
+                                    var in_out_tm : float3x4&)
+  let cockpitQuatX = quat(normalize(lerp(quat_ident, cockpit__endOrientX, float4(t))))
+  let cockpitQuatY = quat(normalize(lerp(quat_ident, cockpit__endOrientY, float4(t))))
+  var x = cockpitQuatX * in_out_tm[0]
+  let y = cockpitQuatY * in_out_tm[1]
+  let z = cross(x, y)
+  x = cross(y, z)
+  in_out_tm[0] = x
+  in_out_tm[1] = y
+  in_out_tm[2] = z
+
+[es(tag=render, after=(vehicle_cockpit_slits, vehicle_attach_cockpit_es))]
+def vehicle_cockpit_slits_transition(info : ParallelUpdateFrameDelayed;
+                                     cockpit__seatNo : int;
+                                     cockpit__attachNodeIndex : int;
+                                     cockpit__startCameraPos : float3;
+                                     cockpit__endCameraPos : float3;
+                                     cockpit__vehicleEid : EntityId;
+                                     cockpit__nextSlit : int;
+                                     cockpit__slitCameraDirs : Point3List;
+                                     cockpit__cockpitOffsetBySlit : Point3List const?;
+                                     cockpit__forwardOffsetDuration : float;
+                                     cockpit__attachNodeIndices : IntList const?;
+                                     cockpit__offset : float3;
+                                     cockpit__slitTransitionDuration : float;
+                                     var transform : float3x4;
+                                     var cockpit__startCameraDir : float3&;
+                                     var cockpit__endCameraOrient : float4&;
+                                     var cockpit__endOrientX : float4&;
+                                     var cockpit__endOrientY : float4&;
+                                     var cockpit__currentSlit : int&;
+                                     var cockpit__forwardOffsetTime : float&;
+                                     var cockpit__cameraTime : float&)
+  let inTransition = cockpit__cameraTime < 1.f
+
+  let prevForwardOffsetTime = cockpit__forwardOffsetTime
+  if cockpit__forwardOffsetDuration < VERY_SMALL_NUMBER
+    cockpit__forwardOffsetTime = inTransition ? 0. : 1.
+  else
+    cockpit__forwardOffsetTime = saturate(cockpit__forwardOffsetTime + (inTransition ? -info.dt : info.dt) / cockpit__forwardOffsetDuration)
+
+  if cockpit__forwardOffsetTime > 0.f
+    return
+
+  if !inTransition
+    return
+
+  if cockpit__slitTransitionDuration < VERY_SMALL_NUMBER
+    cockpit__cameraTime = 1.0
+  else
+    cockpit__cameraTime = saturate(cockpit__cameraTime + info.dt / cockpit__slitTransitionDuration)
+
+  ecs::query(cockpit__vehicleEid) <| $ [es] (animchar : AnimcharBaseComponent; vehicle_seats__seatEids : EidList; var animchar_camera_target__node_offset : float3&; var cockpit__cameraDir : float3&)
+    geomtree_getNodeWtmScalar(*animchar.nodeTree, cockpit__attachNodeIndex, transform)
+
+    if prevForwardOffsetTime > 0.
+      let cameraDir = cockpit__slitCameraDirs[cockpit__nextSlit]
+      var nextAttachTm : float3x4
+      if cockpit__attachNodeIndices != null
+        geomtree_getNodeWtmScalar(*animchar.nodeTree, (*cockpit__attachNodeIndices)[cockpit__nextSlit], nextAttachTm)
+        init_cockpit_transition(transform, nextAttachTm, cockpit__endOrientX, cockpit__endOrientY)
+      let cockpitTm = cockpit__attachNodeIndices != null ? nextAttachTm : transform
+      let seatEid = vehicle_seats__seatEids[cockpit__seatNo]
+      let ownerEid = get_Eid(seatEid, "seat__ownerEid") ?? INVALID_ENTITY_ID
+      init_transition(cameraDir, cockpitTm, ownerEid,
+                      cockpit__startCameraDir, cockpit__endCameraOrient)
+
+    let t = saturate(inOutSine(cockpit__cameraTime))
+    let q = quat(normalize(lerp(quat_ident, cockpit__endCameraOrient, float4(t))))
+    cockpit__cameraDir = q * cockpit__startCameraDir
+    animchar_camera_target__node_offset = lerp(cockpit__startCameraPos, cockpit__endCameraPos, float3(t))
+
+    transform[2] = -transform[2]
+    transform[3] = transform * get_cockpit_transition_offset(cockpit__offset, animchar, cockpit__attachNodeIndices, cockpit__cockpitOffsetBySlit,
+                                                             cockpit__currentSlit, cockpit__nextSlit, t)
+    if cockpit__attachNodeIndices != null
+      set_cockpit_transition_rotation(cockpit__endOrientX, cockpit__endOrientY, t, transform)
+
+    let seatEid = vehicle_seats__seatEids[cockpit__seatNo]
+    let humanInCockpitEid = get_Eid(seatEid, "seat__ownerEid") ?? INVALID_ENTITY_ID
+    query(humanInCockpitEid) <| $ [es] (var human_input__aimAngle : float2&)
+      human_input__aimAngle = dir_to_angles(cockpit__cameraDir)
+
+  if cockpit__cameraTime >= 1.0f
+    cockpit__currentSlit = cockpit__nextSlit
+
+def get_periscope_angles(transform : float3x4;
+                         cockpit__periscopeAngles : Point2List;
+                         cockpit__slitCameraDirs : Point3List;
+                         cockpit__periscopeLimits : Point4List;
+                         cockpit__periscopeSpeed : Point2List;
+                         cockpit__currentSlit : int;
+                         camera__lookDir : float3;
+                         dt : float)
+  let localSlitDir = cockpit__slitCameraDirs[cockpit__currentSlit]
+  var cockpitTm := transform
+  cockpitTm[2] = -cockpitTm[2]
+  let slitDir = rotate(cockpitTm, localSlitDir)
+  let slitAngles = dir_to_angles(slitDir)
+  let wishAngles = renorm_ang(dir_to_angles(camera__lookDir), slitAngles) - slitAngles
+  var periscopeAngles = wishAngles
+  let prevAngles = renorm_ang(cockpit__periscopeAngles[cockpit__currentSlit], periscopeAngles)
+  let rotateSpeed = deg_to_rad(cockpit__periscopeSpeed?[cockpit__currentSlit] ?? float2())
+  if rotateSpeed.x >= 0.
+    periscopeAngles.x = move_to(prevAngles.x, periscopeAngles.x, dt, rotateSpeed.x)
+  if rotateSpeed.y >= 0.
+    periscopeAngles.y = move_to(prevAngles.y, periscopeAngles.y, dt, rotateSpeed.y)
+  let limits = deg_to_rad(cockpit__periscopeLimits?[cockpit__currentSlit] ?? float4())
+  return clamp(periscopeAngles, limits.xz, limits.yw)
+
+def apply_cockpit_periscope_angles(periscope_angles : float2;
+                                   animchar : AnimcharBaseComponent;
+                                   cockpit__attachNodeIndex : int;
+                                   animchar_camera_target__node_offset : float3;
+                                   cockpit__slitCameraDirs : Point3List;
+                                   cockpit__slotRelToCockpitOffset : Point3List;
+                                   cockpit__currentSlit : int;
+                                   cockpit__forwardOffset : float;
+                                   var transform : float3x4&;
+                                   var cockpit__cameraDir : float3&)
+  let localSlitDir = cockpit__slitCameraDirs[cockpit__currentSlit]
+  transform[2] = -transform[2]
+  let slitDir = rotate(transform, localSlitDir)
+  transform[2] = -transform[2]
+
+  let pitchAxis = cross(slitDir, transform[1])
+  let yaw = quat(transform[1], periscope_angles.x)
+  let pitch = quat(pitchAxis, periscope_angles.y)
+  var rotTm : float3x4
+  (yaw * pitch) |> make_tm(rotTm)
+
+  // rotate
+  transform = rotTm * transform
+  // restore camera pos
+  var tm : float3x4
+  geomtree_getNodeWtmScalar(*animchar.nodeTree, cockpit__attachNodeIndex, tm)
+  let cameraSlitPos = tm * animchar_camera_target__node_offset
+  transform[2] = -transform[2]
+  cockpit__cameraDir = rotate(transform, localSlitDir)
+  let cameraForwardOffset = cockpit__cameraDir * cockpit__forwardOffset
+  let cockpitSlitPos = transform * cockpit__slotRelToCockpitOffset[cockpit__currentSlit]
+  transform[3] += cameraSlitPos - cockpitSlitPos - cameraForwardOffset
+  transform[2] = -transform[2]
+
+[es(tag=render, REQUIRE=cockpit__vehicleEid, after=vehicle_cockpit_slits_transition)]
+def vehicle_cockpit_rotate(info : ParallelUpdateFrameDelayed;
+                           cockpit__isAttached : bool;
+                           cockpit__vehicleEid : EntityId;
+                           cockpit__cameraTime : float;
+                           cockpit__attachNodeIndex : int;
+                           cockpit__currentSlit : int;
+                           cockpit__slotRelToCockpitOffset : Point3List;
+                           cockpit__slitCameraDirs : Point3List;
+                           cockpit__forwardOffset : float;
+                           cockpit__periscopeLimits : Point4List;
+                           cockpit__periscopeSpeed : Point2List;
+                           var cockpit__periscopeAngles : Point2List&;
+                           var cockpit__isPeriscope : bool&;
+                           var transform : float3x4&)
+  cockpit__isPeriscope = length_sq(cockpit__periscopeLimits?[cockpit__currentSlit] ?? float4()) > 0.
+  let inTransition = cockpit__cameraTime < 1.f
+  if inTransition || !cockpit__isAttached || cockpit__currentSlit >= length(cockpit__periscopeAngles)
+    return
+  query(cockpit__vehicleEid) <| $ [es] (camera__lookDir : float3;
+                                        animchar : AnimcharBaseComponent;
+                                        animchar_camera_target__node_offset : float3;
+                                        var cockpit__cameraDir : float3&)
+    cockpit__periscopeAngles[cockpit__currentSlit] = get_periscope_angles(transform, cockpit__periscopeAngles, cockpit__slitCameraDirs,
+                                                                          cockpit__periscopeLimits, cockpit__periscopeSpeed,
+                                                                          cockpit__currentSlit, camera__lookDir, info.dt)
+    apply_cockpit_periscope_angles(cockpit__periscopeAngles[cockpit__currentSlit],
+                                   animchar, cockpit__attachNodeIndex, animchar_camera_target__node_offset,
+                                   cockpit__slitCameraDirs, cockpit__slotRelToCockpitOffset, cockpit__currentSlit, cockpit__forwardOffset,
+                                   transform, cockpit__cameraDir)
+
+[es(tag=render, REQUIRE=cockpit__vehicleEid, after=(after_animchar_update_sync, vehicle_attach_cockpit_es, vehicle_cockpit_slits_transition))]
+def vehicle_cockpit_update_animchar(info : ParallelUpdateFrameDelayed;
+                                    transform : float3x4;
+                                    var animchar : AnimcharBaseComponent;
+                                    var animchar_node_wtm : AnimcharNodesMat44;
+                                    var animchar_render__root_pos : vec4f&)
+  animchar_set_tm(animchar, transform, true)
+  animchar_act(animchar, info.dt, true)
+  animchar_copy_nodes(animchar, animchar_node_wtm, animchar_render__root_pos)
+
+[es(tag=render, after=(animchar_es, vehicle_attach_cockpit_es))]
+def vehicle_cockpit_slits(info : ParallelUpdateFrameDelayed;
+                          cockpit__isAttached : bool;
+                          cockpit__forwardOffsetTime : float;
+                          cockpit__minForwardOffset : float;
+                          cockpit__attachNodeIndex : int;
+                          cockpit__vehicleEid : EntityId;
+                          cockpit__currentSlit : int;
+                          cockpit__slitNodes : IntList;
+                          cockpit__slitForwardOffset : FloatList;
+                          cockpit__slitCameraOffsets : Point3List;
+                          cockpit__slitCameraDirs : Point3List;
+                          var cockpit__forwardOffset : float&)
+  if !cockpit__isAttached || cockpit__currentSlit >= length(cockpit__slitNodes)
+    return
+
+  let nodeId = cockpit__slitNodes[cockpit__currentSlit]
+  if nodeId < 0
+    return
+
+  let t = inOutSine(cockpit__forwardOffsetTime)
+  cockpit__forwardOffset = lerp(cockpit__minForwardOffset, cockpit__slitForwardOffset[cockpit__currentSlit], t)
+
+  let cameraOffset = cockpit__slitCameraOffsets[cockpit__currentSlit]
+  let cameraDir    = cockpit__slitCameraDirs[cockpit__currentSlit]
+  let offset       = cameraDir * cockpit__forwardOffset
+
+  ecs::query(cockpit__vehicleEid) <| $ [es] (animchar : AnimcharBaseComponent;
+                                             var vehicle_sight__opacity : float&;
+                                             var animchar_camera_target__node_offset : float3&;
+                                             var animchar_camera_target__nodeIndex : int&;
+                                             var cockpit__cameraDir : float3&)
+    animchar_camera_target__nodeIndex = cockpit__attachNodeIndex
+    animchar_camera_target__node_offset = cameraOffset + offset
+
+    var cockpitTm : float3x4
+    geomtree_getNodeWtmScalar(*animchar.nodeTree, cockpit__attachNodeIndex, cockpitTm)
+
+    cockpit__cameraDir = rotate(cockpitTm, cameraDir)
+
+    vehicle_sight__opacity = inQuintic(cockpit__forwardOffsetTime)
+
+
+[es(tag=render, after=(animchar_es, vehicle_attach_cockpit_es), before=vehicle_cockpit_slits)]
+def vehicle_cockpit_camera_dir(info : ParallelUpdateFrameDelayed;
+                               cockpit__isAttached : bool;
+                               cockpit__attachNodeIndex : int;
+                               cockpit__vehicleEid : EntityId)
+  if !cockpit__isAttached
+    return
+
+  query(cockpit__vehicleEid) <| $ [es] (animchar : AnimcharBaseComponent;
+                                        var cockpit__cameraDir : float3&)
+
+    var cockpitTm : float3x4
+    geomtree_getNodeWtmScalar(*animchar.nodeTree, cockpit__attachNodeIndex, cockpitTm)
+
+    cockpit__cameraDir = cockpitTm[0]
+
+def set_cockpit_eid_to_vehicle_impl(eid, cockpit__vehicleEid : EntityId)
+  ecs::query(cockpit__vehicleEid) <| $ [es] (var cockpit__eid : EntityId&)
+    cockpit__eid = eid
+
+[es(tag=gameClient, on_appear)]
+def set_cockpit_eid_to_vehicle(evt : Event; eid, cockpit__vehicleEid : EntityId)
+  set_cockpit_eid_to_vehicle_impl(eid, cockpit__vehicleEid)
+
+[es(tag=gameClient, on_event=EventEntityDestroyed)]
+def reset_cockpit_eid_to_vehicle(evt : Event; eid : EntityId; cockpit__vehicleEid : EntityId)
+  query(cockpit__vehicleEid) <| $ [es] (var cockpit__eid : EntityId&)
+    if cockpit__eid == eid
+      cockpit__eid = INVALID_ENTITY_ID
+
+
+[es(tag=render, on_appear, before=init_decals_es)]
+def set_decals_to_cockpit(evt : Event;
+                          cockpit__vehicleEid : EntityId;
+                          var animcharDecalsData aka cockpit_animcharDecalsData : Array&)
+  query(cockpit__vehicleEid) <| $ [es] (animcharDecalsData : Array)
+    cockpit_animcharDecalsData := animcharDecalsData
+
+[es(tag=gameClient, on_appear)]
+def cockpit_init_slits(evt : Event; cockpit__slitTemplates : StringList; var cockpit__slitEids : EidList&)
+  cockpit__slitEids |> resize(length(cockpit__slitTemplates))
+  for indx, slitTemplateStr in iter_range(cockpit__slitTemplates), cockpit__slitTemplates
+    peek(slitTemplateStr) <| $(slitTemplate)
+      if empty(slitTemplateStr)
+        cockpit__slitEids[indx] = INVALID_ENTITY_ID
+      else
+        cockpit__slitEids[indx] = createEntity(slitTemplate)
+
+[es(tag=gameClient, on_disappear)]
+def cockpit_destroy_slits(evt : Event; cockpit__slitEids : EidList)
+  for eid in cockpit__slitEids
+    destroyEntity(eid)
+
+[es(tag=gameClient, on_appear, after=vehicle_cockpit_slits_init)]
+def cockpit_init_dof_for_slits(evt : Event;
+                               cockpit__slitNodes : IntList;
+                               var cockpit__slitEnableDof : BoolList;
+                               cockpit__slitTemplates : StringList const?)
+  if length(cockpit__slitEnableDof) == length(cockpit__slitNodes)
+    return
+  resize(cockpit__slitEnableDof, length(cockpit__slitNodes))
+  for enableDof in cockpit__slitEnableDof
+    enableDof = true
+  // disable dof for slits with vehicle sights
+  if cockpit__slitTemplates != null
+    for i, slitTemplate in iter_range(*cockpit__slitTemplates), *cockpit__slitTemplates
+      let templ = getTemplateByName(string(slitTemplate))
+      if templ != null && templateHasComponent(*templ, "vehicle_sight__slitZoom")
+        cockpit__slitEnableDof[i] = false
+
+[es(tag=render, on_appear, track=camera__active)]
+def activate_vehicle_camera_dof(evt : Event;
+                                camera__active : bool;
+                                camera__target : EntityId;
+                                var prevDof__on : bool&;
+                                var prevDof__farDofAmountPercent : float&;
+                                var prevDof__nearDofAmountPercent : float&;
+                                var prevDof__nearDofStart : float&;
+                                var prevDof__nearDofEnd : float&;
+                                var prevDof__is_filmic : bool&;
+                                cockpitDof__nearDofStart : float;
+                                cockpitDof__nearDofEnd : float;
+                                cockpitDof__nearDofAmountPercent : float)
+  if !camera__active
+    return
+  query() <| $ [es] (var dof__on : bool&;
+                     var dof__farDofAmountPercent : float&;
+                     var dof__nearDofAmountPercent : float&;
+                     var dof__nearDofStart : float&;
+                     var dof__nearDofEnd : float&;
+                     var dof__is_filmic : bool&)
+    prevDof__on = dof__on
+    prevDof__farDofAmountPercent = dof__farDofAmountPercent
+    prevDof__nearDofAmountPercent = dof__nearDofAmountPercent
+    prevDof__nearDofStart = dof__nearDofStart
+    prevDof__nearDofEnd = dof__nearDofEnd
+    prevDof__is_filmic = dof__is_filmic
+
+    var enableDof = true
+    query(camera__target) <| $ [es] (cockpit__eid : EntityId)
+      query(cockpit__eid) <| $ [es] (cockpit__currentSlit : int;
+                                     cockpit__slitEnableDof : BoolList)
+        enableDof = cockpit__slitEnableDof[cockpit__currentSlit]
+    dof__on = enableDof
+    dof__farDofAmountPercent = 0.0
+    dof__nearDofAmountPercent = cockpitDof__nearDofAmountPercent
+    dof__nearDofStart = cockpitDof__nearDofStart
+    dof__nearDofEnd = cockpitDof__nearDofEnd
+    dof__is_filmic = false
+
+[es(tag=render, on_disappear, track=camera__active)]
+def deactivate_vehicle_camera_dof(evt : Event;
+                                  camera__active : bool;
+                                  prevDof__on : bool;
+                                  prevDof__farDofAmountPercent : float;
+                                  prevDof__nearDofAmountPercent : float;
+                                  prevDof__nearDofStart : float;
+                                  prevDof__nearDofEnd : float;
+                                  prevDof__is_filmic : bool)
+  if camera__active
+    return
+  query() <| $ [es] (var dof__on : bool&;
+                     var dof__farDofAmountPercent : float&;
+                     var dof__nearDofAmountPercent : float&;
+                     var dof__nearDofStart : float&;
+                     var dof__nearDofEnd : float&;
+                     var dof__is_filmic : bool&)
+    dof__on = prevDof__on
+    dof__farDofAmountPercent = prevDof__farDofAmountPercent
+    dof__nearDofAmountPercent = prevDof__nearDofAmountPercent
+    dof__nearDofStart = prevDof__nearDofStart
+    dof__nearDofEnd = prevDof__nearDofEnd
+    dof__is_filmic = prevDof__is_filmic
+
+[es(tag=render, on_appear, track=cockpit__currentSlit, after=cockpit_init_dof_for_slits)]
+def disable_vehicle_camera_dof_for_gunner(evt : Event;
+                                          cockpit__currentSlit : int;
+                                          cockpit__slitEnableDof : BoolList)
+  if cockpit__currentSlit < 0 || cockpit__currentSlit >= length(cockpit__slitEnableDof)
+    return
+  query() <| $ [es(REQUIRE=cockpitDof__nearDofAmountPercent)] (camera__active : bool)
+    if camera__active
+      query() <| $ [es] (var dof__on : bool&)
+        dof__on = cockpit__slitEnableDof[cockpit__currentSlit]

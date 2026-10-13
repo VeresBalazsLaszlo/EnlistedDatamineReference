@@ -1,0 +1,100 @@
+mass:r=0.235
+caliber:r=0.03
+speed:r=700.0
+maxDistance:r=2000.0
+explosiveType:t="tnt"
+explosiveMass:r=0.0275
+normalizationPreset:t="heat"
+ricochetPreset:t="he"
+groundRicochetPreset:t="he_small_caliber_ground"
+explodeTreshold:r=0.3
+secondaryShattersPreset:t="ap"
+fuseDelayDist:r=0.2
+bulletType:t="he_frag_i"
+slopeEffectPreset:t="ap"
+explodeOnRendinst:b=yes
+recoilMultiplier:r=0.35
+hitPowerMult:r=2.0
+fuseOnWater:b=yes
+onHitChanceMultFire:r=3.5
+fuseOnWaterProbability:r=1.0
+relativeVelArmorShift:p2=200.0, 1000.0
+
+stabilityRicochetModifier{
+  mod1:p2=0.0, 0.05
+  mod2:p2=20.0, 0.1
+  mod3:p2=30.0, 0.2
+  mod3:p2=45.0, 0.3
+}
+
+pressureDamage{
+  damageType:t="pressure"
+}
+
+hitpower{
+  HitPower10m:p2=1.0, 50.0
+  HitPower1000m:p2=0.9, 300.0
+  HitPower1500m:p2=0.1, 700.0
+  HitPower2000m:p2=0.008, 1500.0
+}
+
+armorpower{
+  ArmorPower0m:p2=2.0, 10.0
+  ArmorPower100m:p2=2.0, 100.0
+  ArmorPower500m:p2=1.5, 500.0
+  ArmorPower1000m:p2=1.0, 1000.0
+  ArmorPower1450m:p2=0.5, 1450.0
+  ArmorPower1500m:p2=0.0, 1500.0
+}
+
+damage{
+
+  kinetic{
+    damageType:t="generic"
+    demarrePenetrationK:r=0.15
+    demarreSpeedPow:r=1.43
+    demarreMassPow:r=0.71
+    demarreCaliberPow:r=1.07
+  }
+
+  shatter{
+    useRealShatters:b=yes
+    countPortion:r=0.3
+
+    segment{
+      radiusScale:r=1.065
+      penetrationScale:r=1.2
+      damageScale:r=1.2
+      angles:p2=20.0, 160.0
+      countPortion:r=0.4
+    }
+
+    segment{
+      radiusScale:r=1.065
+      penetrationScale:r=1.2
+      damageScale:r=1.2
+      angles:p2=200.0, 340.0
+      countPortion:r=0.4
+    }
+
+    segment{
+      radiusScale:r=1.065
+      penetrationScale:r=1.2
+      damageScale:r=1.2
+      angles:p2=0.0, 359.0
+      countPortion:r=0.2
+    }
+  }
+}
+
+shatterDamage{
+  breachConeAngle:r=45.0
+}
+
+tracer{
+  headColor:c=0, 0, 0, 0
+  smokeColor:c=0, 0, 0, 0
+  startHeadColor:c=0, 0, 0, 0
+  startTime:r=0.0
+  smokeRadius:r=0.01
+}

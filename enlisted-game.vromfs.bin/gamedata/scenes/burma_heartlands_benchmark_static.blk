@@ -1,0 +1,43 @@
+import{
+  scene:t="gamedata/scenes/_burma_heartlands_benchmark_common.blk"
+}
+
+entity{
+  _template:t="briefing_invasion"
+  mission_name:t="burma_heartlands_inv"
+  mission_campaign:t="burma"
+
+  "loading_images:list<t>"{
+    item:t="ui/pacific_new_georgia_japan_fortification_01.avif"
+    item:t="ui/pacific_new_georgia_h8k_01.avif"
+    item:t="ui/pacific_new_georgia_ship_01.avif"
+  }
+}
+
+entity{
+  _template:t="screen_fade_anim"
+  screen_fade:r=0.9
+  anim_track_on:b=yes
+}
+
+entity{
+  _template:t="benchmark"
+  benchmark_name:t="burma_heartlands_static"
+
+  "camera_tracks:array"{
+
+    "camera_tracks:object"{
+      from_fov:r=90.0
+      from_pos:p3=76.7254, 71.3009, 267.306
+      to_dir:p3=-0.364161, -0.30797, -0.878943
+      duration:r=10000.0
+      to_pos:p3=76.7254, 71.3009, 267.306
+      to_fov:r=90.0
+      from_dir:p3=-0.364161, -0.30797, -0.878943
+    }
+  }
+}
+
+entity{
+  _template:t="ui_disabled"
+}

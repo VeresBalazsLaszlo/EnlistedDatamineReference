@@ -1,0 +1,941 @@
+import{
+  scene:t="gamedata/scenes/_manchuria_benchmark_common.blk"
+}
+
+entity{
+  _template:t="screen_fade_anim"
+  screen_fade:r=0.9
+  anim_track_on:b=yes
+}
+
+entity{
+  _template:t="benchmark"
+  benchmark_name:t="manchuria_dynamic"
+
+  "camera_tracks:array"{
+
+    "camera_tracks:object"{
+      duration:r=25.0
+      from_pos:p3=353.174, 54.341, -124.31
+      from_dir:p3=-0.619576, 0.0, 0.784937
+      from_fov:r=90.0
+      to_pos:p3=292.752, 39.4971, -30.4504
+      to_dir:p3=-0.541935, -0.417205, 0.729553
+      to_fov:r=90.0
+    }
+
+    "camera_tracks:object"{
+      duration:r=25.0
+      from_pos:p3=292.752, 39.4971, -30.4504
+      from_dir:p3=-0.541935, -0.417205, 0.729553
+      from_fov:r=90.0
+      to_pos:p3=145.962, 37.2134, 27.818
+      to_dir:p3=-0.795239, -0.379524, 0.472817
+      to_fov:r=90.0
+    }
+
+    "camera_tracks:object"{
+      duration:r=25.0
+      from_pos:p3=145.962, 37.2134, 27.818
+      from_dir:p3=-0.795239, -0.379524, 0.472817
+      from_fov:r=90.0
+      to_pos:p3=-40.0356, 49.32, 115.971
+      to_dir:p3=-0.293871, -0.44565, -0.845598
+      to_fov:r=90.0
+    }
+
+    "camera_tracks:object"{
+      duration:r=25.0
+      from_pos:p3=-40.0356, 49.32, 115.971
+      from_dir:p3=-0.293871, -0.44565, -0.845598
+      from_fov:r=90.0
+      to_pos:p3=-176.437, 38.71, 127.877
+      to_dir:p3=-0.917576, -0.349751, 0.189021
+      to_fov:r=90.0
+    }
+
+    "camera_tracks:object"{
+      duration:r=25.0
+      from_pos:p3=-176.437, 38.71, 127.877
+      from_dir:p3=-0.917576, -0.349751, 0.189021
+      from_fov:r=90.0
+      to_pos:p3=-214.844, 34.6432, 284.409
+      to_dir:p3=0.301472, -0.186412, -0.935075
+      to_fov:r=90.0
+    }
+
+    "camera_tracks:object"{
+      duration:r=25.0
+      from_pos:p3=-214.844, 34.6432, 284.409
+      from_dir:p3=0.301472, -0.186412, -0.935075
+      from_fov:r=90.0
+      to_pos:p3=-42.7101, 42.7428, 317.273
+      to_dir:p3=0.827081, -0.072254, -0.557419
+      to_fov:r=90.0
+    }
+
+    "camera_tracks:object"{
+      duration:r=25.0
+      from_pos:p3=-42.7101, 42.7428, 317.273
+      from_dir:p3=0.827081, -0.072254, -0.557419
+      from_fov:r=90.0
+      to_pos:p3=252.167, 53.0867, 241.857
+      to_dir:p3=-0.351873, -0.297635, -0.887468
+      to_fov:r=90.0
+    }
+
+    "camera_tracks:object"{
+      duration:r=25.0
+      from_pos:p3=252.167, 53.0867, 241.857
+      from_dir:p3=-0.351873, -0.297635, -0.887468
+      from_fov:r=90.0
+      to_pos:p3=340.89, 41.3797, 41.0062
+      to_dir:p3=0.369491, -0.386917, -0.84485
+      to_fov:r=90.0
+    }
+
+    "camera_tracks:object"{
+      duration:r=25.0
+      from_pos:p3=340.89, 41.3797, 41.0062
+      from_dir:p3=0.369491, -0.386917, -0.84485
+      from_fov:r=90.0
+      to_pos:p3=353.174, 54.341, -124.31
+      to_dir:p3=-0.619576, 0.0, 0.784937
+      to_fov:r=90.0
+    }
+  }
+}
+
+entity{
+  _template:t="ui_disabled"
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [338.676, 10.9592, -82.3701]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [317.044, 11.0653, -89.0994]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [325.42, 11.0803, -94.2378]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [315.606, 11.0185, -78.2044]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [307.26, 11.3109, -84.4396]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [330.54, 10.9855, -90.52]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [342.469, 10.9114, -86.0051]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [348.266, 10.8446, -71.5479]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [308.175, 11.539, -67.105]]
+}
+
+entity{
+  _template:t="artillery_strike_requester"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [323.247, 11.0163, -81.8193]]
+}
+
+entity{
+  _template:t="artillery_strike_requester"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [301.76, 11.7381, -79.4979]]
+}
+
+entity{
+  _template:t="artillery_strike_requester"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [316.138, 12.2153, -28.022]]
+}
+
+entity{
+  _template:t="artillery_strike_requester"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [252.536, 15.5207, 7.18125]]
+}
+
+entity{
+  _template:t="artillery_strike_requester"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [297.386, 11.7742, -101.479]]
+}
+
+entity{
+  _template:t="artillery_strike_requester"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [258.645, 16.4736, -65.0794]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [246.113, 15.5654, 1.00868]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [241.017, 15.4878, 5.07039]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [227.188, 15.211, -4.79441]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [223.202, 15.0375, 17.3854]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [214.959, 15.0699, 16.345]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [217.209, 14.806, 1.35299]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [240.131, 15.49, -7.11627]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [255.948, 15.2378, 12.9392]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [254.123, 14.7384, 42.5772]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [210.848, 15.0151, 30.8612]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [210.084, 14.9988, 42.7579]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [197.118, 15.1931, 46.2252]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [219.238, 14.9313, -10.3319]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [228.687, 15.3142, -0.500946]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [238.129, 15.2188, -10.2739]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [242.132, 15.5461, -1.15915]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [243.747, 15.5588, 5.1832]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [124.708, 15.5898, 32.3414]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [120.072, 15.6372, 36.9769]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [116.192, 15.6214, 37.2055]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [112.809, 15.6606, 37.8858]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [106.619, 15.8265, 40.0359]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [99.2092, 15.9321, 43.5675]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [121.473, 15.5146, 51.8831]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [126.15, 15.6682, 45.8125]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [130.157, 15.6842, 40.5303]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [130.166, 15.6536, 36.9815]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [128.017, 15.5928, 48.4134]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-37.7391, 28.8227, 74.6355]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-41.3127, 29.0522, 71.131]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-48.3686, 29.1886, 68.0752]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-41.9717, 29.0084, 86.1344]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-48.7436, 29.6349, 89.3376]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-54.8876, 29.2406, 94.8391]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-61.6624, 29.3941, 95.7935]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-63.9576, 29.5671, 91.5058]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-180.857, 20.0796, 94.3067]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-180.438, 19.8155, 100.186]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-180.091, 19.786, 107.484]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-181.13, 19.8946, 114.61]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-177.569, 19.9989, 117.737]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-177.09, 19.9549, 123.051]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-178.024, 19.9129, 127.838]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-178.694, 19.8934, 131.374]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-182.612, 19.9064, 135.224]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-185.475, 19.9322, 137.918]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-199.394, 19.8676, 114.548]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-193.585, 19.8192, 127.002]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-199.234, 19.9852, 139.446]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-265.086, 20.1406, 201.694]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-247.844, 20.1406, 204.12]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-231.036, 20.5545, 207.246]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-209.167, 19.8394, 230.703]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-205.287, 20.8043, 238.863]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-224.458, 20.1406, 236.813]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-238.721, 20.1406, 222.296]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-243.96, 20.1406, 167.611]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-258.881, 19.9657, 156.044]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-276.716, 19.9989, 159.182]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-290.93, 20.1406, 166.522]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-285.202, 20.1266, 178.276]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-261.982, 20.1406, 188.736]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-191.528, 20.1406, 199.565]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-186.684, 20.2035, 211.324]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-199.748, 20.0653, 227.351]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-237.236, 20.1406, 216.29]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-142.852, 20.1406, 326.904]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-150.375, 20.1406, 315.877]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-150.316, 19.9882, 306.675]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-148.6, 20.1406, 293.925]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-112.892, 20.1406, 299.085]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-105.606, 20.1406, 309.836]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-115.747, 20.2943, 322.881]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-131.152, 19.9618, 294.846]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-133.647, 20.1406, 273.469]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-143.562, 20.1406, 261.462]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [225.898, 14.4262, 186.733]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [219.994, 14.3651, 194.895]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [217.649, 14.2826, 199.166]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [215.04, 14.8421, 170.022]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[0.965926, 0.0, -0.258819] [0.0, 1.0, 0.0] [0.258819, 0.0, 0.965926] [208.715, 16.8804, 177.042]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [219.639, 14.5793, 181.699]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [225.343, 14.5917, 173.806]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [243.745, 14.8726, 184.114]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [227.922, 14.417, 194.814]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [214.113, 14.5256, 184.704]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [207.913, 14.6376, 179.91]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [212.777, 14.8182, 171.624]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [210.304, 14.9595, 156.465]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [256.958, 16.2134, 96.1483]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [253.422, 16.1349, 100.828]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [239.686, 14.9108, 95.9212]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [227.77, 15.3122, 94.7472]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [220.8, 16.0632, 96.0677]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [212.777, 14.9422, 96.1111]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [225.496, 15.493, 117.157]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [213.054, 14.9422, 111.467]]
+}
+
+entity{
+  _template:t="artillery_strike_requester"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [245.965, 17.1536, 129.583]]
+}
+
+entity{
+  _template:t="artillery_strike_requester"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [211.538, 14.9422, 143.532]]
+}
+
+entity{
+  _template:t="artillery_strike_requester"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [226.226, 15.1036, 149.812]]
+}
+
+entity{
+  _template:t="artillery_strike_requester"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [224.3, 15.3895, 102.422]]
+}
+
+entity{
+  _template:t="artillery_strike_requester"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [140.758, 15.5118, 45.1064]]
+}
+
+entity{
+  _template:t="artillery_strike_requester"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [114.803, 15.6812, 46.4087]]
+}
+
+entity{
+  _template:t="artillery_strike_requester"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [87.3776, 15.9414, 47.3114]]
+}
+
+entity{
+  _template:t="artillery_strike_requester"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [121.654, 15.4578, 85.3107]]
+}
+
+entity{
+  _template:t="artillery_strike_requester"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-27.8913, 28.2829, 97.3423]]
+}
+
+entity{
+  _template:t="artillery_strike_requester"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-30.0344, 29.8617, 84.5749]]
+}
+
+entity{
+  _template:t="artillery_strike_requester"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-30.7645, 28.5588, 56.4737]]
+}
+
+entity{
+  _template:t="artillery_strike_requester"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-55.7073, 29.4967, 107.557]]
+}
+
+entity{
+  _template:t="artillery_strike_requester"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-95.5023, 30.8176, 95.6003]]
+}
+
+entity{
+  _template:t="artillery_strike_requester"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-97.547, 30.3809, 77.3277]]
+}
+
+entity{
+  _template:t="artillery_strike_requester"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-94.1538, 30.4225, 70.6984]]
+}
+
+entity{
+  _template:t="artillery_strike_requester"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-247.669, 20.3395, 124.403]]
+}
+
+entity{
+  _template:t="artillery_strike_requester"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-236.092, 20.1406, 153.026]]
+}
+
+entity{
+  _template:t="artillery_strike_requester"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-234.409, 20.1888, 185.68]]
+}
+
+entity{
+  _template:t="artillery_strike_requester"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-243.015, 20.0019, 199.6]]
+}
+
+entity{
+  _template:t="artillery_strike_requester"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-294.308, 20.1406, 140.245]]
+}
+
+entity{
+  _template:t="artillery_strike_requester"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-228.425, 19.9773, 214.698]]
+}
+
+entity{
+  _template:t="artillery_strike_requester"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-187.038, 20.1406, 218.676]]
+}
+
+entity{
+  _template:t="artillery_strike_requester"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-152.653, 20.1406, 232.414]]
+}
+
+entity{
+  _template:t="artillery_strike_requester"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-166.483, 20.0224, 280.611]]
+}
+
+entity{
+  _template:t="artillery_strike_requester"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-131.982, 20.1406, 284.723]]
+}
+
+entity{
+  _template:t="artillery_strike_requester"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-134.691, 20.1406, 343.5]]
+}
+
+entity{
+  _template:t="artillery_strike_requester"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-165.188, 20.1406, 313.926]]
+}
+
+entity{
+  _template:t="artillery_strike_requester"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-25.0836, 15.4809, 335.341]]
+}
+
+entity{
+  _template:t="artillery_strike_requester"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-4.50145, 13.6309, 332.572]]
+}
+
+entity{
+  _template:t="artillery_strike_requester"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [18.5936, 12.3356, 331.268]]
+}
+
+entity{
+  _template:t="artillery_strike_requester"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [23.0974, 13.1773, 339.441]]
+}
+
+entity{
+  _template:t="artillery_strike_requester"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [183.235, 13.3002, 289.941]]
+}
+
+entity{
+  _template:t="artillery_strike_requester"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [222.159, 14.0321, 218.274]]
+}
+
+entity{
+  _template:t="t_34_85_e_a_destroyed"
+  transform:m=[[0.999995, -0.00155776, 0.00266648] [0.000595388, 0.944505, 0.328497] [-0.00303022, -0.328493, 0.944501] [263.723, 15.1072, -5.95871]]
+}
+
+entity{
+  _template:t="t_34_85_e_a_destroyed"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [282.577, 14.8671, -11.3091]]
+}
+
+entity{
+  _template:t="t_34_85_e_a_destroyed"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [221.436, 14.8764, 5.58628]]
+}
+
+entity{
+  _template:t="t_34_85_e_a_destroyed"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [225.387, 16.0043, -19.3906]]
+}
+
+entity{
+  _template:t="t_34_85_e_a_destroyed"
+  transform:m=[[0.998646, -0.030257, 0.0423103] [0.0295987, 0.999432, 0.0160992] [-0.0427734, -0.014825, 0.998975] [121.272, 15.5594, 22.9685]]
+}
+
+entity{
+  _template:t="t_34_85_e_a_destroyed"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [125.984, 15.5574, 57.8]]
+}
+
+entity{
+  _template:t="t_34_85_e_a_destroyed"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [118.289, 15.7571, 42.4639]]
+}
+
+entity{
+  _template:t="t_34_85_e_a_destroyed"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-40.2713, 28.5731, 94.5157]]
+}
+
+entity{
+  _template:t="t_34_85_e_a_destroyed"
+  transform:m=[[0.999995, -6.92543e-06, 0.00327548] [-6.92543e-06, 0.999991, 0.00422862] [-0.00327548, -0.00422862, 0.999986] [-61.381, 28.0804, 111.545]]
+}
+
+entity{
+  _template:t="t_34_85_e_a_destroyed"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-34.44, 27.8563, 60.178]]
+}
+
+entity{
+  _template:t="t_34_85_e_a_destroyed"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-87.056, 30.0028, 97.0596]]
+}
+
+entity{
+  _template:t="t_34_85_e_a_destroyed"
+  transform:m=[[0.995919, 0.0831033, 0.0352119] [-0.0849931, 0.994802, 0.0560855] [-0.0303679, -0.0588493, 0.997805] [-228.516, 20.0664, 125.988]]
+}
+
+entity{
+  _template:t="t_34_85_e_a_destroyed"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-225.901, 20.1406, 159.95]]
+}
+
+entity{
+  _template:t="t_34_85_e_a_destroyed"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-254.516, 20.1406, 166.027]]
+}
+
+entity{
+  _template:t="t_34_85_e_a_destroyed"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-285.62, 19.96, 125.019]]
+}
+
+entity{
+  _template:t="t_34_85_e_a_destroyed"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-154.292, 20.1406, 326.035]]
+}
+
+entity{
+  _template:t="t_34_85_e_a_destroyed"
+  transform:m=[[0.998416, 0.053216, -0.0182521] [-0.0523527, 0.997619, 0.0448971] [0.0205979, -0.0438705, 0.998825] [-130.917, 20.0574, 321.489]]
+}
+
+entity{
+  _template:t="t_34_85_e_a_destroyed"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-102.038, 20.1406, 298.991]]
+}
+
+entity{
+  _template:t="t_34_85_e_a_destroyed"
+  transform:m=[[0.998322, 0.0458388, 0.0353865] [-0.0428862, 0.995863, -0.0801138] [-0.0389124, 0.0784617, 0.996157] [215.226, 13.9539, 246.558]]
+}
+
+entity{
+  _template:t="t_34_85_e_a_destroyed"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [250.381, 14.7769, 233.307]]
+}
+
+entity{
+  _template:t="t_34_85_e_a_destroyed"
+  transform:m=[[0.999359, 0.0266588, 0.0238806] [-0.0271952, 0.999379, 0.0224276] [-0.0232679, -0.0230627, 0.999463] [255.218, 16.128, 215.034]]
+}

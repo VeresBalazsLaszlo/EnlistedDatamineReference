@@ -1,0 +1,59 @@
+mass:r=238.1
+caliber:r=0.495
+length:r=1.549
+distFromCmToStab:r=0.75
+dragCx:r=0.0257
+normalizationPreset:t="heat"
+explosiveMass:r=156.5
+ricochetPreset:t="he"
+explosiveType:t="tnt"
+secondaryShattersPreset:t="ap"
+stabilityThreshold:r=0.5
+stabilityCaliberToArmorThreshold:r=5.0
+stabilityReductionAfterRicochet:r=0.3
+stabilityReductionAfterPenetration:r=0.15
+bulletType:t="he_bomb"
+slopeEffectPreset:t="ap"
+isDepthCharge:b=yes
+useEffectiveArmorThicknessForShatter:b=yes
+explodeOnRendinst:b=yes
+explodeTreshold:r=0.0
+hitPowerMult:r=1.0
+nearHitPower:p2=1.0, 50.0
+midHitPower:p2=0.9, 400.0
+farHitPower:p2=0.1, 1000.0
+endHitPower:p2=0.01, 1500.0
+relativeVelHitShift:p2=300.0, 1000.0
+nearArmorPower:p2=10.0, 50.0
+sound:t="weapon.bomb_mid"
+midArmorPower:p2=7.0, 400.0
+farArmorPower:p2=0.2, 700.0
+relativeVelArmorShift:p2=200.0, 1000.0
+bombName:t="520lb_herl_mk_1_n"
+bombType:t="he_bomb"
+entityTemplate:t="520lb_herl_mk_1_n_bomb_projectile"
+entityPhysTemplate:t=""
+drownFx:t="bomb_reflection"
+rendinstDamageRadius:r=9.0
+
+stabilityRicochetModifier{
+  mod1:p2=0.0, 0.5
+  mod2:p2=15.0, 0.7
+  mod3:p2=30.0, 0.99
+}
+
+pressureDamage{
+  damageType:t="pressure"
+}
+
+damage{
+
+  shatter{
+    useRealShatters:b=yes
+    countPortion:r=0.0
+  }
+}
+
+explFx{
+  effectTemplName:t="bomb_expl_50kg"
+}

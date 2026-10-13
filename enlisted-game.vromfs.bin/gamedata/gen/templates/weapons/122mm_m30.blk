@@ -1,0 +1,43 @@
+base_122mm_m30{
+  item__name:t="guns/122mm_m30"
+  gun__blk:t="gamedata/gen/weapons/122mm_m30.blk"
+  gun__shotFreq:r=0.055
+  gun__locName:t="122mm_m30"
+
+  "gun__ammoSetsInfo:shared:array"{
+
+    "defaultSet:array"{
+
+      "shell:object"{
+        blk:t="gamedata/gen/weapons/shells/122mm_m30_defaultset.blk"
+        name:t="122mm_of_462"
+        type:t="he_frag_tank"
+      }
+    }
+
+    "122mm_ussr_HEAT:array"{
+
+      "shell:object"{
+        blk:t="gamedata/gen/weapons/shells/122mm_m30_122mm_ussr_heat.blk"
+        name:t="122mm_bp_462"
+        type:t="heat_tank"
+      }
+    }
+
+    "122mm_ussr_Smoke:array"{
+
+      "shell:object"{
+        blk:t="gamedata/gen/weapons/shells/122mm_m30_122mm_ussr_smoke.blk"
+        name:t="122mm_d462a"
+        type:t="smoke_tank"
+      }
+    }
+  }
+}
+
+tankgun_122mm_m30{
+  _use:t="tankgun"
+  _use:t="base_tankgun_cannon"
+  _use:t="base_122mm_m30"
+  turret__triggerGroup:i=0
+}

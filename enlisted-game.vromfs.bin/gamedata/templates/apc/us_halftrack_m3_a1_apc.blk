@@ -1,0 +1,888 @@
+ussr_halftrack_m3_a1_apc{
+  _use:t="us_halftrack_m3_a1_apc"
+  skin__template:t="ussr_halftrack_m3_a1_apc_skins"
+
+  "animchar__objTexReplace:object"{
+    "us_camo_olive*":t="ussr_camo_green*"
+  }
+}
+
+us_halftrack_m3_a1_apc{
+  _use:t="us_halftrack_m3_a1_apc_common"
+  _use:t="apc_settings"
+
+  "disableDMParts:list<t>"{
+    part:t="gunner"
+    part:t="commander"
+    part:t="driver"
+  }
+}
+
+us_halftrack_m3_a1_apc_common{
+  _use:t="base_halftrack_m3_a1"
+  _use:t="forestall"
+  _use:t="halftrack_seats"
+  _use:t="us_halftrack_m3_a1_common_vehicle_sound"
+  _use:t="vehicle_anim_steering_deflection"
+  commanderFpsCamMaxAngle:p2=50.0, 50.0
+  item__iconOffset:p2=0.05, 0.08
+  item__iconScale:r=1.05
+  cockpit__zoomOutFov:r=1.5
+  cockpit__zoomInFov:r=2.0
+  commanderCockpitFpsCamMaxAngle:p2=40.0, 5.0
+  gunner_cam_limit__useCockpitDir:b=yes
+  vehicle_commander_cam__attachToVehicle:b=yes
+
+  "vehicle__isExplosionFatal:b"{
+    _tags:t="server"
+    value:b=yes
+  }
+
+  "vehicle_seats__effectors:array"{
+  }
+
+  "dm_parts_repair_names:list<t>"{
+    part:t="drive_turret_h"
+    part:t="drive_turret_v"
+    part:t="cannon_breech"
+    part:t="engine"
+    part:t="transmission"
+    part:t="gun_barrel"
+    part:t="gun_barrel_01"
+    part:t="gun_barrel_02"
+    part:t="gun_barrel_03"
+    part:t="gun_barrel_04"
+    part:t="gun_barrel_05"
+    part:t="track_r"
+    part:t="track_l"
+    part:t="track_r_01"
+    part:t="track_l_01"
+    part:t="wheel_l_back"
+    part:t="wheel_l_front"
+    part:t="wheel_l_drive"
+    part:t="wheel_r_back"
+    part:t="wheel_r_front"
+    part:t="wheel_r_drive"
+    part:t="wheel_r_01"
+    part:t="wheel_l_01"
+  }
+
+  _group{
+    _tags:t="render"
+    animchar_camera_target__node_name:t="bone_mg_aa_h_01"
+    animchar_camera_target__node_offset:p3=0.0, 1.0, 0.0
+    animchar_camera_target__nodeIndex:i=-1
+  }
+
+  "vehicle_seats__seatsProvideOrder:tag"{
+  }
+
+  "vehicle_seats__seats:shared:array"{
+
+    "seats:object"{
+      name:t="main_gunner"
+      locName:t="vehicle_seats/gunner"
+      attachNode:t="gunner"
+      ignoreAttachNodeRotation:b=yes
+      attachTm:m=[[0.999369, -0.0348149, 4.42826e-15] [0.0348149, 0.999369, 5.83212e-09] [-2.03054e-10, -5.82859e-09, 0.999977] [-0.15, -0.0, 0.0]]
+      seatComponent:t="isGunner"
+      nextSeat:t="driver"
+      shouldHideOwner:b=no
+      receiveDamageFromDMPart:t="gunner"
+      cameraNodeName:t="bone_mg_aa_h_01"
+      directTurretControl:b=yes
+      canPlaceManually:b=yes
+      cameraOffset:p3=-0.6, 0.6, 0.0
+      isHoldGunModeAllowed:b=no
+
+      "turretNames:array"{
+        turretNames:t="turret_01"
+      }
+
+      "loaderTurretNames:array"{
+        turret:t="turret_01"
+      }
+
+      "effectors:object"{
+
+        "l.hand:object"{
+          rel_tm:m=[[0.946154, 0.314319, 0.0774297] [-0.0772435, -0.0130678, 0.996927] [0.314365, -0.949227, 0.0119149] [-0.607666, -0.00865978, -0.0884418]]
+          node:t="bone_mg_aa_v_01"
+        }
+
+        "r.hand:object"{
+          rel_tm:m=[[0.946638, 0.315281, 0.0668975] [0.125997, -0.170965, -0.977188] [-0.296652, 0.933471, -0.201566] [-0.612503, -0.00964385, 0.093379]]
+          node:t="bone_mg_aa_v_01"
+        }
+
+        "l.foot:object"{
+          rel_tm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-0.0, -0.0, 0.0]]
+          node:t="pedal_lfoot_3"
+        }
+
+        "r.foot:object"{
+          rel_tm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-0.0, -0.0, 0.0]]
+          node:t="pedal_rfoot_3"
+        }
+      }
+    }
+
+    "seats:object"{
+      name:t="driver"
+      locName:t="vehicle_seats/driver"
+      seatOwnsEntityControl:b=yes
+      attachNode:t="driver"
+      ignoreAttachNodeRotation:b=yes
+      attachTm:m=[[0.947681, -0.066265, -0.0] [0.0662656, 0.94769, 0.0] [0.0, -0.0, 0.949999] [-0.38, -0.28, 0.0]]
+      seatComponent:t="isDriver"
+      shouldHideOwner:b=no
+      receiveDamageFromDMPart:t="driver"
+      cameraNodeName:t="bone_camera_driver"
+      seatAnimUpper:t="drive_passenger"
+      seatAnimLower:t="drive_passenger"
+      cameraType:t="commander"
+      cameraOffset:p3=-0.1, -0.04, -0.07
+      isHoldGunModeAllowed:b=no
+      canPlaceManually:b=yes
+      canPlaceOnlyOwner:b=yes
+
+      "effectors:object"{
+
+        "l.hand:object"{
+          rel_tm:m=[[0.950533, 0.104804, -0.29241] [0.224297, 0.419659, 0.879533] [0.214891, -0.901611, 0.375393] [0.14946, 0.0634537, -0.138252]]
+          node:t="lefthand_1"
+        }
+
+        "r.hand:object"{
+          rel_tm:m=[[0.734617, -0.649416, 0.196463] [0.642886, 0.758814, 0.104397] [-0.216878, 0.0496121, 0.974938] [0.0180359, 0.0352173, -0.0165787]]
+          node:t="righthand_1"
+        }
+
+        "l.foot:object"{
+          rel_tm:m=[[0.712418, 0.700576, 0.0406819] [-0.700238, 0.713492, -0.0244167] [-0.0461318, -0.0110921, 0.998874] [-0.0641327, -0.0190277, 0.0110579]]
+          node:t="pedal_lfoot_1"
+        }
+
+        "r.foot:object"{
+          rel_tm:m=[[0.991465, -0.130371, 0.00129172] [0.130363, 0.991455, 0.00481451] [-0.00190832, -0.00460509, 0.999988] [-0.0964966, -0.0799866, -0.00249863]]
+          node:t="pedal_rfoot_1"
+        }
+      }
+    }
+
+    "seats:object"{
+      name:t="passenger"
+      attachNode:t="root"
+      locName:t="vehicle_seats/shooter"
+      ignoreAttachNodeRotation:b=yes
+      attachTm:m=[[-0.132196, 1.08003e-13, 0.940766] [1.50267e-14, 0.949872, -1.06937e-13] [-0.940762, 3.21874e-21, -0.132195] [-1.0, 1.35, -0.54]]
+      seatComponent:t="isPassenger"
+      shouldHideOwner:b=no
+      canPlaceManually:b=yes
+      holdingGunPassengerVertLookLimit:p2=-10.0, 85.0
+      seatEnum:t="stool_seat"
+
+      "effectors:object"{
+
+        "l.hand:object"{
+          rel_tm:m=[[-0.111283, -0.0379804, -0.993063] [0.345832, -0.938292, -0.00286828] [-0.931674, -0.343752, 0.11755] [-1.19568, 1.49362, 0.203407]]
+          node:t="root"
+        }
+
+        "r.hand:object"{
+          rel_tm:m=[[-0.186957, -0.0367365, -0.981681] [0.211441, -0.977383, -0.00369246] [-0.959343, -0.208258, 0.190496] [-0.893921, 1.56461, 0.156128]]
+          node:t="root"
+        }
+
+        "l.foot:object"{
+          rel_tm:m=[[-0.0119919, -0.961301, -0.275239] [-0.00308362, 0.275293, -0.961355] [0.999923, -0.0106798, -0.00626559] [-1.1348, 0.991815, 0.165415]]
+          node:t="root"
+        }
+
+        "r.foot:object"{
+          rel_tm:m=[[0.0381357, -0.999172, -0.0141466] [0.160428, 0.0200951, -0.986843] [0.98631, 0.0353644, 0.161061] [-0.852661, 1.062, 0.121132]]
+          node:t="root"
+        }
+      }
+    }
+
+    "seats:object"{
+      name:t="passenger"
+      attachNode:t="root"
+      locName:t="vehicle_seats/shooter"
+      ignoreAttachNodeRotation:b=yes
+      attachTm:m=[[0.132201, 0.0, -0.940655] [0.0, 0.949865, 0.0] [0.940738, 0.0, 0.132212] [-1.0, 1.35, 0.54]]
+      seatComponent:t="isPassenger"
+      shouldHideOwner:b=no
+      canPlaceManually:b=yes
+      holdingGunPassengerVertLookLimit:p2=-10.0, 85.0
+      seatEnum:t="stool_seat"
+
+      "effectors:object"{
+
+        "l.hand:object"{
+          rel_tm:m=[[0.00828105, 0.374023, 0.927383] [-0.183158, -0.911157, 0.369115] [0.983049, -0.172914, 0.06096] [-0.759232, 1.59166, -0.176244]]
+          node:t="root"
+        }
+
+        "r.hand:object"{
+          rel_tm:m=[[0.0127685, 0.241777, 0.970248] [0.00163861, -0.970331, 0.241776] [0.999917, -0.00149726, -0.0127858] [-1.08316, 1.54999, -0.163864]]
+          node:t="root"
+        }
+
+        "l.foot:object"{
+          rel_tm:m=[[0.0165807, -0.999846, -0.00575272] [0.00173709, -0.00572464, 0.999982] [-0.999861, -0.0165904, 0.00164191] [-0.690079, 1.1454, -0.0809066]]
+          node:t="root"
+        }
+
+        "r.foot:object"{
+          rel_tm:m=[[0.00256197, -0.999996, -0.00150982] [0.00163819, -0.00150557, 0.999998] [-0.999995, -0.00256444, 0.00163433] [-1.01457, 1.06344, -0.0847929]]
+          node:t="root"
+        }
+      }
+    }
+
+    "seats:object"{
+      name:t="passenger"
+      attachNode:t="root"
+      locName:t="vehicle_seats/shooter"
+      ignoreAttachNodeRotation:b=yes
+      attachTm:m=[[-0.132196, 1.08003e-13, 0.940766] [1.50267e-14, 0.949872, -1.06937e-13] [-0.940762, 3.21874e-21, -0.132195] [-1.5, 1.35, -0.54]]
+      seatComponent:t="isPassenger"
+      shouldHideOwner:b=no
+      canPlaceManually:b=yes
+      holdingGunPassengerVertLookLimit:p2=-10.0, 85.0
+      seatEnum:t="stool_seat"
+
+      "effectors:object"{
+
+        "l.hand:object"{
+          rel_tm:m=[[-0.111282, -0.0379804, -0.993063] [0.345831, -0.938292, -0.00286809] [-0.931674, -0.343751, 0.11755] [-1.72716, 1.529, 0.205309]]
+          node:t="root"
+        }
+
+        "r.hand:object"{
+          rel_tm:m=[[-0.186957, -0.0367363, -0.981681] [0.211441, -0.977383, -0.00369256] [-0.959342, -0.208258, 0.190496] [-1.37358, 1.56202, 0.157943]]
+          node:t="root"
+        }
+
+        "l.foot:object"{
+          rel_tm:m=[[-0.0108686, -0.999559, -0.027618] [-0.00188614, 0.02764, -0.999616] [0.999939, -0.0108124, -0.00218571] [-1.67877, 1.06105, 0.167237]]
+          node:t="root"
+        }
+
+        "r.foot:object"{
+          rel_tm:m=[[0.0381359, -0.999172, -0.0141464] [0.160428, 0.0200949, -0.986843] [0.98631, 0.0353646, 0.161062] [-1.42017, 1.05893, 0.123227]]
+          node:t="root"
+        }
+      }
+    }
+
+    "seats:object"{
+      name:t="passenger"
+      attachNode:t="root"
+      locName:t="vehicle_seats/shooter"
+      ignoreAttachNodeRotation:b=yes
+      attachTm:m=[[0.132201, 0.0, -0.940655] [0.0, 0.949865, 0.0] [0.940738, 0.0, 0.132212] [-1.5, 1.35, 0.54]]
+      seatComponent:t="isPassenger"
+      shouldHideOwner:b=no
+      canPlaceManually:b=yes
+      holdingGunPassengerVertLookLimit:p2=-10.0, 85.0
+      seatEnum:t="stool_seat"
+
+      "effectors:object"{
+
+        "l.hand:object"{
+          rel_tm:m=[[0.00828074, 0.374023, 0.927383] [-0.183158, -0.911157, 0.369114] [0.983048, -0.172914, 0.0609604] [-1.27177, 1.53077, -0.186889]]
+          node:t="root"
+        }
+
+        "r.hand:object"{
+          rel_tm:m=[[0.0127683, 0.241777, 0.970248] [0.00163851, -0.970331, 0.241776] [0.999917, -0.00149731, -0.0127857] [-1.59695, 1.54724, -0.150805]]
+          node:t="root"
+        }
+
+        "l.foot:object"{
+          rel_tm:m=[[0.0165808, -0.999846, -0.00575274] [0.00173631, -0.00572467, 0.999982] [-0.999861, -0.0165905, 0.00164112] [-1.27026, 1.06347, -0.113121]]
+          node:t="root"
+        }
+
+        "r.foot:object"{
+          rel_tm:m=[[0.00256199, -0.999995, -0.00150996] [0.00163765, -0.00150571, 0.999998] [-0.999995, -0.00256446, 0.00163379] [-1.55914, 1.06042, -0.118728]]
+          node:t="root"
+        }
+      }
+    }
+
+    "seats:object"{
+      name:t="passenger"
+      attachNode:t="root"
+      locName:t="vehicle_seats/shooter"
+      ignoreAttachNodeRotation:b=yes
+      attachTm:m=[[-0.132196, 1.08003e-13, 0.940766] [1.50267e-14, 0.949872, -1.06937e-13] [-0.940762, 3.21874e-21, -0.132195] [-2.0, 1.35, -0.54]]
+      seatComponent:t="isPassenger"
+      shouldHideOwner:b=no
+      canPlaceManually:b=yes
+      holdingGunPassengerVertLookLimit:p2=-10.0, 85.0
+      seatEnum:t="stool_seat"
+
+      "effectors:object"{
+
+        "l.hand:object"{
+          rel_tm:m=[[-0.111282, -0.0379805, -0.993063] [0.345831, -0.938292, -0.00286804] [-0.931673, -0.343751, 0.11755] [-2.22559, 1.52621, 0.157518]]
+          node:t="root"
+        }
+
+        "r.hand:object"{
+          rel_tm:m=[[-0.186956, -0.0367364, -0.981681] [0.211441, -0.977382, -0.00369251] [-0.959342, -0.208258, 0.190496] [-1.8674, 1.52366, 0.131733]]
+          node:t="root"
+        }
+
+        "l.foot:object"{
+          rel_tm:m=[[-0.0108686, -0.999559, -0.0276179] [-0.00188604, 0.0276399, -0.999616] [0.999939, -0.0108123, -0.00218562] [-2.11548, 1.05868, 0.168828]]
+          node:t="root"
+        }
+
+        "r.foot:object"{
+          rel_tm:m=[[0.0381359, -0.999172, -0.0141465] [0.160428, 0.020095, -0.986842] [0.98631, 0.0353646, 0.161062] [-1.88127, 1.05644, 0.124902]]
+          node:t="root"
+        }
+      }
+    }
+
+    "seats:object"{
+      name:t="passenger"
+      locName:t="vehicle_seats/shooter"
+      attachNode:t="commander"
+      shouldHideOwner:b=no
+      ignoreAttachNodeRotation:b=yes
+      attachTm:m=[[0.987694, 0.156435, 0.0] [-0.156435, 0.987694, 0.0] [0.0, 0.0, 1.00001] [-0.23, -0.38, -0.04]]
+      seatComponent:t="isPassenger"
+      receiveDamageFromDMPart:t="commander"
+      seatAnimUpper:t="drive_passenger"
+      seatAnimLower:t="drive_passenger"
+      canPlaceManually:b=yes
+      seatEnum:t="right_seat"
+
+      "effectors:object"{
+
+        "l.hand:object"{
+          rel_tm:m=[[0.714184, 0.559374, 0.420765] [0.212735, 0.399229, -0.89183] [-0.666846, 0.726442, 0.166124] [-0.179199, 0.192134, 0.0994596]]
+          node:t="lefthand_2"
+        }
+
+        "r.hand:object"{
+          rel_tm:m=[[0.203114, -0.896495, -0.393754] [0.918763, 0.31354, -0.239932] [0.338554, -0.313033, 0.88735] [-0.249939, -0.166687, -0.0487995]]
+          node:t="righthand_2"
+        }
+
+        "l.foot:object"{
+          rel_tm:m=[[0.854991, -0.517125, 0.0396488] [0.518529, 0.853899, -0.0445425] [-0.0108218, 0.0586418, 0.998221] [-0.0995026, 0.0289764, 0.00847626]]
+          node:t="pedal_lfoot_2"
+        }
+
+        "r.foot:object"{
+          rel_tm:m=[[0.833926, -0.542366, 0.102011] [0.547047, 0.836784, -0.0230712] [-0.0728486, 0.0750449, 0.994516] [-0.120911, 0.0315475, 0.00581932]]
+          node:t="pedal_rfoot_2"
+        }
+      }
+    }
+
+    "seats:object"{
+      name:t="passenger"
+      attachNode:t="root"
+      locName:t="vehicle_seats/shooter"
+      ignoreAttachNodeRotation:b=yes
+      attachTm:m=[[0.132201, 0.0, -0.940655] [0.0, 0.949865, 0.0] [0.940738, 0.0, 0.132212] [-2.0, 1.35, 0.54]]
+      seatComponent:t="isPassenger"
+      shouldHideOwner:b=no
+      canPlaceManually:b=yes
+      holdingGunPassengerVertLookLimit:p2=-10.0, 85.0
+      seatEnum:t="stool_seat"
+
+      "effectors:object"{
+
+        "l.hand:object"{
+          rel_tm:m=[[0.00675055, 0.579894, 0.814664] [-0.183011, -0.800206, 0.571119] [0.983087, -0.152948, 0.100725] [-1.76976, 1.62303, -0.224471]]
+          node:t="root"
+        }
+
+        "r.hand:object"{
+          rel_tm:m=[[0.0127682, 0.241777, 0.970248] [0.00163851, -0.97033, 0.241776] [0.999917, -0.00149728, -0.0127855] [-2.07144, 1.54467, -0.149028]]
+          node:t="root"
+        }
+
+        "l.foot:object"{
+          rel_tm:m=[[0.015589, -0.972242, -0.233458] [0.002864, -0.233442, 0.972366] [-0.999874, -0.0158269, -0.00085463] [-1.7663, 1.19223, -0.140476]]
+          node:t="root"
+        }
+
+        "r.foot:object"{
+          rel_tm:m=[[0.00256207, -0.999995, -0.00151012] [0.00163752, -0.00150587, 0.999998] [-0.999995, -0.00256454, 0.00163365] [-1.97878, 1.05816, -0.117133]]
+          node:t="root"
+        }
+      }
+    }
+
+    "seats:object"{
+      name:t="passenger"
+      attachNode:t="root"
+      locName:t="vehicle_seats/shooter"
+      ignoreAttachNodeRotation:b=yes
+      attachTm:m=[[-0.132196, 1.08003e-13, 0.940766] [1.50267e-14, 0.949872, -1.06937e-13] [-0.940762, 3.21874e-21, -0.132195] [-2.5, 1.35, -0.54]]
+      seatComponent:t="isPassenger"
+      shouldHideOwner:b=no
+      canPlaceManually:b=yes
+      holdingGunPassengerVertLookLimit:p2=-10.0, 85.0
+      seatEnum:t="stool_seat"
+
+      "effectors:object"{
+
+        "l.hand:object"{
+          rel_tm:m=[[-0.111282, -0.0379801, -0.993063] [0.345831, -0.938292, -0.00286832] [-0.931674, -0.343751, 0.11755] [-2.67818, 1.52378, 0.169167]]
+          node:t="root"
+        }
+
+        "r.hand:object"{
+          rel_tm:m=[[-0.186957, -0.0367361, -0.981682] [0.211441, -0.977383, -0.00369276] [-0.959342, -0.208258, 0.190496] [-2.37274, 1.55648, 0.0918959]]
+          node:t="root"
+        }
+
+        "l.foot:object"{
+          rel_tm:m=[[-0.0108684, -0.999559, -0.0276179] [-0.00188599, 0.0276399, -0.999616] [0.999939, -0.0108121, -0.00218556] [-2.57317, 1.05621, 0.170517]]
+          node:t="root"
+        }
+
+        "r.foot:object"{
+          rel_tm:m=[[0.0381357, -0.999172, -0.0141467] [0.160428, 0.0200951, -0.986843] [0.98631, 0.0353644, 0.161062] [-2.34441, 1.05393, 0.126608]]
+          node:t="root"
+        }
+      }
+    }
+
+    "seats:object"{
+      name:t="passenger"
+      attachNode:t="root"
+      locName:t="vehicle_seats/shooter"
+      ignoreAttachNodeRotation:b=yes
+      attachTm:m=[[0.132201, 0.0, -0.940655] [0.0, 0.949865, 0.0] [0.940738, 0.0, 0.132212] [-2.5, 1.35, 0.54]]
+      seatComponent:t="isPassenger"
+      shouldHideOwner:b=no
+      canPlaceManually:b=yes
+      holdingGunPassengerVertLookLimit:p2=-10.0, 85.0
+      seatEnum:t="stool_seat"
+
+      "effectors:object"{
+
+        "l.hand:object"{
+          rel_tm:m=[[0.00890259, 0.28098, 0.959672] [-0.183325, -0.942985, 0.277795] [0.983012, -0.178405, 0.0431156] [-2.261, 1.51848, -0.158169]]
+          node:t="root"
+        }
+
+        "r.hand:object"{
+          rel_tm:m=[[0.0127679, 0.241777, 0.970248] [0.00163852, -0.97033, 0.241776] [0.999917, -0.0014972, -0.0127853] [-2.57176, 1.54197, -0.147172]]
+          node:t="root"
+        }
+
+        "l.foot:object"{
+          rel_tm:m=[[0.0166149, -0.999856, 0.00337624] [0.00168553, 0.00340477, 0.999992] [-0.99986, -0.0166091, 0.00174186] [-2.22771, 1.06356, 0.0515218]]
+          node:t="root"
+        }
+
+        "r.foot:object"{
+          rel_tm:m=[[0.00327492, -0.999992, -0.00197892] [-0.184616, -0.00254947, 0.982807] [-0.982805, -0.00285329, -0.184623] [-2.42773, 1.05573, -0.115504]]
+          node:t="root"
+        }
+      }
+    }
+
+    "seats:object"{
+      name:t="passenger"
+      attachNode:t="root"
+      locName:t="vehicle_seats/shooter"
+      ignoreAttachNodeRotation:b=yes
+      attachTm:m=[[1.90355e-06, -0.258413, 0.964424] [-1.43542e-06, 0.962215, 0.257821] [-0.998741, -1.87868e-06, 1.46732e-06] [-1.0, 1.35, -0.54]]
+      seatComponent:t="isPassenger"
+      shouldHideOwner:b=yes
+      isHoldGunModeAllowed:b=no
+      seatEnum:t="right_seat"
+    }
+
+    "seats:object"{
+      name:t="passenger"
+      attachNode:t="root"
+      locName:t="vehicle_seats/shooter"
+      ignoreAttachNodeRotation:b=yes
+      attachTm:m=[[1.90355e-06, -0.258413, 0.964424] [-1.43542e-06, 0.962215, 0.257821] [-0.998741, -1.87868e-06, 1.46732e-06] [-1.5, 1.35, -0.54]]
+      seatComponent:t="isPassenger"
+      shouldHideOwner:b=yes
+      isHoldGunModeAllowed:b=no
+      seatEnum:t="right_seat"
+    }
+
+    "seats:object"{
+      name:t="passenger"
+      attachNode:t="root"
+      locName:t="vehicle_seats/shooter"
+      ignoreAttachNodeRotation:b=yes
+      attachTm:m=[[-2.36466e-07, -0.0697057, 0.996863] [-1.43542e-06, 0.962215, 0.257821] [-0.998741, -1.87868e-06, 1.46732e-06] [-2.0, 1.35, -0.54]]
+      seatComponent:t="isPassenger"
+      shouldHideOwner:b=yes
+      isHoldGunModeAllowed:b=no
+      seatEnum:t="right_seat"
+    }
+
+    "seats:object"{
+      name:t="passenger"
+      attachNode:t="root"
+      locName:t="vehicle_seats/shooter"
+      ignoreAttachNodeRotation:b=yes
+      attachTm:m=[[-2.36466e-07, -0.0697057, 0.996863] [-1.43542e-06, 0.962215, 0.257821] [-0.998741, -1.87868e-06, 1.46732e-06] [-2.5, 1.35, -0.54]]
+      seatComponent:t="isPassenger"
+      shouldHideOwner:b=yes
+      isHoldGunModeAllowed:b=no
+      seatEnum:t="right_seat"
+    }
+
+    "seats:object"{
+      name:t="passenger"
+      attachNode:t="root"
+      locName:t="vehicle_seats/shooter"
+      ignoreAttachNodeRotation:b=yes
+      attachTm:m=[[7.94122e-07, -0.104399, -0.993303] [2.42817e-06, 0.991231, -0.104181] [0.998935, -2.32787e-06, 1.04379e-06] [-1.0, 1.3, 0.57]]
+      seatComponent:t="isPassenger"
+      shouldHideOwner:b=yes
+      isHoldGunModeAllowed:b=no
+      seatEnum:t="left_seat"
+    }
+
+    "seats:object"{
+      name:t="passenger"
+      attachNode:t="root"
+      locName:t="vehicle_seats/shooter"
+      ignoreAttachNodeRotation:b=yes
+      attachTm:m=[[7.94122e-07, -0.104399, -0.993303] [2.42817e-06, 0.991231, -0.104181] [0.998935, -2.32787e-06, 1.04379e-06] [-1.5, 1.3, 0.57]]
+      seatComponent:t="isPassenger"
+      shouldHideOwner:b=yes
+      isHoldGunModeAllowed:b=no
+      seatEnum:t="left_seat"
+    }
+
+    "seats:object"{
+      name:t="passenger"
+      attachNode:t="root"
+      locName:t="vehicle_seats/shooter"
+      ignoreAttachNodeRotation:b=yes
+      attachTm:m=[[7.94122e-07, -0.104399, -0.993303] [2.42817e-06, 0.991231, -0.104181] [0.998935, -2.32787e-06, 1.04379e-06] [-2.0, 1.3, 0.57]]
+      seatComponent:t="isPassenger"
+      shouldHideOwner:b=yes
+      isHoldGunModeAllowed:b=no
+      seatEnum:t="left_seat"
+    }
+
+    "seats:object"{
+      name:t="passenger"
+      attachNode:t="root"
+      locName:t="vehicle_seats/shooter"
+      ignoreAttachNodeRotation:b=yes
+      attachTm:m=[[7.94122e-07, -0.104399, -0.993303] [2.42817e-06, 0.991231, -0.104181] [0.998935, -2.32787e-06, 1.04379e-06] [-2.5, 1.3, 0.57]]
+      seatComponent:t="isPassenger"
+      shouldHideOwner:b=yes
+      isHoldGunModeAllowed:b=no
+      seatEnum:t="left_seat"
+    }
+  }
+}
+
+halftrack_m3_a1_turret_01_12_7mm_m2_hb_user_machinegun_for_m15{
+  _override:b=yes
+  turret__triggerGroup:i=0
+}
+
+halftrack_m3_a1_event_turret_01_12_7mm_m2_hb_user_machinegun_for_m15{
+  _use:t="tankgun_12_7mm_m2_hb_user_machinegun_for_m15"
+  turret__triggerGroup:i=0
+  gun__shootNodeName:t="bone_mg_aa_v_01"
+  turret__yawSpeed:r=60.0
+  turret__pitchSpeed:r=60.0
+  turret__aimNodeName:t="bone_turret"
+  turret__limit:p4=-180.0, 180.0, -15.0, 30.0
+
+  "gun__shellsAmmo:array"{
+    ammo:i=2200
+  }
+}
+
+us_halftrack_m3_a1_apc_zombie_event{
+  _use:t="us_halftrack_m3_a1_apc_common"
+  vehicle_net_phys__blk:t="gamedata/gen/units/tanks/halftrack_m3_a1_zombie.blk:VehiclePhys"
+  damage_model__blk:t="gamedata/gen/units/tanks/halftrack_m3_a1_zombie.blk"
+  particle_phys__blk:t="gamedata/gen/units/tanks/halftrack_m3_a1_zombie.blk:PhysSys"
+  physical_tracks__blk:t="gamedata/gen/units/tanks/halftrack_m3_a1_zombie.blk"
+  fire_damage__timeToExplosion:r=800.0
+
+  "vehicle__isExplosionFatal:b"{
+    _tags:t="server"
+    value:b=no
+  }
+
+  _group{
+    _tags:t="gameClient"
+    chain_ik__blk:t="gamedata/gen/units/tanks/halftrack_m3_a1_zombie.blk:chainIK"
+  }
+
+  "turret_control__turretInfo:shared:array"{
+
+    "turretInfo:object"{
+      turretName:t="turret_01"
+      turretGroup:t="main_turrets"
+      gun:t="halftrack_m3_a1_event_turret_01_12_7mm_m2_hb_user_machinegun_for_m15+main_turret"
+      barrelDm:t="gun_barrel"
+      breechDm:t="gun_barrel"
+      verDriveDm:t="gun_barrel"
+      horDriveDm:t="gun_barrel"
+      salt:i=1
+    }
+  }
+
+  "animchar__objTexReplace:object"{
+    "us_camo_olive*":t="us_camo_daemon_halloween*"
+  }
+
+  "attach_decorators__entities:list<eid>"{
+  }
+
+  "attach_decorators__templates:array"{
+
+    "templates:object"{
+      preinited:b=yes
+      relativeTm:m=[[0.00515404, -0.030474, -0.824116] [-0.572364, 0.593105, -0.0255117] [0.593691, 0.572196, -0.0174481] [0.823775, 1.627, 0.0218506]]
+      template:t="sandbag_single_c_decor"
+      nodeName:t="root"
+    }
+
+    "templates:object"{
+      preinited:b=yes
+      relativeTm:m=[[0.817625, -0.0707731, -0.0275897] [-0.0268662, 0.00951272, -0.820605] [0.071052, 0.818026, 0.00715738] [1.63818, 1.4732, -0.14856]]
+      template:t="sandbag_single_d_decor"
+      nodeName:t="root"
+    }
+
+    "templates:object"{
+      preinited:b=yes
+      relativeTm:m=[[0.718568, -0.108569, -0.0670974] [-0.0682401, -0.00260542, -0.726569] [0.10784, 0.721625, -0.0127155] [1.61836, 1.44984, 0.164062]]
+      template:t="sandbag_single_c_decor"
+      nodeName:t="root"
+    }
+
+    "templates:object"{
+      preinited:b=yes
+      relativeTm:m=[[0.00712048, -0.00463159, -0.838679] [-0.825629, 0.14751, -0.00782426] [0.147557, 0.825745, -0.00330736] [1.18281, 1.51018, 0.0155945]]
+      template:t="sandbag_single_d_decor"
+      nodeName:t="root"
+    }
+
+    "templates:object"{
+      preinited:b=yes
+      relativeTm:m=[[-0.578705, -0.0145009, 0.00135053] [-0.0144992, 0.578615, -0.000824923] [-0.00164915, -0.00106528, -0.718089] [-1.67323, 1.64497, -0.964294]]
+      template:t="metal_spike"
+      nodeName:t="root"
+    }
+
+    "templates:object"{
+      preinited:b=yes
+      relativeTm:m=[[0.578967, -4.43578e-06, 6.85013e-05] [4.13382e-06, 0.57868, 0.00048165] [-9.45057e-05, -0.000660745, 0.792966] [-1.63762, 1.60232, 0.96315]]
+      template:t="metal_spike"
+      nodeName:t="root"
+    }
+
+    "templates:object"{
+      preinited:b=yes
+      relativeTm:m=[[-0.00870005, 0.00918248, 0.447163] [0.444812, -0.0462088, 0.00960331] [0.0463743, 0.444689, -0.00822948] [2.07219, 1.40674, -0.315155]]
+      template:t="metal_spike"
+      nodeName:t="root"
+    }
+
+    "templates:object"{
+      preinited:b=yes
+      relativeTm:m=[[1.00001, -5.99773e-07, -2.27941e-07] [5.08488e-07, 1.00002, -8.05594e-08] [5.15953e-07, 2.16532e-07, 1.14668] [-0.551373, 1.5731, 0.967545]]
+      template:t="metal_flame"
+      nodeName:t="root"
+    }
+
+    "templates:object"{
+      preinited:b=yes
+      relativeTm:m=[[0.44409, -0.0536043, -0.00622701] [-0.00584128, 0.00357111, -0.447338] [0.0536198, 0.443926, 0.00284374] [2.0962, 1.40465, 0.308258]]
+      template:t="metal_spike"
+      nodeName:t="root"
+    }
+
+    "templates:object"{
+      preinited:b=yes
+      relativeTm:m=[[0.684385, -0.0712981, -0.00444035] [-0.00227412, 0.0210091, -0.687851] [0.0949503, 0.909755, 0.027474] [1.5124, 1.47035, -0.452576]]
+      template:t="metal_flame"
+      nodeName:t="root"
+    }
+
+    "templates:object"{
+      preinited:b=yes
+      relativeTm:m=[[0.447371, -1.24764e-06, -4.43542e-08] [8.28243e-07, 0.447297, 1.60653e-08] [1.01048e-07, 8.80682e-08, 0.447261] [-2.52768, 1.49582, 0.964905]]
+      template:t="metal_spike"
+      nodeName:t="root"
+    }
+
+    "templates:object"{
+      preinited:b=yes
+      relativeTm:m=[[0.681751, -0.0773949, -0.0528122] [-0.0516054, 0.0135374, -0.686045] [0.092963, 0.812829, 0.00904558] [1.48722, 1.4754, 0.438202]]
+      template:t="metal_flame"
+      nodeName:t="root"
+    }
+
+    "templates:object"{
+      preinited:b=yes
+      relativeTm:m=[[0.369832, -0.251622, 0.00568319] [0.00356115, -0.00486783, -0.447274] [0.251607, 0.369743, -0.00202081] [2.52511, 0.973005, 0.600677]]
+      template:t="metal_spike"
+      nodeName:t="root"
+    }
+
+    "templates:object"{
+      preinited:b=yes
+      relativeTm:m=[[0.999793, 0.0250453, -2.62421e-05] [0.0250453, -0.999457, 0.00198915] [3.2091e-05, -0.00272372, -1.36944] [-0.565103, 1.54296, -0.963348]]
+      template:t="metal_flame"
+      nodeName:t="root"
+    }
+
+    "templates:object"{
+      preinited:b=yes
+      relativeTm:m=[[0.0102788, -0.447204, 0.000116206] [-0.447205, -0.0102764, 0.00180438] [-0.00180106, -0.000157679, -0.447257] [-2.49248, 1.58303, -0.964661]]
+      template:t="metal_spike"
+      nodeName:t="root"
+    }
+
+    "templates:object"{
+      preinited:b=yes
+      relativeTm:m=[[0.42974, 0.000518763, -0.124831] [0.000304008, 0.447401, 0.00290552] [0.124745, -0.00287329, 0.429423] [0.421601, 2.09641, 0.90979]]
+      template:t="metal_spike"
+      nodeName:t="root"
+    }
+
+    "templates:object"{
+      preinited:b=yes
+      relativeTm:m=[[0.0011636, -0.444214, -0.051602] [0.00566663, -0.0515766, 0.444153] [-0.447148, -0.00180957, 0.00549474] [-2.83369, 1.37069, 0.0128174]]
+      template:t="metal_spike"
+      nodeName:t="root"
+    }
+
+    "templates:object"{
+      preinited:b=yes
+      relativeTm:m=[[0.44731, 0.00775739, 0.000924234] [-0.00774792, 0.447238, -0.00395211] [-0.000992223, 0.00393463, 0.447216] [-0.443606, 2.08686, 0.964752]]
+      template:t="metal_spike"
+      nodeName:t="root"
+    }
+
+    "templates:object"{
+      preinited:b=yes
+      relativeTm:m=[[-0.438096, -0.00509955, -0.0901567] [-0.00696492, 0.447112, 0.00855459] [0.0900155, 0.00978135, -0.43796] [0.326124, 1.06658, -0.871246]]
+      template:t="metal_spike"
+      nodeName:t="root"
+    }
+
+    "templates:object"{
+      preinited:b=yes
+      relativeTm:m=[[0.581212, 3.45521e-07, 0.00729252] [-0.00727652, 0.000177235, 0.581193] [-1.9439e-06, -0.581227, 0.000177277] [-0.00480306, -0.183716, -6.05583e-05]]
+      template:t="metal_spike"
+      nodeName:t="wheel_r_drive"
+    }
+
+    "templates:object"{
+      preinited:b=yes
+      relativeTm:m=[[0.570272, 5.16884e-07, 0.00769992] [0.00714012, -0.000173949, -0.570244] [1.807e-06, 0.570364, -0.000173959] [0.00534368, 0.181183, 0.000172317]]
+      template:t="metal_spike"
+      nodeName:t="wheel_l_drive"
+    }
+
+    "templates:object"{
+      preinited:b=yes
+      relativeTm:m=[[0.00184326, 0.00166047, -1.00001] [-1.0, 0.00030835, -0.0018427] [0.000305039, 0.999949, 0.00166124] [-2.85774, 1.23433, -0.840057]]
+      template:t="usa_bag_large_decor"
+      nodeName:t="root"
+    }
+
+    "templates:object"{
+      preinited:b=yes
+      relativeTm:m=[[0.00184333, 0.00166048, -1.00001] [-0.999999, 0.000308077, -0.00184307] [0.000305246, 0.999935, 0.00166129] [-2.87375, 1.57322, 0.632416]]
+      template:t="usa_bag_large_decor"
+      nodeName:t="root"
+    }
+
+    "templates:object"{
+      preinited:b=yes
+      relativeTm:m=[[0.00184282, 0.0016606, -1.00001] [-1.0, 0.000308019, -0.00184251] [0.000304938, 0.999866, 0.00166117] [-2.88577, 1.58228, -0.651367]]
+      template:t="usa_bag_large_decor"
+      nodeName:t="root"
+    }
+
+    "templates:object"{
+      preinited:b=yes
+      relativeTm:m=[[0.00184333, 0.00166043, -1.00001] [-0.999998, 0.000307487, -0.00184294] [0.00030502, 0.999905, 0.00166122] [-2.97208, 1.08573, 0.914597]]
+      template:t="usa_big_bag_decor"
+      nodeName:t="root"
+    }
+
+    "templates:object"{
+      preinited:b=yes
+      relativeTm:m=[[0.00184336, 0.00166074, -1.00001] [-1.00001, 0.000307786, -0.00184302] [0.000305754, 0.999913, 0.00166151] [-2.95093, 1.39339, -0.939941]]
+      template:t="usa_big_bag_decor"
+      nodeName:t="root"
+    }
+
+    "templates:object"{
+      preinited:b=yes
+      relativeTm:m=[[0.00184336, 0.00166039, -1.00001] [-0.999998, 0.000308237, -0.00184305] [0.000305183, 1.0, 0.00166122] [-2.95902, 1.00118, 0.584503]]
+      template:t="usa_big_bag_decor"
+      nodeName:t="root"
+    }
+
+    "templates:object"{
+      preinited:b=yes
+      relativeTm:m=[[0.999971, 0.00924784, 0.00182648] [0.00183966, -0.00141161, -0.999997] [-0.00924503, 0.999956, -0.00142805] [-1.22963, 1.21427, -1.04718]]
+      template:t="usa_bag_large_decor"
+      nodeName:t="root"
+    }
+
+    "templates:object"{
+      preinited:b=yes
+      relativeTm:m=[[-1.00001, -0.00158867, -0.00249697] [-0.00250022, 0.00266717, 0.999987] [-0.00158211, 0.999989, -0.00267057] [-2.49908, 1.2148, 1.05441]]
+      template:t="usa_bag_large_decor"
+      nodeName:t="root"
+    }
+
+    "templates:object"{
+      preinited:b=yes
+      relativeTm:m=[[-1.00001, -0.00158887, -0.00249695] [-0.00250069, 0.00266711, 0.999987] [-0.00158235, 0.999989, -0.00267061] [-0.289584, 1.22543, 1.04832]]
+      template:t="usa_bag_large_decor"
+      nodeName:t="root"
+    }
+
+    "templates:object"{
+      preinited:b=yes
+      relativeTm:m=[[-1.00001, -0.00158863, -0.00249697] [-0.0024996, 0.00266717, 0.999987] [-0.00158234, 0.999989, -0.0026706] [-1.58686, 0.987608, 1.14819]]
+      template:t="usa_big_bag_decor"
+      nodeName:t="root"
+    }
+
+    "templates:object"{
+      preinited:b=yes
+      relativeTm:m=[[0.999971, 0.00924786, 0.00182647] [0.00183868, -0.00141156, -0.999866] [-0.00924367, 0.999824, -0.00142827] [-2.64735, 0.977251, -1.14758]]
+      template:t="usa_big_bag_decor"
+      nodeName:t="root"
+    }
+
+    "templates:object"{
+      preinited:b=yes
+      relativeTm:m=[[0.999971, 0.00924786, 0.00182647] [0.00183923, -0.00141163, -0.999938] [-0.0092444, 0.999898, -0.00142832] [-0.33349, 0.965984, -1.13446]]
+      template:t="usa_big_bag_decor"
+      nodeName:t="root"
+    }
+  }
+}

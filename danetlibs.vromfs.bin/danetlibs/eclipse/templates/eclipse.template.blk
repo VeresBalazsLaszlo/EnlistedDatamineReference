@@ -1,0 +1,21 @@
+eclipse{
+  _singleton:b=yes
+
+  "customSkyRenderer:tag"{
+  }
+
+  _group{
+    _tags:t="render"
+    eclipse__sun_attenuation_base:r=0.001
+    eclipse__envi_attenuation_base:r=0.005
+    eclipse__gi_weight_attenuation_base:r=0.001
+    eclipse__sky_attenuation_base:r=0.001
+    eclipse__target_progress:r=1.0
+    eclipse__current_progress:r=0.0
+    eclipse__transition_speed:r=1.0
+    eclipse__shader_name:t="eclipse_panorama"
+
+    "eclipse__shader:PostFxRenderer"{
+    }
+  }
+}

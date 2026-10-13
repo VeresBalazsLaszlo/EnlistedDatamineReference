@@ -1,0 +1,22 @@
+vehicle_horn_control{
+  vehicle_horn_control__endTime:r=0.0
+  vehicle_horn_control__maxDuration:r=20.0
+
+  "vehicle_horn_control__player:eid"{
+    _track:b=yes
+    _replicate:b=yes
+  }
+
+  "vehicle_horn_control__seat:eid"{
+    _tags:t="server"
+  }
+
+  "vehicle_horn_control__localPlayer:eid"{
+    _tags:t="sound"
+    _track:b=yes
+  }
+
+  "vehicle_horn_control__localSeat:eid"{
+    _tags:t="sound"
+  }
+}

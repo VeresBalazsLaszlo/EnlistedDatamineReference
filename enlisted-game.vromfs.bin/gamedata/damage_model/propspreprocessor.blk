@@ -1,0 +1,60 @@
+damage{
+
+  preset{
+    param:t="bulletType"
+    presets:t="gamedata/damage_model/damage_system.blk:bulletTypes"
+    target:t=""
+  }
+
+  extends{
+    source:t="gamedata/damage_model/damage_system.blk:defaultKineticDamageProps"
+    target:t="kineticDamage"
+  }
+
+  extends{
+    source:t="gamedata/damage_model/damage_system.blk:defaultCumulativeDamageProps"
+    target:t="cumulativeDamage"
+    checkTargetExists:b=yes
+  }
+
+  extends{
+    source:t="gamedata/damage_model/damage_system.blk:defaultSplashDamageProps"
+    target:t="damage/splash"
+    checkTargetExists:b=yes
+  }
+
+  extends{
+    source:t="gamedata/damage_model/damage_system.blk:defaultShatterDamageProps"
+    target:t="damage/shatter"
+    checkTargetExists:b=yes
+  }
+
+  alias{
+    param:t="splashDamage/radius"
+    alias:t="explodeRadius"
+  }
+
+  alias{
+    param:t="splashDamage/penetration"
+    alias:t="explodeArmorPower"
+  }
+
+  alias{
+    param:t="splashDamage/damage"
+    alias:t="explodeHitPower"
+  }
+}
+
+ballistics{
+
+  preset{
+    param:t="bulletType"
+    presets:t="gamedata/damage_model/damage_system.blk:bulletTypes"
+    target:t=""
+  }
+
+  extends{
+    source:t="gamedata/damage_model/damage_system.blk:bulletTypes/default"
+    target:t=""
+  }
+}

@@ -1,0 +1,21 @@
+import{
+  scene:t="gamedata/scenes/_common_sounds.blk"
+}
+
+entity{
+  _template:t="europe_battle_ambient_sound"
+}
+
+entity{
+  _template:t="compound_ambient_sound_type"
+  compound_ambient_sound_type__soundType:t="forest_burned"
+  compound_ambient_sound_type__path:t="ambient/positioned/forest_burned"
+}
+
+entity{
+  _template:t="compound_ambient_sound_controller"
+
+  "compound_ambient_sound_controller__soundTypes:list<t>"{
+    name:t="forest_burned"
+  }
+}

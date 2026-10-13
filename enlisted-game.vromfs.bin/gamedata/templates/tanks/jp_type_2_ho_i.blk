@@ -1,0 +1,389 @@
+jp_type_2_ho_i_pacific{
+  _use:t="jp_type_2_ho_i_common"
+}
+
+jp_type_2_ho_i_common{
+  _use:t="base_type_2_ho_i"
+  _use:t="jp_type_2_ho_i_common_vehicle_sound"
+  item__iconOffset:p2=-0.05, 0.05
+  item__iconScale:r=1.25
+  commanderCockpitFpsCamMaxAngle:p2=40.0, 5.0
+  gunner_cam_limit__useCockpitDir:b=yes
+
+  "turrets__initAmmoDistribution:array"{
+
+    "ammo:object"{
+      slot:i=0
+      fill:b=yes
+    }
+
+    "ammo:object"{
+      slot:i=1
+      count:i=10
+    }
+
+    "ammo:object"{
+      slot:i=2
+      fill:b=yes
+    }
+
+    "ammo:object"{
+      slot:i=3
+      count:i=7
+    }
+  }
+
+  "vehicle_seats__seatsProvideOrder:tag"{
+  }
+
+  "vehicle_seats__seats:shared:array"{
+
+    "seats:object"{
+      name:t="commander"
+      nextSeat:t="main_gunner"
+      locName:t="vehicle_seats/commander"
+      attachNode:t="commander"
+      shouldHideOwner:b=yes
+      maxPosWithOpenHatch:r=1.2
+      hatchRotationAxis:p3=1.9, 0.0, 0.0
+      ignoreAttachNodeRotation:b=yes
+      attachTm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-0.05, -0.8, 0.18]]
+      seatComponent:t="isDriver"
+      receiveDamageFromDMPart:t="commander"
+      cameraNodeName:t="bone_turret"
+      cockpitTemplate:t="jp_type_2_ho_i_commander_cockpit"
+
+      "hatchNodes:array"{
+        node:t="hatch_05"
+        node:t="hatch_04"
+      }
+
+      "hatchTurretNames:array"{
+        turret:t="turret_03"
+      }
+    }
+
+    "seats:object"{
+      name:t="main_gunner"
+      locName:t="vehicle_seats/gunner"
+      attachNode:t="gunner"
+      ignoreAttachNodeRotation:b=yes
+      attachTm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-0.25, -0.5, 0.0]]
+      seatComponent:t="isGunner"
+      nextSeat:t="driver"
+      shouldHideOwner:b=yes
+      receiveDamageFromDMPart:t="gunner"
+      cameraNodeName:t="bone_camera_gunner"
+      cockpitTemplate:t="jp_type_2_ho_i_gunner_cockpit"
+
+      "turretNames:array"{
+        turret:t="turret_01"
+      }
+    }
+
+    "seats:object"{
+      name:t="driver"
+      locName:t="vehicle_seats/driver"
+      seatOwnsEntityControl:b=yes
+      attachNode:t="driver"
+      ignoreAttachNodeRotation:b=yes
+      attachTm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-0.25, -0.25, 0.0]]
+      seatComponent:t="isDriver"
+      nextSeat:t="machinegunner"
+      shouldHideOwner:b=yes
+      receiveDamageFromDMPart:t="driver"
+      cameraNodeName:t="bone_camera_driver"
+      cameraOffset:p3=0.15, -0.0, -0.0
+      cockpitTemplate:t="jp_type_2_ho_i_driver_cockpit"
+    }
+
+    "seats:object"{
+      name:t="loader"
+      canPlaceManually:b=no
+      attachNode:t="loader"
+      locName:t="vehicle_seats/loader"
+      ignoreAttachNodeRotation:b=yes
+      attachTm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-0.25, -0.5, 0.0]]
+      seatComponent:t="isPassenger"
+      shouldHideOwner:b=yes
+      receiveDamageFromDMPart:t="loader"
+      cameraNodeName:t="bone_camera_driver"
+
+      "loaderTurretNames:array"{
+        turret:t="turret_01"
+      }
+    }
+
+    "seats:object"{
+      name:t="machinegunner"
+      canPlaceManually:b=yes
+      locName:t="vehicle_seats/radioman"
+      attachNode:t="gunner"
+      ignoreAttachNodeRotation:b=yes
+      attachTm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-0.25, -0.5, 0.0]]
+      seatComponent:t="isGunner"
+      shouldHideOwner:b=yes
+      receiveDamageFromDMPart:t="gunner"
+      cameraNodeName:t="root"
+      cockpitTemplate:t="jp_type_2_ho_i_machinegunner_cockpit"
+
+      "turretNames:array"{
+        turret:t="turret_02"
+      }
+    }
+  }
+}
+
+jp_type_2_ho_i_driver_cockpit{
+  _use:t="base_driver_cockpit_no_slits"
+  animchar__res:t="bt_7_driver_char"
+  cockpit__offset:p3=0.0646394, -0.374342, 0.00730274
+
+  "cockpit__visibleVehicleNodeNames:list<t>"{
+    node:t="gun_barrel"
+  }
+
+  "cockpit__slitForwardOffset:list<r>"{
+    slit:r=0.06
+  }
+
+  "cockpit__slitIsGun:list<b>"{
+    slit:b=no
+  }
+
+  "cockpit__slitNodeNames:list<t>"{
+    slit:t="cam_front"
+  }
+}
+
+jp_type_2_ho_i_gunner_cockpit{
+  _use:t="base_gunner_cockpit"
+  animchar__res:t="ba_11_gunner_char"
+  cockpit__offset:p3=-0.578069, -0.0561157, 0.244711
+
+  "cockpit__visibleVehicleNodeNames:list<t>"{
+    node:t="gun_barrel"
+  }
+
+  "cockpit__slitNodeNames:list<t>"{
+    slit:t="cam_front_right"
+  }
+
+  "cockpit__slitForwardOffset:list<r>"{
+    slit:r=0.21
+  }
+
+  "cockpit__slitIsGun:list<b>"{
+    slit:b=yes
+  }
+
+  "cockpit__attachNodeNames:list<t>"{
+    node:t="bone_camera_gunner"
+  }
+
+  "cockpit__attachNodeIndices:list<i>"{
+  }
+
+  "cockpit__slitZoom:array"{
+
+    "slit:list<r>"{
+      zoom:r=1.9
+      zoom:r=3.5
+    }
+  }
+
+  "cockpit__slitZoomTime:list<r>"{
+    slit:r=0.05
+  }
+
+  "cockpit__slitTemplates:list<t>"{
+    slit:t="jp_75mm"
+  }
+
+  "cockpit__slitEids:list<eid>"{
+  }
+}
+
+jp_type_2_ho_i_commander_cockpit{
+  _use:t="base_commander_tower_cockpit"
+  animchar__res:t="pzkpfw_iii_b_commander_char"
+  cockpit__offset:p3=-0.29198, 0.57366, 0.264992
+
+  "cockpit__visibleVehicleNodeNames:list<t>"{
+    node:t="bone_gun"
+    node:t="gun_barrel"
+  }
+
+  "cockpit__cockpitOffsetBySlit:list<p3>"{
+    item:p3=0.0, 0.0, 0.0
+    item:p3=0.0, 0.0, 0.0
+    item:p3=0.0, 0.0, 0.0
+    item:p3=0.0, 0.0, 0.0
+    item:p3=0.0, 0.0, 0.0
+    item:p3=0.0, 0.0, 0.0
+  }
+
+  "cockpit__slitForwardOffset:list<r>"{
+    slit:r=-0.05
+    slit:r=-0.05
+    slit:r=-0.05
+    slit:r=-0.05
+    slit:r=-0.05
+    slit:r=-0.05
+  }
+
+  "cockpit__slitIsGun:list<b>"{
+    slit:b=yes
+    slit:b=no
+    slit:b=no
+    slit:b=no
+    slit:b=no
+    slit:b=no
+  }
+
+  "cockpit__slitZoom:array"{
+
+    "slit:list<r>"{
+      zoom:r=1.44
+    }
+
+    "slit:list<r>"{
+      zoom:r=1.44
+    }
+
+    "slit:list<r>"{
+      zoom:r=1.44
+    }
+
+    "slit:list<r>"{
+      zoom:r=1.44
+    }
+
+    "slit:list<r>"{
+      zoom:r=1.44
+    }
+
+    "slit:list<r>"{
+      zoom:r=1.44
+    }
+  }
+
+  "cockpit__slitNodeNames:list<t>"{
+    slit:t="cam_front"
+    slit:t="cam_front_left"
+    slit:t="cam_rear_left"
+    slit:t="cam_rear"
+    slit:t="cam_rear_right"
+    slit:t="cam_front_right"
+  }
+}
+
+jp_type_2_ho_i_machinegunner_cockpit{
+  _use:t="base_gunner_cockpit"
+  animchar__res:t="ba_11_gunner_char"
+  cockpit__offset:p3=-0.3, -0.05, 0.25
+
+  "cockpit__visibleVehicleNodeNames:list<t>"{
+    node:t="gun_barrel"
+  }
+
+  "cockpit__slitNodeNames:list<t>"{
+    slit:t="cam_front_right"
+  }
+
+  "cockpit__slitForwardOffset:list<r>"{
+    slit:r=0.2
+  }
+
+  "cockpit__slitIsGun:list<b>"{
+    slit:b=yes
+  }
+
+  "cockpit__attachNodeNames:list<t>"{
+    node:t="bone_mg_v_01"
+  }
+
+  "cockpit__attachNodeIndices:list<i>"{
+  }
+
+  "cockpit__slitZoom:array"{
+
+    "slit:list<r>"{
+      zoom:r=2.0
+    }
+  }
+
+  "cockpit__slitZoomTime:list<r>"{
+    slit:r=0.05
+  }
+
+  "cockpit__slitTemplates:list<t>"{
+    slit:t="cross"
+  }
+
+  "cockpit__slitEids:list<eid>"{
+  }
+}
+
+tankgun_75mm_type99{
+  _override:b=yes
+
+  "gun__ammoSetsInfo:shared:array"{
+
+    "defaultSet:array"{
+
+      "shell:object"{
+        blk:t="gamedata/gen/weapons/shells/75mm_type99_75mm_type2_heat.blk"
+        name:t="75mm_type2"
+        type:t="heat_tank"
+      }
+    }
+
+    "75mm_type2_HEAT:array"{
+
+      "shell:object"{
+        blk:t="gamedata/gen/weapons/shells/75mm_type99_defaultset.blk"
+        name:t="75mm_type95"
+        type:t="aphe_tank"
+      }
+    }
+
+    "75mm_type94_HE:array"{
+
+      "shell:object"{
+        blk:t="gamedata/gen/weapons/shells/75mm_type99_75mm_type94_he.blk"
+        name:t="75mm_type94_he"
+        type:t="he_frag_tank"
+      }
+    }
+
+    "75mm_jp_Smoke:array"{
+
+      "shell:object"{
+        blk:t="gamedata/gen/weapons/shells/75mm_type99_75mm_jp_smoke.blk"
+        name:t="75mm_type90_smoke"
+        type:t="smoke_tank"
+      }
+    }
+  }
+}
+
+jp_type_2_ho_i_forest_fourcolor_battlepass_premium{
+  _use:t="jp_type_2_ho_i_common"
+  item__name:t="items/jp_type_2_ho_i_forest_fourcolor"
+
+  "animchar__objTexReplace:object"{
+    "jp_camo_willow_green*":t="jp_camo_forest_fourcolor*"
+  }
+
+  "animchar__objTexSet:object"{
+
+    "type_3_chi_nu_body_c*:object"{
+      "type_3_chi_nu_forest_fourcolor_body_c*":t="camo_skin_tex"
+    }
+
+    "type_2_ho_i_turret_c*:object"{
+      "type_2_ho_i_forest_fourcolor_turret_c*":t="camo_skin_tex"
+    }
+  }
+}

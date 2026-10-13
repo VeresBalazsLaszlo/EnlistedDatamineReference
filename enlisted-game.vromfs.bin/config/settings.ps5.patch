@@ -1,0 +1,220 @@
+"@override:__allowedConfigOverrides"{
+  ps5_submission_circuit:t=""
+  ps5_circuit:t=""
+
+  embeddedUpdater { yupTag { __allow_all_params:b=yes; } }
+}
+
+"@override:ps5"{
+  "@delete:min_res_4k":b=""
+  "@delete:max_res_4k":b=""
+  min_res_4k:t="3840x2160"
+  max_res_4k:t="3840x2160"
+}
+
+"@override:video"{
+  "@delete:vsync":b=no
+  vsync:b=yes
+  vsync_tearing_tolerance_percents:i=10
+  "@override:antialiasing_upscaling":t="125"
+  enableHdr:b=yes
+  resolution:t="3840x2160"
+}
+
+"@override:texStreaming"{
+  forceGpuMemMB:i=0
+}
+
+"@override:graphics"{
+  "@delete-all:gi":b=""
+  consolePreset:t="HighQuality"
+  shadowsQuality:t="high"
+  texquality:t="medium"
+  aoQuality:t="high"
+  groundDeformations:t="medium"
+  effectsShadows:b=yes
+  scopeImageQuality:i=1
+  shouldRenderHeroCockpit:b=yes
+  skiesQuality:t="high"
+  ssssQuality:t="high"
+  lodsShiftDistMul:r=1.0
+  cloudsQuality:t="volumetric"
+  volumeFogQuality:t="close"
+  giAlgorithm:t="medium"
+  giAlgorithmQuality:r=0.5
+  waterQuality:t="medium"
+}
+
+"@override:game_das_loading_threads":i=3
+"@override:game_das_reload_threads":i=2
+
+"@override:replay"{
+  "@override:storageLimitMB":i=300
+}
+
+"@override:sound"{
+  "@override:isFixedPool":b=yes
+}
+
+__allowedSavedConfig{
+  graphics{
+    __allow_force_apply_all:b=no
+    consolePreset:b=yes
+    gamma_correction:b=yes
+    lensFlares:b=yes
+    chromaticAberration:b=yes
+    filmGrain:b=yes
+    motionBlurStrength:b=yes
+    screenSpaceWeatherEffects:b=yes
+  }
+  video{
+    __allow_force_apply_all:b=no
+    safeArea:b=yes
+    paperWhiteNits:b=yes
+    enableHdr:b=yes
+  }
+}
+
+consoleGraphicalPresets {
+  HighFPS {
+    video {
+      resolution:t="3840 x 2160"
+      vsync_tearing_tolerance_percents:i=10
+      freqLevel:i=3 // 120hz
+      fpsLimit:i=90
+      antialiasing_mode:t="tsr"
+      dynamicResolution {
+        targetFPS:i=90
+        considerCPUbottleneck:b=yes
+        minResolutionScale:r=0.5
+        maxResolutionScale:r=1
+      }
+    }
+    graphics {
+      lodsShiftDistMul:r=1.3
+      anisotropy:i=2
+      aoQuality:t="low"
+      groundDeformations:t="off"
+      shadowsQuality:t="low"
+      effectsShadows:b=no
+      scopeImageQuality:i=0
+      fxTarget:t="lowres"
+      shouldRenderHeroCockpit:b=yes
+      giAlgorithm:t="medium"
+      giAlgorithmQuality:r=0.5
+      skiesQuality:t="medium"
+      ssssQuality:t="high"
+      waterQuality:t="low"
+      staticShadowsResolution:i=8192
+
+      enableRTSM:t="off"
+      enableRTR:b=no
+      enableRTTR:b=no
+      enableRTAO:b=no
+      RTRWater:b=no
+      enableRTGI:b=no
+      bvhDagdp:b=no
+    }
+    ps5 {
+      useHfr:b=yes
+    }
+  }
+
+  HighQuality {
+    video {
+      resolution:t="3840 x 2160"
+      vsync_tearing_tolerance_percents:i=10
+      freqLevel:i=1 // 60hz
+      fpsLimit:i=0
+      antialiasing_mode:t="tsr"
+      dynamicResolution {
+        targetFPS:i=60
+        considerCPUbottleneck:b=yes
+        minResolutionScale:r=0.75
+        maxResolutionScale:r=1
+      }
+    }
+    graphics {
+      lodsShiftDistMul:r=1.0
+      anisotropy:i=4
+      aoQuality:t="high"
+      groundDeformations:t="medium"
+      shadowsQuality:t="high"
+      effectsShadows:b=yes
+      scopeImageQuality:i=1
+      fxTarget:t="medres"
+      shouldRenderHeroCockpit:b=yes
+      giAlgorithm:t="medium"
+      giAlgorithmQuality:r=0.5
+      skiesQuality:t="high"
+      ssssQuality:t="high"
+      waterQuality:t="medium"
+      staticShadowsResolution:i=8192
+
+      enableRTSM:t="off"
+      enableRTR:b=no
+      enableRTTR:b=no
+      enableRTAO:b=no
+      RTRWater:b=no
+      enableRTGI:b=no
+      bvhDagdp:b=no
+    }
+    ps5 {
+      useHfr:b=no
+    }
+  }
+
+  RayTracing {
+    video {
+      resolution:t="3840 x 2160"
+      vsync_tearing_tolerance_percents:i=10
+      freqLevel:i=0 // 30hz
+      fpsLimit:i=0
+      antialiasing_mode:t="tsr"
+      dynamicResolution {
+        targetFPS:i=30
+        considerCPUbottleneck:b=yes
+        minResolutionScale:r=0.5
+        maxResolutionScale:r=0.67
+      }
+    }
+    graphics {
+      lodsShiftDistMul:r=1.3
+      anisotropy:i=4
+      aoQuality:t="high"
+      groundDeformations:t="medium"
+      shadowsQuality:t="high"
+      effectsShadows:b=yes
+      scopeImageQuality:i=1
+      fxTarget:t="medres"
+      shouldRenderHeroCockpit:b=yes
+      giAlgorithm:t="medium"
+      giAlgorithmQuality:r=0.5
+      skiesQuality:t="high"
+      ssssQuality:t="high"
+      waterQuality:t="medium"
+      staticShadowsResolution:i=4096
+
+      enableRTSM:t="sun"
+      enableRTR:b=yes
+      enableRTTR:b=yes
+      enableRTAO:b=yes
+      RTRWater:b=yes
+      enableRTGI:b=no
+      bvhDagdp:b=yes
+
+      bvhPrioritizeCompaction:b=yes
+      bvhDiscardDestrAssets:b=yes
+      bvhDynModels:b=no // TODO Save more memory and enable it back
+      bvhSingleLodMaxFaces:i=100
+      bvhSingleLodMaxRange:r=50.0
+      bvhUseFastTlasBuild:b=yes
+      bvhEnableCaching:b=no
+      treeWindAnimDistance:r=80
+      treeWindAnimFadeRange:r=10
+    }
+    ps5 {
+      useHfr:b=no
+    }
+  }
+}

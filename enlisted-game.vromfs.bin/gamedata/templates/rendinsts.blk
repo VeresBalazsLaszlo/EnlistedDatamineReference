@@ -1,0 +1,727 @@
+_infoCommonComponents{
+
+  ri_hit_points{
+    desc:t="Special values are: 0 (default HP with regeneration), -1 (default HP with no regeneration) and -2 (invincible). Anything more than 0 is explicit hit points value with no regeneration."
+  }
+}
+
+rendinst_base{
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, 0.0, 0.0]]
+  _tracked:t="transform"
+  ri_extra__destroyed:b=no
+
+  "riExtraAuthority:tag"{
+    _tags:t="server"
+  }
+
+  "riOffender:eid"{
+    _tags:t="server"
+  }
+
+  ri_extra{
+  }
+}
+
+rendinst_handle{
+  _use:t="rendinst_base"
+
+  "ri_extra__handle:u64"{
+    value:i64=-1
+  }
+}
+
+rendinst{
+  _use:t="rendinst_base"
+  ri_extra__bboxMin:p3=0.0, 0.0, 0.0
+  ri_extra__bboxMax:p3=0.0, 0.0, 0.0
+
+  "ri_extra__name:t"{
+    value:t="sandbags_wall_medium_rounded_a"
+
+    _info{
+      desc:t="Render model name for this extra render instance (RI)"
+    }
+  }
+}
+
+net_rendinst{
+  _use:t="rendinst"
+  _use:t="replicating"
+
+  "isRendinstDestr:tag"{
+    _tags:t="render"
+  }
+}
+
+game_rendinst{
+  _use:t="rendinst"
+  _use:t="replicating"
+  ri_shadow__prevBSphere:p4=0.0, 0.0, 0.0, 0.0
+
+  "gameRendInstTag:tag"{
+  }
+
+  "ri_extra__overrideHitPoints:i"{
+    value:i=0
+    _info:t="ri_hit_points"
+  }
+
+  "riShadowUpdateTag:tag"{
+  }
+
+  "isRendinstDestr:tag"{
+    _tags:t="render"
+  }
+
+  "levelRiExtra:tag"{
+  }
+
+  "neverStillObstacle:tag"{
+  }
+
+  _info{
+    desc:t="Game level model (render instance or RI) with physical destruction (some are immortal). You can also create, copy and remove RI via Toolbox panel at right top corner of editor (Toolbox/RendInsts)."
+  }
+}
+
+game_rendinst_decor{
+  _use:t="rendinst"
+  _use:t="replicating"
+  ri_shadow__prevBSphere:p4=0.0, 0.0, 0.0, 0.0
+  ri_extra__hasCollision:b=yes
+
+  "gameRendInstTag:tag"{
+  }
+
+  "ri_extra__overrideHitPoints:i"{
+    value:i=-2
+    _info:t="ri_hit_points"
+  }
+
+  "riShadowUpdateTag:tag"{
+  }
+
+  "levelRiExtra:tag"{
+  }
+
+  "neverStillObstacle:tag"{
+  }
+
+  _info{
+    desc:t="Game level model (render instance or RI) without physical destruction. You can also create, copy and remove RI via Toolbox panel at right top corner of editor (Toolbox/RendInsts)."
+  }
+}
+
+unbaked_rendinst{
+  _use:t="rendinst"
+  _use:t="replicating"
+  ri_shadow__prevBSphere:p4=0.0, 0.0, 0.0, 0.0
+  nonCreatableObj:b=yes
+  _skipInitialReplication:t="rebake__tm,rebake__name"
+  rebake__tm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, 0.0, 0.0]]
+  rebake__name:t=""
+
+  "unbakedRendInstTag:tag"{
+  }
+
+  "ri_extra__overrideHitPoints:i"{
+    value:i=0
+    _info:t="ri_hit_points"
+  }
+
+  "riShadowUpdateTag:tag"{
+  }
+
+  "isRendinstDestr:tag"{
+    _tags:t="render"
+  }
+
+  "levelRiExtra:tag"{
+  }
+
+  "neverStillObstacle:tag"{
+  }
+
+  _info{
+    desc:t="Original level model (render instance or RI) unbaked from level that could be freely moved, rotated and scaled. Please note, that you can select, remove and copy RI via Toolbox panel at right top corner of editor (RendInsts)."
+  }
+}
+
+enbaked_ri{
+
+  "enbakedRITag:tag"{
+    _tags:t="render"
+  }
+
+  "ignoredEditable:tag"{
+    _tags:t="render"
+  }
+}
+
+unbaked_door_ri{
+  _use:t="replicating"
+  ri_replicateDoorTm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, 0.0, 0.0]]
+  ri_extra__name:t=""
+  _skipInitialReplication:t="rebake__tm,rebake__name"
+  rebake__tm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, 0.0, 0.0]]
+  rebake__name:t=""
+
+  "clonedRIDoorTag:tag"{
+  }
+}
+
+rebaked_rendinst{
+  _use:t="rendinst"
+  ri_shadow__prevBSphere:p4=0.0, 0.0, 0.0, 0.0
+  nonCreatableObj:b=yes
+  editableObj:b=no
+
+  "rebakedRendInstTag:tag"{
+  }
+}
+
+animated_scripted_rendinst{
+  _use:t="rendinst"
+  _use:t="key_track_animated"
+  _use:t="set_rotation"
+}
+
+sandbags_ri{
+  _use:t="rendinst"
+  _use:t="replicating"
+}
+
+sandbags_wall_high_10x8_canopy_a{
+  _use:t="rendinst"
+  _use:t="replicating"
+  ri_extra__name:t="sandbags_wall_high_10x8_canopy_a"
+}
+
+sandbags_wall_low_l2000_a{
+  _use:t="rendinst"
+  _use:t="replicating"
+  ri_extra__name:t="sandbags_wall_low_l2000_a"
+}
+
+target_round_a{
+  _use:t="rendinst"
+  _use:t="replicating"
+  ri_extra__name:t="target_round_a"
+
+  "isRendinstDestr:tag"{
+    _tags:t="render"
+  }
+}
+
+target_round_b{
+  _use:t="rendinst"
+  _use:t="replicating"
+  ri_extra__name:t="target_round_b"
+
+  "isRendinstDestr:tag"{
+    _tags:t="render"
+  }
+}
+
+target_round_c{
+  _use:t="rendinst"
+  _use:t="replicating"
+  ri_extra__name:t="target_round_c"
+
+  "isRendinstDestr:tag"{
+    _tags:t="render"
+  }
+}
+
+target_silhouette_a{
+  _use:t="rendinst"
+  _use:t="replicating"
+  ri_extra__name:t="target_silhouette_a"
+
+  "isRendinstDestr:tag"{
+    _tags:t="render"
+  }
+}
+
+target_silhouette_b{
+  _use:t="rendinst"
+  _use:t="replicating"
+  ri_extra__name:t="target_silhouette_b"
+
+  "isRendinstDestr:tag"{
+    _tags:t="render"
+  }
+}
+
+target_silhouette_c{
+  _use:t="rendinst"
+  _use:t="replicating"
+  ri_extra__name:t="target_silhouette_c"
+
+  "isRendinstDestr:tag"{
+    _tags:t="render"
+  }
+}
+
+target_tank_a{
+  _use:t="rendinst"
+  _use:t="replicating"
+  ri_extra__name:t="target_tank_a"
+}
+
+target_tank_a_mission{
+  _use:t="rendinst"
+  _use:t="replicating"
+  ri_extra__name:t="target_tank_a_mission"
+}
+
+russia_red_onion{
+  _use:t="rendinst"
+  _use:t="replicating"
+  ri_extra__name:t="russia_red_onion"
+}
+
+russia_yellow_onion{
+  _use:t="rendinst"
+  _use:t="replicating"
+  ri_extra__name:t="russia_yellow_onion"
+}
+
+storage_tank_c{
+  _use:t="rendinst"
+  _use:t="replicating"
+  ri_extra__name:t="storage_tank_c"
+}
+
+opel_blitz_kfz_305_broken{
+  _use:t="rendinst"
+  _use:t="replicating"
+  ri_extra__name:t="opel_blitz_kfz_305_broken"
+}
+
+opel_blitz_kfz_305_destroyed{
+  _use:t="rendinst"
+  _use:t="replicating"
+  ri_extra__name:t="opel_blitz_kfz_305_destroyed"
+}
+
+88mm_flak_36_canon_b{
+  _use:t="rendinst"
+  _use:t="replicating"
+  ri_extra__name:t="88mm_flak_36_canon_b"
+}
+
+150cm_flak_sw_37{
+  _use:t="rendinst"
+  _use:t="replicating"
+  ri_extra__name:t="150cm_flak_sw_37"
+}
+
+24kw_flak_generator{
+  _use:t="rendinst"
+  _use:t="replicating"
+  ri_extra__name:t="24kw_flak_generator"
+}
+
+bf_109g_14_a_destroyed{
+  _use:t="rendinst"
+  _use:t="replicating"
+  ri_extra__name:t="bf_109g_14_a_destroyed"
+}
+
+tree_spruce_christmas_c{
+  _use:t="rendinst"
+  _use:t="replicating"
+  ri_extra__name:t="tree_spruce_christmas_c"
+}
+
+debris_wooden_planks_stack_a{
+  _use:t="rendinst"
+  _use:t="replicating"
+  ri_extra__name:t="debris_wooden_planks_stack_a"
+}
+
+sawmill_wood_boards_a{
+  _use:t="rendinst"
+  _use:t="replicating"
+  ri_extra__name:t="sawmill_wood_boards_a"
+}
+
+russia_wooden_planks_b{
+  _use:t="rendinst"
+  _use:t="replicating"
+  ri_extra__name:t="russia_wooden_planks_b"
+}
+
+ammunition_box_n{
+  _use:t="rendinst"
+  _use:t="replicating"
+  ri_extra__name:t="ammunition_box_n"
+}
+
+sample_box_gray_1000x1000x1000{
+  _use:t="rendinst"
+  _use:t="replicating"
+  ri_extra__name:t="sample_box_gray_1000x1000x1000"
+}
+
+sample_box_red_1000x1000x1000{
+  _use:t="rendinst"
+  _use:t="replicating"
+  ri_extra__name:t="sample_box_red_1000x1000x1000"
+}
+
+sample_box_orange_1000x1000x1000{
+  _use:t="rendinst"
+  _use:t="replicating"
+  ri_extra__name:t="sample_box_orange_1000x1000x1000"
+}
+
+sample_box_green_1000x1000x1000{
+  _use:t="rendinst"
+  _use:t="replicating"
+  ri_extra__name:t="sample_box_green_1000x1000x1000"
+}
+
+sample_box_blue_1000x1000x1000{
+  _use:t="rendinst"
+  _use:t="replicating"
+  ri_extra__name:t="sample_box_blue_1000x1000x1000"
+}
+
+sample_box_purple_1000x1000x1000{
+  _use:t="rendinst"
+  _use:t="replicating"
+  ri_extra__name:t="sample_box_purple_1000x1000x1000"
+}
+
+sample_arrow_blue{
+  _use:t="rendinst"
+  _use:t="replicating"
+  ri_extra__name:t="sample_arrow_blue"
+}
+
+sample_arrow_green{
+  _use:t="rendinst"
+  _use:t="replicating"
+  ri_extra__name:t="sample_arrow_green"
+}
+
+sample_arrow_grey{
+  _use:t="rendinst"
+  _use:t="replicating"
+  ri_extra__name:t="sample_arrow_grey"
+}
+
+sample_arrow_red{
+  _use:t="rendinst"
+  _use:t="replicating"
+  ri_extra__name:t="sample_arrow_red"
+}
+
+sample_car{
+  _use:t="rendinst"
+  _use:t="replicating"
+  ri_extra__name:t="sample_car"
+}
+
+sample_tank{
+  _use:t="rendinst"
+  _use:t="replicating"
+  ri_extra__name:t="sample_tank"
+}
+
+sample_truck{
+  _use:t="rendinst"
+  _use:t="replicating"
+  ri_extra__name:t="sample_truck"
+}
+
+sample_tree_fir{
+  _use:t="rendinst"
+  _use:t="replicating"
+  ri_extra__name:t="sample_tree_fir"
+}
+
+sample_tree_maple{
+  _use:t="rendinst"
+  _use:t="replicating"
+  ri_extra__name:t="sample_tree_maple"
+}
+
+sample_ruler_10m{
+  _use:t="rendinst"
+  _use:t="replicating"
+  ri_extra__name:t="sample_ruler_10m"
+}
+
+sample_soldier_standing{
+  _use:t="rendinst"
+  _use:t="replicating"
+  ri_extra__name:t="sample_soldier_standing"
+}
+
+chinese_dancing_lion_sitting{
+  _use:t="rendinst"
+  _use:t="replicating"
+  ri_extra__name:t="chinese_dancing_lion_sitting"
+}
+
+chinese_fire_horse_a{
+  _use:t="rendinst"
+  _use:t="replicating"
+  ri_extra__name:t="chinese_fire_horse_a"
+}
+
+chinese_pagoda_lantern_a{
+  _use:t="rendinst"
+  _use:t="replicating"
+  ri_extra__name:t="chinese_pagoda_lantern_a"
+}
+
+wall_lamp_c{
+  _use:t="rendinst"
+  _use:t="replicating"
+  ri_extra__name:t="wall_lamp_c"
+}
+
+wall_lamp_c_glass_on{
+  _use:t="rendinst"
+  _use:t="replicating"
+  ri_extra__name:t="wall_lamp_c_glass_on"
+}
+
+poster_guns_c{
+  _use:t="rendinst"
+  _use:t="replicating"
+  ri_extra__name:t="poster_guns_c"
+}
+
+poster_guns_a{
+  _use:t="rendinst"
+  _use:t="replicating"
+  ri_extra__name:t="poster_guns_a"
+}
+
+poster_guns_b{
+  _use:t="rendinst"
+  _use:t="replicating"
+  ri_extra__name:t="poster_guns_b"
+}
+
+guns_decal_a{
+  _use:t="rendinst"
+  _use:t="replicating"
+  ri_extra__name:t="guns_decal_a"
+}
+
+guns_decal_b{
+  _use:t="rendinst"
+  _use:t="replicating"
+  ri_extra__name:t="guns_decal_b"
+}
+
+guns_decal_c{
+  _use:t="rendinst"
+  _use:t="replicating"
+  ri_extra__name:t="guns_decal_c"
+}
+
+guns_decal_d{
+  _use:t="rendinst"
+  _use:t="replicating"
+  ri_extra__name:t="guns_decal_d"
+}
+
+guns_decal_e{
+  _use:t="rendinst"
+  _use:t="replicating"
+  ri_extra__name:t="guns_decal_e"
+}
+
+guns_decal_f{
+  _use:t="rendinst"
+  _use:t="replicating"
+  ri_extra__name:t="guns_decal_f"
+}
+
+chinese_fireworks_a{
+  _use:t="rendinst"
+  _use:t="replicating"
+  ri_extra__name:t="chinese_fireworks_a"
+}
+
+chinese_fireworks_b{
+  _use:t="rendinst"
+  _use:t="replicating"
+  ri_extra__name:t="chinese_fireworks_b"
+}
+
+chinese_sign_a{
+  _use:t="rendinst"
+  _use:t="replicating"
+  ri_extra__name:t="chinese_sign_a"
+}
+
+chinese_sign_b{
+  _use:t="rendinst"
+  _use:t="replicating"
+  ri_extra__name:t="chinese_sign_b"
+}
+
+chinese_sign_c{
+  _use:t="rendinst"
+  _use:t="replicating"
+  ri_extra__name:t="chinese_sign_c"
+}
+
+firework_scraps_a{
+  _use:t="rendinst"
+  _use:t="replicating"
+  ri_extra__name:t="firework_scraps_a"
+}
+
+firework_scraps_b{
+  _use:t="rendinst"
+  _use:t="replicating"
+  ri_extra__name:t="firework_scraps_b"
+}
+
+firework_scraps_c{
+  _use:t="rendinst"
+  _use:t="replicating"
+  ri_extra__name:t="firework_scraps_c"
+}
+
+firework_scraps_d{
+  _use:t="rendinst"
+  _use:t="replicating"
+  ri_extra__name:t="firework_scraps_d"
+}
+
+hangar_wire_a{
+  _use:t="rendinst"
+  _use:t="replicating"
+  ri_extra__name:t="hangar_wire_a"
+}
+
+hangar_wire_b{
+  _use:t="rendinst"
+  _use:t="replicating"
+  ri_extra__name:t="hangar_wire_b"
+}
+
+hangar_wire_f{
+  _use:t="rendinst"
+  _use:t="replicating"
+  ri_extra__name:t="hangar_wire_f"
+}
+
+wind_oriented_ri{
+  wind_rotated_ri__rotationSpeed:r=0.0
+
+  "windOrientedRi:tag"{
+  }
+}
+
+decal_reapers_mark_projection_box_a{
+  _use:t="rendinst"
+  _use:t="replicating"
+  ri_extra__name:t="decal_reapers_mark_projection_box_a"
+}
+
+tank_explosion_projective_decal_ri{
+  _use:t="rendinst"
+  ri_extra__name:t="tank_explosion_projective_decal"
+}
+
+animated_scene_rendinst{
+  _use:t="replicating"
+  _use:t="key_track_animated"
+  _use:t="set_rotation"
+  _use:t="enable_ri_motion_on_dist_from_cam"
+  _use:t="rotating_rendinst_decal_matrixes"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, 0.0, 0.0]]
+  initialTransform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, 0.0, 0.0]]
+  _tracked:t="transform"
+  ri_extra__destroyed:b=no
+
+  ri_extra{
+  }
+
+  "ri_extra__handle:u64"{
+    value:i64=-1
+  }
+}
+
+animated_scene_rendinst_with_wind{
+  _use:t="animated_scene_rendinst"
+  _use:t="wind_oriented_ri"
+  ri_motion__enableDistSqFromCam:r=900.0
+}
+
+floating_rendinst_system{
+  _singleton:b=yes
+  floatingRiSystem__randomWavesAmplitude:r=0.0
+  floatingRiSystem__randomWavesLength:r=0.5
+  floatingRiSystem__randomWavesPeriod:r=1.0
+  floatingRiSystem__randomWavesVelocity:p2=0.6, 0.6
+
+  "floatingRiSystem__volumePresets:object"{
+
+    "default_1:array"{
+      volPos:p3=0.0, 0.0, 0.0
+    }
+
+    "default_4:array"{
+      volPos:p3=-1.0, 0.0, -1.0
+      volPos:p3=-1.0, 0.0, 1.0
+      volPos:p3=1.0, 0.0, -1.0
+      volPos:p3=1.0, 0.0, 1.0
+    }
+
+    "default_12:array"{
+      volPos:p3=-1.0, 0.5, 0.0
+      volPos:p3=1.0, 0.5, 0.0
+      volPos:p3=-0.8, 0.0, -1.0
+      volPos:p3=-0.4, 0.0, -1.0
+      volPos:p3=0.0, 0.0, -1.0
+      volPos:p3=0.4, 0.0, -1.0
+      volPos:p3=0.8, 0.0, -1.0
+      volPos:p3=-0.8, 0.0, 1.0
+      volPos:p3=-0.4, 0.0, 1.0
+      volPos:p3=0.0, 0.0, 1.0
+      volPos:p3=0.4, 0.0, 1.0
+      volPos:p3=0.8, 0.0, 1.0
+    }
+  }
+
+  "floatingRiSystem__userVolumePresets:object"{
+  }
+}
+
+floating_rendinst_res_group{
+  floatingRiGroup__wreckageFloatDuration:r=15.0
+  floatingRiGroup__updateDistSq:r=1000000.0
+  floatingRiGroup__interactionType:i=0
+  floatingRiGroup__interactionDistSq:r=0.0
+  floatingRiGroup__elasticity:r=0.1
+  floatingRiGroup__physUpdateDt:r=0.0417
+  floatingRiGroup__maxShiftDist:r=1000.0
+  floatingRiGroup__viscosity:r=0.57
+  floatingRiGroup__minDistToGround:r=-1000000.0
+
+  _group{
+    _track:b=yes
+    floatingRiGroup__resName:t=""
+    floatingRiGroup__inertiaMult:p3=1.0, 1.0, 1.0
+    floatingRiGroup__volumesCount:i=-1
+    floatingRiGroup__volumePresetName:t=""
+    floatingRiGroup__density:r=500.0
+    floatingRiGroup__densityRandRange:r=0.0
+    floatingRiGroup__useBoxInertia:b=no
+  }
+
+  floatingRiGroup__riPhysFloatingModel{
+  }
+}

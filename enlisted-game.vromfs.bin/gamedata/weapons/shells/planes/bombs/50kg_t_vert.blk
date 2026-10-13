@@ -1,0 +1,35 @@
+mass:r=58.0
+explosiveType:t="tnt"
+explosiveMass:r=25.0
+bombType:t="he_bomb"
+bombName:t="it_50kg_t"
+caliber:r=0.252
+length:r=1.03
+distFromCmToStab:r=0.3
+dragCx:r=0.02
+sound:t="weapon.bomb_mid"
+bulletType:t="he_bomb"
+hitPowerMult:r=1.0
+explodeArmorPower:r=38.0
+nearHitPower:p2=1.0, 50.0
+explodeRadius:p2=1.0, 4.0
+midHitPower:p2=0.9, 400.0
+farHitPower:p2=0.1, 1000.0
+rendinstDamageRadius:r=9.0
+endHitPower:p2=0.01, 1500.0
+relativeVelHitShift:p2=300.0, 1000.0
+shutterDamage:b=yes
+nearArmorPower:p2=10.0, 50.0
+shutterDamageRadius:r=40.0
+midArmorPower:p2=7.0, 400.0
+shutterAmount:i=2000
+farArmorPower:p2=0.2, 700.0
+shutterArmorPower:r=10.0
+relativeVelArmorShift:p2=200.0, 1000.0
+shutterHit:r=10.0
+entityTemplate:t="50kg_t_vert_bomb_projectile"
+entityPhysTemplate:t=""
+
+pressureDamage{
+  damageType:t="pressure"
+}

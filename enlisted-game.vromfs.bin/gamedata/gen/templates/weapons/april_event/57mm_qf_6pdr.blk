@@ -1,0 +1,34 @@
+base_57mm_qf_6pdr{
+  item__name:t="guns/57mm_qf_6pdr"
+  gun__blk:t="gamedata/gen/weapons/april_event/57mm_qf_6pdr.blk"
+  gun__shotFreq:r=0.33
+  gun__locName:t="57mm_qf_6pdr"
+
+  "gun__ammoSetsInfo:shared:array"{
+
+    "defaultSet:array"{
+
+      "shell:object"{
+        blk:t="gamedata/gen/weapons/shells/april_event/57mm_qf_6pdr_defaultset.blk"
+        name:t="57mm_qf_ap"
+        type:t="aphe_tank"
+      }
+    }
+
+    "57mm_britain_6pdr_HE:array"{
+
+      "shell:object"{
+        blk:t="gamedata/gen/weapons/shells/april_event/57mm_qf_6pdr_57mm_britain_6pdr_he.blk"
+        name:t="57mm_qf_he"
+        type:t="he_frag_tank"
+      }
+    }
+  }
+}
+
+tankgun_57mm_qf_6pdr{
+  _use:t="tankgun"
+  _use:t="base_tankgun_cannon"
+  _use:t="base_57mm_qf_6pdr"
+  turret__triggerGroup:i=0
+}

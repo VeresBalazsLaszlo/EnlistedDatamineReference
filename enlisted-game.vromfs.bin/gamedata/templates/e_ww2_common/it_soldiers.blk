@@ -1,0 +1,18 @@
+it_human_voice{
+
+  _group{
+    _tags:t="sound"
+    human_speech__locale:t="it"
+  }
+}
+
+it_base_soldier{
+  _use:t="ger_soldier"
+  _use:t="enlisted_base_soldier"
+  _use:t="it_human_voice"
+}
+
+ai_aircraft_crew_it_soldier{
+  _use:t="ai_aircraft_crew_soldier_base"
+  _use:t="ger_summer_2"
+}

@@ -1,0 +1,25 @@
+global_tracers_info_base{
+  _singleton:b=yes
+  _use:t="replicating"
+
+  _group{
+    _hide:b=yes
+    global_tracer__caliberToSmokeRadiusCoeff:r=0.5
+    global_tracer__defaultType:t=""
+
+    "global_tracer__bulletTracer:array"{
+    }
+
+    "global_tracer__bulletMapping:object"{
+    }
+
+    "global_tracer__typeNameToId:object"{
+    }
+
+    "global_tracer__mapping:list<i>"{
+    }
+
+    "global_tracer__shellNames:list<t>"{
+    }
+  }
+}

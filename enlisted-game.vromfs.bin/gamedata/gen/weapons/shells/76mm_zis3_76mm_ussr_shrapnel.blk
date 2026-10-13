@@ -1,0 +1,144 @@
+bulletCount:i=40
+mass:r=6.44
+explosiveType:t="tnt"
+explosiveMass:r=0.085
+caliber:r=0.0762
+speed:r=618.0
+Cx:r=0.5181
+maxDistance:r=10000.0
+normalizationPreset:t="heat"
+ricochetPreset:t="heat"
+groundRicochetPreset:t="heat"
+secondaryShattersPreset:t="ap"
+stabilityThreshold:r=0.5
+stabilityCaliberToArmorThreshold:r=5.0
+stabilityReductionAfterRicochet:r=0.3
+stabilityReductionAfterPenetration:r=0.15
+bulletType:t="shrapnel_tank"
+slopeEffectPreset:t="ap"
+modelName:t="tank_bullet_shrapnel"
+fresnel:p3=0.23, 0.1, 2.0
+explodeOnRendinst:b=yes
+bulletName:t="76mm_sh_354t"
+relativeVelHitShift:p2=300.0, 1000.0
+fuseDelayDist:r=1.2
+explodeTreshold:r=14.0
+relativeVelArmorShift:p2=200.0, 1000.0
+waterRicochetEffect:t="hit_59_80mm_water"
+groundRicochetEffect:t="hit_59_80mm_dirt_ap"
+
+stabilityRicochetModifier{
+  mod1:p2=0.0, 0.5
+  mod2:p2=15.0, 0.7
+  mod3:p2=30.0, 0.99
+}
+
+hitpower{
+  HitPower0m:p2=1.0, 0.0
+  HitPower1000m:p2=0.9, 0.0
+  HitPower10000m:p2=0.8, 10000.0
+}
+
+pressureDamage{
+  damageType:t="pressure"
+}
+
+damage{
+
+  kinetic{
+    damageType:t="generic"
+    demarrePenetrationK:r=0.37
+    demarreSpeedPow:r=1.43
+    demarreMassPow:r=0.71
+    demarreCaliberPow:r=1.07
+  }
+
+  shatter{
+    useRealShatters:b=yes
+    countPortion:r=0.25
+    damageType:t="shatter"
+
+    segment{
+      radiusScale:r=1.0
+      penetrationScale:r=1.0
+      damageScale:r=1.0
+      angles:p2=0.0, 10.0
+      countPortion:r=0.09
+    }
+
+    segment{
+      radiusScale:r=1.0
+      penetrationScale:r=1.0
+      damageScale:r=1.0
+      angles:p2=11.0, 39.0
+      countPortion:r=0.1
+    }
+
+    segment{
+      radiusScale:r=1.0
+      penetrationScale:r=1.0
+      damageScale:r=1.5
+      angles:p2=40.0, 70.0
+      countPortion:r=0.11
+    }
+
+    segment{
+      radiusScale:r=1.0
+      penetrationScale:r=1.0
+      damageScale:r=1.0
+      angles:p2=71.0, 180.0
+      countPortion:r=0.2
+    }
+
+    segment{
+      radiusScale:r=1.0
+      penetrationScale:r=1.0
+      damageScale:r=1.0
+      angles:p2=181.0, 289.0
+      countPortion:r=0.2
+    }
+
+    segment{
+      radiusScale:r=1.0
+      penetrationScale:r=1.0
+      damageScale:r=1.5
+      angles:p2=290.0, 320.0
+      countPortion:r=0.11
+    }
+
+    segment{
+      radiusScale:r=1.0
+      penetrationScale:r=1.0
+      damageScale:r=1.0
+      angles:p2=321.0, 349.0
+      countPortion:r=0.1
+    }
+
+    segment{
+      radiusScale:r=1.0
+      penetrationScale:r=1.0
+      damageScale:r=1.0
+      angles:p2=350.0, 359.0
+      countPortion:r=0.09
+    }
+  }
+}
+
+visual{
+  range_percent_of_ammo:p2=100.0, 0.0
+  traceFreq:i=1
+  tracer:t="noColor"
+  trail:t="black"
+}
+
+kineticDamage{
+  damageType:t="generic"
+}
+
+tracer{
+  headColor:c=0, 0, 0, 0
+  smokeColor:c=80, 80, 80, 186
+  startHeadColor:c=0, 0, 0, 0
+  startTime:r=0.0
+  smokeRadius:r=0.01
+}

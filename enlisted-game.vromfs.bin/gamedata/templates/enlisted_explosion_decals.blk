@@ -1,0 +1,21 @@
+shell_explosion_decal_grenade{
+  _use:t="shell_explosion_decal_info"
+  shell_explosion_decal__damageType:t="grenade_explosion"
+  shell_explosion_decal__size:r=1.0
+  shell_explosion_decal__traceShootDir:b=no
+}
+
+shell_explosion_decal_rocket{
+  _use:t="shell_explosion_decal_info"
+  shell_explosion_decal__damageType:t="explosive_non_penetration"
+  shell_explosion_decal__size:r=0.1
+  shell_explosion_decal__traceShootDir:b=yes
+}
+
+shell_explosion_decal_bomb{
+  _use:t="shell_explosion_decal_info"
+  shell_explosion_decal__damageType:t="bomb_explosion"
+  shell_explosion_decal__size:r=1.0
+  shell_explosion_decal__traceShootDir:b=yes
+  shell_explosion_decal__sideTraceLength:r=1.2
+}

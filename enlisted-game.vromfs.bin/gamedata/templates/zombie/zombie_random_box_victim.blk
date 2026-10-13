@@ -1,0 +1,470 @@
+random_weapon_box_victim{
+  _use:t="item"
+  _use:t="animchar"
+  _use:t="item_in_world"
+  _use:t="ui_visible"
+  _use:t="disable_update"
+  _use:t="main_weap_slots"
+  paid_loot__cost:i=4000
+  item__iconYaw:r=-90.0
+  item__ui_priority:i=2
+  item__lootType:t="gun"
+  item__lootSoundType:t="weapon"
+  gun__propsId:i=-1
+  gun__maxAmmo:i=0
+  dropTm:m=[[0.0, 1.0, 0.0] [0.0, 0.0, -1.0] [-1.0, 0.0, 0.0] [0.0, 0.03, 0.0]]
+  gun__customSkin:t=""
+  item__weapTemplate:t="random_weapon_box"
+  item__name:t="items/random_weapon_box"
+  item__weapType:t="random_weapon_box"
+  item__weight:r=4.7
+  gun__locName:t="Weapon Box"
+  item__template:t="random_weapon_box"
+  item__proto:t="gamedata/weapons/empty.blk"
+  gun__blk:t="gamedata/weapons/empty.blk"
+  animchar__res:t="jap_toolbox_char"
+  collres__res:t="jap_toolbox_collision"
+
+  "item__specialPickup:tag"{
+  }
+
+  "paid_loot_item:tag"{
+  }
+
+  "paid_loot__weapTemplates:list<t>"{
+    item:t="mondragon_m1908_zombie_gun_item+item_in_world+ui_visible+disable_update"
+    item:t="winchester_model_1912_zombie_gun_item+item_in_world+ui_visible+disable_update"
+    item:t="browning_auto_5_halloween_gun_item+item_in_world+ui_visible+disable_update"
+    item:t="m1_thompson_halloween_gun_item+item_in_world+ui_visible+disable_update"
+    item:t="stl_mp_40_zombie_gun_item+item_in_world+ui_visible+disable_update"
+    item:t="pps_42_zombie_gun_item+item_in_world+ui_visible+disable_update"
+    item:t="nambu_type_2_1934_smg_zombie_gun_item+item_in_world+ui_visible+disable_update"
+    item:t="hyde_m1944_halloween_gun_item+item_in_world+ui_visible+disable_update"
+    item:t="patchett_mk1_halloween_gun_item+item_in_world+ui_visible+disable_update"
+    item:t="thompson_m1928a1_50_drum_gold_zombie_gun_item+item_in_world+ui_visible+disable_update"
+    item:t="thompson_m1928a1_50_drum_zombie_gun_item+item_in_world+ui_visible+disable_update"
+    item:t="ppsh_41_zombie_gun_item+item_in_world+ui_visible+disable_update"
+    item:t="stg_44_zombie_gun_item+item_in_world+ui_visible+disable_update"
+    item:t="akm_47_zombie_gun_item+item_in_world+ui_visible+disable_update"
+    item:t="stg_44_gold_zombie_gun_item+item_in_world+ui_visible+disable_update"
+    item:t="fg_42_zombie_gun_item+item_in_world+ui_visible+disable_update"
+    item:t="as_44_halloween_gun_item+item_in_world+ui_visible+disable_update"
+    item:t="t20_rifle_halloween_gun_item+item_in_world+ui_visible+disable_update"
+    item:t="type_hei_automatic_lmg_halloween_gun_item+item_in_world+ui_visible+disable_update"
+    item:t="type_hei_automatic_rifle_halloween_gun_item+item_in_world+ui_visible+disable_update"
+    item:t="mg_13_halloween_gun_item+item_in_world+ui_visible+disable_update"
+    item:t="bren_mk2_halloween_gun_item+item_in_world+ui_visible+disable_update"
+    item:t="type_11_lmg_halloween_gun_item+item_in_world+ui_visible+disable_update"
+    item:t="browning_m1918a2_halloween_gun_item+item_in_world+ui_visible+disable_update"
+    item:t="madsen_halloween_gun_item+item_in_world+ui_visible+disable_update"
+    item:t="dp_27_zombie_gun_item+item_in_world+ui_visible+disable_update"
+    item:t="mg_34_halloween_gun_item+item_in_world+ui_visible+disable_update"
+    item:t="dt_29_halloween_gun_item+item_in_world+ui_visible+disable_update"
+    item:t="m1941_johnson_mg_halloween_gun_item+item_in_world+ui_visible+disable_update"
+    item:t="type_89_te_4_halloween_gun_item+item_in_world+ui_visible+disable_update"
+    item:t="mg_42_handheld_halloween_gun_item+item_in_world+ui_visible+disable_update"
+    item:t="browning_m1919a6_zombie_gun_item+item_in_world+ui_visible+disable_update"
+    item:t="mg_42_beltfed_halloween_gun_item+item_in_world+ui_visible+disable_update"
+    item:t="rd_44_zombie_gun_item+item_in_world+ui_visible+disable_update"
+    item:t="type_100_mg_zombie_gun_item+item_in_world+ui_visible+disable_update"
+    item:t="ptrs_41_zombie_gun_item+item_in_world+ui_visible+disable_update"
+    item:t="blaster_zombie_gun_item+item_in_world+ui_visible+disable_update"
+    item:t="neiman_minethrower_zombie_gun_item+item_in_world+ui_visible+disable_update"
+    item:t="m2_flamethrower_zombie_gun_item+item_in_world+ui_visible+disable_update"
+    item:t="atr_boys_halloween_gun_item+item_in_world+ui_visible+disable_update"
+    item:t="flamethrower_portable_no_2_mk1_lifebuoy_zombie_gun_item+item_in_world+ui_visible+disable_update"
+  }
+
+  "paid_loot__weapRandomizeWeight:list<r>"{
+    item:r=1.0
+    item:r=1.0
+    item:r=1.0
+    item:r=2.0
+    item:r=2.0
+    item:r=2.0
+    item:r=2.0
+    item:r=2.0
+    item:r=2.0
+    item:r=0.2
+    item:r=1.0
+    item:r=1.0
+    item:r=2.0
+    item:r=0.2
+    item:r=0.2
+    item:r=1.0
+    item:r=2.0
+    item:r=1.0
+    item:r=2.0
+    item:r=1.0
+    item:r=1.0
+    item:r=2.0
+    item:r=1.0
+    item:r=2.0
+    item:r=1.0
+    item:r=2.0
+    item:r=1.0
+    item:r=2.0
+    item:r=1.0
+    item:r=2.0
+    item:r=1.0
+    item:r=1.0
+    item:r=1.0
+    item:r=1.0
+    item:r=1.0
+    item:r=1.0
+    item:r=1.0
+    item:r=1.0
+    item:r=1.0
+    item:r=1.0
+    item:r=1.0
+  }
+
+  "paid_loot__weapChanceRange:list<r>"{
+  }
+
+  "item__id:i"{
+    value:i=0
+    _hide:b=yes
+  }
+}
+
+random_weapon_box_spawn_point{
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, 0.0, 0.0]]
+
+  "randomBoxSpawn:tag"{
+  }
+}
+
+special_weapon_box_base_victim{
+  _use:t="special_weapon_box_base"
+
+  "paid_loot__weapTemplates:list<t>"{
+    item:t="colt_swartz_zombie_gun_item+item_in_world+ui_visible+disable_update"
+    item:t="nambu_type_a_sword_pistol_zombie_gun_item+item_in_world+ui_visible+disable_update"
+    item:t="nagant_m1895_zombie_gun_item+item_in_world+ui_visible+disable_update"
+    item:t="m1_garand_zombie_gun_item+item_in_world+ui_visible+disable_update"
+    item:t="mondragon_m1908_zombie_gun_item+item_in_world+ui_visible+disable_update"
+    item:t="winchester_model_1912_zombie_gun_item+item_in_world+ui_visible+disable_update"
+    item:t="stl_mp_40_zombie_gun_item+item_in_world+ui_visible+disable_update"
+    item:t="pps_42_zombie_gun_item+item_in_world+ui_visible+disable_update"
+    item:t="ppsh_41_zombie_gun_item+item_in_world+ui_visible+disable_update"
+    item:t="nambu_type_2_1934_smg_zombie_gun_item+item_in_world+ui_visible+disable_update"
+    item:t="thompson_m1928a1_50_drum_gold_zombie_gun_item+item_in_world+ui_visible+disable_update"
+    item:t="stg_44_zombie_gun_item+item_in_world+ui_visible+disable_update"
+    item:t="akm_47_zombie_gun_item+item_in_world+ui_visible+disable_update"
+    item:t="stg_44_gold_zombie_gun_item+item_in_world+ui_visible+disable_update"
+    item:t="fg_42_zombie_gun_item+item_in_world+ui_visible+disable_update"
+    item:t="dp_27_zombie_gun_item+item_in_world+ui_visible+disable_update"
+    item:t="browning_m1919a6_zombie_gun_item+item_in_world+ui_visible+disable_update"
+    item:t="ptrs_41_zombie_gun_item+item_in_world+ui_visible+disable_update"
+    item:t="blaster_zombie_gun_item+item_in_world+ui_visible+disable_update"
+    item:t="neiman_minethrower_zombie_gun_item+item_in_world+ui_visible+disable_update"
+    item:t="m2_flamethrower_zombie_gun_item+item_in_world+ui_visible+disable_update"
+    item:t="german_officer_sword_item+item_in_world+ui_visible+disable_update"
+    item:t="explosion_pack_item+item_in_world+ui_visible+disable_update"
+    item:t="srcm_mod_35_impact_grenade_item+item_in_world+ui_visible+disable_update"
+    item:t="molotov_grenade+item_in_world+ui_visible+disable_update"
+  }
+
+  "paid_loot__weapRandomizeWeight:list<r>"{
+    item:r=1.0
+    item:r=1.0
+    item:r=1.0
+    item:r=7.0
+    item:r=3.0
+    item:r=5.0
+    item:r=7.0
+    item:r=7.0
+    item:r=2.0
+    item:r=7.0
+    item:r=1.0
+    item:r=3.0
+    item:r=1.0
+    item:r=1.0
+    item:r=3.0
+    item:r=2.0
+    item:r=1.0
+    item:r=1.0
+    item:r=0.1
+    item:r=0.4
+    item:r=1.0
+    item:r=0.5
+    item:r=1.0
+    item:r=1.0
+    item:r=1.0
+  }
+}
+
+special_weapon_box_base_simple_weapon_victim{
+  _use:t="ecs_no_debug"
+  _use:t="item_with_animchar_updatable"
+  _use:t="animchar"
+  _use:t="item_in_world"
+  _use:t="ui_visible"
+  _use:t="disable_update"
+  _use:t="main_weap_slots"
+  _use:t="zombie_green_dim_emissive"
+  buildingRadius:r=1.0
+  building_menu__image:t="paratrooper_box"
+  paid_loot__cost:i=25
+  _tracked:t="paid_loot__alreadyUsed"
+  _replicated:t="paid_loot__alreadyUsed"
+  paid_loot__alreadyUsed:b=no
+  paid_loot__tokenNominal:i=0
+  paid_loot__getTokensProb:r=0.0
+  paid_loot__regularBoxProb:r=0.9
+  item__iconYaw:r=-90.0
+  item__ui_priority:i=2
+  item__lootType:t="gun"
+  item__lootSoundType:t="weapon"
+  gun__propsId:i=-1
+  gun__maxAmmo:i=0
+  dropTm:m=[[0.0, 1.0, 0.0] [0.0, 0.0, -1.0] [-1.0, 0.0, 0.0] [0.0, 0.03, 0.0]]
+  gun__customSkin:t=""
+  item__name:t="items/random_weapon_box"
+  item__weapType:t="random_weapon_box"
+  item__weight:r=4.7
+  gun__locName:t="Weapon Box NEW"
+  animchar__updatable:b=no
+  paid_loot_anim__nodeName:t="ammunition_box_hatch"
+  paid_loot_anim__startAngle:r=0.0
+  paid_loot_anim__openedAngle:r=130.0
+  paid_loot_anim__timeToOpen:r=1.0
+  paid_loot_anim__openedAt:r=-1.0
+  paid_loot_anim__progressVarId:i=-1
+  paid_loot_anim__progress:r=-1.0
+  item__template:t="random_weapon_box"
+  item__proto:t="gamedata/weapons/empty.blk"
+  gun__blk:t="gamedata/weapons/empty.blk"
+  animchar__res:t="ammunition_supply_b_char"
+  collres__res:t="ammunition_supply_b_dynmodel_collision"
+  special_box_hud__iconImage:t="paratrooper_box"
+  special_box_hud__offsetY:r=0.5
+  special_box_hud__minDistanceToShow:r=0.1
+  special_box_hud__maxDistanceToShow:r=15.0
+  item__visible:b=yes
+
+  "item__specialPickup:tag"{
+  }
+
+  "paid_loot_item:tag"{
+  }
+
+  "paid_loot_special_box:tag"{
+  }
+
+  "paid_loot__specialWeapTemplatesBase:list<t>"{
+  }
+
+  "paid_loot__specialWeapRandomizeWeightBase:list<r>"{
+  }
+
+  "paid_loot__specialWeapTemplates:list<t>"{
+  }
+
+  "paid_loot__specialWeapRandomizeWeight:list<r>"{
+  }
+
+  "paid_loot__specialWeapChanceRange:list<r>"{
+  }
+
+  "paid_loot__weapTemplates:list<t>"{
+    item:t="m1_garand_zombie_gun_item+item_in_world+ui_visible+disable_update"
+    item:t="mondragon_m1908_zombie_gun_item+item_in_world+ui_visible+disable_update"
+    item:t="winchester_model_1912_zombie_gun_item+item_in_world+ui_visible+disable_update"
+    item:t="stl_mp_40_zombie_gun_item+item_in_world+ui_visible+disable_update"
+    item:t="pps_42_zombie_gun_item+item_in_world+ui_visible+disable_update"
+    item:t="ppsh_41_zombie_gun_item+item_in_world+ui_visible+disable_update"
+    item:t="nambu_type_2_1934_smg_zombie_gun_item+item_in_world+ui_visible+disable_update"
+    item:t="thompson_m1928a1_50_drum_gold_zombie_gun_item+item_in_world+ui_visible+disable_update"
+    item:t="stg_44_zombie_gun_item+item_in_world+ui_visible+disable_update"
+    item:t="akm_47_zombie_gun_item+item_in_world+ui_visible+disable_update"
+    item:t="stg_44_gold_zombie_gun_item+item_in_world+ui_visible+disable_update"
+    item:t="fg_42_zombie_gun_item+item_in_world+ui_visible+disable_update"
+    item:t="dp_27_zombie_gun_item+item_in_world+ui_visible+disable_update"
+    item:t="browning_m1919a6_zombie_gun_item+item_in_world+ui_visible+disable_update"
+    item:t="ptrs_41_zombie_gun_item+item_in_world+ui_visible+disable_update"
+    item:t="blaster_zombie_gun_item+item_in_world+ui_visible+disable_update"
+    item:t="neiman_minethrower_zombie_gun_item+item_in_world+ui_visible+disable_update"
+    item:t="m2_flamethrower_zombie_gun_item+item_in_world+ui_visible+disable_update"
+    item:t="german_officer_sword_item+item_in_world+ui_visible+disable_update"
+  }
+
+  "paid_loot__weapRandomizeWeight:list<r>"{
+    item:r=7.0
+    item:r=3.0
+    item:r=5.0
+    item:r=7.0
+    item:r=7.0
+    item:r=1.0
+    item:r=7.0
+    item:r=1.0
+    item:r=2.0
+    item:r=0.5
+    item:r=0.5
+    item:r=3.0
+    item:r=2.0
+    item:r=1.0
+    item:r=1.0
+    item:r=0.1
+    item:r=0.4
+    item:r=1.0
+    item:r=0.5
+  }
+
+  "paid_loot__weapChanceRange:list<r>"{
+  }
+
+  "item__id:i"{
+    value:i=0
+    _hide:b=yes
+  }
+
+  phys_vars{
+  }
+
+  anim_phys{
+  }
+
+  "disable_visibility_tracing:tag"{
+  }
+
+  "fastPickup:tag"{
+  }
+}
+
+base_fortification_build_halloween{
+  _use:t="fortification_builder_info"
+  _use:t="fortification_ai_target"
+  _use:t="fortification_build_sound"
+  buildingCost:r=0.0
+  maxCostReturnedOnDestructionMul:r=0.5
+  costReturnedOnDestructionMul:r=0.5
+  buildTypeId:i=0
+  buildingRadius:r=0.0
+  buildingCenterOffset:p3=0.0, 0.0, 0.0
+  buildingCostructedAtTime:r=0.0
+  actionTimerColor:p3=255.0, 0.0, 0.0
+  _replicated:t="building_destroy__timeToDestroy"
+  building_destroy__maxTimeToDestroy:r=5.0
+  building_destroy__timeToDestroy:r=0.0
+  building_destroy__lastDamageAtTime:r=-1.0
+  building_destroy__timeToResetDestructionTimer:r=15.0
+  building_destroy__distanceVerifyThreshold:r=1.5
+  building_destroy__disassembleSound:t="env_effects/building/destroy_action"
+
+  "building__canDismantle:tag"{
+  }
+
+  "build_attach__riexHandle:u64"{
+    value:i64=-1
+    _tags:t="server"
+  }
+
+  "building__isBroken:b"{
+    value:b=no
+    _tags:t="server"
+  }
+
+  _group{
+    _tags:t="server"
+    obstacle__initialStillTimeout:r=0.0
+    building__destructionAwardStat:t=""
+
+    "building__breakOffender:eid"{
+    }
+  }
+
+  "building_destroy__operator:eid"{
+  }
+}
+
+paid_remove_obstacle{
+  _use:t="base_fortification_build_halloween"
+  _use:t="base_ri_building"
+  _use:t="undestroyable_ri_extra"
+  _use:t="undestroyable_building"
+  _use:t="game_interactable_object"
+  _tracked:t="paid_door__currentCost"
+  _tracked:t="minimap__visibleForAll"
+  _tracked:t="active"
+  _tracked:t="hud_icon__counter"
+  _replicated:t="paid_door__currentCost"
+  _replicated:t="active"
+  _replicated:t="hud_icon__counter"
+  paid_door__effect:t="event_zombie_door_effect"
+  building_menu__image:t="point_lock"
+  minimap__visibleForAll:b=yes
+  item__name:t=""
+  useful_box__hintFull:t="zombie/open_door"
+  useful_box__hintCost:t="btn/open_door"
+  buildingRadius:r=1.4
+  builder_info__team:i=1
+  team:i=1
+  interactAngleLimits:p2=-180.0, 180.0
+  interactDist:r=2.0
+  active:b=no
+  groupName:t=""
+  ri_extra__name:t="normandy_door_2670x1500_steel_a_r_closed"
+  paid_door__currentCost:i=100
+  hud_icon__counter:i=100
+
+  _group{
+    _tags:t="ui"
+    hud_icon__image:t="point_lock"
+    hud_icon__offsetY:r=0.6
+    hud_icon__maxDistance:r=27.0
+    hud_icon__opacityRangeX:p2=0.5, 0.8
+    hud_icon__opacityRangeY:p2=0.5, 0.8
+    hud_icon__opacityCenterMinMult:r=1.0
+
+    "hud_icon__isActive:b"{
+      value:b=no
+      _track:b=yes
+    }
+  }
+
+  _group{
+    _tags:t="server"
+
+    "blocking_obstacle:tag"{
+    }
+  }
+
+  "paid_door__activateChoice:object"{
+  }
+
+  "paid_door__deactivateZones:list<t>"{
+  }
+
+  "activateCheck:tag"{
+  }
+}
+
+random_weapon_stand_shop{
+  _use:t="replicating"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, 0.0, 0.0]]
+  active:b=no
+  _tracked:t="active"
+  _replicated:t="active"
+  groupName:t=""
+  random_weapon_stand_shop__weaponsCreated:b=no
+
+  "activateCheck:tag"{
+  }
+
+  "random_weapon_stand_shop__weapTemplates:list<t>"{
+  }
+
+  "random_weapon_stand_shop__weapChances:list<r>"{
+  }
+
+  "random_weapon_stand_shop__weapRandomizeWeight:list<r>"{
+  }
+
+  "random_weapon_stand_shop__spawnRelTms:list<m>"{
+  }
+
+  "random_weapon_stand_shop__prices:list<i>"{
+  }
+}

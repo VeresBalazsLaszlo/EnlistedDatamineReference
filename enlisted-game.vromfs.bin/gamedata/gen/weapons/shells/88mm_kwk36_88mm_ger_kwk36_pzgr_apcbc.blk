@@ -1,0 +1,114 @@
+bulletCount:i=20
+mass:r=9.5
+explosiveType:t="fp10_np10"
+explosiveMass:r=0.168
+caliber:r=0.088
+speed:r=810.0
+Cx:r=0.33
+maxDistance:r=7000.0
+normalizationPreset:t="apbc"
+ricochetPreset:t="apbc"
+groundRicochetPreset:t="apbc_ground"
+secondaryShattersPreset:t="ap"
+stabilityThreshold:r=0.05
+stabilityCaliberToArmorThreshold:r=5.0
+stabilityReductionAfterRicochet:r=0.3
+stabilityReductionAfterPenetration:r=0.0
+stucking:r=0.7
+stuckingAngle:r=45.0
+bulletType:t="apcbc_tank"
+slopeEffectPreset:t="apc"
+fresnel:p3=0.23, 0.1, 2.0
+bulletName:t="88mm_pzgr"
+relativeVelHitShift:p2=300.0, 1000.0
+checkIntegrityAfterExplosion:b=yes
+fuseDelayDist:r=1.2
+explodeTreshold:r=14.0
+relativeVelArmorShift:p2=200.0, 1000.0
+waterRicochetEffect:t="hit_59_80mm_water"
+groundRicochetEffect:t="hit_59_80mm_dirt_ap"
+rendinstDamageRadius:r=0.0
+modelName:t="tank_bullet_apcbc"
+
+stabilityRicochetModifier{
+  mod1:p2=0.0, 0.2
+  mod2:p2=20.0, 0.4
+  mod3:p2=30.0, 0.6
+  mod3:p2=45.0, 0.9
+}
+
+hitpower{
+  HitPower0m:p2=1.0, 0.0
+  HitPower1000m:p2=0.9, 0.0
+  HitPower10000m:p2=0.8, 10000.0
+}
+
+damage{
+
+  kinetic{
+    damageType:t="generic"
+    demarrePenetrationK:r=1.0
+    demarreSpeedPow:r=1.43
+    demarreMassPow:r=0.71
+    demarreCaliberPow:r=1.07
+  }
+}
+
+testProperties{
+  checkIntegrityAfterExplosion:b=yes
+
+  damage{
+
+    shatter{
+      useRealShatters:b=yes
+      countPortion:r=0.6
+
+      segment{
+        radiusScale:r=1.0
+        penetrationScale:r=0.75
+        damageScale:r=1.5
+        angles:p2=0.0, 180.0
+        countPortion:r=0.4
+      }
+
+      segment{
+        radiusScale:r=1.0
+        penetrationScale:r=1.0
+        damageScale:r=1.75
+        angles:p2=45.0, 105.0
+        countPortion:r=0.5
+      }
+
+      segment{
+        radiusScale:r=1.0
+        penetrationScale:r=1.0
+        damageScale:r=1.5
+        angles:p2=130.0, 180.0
+        countPortion:r=0.1
+      }
+    }
+  }
+}
+
+pressureDamage{
+  damageType:t="pressure"
+}
+
+visual{
+  range_percent_of_ammo:p2=100.0, 0.0
+  traceFreq:i=1
+  tracer:t="76mmRed"
+  trail:t="black"
+}
+
+kineticDamage{
+  damageType:t="generic"
+}
+
+tracer{
+  headColor:c=255, 15, 15, 255
+  smokeColor:c=80, 80, 80, 186
+  startHeadColor:c=255, 248, 60, 120
+  startTime:r=0.025
+  smokeRadius:r=0.09
+}

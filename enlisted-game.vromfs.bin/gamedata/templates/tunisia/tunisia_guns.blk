@@ -1,0 +1,5425 @@
+carcano_m38{
+  _use:t="main_weap_slots"
+  _use:t="ironsights_open_rifle"
+  animchar__res:t="carcano_m38_char"
+  gun__blk:t="gamedata/weapons/carcano_m38.blk"
+  item__template:t="carcano_m38_gun_item"
+  item__proto:t="gamedata/weapons/carcano_m38.blk"
+  item__weapTemplate:t="carcano_m38_gun"
+  item__name:t="items/carcano_m38"
+  item__weapType:t="rifle"
+  item__weight:r=3.5
+  gun__locName:t="Carcano Mod. 38"
+  gun__statName:t="rifle"
+  gun__shotFreq:r=0.9
+  gun__automaticReload:b=no
+  gun_spread__maxDeltaAngle:r=0.17
+  gun_deviation__omegaRange:p2=30.0, 90.0
+  gun_deviation__omegaDevInc:p2=0.1, 0.5
+  gun_deviation__movementRange:p2=2.1, 4.0
+  gun_deviation__movementDevInc:p2=0.0, 8.0
+  gun_deviation__onShotDeviationChange:r=0.0
+  gun_deviation__shotTau:r=0.1
+  gun_deviation__extraDeviationTau:r=0.15
+  gun_deviation__maxDeviation:r=15.0
+  gun__reloadTime:r=3.2
+  gun__altReloadTime:r=3.8
+  gun__kineticDamageMult:r=1.58
+
+  "item__id:i"{
+    value:i=0
+    _hide:b=yes
+  }
+
+  "gun_shell_ejection__onShootRelease:tag"{
+  }
+
+  "gun__ammoHolders:array"{
+    ammoHolders:t="carcano_m38_magazine"
+  }
+
+  "gun__shells:array"{
+    shells:t="gamedata/weapons/bullets/6.5x52_carcano.blk"
+  }
+
+  "gun__firingModes:array"{
+
+    "mode:object"{
+      modeType:t="manual"
+    }
+  }
+
+  "gun__firingModeNames:array"{
+    mode:t="bolt_action"
+  }
+}
+
+carcano_m38_gun{
+  _use:t="equipable_gun"
+  _use:t="carbine_ww2_preset"
+  _use:t="carcano_m38"
+  _use:t="rifle_carbine_muzzle_preset"
+  _use:t="hit_effect_group_handgun_medium"
+  _use:t="rifle_gun_aim_sound"
+  gun_shell_ejection__timeMult:r=0.35
+  gun__length:r=0.4
+  gun__recoilAmount:r=0.115
+  gun__recoilDirAmount:r=0.8
+  gun__recoilDir:r=0.1
+  gun__visualRecoilMult:r=1.0
+  gun__recoilControlMult:r=0.0
+  gun__recoilOffsMult:r=1.0
+  gun_attach__slot:t="weapon"
+  gun__adsSpeedMult:r=0.95
+  meleeSoundType:t="rifle"
+  gun_anim_var__fpsGunOffsetAlong:r=-0.02
+  gun_anim_var__fpsGunOffsetAcross:r=0.015
+  gun_anim_var__fpsGunOffsetUp:r=0.045
+
+  "gun_mods__slots:object"{
+
+    "bayonet:object"{
+      carcano_m38_bayonet:t="carcano_m38_bayonet"
+    }
+  }
+
+  "gun_sound__shotPath:shared:object"{
+    _tags:t="sound"
+    path:t="/weapon/rifle/carcano_m41"
+  }
+
+  "sound_irqs:shared:object"{
+    _tags:t="sound"
+
+    "reload1:object"{
+      path:t="/weapon/rifle/carcano_m41/reload1/change_ammo"
+    }
+
+    "reload2:object"{
+      path:t="/weapon/rifle/carcano_m41/reload2/change_ammo"
+    }
+
+    "reload3:object"{
+      path:t="/weapon/rifle/carcano_m41/reload3/change_ammo"
+    }
+
+    "reload4:object"{
+      path:t="/weapon/rifle/carcano_m41/reload4/change_ammo"
+    }
+
+    "boltAction:object"{
+      path:t="/weapon/rifle/carcano_m41/bolt_action"
+    }
+  }
+
+  "gun__mountPoints:shared:array"{
+
+    "point:object"{
+      type:t="rest"
+      recoil:r=-1.0
+      offset:p3=0.58, -0.0246, 0.0
+    }
+  }
+}
+
+carcano_m38_7_35{
+  _use:t="main_weap_slots"
+  _use:t="ironsights_open_rifle"
+  animchar__res:t="carcano_m38_7_35_char"
+  gun__blk:t="gamedata/weapons/carcano_m38_7_35.blk"
+  item__template:t="carcano_m38_7_35_gun_item"
+  item__proto:t="gamedata/weapons/carcano_m38_7_35.blk"
+  item__weapTemplate:t="carcano_m38_7_35_gun"
+  item__name:t="items/carcano_m38_7_35"
+  item__weapType:t="rifle"
+  item__weight:r=3.5
+  gun__locName:t="Carcano Mod. 38 (cal 7.35mm)"
+  gun__statName:t="rifle"
+  gun__shotFreq:r=0.9
+  gun__automaticReload:b=no
+  gun_spread__maxDeltaAngle:r=0.16
+  gun_deviation__omegaRange:p2=30.0, 90.0
+  gun_deviation__omegaDevInc:p2=0.1, 0.5
+  gun_deviation__movementRange:p2=2.1, 4.0
+  gun_deviation__movementDevInc:p2=0.0, 8.0
+  gun_deviation__onShotDeviationChange:r=0.0
+  gun_deviation__shotTau:r=0.1
+  gun_deviation__extraDeviationTau:r=0.15
+  gun_deviation__maxDeviation:r=15.0
+  gun__reloadTime:r=3.2
+  gun__altReloadTime:r=3.8
+  gun__kineticDamageMult:r=1.58
+
+  "item__id:i"{
+    value:i=0
+    _hide:b=yes
+  }
+
+  "gun_shell_ejection__onShootRelease:tag"{
+  }
+
+  "gun__ammoHolders:array"{
+    ammoHolders:t="carcano_m38_7_35_magazine"
+  }
+
+  "gun__shells:array"{
+    shells:t="gamedata/weapons/bullets/7.35x51_carcano.blk"
+  }
+
+  "gun__firingModes:array"{
+
+    "mode:object"{
+      modeType:t="manual"
+    }
+  }
+
+  "gun__firingModeNames:array"{
+    mode:t="bolt_action"
+  }
+}
+
+carcano_m38_7_35_gun{
+  _use:t="equipable_gun"
+  _use:t="carbine_ww2_preset"
+  _use:t="carcano_m38_7_35"
+  _use:t="rifle_carbine_muzzle_preset"
+  _use:t="hit_effect_group_handgun_medium"
+  _use:t="rifle_gun_aim_sound"
+  gun_shell_ejection__timeMult:r=0.35
+  gun__length:r=0.4
+  gun__recoilAmount:r=0.122
+  gun__recoilDirAmount:r=0.8
+  gun__recoilDir:r=0.1
+  gun__visualRecoilMult:r=1.0
+  gun__recoilControlMult:r=0.0
+  gun__recoilOffsMult:r=1.0
+  gun_attach__slot:t="weapon"
+  gun__adsSpeedMult:r=0.95
+  meleeSoundType:t="rifle"
+  gun_anim_var__fpsGunOffsetAlong:r=-0.03
+  gun_anim_var__fpsGunOffsetAcross:r=0.015
+  gun_anim_var__fpsGunOffsetUp:r=0.058
+
+  "gun_mods__slots:object"{
+
+    "bayonet:object"{
+      carcano_m38_bayonet:t="carcano_m38_bayonet"
+    }
+  }
+
+  "gun_sound__shotPath:shared:object"{
+    _tags:t="sound"
+    path:t="/weapon/rifle/carcano_m41"
+  }
+
+  "sound_irqs:shared:object"{
+    _tags:t="sound"
+
+    "reload1:object"{
+      path:t="/weapon/rifle/carcano_m41/reload1/change_ammo"
+    }
+
+    "reload2:object"{
+      path:t="/weapon/rifle/carcano_m41/reload2/change_ammo"
+    }
+
+    "reload3:object"{
+      path:t="/weapon/rifle/carcano_m41/reload3/change_ammo"
+    }
+
+    "reload4:object"{
+      path:t="/weapon/rifle/carcano_m41/reload4/change_ammo"
+    }
+
+    "boltAction:object"{
+      path:t="/weapon/rifle/carcano_m41/bolt_action"
+    }
+  }
+
+  "gun__mountPoints:shared:array"{
+
+    "point:object"{
+      type:t="rest"
+      recoil:r=-1.0
+      offset:p3=0.58, -0.0246, 0.0
+    }
+  }
+}
+
+carcano_m38_7_35_with_scope_mount{
+  _use:t="main_weap_slots"
+  _use:t="ironsights_open_rifle"
+  animchar__res:t="carcano_m38_7_35_char"
+  gun__blk:t="gamedata/weapons/carcano_m38_7_35_with_scope_mount.blk"
+  item__template:t="carcano_m38_7_35_with_scope_mount_gun_item"
+  item__proto:t="gamedata/weapons/carcano_m38_7_35_with_scope_mount.blk"
+  item__weapTemplate:t="carcano_m38_7_35_with_scope_mount_gun"
+  item__name:t="items/carcano_m38_7_35_with_scope_mount"
+  item__weapType:t="rifle"
+  item__weight:r=3.5
+  gun__locName:t="Carcano Mod. 38 Scoped (cal 7.35mm)"
+  gun__statName:t="rifle"
+  gun__shotFreq:r=0.9
+  gun__automaticReload:b=no
+  gun_spread__maxDeltaAngle:r=0.02
+  gun_deviation__omegaRange:p2=30.0, 90.0
+  gun_deviation__omegaDevInc:p2=0.1, 0.5
+  gun_deviation__movementRange:p2=2.1, 4.0
+  gun_deviation__movementDevInc:p2=0.0, 8.0
+  gun_deviation__onShotDeviationChange:r=0.0
+  gun_deviation__shotTau:r=0.1
+  gun_deviation__extraDeviationTau:r=0.15
+  gun_deviation__maxDeviation:r=15.0
+  gun__reloadTime:r=3.2
+  gun__altReloadTime:r=3.8
+  gun__kineticDamageMult:r=1.58
+
+  "item__id:i"{
+    value:i=0
+    _hide:b=yes
+  }
+
+  "gun_shell_ejection__onShootRelease:tag"{
+  }
+
+  "gun__ammoHolders:array"{
+    ammoHolders:t="carcano_m38_7_35_magazine"
+  }
+
+  "gun__shells:array"{
+    shells:t="gamedata/weapons/bullets/7.35x51_carcano_ap.blk"
+  }
+
+  "gun__firingModes:array"{
+
+    "mode:object"{
+      modeType:t="manual"
+    }
+  }
+
+  "gun__firingModeNames:array"{
+    mode:t="bolt_action"
+  }
+}
+
+carcano_m38_7_35_with_scope_mount_gun{
+  _use:t="equipable_gun"
+  _use:t="carbine_ww2_preset"
+  _use:t="carcano_m38_7_35_with_scope_mount"
+  _use:t="rifle_carbine_muzzle_preset"
+  _use:t="hit_effect_group_handgun_medium"
+  _use:t="rifle_gun_aim_sound"
+  gun_shell_ejection__timeMult:r=0.35
+  gun__length:r=0.4
+  gun__recoilAmount:r=0.122
+  gun__recoilDirAmount:r=0.8
+  gun__recoilDir:r=0.1
+  gun__visualRecoilMult:r=1.0
+  gun__recoilControlMult:r=0.0
+  gun__recoilOffsMult:r=1.0
+  gun_attach__slot:t="weapon"
+  gun__adsSpeedMult:r=0.95
+  gun__statName:t="sniper"
+  meleeSoundType:t="rifle"
+  gun_anim_var__fpsGunOffsetAlong:r=-0.03
+  gun_anim_var__fpsGunOffsetAcross:r=0.015
+  gun_anim_var__fpsGunOffsetUp:r=0.058
+
+  "gun_mods__slots:object"{
+
+    "scope:object"{
+      scope_carcano_m38:t="scope_carcano_m38"
+    }
+  }
+
+  "gun_sound__shotPath:shared:object"{
+    _tags:t="sound"
+    path:t="/weapon/rifle/carcano_m41"
+  }
+
+  "sound_irqs:shared:object"{
+    _tags:t="sound"
+
+    "reload1:object"{
+      path:t="/weapon/rifle/carcano_m41/reload1/change_ammo"
+    }
+
+    "reload2:object"{
+      path:t="/weapon/rifle/carcano_m41/reload2/change_ammo"
+    }
+
+    "reload3:object"{
+      path:t="/weapon/rifle/carcano_m41/reload3/change_ammo"
+    }
+
+    "reload4:object"{
+      path:t="/weapon/rifle/carcano_m41/reload4/change_ammo"
+    }
+
+    "boltAction:object"{
+      path:t="/weapon/rifle/carcano_m41/bolt_action"
+    }
+  }
+
+  "gun__mountPoints:shared:array"{
+
+    "point:object"{
+      type:t="rest"
+      recoil:r=-1.0
+      offset:p3=0.58, -0.0246, 0.0
+    }
+  }
+}
+
+scope_carcano_m38{
+  _use:t="scope_gunmod"
+  animchar__res:t="scope_zf_41_char"
+  collres__res:t="scope_zf_41_collision"
+  item__template:t="scope_carcano_m38_item"
+  item__proto:t="gamedata/items/scope_carcano_m38.blk"
+  gunAttachable__slot:i=-1
+  gunAttachable__slotName:t="scope"
+  gunAttachable__gunSlotName:t="scope"
+  gunAttachable__slotTag:t="scope_carcano_m38"
+  gunmod__deviationMult:r=0.3
+  gunmod__zoomFactor:r=4.0
+  item__weight:r=0.3
+  item__volume:r=0.5
+  item__name:t="items/scope_carcano_m38"
+  item__iconYaw:r=80.0
+  gunmod__dofNearAmountPercent:r=2.0
+  gunmod__scopeRadLen:p2=0.0079, 0.2
+
+  "gunAttachable:tag"{
+  }
+}
+
+scope_carcano_m91{
+  _use:t="scope_gunmod"
+  animchar__res:t="scope_carcano_m91_char"
+  collres__res:t="scope_carcano_m91_collision"
+  item__template:t="scope_carcano_m91_item"
+  item__proto:t="gamedata/items/scope_carcano_m91.blk"
+  gunAttachable__slot:i=-1
+  gunAttachable__slotName:t="scope"
+  gunAttachable__gunSlotName:t="scope"
+  gunAttachable__slotTag:t="scope_carcano_m91"
+  gunmod__deviationMult:r=0.3
+  gunmod__zoomFactor:r=7.0
+  gunmod__camShiftMin:r=0.3
+  gunmod__camShiftMax:r=0.3
+  item__weight:r=0.3
+  item__volume:r=0.5
+  item__name:t="items/scope_carcano_m91"
+  item__iconYaw:r=80.0
+  gunmod__scopeRadLen:p2=0.017, 0.4
+
+  "hideOnAiming:tag"{
+  }
+
+  "gunAttachable:tag"{
+  }
+}
+
+carcano_m41{
+  _use:t="main_weap_slots"
+  _use:t="ironsights_open_rifle"
+  animchar__res:t="carcano_m41_char"
+  gun__blk:t="gamedata/weapons/carcano_m41.blk"
+  item__template:t="carcano_m41_gun_item"
+  item__proto:t="gamedata/weapons/carcano_m41.blk"
+  item__weapTemplate:t="carcano_m41_gun"
+  item__name:t="items/carcano_m41"
+  item__weapType:t="rifle"
+  item__weight:r=3.5
+  gun__locName:t="Carcano Mod. 41"
+  gun__statName:t="rifle"
+  gun__shotFreq:r=0.75
+  gun__automaticReload:b=no
+  gun_spread__maxDeltaAngle:r=0.15
+  gun_deviation__omegaRange:p2=30.0, 90.0
+  gun_deviation__omegaDevInc:p2=0.1, 0.5
+  gun_deviation__movementRange:p2=2.1, 4.0
+  gun_deviation__movementDevInc:p2=0.0, 8.0
+  gun_deviation__onShotDeviationChange:r=0.0
+  gun_deviation__shotTau:r=0.1
+  gun_deviation__extraDeviationTau:r=0.15
+  gun_deviation__maxDeviation:r=15.0
+  gun__reloadTime:r=3.0
+  gun__altReloadTime:r=3.8
+  gun__kineticDamageMult:r=1.58
+
+  "item__id:i"{
+    value:i=0
+    _hide:b=yes
+  }
+
+  "gun_shell_ejection__onShootRelease:tag"{
+  }
+
+  "gun__ammoHolders:array"{
+    ammoHolders:t="carcano_m38_magazine"
+  }
+
+  "gun__shells:array"{
+    shells:t="gamedata/weapons/bullets/6.5x52_carcano.blk"
+  }
+
+  "gun__firingModes:array"{
+
+    "mode:object"{
+      modeType:t="manual"
+    }
+  }
+
+  "gun__firingModeNames:array"{
+    mode:t="bolt_action"
+  }
+}
+
+carcano_m41_gun{
+  _use:t="equipable_gun"
+  _use:t="carbine_ww2_preset"
+  _use:t="carcano_m41"
+  _use:t="rifle_muzzle_preset"
+  _use:t="hit_effect_group_handgun_medium"
+  _use:t="rifle_gun_aim_sound"
+  gun_shell_ejection__timeMult:r=0.52
+  gun__length:r=0.4
+  gun__recoilAmount:r=0.109
+  gun__recoilDirAmount:r=0.8
+  gun__recoilDir:r=0.1
+  gun__visualRecoilMult:r=1.0
+  gun__recoilControlMult:r=0.0
+  gun__recoilOffsMult:r=1.0
+  gun_attach__slot:t="weapon"
+  gun__adsSpeedMult:r=0.95
+  meleeSoundType:t="rifle"
+  gun_anim_var__fpsGunOffsetAlong:r=0.06
+  gun_anim_var__fpsGunOffsetAcross:r=0.035
+  gun_anim_var__fpsGunOffsetUp:r=0.025
+
+  "gun_mods__slots:object"{
+
+    "bayonet:object"{
+      carcano_m91_bayonet:t="carcano_m91_bayonet"
+    }
+  }
+
+  "gun_sound__shotPath:shared:object"{
+    _tags:t="sound"
+    path:t="/weapon/rifle/carcano_m41"
+  }
+
+  "sound_irqs:shared:object"{
+    _tags:t="sound"
+
+    "reload1:object"{
+      path:t="/weapon/rifle/carcano_m41/reload1/change_ammo"
+    }
+
+    "reload2:object"{
+      path:t="/weapon/rifle/carcano_m41/reload2/change_ammo"
+    }
+
+    "reload3:object"{
+      path:t="/weapon/rifle/carcano_m41/reload3/change_ammo"
+    }
+
+    "reload4:object"{
+      path:t="/weapon/rifle/carcano_m41/reload4/change_ammo"
+    }
+
+    "boltAction:object"{
+      path:t="/weapon/rifle/carcano_m41/bolt_action"
+    }
+  }
+
+  "gun__mountPoints:shared:array"{
+
+    "point:object"{
+      type:t="rest"
+      recoil:r=-1.0
+      offset:p3=0.62, -0.0244, 0.0
+    }
+  }
+}
+
+carcano_m41_default{
+  _use:t="carcano_m41"
+  item__template:t="carcano_m41_default_gun_item"
+  item__weapTemplate:t="carcano_m41_default_gun"
+  item__name:t="items/carcano_m41_default"
+}
+
+carcano_m41_default_gun{
+  _use:t="carcano_m41_gun"
+  _use:t="carcano_m41_default"
+}
+
+carcano_m91{
+  _use:t="main_weap_slots"
+  _use:t="ironsights_open_rifle"
+  animchar__res:t="carcano_m91_char"
+  gun__blk:t="gamedata/weapons/carcano_m91.blk"
+  item__template:t="carcano_m91_gun_item"
+  item__proto:t="gamedata/weapons/carcano_m91.blk"
+  item__weapTemplate:t="carcano_m91_gun"
+  item__name:t="items/carcano_m91"
+  item__weapType:t="rifle"
+  item__weight:r=3.8
+  gun__locName:t="Carcano Mod. 91"
+  gun__statName:t="rifle"
+  gun__shotFreq:r=0.8
+  gun__automaticReload:b=no
+  gun_spread__maxDeltaAngle:r=0.13
+  gun_deviation__omegaRange:p2=30.0, 90.0
+  gun_deviation__omegaDevInc:p2=0.1, 0.5
+  gun_deviation__movementRange:p2=2.1, 4.0
+  gun_deviation__movementDevInc:p2=0.0, 8.0
+  gun_deviation__onShotDeviationChange:r=0.0
+  gun_deviation__shotTau:r=0.1
+  gun_deviation__extraDeviationTau:r=0.15
+  gun_deviation__maxDeviation:r=15.0
+  gun__reloadTime:r=3.5
+  gun__altReloadTime:r=3.8
+  gun__kineticDamageMult:r=1.58
+
+  "item__id:i"{
+    value:i=0
+    _hide:b=yes
+  }
+
+  "gun_shell_ejection__onShootRelease:tag"{
+  }
+
+  "gun__ammoHolders:array"{
+    ammoHolders:t="carcano_m38_magazine"
+  }
+
+  "gun__shells:array"{
+    shells:t="gamedata/weapons/bullets/6.5x52_carcano_long.blk"
+  }
+
+  "gun__firingModes:array"{
+
+    "mode:object"{
+      modeType:t="manual"
+    }
+  }
+
+  "gun__firingModeNames:array"{
+    mode:t="bolt_action"
+  }
+}
+
+carcano_m91_gun{
+  _use:t="equipable_gun"
+  _use:t="carbine_ww2_preset"
+  _use:t="carcano_m91"
+  _use:t="rifle_muzzle_preset"
+  _use:t="hit_effect_group_handgun_medium"
+  _use:t="rifle_gun_aim_sound"
+  gun_shell_ejection__timeMult:r=0.35
+  gun__length:r=0.4
+  gun__recoilAmount:r=0.105
+  gun__recoilDirAmount:r=0.8
+  gun__recoilDir:r=0.1
+  gun__visualRecoilMult:r=1.0
+  gun__recoilControlMult:r=0.0
+  gun__recoilOffsMult:r=1.0
+  gun_attach__slot:t="weapon"
+  gun__adsSpeedMult:r=0.85
+  meleeSoundType:t="rifle"
+  gun_anim_var__fpsGunOffsetAlong:r=0.005
+  gun_anim_var__fpsGunOffsetAcross:r=0.035
+  gun_anim_var__fpsGunOffsetUp:r=0.045
+
+  "gun_mods__slots:object"{
+
+    "bayonet:object"{
+      carcano_m91_bayonet:t="carcano_m91_bayonet"
+    }
+  }
+
+  "gun_sound__shotPath:shared:object"{
+    _tags:t="sound"
+    path:t="/weapon/rifle/carcano_m41"
+  }
+
+  "sound_irqs:shared:object"{
+    _tags:t="sound"
+
+    "reload1:object"{
+      path:t="/weapon/rifle/carcano_m41/reload1/change_ammo"
+    }
+
+    "reload2:object"{
+      path:t="/weapon/rifle/carcano_m41/reload2/change_ammo"
+    }
+
+    "reload3:object"{
+      path:t="/weapon/rifle/carcano_m41/reload3/change_ammo"
+    }
+
+    "reload4:object"{
+      path:t="/weapon/rifle/carcano_m41/reload4/change_ammo"
+    }
+
+    "boltAction:object"{
+      path:t="/weapon/rifle/carcano_m41/bolt_action"
+    }
+  }
+
+  "gun__mountPoints:shared:array"{
+
+    "point:object"{
+      type:t="rest"
+      recoil:r=-1.0
+      offset:p3=0.67, -0.0244, 0.0
+    }
+
+    "point:object"{
+      type:t="rest"
+      recoil:r=-1.0
+      offset:p3=0.9, -0.0244, 0.0
+    }
+  }
+}
+
+carcano_m91_with_scope_mount{
+  _use:t="main_weap_slots"
+  _use:t="ironsights_open_rifle"
+  _use:t="main_weap_slots"
+  _use:t="carcano_m91"
+  gun__blk:t="gamedata/weapons/carcano_m91_with_scope_mount.blk"
+  item__template:t="carcano_m91_with_scope_mount_gun_item"
+  item__proto:t="gamedata/weapons/carcano_m91_with_scope_mount.blk"
+  item__weapTemplate:t="carcano_m91_with_scope_mount_gun"
+  item__name:t="items/carcano_m91_with_scope_mount"
+  gun__locName:t="Sniper Carcano Mod. 91"
+  gun__shotFreq:r=0.833
+  gun_spread__maxDeltaAngle:r=0.01
+  gun__reloadTime:r=3.5
+  gun__altReloadTime:r=3.8
+  gun__statName:t="rifle"
+  gun__kineticDamageMult:r=1.58
+
+  "gun__shells:array"{
+    shells:t="gamedata/weapons/bullets/6.5x52_carcano_sniper.blk"
+  }
+}
+
+carcano_m91_with_scope_mount_gun{
+  _use:t="equipable_gun"
+  _use:t="carbine_ww2_preset"
+  _use:t="carcano_m91_with_scope_mount"
+  _use:t="rifle_muzzle_preset"
+  _use:t="hit_effect_group_handgun_medium"
+  _use:t="rifle_gun_aim_sound"
+  gun_shell_ejection__timeMult:r=0.35
+  gun__length:r=0.4
+  gun__recoilAmount:r=0.105
+  gun__recoilDirAmount:r=0.8
+  gun__recoilDir:r=0.1
+  gun__visualRecoilMult:r=1.0
+  gun__recoilControlMult:r=0.0
+  gun__recoilOffsMult:r=1.0
+  gun_attach__slot:t="weapon"
+  gun__adsSpeedMult:r=0.75
+  gun__statName:t="sniper"
+  meleeSoundType:t="rifle"
+  gun_anim_var__fpsGunOffsetAlong:r=0.008
+  gun_anim_var__fpsGunOffsetAcross:r=0.055
+  gun_anim_var__fpsGunOffsetUp:r=0.015
+
+  "gun_mods__slots:object"{
+
+    "scope:object"{
+      scope_carcano_m91:t="scope_carcano_m91"
+    }
+  }
+
+  "gun_sound__shotPath:shared:object"{
+    _tags:t="sound"
+    path:t="/weapon/rifle/carcano_m41"
+  }
+
+  "sound_irqs:shared:object"{
+    _tags:t="sound"
+
+    "reload1:object"{
+      path:t="/weapon/rifle/carcano_m41/reload1/change_ammo"
+    }
+
+    "reload2:object"{
+      path:t="/weapon/rifle/carcano_m41/reload2/change_ammo"
+    }
+
+    "reload3:object"{
+      path:t="/weapon/rifle/carcano_m41/reload3/change_ammo"
+    }
+
+    "reload4:object"{
+      path:t="/weapon/rifle/carcano_m41/reload4/change_ammo"
+    }
+
+    "boltAction:object"{
+      path:t="/weapon/rifle/carcano_m41/bolt_action"
+    }
+  }
+
+  "gun__mountPoints:shared:array"{
+
+    "point:object"{
+      type:t="rest"
+      recoil:r=-1.0
+      offset:p3=0.67, -0.0244, 0.0
+    }
+
+    "point:object"{
+      type:t="rest"
+      recoil:r=-1.0
+      offset:p3=0.9, -0.0244, 0.0
+    }
+  }
+}
+
+carcano_moschetto_91{
+  _use:t="main_weap_slots"
+  _use:t="ironsights_open_rifle"
+  animchar__res:t="carcano_moschetto_91_char"
+  gun__blk:t="gamedata/weapons/carcano_moschetto_91.blk"
+  item__template:t="carcano_moschetto_91_gun_item"
+  item__proto:t="gamedata/weapons/carcano_moschetto_91.blk"
+  item__weapTemplate:t="carcano_moschetto_91_gun"
+  item__name:t="items/carcano_moschetto_91"
+  item__weapType:t="rifle"
+  item__weight:r=3.5
+  gun__locName:t="Moschetto Carcano Mod. 38"
+  gun__statName:t="rifle"
+  gun__shotFreq:r=0.9
+  gun__automaticReload:b=no
+  gun_spread__maxDeltaAngle:r=0.17
+  gun_deviation__omegaRange:p2=30.0, 90.0
+  gun_deviation__omegaDevInc:p2=0.1, 0.5
+  gun_deviation__movementRange:p2=2.1, 4.0
+  gun_deviation__movementDevInc:p2=0.0, 8.0
+  gun_deviation__onShotDeviationChange:r=0.0
+  gun_deviation__shotTau:r=0.1
+  gun_deviation__extraDeviationTau:r=0.15
+  gun_deviation__maxDeviation:r=15.0
+  gun__integratedBayonet:b=yes
+  melee_weapon__blk:t="gamedata/weapons/mosin_m1930_bayonet.blk"
+  gun__reloadTime:r=3.5
+  gun__altReloadTime:r=4.2
+  gun__kineticDamageMult:r=1.58
+
+  "item__id:i"{
+    value:i=0
+    _hide:b=yes
+  }
+
+  "meleeChargeWeapon:tag"{
+  }
+
+  "gun_shell_ejection__onShootRelease:tag"{
+  }
+
+  "gun__ammoHolders:array"{
+    ammoHolders:t="carcano_m38_magazine"
+  }
+
+  "gun__shells:array"{
+    shells:t="gamedata/weapons/bullets/6.5x52_carcano.blk"
+  }
+
+  "gun__firingModes:array"{
+
+    "mode:object"{
+      modeType:t="manual"
+    }
+  }
+
+  "gun__firingModeNames:array"{
+    mode:t="bolt_action"
+  }
+}
+
+carcano_moschetto_91_gun{
+  _use:t="equipable_gun"
+  _use:t="carbine_ww2_preset"
+  _use:t="carcano_moschetto_91"
+  _use:t="rifle_carbine_muzzle_preset"
+  _use:t="hit_effect_group_handgun_medium"
+  _use:t="rifle_gun_aim_sound"
+  gun_shell_ejection__timeMult:r=0.35
+  gun__length:r=0.4
+  gun__recoilAmount:r=0.115
+  gun__recoilDirAmount:r=0.8
+  gun__recoilDir:r=0.1
+  gun__visualRecoilMult:r=1.0
+  gun__recoilControlMult:r=0.0
+  gun__recoilOffsMult:r=1.0
+  gun_attach__slot:t="weapon"
+  gun__adsSpeedMult:r=0.95
+  meleeSoundType:t="rifle"
+  gun_anim_var__fpsGunOffsetAlong:r=-0.06
+  gun_anim_var__fpsGunOffsetAcross:r=0.06
+  gun_anim_var__fpsGunOffsetUp:r=0.015
+
+  "gun_sound__shotPath:shared:object"{
+    _tags:t="sound"
+    path:t="/weapon/rifle/carcano_m41"
+  }
+
+  "sound_irqs:shared:object"{
+    _tags:t="sound"
+
+    "reload1:object"{
+      path:t="/weapon/rifle/carcano_m41/reload1/change_ammo"
+    }
+
+    "reload2:object"{
+      path:t="/weapon/rifle/carcano_m41/reload2/change_ammo"
+    }
+
+    "reload3:object"{
+      path:t="/weapon/rifle/carcano_m41/reload3/change_ammo"
+    }
+
+    "reload4:object"{
+      path:t="/weapon/rifle/carcano_m41/reload4/change_ammo"
+    }
+
+    "boltAction:object"{
+      path:t="/weapon/rifle/carcano_m41/bolt_action"
+    }
+  }
+
+  "gun__mountPoints:shared:array"{
+
+    "point:object"{
+      type:t="rest"
+      recoil:r=-1.0
+      offset:p3=0.76, -0.0162, 0.0
+    }
+  }
+}
+
+carcano_m91_bayonet{
+  _use:t="bayonet_gunmod"
+  animchar__res:t="carcano_m91_bayonet_char"
+  item__template:t="carcano_m91_bayonet_item"
+  item__proto:t="gamedata/items/carcano_m91_bayonet.blk"
+  gunAttachable__slot:i=-1
+  gunAttachable__slotName:t="bayonet"
+  gunAttachable__gunSlotName:t="bayonet"
+  gunAttachable__slotTag:t="carcano_m91_bayonet"
+  item__weight:r=0.3
+  item__volume:r=0.5
+  item__name:t="items/carcano_m91_bayonet"
+  melee_weapon__blk:t="gamedata/weapons/carcano_m91_bayonet.blk"
+
+  "gunAttachable:tag"{
+  }
+}
+
+carcano_m38_bayonet{
+  _use:t="bayonet_gunmod"
+  animchar__res:t="carcano_m38_bayonet_char"
+  item__template:t="carcano_m38_bayonet_item"
+  item__proto:t="gamedata/items/carcano_m38_bayonet.blk"
+  gunAttachable__slot:i=-1
+  gunAttachable__slotName:t="bayonet"
+  gunAttachable__gunSlotName:t="bayonet"
+  gunAttachable__slotTag:t="carcano_m38_bayonet"
+  item__weight:r=0.3
+  item__volume:r=0.5
+  item__name:t="items/carcano_m38_bayonet"
+  melee_weapon__blk:t="gamedata/weapons/carcano_m38_bayonet.blk"
+
+  "gunAttachable:tag"{
+  }
+}
+
+smle_mk3{
+  _use:t="main_weap_slots"
+  _use:t="reload_not_empty_single_bullet"
+  _use:t="ironsights_open_rifle"
+  reload__singleReloadMaxAmmo:i=4
+  single_reload__prepareTime:r=1.0
+  single_reload__loopTime:r=0.63
+  single_reload__postTime:r=1.1
+  animchar__res:t="smle_mk_3_char"
+  gun__blk:t="gamedata/weapons/smle_mk3.blk"
+  item__template:t="smle_mk3_gun_item"
+  item__proto:t="gamedata/weapons/smle_mk3.blk"
+  item__weapTemplate:t="smle_mk3_gun"
+  item__name:t="items/smle_mk3"
+  item__weapType:t="rifle"
+  item__weight:r=4.0
+  gun__locName:t="Short Magazine Lee-Enfield No. 1 Mk III"
+  gun__statName:t="rifle"
+  gun__shotFreq:r=0.92
+  gun__automaticReload:b=no
+  gun_spread__maxDeltaAngle:r=0.15
+  gun_deviation__omegaRange:p2=30.0, 90.0
+  gun_deviation__omegaDevInc:p2=0.1, 0.5
+  gun_deviation__movementRange:p2=2.1, 4.0
+  gun_deviation__movementDevInc:p2=0.0, 15.0
+  gun_deviation__onShotDeviationChange:r=0.0
+  gun_deviation__shotTau:r=0.1
+  gun_deviation__extraDeviationTau:r=0.15
+  gun_deviation__maxDeviation:r=15.0
+  gun__reloadTime:r=4.0
+  gun__kineticDamageMult:r=1.58
+
+  "item__id:i"{
+    value:i=0
+    _hide:b=yes
+  }
+
+  "gun_shell_ejection__onShootRelease:tag"{
+  }
+
+  "gun__canZoomInBoltAction:tag"{
+  }
+
+  "gun__ammoHolders:array"{
+    ammoHolders:t="lee_enfield_no4_mk1_magazine"
+  }
+
+  "gun__shells:array"{
+    shells:t="gamedata/weapons/bullets/303_british_mk7.blk"
+  }
+
+  "gun__firingModes:array"{
+
+    "mode:object"{
+      modeType:t="manual"
+    }
+  }
+
+  "gun__firingModeNames:array"{
+    mode:t="bolt_action"
+  }
+}
+
+smle_mk3_gun{
+  _use:t="equipable_gun"
+  _use:t="rifle_ww2_preset"
+  _use:t="smle_mk3"
+  _use:t="rifle_muzzle_preset"
+  _use:t="hit_effect_group_handgun_medium"
+  _use:t="rifle_gun_aim_sound"
+  gun_shell_ejection__timeMult:r=0.35
+  gun__length:r=0.4
+  gun__recoilAmount:r=0.127
+  gun__recoilDirAmount:r=0.64
+  gun__recoilDir:r=0.1
+  gun__visualRecoilMult:r=1.0
+  gun_attach__slot:t="weapon"
+  meleeSoundType:t="rifle"
+  gun_anim_var__fpsGunOffsetAlong:r=0.12
+  gun_anim_var__fpsGunOffsetAcross:r=0.045
+  gun_anim_var__fpsGunOffsetUp:r=0.065
+  weapon__aimNodeOffset:r=0.2
+  gun_reload_state__prepareTime:r=1.0
+  gun_reload_state__bulletSingleTime:r=0.5
+  gun_reload_state__bulletMultipleTime:r=0.95
+  gun_reload_state__bulletMultipleCount:i=5
+  gun_reload_state__postTime:r=1.1
+
+  "multiStateReloadSystem:tag"{
+  }
+
+  "gun_mods__slots:object"{
+
+    "bayonet:object"{
+      smle_mk3_bayonet:t="smle_mk3_bayonet"
+    }
+  }
+
+  "gun_sound__shotPath:shared:object"{
+    _tags:t="sound"
+    path:t="/weapon/rifle/lee_enfield"
+  }
+
+  "sound_irqs:shared:object"{
+    _tags:t="sound"
+
+    "reload:object"{
+      path:t="/weapon/rifle/lee_enfield/reload"
+    }
+
+    "reload_prepare:object"{
+      path:t="/weapon/rifle/lee_enfield/reload_prepare"
+    }
+
+    "reload_loop_single:object"{
+      path:t="/weapon/rifle/lee_enfield/reload_loop_single"
+    }
+
+    "reload_loop_multiple:object"{
+      path:t="/weapon/rifle/lee_enfield/reload_loop_multiple"
+    }
+
+    "reload_post:object"{
+      path:t="/weapon/rifle/lee_enfield/reload_post"
+    }
+
+    "boltAction:object"{
+      path:t="/weapon/rifle/lee_enfield/bolt_action"
+    }
+
+    "ammo_drop:object"{
+      watched:t="player/weapon/_common/clip_drop"
+      type:t="matUnderFeet"
+    }
+  }
+
+  "gun__mountPoints:shared:array"{
+
+    "point:object"{
+      type:t="rest"
+      recoil:r=-1.0
+      offset:p3=0.56, -0.0389, 0.0
+    }
+  }
+}
+
+smle_mk3_bayonet{
+  _use:t="bayonet_gunmod"
+  animchar__res:t="smle_mk3_bayonet_char"
+  item__template:t="smle_mk3_bayonet_item"
+  item__proto:t="gamedata/items/smle_mk3_bayonet.blk"
+  gunAttachable__slot:i=-1
+  gunAttachable__slotName:t="bayonet"
+  gunAttachable__gunSlotName:t="bayonet"
+  gunAttachable__slotTag:t="smle_mk3_bayonet"
+  item__weight:r=0.3
+  item__volume:r=0.5
+  item__name:t="items/smle_mk3_bayonet"
+  melee_weapon__blk:t="gamedata/weapons/smle_mk3_bayonet.blk"
+
+  "gunAttachable:tag"{
+  }
+}
+
+armaguerra_mod_39{
+  _use:t="main_weap_slots"
+  _use:t="ironsights_open_semiauto"
+  animchar__res:t="armaguerra_mod_39_char"
+  gun__blk:t="gamedata/weapons/armaguerra_mod_39.blk"
+  item__template:t="armaguerra_mod_39_gun_item"
+  item__proto:t="gamedata/weapons/armaguerra_mod_39.blk"
+  item__weapTemplate:t="armaguerra_mod_39_gun"
+  item__name:t="items/armaguera_mod_39"
+  item__weapType:t="semiauto"
+  item__weight:r=4.2
+  gun__locName:t="Armaguerra mod 39"
+  gun__statName:t="semiauto"
+  gun__sightsDistance:r=0.05
+  gun__shotFreq:r=5.333
+  gun__boltFreq:r=7.0
+  gun__automaticReload:b=no
+  gun_spread__maxDeltaAngle:r=0.3
+  gun_deviation__omegaRange:p2=30.0, 90.0
+  gun_deviation__omegaDevInc:p2=0.1, 0.6
+  gun_deviation__movementRange:p2=2.1, 4.0
+  gun_deviation__movementDevInc:p2=0.0, 15.0
+  gun_deviation__onShotDeviationChange:r=0.0
+  gun_deviation__shotTau:r=0.1
+  gun_deviation__extraDeviationTau:r=0.15
+  gun_deviation__maxDeviation:r=30.0
+  gun__reloadTime:r=3.2
+  gun__altReloadTime:r=3.8
+
+  "item__id:i"{
+    value:i=0
+    _hide:b=yes
+  }
+
+  "gun__ammoHolders:array"{
+    ammoHolders:t="carcano_m38_magazine"
+  }
+
+  "gun__shells:array"{
+    shells:t="gamedata/weapons/bullets/6.5x52_carcano_semiauto.blk"
+  }
+
+  "gun__firingModes:array"{
+
+    "mode:object"{
+      modeType:t="burst"
+      burstSize:i=1
+    }
+  }
+
+  "gun__firingModeNames:array"{
+    mode:t="semi_auto"
+  }
+}
+
+armaguerra_mod_39_gun{
+  _use:t="equipable_gun"
+  _use:t="semiauto_ww2_preset"
+  _use:t="armaguerra_mod_39"
+  _use:t="rifle_muzzle_preset"
+  _use:t="hit_effect_group_handgun_medium"
+  _use:t="rifle_gun_aim_sound"
+  gun_shell_ejection__timeMult:r=0.35
+  gun__length:r=0.4
+  gun__recoilAmount:r=0.108
+  gun__recoilDirAmount:r=0.78
+  gun__recoilDir:r=0.35
+  gun__visualRecoilMult:r=1.3
+  gun_attach__slot:t="weapon"
+  gun__adsSpeedMult:r=0.75
+  meleeSoundType:t="rifle"
+  gun_anim_var__fpsGunOffsetAlong:r=0.06
+  gun_anim_var__fpsGunOffsetAcross:r=0.025
+  gun_anim_var__fpsGunOffsetUp:r=0.025
+
+  "gun_sound__shotPath:shared:object"{
+    _tags:t="sound"
+    path:t="/weapon/rifle/armaguerra_mod_39"
+  }
+
+  "sound_irqs:shared:object"{
+    _tags:t="sound"
+
+    "reload1:object"{
+      path:t="/weapon/rifle/armaguerra_mod_39/reload1/change_ammo"
+    }
+
+    "reload2:object"{
+      path:t="/weapon/rifle/armaguerra_mod_39/reload2/change_ammo"
+    }
+
+    "reload3:object"{
+      path:t="/weapon/rifle/armaguerra_mod_39/reload3/change_ammo"
+    }
+
+    "reload4:object"{
+      path:t="/weapon/rifle/armaguerra_mod_39/reload4/change_ammo"
+    }
+
+    "boltAction:object"{
+      path:t="/weapon/rifle/armaguerra_mod_39/bolt_action"
+    }
+  }
+
+  "gun__mountPoints:shared:array"{
+
+    "point:object"{
+      type:t="rest"
+      recoil:r=-1.0
+      offset:p3=0.62, -0.0353, 0.0
+    }
+  }
+}
+
+beretta_m31{
+  _use:t="main_weap_slots"
+  _use:t="ironsights_open_semiauto"
+  animchar__res:t="beretta_m31_char"
+  gun__blk:t="gamedata/weapons/beretta_m31.blk"
+  item__template:t="beretta_m31_gun_item"
+  item__proto:t="gamedata/weapons/beretta_m31.blk"
+  item__weapTemplate:t="beretta_m31_gun"
+  item__name:t="items/beretta_m31"
+  item__weapType:t="semiauto"
+  item__weight:r=4.2
+  gun__locName:t="Beretta M31"
+  gun__statName:t="semiauto"
+  gun__sightsDistance:r=0.05
+  gun__shotFreq:r=5.333
+  gun__boltFreq:r=7.0
+  gun__automaticReload:b=no
+  gun_spread__maxDeltaAngle:r=0.28
+  gun_deviation__omegaRange:p2=30.0, 90.0
+  gun_deviation__omegaDevInc:p2=0.1, 0.6
+  gun_deviation__movementRange:p2=2.1, 4.0
+  gun_deviation__movementDevInc:p2=0.0, 15.0
+  gun_deviation__onShotDeviationChange:r=0.0
+  gun_deviation__shotTau:r=0.1
+  gun_deviation__extraDeviationTau:r=0.15
+  gun_deviation__maxDeviation:r=30.0
+  gun__reloadTime:r=2.8
+  gun__altReloadTime:r=2.4
+
+  "item__id:i"{
+    value:i=0
+    _hide:b=yes
+  }
+
+  "gun__ammoHolders:array"{
+    ammoHolders:t="carcano_m38_magazine"
+  }
+
+  "gun__shells:array"{
+    shells:t="gamedata/weapons/bullets/6.5x52_carcano_semiauto.blk"
+  }
+
+  "gun__firingModes:array"{
+
+    "mode:object"{
+      modeType:t="burst"
+      burstSize:i=1
+    }
+  }
+
+  "gun__firingModeNames:array"{
+    mode:t="semi_auto"
+  }
+}
+
+beretta_m31_gun{
+  _use:t="equipable_gun"
+  _use:t="semiauto_ww2_preset"
+  _use:t="beretta_m31"
+  _use:t="rifle_muzzle_preset"
+  _use:t="hit_effect_group_handgun_medium"
+  _use:t="rifle_gun_aim_sound"
+  gun_shell_ejection__timeMult:r=0.35
+  gun__length:r=0.4
+  gun__recoilAmount:r=0.109
+  gun__recoilDirAmount:r=0.75
+  gun__recoilDir:r=0.35
+  gun__visualRecoilMult:r=1.3
+  gun_attach__slot:t="weapon"
+  gun__adsSpeedMult:r=0.7
+  meleeSoundType:t="rifle"
+  gun_anim_var__fpsGunOffsetAlong:r=0.11
+  gun_anim_var__fpsGunOffsetAcross:r=0.025
+  gun_anim_var__fpsGunOffsetUp:r=0.044
+
+  "gun_sound__shotPath:shared:object"{
+    _tags:t="sound"
+    path:t="/weapon/rifle/m1"
+  }
+
+  "sound_irqs:shared:object"{
+    _tags:t="sound"
+
+    "reload1:object"{
+      path:t="/weapon/rifle/beretta_m31/reload1/change_ammo"
+    }
+
+    "reload2:object"{
+      path:t="/weapon/rifle/beretta_m31/reload2/change_ammo"
+    }
+
+    "reload3:object"{
+      path:t="/weapon/rifle/beretta_m31/reload3/change_ammo"
+    }
+
+    "reload4:object"{
+      path:t="/weapon/rifle/beretta_m31/reload4/change_ammo"
+    }
+
+    "reload5:object"{
+      path:t="/weapon/rifle/beretta_m31/reload5/change_ammo"
+    }
+
+    "boltAction:object"{
+      path:t="/weapon/rifle/m1/bolt_action"
+    }
+
+    "ammo_drop:object"{
+      watched:t="player/weapon/_common/clip_drop"
+      type:t="matUnderFeet"
+    }
+  }
+
+  "gun__mountPoints:shared:array"{
+
+    "point:object"{
+      type:t="rest"
+      recoil:r=-1.0
+      offset:p3=0.62, -0.0414, -0.014
+    }
+  }
+}
+
+pavesi_m42{
+  _use:t="main_weap_slots"
+  _use:t="ironsights_open_semiauto"
+  animchar__res:t="pavesi_prototype_1942_char"
+  gun__blk:t="gamedata/weapons/pavesi_m42.blk"
+  item__template:t="pavesi_m42_gun_item"
+  item__proto:t="gamedata/weapons/pavesi_m42.blk"
+  item__weapTemplate:t="pavesi_m42_gun"
+  item__name:t="items/pavesi_m42"
+  item__weapType:t="semiauto"
+  item__weight:r=4.4
+  gun__locName:t="Pavesi M1942 Prototype"
+  gun__statName:t="semiauto"
+  gun__sightsDistance:r=0.05
+  gun__shotFreq:r=5.333
+  gun__boltFreq:r=7.0
+  gun__automaticReload:b=no
+  gun_spread__maxDeltaAngle:r=0.3
+  gun_deviation__omegaRange:p2=30.0, 90.0
+  gun_deviation__omegaDevInc:p2=0.1, 0.6
+  gun_deviation__movementRange:p2=2.1, 4.0
+  gun_deviation__movementDevInc:p2=0.0, 15.0
+  gun_deviation__onShotDeviationChange:r=0.0
+  gun_deviation__shotTau:r=0.1
+  gun_deviation__extraDeviationTau:r=0.15
+  gun_deviation__maxDeviation:r=30.0
+  gun__reloadTime:r=3.4
+  gun__altReloadTime:r=4.0
+
+  "item__id:i"{
+    value:i=0
+    _hide:b=yes
+  }
+
+  "gun__ammoHolders:array"{
+    ammoHolders:t="pavesi_m42_magazine"
+  }
+
+  "gun__shells:array"{
+    shells:t="gamedata/weapons/bullets/8x59_breda_semiauto.blk"
+  }
+
+  "gun__firingModes:array"{
+
+    "mode:object"{
+      modeType:t="burst"
+      burstSize:i=1
+    }
+  }
+
+  "gun__firingModeNames:array"{
+    mode:t="semi_auto"
+  }
+}
+
+pavesi_m42_gun{
+  _use:t="equipable_gun"
+  _use:t="semiauto_ww2_preset"
+  _use:t="pavesi_m42"
+  _use:t="rifle_muzzle_break_2_preset"
+  _use:t="hit_effect_group_handgun_medium"
+  _use:t="rifle_gun_aim_sound"
+  gun_shell_ejection__timeMult:r=0.35
+  gun__length:r=0.4
+  gun__recoilAmount:r=0.157
+  gun__recoilDirAmount:r=0.78
+  gun__recoilDir:r=0.35
+  gun__visualRecoilMult:r=1.3
+  gun_attach__slot:t="weapon"
+  gun__adsSpeedMult:r=0.75
+  meleeSoundType:t="rifle"
+  gun_anim_var__fpsGunOffsetAlong:r=0.06
+  gun_anim_var__fpsGunOffsetAcross:r=0.025
+  gun_anim_var__fpsGunOffsetUp:r=0.025
+
+  "gun_sound__shotPath:shared:object"{
+    _tags:t="sound"
+    path:t="/weapon/rifle/armaguerra_mod_39"
+  }
+
+  "sound_irqs:shared:object"{
+    _tags:t="sound"
+
+    "reload1:object"{
+      path:t="/weapon/rifle/pavesi_m42/reload1/change_ammo"
+    }
+
+    "reload2:object"{
+      path:t="/weapon/rifle/pavesi_m42/reload2/change_ammo"
+    }
+
+    "reload3:object"{
+      path:t="/weapon/rifle/pavesi_m42/reload3/change_ammo"
+    }
+
+    "reload4:object"{
+      path:t="/weapon/rifle/pavesi_m42/reload4/change_ammo"
+    }
+
+    "reload5:object"{
+      path:t="/weapon/rifle/pavesi_m42/reload5/change_ammo"
+    }
+
+    "boltAction:object"{
+      path:t="/weapon/rifle/armaguerra_mod_39/bolt_action"
+    }
+
+    "ammo_drop:object"{
+      watched:t="player/weapon/_common/clip_drop"
+      type:t="matUnderFeet"
+    }
+  }
+
+  "gun__mountPoints:shared:array"{
+
+    "point:object"{
+      type:t="rest"
+      recoil:r=-1.0
+      offset:p3=0.62, -0.009, 0.0
+    }
+  }
+}
+
+pavesi_prototype_svt_copy{
+  _use:t="main_weap_slots"
+  _use:t="ironsights_open_semiauto"
+  _use:t="reload_single_bullet"
+  reload__singleReloadAmmoCount:i=5
+  single_reload__prepareTime:r=1.0
+  single_reload__loopTime:r=1.2
+  single_reload__postTime:r=1.5
+  animchar__res:t="pavesi_prototype_svt_copy_char"
+  gun__blk:t="gamedata/weapons/pavesi_prototype_svt_copy.blk"
+  item__template:t="pavesi_prototype_svt_copy_gun_item"
+  item__proto:t="gamedata/weapons/pavesi_prototype_svt_copy.blk"
+  item__weapTemplate:t="pavesi_prototype_svt_copy_gun"
+  item__name:t="items/pavesi_prototype_svt_copy"
+  item__weapType:t="semiauto"
+  item__weight:r=4.4
+  gun__locName:t="Pavesi SVT Copy Prototype"
+  gun__statName:t="semiauto"
+  gun__sightsDistance:r=0.05
+  gun__shotFreq:r=5.333
+  gun__boltFreq:r=7.0
+  gun__automaticReload:b=no
+  gun_spread__maxDeltaAngle:r=0.32
+  gun_deviation__omegaRange:p2=30.0, 90.0
+  gun_deviation__omegaDevInc:p2=0.1, 0.6
+  gun_deviation__movementRange:p2=2.1, 4.0
+  gun_deviation__movementDevInc:p2=0.0, 15.0
+  gun_deviation__onShotDeviationChange:r=0.0
+  gun_deviation__shotTau:r=0.1
+  gun_deviation__extraDeviationTau:r=0.15
+  gun_deviation__maxDeviation:r=30.0
+  gun__reloadTime:r=4.0
+  gun__altReloadTime:r=4.0
+
+  "item__id:i"{
+    value:i=0
+    _hide:b=yes
+  }
+
+  "gun__ammoHolders:array"{
+    ammoHolders:t="pavesi_prototype_svt_copy_magazine"
+  }
+
+  "gun__shells:array"{
+    shells:t="gamedata/weapons/bullets/8x59_breda_semiauto.blk"
+  }
+
+  "gun__firingModes:array"{
+
+    "mode:object"{
+      modeType:t="burst"
+      burstSize:i=1
+    }
+  }
+
+  "gun__firingModeNames:array"{
+    mode:t="semi_auto"
+  }
+}
+
+pavesi_prototype_svt_copy_gun{
+  _use:t="equipable_gun"
+  _use:t="semiauto_ww2_preset"
+  _use:t="pavesi_prototype_svt_copy"
+  _use:t="rifle_muzzle_break_2_preset"
+  _use:t="hit_effect_group_handgun_medium"
+  _use:t="rifle_gun_aim_sound"
+  gun_shell_ejection__timeMult:r=0.35
+  gun__length:r=0.4
+  gun__recoilAmount:r=0.113
+  gun__recoilDirAmount:r=0.71
+  gun__recoilDir:r=0.2
+  gun__visualRecoilMult:r=1.0
+  gun_attach__slot:t="weapon"
+  gun__adsSpeedMult:r=0.75
+  meleeSoundType:t="rifle"
+  gun_anim_var__fpsGunOffsetAlong:r=0.06
+  gun_anim_var__fpsGunOffsetAcross:r=0.013
+  gun_anim_var__fpsGunOffsetUp:r=0.02
+  gun_reload_state__prepareTime:r=1.0
+  gun_reload_state__bulletSingleTime:r=0.5
+  gun_reload_state__bulletMultipleTime:r=1.2
+  gun_reload_state__bulletMultipleCount:i=5
+  gun_reload_state__postTime:r=0.6
+
+  "multiStateReloadSystem:tag"{
+  }
+
+  "gun_sound__shotPath:shared:object"{
+    _tags:t="sound"
+    path:t="/weapon/rifle/armaguerra_mod_39"
+  }
+
+  "sound_irqs:shared:object"{
+    _tags:t="sound"
+
+    "foley_start:object"{
+      path:t="/weapon/rifle/pavesi_prototype_svt_copy/reload_foley_start"
+    }
+
+    "shell_in:object"{
+      path:t="/weapon/rifle/pavesi_prototype_svt_copy/reload_shell_in"
+    }
+
+    "mag_in:object"{
+      path:t="/weapon/rifle/pavesi_prototype_svt_copy/reload_mag_in"
+    }
+
+    "mag_out:object"{
+      path:t="/weapon/rifle/pavesi_prototype_svt_copy/reload_mag_out"
+    }
+
+    "shutter_in:object"{
+      path:t="/weapon/rifle/pavesi_prototype_svt_copy/reload_shutter_in"
+    }
+
+    "shutter_out:object"{
+      path:t="/weapon/rifle/pavesi_prototype_svt_copy/reload_shutter_out"
+    }
+
+    "foley_end:object"{
+      path:t="/weapon/rifle/pavesi_prototype_svt_copy/reload_foley_end"
+    }
+  }
+
+  "gun__mountPoints:shared:array"{
+
+    "point:object"{
+      type:t="rest"
+      recoil:r=-1.0
+      offset:p3=0.57, -0.0075, -0.023
+    }
+
+    "point:object"{
+      type:t="rest"
+      recoil:r=-1.0
+      offset:p3=0.823, -0.0075, -0.023
+    }
+  }
+}
+
+scotti_model_x{
+  _use:t="main_weap_slots"
+  _use:t="ironsights_open_semiauto"
+  animchar__res:t="scotti_model_x_char"
+  gun__blk:t="gamedata/weapons/scotti_model_x.blk"
+  item__template:t="scotti_model_x_gun_item"
+  item__proto:t="gamedata/weapons/scotti_model_x.blk"
+  item__weapTemplate:t="scotti_model_x_gun"
+  item__name:t="items/scotti_model_x"
+  item__weapType:t="semiauto"
+  item__weight:r=4.0
+  gun__locName:t="Scotti Model X"
+  gun__statName:t="semiauto"
+  gun__sightsDistance:r=0.05
+  gun__shotFreq:r=5.0
+  gun__boltFreq:r=7.0
+  gun__automaticReload:b=no
+  gun_spread__maxDeltaAngle:r=0.25
+  gun_deviation__omegaRange:p2=30.0, 90.0
+  gun_deviation__omegaDevInc:p2=0.1, 0.35
+  gun_deviation__movementRange:p2=2.1, 4.0
+  gun_deviation__movementDevInc:p2=0.0, 10.0
+  gun_deviation__onShotDeviationChange:r=0.0
+  gun_deviation__shotTau:r=0.15
+  gun_deviation__extraDeviationTau:r=0.25
+  gun_deviation__maxDeviation:r=18.0
+  gun__reloadTime:r=2.6
+  gun__altReloadTime:r=3.2
+  gun__kineticDamageMult:r=1.066
+
+  "item__id:i"{
+    value:i=0
+    _hide:b=yes
+  }
+
+  "gun__ammoHolders:array"{
+    ammoHolders:t="carcano_m38_magazine"
+  }
+
+  "gun__shells:array"{
+    shells:t="gamedata/weapons/bullets/6.5x52_carcano_semiauto.blk"
+  }
+
+  "gun__firingModes:array"{
+
+    "mode:object"{
+      modeType:t="burst"
+      burstSize:i=1
+    }
+  }
+
+  "gun__firingModeNames:array"{
+    mode:t="semi_auto"
+  }
+}
+
+scotti_model_x_gun{
+  _use:t="equipable_gun"
+  _use:t="semiauto_ww2_preset"
+  _use:t="scotti_model_x"
+  _use:t="rifle_muzzle_preset"
+  _use:t="hit_effect_group_handgun_medium"
+  _use:t="rifle_gun_aim_sound"
+  gun_shell_ejection__timeMult:r=0.35
+  gun__length:r=0.4
+  gun__recoilAmount:r=0.125
+  gun__recoilDirAmount:r=0.8
+  gun__recoilDir:r=0.4
+  gun__visualRecoilMult:r=0.75
+  gun_attach__slot:t="weapon"
+  gun__adsSpeedMult:r=1.1
+  meleeSoundType:t="rifle"
+  gun_anim_var__fpsGunOffsetAlong:r=0.15
+  gun_anim_var__fpsGunOffsetAcross:r=-0.005
+  gun_anim_var__fpsGunOffsetUp:r=0.065
+
+  "gun_sound__shotPath:shared:object"{
+    _tags:t="sound"
+    path:t="/weapon/rifle/carcano_m41"
+  }
+
+  "sound_irqs:shared:object"{
+    _tags:t="sound"
+
+    "reload1:object"{
+      path:t="/weapon/rifle/carcano_m41/reload1/change_ammo"
+    }
+
+    "reload2:object"{
+      path:t="/weapon/rifle/carcano_m41/reload2/change_ammo"
+    }
+
+    "reload3:object"{
+      path:t="/weapon/rifle/carcano_m41/reload3/change_ammo"
+    }
+
+    "reload4:object"{
+      path:t="/weapon/rifle/carcano_m41/reload4/change_ammo"
+    }
+
+    "boltAction:object"{
+      path:t="/weapon/rifle/mosin/bolt_action"
+    }
+
+    "ammo_drop:object"{
+      watched:t="player/weapon/_common/clip_drop"
+      type:t="matUnderFeet"
+    }
+  }
+
+  "gun__mountPoints:shared:array"{
+
+    "point:object"{
+      type:t="rest"
+      recoil:r=-1.0
+      offset:p3=0.64, -0.0339, 0.0
+    }
+  }
+}
+
+scotti_naval_rifle{
+  _use:t="main_weap_slots"
+  _use:t="ironsights_open_semiauto"
+  animchar__res:t="scotti_naval_rifle_char"
+  gun__blk:t="gamedata/weapons/scotti_naval_rifle.blk"
+  item__template:t="scotti_naval_rifle_gun_item"
+  item__proto:t="gamedata/weapons/scotti_naval_rifle.blk"
+  item__weapTemplate:t="scotti_naval_rifle_gun"
+  item__name:t="items/scotti_naval_rifle"
+  item__weapType:t="semiauto"
+  item__weight:r=4.4
+  gun__locName:t="Scotti Naval Rifle"
+  gun__statName:t="semiauto"
+  gun__sightsDistance:r=0.05
+  gun__shotFreq:r=13.33
+  gun__automaticReload:b=no
+  gun_spread__maxDeltaAngle:r=0.26
+  gun_deviation__omegaRange:p2=30.0, 90.0
+  gun_deviation__omegaDevInc:p2=0.05, 0.35
+  gun_deviation__movementRange:p2=2.1, 4.0
+  gun_deviation__movementDevInc:p2=0.0, 10.0
+  gun_deviation__onShotDeviationChange:r=0.0
+  gun_deviation__shotTau:r=0.15
+  gun_deviation__extraDeviationTau:r=0.2
+  gun_deviation__maxDeviation:r=18.0
+  gun__reloadTime:r=2.5
+  gun__altReloadTime:r=2.0
+  gun__kineticDamageMult:r=1.066
+
+  "item__id:i"{
+    value:i=0
+    _hide:b=yes
+  }
+
+  "gun__ammoHolders:array"{
+    ammoHolders:t="scotti_naval_rifle_magazine"
+  }
+
+  "gun__shells:array"{
+    shells:t="gamedata/weapons/bullets/6.5x52_carcano_semiauto.blk"
+  }
+
+  "gun__firingModes:array"{
+
+    "mode:object"{
+      modeType:t="automatic"
+    }
+  }
+
+  "gun__firingModeNames:array"{
+    mode:t="full_auto"
+  }
+}
+
+scotti_naval_rifle_gun{
+  _use:t="equipable_gun"
+  _use:t="semiauto_ww2_preset"
+  _use:t="scotti_naval_rifle"
+  _use:t="assault_rifle_rapid_muzzle_preset"
+  _use:t="hit_effect_group_handgun_medium"
+  _use:t="rifle_gun_aim_sound"
+  _use:t="visual_magazine_fullness"
+  gun_shell_ejection__timeMult:r=0.35
+  gun__length:r=0.4
+  gun__recoilAmount:r=0.077
+  gun__recoilDirAmount:r=0.82
+  gun__recoilDir:r=0.23
+  gun__visualRecoilMult:r=0.75
+  gun_attach__slot:t="weapon"
+  gun__adsSpeedMult:r=1.3
+  meleeSoundType:t="rifle"
+  gun__recoilControlMult:r=0.3
+  gun__recoilOffsMult:r=0.3
+  gun_anim_var__fpsGunOffsetAlong:r=0.17
+  gun_anim_var__fpsGunOffsetAcross:r=-0.005
+  gun_anim_var__fpsGunOffsetUp:r=0.065
+  weapon__aimNodeOffset:r=0.4
+  gun__saveAmmoInChamberOnReload:b=yes
+
+  "anim_irq__eventNames:object"{
+
+    "newMagazineShown:object"{
+      irqName:t="ammo_refresh"
+      irqId:i=-1
+    }
+  }
+
+  anim_irq_to_event_converter{
+  }
+
+  _group{
+    _tags:t="sound"
+    gun_sound__forceOneshot:b=yes
+  }
+
+  "gun_sound__shotPath:shared:object"{
+    _tags:t="sound"
+    path:t="/weapon/mgun/scotti_naval_rifle"
+  }
+
+  "sound_irqs:shared:object"{
+    _tags:t="sound"
+
+    "reload1:object"{
+      path:t="/weapon/rifle/svt40/reload1/change_ammo"
+    }
+
+    "reload2:object"{
+      path:t="/weapon/rifle/svt40/reload2/change_ammo"
+    }
+
+    "reload3:object"{
+      path:t="/weapon/rifle/svt40/reload3/change_ammo"
+    }
+
+    "reload4:object"{
+      path:t="/weapon/rifle/svt40/reload4/change_ammo"
+    }
+
+    "boltAction:object"{
+      path:t="/weapon/rifle/svt40/bolt_action"
+    }
+  }
+
+  "gun__mountPoints:shared:array"{
+
+    "point:object"{
+      type:t="rest"
+      recoil:r=-1.0
+      offset:p3=0.55, -0.0268, 0.0
+    }
+
+    "point:object"{
+      type:t="rest"
+      recoil:r=-1.0
+      offset:p3=0.17, -0.15, 0.0
+    }
+  }
+}
+
+cei_rigotti_rifle{
+  _use:t="main_weap_slots"
+  _use:t="reload_single_bullet"
+  _use:t="ironsights_open_semiauto"
+  reload__singleReloadAmmoCount:i=5
+  single_reload__prepareTime:r=1.0
+  single_reload__loopTime:r=1.2
+  single_reload__postTime:r=1.5
+  animchar__res:t="cei_rigotti_char"
+  gun__blk:t="gamedata/weapons/cei_rigotti_rifle.blk"
+  item__template:t="cei_rigotti_rifle_gun_item"
+  item__proto:t="gamedata/weapons/cei_rigotti_rifle.blk"
+  item__weapTemplate:t="cei_rigotti_rifle_gun"
+  item__name:t="items/cei_rigotti_rifle"
+  item__weapType:t="semiauto"
+  item__weight:r=4.2
+  gun__locName:t="Beretta M31"
+  gun__statName:t="semiauto"
+  gun__sightsDistance:r=0.05
+  gun__shotFreq:r=15.0
+  gun__boltFreq:r=15.0
+  gun__automaticReload:b=no
+  gun_spread__maxDeltaAngle:r=0.28
+  gun_deviation__omegaRange:p2=30.0, 90.0
+  gun_deviation__omegaDevInc:p2=0.1, 0.6
+  gun_deviation__movementRange:p2=2.1, 4.0
+  gun_deviation__movementDevInc:p2=0.0, 15.0
+  gun_deviation__onShotDeviationChange:r=0.0
+  gun_deviation__shotTau:r=0.1
+  gun_deviation__extraDeviationTau:r=0.15
+  gun_deviation__maxDeviation:r=30.0
+  gun__reloadTime:r=2.8
+  gun__altReloadTime:r=2.4
+
+  "item__id:i"{
+    value:i=0
+    _hide:b=yes
+  }
+
+  "gun__ammoHolders:array"{
+    ammoHolders:t="cei_rigotti_rifle_magazine"
+  }
+
+  "gun__shells:array"{
+    shells:t="gamedata/weapons/bullets/6.5x52_carcano_semiauto.blk"
+  }
+
+  "gun__firingModes:array"{
+
+    "mode:object"{
+      modeType:t="automatic"
+    }
+
+    "mode:object"{
+      modeType:t="burst"
+      burstSize:i=1
+      shotFreqMult:r=2.6
+    }
+  }
+
+  "gun__firingModeNames:array"{
+    mode:t="full_auto"
+    mode:t="semi_auto"
+  }
+}
+
+cei_rigotti_rifle_gun{
+  _use:t="equipable_gun"
+  _use:t="semiauto_ww2_preset"
+  _use:t="cei_rigotti_rifle"
+  _use:t="rifle_muzzle_preset"
+  _use:t="hit_effect_group_handgun_medium"
+  _use:t="rifle_gun_aim_sound"
+  gun_shell_ejection__timeMult:r=0.35
+  gun__length:r=0.4
+  gun__recoilAmount:r=0.075
+  gun__recoilDirAmount:r=0.71
+  gun__recoilDir:r=0.35
+  gun__visualRecoilMult:r=1.3
+  gun_attach__slot:t="weapon"
+  gun__adsSpeedMult:r=0.7
+  meleeSoundType:t="rifle"
+  gun__recoilControlMult:r=0.3
+  gun__recoilOffsMult:r=0.3
+  weapon__aimNodeOffset:r=0.4
+  gun_anim_var__fpsGunOffsetAlong:r=0.15
+  gun_anim_var__fpsGunOffsetAcross:r=0.025
+  gun_anim_var__fpsGunOffsetUp:r=0.03
+  gun_reload_state__prepareTime:r=1.0
+  gun_reload_state__bulletSingleTime:r=0.9
+  gun_reload_state__bulletMultipleTime:r=1.4
+  gun_reload_state__bulletMultipleCount:i=5
+  gun_reload_state__postTime:r=1.2
+
+  "multiStateReloadSystem:tag"{
+  }
+
+  _group{
+    _tags:t="sound"
+    gun_sound__forceOneshot:b=yes
+  }
+
+  "gun_sound__shotPath:shared:object"{
+    _tags:t="sound"
+    path:t="/weapon/mgun/scotti_naval_rifle"
+  }
+
+  "sound_irqs:shared:object"{
+    _tags:t="sound"
+
+    "reload_prepare:object"{
+      path:t="/weapon/rifle/mauser_gewehr_98_warmod/reload_prepare"
+    }
+
+    "reload_loop_single:object"{
+      path:t="/weapon/rifle/mauser_gewehr_98_warmod/reload_loop_single"
+    }
+
+    "reload_loop_multiple:object"{
+      path:t="/weapon/rifle/mauser_gewehr_98_warmod/reload_loop_multiple"
+    }
+
+    "reload_post:object"{
+      path:t="/weapon/rifle/mauser_gewehr_98_warmod/reload_post"
+    }
+
+    "boltAction:object"{
+      path:t="/weapon/rifle/m1/bolt_action"
+    }
+
+    "ammo_drop:object"{
+      watched:t="player/weapon/_common/clip_drop"
+      type:t="matUnderFeet"
+    }
+  }
+
+  "gun__mountPoints:shared:array"{
+
+    "point:object"{
+      type:t="rest"
+      recoil:r=-1.0
+      offset:p3=0.62, -0.0474, -0.014
+    }
+  }
+}
+
+cei_rigotti_rifle_event_gun{
+  _use:t="cei_rigotti_rifle_gun"
+  item__template:t="cei_rigotti_rifle_event_gun_item"
+  item__weapTemplate:t="cei_rigotti_rifle_event_gun"
+
+  "gun__firingModes:array"{
+
+    "mode:object"{
+      modeType:t="burst"
+      burstSize:i=1
+      shotFreqMult:r=2.6
+    }
+  }
+
+  "gun__firingModeNames:array"{
+    mode:t="semi_auto"
+  }
+}
+
+cei_rigotti_rifle_event_gun_item{
+  _use:t="cei_rigotti_rifle_gun_item"
+  _use:t="cei_rigotti_rifle_event_gun"
+}
+
+breda_m1935_pg{
+  _use:t="main_weap_slots"
+  _use:t="ironsights_open_semiauto"
+  animchar__res:t="breda_m1935_pg_char"
+  gun__blk:t="gamedata/weapons/breda_m1935_pg.blk"
+  item__template:t="breda_m1935_pg_gun_item"
+  item__proto:t="gamedata/weapons/breda_m1935_pg.blk"
+  item__weapTemplate:t="breda_m1935_pg_gun"
+  item__name:t="items/breda_m1935_pg"
+  item__weapType:t="semiauto"
+  item__weight:r=5.2
+  gun__locName:t="Breda PG"
+  gun__statName:t="semiauto"
+  gun__sightsDistance:r=0.05
+  gun__shotFreq:r=5.333
+  gun__boltFreq:r=10.0
+  gun__automaticReload:b=no
+  gun_spread__maxDeltaAngle:r=0.34
+  gun_deviation__omegaRange:p2=30.0, 90.0
+  gun_deviation__omegaDevInc:p2=0.1, 0.6
+  gun_deviation__movementRange:p2=2.1, 4.0
+  gun_deviation__movementDevInc:p2=0.0, 15.0
+  gun_deviation__onShotDeviationChange:r=0.0
+  gun_deviation__shotTau:r=0.1
+  gun_deviation__extraDeviationTau:r=0.15
+  gun_deviation__maxDeviation:r=30.0
+  gun__reloadTime:r=2.5
+  gun__altReloadTime:r=2.2
+
+  "item__id:i"{
+    value:i=0
+    _hide:b=yes
+  }
+
+  "gun__ammoHolders:array"{
+    ammoHolders:t="breda_m1935_pg_magazine"
+  }
+
+  "gun__shells:array"{
+    shells:t="gamedata/weapons/bullets/7x57_mauser_semiauto.blk"
+  }
+
+  "gun__firingModes:array"{
+
+    "mode:object"{
+      modeType:t="burst"
+      burstSize:i=4
+      shotFreqMult:r=0.53
+    }
+
+    "mode:object"{
+      modeType:t="burst"
+      burstSize:i=1
+    }
+  }
+
+  "gun__firingModeNames:array"{
+    mode:t="semi_auto_4_shots"
+    mode:t="semi_auto"
+  }
+}
+
+breda_m1935_pg_gun{
+  _use:t="equipable_gun"
+  _use:t="semiauto_ww2_preset"
+  _use:t="breda_m1935_pg"
+  _use:t="assault_rifle_rapid_muzzle_preset"
+  _use:t="hit_effect_group_handgun_medium"
+  _use:t="rifle_gun_aim_sound"
+  _use:t="visual_magazine_fullness"
+  gun_shell_ejection__timeMult:r=0.35
+  gun__length:r=0.4
+  gun__recoilAmount:r=0.094
+  gun__recoilDirAmount:r=0.73
+  gun__recoilDir:r=0.35
+  gun__visualRecoilMult:r=1.3
+  gun_attach__slot:t="weapon"
+  gun__adsSpeedMult:r=0.7
+  meleeSoundType:t="rifle"
+  gun__recoilControlMult:r=0.25
+  gun__recoilOffsMult:r=0.3
+  gun_anim_var__fpsGunOffsetAlong:r=0.06
+  gun_anim_var__fpsGunOffsetAcross:r=0.035
+  gun_anim_var__fpsGunOffsetUp:r=0.02
+  gun__saveAmmoInChamberOnReload:b=yes
+
+  "anim_irq__eventNames:object"{
+
+    "newMagazineShown:object"{
+      irqName:t="ammo_refresh"
+      irqId:i=-1
+    }
+  }
+
+  anim_irq_to_event_converter{
+  }
+
+  _group{
+    _tags:t="sound"
+    gun_sound__forceOneshot:b=yes
+  }
+
+  "gun_sound__shotPath:shared:object"{
+    _tags:t="sound"
+    path:t="/weapon/rifle/breda_m1935_pg"
+  }
+
+  "sound_irqs:shared:object"{
+    _tags:t="sound"
+
+    "reload:object"{
+      path:t="/weapon/rifle/breda_m1935_pg/reload"
+    }
+
+    "reload_alt:object"{
+      path:t="/weapon/rifle/breda_m1935_pg/reload_alt"
+    }
+  }
+
+  "gun__mountPoints:shared:array"{
+
+    "point:object"{
+      type:t="rest"
+      recoil:r=-1.0
+      offset:p3=0.62, 0.0, -0.014
+    }
+  }
+}
+
+breda_m1935_pg_carcano{
+  _use:t="main_weap_slots"
+  _use:t="ironsights_open_semiauto"
+  animchar__res:t="breda_m1935_pg_carcano_char"
+  gun__blk:t="gamedata/weapons/breda_m1935_pg_carcano.blk"
+  item__template:t="breda_m1935_pg_carcano_gun_item"
+  item__proto:t="gamedata/weapons/breda_m1935_pg_carcano.blk"
+  item__weapTemplate:t="breda_m1935_pg_carcano_gun"
+  item__name:t="items/breda_m1935_pg_carcano"
+  item__weapType:t="semiauto"
+  item__weight:r=5.2
+  gun__locName:t="Breda PG"
+  gun__statName:t="semiauto"
+  gun__sightsDistance:r=0.05
+  gun__shotFreq:r=5.333
+  gun__boltFreq:r=10.0
+  gun__automaticReload:b=no
+  gun_spread__maxDeltaAngle:r=0.31
+  gun_deviation__omegaRange:p2=30.0, 90.0
+  gun_deviation__omegaDevInc:p2=0.1, 0.6
+  gun_deviation__movementRange:p2=2.1, 4.0
+  gun_deviation__movementDevInc:p2=0.0, 15.0
+  gun_deviation__onShotDeviationChange:r=0.0
+  gun_deviation__shotTau:r=0.1
+  gun_deviation__extraDeviationTau:r=0.15
+  gun_deviation__maxDeviation:r=30.0
+  gun__reloadTime:r=2.5
+  gun__altReloadTime:r=2.2
+
+  "item__id:i"{
+    value:i=0
+    _hide:b=yes
+  }
+
+  "gun__ammoHolders:array"{
+    ammoHolders:t="breda_m1935_pg_carcano_magazine"
+  }
+
+  "gun__shells:array"{
+    shells:t="gamedata/weapons/bullets/6.5x52_carcano_semiauto.blk"
+  }
+
+  "gun__firingModes:array"{
+
+    "mode:object"{
+      modeType:t="burst"
+      burstSize:i=1
+    }
+  }
+
+  "gun__firingModeNames:array"{
+    mode:t="semi_auto"
+  }
+}
+
+breda_m1935_pg_carcano_gun{
+  _use:t="equipable_gun"
+  _use:t="semiauto_ww2_preset"
+  _use:t="breda_m1935_pg_carcano"
+  _use:t="assault_rifle_rapid_muzzle_preset"
+  _use:t="hit_effect_group_handgun_medium"
+  _use:t="rifle_gun_aim_sound"
+  _use:t="visual_magazine_fullness"
+  gun_shell_ejection__timeMult:r=0.35
+  gun__length:r=0.4
+  gun__recoilAmount:r=0.082
+  gun__recoilDirAmount:r=0.7
+  gun__recoilDir:r=0.28
+  gun__visualRecoilMult:r=1.3
+  gun_attach__slot:t="weapon"
+  gun__adsSpeedMult:r=0.7
+  meleeSoundType:t="rifle"
+  gun__recoilControlMult:r=0.25
+  gun__recoilOffsMult:r=0.3
+  gun_anim_var__fpsGunOffsetAlong:r=0.06
+  gun_anim_var__fpsGunOffsetAcross:r=0.035
+  gun_anim_var__fpsGunOffsetUp:r=0.02
+  gun__saveAmmoInChamberOnReload:b=yes
+
+  "anim_irq__eventNames:object"{
+
+    "newMagazineShown:object"{
+      irqName:t="ammo_refresh"
+      irqId:i=-1
+    }
+  }
+
+  anim_irq_to_event_converter{
+  }
+
+  _group{
+    _tags:t="sound"
+    gun_sound__forceOneshot:b=yes
+  }
+
+  "gun_sound__shotPath:shared:object"{
+    _tags:t="sound"
+    path:t="/weapon/rifle/breda_m1935_pg"
+  }
+
+  "sound_irqs:shared:object"{
+    _tags:t="sound"
+
+    "reload:object"{
+      path:t="/weapon/rifle/breda_m1935_pg/reload"
+    }
+
+    "reload_alt:object"{
+      path:t="/weapon/rifle/breda_m1935_pg/reload_alt"
+    }
+  }
+
+  "gun__mountPoints:shared:array"{
+
+    "point:object"{
+      type:t="rest"
+      recoil:r=-1.0
+      offset:p3=0.62, 0.0, -0.014
+    }
+  }
+}
+
+beretta_m1918_30{
+  _use:t="main_weap_slots"
+  _use:t="ironsights_open_smg"
+  animchar__res:t="beretta_m1918_30_char"
+  gun__blk:t="gamedata/weapons/beretta_m1918_30.blk"
+  item__template:t="beretta_m1918_30_gun_item"
+  item__proto:t="gamedata/weapons/beretta_m1918_30.blk"
+  item__weapTemplate:t="beretta_m1918_30_gun"
+  item__name:t="items/beretta_m1918_30"
+  item__weapType:t="submachine_gun"
+  item__weight:r=4.0
+  gun__locName:t="Beretta M1918/30"
+  gun__statName:t="submachine_gun"
+  gun__shotFreq:r=7.0
+  gun__boltFreq:r=10.0
+  gun_spread__maxDeltaAngle:r=0.35
+  gun_deviation__omegaRange:p2=30.0, 90.0
+  gun_deviation__omegaDevInc:p2=0.07, 0.5
+  gun_deviation__movementRange:p2=2.1, 4.0
+  gun_deviation__movementDevInc:p2=0.0, 7.0
+  gun_deviation__onShotDeviationChange:r=0.0
+  gun_deviation__shotTau:r=0.1
+  gun_deviation__extraDeviationTau:r=0.2
+  gun_deviation__maxDeviation:r=20.0
+  gun__reloadTime:r=2.6
+  gun__altReloadTime:r=2.0
+  gun__integratedBayonet:b=yes
+  melee_weapon__blk:t="gamedata/weapons/mosin_m1930_bayonet.blk"
+  melee_weapon__attackTime:r=0.5
+  melee_weapon__attackAt:r=0.375
+  gun__kineticDamageMult:r=1.05
+
+  "item__id:i"{
+    value:i=0
+    _hide:b=yes
+  }
+
+  "meleeChargeWeapon:tag"{
+  }
+
+  "gun__ammoHolders:array"{
+    ammoHolders:t="beretta_m1918_magazine"
+  }
+
+  "gun__shells:array"{
+    shells:t="gamedata/weapons/bullets/9x19_parabellum_smg.blk"
+  }
+
+  "gun__firingModes:array"{
+
+    "mode:object"{
+      modeType:t="burst"
+      burstSize:i=1
+    }
+  }
+
+  "gun__firingModeNames:array"{
+    mode:t="semi_auto"
+  }
+}
+
+beretta_m1918_30_gun{
+  _use:t="equipable_gun"
+  _use:t="mp_ww2_preset"
+  _use:t="beretta_m1918_30"
+  _use:t="smg_muzzle_preset"
+  _use:t="hit_effect_group_handgun_small"
+  _use:t="gun_switch_firing_mode_sound"
+  _use:t="rifle_gun_aim_sound"
+  gun__length:r=0.4
+  gun__recoilAmount:r=0.04
+  gun__recoilDirAmount:r=0.52
+  gun__recoilControlMult:r=0.4
+  gun__recoilDir:r=0.4
+  gun__visualRecoilMult:r=1.3
+  gun__adsSpeedMult:r=0.76
+  meleeSoundType:t="mgun"
+  gun__recoilOffsMult:r=0.3
+  gun__rotationSpringMult:p3=0.75, 0.9, 0.9
+  gun_anim_var__fpsGunOffsetAlong:r=-0.06
+  gun_anim_var__fpsGunOffsetAcross:r=0.05
+  gun_anim_var__fpsGunOffsetUp:r=0.025
+
+  _group{
+    _tags:t="sound"
+    gun_sound__forceOneshot:b=yes
+  }
+
+  "gun_sound__shotPath:shared:object"{
+    _tags:t="sound"
+    path:t="/weapon/mgun/beretta_m1918"
+  }
+
+  "sound_irqs:shared:object"{
+    _tags:t="sound"
+
+    "reload1:object"{
+      path:t="/weapon/mgun/beretta_m1918/reload1/change_ammo"
+    }
+
+    "reload2:object"{
+      path:t="/weapon/mgun/beretta_m1918/reload2/change_ammo"
+    }
+
+    "reload3:object"{
+      path:t="/weapon/mgun/beretta_m1918/reload3/change_ammo"
+    }
+  }
+
+  "gun__mountPoints:shared:array"{
+
+    "point:object"{
+      type:t="rest"
+      recoil:r=-1.0
+      offset:p3=0.7, -0.0153, 0.02
+    }
+  }
+}
+
+sw_light_rifle_mk_1{
+  _use:t="main_weap_slots"
+  _use:t="ironsights_open_smg"
+  animchar__res:t="sw_1940_mk_1_char"
+  gun__blk:t="gamedata/weapons/sw_light_rifle_mk_1.blk"
+  item__template:t="sw_light_rifle_mk_1_gun_item"
+  item__proto:t="gamedata/weapons/sw_light_rifle_mk_1.blk"
+  item__weapTemplate:t="sw_light_rifle_mk_1_gun"
+  item__name:t="items/sw_light_rifle_mk_1"
+  item__weapType:t="submachine_gun"
+  item__weight:r=4.1
+  gun__locName:t="S&W Light Rifle Mk I"
+  gun__statName:t="submachine_gun"
+  gun__sightsDistance:r=0.25
+  gun__shotFreq:r=7.0
+  gun__boltFreq:r=7.0
+  gun_spread__maxDeltaAngle:r=0.5
+  gun_deviation__omegaRange:p2=25.0, 90.0
+  gun_deviation__omegaDevInc:p2=0.07, 0.5
+  gun_deviation__movementRange:p2=2.1, 4.0
+  gun_deviation__movementDevInc:p2=0.0, 15.0
+  gun_deviation__onShotDeviationChange:r=0.0
+  gun_deviation__shotTau:r=0.1
+  gun_deviation__extraDeviationTau:r=0.2
+  gun_deviation__maxDeviation:r=20.0
+  gun__reloadTime:r=3.8
+  gun__altReloadTime:r=3.3
+
+  "item__id:i"{
+    value:i=0
+    _hide:b=yes
+  }
+
+  "gun__ammoHolders:array"{
+    ammoHolders:t="sw_light_rifle_magazine"
+  }
+
+  "gun__shells:array"{
+    shells:t="gamedata/weapons/bullets/9x19_parabellum_carbine.blk"
+  }
+
+  "gun__firingModes:array"{
+
+    "mode:object"{
+      modeType:t="burst"
+      burstSize:i=1
+    }
+  }
+
+  "gun__firingModeNames:array"{
+    mode:t="semi_auto"
+  }
+}
+
+sw_light_rifle_mk_1_gun{
+  _use:t="equipable_gun"
+  _use:t="mp_ww2_preset"
+  _use:t="sw_light_rifle_mk_1"
+  _use:t="smg_muzzle_preset"
+  _use:t="hit_effect_group_handgun_small"
+  _use:t="mgun_gun_aim_sound"
+  gun__length:r=0.4
+  gun__recoilAmount:r=0.03
+  gun__recoilDirAmount:r=0.71
+  gun__recoilDir:r=0.0
+  gun__visualRecoilMult:r=1.0
+  gun__adsSpeedMult:r=0.85
+  meleeSoundType:t="mgun"
+
+  _group{
+    _tags:t="sound"
+    gun_sound__forceOneshot:b=yes
+  }
+
+  "gun_sound__shotPath:shared:object"{
+    _tags:t="sound"
+    path:t="/weapon/rifle/sw_light_rifle"
+  }
+
+  "sound_irqs:shared:object"{
+    _tags:t="sound"
+
+    "reload1:object"{
+      path:t="/weapon/mgun/schmeisser_mk36/reload1/change_ammo"
+    }
+
+    "reload2:object"{
+      path:t="/weapon/mgun/schmeisser_mk36/reload2/change_ammo"
+    }
+
+    "reload3:object"{
+      path:t="/weapon/rifle/sw_light_rifle/reload3/change_ammo"
+    }
+  }
+
+  "gun__mountPoints:shared:array"{
+
+    "point:object"{
+      type:t="rest"
+      recoil:r=-1.0
+      offset:p3=0.25, -0.11, 0.0
+    }
+
+    "point:object"{
+      type:t="rest"
+      recoil:r=-1.0
+      offset:p3=0.4, -0.0175, 0.0
+    }
+  }
+}
+
+sw_light_rifle_mk_2{
+  _use:t="main_weap_slots"
+  _use:t="ironsights_open_smg"
+  animchar__res:t="sw_1940_mk_2_char"
+  gun__blk:t="gamedata/weapons/sw_light_rifle_mk_2.blk"
+  item__template:t="sw_light_rifle_mk_2_gun_item"
+  item__proto:t="gamedata/weapons/sw_light_rifle_mk_2.blk"
+  item__weapTemplate:t="sw_light_rifle_mk_2_gun"
+  item__name:t="items/sw_light_rifle_mk_2"
+  item__weapType:t="submachine_gun"
+  item__weight:r=3.1
+  gun__locName:t="S&W Light Rifle Mk II"
+  gun__statName:t="submachine_gun"
+  gun__sightsDistance:r=0.25
+  gun__shotFreq:r=7.0
+  gun__boltFreq:r=10.0
+  gun_spread__maxDeltaAngle:r=0.5
+  gun_deviation__omegaRange:p2=25.0, 90.0
+  gun_deviation__omegaDevInc:p2=0.07, 0.5
+  gun_deviation__movementRange:p2=2.1, 4.0
+  gun_deviation__movementDevInc:p2=0.0, 15.0
+  gun_deviation__onShotDeviationChange:r=0.0
+  gun_deviation__shotTau:r=0.1
+  gun_deviation__extraDeviationTau:r=0.2
+  gun_deviation__maxDeviation:r=20.0
+  gun__reloadTime:r=2.3
+  gun__altReloadTime:r=1.8
+  gun__kineticDamageMult:r=1.05
+
+  "item__id:i"{
+    value:i=0
+    _hide:b=yes
+  }
+
+  "gun__ammoHolders:array"{
+    ammoHolders:t="sw_light_rifle_magazine"
+  }
+
+  "gun__shells:array"{
+    shells:t="gamedata/weapons/bullets/9x19_parabellum_carbine.blk"
+  }
+
+  "gun__firingModes:array"{
+
+    "mode:object"{
+      modeType:t="burst"
+      burstSize:i=1
+    }
+  }
+
+  "gun__firingModeNames:array"{
+    mode:t="semi_auto"
+  }
+}
+
+sw_light_rifle_mk_2_gun{
+  _use:t="equipable_gun"
+  _use:t="mp_ww2_preset"
+  _use:t="sw_light_rifle_mk_2"
+  _use:t="smg_muzzle_preset"
+  _use:t="hit_effect_group_handgun_small"
+  _use:t="mgun_gun_aim_sound"
+  gun__length:r=0.4
+  gun__recoilAmount:r=0.049
+  gun__recoilDirAmount:r=0.71
+  gun__recoilControlMult:r=0.4
+  gun__recoilDir:r=0.4
+  gun__visualRecoilMult:r=1.0
+  gun__adsSpeedMult:r=0.85
+  meleeSoundType:t="mgun"
+  gun__recoilOffsMult:r=0.3
+  gun__rotationSpringMult:p3=0.75, 0.9, 0.9
+  gun_anim_var__fpsGunOffsetAlong:r=-0.06
+  gun_anim_var__fpsGunOffsetAcross:r=0.045
+  gun_anim_var__fpsGunOffsetUp:r=0.037
+
+  _group{
+    _tags:t="sound"
+    gun_sound__forceOneshot:b=yes
+  }
+
+  "gun_sound__shotPath:shared:object"{
+    _tags:t="sound"
+    path:t="/weapon/rifle/sw_light_rifle"
+  }
+
+  "sound_irqs:shared:object"{
+    _tags:t="sound"
+
+    "reload1:object"{
+      path:t="/weapon/mgun/schmeisser_mk36/reload1/change_ammo"
+    }
+
+    "reload2:object"{
+      path:t="/weapon/mgun/schmeisser_mk36/reload2/change_ammo"
+    }
+
+    "reload3:object"{
+      path:t="/weapon/rifle/sw_light_rifle/reload3/change_ammo"
+    }
+  }
+
+  "gun__mountPoints:shared:array"{
+
+    "point:object"{
+      type:t="rest"
+      recoil:r=-1.0
+      offset:p3=0.41, -0.11, 0.01
+    }
+
+    "point:object"{
+      type:t="rest"
+      recoil:r=-1.0
+      offset:p3=0.57, -0.0175, 0.01
+    }
+  }
+}
+
+turner_automatic_rifle{
+  _use:t="main_weap_slots"
+  _use:t="ironsights_open_semiauto"
+  _use:t="reload_single_bullet"
+  _use:t="ironsights_open_semiauto"
+  reload__singleReloadAmmoCount:i=5
+  single_reload__prepareTime:r=1.2
+  single_reload__loopTime:r=1.1
+  single_reload__postTime:r=1.4
+  animchar__res:t="turner_semiauto_smle_conversion_char"
+  gun__blk:t="gamedata/weapons/turner_automatic_rifle.blk"
+  item__template:t="turner_automatic_rifle_gun_item"
+  item__proto:t="gamedata/weapons/turner_automatic_rifle.blk"
+  item__weapTemplate:t="turner_automatic_rifle_gun"
+  item__name:t="items/turner_automatic_rifle"
+  item__weapType:t="semiauto"
+  item__weight:r=4.9
+  gun__locName:t="Turner SMLE"
+  gun__statName:t="semiauto"
+  gun__shotFreq:r=5.333
+  gun__boltFreq:r=6.0
+  gun__automaticReload:b=no
+  gun_spread__maxDeltaAngle:r=0.27
+  gun_deviation__omegaRange:p2=30.0, 90.0
+  gun_deviation__omegaDevInc:p2=0.1, 0.6
+  gun_deviation__movementRange:p2=2.1, 4.0
+  gun_deviation__movementDevInc:p2=0.0, 15.0
+  gun_deviation__onShotDeviationChange:r=0.0
+  gun_deviation__shotTau:r=0.1
+  gun_deviation__extraDeviationTau:r=0.15
+  gun_deviation__maxDeviation:r=30.0
+  gun__reloadTime:r=4.2
+
+  "item__id:i"{
+    value:i=0
+    _hide:b=yes
+  }
+
+  "gun__ammoHolders:array"{
+    ammoHolders:t="lee_enfield_no4_mk1_magazine"
+  }
+
+  "gun__shells:array"{
+    shells:t="gamedata/weapons/bullets/303_british_mk7.blk"
+  }
+
+  "gun__firingModes:array"{
+
+    "mode:object"{
+      modeType:t="burst"
+      burstSize:i=1
+    }
+  }
+
+  "gun__firingModeNames:array"{
+    mode:t="semi_auto"
+  }
+}
+
+turner_automatic_rifle_gun{
+  _use:t="equipable_gun"
+  _use:t="semiauto_ww2_preset"
+  _use:t="turner_automatic_rifle"
+  _use:t="rifle_muzzle_preset"
+  _use:t="hit_effect_group_handgun_small"
+  _use:t="rifle_gun_aim_sound"
+  gun_shell_ejection__timeMult:r=0.35
+  gun__length:r=0.4
+  gun__recoilAmount:r=0.128
+  gun__recoilDirAmount:r=0.78
+  gun__recoilDir:r=0.35
+  gun__visualRecoilMult:r=0.7
+  gun_attach__slot:t="weapon"
+  gun__adsSpeedMult:r=0.9
+  meleeSoundType:t="rifle"
+  gun_anim_var__fpsGunOffsetAlong:r=0.04
+  gun_anim_var__fpsGunOffsetAcross:r=0.015
+  gun_anim_var__fpsGunOffsetUp:r=0.055
+  gun_reload_state__prepareTime:r=0.8
+  gun_reload_state__bulletSingleTime:r=0.75
+  gun_reload_state__bulletMultipleTime:r=1.2
+  gun_reload_state__bulletMultipleCount:i=5
+  gun_reload_state__postTime:r=1.0
+
+  "multiStateReloadSystem:tag"{
+  }
+
+  "gun_sound__shotPath:shared:object"{
+    _tags:t="sound"
+    watched:t="player/weapon/rifle/turner"
+    other:t="enemy/weapon/rifle/lee_enfield"
+  }
+
+  "sound_irqs:shared:object"{
+    _tags:t="sound"
+
+    "reload_prepare:object"{
+      path:t="/weapon/rifle/turner/reload_prepare"
+    }
+
+    "reload_loop_single:object"{
+      path:t="/weapon/rifle/turner/reload_loop_single"
+    }
+
+    "reload_loop_multiple:object"{
+      path:t="/weapon/rifle/turner/reload_loop_multiple"
+    }
+
+    "reload_post:object"{
+      path:t="/weapon/rifle/turner/reload_post"
+    }
+  }
+
+  "gun__mountPoints:shared:array"{
+
+    "point:object"{
+      type:t="rest"
+      recoil:r=-1.0
+      offset:p3=0.81, -0.0521, -0.02
+    }
+
+    "point:object"{
+      type:t="rest"
+      recoil:r=-1.0
+      offset:p3=0.595, -0.0521, -0.02
+    }
+  }
+}
+
+beretta_m38_42{
+  _use:t="main_weap_slots"
+  _use:t="ironsights_open_smg"
+  animchar__res:t="beretta_m38_42_char"
+  gun__blk:t="gamedata/weapons/beretta_m38_42.blk"
+  item__template:t="beretta_m38_42_gun_item"
+  item__proto:t="gamedata/weapons/beretta_m38_42.blk"
+  item__weapTemplate:t="beretta_m38_42_gun"
+  item__name:t="items/beretta_m38_42"
+  item__weapType:t="submachine_gun"
+  item__weight:r=4.2
+  gun__locName:t="Beretta M38/42"
+  gun__statName:t="submachine_gun"
+  gun__shotFreq:r=9.167
+  gun_spread__maxDeltaAngle:r=0.8
+  gun_deviation__omegaRange:p2=30.0, 90.0
+  gun_deviation__omegaDevInc:p2=0.07, 0.5
+  gun_deviation__movementRange:p2=2.1, 4.0
+  gun_deviation__movementDevInc:p2=0.0, 15.0
+  gun_deviation__onShotDeviationChange:r=0.0
+  gun_deviation__shotTau:r=0.1
+  gun_deviation__extraDeviationTau:r=0.2
+  gun_deviation__maxDeviation:r=20.0
+  gun__reloadTime:r=2.6
+  gun__altReloadTime:r=2.1
+
+  "item__id:i"{
+    value:i=0
+    _hide:b=yes
+  }
+
+  "gun__ammoHolders:array"{
+    ammoHolders:t="beretta_m38_40_round_magazine"
+  }
+
+  "gun__shells:array"{
+    shells:t="gamedata/weapons/bullets/9x19_parabellum_smg.blk"
+  }
+
+  "gun__firingModes:array"{
+
+    "mode:object"{
+      modeType:t="automatic"
+    }
+
+    "mode:object"{
+      modeType:t="burst"
+      burstSize:i=1
+    }
+  }
+
+  "gun__firingModeNames:array"{
+    mode:t="full_auto"
+    mode:t="semi_auto"
+  }
+}
+
+beretta_m38_42_gun{
+  _use:t="equipable_gun"
+  _use:t="mp_ww2_preset"
+  _use:t="beretta_m38_42"
+  _use:t="smg_muzzle_break_preset"
+  _use:t="hit_effect_group_handgun_small"
+  _use:t="gun_switch_firing_mode_sound"
+  _use:t="rifle_gun_aim_sound"
+  gun__length:r=0.4
+  gun__recoilAmount:r=0.039
+  gun__recoilDirAmount:r=0.77
+  gun__recoilDir:r=0.4
+  gun__visualRecoilMult:r=1.6
+  gun__crawlRecoilMult:r=0.8
+  meleeSoundType:t="mgun"
+  gun__recoilControlMult:r=0.4
+  gun__recoilOffsMult:r=0.3
+  gun__rotationSpringMult:p3=0.75, 0.9, 0.9
+  gun_anim_var__fpsGunOffsetAlong:r=0.09
+  gun_anim_var__fpsGunOffsetAcross:r=0.005
+  gun_anim_var__fpsGunOffsetUp:r=0.005
+  gun__projectileVelocityMult:r=1.075
+
+  _group{
+    _tags:t="sound"
+    gun_sound__forceOneshot:b=yes
+  }
+
+  "gun_sound__shotPath:shared:object"{
+    _tags:t="sound"
+    path:t="/weapon/mgun/m38"
+  }
+
+  "sound_irqs:shared:object"{
+    _tags:t="sound"
+
+    "reload1:object"{
+      path:t="/weapon/mgun/m38/reload1/change_ammo"
+    }
+
+    "reload2:object"{
+      path:t="/weapon/mgun/m38/reload2/change_ammo"
+    }
+
+    "reload3:object"{
+      path:t="/weapon/mgun/m38/reload3/change_ammo"
+    }
+  }
+
+  "gun__mountPoints:shared:array"{
+
+    "point:object"{
+      type:t="rest"
+      recoil:r=-1.0
+      offset:p3=0.4, 0.0156, -0.005
+    }
+
+    "point:object"{
+      type:t="rest"
+      recoil:r=-1.0
+      offset:p3=0.25, -0.155, -0.005
+    }
+  }
+}
+
+beretta_m1{
+  _use:t="main_weap_slots"
+  _use:t="ironsights_open_smg"
+  animchar__res:t="beretta_m1_char"
+  gun__blk:t="gamedata/weapons/beretta_m1.blk"
+  item__template:t="beretta_m1_gun_item"
+  item__proto:t="gamedata/weapons/beretta_m1.blk"
+  item__weapTemplate:t="beretta_m1_gun"
+  item__name:t="items/beretta_m1"
+  item__weapType:t="submachine_gun"
+  item__weight:r=4.1
+  gun__locName:t="Beretta Model 1"
+  gun__statName:t="submachine_gun"
+  gun__shotFreq:r=8.33
+  gun_spread__maxDeltaAngle:r=0.86
+  gun_deviation__omegaRange:p2=30.0, 90.0
+  gun_deviation__omegaDevInc:p2=0.07, 0.5
+  gun_deviation__movementRange:p2=2.1, 4.0
+  gun_deviation__movementDevInc:p2=0.0, 15.0
+  gun_deviation__onShotDeviationChange:r=0.0
+  gun_deviation__shotTau:r=0.1
+  gun_deviation__extraDeviationTau:r=0.2
+  gun_deviation__maxDeviation:r=20.0
+  gun__reloadTime:r=2.8
+  gun__altReloadTime:r=2.3
+
+  "item__id:i"{
+    value:i=0
+    _hide:b=yes
+  }
+
+  "gun__ammoHolders:array"{
+    ammoHolders:t="beretta_m38_40_round_magazine"
+  }
+
+  "gun__shells:array"{
+    shells:t="gamedata/weapons/bullets/9x19_parabellum_smg.blk"
+  }
+
+  "gun__firingModes:array"{
+
+    "mode:object"{
+      modeType:t="automatic"
+    }
+
+    "mode:object"{
+      modeType:t="burst"
+      burstSize:i=1
+    }
+  }
+
+  "gun__firingModeNames:array"{
+    mode:t="full_auto"
+    mode:t="semi_auto"
+  }
+}
+
+beretta_m1_gun{
+  _use:t="equipable_gun"
+  _use:t="mp_ww2_preset"
+  _use:t="beretta_m1"
+  _use:t="smg_muzzle_break_preset"
+  _use:t="hit_effect_group_handgun_small"
+  _use:t="gun_switch_firing_mode_sound"
+  _use:t="rifle_gun_aim_sound"
+  gun__length:r=0.4
+  gun__recoilAmount:r=0.04
+  gun__recoilDirAmount:r=0.71
+  gun__recoilDir:r=0.4
+  gun__visualRecoilMult:r=1.6
+  gun__crawlRecoilMult:r=0.8
+  meleeSoundType:t="mgun"
+  gun__recoilControlMult:r=0.4
+  gun__recoilOffsMult:r=0.3
+  gun__rotationSpringMult:p3=0.75, 0.9, 0.9
+  gun_anim_var__fpsGunOffsetAlong:r=0.11
+  gun_anim_var__fpsGunOffsetAcross:r=0.045
+  gun_anim_var__fpsGunOffsetUp:r=-0.025
+
+  _group{
+    _tags:t="sound"
+    gun_sound__forceOneshot:b=yes
+  }
+
+  "gun_sound__shotPath:shared:object"{
+    _tags:t="sound"
+    path:t="/weapon/mgun/m38"
+  }
+
+  "sound_irqs:shared:object"{
+    _tags:t="sound"
+
+    "reload1:object"{
+      path:t="/weapon/mgun/m38/reload1/change_ammo"
+    }
+
+    "reload2:object"{
+      path:t="/weapon/mgun/m38/reload2/change_ammo"
+    }
+
+    "reload3:object"{
+      path:t="/weapon/mgun/m38/reload3/change_ammo"
+    }
+  }
+
+  "gun__mountPoints:shared:array"{
+
+    "point:object"{
+      type:t="rest"
+      recoil:r=-1.0
+      offset:p3=0.4, 0.0149, -0.005
+    }
+
+    "point:object"{
+      type:t="rest"
+      recoil:r=-1.0
+      offset:p3=0.25, -0.155, -0.005
+    }
+  }
+}
+
+ovp_1918{
+  _use:t="main_weap_slots"
+  _use:t="ironsights_open_smg"
+  animchar__res:t="ovp_1918_char"
+  gun__blk:t="gamedata/weapons/ovp_1918.blk"
+  item__template:t="ovp_1918_gun_item"
+  item__proto:t="gamedata/weapons/ovp_1918.blk"
+  item__weapTemplate:t="ovp_1918_gun"
+  item__name:t="items/ovp_1918"
+  item__weapType:t="submachine_gun"
+  item__weight:r=4.5
+  gun__locName:t="OVP-1918"
+  gun__statName:t="submachine_gun"
+  gun__sightsDistance:r=0.25
+  gun__shotFreq:r=15.0
+  gun_spread__maxDeltaAngle:r=0.9
+  gun_deviation__omegaRange:p2=25.0, 90.0
+  gun_deviation__omegaDevInc:p2=0.07, 0.5
+  gun_deviation__movementRange:p2=2.1, 4.0
+  gun_deviation__movementDevInc:p2=0.0, 15.0
+  gun_deviation__onShotDeviationChange:r=0.0
+  gun_deviation__shotTau:r=0.1
+  gun_deviation__extraDeviationTau:r=0.2
+  gun_deviation__maxDeviation:r=20.0
+  gun__reloadTime:r=3.0
+  gun__altReloadTime:r=2.5
+
+  "item__id:i"{
+    value:i=0
+    _hide:b=yes
+  }
+
+  "gun__ammoHolders:array"{
+    ammoHolders:t="ovp_1918_magazine"
+  }
+
+  "gun__shells:array"{
+    shells:t="gamedata/weapons/bullets/9x19_parabellum_carbine.blk"
+  }
+
+  "gun__firingModes:array"{
+
+    "mode:object"{
+      modeType:t="automatic"
+    }
+
+    "mode:object"{
+      modeType:t="burst"
+      burstSize:i=1
+    }
+  }
+
+  "gun__firingModeNames:array"{
+    mode:t="full_auto"
+    mode:t="semi_auto"
+  }
+}
+
+ovp_1918_gun{
+  _use:t="equipable_gun"
+  _use:t="mp_ww2_preset"
+  _use:t="ovp_1918"
+  _use:t="smg_rapid_muzzle_preset"
+  _use:t="hit_effect_group_handgun_small"
+  _use:t="mgun_gun_aim_sound"
+  gun__length:r=0.4
+  gun__recoilAmount:r=0.049
+  gun__recoilDirAmount:r=0.67
+  gun__recoilDir:r=0.4
+  gun__visualRecoilMult:r=1.6
+  gun__adsSpeedMult:r=0.85
+  meleeSoundType:t="mgun"
+  gun__recoilControlMult:r=0.4
+  gun__recoilOffsMult:r=0.3
+  gun__rotationSpringMult:p3=0.75, 0.9, 0.9
+  gun_anim_var__fpsGunOffsetAlong:r=0.13
+  gun_anim_var__fpsGunOffsetAcross:r=0.075
+  gun_anim_var__fpsGunOffsetUp:r=0.037
+
+  _group{
+    _tags:t="sound"
+    gun_sound__forceOneshot:b=yes
+  }
+
+  "gun_sound__shotPath:shared:object"{
+    _tags:t="sound"
+    path:t="/weapon/mgun/schmeisser_mk36"
+  }
+
+  "sound_irqs:shared:object"{
+    _tags:t="sound"
+
+    "reload1:object"{
+      path:t="/weapon/mgun/schmeisser_mk36/reload1/change_ammo"
+    }
+
+    "reload2:object"{
+      path:t="/weapon/mgun/schmeisser_mk36/reload2/change_ammo"
+    }
+
+    "reload3:object"{
+      path:t="/weapon/mgun/schmeisser_mk36/reload3/change_ammo"
+    }
+  }
+
+  "gun__mountPoints:shared:array"{
+
+    "point:object"{
+      type:t="rest"
+      recoil:r=-1.0
+      offset:p3=0.4, -0.0537, 0.0
+    }
+  }
+}
+
+tz_45{
+  _use:t="main_weap_slots"
+  _use:t="ironsights_open_smg"
+  animchar__res:t="tz_45_char"
+  gun__blk:t="gamedata/weapons/tz_45.blk"
+  item__template:t="tz_45_gun_item"
+  item__proto:t="gamedata/weapons/tz_45.blk"
+  item__weapTemplate:t="tz_45_gun"
+  item__name:t="items/tz_45"
+  item__weapType:t="submachine_gun"
+  item__weight:r=3.2
+  gun__locName:t="Beretta Model 1"
+  gun__statName:t="submachine_gun"
+  gun__sightsDistance:r=0.05
+  gun__shotFreq:r=10.0
+  gun_spread__maxDeltaAngle:r=0.65
+  gun_deviation__omegaRange:p2=30.0, 90.0
+  gun_deviation__omegaDevInc:p2=0.08, 0.55
+  gun_deviation__movementRange:p2=2.2, 4.5
+  gun_deviation__movementDevInc:p2=0.0, 15.0
+  gun_deviation__onShotDeviationChange:r=0.0
+  gun_deviation__shotTau:r=0.1
+  gun_deviation__extraDeviationTau:r=0.15
+  gun_deviation__maxDeviation:r=16.0
+  gun__reloadTime:r=2.6
+  gun__altReloadTime:r=2.1
+
+  "item__id:i"{
+    value:i=0
+    _hide:b=yes
+  }
+
+  "gun__ammoHolders:array"{
+    ammoHolders:t="beretta_m38_40_round_magazine"
+  }
+
+  "gun__shells:array"{
+    shells:t="gamedata/weapons/bullets/9x19_parabellum_smg.blk"
+  }
+
+  "gun__firingModes:array"{
+
+    "mode:object"{
+      modeType:t="automatic"
+    }
+
+    "mode:object"{
+      modeType:t="burst"
+      burstSize:i=1
+    }
+  }
+
+  "gun__firingModeNames:array"{
+    mode:t="full_auto"
+    mode:t="semi_auto"
+  }
+}
+
+tz_45_gun{
+  _use:t="equipable_gun"
+  _use:t="mp_ww2_preset"
+  _use:t="tz_45"
+  _use:t="smg_muzzle_break_preset"
+  _use:t="hit_effect_group_handgun_small"
+  _use:t="gun_switch_firing_mode_sound"
+  _use:t="rifle_gun_aim_sound"
+  gun__length:r=0.4
+  gun__recoilAmount:r=0.049
+  gun__recoilDirAmount:r=0.71
+  gun__recoilDir:r=0.1
+  gun__visualRecoilMult:r=1.4
+  meleeSoundType:t="mgun"
+  gun__recoilControlMult:r=0.5
+  gun__recoilOffsMult:r=0.3
+  gun__rotationSpringMult:p3=0.75, 0.9, 0.9
+
+  _group{
+    _tags:t="sound"
+    gun_sound__forceOneshot:b=yes
+  }
+
+  "gun_sound__shotPath:shared:object"{
+    _tags:t="sound"
+    path:t="/weapon/mgun/mp34o"
+  }
+
+  "sound_irqs:shared:object"{
+    _tags:t="sound"
+
+    "reload1:object"{
+      path:t="/weapon/mgun/mp34o/reload1/change_ammo"
+    }
+
+    "reload2:object"{
+      path:t="/weapon/mgun/mp34o/reload2/change_ammo"
+    }
+
+    "reload3:object"{
+      path:t="/weapon/mgun/mp34o/reload3/change_ammo"
+    }
+  }
+
+  "gun__mountPoints:shared:array"{
+
+    "point:object"{
+      type:t="rest"
+      recoil:r=-1.0
+      offset:p3=0.36, 0.0007, 0.0
+    }
+  }
+}
+
+og_43{
+  _use:t="main_weap_slots"
+  _use:t="ironsights_open_smg"
+  animchar__res:t="og_43_char"
+  gun__blk:t="gamedata/weapons/og_43.blk"
+  item__template:t="og_43_gun_item"
+  item__proto:t="gamedata/weapons/og_43.blk"
+  item__weapTemplate:t="og_43_gun"
+  item__name:t="items/og_43"
+  item__weapType:t="submachine_gun"
+  item__weight:r=3.0
+  gun__locName:t="OG-43"
+  gun__statName:t="submachine_gun"
+  gun__shotFreq:r=8.33
+  gun_spread__maxDeltaAngle:r=0.72
+  gun_deviation__omegaRange:p2=30.0, 90.0
+  gun_deviation__omegaDevInc:p2=0.07, 0.5
+  gun_deviation__movementRange:p2=2.1, 4.0
+  gun_deviation__movementDevInc:p2=0.0, 5.0
+  gun_deviation__onShotDeviationChange:r=0.0
+  gun_deviation__shotTau:r=0.05
+  gun_deviation__extraDeviationTau:r=0.12
+  gun_deviation__maxDeviation:r=15.0
+  gun__reloadTime:r=2.6
+  gun__altReloadTime:r=2.1
+
+  "item__id:i"{
+    value:i=0
+    _hide:b=yes
+  }
+
+  "gun__ammoHolders:array"{
+    ammoHolders:t="og_43_magazine"
+  }
+
+  "gun__shells:array"{
+    shells:t="gamedata/weapons/bullets/9x19_parabellum_smg.blk"
+  }
+
+  "gun__firingModes:array"{
+
+    "mode:object"{
+      modeType:t="automatic"
+    }
+
+    "mode:object"{
+      modeType:t="burst"
+      burstSize:i=1
+    }
+  }
+
+  "gun__firingModeNames:array"{
+    mode:t="full_auto"
+    mode:t="semi_auto"
+  }
+}
+
+og_43_gun{
+  _use:t="equipable_gun"
+  _use:t="mp_ww2_preset"
+  _use:t="og_43"
+  _use:t="smg_muzzle_break_preset"
+  _use:t="hit_effect_group_handgun_small"
+  _use:t="gun_switch_firing_mode_sound"
+  _use:t="rifle_gun_aim_sound"
+  gun__length:r=0.4
+  gun__recoilAmount:r=0.032
+  gun__recoilControlMult:r=0.3
+  gun__recoilDirAmount:r=0.75
+  gun__recoilDir:r=0.0
+  gun__visualRecoilMult:r=1.6
+  gun__crawlRecoilMult:r=0.8
+  meleeSoundType:t="mgun"
+  gun_anim_var__fpsGunOffsetAlong:r=0.11
+  gun_anim_var__fpsGunOffsetAcross:r=-0.01
+  gun_anim_var__fpsGunOffsetUp:r=0.09
+
+  _group{
+    _tags:t="sound"
+    gun_sound__forceOneshot:b=yes
+  }
+
+  "gun_sound__shotPath:shared:object"{
+    _tags:t="sound"
+    path:t="/weapon/mgun/m38"
+  }
+
+  "sound_irqs:shared:object"{
+    _tags:t="sound"
+
+    "reload1:object"{
+      path:t="/weapon/mgun/m38/reload1/change_ammo"
+    }
+
+    "reload2:object"{
+      path:t="/weapon/mgun/m38/reload2/change_ammo"
+    }
+
+    "reload3:object"{
+      path:t="/weapon/mgun/m38/reload3/change_ammo"
+    }
+  }
+
+  "gun__mountPoints:shared:array"{
+
+    "point:object"{
+      type:t="rest"
+      recoil:r=-1.0
+      offset:p3=0.07, -0.155, -0.012
+    }
+  }
+}
+
+og_44{
+  _use:t="main_weap_slots"
+  _use:t="ironsights_open_smg"
+  animchar__res:t="og_44_char"
+  gun__blk:t="gamedata/weapons/og_44.blk"
+  item__template:t="og_44_gun_item"
+  item__proto:t="gamedata/weapons/og_44.blk"
+  item__weapTemplate:t="og_44_gun"
+  item__name:t="items/og_44"
+  item__weapType:t="submachine_gun"
+  item__weight:r=3.2
+  gun__locName:t="OG-44"
+  gun__statName:t="submachine_gun"
+  gun__shotFreq:r=9.167
+  gun_spread__maxDeltaAngle:r=0.64
+  gun_deviation__omegaRange:p2=30.0, 90.0
+  gun_deviation__omegaDevInc:p2=0.07, 0.5
+  gun_deviation__movementRange:p2=2.1, 4.0
+  gun_deviation__movementDevInc:p2=0.0, 5.0
+  gun_deviation__onShotDeviationChange:r=0.0
+  gun_deviation__shotTau:r=0.05
+  gun_deviation__extraDeviationTau:r=0.12
+  gun_deviation__maxDeviation:r=15.0
+  gun__reloadTime:r=2.7
+  gun__altReloadTime:r=2.2
+
+  "item__id:i"{
+    value:i=0
+    _hide:b=yes
+  }
+
+  "gun__ammoHolders:array"{
+    ammoHolders:t="beretta_m38_40_round_magazine"
+  }
+
+  "gun__shells:array"{
+    shells:t="gamedata/weapons/bullets/9x19_parabellum_smg.blk"
+  }
+
+  "gun__firingModes:array"{
+
+    "mode:object"{
+      modeType:t="automatic"
+    }
+
+    "mode:object"{
+      modeType:t="burst"
+      burstSize:i=1
+    }
+  }
+
+  "gun__firingModeNames:array"{
+    mode:t="full_auto"
+    mode:t="semi_auto"
+  }
+}
+
+og_44_gun{
+  _use:t="equipable_gun"
+  _use:t="mp_ww2_preset"
+  _use:t="og_44"
+  _use:t="smg_muzzle_break_preset"
+  _use:t="hit_effect_group_handgun_small"
+  _use:t="gun_switch_firing_mode_sound"
+  _use:t="rifle_gun_aim_sound"
+  gun__length:r=0.4
+  gun__recoilAmount:r=0.03
+  gun__recoilControlMult:r=0.3
+  gun__recoilDirAmount:r=0.78
+  gun__recoilDir:r=0.0
+  gun__visualRecoilMult:r=1.7
+  gun__crawlRecoilMult:r=0.8
+  meleeSoundType:t="mgun"
+  gun_anim_var__fpsGunOffsetAlong:r=0.06
+  gun_anim_var__fpsGunOffsetAcross:r=0.03
+  gun_anim_var__fpsGunOffsetUp:r=0.02
+
+  _group{
+    _tags:t="sound"
+    gun_sound__forceOneshot:b=yes
+  }
+
+  "gun_sound__shotPath:shared:object"{
+    _tags:t="sound"
+    path:t="/weapon/mgun/m38"
+  }
+
+  "sound_irqs:shared:object"{
+    _tags:t="sound"
+
+    "reload1:object"{
+      path:t="/weapon/mgun/m38/reload1/change_ammo"
+    }
+
+    "reload2:object"{
+      path:t="/weapon/mgun/m38/reload2/change_ammo"
+    }
+
+    "reload3:object"{
+      path:t="/weapon/mgun/m38/reload3/change_ammo"
+    }
+  }
+
+  "gun__mountPoints:shared:array"{
+
+    "point:object"{
+      type:t="rest"
+      recoil:r=-1.0
+      offset:p3=0.24, -0.2, 0.0
+    }
+
+    "point:object"{
+      type:t="rest"
+      recoil:r=-1.0
+      offset:p3=0.44, -0.02, 0.0
+    }
+  }
+}
+
+thompson_m1921_28_box{
+  _use:t="main_weap_slots"
+  _use:t="ironsights_open_smg"
+  animchar__res:t="thompson_m1921_28_box_char"
+  gun__blk:t="gamedata/weapons/thompson_m1921_28_box.blk"
+  item__template:t="thompson_m1921_28_box_gun_item"
+  item__proto:t="gamedata/weapons/thompson_m1921_28_box.blk"
+  item__weapTemplate:t="thompson_m1921_28_box_gun"
+  item__name:t="items/thompson_m1921_28_box"
+  item__weapType:t="submachine_gun"
+  item__weight:r=4.0
+  gun__locName:t="Thompson M1921/28"
+  gun__statName:t="submachine_gun"
+  gun__sightsDistance:r=0.05
+  gun__shotFreq:r=11.67
+  gun_spread__maxDeltaAngle:r=0.68
+  gun_deviation__omegaRange:p2=30.0, 90.0
+  gun_deviation__omegaDevInc:p2=0.07, 0.5
+  gun_deviation__movementRange:p2=2.1, 4.0
+  gun_deviation__movementDevInc:p2=0.0, 15.0
+  gun_deviation__onShotDeviationChange:r=0.0
+  gun_deviation__shotTau:r=0.1
+  gun_deviation__extraDeviationTau:r=0.2
+  gun_deviation__maxDeviation:r=20.0
+  gun__reloadTime:r=1.7
+  gun__altReloadTime:r=1.7
+
+  "item__id:i"{
+    value:i=0
+    _hide:b=yes
+  }
+
+  "animchar__objTexReplace:object"{
+    "m1921_thompson_main_tex_ao*":t="thompson_m1921_28_main_tex_ao*"
+    "m1921_thompson_main_tex_d*":t="thompson_m1921_28_main_tex_d*"
+    "m1921_thompson_main_tex_n* ":t="thompson_m1921_28_main_tex_n*"
+  }
+
+  "gun__ammoHolders:array"{
+    ammoHolders:t="m1928a_thompson_magazine"
+  }
+
+  "gun__shells:array"{
+    shells:t="gamedata/weapons/bullets/11.51x23_browning_smg.blk"
+  }
+
+  "gun__firingModes:array"{
+
+    "mode:object"{
+      modeType:t="automatic"
+    }
+
+    "mode:object"{
+      modeType:t="burst"
+      burstSize:i=1
+    }
+  }
+
+  "gun__firingModeNames:array"{
+    mode:t="full_auto"
+    mode:t="semi_auto"
+  }
+}
+
+thompson_m1921_28_box_gun{
+  _use:t="equipable_gun"
+  _use:t="mp_45acp_ww2_preset"
+  _use:t="thompson_m1921_28_box"
+  _use:t="smg_muzzle_break_preset"
+  _use:t="hit_effect_group_handgun_small"
+  _use:t="gun_switch_firing_mode_sound"
+  _use:t="mgun_gun_aim_sound"
+  gun__length:r=0.4
+  gun__recoilAmount:r=0.054
+  gun__recoilDirAmount:r=0.8
+  gun__recoilDir:r=0.31
+  gun__visualRecoilMult:r=1.2
+  gun__adsSpeedMult:r=0.75
+  meleeSoundType:t="mgun"
+  gun__recoilControlMult:r=0.3
+  gun__recoilOffsMult:r=0.3
+  gun__rotationSpringMult:p3=1.0, 0.9, 0.9
+  gun__crawlRecoilMult:r=0.8
+  weapon__aimNodeOffset:r=0.3
+  gun_anim_var__fpsGunOffsetAlong:r=0.17
+  gun_anim_var__fpsGunOffsetAcross:r=-0.01
+  gun_anim_var__fpsGunOffsetUp:r=0.035
+
+  _group{
+    _tags:t="sound"
+    gun_sound__forceOneshot:b=yes
+  }
+
+  "gun_sound__shotPath:shared:object"{
+    _tags:t="sound"
+    path:t="/weapon/mgun/thompson"
+  }
+
+  "sound_irqs:shared:object"{
+    _tags:t="sound"
+
+    "reload1:object"{
+      path:t="/weapon/mgun/thompson/reload1/change_ammo"
+    }
+
+    "reload2:object"{
+      path:t="/weapon/mgun/thompson/reload2/change_ammo"
+    }
+
+    "reload3:object"{
+      path:t="/weapon/mgun/thompson/reload3/change_ammo"
+    }
+  }
+
+  "gun__mountPoints:shared:array"{
+
+    "point:object"{
+      type:t="rest"
+      recoil:r=-1.0
+      offset:p3=0.14, -0.155, 0.0
+    }
+  }
+}
+
+sten_mk3{
+  _use:t="main_weap_slots"
+  _use:t="ironsights_open_smg"
+  animchar__res:t="sten_mk3_char"
+  gun__blk:t="gamedata/weapons/sten_mk3.blk"
+  item__template:t="sten_mk3_gun_item"
+  item__proto:t="gamedata/weapons/sten_mk3.blk"
+  item__weapTemplate:t="sten_mk3_gun"
+  item__name:t="items/sten_mk3"
+  item__weapType:t="submachine_gun"
+  item__weight:r=4.0
+  gun__locName:t="Sten Mk III"
+  gun__statName:t="submachine_gun"
+  gun__sightsDistance:r=0.05
+  gun__shotFreq:r=8.33
+  gun_spread__maxDeltaAngle:r=0.95
+  gun_deviation__omegaRange:p2=30.0, 90.0
+  gun_deviation__omegaDevInc:p2=0.07, 0.5
+  gun_deviation__movementRange:p2=2.1, 4.0
+  gun_deviation__movementDevInc:p2=0.0, 15.0
+  gun_deviation__onShotDeviationChange:r=0.0
+  gun_deviation__shotTau:r=0.1
+  gun_deviation__extraDeviationTau:r=0.2
+  gun_deviation__maxDeviation:r=20.0
+  gun__reloadTime:r=2.6
+  gun__altReloadTime:r=2.2
+
+  "item__id:i"{
+    value:i=0
+    _hide:b=yes
+  }
+
+  "gun__ammoHolders:array"{
+    ammoHolders:t="sten_mk2_magazine"
+  }
+
+  "gun__shells:array"{
+    shells:t="gamedata/weapons/bullets/9x19_parabellum_pistol.blk"
+  }
+
+  "gun__firingModes:array"{
+
+    "mode:object"{
+      modeType:t="automatic"
+    }
+
+    "mode:object"{
+      modeType:t="burst"
+      burstSize:i=1
+    }
+  }
+
+  "gun__firingModeNames:array"{
+    mode:t="full_auto"
+    mode:t="semi_auto"
+  }
+}
+
+sten_mk3_gun{
+  _use:t="equipable_gun"
+  _use:t="mp_ww2_preset"
+  _use:t="sten_mk3"
+  _use:t="smg_muzzle_preset"
+  _use:t="hit_effect_group_handgun_small"
+  _use:t="mgun_gun_aim_sound"
+  gun__length:r=0.4
+  gun__recoilAmount:r=0.051
+  gun__recoilDirAmount:r=0.65
+  gun__recoilDir:r=0.4
+  gun__visualRecoilMult:r=0.7
+  meleeSoundType:t="mgun"
+  gun__recoilControlMult:r=0.3
+  gun__recoilOffsMult:r=0.3
+  gun__rotationSpringMult:p3=0.75, 0.9, 0.9
+  weapon__aimNodeOffset:r=0.1
+  gun_anim_var__fpsGunOffsetAlong:r=0.08
+  gun_anim_var__fpsGunOffsetAcross:r=0.025
+  gun_anim_var__fpsGunOffsetUp:r=0.045
+
+  _group{
+    _tags:t="sound"
+    gun_sound__forceOneshot:b=yes
+  }
+
+  "gun_sound__shotPath:shared:object"{
+    _tags:t="sound"
+    path:t="/weapon/mgun/sten_mk2"
+  }
+
+  "sound_irqs:shared:object"{
+    _tags:t="sound"
+
+    "reload1:object"{
+      path:t="/weapon/mgun/sten_mk2/reload1/change_ammo"
+    }
+
+    "reload2:object"{
+      path:t="/weapon/mgun/sten_mk2/reload2/change_ammo"
+    }
+
+    "reload3:object"{
+      path:t="/weapon/mgun/sten_mk2/reload3/change_ammo"
+    }
+  }
+
+  "gun__mountPoints:shared:array"{
+
+    "point:object"{
+      type:t="rest"
+      recoil:r=-1.0
+      offset:p3=0.35, -0.033, 0.0
+    }
+  }
+}
+
+owen_mk1_42{
+  _use:t="main_weap_slots"
+  _use:t="ironsights_open_smg"
+  animchar__res:t="owen_mk1_42_char"
+  gun__blk:t="gamedata/weapons/owen_mk1_42.blk"
+  item__template:t="owen_mk1_42_gun_item"
+  item__proto:t="gamedata/weapons/owen_mk1_42.blk"
+  item__weapTemplate:t="owen_mk1_42_gun"
+  item__name:t="items/owen_mk1_42"
+  item__iconScale:r=0.75
+  item__weapType:t="submachine_gun"
+  item__weight:r=4.2
+  gun__locName:t="Owen Gun MkI/42"
+  gun__statName:t="submachine_gun"
+  gun__sightsDistance:r=0.05
+  gun__shotFreq:r=11.67
+  gun_spread__maxDeltaAngle:r=0.85
+  gun_deviation__omegaRange:p2=30.0, 90.0
+  gun_deviation__omegaDevInc:p2=0.07, 0.5
+  gun_deviation__movementRange:p2=2.1, 4.0
+  gun_deviation__movementDevInc:p2=0.0, 15.0
+  gun_deviation__onShotDeviationChange:r=0.0
+  gun_deviation__shotTau:r=0.1
+  gun_deviation__extraDeviationTau:r=0.2
+  gun_deviation__maxDeviation:r=20.0
+  gun__reloadTime:r=2.7
+  gun__altReloadTime:r=2.2
+
+  "item__id:i"{
+    value:i=0
+    _hide:b=yes
+  }
+
+  "gun__ammoHolders:array"{
+    ammoHolders:t="owen_magazine"
+  }
+
+  "gun__shells:array"{
+    shells:t="gamedata/weapons/bullets/9x19_parabellum_smg.blk"
+  }
+
+  "gun__firingModes:array"{
+
+    "mode:object"{
+      modeType:t="automatic"
+    }
+
+    "mode:object"{
+      modeType:t="burst"
+      burstSize:i=1
+    }
+  }
+
+  "gun__firingModeNames:array"{
+    mode:t="full_auto"
+    mode:t="semi_auto"
+  }
+}
+
+owen_mk1_42_gun{
+  _use:t="equipable_gun"
+  _use:t="mp_ww2_preset"
+  _use:t="owen_mk1_42"
+  _use:t="smg_muzzle_break_preset"
+  _use:t="hit_effect_group_handgun_small"
+  _use:t="mgun_gun_aim_sound"
+  gun__length:r=0.4
+  gun__recoilAmount:r=0.048
+  gun__recoilDirAmount:r=0.64
+  gun__recoilDir:r=0.7
+  gun__visualRecoilMult:r=0.8
+  meleeSoundType:t="mgun"
+  gun__recoilControlMult:r=0.4
+  gun__recoilOffsMult:r=0.3
+  gun__rotationSpringMult:p3=1.0, 3.7, 3.7
+  gun__rotInertia:p3=0.1, 2.0, 2.0
+  weapon__aimNodeOffset:r=0.3
+  gun_anim_var__fpsGunOffsetAlong:r=-0.02
+  gun_anim_var__fpsGunOffsetAcross:r=0.055
+  gun_anim_var__fpsGunOffsetUp:r=0.025
+
+  _group{
+    _tags:t="sound"
+    gun_sound__forceOneshot:b=yes
+  }
+
+  "gun_sound__shotPath:shared:object"{
+    _tags:t="sound"
+    path:t="/weapon/mgun/sten_mk2"
+  }
+
+  "sound_irqs:shared:object"{
+    _tags:t="sound"
+
+    "reload1:object"{
+      path:t="/weapon/mgun/sten_mk2/reload1/change_ammo"
+    }
+
+    "reload2:object"{
+      path:t="/weapon/mgun/sten_mk2/reload2/change_ammo"
+    }
+
+    "reload3:object"{
+      path:t="/weapon/mgun/sten_mk2/reload3/change_ammo"
+    }
+  }
+
+  "gun__mountPoints:shared:array"{
+
+    "point:object"{
+      type:t="rest"
+      recoil:r=-1.0
+      offset:p3=0.625, 0.0084, 0.022
+    }
+
+    "point:object"{
+      type:t="rest"
+      recoil:r=-1.0
+      offset:p3=0.47, -0.075, 0.022
+    }
+  }
+}
+
+owen_mk1_42_camo{
+  _use:t="owen_mk1_42"
+  item__template:t="owen_mk1_42_camo_gun_item"
+  item__weapTemplate:t="owen_mk1_42_camo_gun"
+  item__name:t="items/owen_mk1_42_camo"
+
+  "animchar__objTexReplace:object"{
+    "owen_gun_mk_1_42_main_tex_d*":t="owen_gun_mk_1_42_camo_main_tex_d*"
+    "owen_gun_mk_1_42_main_tex_n*":t="owen_gun_mk_1_42_camo_main_tex_n*"
+    "owen_gun_mk_1_42_ammo_tex_d*":t="owen_gun_mk_1_42_camo_ammo_tex_d*"
+    "owen_gun_mk_1_42_ammo_tex_n*":t="owen_gun_mk_1_42_camo_ammo_tex_n*"
+  }
+}
+
+owen_mk1_42_camo_gun{
+  _use:t="owen_mk1_42_gun"
+  _use:t="owen_mk1_42_camo"
+}
+
+beretta_m1923{
+  _use:t="pistol_weap_slots"
+  _use:t="ironsights_open_pistol"
+  animchar__res:t="beretta_m1923_char"
+  gun__blk:t="gamedata/weapons/beretta_m1923.blk"
+  item__template:t="beretta_m1923_gun_item"
+  item__proto:t="gamedata/weapons/beretta_m1923.blk"
+  item__weapTemplate:t="beretta_m1923_gun"
+  item__name:t="items/beretta_m1923"
+  item__weapType:t="pistol"
+  item__weight:r=0.8
+  gun__locName:t="Beretta M1923"
+  gun__statName:t="pistol"
+  gun__shotFreq:r=5.0
+  gun__automaticReload:b=no
+  gun_spread__maxDeltaAngle:r=1.05
+  gun_deviation__omegaRange:p2=30.0, 90.0
+  gun_deviation__omegaDevInc:p2=0.1, 0.7
+  gun_deviation__movementRange:p2=2.1, 4.0
+  gun_deviation__movementDevInc:p2=0.0, 15.0
+  gun_deviation__onShotDeviationChange:r=0.0
+  gun_deviation__shotTau:r=0.1
+  gun_deviation__extraDeviationTau:r=0.15
+  gun_deviation__maxDeviation:r=15.0
+  gun__reloadTime:r=2.3
+  gun__altReloadTime:r=1.8
+
+  "item__id:i"{
+    value:i=0
+    _hide:b=yes
+  }
+
+  "gun__ammoHolders:array"{
+    ammoHolders:t="beretta_m1923_magazine"
+  }
+
+  "gun__shells:array"{
+    shells:t="gamedata/weapons/bullets/9x19_glisenti_pistol.blk"
+  }
+
+  "gun__firingModes:array"{
+
+    "mode:object"{
+      modeType:t="burst"
+      burstSize:i=1
+    }
+  }
+
+  "gun__firingModeNames:array"{
+    mode:t="semi_auto"
+  }
+}
+
+beretta_m1923_gun{
+  _use:t="equipable_gun"
+  _use:t="pistol_ww2_preset"
+  _use:t="beretta_m1923"
+  _use:t="pistol_muzzle_preset"
+  _use:t="hit_effect_group_handgun_tiny"
+  gun__recoilAmount:r=0.044
+  gun__recoilDirAmount:r=0.5
+  gun__recoilDir:r=0.0
+  gun__visualRecoilMult:r=1.0
+  meleeSoundType:t="pistol"
+  meleeSoundName:t="pistol/whoosh"
+  gun__saveAmmoInChamberOnReload:b=yes
+
+  "gun_sound__shotPath:shared:object"{
+    _tags:t="sound"
+    path:t="/weapon/pistol/beretta_m1923"
+  }
+
+  "sound_irqs:shared:object"{
+    _tags:t="sound"
+
+    "reload1:object"{
+      path:t="/weapon/pistol/walther_pp/reload1/change_ammo"
+    }
+
+    "reload2:object"{
+      path:t="/weapon/pistol/walther_pp/reload2/change_ammo"
+    }
+
+    "reload3:object"{
+      path:t="/weapon/pistol/beretta_m1923/reload3/change_ammo"
+    }
+  }
+}
+
+beretta_m1934{
+  _use:t="pistol_weap_slots"
+  _use:t="ironsights_open_pistol"
+  animchar__res:t="beretta_m1934_char"
+  gun__blk:t="gamedata/weapons/beretta_m1934.blk"
+  item__template:t="beretta_m1934_gun_item"
+  item__proto:t="gamedata/weapons/beretta_m1934.blk"
+  item__weapTemplate:t="beretta_m1934_gun"
+  item__name:t="items/beretta_m1934"
+  item__weapType:t="pistol"
+  item__weight:r=0.7
+  gun__locName:t="Beretta M1934"
+  gun__statName:t="pistol"
+  gun__shotFreq:r=6.0
+  gun__automaticReload:b=no
+  gun_spread__maxDeltaAngle:r=0.95
+  gun_deviation__omegaRange:p2=30.0, 90.0
+  gun_deviation__omegaDevInc:p2=0.1, 0.7
+  gun_deviation__movementRange:p2=2.1, 4.0
+  gun_deviation__movementDevInc:p2=0.0, 15.0
+  gun_deviation__onShotDeviationChange:r=0.0
+  gun_deviation__shotTau:r=0.1
+  gun_deviation__extraDeviationTau:r=0.15
+  gun_deviation__maxDeviation:r=15.0
+  gun__reloadTime:r=2.0
+  gun__altReloadTime:r=1.6
+
+  "item__id:i"{
+    value:i=0
+    _hide:b=yes
+  }
+
+  "gun__ammoHolders:array"{
+    ammoHolders:t="beretta_m1934_magazine"
+  }
+
+  "gun__shells:array"{
+    shells:t="gamedata/weapons/bullets/9x17_corto_pistol.blk"
+  }
+
+  "gun__firingModes:array"{
+
+    "mode:object"{
+      modeType:t="burst"
+      burstSize:i=1
+    }
+  }
+
+  "gun__firingModeNames:array"{
+    mode:t="semi_auto"
+  }
+}
+
+beretta_m1934_gun{
+  _use:t="equipable_gun"
+  _use:t="pistol_ww2_preset"
+  _use:t="beretta_m1934"
+  _use:t="pistol_muzzle_preset"
+  _use:t="hit_effect_group_handgun_tiny"
+  gun__recoilAmount:r=0.048
+  gun__recoilDirAmount:r=0.64
+  gun__recoilDir:r=0.0
+  gun__visualRecoilMult:r=1.0
+  meleeSoundType:t="pistol"
+  meleeSoundName:t="pistol/whoosh"
+  gun__saveAmmoInChamberOnReload:b=yes
+
+  "gun_sound__shotPath:shared:object"{
+    _tags:t="sound"
+    path:t="/weapon/pistol/beretta_m1923"
+  }
+
+  "sound_irqs:shared:object"{
+    _tags:t="sound"
+
+    "reload1:object"{
+      path:t="/weapon/pistol/walther_pp/reload1/change_ammo"
+    }
+
+    "reload2:object"{
+      path:t="/weapon/pistol/walther_pp/reload2/change_ammo"
+    }
+
+    "reload3:object"{
+      path:t="/weapon/pistol/beretta_m1923/reload3/change_ammo"
+    }
+  }
+}
+
+beretta_m1934_gold{
+  _use:t="beretta_m1934"
+  gun__blk:t="gamedata/weapons/beretta_m1934_gold.blk"
+  item__template:t="beretta_m1934_gold_gun_item"
+  item__proto:t="gamedata/weapons/beretta_m1934_gold.blk"
+  item__weapTemplate:t="beretta_m1934_gold_gun"
+  item__name:t="items/beretta_m1934_gold"
+
+  "animchar__objTexReplace:object"{
+    "beretta_m1934_main_tex_ao*":t="beretta_m1934_gold_main_tex_ao*"
+    "beretta_m1934_main_tex_d*":t="beretta_m1934_gold_main_tex_d*"
+    "beretta_m1934_main_tex_n* ":t="beretta_m1934_gold_main_tex_n*"
+    "beretta_m1934_ammo_tex_ao* ":t="beretta_m1934_gold_ammo_tex_ao*"
+    "beretta_m1934_ammo_tex_d* ":t="beretta_m1934_gold_ammo_tex_d*"
+    "beretta_m1934_ammo_tex_n* ":t="beretta_m1934_gold_ammo_tex_n*"
+  }
+}
+
+beretta_m1934_gold_gun{
+  _use:t="equipable_gun"
+  _use:t="pistol_ww2_preset"
+  _use:t="beretta_m1934_gold"
+  _use:t="pistol_muzzle_preset"
+  _use:t="hit_effect_group_handgun_tiny"
+  gun__recoilAmount:r=0.048
+  gun__recoilDirAmount:r=0.64
+  gun__recoilDir:r=0.0
+  gun__visualRecoilMult:r=1.0
+  meleeSoundType:t="pistol"
+  meleeSoundName:t="pistol/whoosh"
+  gun__saveAmmoInChamberOnReload:b=yes
+
+  "gun_sound__shotPath:shared:object"{
+    _tags:t="sound"
+    path:t="/weapon/pistol/beretta_m1923"
+  }
+
+  "sound_irqs:shared:object"{
+    _tags:t="sound"
+
+    "reload1:object"{
+      path:t="/weapon/pistol/walther_pp/reload1/change_ammo"
+    }
+
+    "reload2:object"{
+      path:t="/weapon/pistol/walther_pp/reload2/change_ammo"
+    }
+
+    "reload3:object"{
+      path:t="/weapon/pistol/beretta_m1923/reload3/change_ammo"
+    }
+  }
+}
+
+webley_mk6{
+  _use:t="pistol_weap_slots"
+  _use:t="reload_single_bullet"
+  _use:t="ironsights_open_pistol"
+  reload__singleReloadAmmoCount:i=2
+  single_reload__prepareTime:r=1.1
+  single_reload__loopTime:r=1.1
+  single_reload__postTime:r=0.7
+  gun_shell_ejection__expireTime:r=0.0
+  animchar__res:t="webley_mk6_char"
+  gun__blk:t="gamedata/weapons/webley_mk6.blk"
+  item__template:t="webley_mk6_gun_item"
+  item__proto:t="gamedata/weapons/webley_mk6.blk"
+  item__weapTemplate:t="webley_mk6_gun"
+  item__name:t="items/webley_mk6"
+  item__weapType:t="pistol"
+  item__weight:r=1.2
+  gun__locName:t="Webley revolver Mk VI"
+  gun__statName:t="pistol"
+  gun__shotFreq:r=2.5
+  gun__boltFreq:r=4.0
+  gun__automaticReload:b=no
+  gun_spread__maxDeltaAngle:r=0.7
+  gun_deviation__omegaRange:p2=30.0, 90.0
+  gun_deviation__omegaDevInc:p2=0.1, 0.7
+  gun_deviation__movementRange:p2=2.1, 4.0
+  gun_deviation__movementDevInc:p2=0.0, 10.0
+  gun_deviation__onShotDeviationChange:r=0.0
+  gun_deviation__shotTau:r=0.1
+  gun_deviation__extraDeviationTau:r=0.15
+  gun_deviation__maxDeviation:r=15.0
+  gun__reloadTime:r=5.1
+
+  "item__id:i"{
+    value:i=0
+    _hide:b=yes
+  }
+
+  "gun__ammoHolders:array"{
+    ammoHolders:t="webley_mk6_magazine"
+  }
+
+  "gun__shells:array"{
+    shells:t="gamedata/weapons/bullets/455_webley_mk6_pistol.blk"
+  }
+
+  "gun__firingModes:array"{
+
+    "mode:object"{
+      modeType:t="burst"
+      burstSize:i=1
+    }
+  }
+
+  "gun__firingModeNames:array"{
+    mode:t="semi_auto"
+  }
+}
+
+webley_mk6_gun{
+  _use:t="equipable_gun"
+  _use:t="pistol_ww2_preset"
+  _use:t="webley_mk6"
+  _use:t="pistol_big_muzzle_preset"
+  _use:t="hit_effect_group_handgun_small"
+  gun__recoilAmount:r=0.06
+  gun__recoilDirAmount:r=0.63
+  gun__rotationSpringMult:p3=1.0, 1.0, 0.1
+  gun__visualBoltRecoilMult:r=0.0
+  gun__recoilDir:r=0.0
+  gun__visualRecoilMult:r=1.0
+  meleeSoundType:t="pistol"
+
+  "gun_sound__shotPath:shared:object"{
+    _tags:t="sound"
+    path:t="/weapon/pistol/colt_new_service"
+  }
+
+  "sound_irqs:shared:object"{
+    _tags:t="sound"
+
+    "reload1:object"{
+      path:t="/weapon/pistol/colt_new_service/reload1/change_ammo"
+    }
+
+    "reload2:object"{
+      path:t="/weapon/pistol/colt_new_service/reload2/change_ammo"
+    }
+
+    "reload3:object"{
+      path:t="/weapon/pistol/colt_new_service/reload3/change_ammo"
+    }
+  }
+}
+
+webley_mk6_nickel{
+  _use:t="webley_mk6"
+  gun__blk:t="gamedata/weapons/webley_mk6_nickel.blk"
+  item__template:t="webley_mk6_nickel_gun_item"
+  item__proto:t="gamedata/weapons/webley_mk6_nickel.blk"
+  item__weapTemplate:t="webley_mk6_nickel_gun"
+  item__name:t="items/webley_mk6_nickel"
+
+  "animchar__objTexReplace:object"{
+    "webley_mk6_main_tex_ao*":t="webley_mk6_nickel_main_tex_ao*"
+    "webley_mk6_main_tex_d*":t="webley_mk6_nickel_main_tex_d*"
+    "webley_mk6_main_tex_n* ":t="webley_mk6_nickel_main_tex_n*"
+  }
+}
+
+webley_mk6_nickel_gun{
+  _use:t="equipable_gun"
+  _use:t="pistol_ww2_preset"
+  _use:t="webley_mk6_nickel"
+  _use:t="pistol_big_muzzle_preset"
+  _use:t="hit_effect_group_handgun_small"
+  gun__recoilAmount:r=0.06
+  gun__recoilDirAmount:r=0.63
+  gun__rotationSpringMult:p3=1.0, 1.0, 0.1
+  gun__visualBoltRecoilMult:r=0.0
+  gun__recoilDir:r=0.0
+  gun__visualRecoilMult:r=1.0
+  meleeSoundType:t="pistol"
+
+  "gun_sound__shotPath:shared:object"{
+    _tags:t="sound"
+    path:t="/weapon/pistol/colt_new_service"
+  }
+
+  "sound_irqs:shared:object"{
+    _tags:t="sound"
+
+    "reload1:object"{
+      path:t="/weapon/pistol/colt_new_service/reload1/change_ammo"
+    }
+
+    "reload2:object"{
+      path:t="/weapon/pistol/colt_new_service/reload2/change_ammo"
+    }
+
+    "reload3:object"{
+      path:t="/weapon/pistol/colt_new_service/reload3/change_ammo"
+    }
+  }
+}
+
+enfield_no2_mk1{
+  _use:t="pistol_weap_slots"
+  _use:t="reload_single_bullet"
+  _use:t="ironsights_open_pistol"
+  reload__singleReloadAmmoCount:i=2
+  single_reload__prepareTime:r=1.1
+  single_reload__loopTime:r=1.35
+  single_reload__postTime:r=0.7
+  gun_shell_ejection__expireTime:r=0.0
+  animchar__res:t="enfield_no2_char"
+  gun__blk:t="gamedata/weapons/enfield_no2_mk1.blk"
+  item__template:t="enfield_no2_mk1_gun_item"
+  item__proto:t="gamedata/weapons/enfield_no2_mk1.blk"
+  item__weapTemplate:t="enfield_no2_mk1_gun"
+  item__name:t="items/enfield_no2_mk1"
+  item__weapType:t="pistol"
+  item__weight:r=0.8
+  gun__locName:t="Enfield No.2 revolver Mk I"
+  gun__statName:t="pistol"
+  gun__shotFreq:r=2.9
+  gun__boltFreq:r=4.5
+  gun__automaticReload:b=no
+  gun_spread__maxDeltaAngle:r=0.65
+  gun_deviation__omegaRange:p2=30.0, 90.0
+  gun_deviation__omegaDevInc:p2=0.1, 0.7
+  gun_deviation__movementRange:p2=2.1, 4.0
+  gun_deviation__movementDevInc:p2=0.0, 10.0
+  gun_deviation__onShotDeviationChange:r=0.0
+  gun_deviation__shotTau:r=0.1
+  gun_deviation__extraDeviationTau:r=0.15
+  gun_deviation__maxDeviation:r=15.0
+  gun__reloadTime:r=5.85
+
+  "item__id:i"{
+    value:i=0
+    _hide:b=yes
+  }
+
+  "gun__ammoHolders:array"{
+    ammoHolders:t="enfield_no2_mk1_magazine"
+  }
+
+  "gun__shells:array"{
+    shells:t="gamedata/weapons/bullets/9x20_380_sw_short_pistol.blk"
+  }
+
+  "gun__firingModes:array"{
+
+    "mode:object"{
+      modeType:t="burst"
+      burstSize:i=1
+    }
+  }
+
+  "gun__firingModeNames:array"{
+    mode:t="semi_auto"
+  }
+}
+
+enfield_no2_mk1_gun{
+  _use:t="equipable_gun"
+  _use:t="pistol_ww2_preset"
+  _use:t="enfield_no2_mk1"
+  _use:t="pistol_big_muzzle_preset"
+  _use:t="hit_effect_group_handgun_tiny"
+  gun__recoilAmount:r=0.052
+  gun__recoilDirAmount:r=0.68
+  gun__rotationSpringMult:p3=1.0, 1.0, 0.1
+  gun__visualBoltRecoilMult:r=0.0
+  gun__recoilDir:r=0.0
+  gun__visualRecoilMult:r=1.0
+  meleeSoundType:t="pistol"
+
+  "gun_sound__shotPath:shared:object"{
+    _tags:t="sound"
+    path:t="/weapon/pistol/colt_new_service"
+  }
+
+  "sound_irqs:shared:object"{
+    _tags:t="sound"
+
+    "reload1:object"{
+      path:t="/weapon/pistol/colt_new_service/reload1/change_ammo"
+    }
+
+    "reload2:object"{
+      path:t="/weapon/pistol/colt_new_service/reload2/change_ammo"
+    }
+
+    "reload3:object"{
+      path:t="/weapon/pistol/colt_new_service/reload3/change_ammo"
+    }
+  }
+}
+
+bren_mk1{
+  _use:t="main_weap_slots"
+  _use:t="ironsights_open_machinegun"
+  animchar__res:t="bren_lmg_mk_1_char"
+  gun__blk:t="gamedata/weapons/bren_lmg_mk_1.blk"
+  item__template:t="bren_mk1_gun_item"
+  item__proto:t="gamedata/weapons/bren_lmg_mk_1.blk"
+  item__weapTemplate:t="bren_mk1_gun"
+  item__name:t="items/bren_mk1"
+  item__weapType:t="machine_gun"
+  item__weight:r=8.33
+  gun__inertialMass:r=7.0
+  gun__locName:t="bren_mk1"
+  gun__statName:t="machine_gun"
+  gun__sightsDistance:r=0.3
+  gun__shotFreq:r=8.03
+  gun_spread__maxDeltaAngle:r=0.35
+  gun_deviation__omegaRange:p2=30.0, 90.0
+  gun_deviation__omegaDevInc:p2=0.07, 0.5
+  gun_deviation__movementRange:p2=0.1, 4.0
+  gun_deviation__movementDevInc:p2=13.0, 30.0
+  gun_deviation__onShotDeviationChange:r=0.0
+  gun_deviation__shotTau:r=0.1
+  gun_deviation__extraDeviationTau:r=0.2
+  gun_deviation__maxDeviation:r=20.0
+  gun__reloadTime:r=2.5
+  gun__altReloadTime:r=2.5
+
+  "item__id:i"{
+    value:i=0
+    _hide:b=yes
+  }
+
+  "gun__ammoHolders:array"{
+    ammoHolders:t="bren_mk2_magazine"
+  }
+
+  "gun__shells:array"{
+    shells:t="gamedata/weapons/bullets/303_british_mk7_tracer.blk"
+  }
+
+  "gun__firingModes:array"{
+
+    "mode:object"{
+      modeType:t="automatic"
+    }
+
+    "mode:object"{
+      modeType:t="burst"
+      burstSize:i=1
+    }
+  }
+
+  "gun__firingModeNames:array"{
+    mode:t="full_auto"
+    mode:t="semi_auto"
+  }
+}
+
+bren_mk1_gun{
+  _use:t="equipable_gun"
+  _use:t="mg_ww2_preset"
+  _use:t="bren_mk1"
+  _use:t="mg_rapid_muzzle_preset"
+  _use:t="hit_effect_group_handgun_medium"
+  _use:t="gun_switch_firing_mode_sound"
+  _use:t="mgun_gun_aim_sound"
+  gun_shell_ejection__timeMult:r=0.35
+  gun__length:r=0.4
+  gun__recoilAmount:r=0.055
+  gun__recoilDirAmount:r=0.63
+  gun__recoilDir:r=0.0
+  gun__visualRecoilMult:r=0.4
+  gun__recoilControlMult:r=0.9
+  gun__recoilOffsMult:r=0.1
+  gun_attach__slot:t="weapon"
+  weap__sprintLerpFactor:r=0.5
+  meleeSoundType:t="rifle"
+  gun__rotationSpringMult:p3=1.0, 3.7, 3.7
+  gun__rotInertia:p3=0.1, 2.0, 2.0
+  weapon__aimNodeOffset:r=0.4
+  gun_anim_var__fpsGunOffsetAlong:r=0.17
+  gun_anim_var__fpsGunOffsetAcross:r=0.035
+  gun_anim_var__fpsGunOffsetUp:r=0.025
+
+  _group{
+    _tags:t="sound"
+    gun_sound__forceOneshot:b=yes
+  }
+
+  "gun_sound__shotPath:shared:object"{
+    _tags:t="sound"
+    path:t="/weapon/mgun/zb_26"
+  }
+
+  "sound_irqs:shared:object"{
+    _tags:t="sound"
+
+    "reload1:object"{
+      path:t="/weapon/mgun/zb_26/reload1/change_ammo"
+    }
+
+    "reload2:object"{
+      path:t="/weapon/mgun/zb_26/reload2/change_ammo"
+    }
+
+    "reload3:object"{
+      path:t="/weapon/mgun/zb_26/reload3/change_ammo"
+    }
+
+    "reload4:object"{
+      path:t="/weapon/mgun/zb_26/reload4/change_ammo"
+    }
+
+    "reload5:object"{
+      path:t="/weapon/mgun/zb_26/reload5/change_ammo"
+    }
+
+    "reload6:object"{
+      path:t="/weapon/mgun/zb_26/reload6/change_ammo"
+    }
+
+    "reload7:object"{
+      path:t="/weapon/mgun/zb_26/reload7/change_ammo"
+    }
+
+    "boltAction:object"{
+      path:t="/weapon/rifle/mauser98k/bolt_action"
+    }
+  }
+
+  "gun__mountPoints:shared:array"{
+
+    "point:object"{
+      type:t="bipod"
+      recoil:r=-1.0
+      offset:p3=0.44, -0.035, 0.0
+      forceOffset:b=yes
+      angle:r=31.0
+      length:r=0.3
+    }
+
+    "point:object"{
+      type:t="rest"
+      recoil:r=-1.0
+      offset:p3=0.43, -0.04, 0.0
+    }
+  }
+}
+
+besal_lmg{
+  _use:t="main_weap_slots"
+  _use:t="ironsights_open_machinegun"
+  animchar__res:t="besal_lmg_char"
+  gun__blk:t="gamedata/weapons/besal_lmg.blk"
+  item__template:t="besal_lmg_gun_item"
+  item__proto:t="gamedata/weapons/besal_lmg.blk"
+  item__weapTemplate:t="besal_lmg_gun"
+  item__name:t="items/besal_lmg"
+  item__weapType:t="machine_gun"
+  item__weight:r=9.8
+  gun__inertialMass:r=7.0
+  gun__locName:t="besal_lmg"
+  gun__statName:t="machine_gun"
+  gun__sightsDistance:r=0.3
+  gun__shotFreq:r=10.0
+  gun_spread__maxDeltaAngle:r=0.35
+  gun_deviation__omegaRange:p2=30.0, 90.0
+  gun_deviation__omegaDevInc:p2=0.07, 0.5
+  gun_deviation__movementRange:p2=0.1, 4.0
+  gun_deviation__movementDevInc:p2=13.0, 30.0
+  gun_deviation__onShotDeviationChange:r=0.0
+  gun_deviation__shotTau:r=0.1
+  gun_deviation__extraDeviationTau:r=0.2
+  gun_deviation__maxDeviation:r=20.0
+  gun__reloadTime:r=4.5
+  gun__altReloadTime:r=3.4
+
+  "item__id:i"{
+    value:i=0
+    _hide:b=yes
+  }
+
+  "gun__ammoHolders:array"{
+    ammoHolders:t="bren_mk2_magazine"
+  }
+
+  "gun__shells:array"{
+    shells:t="gamedata/weapons/bullets/303_british_mk7_tracer.blk"
+  }
+
+  "gun__firingModes:array"{
+
+    "mode:object"{
+      modeType:t="automatic"
+    }
+  }
+
+  "gun__firingModeNames:array"{
+    mode:t="full_auto"
+  }
+}
+
+besal_lmg_gun{
+  _use:t="equipable_gun"
+  _use:t="mg_ww2_preset"
+  _use:t="besal_lmg"
+  _use:t="mg_rapid_muzzle_preset"
+  _use:t="hit_effect_group_handgun_medium"
+  _use:t="gun_switch_firing_mode_sound"
+  _use:t="mgun_gun_aim_sound"
+  gun_shell_ejection__timeMult:r=0.35
+  gun__length:r=0.4
+  gun__recoilAmount:r=0.057
+  gun__recoilDirAmount:r=0.68
+  gun__recoilDir:r=0.0
+  gun__visualRecoilMult:r=0.4
+  gun__recoilControlMult:r=0.9
+  gun__recoilOffsMult:r=0.1
+  gun_attach__slot:t="weapon"
+  weap__sprintLerpFactor:r=0.5
+  meleeSoundType:t="rifle"
+  gun_anim_var__fpsGunOffsetAlong:r=-0.05
+  gun_anim_var__fpsGunOffsetAcross:r=0.035
+  gun_anim_var__fpsGunOffsetUp:r=0.025
+
+  _group{
+    _tags:t="sound"
+    gun_sound__forceOneshot:b=yes
+  }
+
+  "gun_sound__shotPath:shared:object"{
+    _tags:t="sound"
+    path:t="/weapon/mgun/zb_26"
+  }
+
+  "sound_irqs:shared:object"{
+    _tags:t="sound"
+
+    "reload1:object"{
+      path:t="/weapon/mgun/besal_lmg/reload1/change_ammo"
+    }
+
+    "reload3:object"{
+      path:t="/weapon/mgun/besal_lmg/reload3/change_ammo"
+    }
+
+    "reload6:object"{
+      path:t="/weapon/mgun/besal_lmg/reload6/change_ammo"
+    }
+
+    "reload7:object"{
+      path:t="/weapon/mgun/besal_lmg/reload7/change_ammo"
+    }
+
+    "boltAction:object"{
+      path:t="/weapon/rifle/mauser98k/bolt_action"
+    }
+  }
+
+  "gun__mountPoints:shared:array"{
+
+    "point:object"{
+      type:t="bipod"
+      recoil:r=-1.0
+      offset:p3=0.74, -0.01, -0.01
+      forceOffset:b=yes
+      angle:r=35.5
+      length:r=0.24
+    }
+
+    "point:object"{
+      type:t="rest"
+      recoil:r=-1.0
+      offset:p3=0.67, -0.035, -0.005
+    }
+  }
+}
+
+charlton_automatic_rifle{
+  _use:t="main_weap_slots"
+  _use:t="ironsights_open_machinegun"
+  animchar__res:t="charlton_automatic_rifle_char"
+  gun__blk:t="gamedata/weapons/charlton_automatic_rifle.blk"
+  item__template:t="charlton_automatic_rifle_gun_item"
+  item__proto:t="gamedata/weapons/charlton_automatic_rifle.blk"
+  item__weapTemplate:t="charlton_automatic_rifle_gun"
+  item__name:t="items/charlton_automatic_rifle"
+  item__weapType:t="machine_gun"
+  item__weight:r=7.5
+  gun__inertialMass:r=7.0
+  gun__locName:t="charlton_automatic_rifle"
+  gun__statName:t="machine_gun"
+  gun__sightsDistance:r=0.3
+  gun__shotFreq:r=11.67
+  gun_spread__maxDeltaAngle:r=0.35
+  gun_deviation__omegaRange:p2=30.0, 90.0
+  gun_deviation__omegaDevInc:p2=0.07, 0.5
+  gun_deviation__movementRange:p2=0.1, 4.0
+  gun_deviation__movementDevInc:p2=13.0, 30.0
+  gun_deviation__onShotDeviationChange:r=0.0
+  gun_deviation__shotTau:r=0.1
+  gun_deviation__extraDeviationTau:r=0.2
+  gun_deviation__maxDeviation:r=20.0
+  gun__reloadTime:r=4.2
+  gun__altReloadTime:r=3.2
+
+  "item__id:i"{
+    value:i=0
+    _hide:b=yes
+  }
+
+  "gun__ammoHolders:array"{
+    ammoHolders:t="charlton_automatic_rifle_magazine"
+  }
+
+  "gun__shells:array"{
+    shells:t="gamedata/weapons/bullets/303_british_mk7_tracer.blk"
+  }
+
+  "gun__firingModes:array"{
+
+    "mode:object"{
+      modeType:t="automatic"
+    }
+
+    "mode:object"{
+      modeType:t="burst"
+      burstSize:i=1
+    }
+  }
+
+  "gun__firingModeNames:array"{
+    mode:t="full_auto"
+    mode:t="semi_auto"
+  }
+}
+
+charlton_automatic_rifle_gun{
+  _use:t="equipable_gun"
+  _use:t="mg_ww2_preset"
+  _use:t="charlton_automatic_rifle"
+  _use:t="mg_rapid_muzzle_preset"
+  _use:t="hit_effect_group_handgun_medium"
+  _use:t="gun_switch_firing_mode_sound"
+  _use:t="mgun_gun_aim_sound"
+  gun_shell_ejection__timeMult:r=0.35
+  gun__length:r=0.4
+  gun__recoilAmount:r=0.061
+  gun__recoilDirAmount:r=0.67
+  gun__recoilDir:r=0.0
+  gun__visualRecoilMult:r=0.4
+  gun__recoilControlMult:r=0.9
+  gun__recoilOffsMult:r=0.1
+  gun_attach__slot:t="weapon"
+  weap__sprintLerpFactor:r=0.7
+  gun__adsSpeedMult:r=0.65
+  meleeSoundType:t="rifle"
+  gun_anim_var__fpsGunOffsetAlong:r=-0.1
+  gun_anim_var__fpsGunOffsetAcross:r=0.055
+  gun_anim_var__fpsGunOffsetUp:r=0.025
+  gun__saveAmmoInChamberOnReload:b=yes
+
+  _group{
+    _tags:t="sound"
+    gun_sound__forceOneshot:b=yes
+  }
+
+  "gun_sound__shotPath:shared:object"{
+    _tags:t="sound"
+    path:t="/weapon/mgun/charlton"
+  }
+
+  "sound_irqs:shared:object"{
+    _tags:t="sound"
+
+    "foley_start:object"{
+      path:t="/weapon/mgun/charlton/reload_foley_start"
+    }
+
+    "mag_out:object"{
+      path:t="/weapon/mgun/charlton/reload_mag_out"
+    }
+
+    "mag_in:object"{
+      path:t="/weapon/mgun/charlton/reload_mag_in"
+    }
+
+    "shutter_in:object"{
+      path:t="/weapon/mgun/charlton/reload_shutter_in"
+    }
+
+    "foley_end:object"{
+      path:t="/weapon/mgun/charlton/reload_foley_end"
+    }
+  }
+
+  "gun__mountPoints:shared:array"{
+
+    "point:object"{
+      type:t="bipod"
+      recoil:r=-1.0
+      offset:p3=0.68, 0.08, 0.0345
+      forceOffset:b=yes
+      angle:r=15.0
+      length:r=0.3
+    }
+
+    "point:object"{
+      type:t="rest"
+      recoil:r=-1.0
+      offset:p3=0.68, 0.0159, 0.0345
+    }
+  }
+}
+
+solothurn_s_18_100{
+  _use:t="main_weap_slots"
+  _use:t="ironsights_open_at_rifle"
+  animchar__res:t="solothurn_s18_100_char"
+  gun__blk:t="gamedata/weapons/solothurn_s_18_100.blk"
+  item__template:t="solothurn_s_18_100_gun_item"
+  item__proto:t="gamedata/weapons/solothurn_s_18_100.blk"
+  item__weapTemplate:t="solothurn_s_18_100_gun"
+  item__name:t="items/solothurn_s_18_100"
+  item__weapType:t="launcher"
+  item__weight:r=20.3
+  gun__inertialMass:r=20.3
+  gun__locName:t="Solothurn S18-100"
+  gun__statName:t="launcher"
+  gun__shotFreq:r=1.5
+  gun__boltFreq:r=3.0
+  gun__automaticReload:b=no
+  gun_spread__maxDeltaAngle:r=0.05
+  gun_deviation__omegaRange:p2=30.0, 90.0
+  gun_deviation__omegaDevInc:p2=0.1, 0.6
+  gun_deviation__movementRange:p2=2.1, 4.0
+  gun_deviation__movementDevInc:p2=0.0, 35.0
+  gun_deviation__onShotDeviationChange:r=0.0
+  gun_deviation__shotTau:r=0.15
+  gun_deviation__extraDeviationTau:r=0.3
+  gun_deviation__maxDeviation:r=30.0
+  gun__reloadTime:r=3.8
+  gun__altReloadTime:r=5.3
+
+  "item__id:i"{
+    value:i=0
+    _hide:b=yes
+  }
+
+  "gun__ammoHolders:array"{
+    ammoHolders:t="solothurn_s_18_100_magazine"
+  }
+
+  "gun__shells:array"{
+    shells:t="gamedata/weapons/bullets/20x105_b_solosthurn.blk"
+  }
+
+  "gun__firingModes:array"{
+
+    "mode:object"{
+      modeType:t="burst"
+      burstSize:i=1
+    }
+  }
+
+  "gun__firingModeNames:array"{
+    mode:t="semi_auto"
+  }
+}
+
+solothurn_s_18_100_gun{
+  _use:t="equipable_gun"
+  _use:t="ptr_ww2_preset"
+  _use:t="solothurn_s_18_100"
+  _use:t="high_caliber_muzzle_brake_2_preset"
+  _use:t="hit_effect_group_27_60mm"
+  _use:t="gun_switch_firing_mode_sound"
+  _use:t="rifle_gun_aim_sound"
+  _use:t="visual_magazine_fullness"
+  gun_shell_ejection__timeMult:r=0.55
+  gun__length:r=0.4
+  gun__recoilAmount:r=0.4
+  gun__recoilDirAmount:r=0.8
+  gun__recoilDir:r=0.0
+  gun__visualRecoilMult:r=1.0
+  gun_attach__slot:t="weapon"
+  weap__sprintLerpFactor:r=0.0
+  meleeSoundType:t="rifle"
+  gun_anim_var__tpsGunOffsetAlong:r=0.1
+  gun_anim_var__tpsGunOffsetAcross:r=0.06
+  gun_anim_var__tpsGunOffsetUp:r=-0.1
+
+  "gun__bipodMandatory:tag"{
+  }
+
+  "anim_irq__eventNames:object"{
+
+    "newMagazineShown:object"{
+      irqName:t="ammo_refresh"
+      irqId:i=-1
+    }
+  }
+
+  anim_irq_to_event_converter{
+  }
+
+  "xrayActivator:tag"{
+  }
+
+  "gun_sound__shotPath:shared:object"{
+    _tags:t="sound"
+    path:t="/weapon/antivehicle/solothurn"
+  }
+
+  "sound_irqs:shared:object"{
+    _tags:t="sound"
+
+    "reload1:object"{
+      path:t="/weapon/antivehicle/ptrs41/reload1/change_ammo"
+    }
+
+    "reload2:object"{
+      path:t="/weapon/antivehicle/ptrs41/reload2/change_ammo"
+    }
+
+    "reload3:object"{
+      path:t="/weapon/antivehicle/ptrs41/reload3/change_ammo"
+    }
+
+    "boltAction:object"{
+      path:t="/weapon/rifle/mosin/bolt_action"
+    }
+  }
+
+  "gun__mountPoints:shared:array"{
+
+    "point:object"{
+      type:t="bipod"
+      recoil:r=0.4
+      offset:p3=0.6, -0.02, 0.0
+      forceOffset:b=yes
+      angle:r=35.0
+      length:r=0.25
+    }
+
+    "point:object"{
+      type:t="rest"
+      recoil:r=0.4
+      offset:p3=0.9, 0.01, 0.0
+    }
+  }
+}
+
+atr_boys{
+  _use:t="main_weap_slots"
+  _use:t="ironsights_open_rifle"
+  animchar__res:t="atr_boys_char"
+  gun__blk:t="gamedata/weapons/atr_boys.blk"
+  item__template:t="atr_boys_gun_item"
+  item__proto:t="gamedata/weapons/atr_boys.blk"
+  item__weapTemplate:t="atr_boys_gun"
+  item__name:t="items/atr_boys"
+  item__weapType:t="rifle"
+  item__weight:r=16.3
+  gun__locName:t="atr_boys"
+  gun__statName:t="rifle"
+  gun__shotFreq:r=0.55
+  gun__automaticReload:b=no
+  gun_spread__maxDeltaAngle:r=0.05
+  gun_deviation__omegaRange:p2=10.0, 30.0
+  gun_deviation__omegaDevInc:p2=0.1, 0.5
+  gun_deviation__movementRange:p2=2.1, 4.0
+  gun_deviation__movementDevInc:p2=5.0, 10.0
+  gun_deviation__onShotDeviationChange:r=0.0
+  gun_deviation__shotTau:r=0.1
+  gun_deviation__extraDeviationTau:r=0.4
+  gun_deviation__maxDeviation:r=15.0
+  gun__reloadTime:r=4.4
+  gun__altReloadTime:r=3.8
+
+  "item__id:i"{
+    value:i=0
+    _hide:b=yes
+  }
+
+  "gun_shell_ejection__onShootRelease:tag"{
+  }
+
+  "gun__ammoHolders:array"{
+    ammoHolders:t="atr_boys_magazine"
+  }
+
+  "gun__shells:array"{
+    shells:t="gamedata/weapons/bullets/13.9x99_boys.blk"
+  }
+
+  "gun__firingModes:array"{
+
+    "mode:object"{
+      modeType:t="manual"
+    }
+  }
+
+  "gun__firingModeNames:array"{
+    mode:t="bolt_action"
+  }
+}
+
+atr_boys_gun{
+  _use:t="equipable_gun"
+  _use:t="ptr_ww2_preset"
+  _use:t="atr_boys"
+  _use:t="high_caliber_muzzle_brake_3_preset"
+  _use:t="hit_effect_group_handgun_big"
+  _use:t="rifle_gun_aim_sound"
+  gun_shell_ejection__timeMult:r=0.35
+  gun__length:r=0.4
+  gun__recoilAmount:r=0.35
+  gun__recoilDirAmount:r=0.8
+  gun__recoilDir:r=0.0
+  gun__visualRecoilMult:r=0.6
+  gun__recoilControlMult:r=0.4
+  gun__recoilOffsMult:r=1.0
+  gun_attach__slot:t="weapon"
+  gun__adsSpeedMult:r=0.45
+  gun__bipodOffset:p3=0.325, 0.07, 0.1
+  meleeSoundType:t="rifle"
+  weap__sprintLerpFactor:r=0.0
+  gun__saveAmmoInChamberOnReload:b=yes
+  slot_attach__posOffset:p3=0.0, 0.0, 0.0
+  slot_attach__rotTm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, 0.0, 0.0]]
+  gun_attach__holsterPosOffset:p3=0.13, 0.0, -0.15
+  gun_attach__holsterAnimLerpFactor:r=12.0
+
+  "xrayActivator:tag"{
+  }
+
+  "gun_sound__shotPath:shared:object"{
+    _tags:t="sound"
+    path:t="/weapon/antivehicle/ptrs41"
+  }
+
+  "sound_irqs:shared:object"{
+    _tags:t="sound"
+
+    "reload_mag_in:object"{
+      path:t="/weapon/antivehicle/atr_boys/reload_mag_in"
+    }
+
+    "reload_mag_out:object"{
+      path:t="/weapon/antivehicle/atr_boys/reload_mag_out"
+    }
+
+    "reload_shutter_in:object"{
+      path:t="/weapon/antivehicle/atr_boys/reload_shutter_in"
+    }
+
+    "reload_shutter_out:object"{
+      path:t="/weapon/antivehicle/atr_boys/reload_shutter_out"
+    }
+
+    "boltAction:object"{
+      path:t="/weapon/antivehicle/atr_boys/bolt_action"
+    }
+  }
+
+  "gun__mountPoints:shared:array"{
+
+    "point:object"{
+      type:t="bipod"
+      recoil:r=-1.0
+      offset:p3=0.495, 0.045, 0.0
+      forceOffset:b=yes
+      angle:r=28.0
+      length:r=0.27
+    }
+
+    "point:object"{
+      type:t="rest"
+      recoil:r=-1.0
+      offset:p3=0.515, -0.035, 0.0
+    }
+  }
+}
+
+vickers_berthier{
+  _use:t="main_weap_slots"
+  _use:t="ironsights_open_machinegun"
+  animchar__res:t="mg_vickers_berthier_char"
+  gun__blk:t="gamedata/weapons/vickers_berthier.blk"
+  item__template:t="vickers_berthier_gun_item"
+  item__proto:t="gamedata/weapons/vickers_berthier.blk"
+  item__weapTemplate:t="vickers_berthier_gun"
+  item__name:t="items/vickers_berthier"
+  item__weapType:t="machine_gun"
+  item__weight:r=10.4
+  gun__inertialMass:r=5.0
+  gun__locName:t="vickers_berthier"
+  gun__statName:t="machine_gun"
+  gun__sightsDistance:r=0.3
+  gun__shotFreq:r=7.33
+  gun_spread__maxDeltaAngle:r=0.39
+  gun_deviation__omegaRange:p2=30.0, 90.0
+  gun_deviation__omegaDevInc:p2=0.07, 0.5
+  gun_deviation__movementRange:p2=2.1, 4.0
+  gun_deviation__movementDevInc:p2=0.0, 30.0
+  gun_deviation__onShotDeviationChange:r=0.0
+  gun_deviation__shotTau:r=0.1
+  gun_deviation__extraDeviationTau:r=0.2
+  gun_deviation__maxDeviation:r=20.0
+  gun__reloadTime:r=2.8
+  gun__altReloadTime:r=2.8
+
+  "item__id:i"{
+    value:i=0
+    _hide:b=yes
+  }
+
+  "gun__ammoHolders:array"{
+    ammoHolders:t="vickers_berthier_magazine"
+  }
+
+  "gun__shells:array"{
+    shells:t="gamedata/weapons/bullets/303_british_mk7_tracer.blk"
+  }
+
+  "gun__firingModes:array"{
+
+    "mode:object"{
+      modeType:t="automatic"
+    }
+
+    "mode:object"{
+      modeType:t="burst"
+      burstSize:i=1
+    }
+  }
+
+  "gun__firingModeNames:array"{
+    mode:t="full_auto"
+    mode:t="semi_auto"
+  }
+}
+
+vickers_berthier_gun{
+  _use:t="equipable_gun"
+  _use:t="mg_ww2_preset"
+  _use:t="vickers_berthier"
+  _use:t="mg_rapid_muzzle_preset"
+  _use:t="hit_effect_group_handgun_medium"
+  _use:t="gun_switch_firing_mode_sound"
+  _use:t="mgun_gun_aim_sound"
+  gun_shell_ejection__timeMult:r=0.35
+  gun__length:r=0.4
+  gun__recoilAmount:r=0.048
+  gun__bipodRecoilMult:r=0.15
+  gun__recoilDirAmount:r=0.65
+  gun__recoilDir:r=0.0
+  gun__visualRecoilMult:r=0.4
+  gun__recoilControlMult:r=0.9
+  gun__recoilOffsMult:r=0.1
+  gun_attach__slot:t="weapon"
+  weap__sprintLerpFactor:r=0.5
+  meleeSoundType:t="rifle"
+  gun__rotationSpringMult:p3=1.0, 3.7, 3.7
+  gun__rotInertia:p3=0.1, 2.0, 2.0
+  weapon__aimNodeOffset:r=0.5
+  gun_anim_var__fpsGunOffsetAlong:r=0.2
+  gun_anim_var__fpsGunOffsetAcross:r=0.045
+  gun_anim_var__fpsGunOffsetUp:r=0.025
+
+  _group{
+    _tags:t="sound"
+    gun_sound__forceOneshot:b=yes
+  }
+
+  "gun_sound__shotPath:shared:object"{
+    _tags:t="sound"
+    path:t="/weapon/mgun/zb_26"
+  }
+
+  "sound_irqs:shared:object"{
+    _tags:t="sound"
+
+    "reload1:object"{
+      path:t="/weapon/mgun/zb_26/reload1/change_ammo"
+    }
+
+    "reload2:object"{
+      path:t="/weapon/mgun/zb_26/reload2/change_ammo"
+    }
+
+    "reload3:object"{
+      path:t="/weapon/mgun/zb_26/reload3/change_ammo"
+    }
+
+    "reload4:object"{
+      path:t="/weapon/mgun/zb_26/reload4/change_ammo"
+    }
+
+    "reload5:object"{
+      path:t="/weapon/mgun/zb_26/reload5/change_ammo"
+    }
+
+    "reload6:object"{
+      path:t="/weapon/mgun/zb_26/reload6/change_ammo"
+    }
+
+    "reload7:object"{
+      path:t="/weapon/mgun/zb_26/reload7/change_ammo"
+    }
+
+    "boltAction:object"{
+      path:t="/weapon/rifle/mauser98k/bolt_action"
+    }
+  }
+
+  "gun__mountPoints:shared:array"{
+
+    "point:object"{
+      type:t="bipod"
+      recoil:r=-1.0
+      offset:p3=0.47, -0.01, 0.0
+      forceOffset:b=yes
+      angle:r=30.0
+      length:r=0.26
+    }
+
+    "point:object"{
+      type:t="rest"
+      recoil:r=-1.0
+      offset:p3=0.494, -0.03, 0.0
+    }
+  }
+}
+
+smle_mk3_grenade_launcher{
+  _use:t="main_weap_slots"
+  _use:t="reload_not_empty_single_bullet"
+  _use:t="ironsights_open_rifle"
+  reload__singleReloadMaxAmmo:i=4
+  single_reload__prepareTime:r=1.1
+  single_reload__loopTime:r=0.8
+  single_reload__postTime:r=1.2
+  animchar__res:t="smle_mk3_grenade_launcher_char"
+  gun__blk:t="gamedata/weapons/smle_mk3_grenade_launcher.blk"
+  item__template:t="smle_mk3_grenade_launcher_gun_item"
+  item__proto:t="gamedata/weapons/smle_mk3_grenade_launcher.blk"
+  item__weapTemplate:t="smle_mk3_grenade_launcher_gun"
+  item__name:t="items/smle_mk3_grenade_launcher"
+  item__weapType:t="rifle"
+  item__weight:r=4.0
+  gun__locName:t="SMLE Mk III with grenade launcher"
+  gun__statName:t="rifle"
+  gun__shotFreq:r=0.92
+  gun__automaticReload:b=no
+  gun_spread__maxDeltaAngle:r=0.15
+  gun_deviation__omegaRange:p2=30.0, 90.0
+  gun_deviation__omegaDevInc:p2=0.1, 0.5
+  gun_deviation__movementRange:p2=2.1, 4.0
+  gun_deviation__movementDevInc:p2=0.0, 15.0
+  gun_deviation__onShotDeviationChange:r=0.0
+  gun_deviation__shotTau:r=0.1
+  gun_deviation__extraDeviationTau:r=0.15
+  gun_deviation__maxDeviation:r=15.0
+  gun__reloadTime:r=4.0
+  gun__showChamberedAmmo:b=no
+  gun__kineticDamageMult:r=1.58
+  animchar_fast_phys__res:t="mosin_1928_grenade_launcher_fastphys"
+
+  "item__id:i"{
+    value:i=0
+    _hide:b=yes
+  }
+
+  "gun_shell_ejection__onShootRelease:tag"{
+  }
+
+  "gun__canZoomInBoltAction:tag"{
+  }
+
+  "gun__ammoHolders:array"{
+    ammoHolders:t="lee_enfield_no4_mk1_magazine"
+  }
+
+  "gun__shells:array"{
+    shells:t="gamedata/weapons/bullets/303_british_mk7.blk"
+  }
+
+  "gun__firingModes:array"{
+
+    "mode:object"{
+      modeType:t="manual"
+    }
+  }
+
+  "gun__firingModeNames:array"{
+    mode:t="bolt_action"
+  }
+
+  animchar_fast_phys{
+    _tags:t="gameClient"
+  }
+}
+
+smle_mk3_grenade_launcher_gun{
+  _use:t="equipable_gun"
+  _use:t="rifle_ww2_preset"
+  _use:t="smle_mk3_grenade_launcher"
+  _use:t="rifle_muzzle_preset"
+  _use:t="hit_effect_group_handgun_medium"
+  _use:t="rifle_gun_aim_sound"
+  gun_shell_ejection__timeMult:r=0.35
+  gun__length:r=0.4
+  gun__recoilAmount:r=0.127
+  gun__recoilDirAmount:r=0.64
+  gun__recoilDir:r=0.0
+  gun__visualRecoilMult:r=1.0
+  gun_attach__slot:t="weapon"
+  meleeSoundType:t="rifle"
+  gun_anim_var__fpsGunOffsetAlong:r=0.12
+  gun_anim_var__fpsGunOffsetAcross:r=0.045
+  gun_anim_var__fpsGunOffsetUp:r=0.065
+  weapon__aimNodeOffset:r=0.3
+  gun_reload_state__prepareTime:r=1.0
+  gun_reload_state__bulletSingleTime:r=0.5
+  gun_reload_state__bulletMultipleTime:r=0.95
+  gun_reload_state__bulletMultipleCount:i=5
+  gun_reload_state__postTime:r=1.1
+
+  "multiStateReloadSystem:tag"{
+  }
+
+  "gun_sound__shotPath:shared:object"{
+    _tags:t="sound"
+    path:t="/weapon/rifle/lee_enfield"
+  }
+
+  "sound_irqs:shared:object"{
+    _tags:t="sound"
+
+    "reload:object"{
+      path:t="/weapon/rifle/lee_enfield/reload"
+    }
+
+    "reload_prepare:object"{
+      path:t="/weapon/rifle/lee_enfield/reload_prepare"
+    }
+
+    "reload_loop_single:object"{
+      path:t="/weapon/rifle/lee_enfield/reload_loop_single"
+    }
+
+    "reload_loop_multiple:object"{
+      path:t="/weapon/rifle/lee_enfield/reload_loop_multiple"
+    }
+
+    "reload_post:object"{
+      path:t="/weapon/rifle/lee_enfield/reload_post"
+    }
+
+    "boltAction:object"{
+      path:t="/weapon/rifle/lee_enfield/bolt_action"
+    }
+
+    "modActivate:object"{
+      path:t="/weapon/antivehicle/mortyr_grenade_launcher/mod_activate"
+    }
+
+    "modDeactivate:object"{
+      path:t="/weapon/antivehicle/mortyr_grenade_launcher/mod_deactivate"
+    }
+
+    "modReload:object"{
+      path:t="/weapon/antivehicle/mortyr_grenade_launcher/mod_reload"
+    }
+
+    "ammo_drop:object"{
+      watched:t="player/weapon/_common/clip_drop"
+      type:t="matUnderFeet"
+    }
+  }
+
+  "gun_mods__slots:object"{
+
+    "grenade_launcher:object"{
+      smle_2_5_inch_grenade_launcher_cup:t="smle_2_5_inch_grenade_launcher_cup"
+    }
+  }
+
+  "gun__mountPoints:shared:array"{
+
+    "point:object"{
+      type:t="rest"
+      recoil:r=-1.0
+      offset:p3=0.57, -0.0434, 0.0
+    }
+  }
+}
+
+smle_2_5_inch_grenade_launcher_cup{
+  _use:t="grenade_launcher_gunmod"
+  animchar__res:t="smle_2_5_inch_grenade_launcher_cup_char"
+  item__template:t="smle_2_5_inch_grenade_launcher_cup_item"
+  item__proto:t="gamedata/weapons/smle_2_5_inch_grenade_launcher_cup.blk"
+  item__weight:r=0.3
+  item__volume:r=0.5
+  item__name:t="items/smle_2_5_inch_grenade_launcher_cup"
+  item__iconYaw:r=175.0
+  gunAttachable__slot:i=-1
+  gunAttachable__slotName:t="grenade_launcher"
+  gunAttachable__gunSlotName:t="grenade_launcher"
+  gunAttachable__slotTag:t="smle_2_5_inch_grenade_launcher_cup"
+  gun__blk:t="gamedata/weapons/smle_2_5_inch_grenade_launcher_cup.blk"
+  gun__shootNodeName:t="bullet"
+  gun__magnification:r=3.0
+  gun__locName:t="SMLE 2.5~' grenade launcher"
+  gun__statName:t="launcher"
+  gun__shotFreq:r=0.8
+  gun__automaticReload:b=no
+  gun_spread__maxDeltaAngle:r=0.05
+  gun_deviation__omegaRange:p2=30.0, 90.0
+  gun_deviation__omegaDevInc:p2=0.1, 0.5
+  gun_deviation__movementRange:p2=2.1, 4.0
+  gun_deviation__movementDevInc:p2=0.0, 15.0
+  gun_deviation__onShotDeviationChange:r=0.0
+  gun_deviation__shotTau:r=0.1
+  gun_deviation__extraDeviationTau:r=0.15
+  gun_deviation__maxDeviation:r=15.0
+  gun__length:r=0.4
+  gun__reloadTime:r=3.5
+  gun_shell_ejection__timeMult:r=0.35
+  gun__recoilAmount:r=0.2
+  gun__recoilDirAmount:r=0.9
+  gun__recoilDir:r=0.0
+  gun__visualRecoilMult:r=1.0
+  weapon_mod__activateTime:r=2.6
+  weapon_mod__deactivateTime:r=2.6
+
+  "gunAttachable:tag"{
+  }
+
+  "gun__ammoHolders:array"{
+    ammo_holder__templateName:t="smle_2_5_inch_rifle_grenade_item"
+    ammoHolders:t="gamedata/weapons/grenades/smle_2_5_inch_rifle_grenade.blk"
+  }
+
+  "gun__shells:array"{
+    shells:t="gamedata/weapons/grenades/smle_2_5_inch_rifle_grenade.blk"
+  }
+
+  "gun__firingModes:array"{
+
+    "mode:object"{
+      modeType:t="manual"
+    }
+  }
+
+  "gun__firingModeNames:array"{
+    mode:t="bolt_action"
+  }
+}
+
+smle_2_5_inch_rifle_grenade_shell{
+  animchar__res:t="smle_mk3_grenade_launcher_ammo_char"
+  collres__res:t="smle_mk3_grenade_launcher_ammo_collision"
+  shell__hudMarkerTemplate:t="hud_grenade_marker"
+}
+
+smle_2_5_inch_rifle_grenade_phys{
+  _use:t="projectile_phys_with_shell"
+  _use:t="smle_2_5_inch_rifle_grenade_shell"
+  _use:t="hud_grenade_marker"
+  _use:t="block_rethrow_shell"
+  _use:t="shell_launch_sound"
+  havePairCollision:b=no
+  start_omega:p3=100.0, 0.0, 0.0
+  explTimeAdd:r=3.0
+  phys_obj_net_phys__blk:t="gamedata/weapons/grenades/smle_2_5_inch_rifle_grenade.blk"
+  explosion_flash__template:t="default_explosion_flash"
+  shell__active:b=yes
+  shell__launchTime:r=-1.0
+  shell__cleanupTime:r=30.0
+  shell__fuseTime:r=0.0
+  shell_explosion_fx__infoTemplate:t="hit_effect_group_grenade_explosion"
+  shell__waterImpactFx:t="hit_water_medium_effect"
+
+  "shell__concussionMaxRadius:r"{
+    value:r=1.8
+    _tags:t="server"
+  }
+
+  "shell__explodeOnContact:tag"{
+  }
+
+  _group{
+    _tags:t="sound"
+    shell_launch_sound__name:t="weapon/antivehicle/mortyr_grenade_launcher/shot_single"
+  }
+}

@@ -1,0 +1,1971 @@
+gewehr_43_halloween_gun{
+  _use:t="gewehr_43_gun"
+  _use:t="gun_with_initial_ammo"
+  _use:t="paid_loot_ressuply"
+  item__template:t="gewehr_43_halloween_gun_item"
+  item__weapTemplate:t="gewehr_43_halloween_gun"
+  gun__kineticDamageMult:r=1.4
+}
+
+gewehr_43_halloween_gun_item{
+  _use:t="item_gun"
+  _use:t="gewehr_43_halloween_gun"
+  collres__res:t="gewehr_43_collision"
+
+  _group{
+    _tags:t="server"
+
+    "gun__initialAmmoHoldersCount:list<i>"{
+      item:i=10
+    }
+  }
+}
+
+stl_mp_40_halloween_gun{
+  _use:t="stl_mp_40_gun"
+  _use:t="gun_with_initial_ammo"
+  _use:t="paid_loot_ressuply"
+  item__template:t="stl_mp_40_halloween_gun_item"
+  item__weapTemplate:t="stl_mp_40_halloween_gun"
+  gun__shotFreq:r=9.5
+}
+
+stl_mp_40_halloween_gun_item{
+  _use:t="item_gun"
+  _use:t="stl_mp_40_halloween_gun"
+  collres__res:t="mp40_collision"
+
+  _group{
+    _tags:t="server"
+
+    "gun__initialAmmoHoldersCount:list<i>"{
+      item:i=7
+    }
+  }
+}
+
+dp_27_halloween_gun{
+  _use:t="dp_27_gun"
+  _use:t="gun_with_initial_ammo"
+  _use:t="paid_loot_ressuply"
+  gun__kineticDamageMult:r=1.25
+  item__template:t="dp_27_halloween_gun_item"
+  item__weapTemplate:t="dp_27_halloween_gun"
+}
+
+dp_27_halloween_gun_item{
+  _use:t="item_gun"
+  _use:t="dp_27_halloween_gun"
+  collres__res:t="dp_27_collision"
+
+  _group{
+    _tags:t="server"
+
+    "gun__initialAmmoHoldersCount:list<i>"{
+      item:i=3
+    }
+  }
+}
+
+mg_13_halloween_gun{
+  _use:t="mg_13_gun"
+  _use:t="gun_with_initial_ammo"
+  _use:t="paid_loot_ressuply"
+  gun__kineticDamageMult:r=1.3
+  item__template:t="mg_13_halloween_gun_item"
+  item__weapTemplate:t="mg_13_halloween_gun"
+}
+
+mg_13_halloween_gun_item{
+  _use:t="item_gun"
+  _use:t="mg_13_halloween_gun"
+  collres__res:t="mg_13_collision"
+
+  _group{
+    _tags:t="server"
+
+    "gun__initialAmmoHoldersCount:list<i>"{
+      item:i=10
+    }
+  }
+}
+
+ppd_34_halloween_gun{
+  _use:t="ppd_34_gun"
+  _use:t="gun_with_initial_ammo"
+  _use:t="paid_loot_ressuply"
+  item__template:t="ppd_34_halloween_gun_item"
+  item__weapTemplate:t="ppd_34_halloween_gun"
+}
+
+ppd_34_halloween_gun_item{
+  _use:t="item_gun"
+  _use:t="ppd_34_halloween_gun"
+  collres__res:t="ppd_34_collision"
+
+  _group{
+    _tags:t="server"
+
+    "gun__initialAmmoHoldersCount:list<i>"{
+      item:i=8
+    }
+  }
+}
+
+m3a1_grease_halloween_gun{
+  _use:t="m3a1_grease_gun_gun"
+  _use:t="gun_with_initial_ammo"
+  _use:t="paid_loot_ressuply"
+  item__template:t="m3a1_grease_halloween_gun_item"
+  item__weapTemplate:t="m3a1_grease_halloween_gun"
+  gun__shotFreq:r=7.0
+}
+
+m3a1_grease_halloween_gun_item{
+  _use:t="item_gun"
+  _use:t="m3a1_grease_halloween_gun"
+  collres__res:t="m3a1_grease_gun_collision"
+
+  _group{
+    _tags:t="server"
+
+    "gun__initialAmmoHoldersCount:list<i>"{
+      item:i=7
+    }
+  }
+}
+
+sten_mk2_halloween_gun{
+  _use:t="sten_mk2_gun"
+  _use:t="gun_with_initial_ammo"
+  _use:t="paid_loot_ressuply"
+  item__template:t="sten_mk2_halloween_gun_item"
+  item__weapTemplate:t="sten_mk2_halloween_gun"
+  gun__shotFreq:r=9.0
+}
+
+sten_mk2_halloween_gun_item{
+  _use:t="item_gun"
+  _use:t="sten_mk2_halloween_gun"
+  collres__res:t="sten_mk2_collision"
+
+  _group{
+    _tags:t="server"
+
+    "gun__initialAmmoHoldersCount:list<i>"{
+      item:i=6
+    }
+  }
+}
+
+type_100_smg_early_halloween_gun{
+  _use:t="type_100_smg_early_gun"
+  _use:t="gun_with_initial_ammo"
+  _use:t="paid_loot_ressuply"
+  item__template:t="type_100_smg_early_halloween_gun_item"
+  item__weapTemplate:t="type_100_smg_early_halloween_gun"
+  gun__shotFreq:r=7.0
+}
+
+type_100_smg_early_halloween_gun_item{
+  _use:t="item_gun"
+  _use:t="type_100_smg_early_halloween_gun"
+  collres__res:t="type_100_smg_early_collision"
+
+  _group{
+    _tags:t="server"
+
+    "gun__initialAmmoHoldersCount:list<i>"{
+      item:i=7
+    }
+  }
+}
+
+m1_garand_halloween_gun{
+  _use:t="m1_garand_gun"
+  _use:t="gun_with_initial_ammo"
+  _use:t="paid_loot_ressuply"
+  item__template:t="m1_garand_halloween_gun_item"
+  item__weapTemplate:t="m1_garand_halloween_gun"
+  gun__kineticDamageMult:r=1.4
+}
+
+m1_garand_halloween_gun_item{
+  _use:t="item_gun"
+  _use:t="m1_garand_halloween_gun"
+  collres__res:t="m1_garand_collision"
+
+  _group{
+    _tags:t="server"
+
+    "gun__initialAmmoHoldersCount:list<i>"{
+      item:i=9
+    }
+  }
+}
+
+svt_40_halloween_gun{
+  _use:t="svt_40_gun"
+  _use:t="gun_with_initial_ammo"
+  _use:t="paid_loot_ressuply"
+  item__template:t="svt_40_halloween_gun_item"
+  item__weapTemplate:t="svt_40_halloween_gun"
+  gun__kineticDamageMult:r=1.4
+}
+
+svt_40_halloween_gun_item{
+  _use:t="item_gun"
+  _use:t="svt_40_halloween_gun"
+  collres__res:t="svt_40_collision"
+
+  _group{
+    _tags:t="server"
+
+    "gun__initialAmmoHoldersCount:list<i>"{
+      item:i=10
+    }
+  }
+}
+
+svt_40_20_rounds_halloween_gun{
+  _use:t="avt_40_halloween_2025_gun"
+  _use:t="gun_with_initial_ammo"
+  _use:t="paid_loot_ressuply"
+  item__template:t="svt_40_20_rounds_halloween_gun_item"
+  item__weapTemplate:t="svt_40_20_rounds_halloween_gun"
+  gun__kineticDamageMult:r=1.4
+}
+
+svt_40_20_rounds_halloween_gun_item{
+  _use:t="item_gun"
+  _use:t="svt_40_20_rounds_halloween_gun"
+  collres__res:t="avt_40_20_rounds_collision"
+
+  _group{
+    _tags:t="server"
+
+    "gun__initialAmmoHoldersCount:list<i>"{
+      item:i=7
+    }
+  }
+}
+
+winchester_model_1912_halloween_gun{
+  _use:t="winchester_model_1912_gun"
+  _use:t="gun_with_initial_ammo"
+  _use:t="paid_loot_ressuply"
+  item__template:t="winchester_model_1912_halloween_gun_item"
+  item__weapTemplate:t="winchester_model_1912_halloween_gun"
+}
+
+winchester_model_1912_halloween_gun_item{
+  _use:t="item_gun"
+  _use:t="winchester_model_1912_halloween_gun"
+  collres__res:t="winchester_model_1912_collision"
+
+  _group{
+    _tags:t="server"
+
+    "gun__initialAmmoHoldersCount:list<i>"{
+      item:i=10
+    }
+  }
+}
+
+fg_42_halloween_gun{
+  _use:t="fg_42_model_2_blood_gun"
+  _use:t="gun_with_initial_ammo"
+  _use:t="paid_loot_ressuply"
+  item__template:t="fg_42_halloween_gun_item"
+  item__weapTemplate:t="fg_42_halloween_gun"
+  gun__kineticDamageMult:r=1.3
+}
+
+fg_42_halloween_gun_item{
+  _use:t="item_gun"
+  _use:t="fg_42_halloween_gun"
+  collres__res:t="fg_42_collision"
+  item__unlockId:t="fg_42_model_2_blood_unlock"
+
+  _group{
+    _tags:t="server"
+
+    "gun__initialAmmoHoldersCount:list<i>"{
+      item:i=6
+    }
+  }
+}
+
+ppsh_41_halloween_gun{
+  _use:t="ppsh_41_blood_gun"
+  _use:t="gun_with_initial_ammo"
+  _use:t="paid_loot_ressuply"
+  item__template:t="ppsh_41_halloween_gun_item"
+  item__weapTemplate:t="ppsh_41_halloween_gun"
+}
+
+ppsh_41_halloween_gun_item{
+  _use:t="item_gun"
+  _use:t="ppsh_41_halloween_gun"
+  collres__res:t="ppsh_41_late_collision"
+  item__unlockId:t="ppsh_41_blood_unlock"
+
+  _group{
+    _tags:t="server"
+
+    "gun__initialAmmoHoldersCount:list<i>"{
+      item:i=4
+    }
+  }
+}
+
+stg_44_halloween_gun{
+  _use:t="stg_44_blood_gun"
+  _use:t="gun_with_initial_ammo"
+  _use:t="paid_loot_ressuply"
+  item__template:t="stg_44_halloween_gun_item"
+  item__weapTemplate:t="stg_44_halloween_gun"
+}
+
+stg_44_halloween_gun_item{
+  _use:t="item_gun"
+  _use:t="stg_44_halloween_gun"
+  collres__res:t="stg_44_collision"
+  item__unlockId:t="stg_44_blood_unlock"
+
+  _group{
+    _tags:t="server"
+
+    "gun__initialAmmoHoldersCount:list<i>"{
+      item:i=6
+    }
+  }
+}
+
+thompson_m1928a1_50_drum_halloween_gun{
+  _use:t="thompson_m1928a1_50_drum_blood_gun"
+  _use:t="gun_with_initial_ammo"
+  _use:t="paid_loot_ressuply"
+  item__template:t="thompson_m1928a1_50_drum_halloween_gun_item"
+  item__weapTemplate:t="thompson_m1928a1_50_drum_halloween_gun"
+  gun__kineticDamageMult:r=1.15
+}
+
+thompson_m1928a1_50_drum_halloween_gun_item{
+  _use:t="item_gun"
+  _use:t="thompson_m1928a1_50_drum_halloween_gun"
+  collres__res:t="thompson_m1928a1_50_drum_collision"
+  item__unlockId:t="thompson_m1928a1_50_drum_blood_unlock"
+
+  _group{
+    _tags:t="server"
+
+    "gun__initialAmmoHoldersCount:list<i>"{
+      item:i=4
+    }
+  }
+}
+
+type_100_mg_halloween_gun{
+  _use:t="type_100_mg_blood_gun"
+  _use:t="gun_with_initial_ammo"
+  _use:t="paid_loot_ressuply"
+  item__template:t="type_100_mg_halloween_gun_item"
+  item__weapTemplate:t="type_100_mg_halloween_gun"
+}
+
+type_100_mg_halloween_gun_item{
+  _use:t="item_gun"
+  _use:t="type_100_mg_halloween_gun"
+  collres__res:t="type_100_infantry_collision"
+  item__unlockId:t="type_100_mg_blood_unlock"
+
+  _group{
+    _tags:t="server"
+
+    "gun__initialAmmoHoldersCount:list<i>"{
+      item:i=3
+    }
+  }
+}
+
+browning_m1919a6_halloween_gun{
+  _use:t="browning_m1919a6_blood_gun"
+  _use:t="gun_with_initial_ammo"
+  _use:t="paid_loot_ressuply"
+  gun__kineticDamageMult:r=1.25
+  item__template:t="browning_m1919a6_halloween_gun_item"
+  item__weapTemplate:t="browning_m1919a6_halloween_gun"
+}
+
+browning_m1919a6_halloween_gun_item{
+  _use:t="item_gun"
+  _use:t="browning_m1919a6_halloween_gun"
+  collres__res:t="browning_m1919a6_collision"
+  item__unlockId:t="browning_m1919a6_blood_unlock"
+
+  _group{
+    _tags:t="server"
+
+    "gun__initialAmmoHoldersCount:list<i>"{
+      item:i=2
+    }
+  }
+}
+
+type_4_70_at_rocket_launcher_halloween_gun{
+  _use:t="type_4_70_at_rocket_launcher_gun"
+  _use:t="gun_with_initial_ammo"
+  _use:t="paid_loot_ressuply"
+  _use:t="disable_item_drop"
+  gun__kineticDamageMult:r=1.25
+  item__template:t="type_4_70_at_rocket_launcher_halloween_gun_item"
+  item__weapTemplate:t="type_4_70_at_rocket_launcher_halloween_gun"
+  gun__reloadTime:r=5.0
+
+  "gun__ammoHolders:array"{
+    ammoHolders:t="zombie_bazooka_shell_item"
+  }
+
+  "gun__shells:array"{
+    shells:t="content/enlisted_extra/gamedata/weapons/shells/zombie_bazooka_shell.blk"
+  }
+}
+
+zombie_bazooka_phys{
+  _use:t="type_4_at_7cm_phys"
+  phys_obj_net_phys__blk:t="content/enlisted_extra/gamedata/weapons/shells/zombie_bazooka_shell.blk"
+}
+
+zombie_bazooka_shell_item{
+  _use:t="type_4_at_7cm_item"
+  item__template:t="zombie_bazooka_shell_item"
+  ammo_holder__templateName:t="zombie_bazooka_shell_item"
+  item__proto:t="content/enlisted_extra/gamedata/weapons/shells/zombie_bazooka_shell.blk"
+  item__shell:t="content/enlisted_extra/gamedata/weapons/shells/zombie_bazooka_shell.blk"
+}
+
+type_4_70_at_rocket_launcher_halloween_gun_item{
+  _use:t="item_gun"
+  _use:t="type_4_70_at_rocket_launcher_halloween_gun"
+  collres__res:t="type_4_70_at_rocket_launcher_collision"
+
+  _group{
+    _tags:t="server"
+
+    "gun__initialAmmoHoldersCount:list<i>"{
+      item:i=1
+    }
+  }
+}
+
+rd_44_halloween_gun{
+  _use:t="rd_44_blood_gun"
+  _use:t="gun_with_initial_ammo"
+  _use:t="paid_loot_ressuply"
+  gun__kineticDamageMult:r=1.25
+  item__template:t="rd_44_halloween_gun_item"
+  item__weapTemplate:t="rd_44_halloween_gun"
+}
+
+rd_44_halloween_gun_item{
+  _use:t="item_gun"
+  _use:t="rd_44_halloween_gun"
+  collres__res:t="rd_44_collision"
+  item__unlockId:t="rd_44_blood_unlock"
+
+  _group{
+    _tags:t="server"
+
+    "gun__initialAmmoHoldersCount:list<i>"{
+      item:i=3
+    }
+  }
+}
+
+rd_44_zombie_gun{
+  _use:t="rd_44_gun"
+  _use:t="gun_with_initial_ammo"
+  _use:t="paid_loot_ressuply"
+  gun__kineticDamageMult:r=1.25
+  item__template:t="rd_44_zombie_gun_item"
+  item__weapTemplate:t="rd_44_zombie_gun"
+}
+
+rd_44_zombie_gun_item{
+  _use:t="item_gun"
+  _use:t="rd_44_zombie_gun"
+  collres__res:t="rd_44_collision"
+
+  _group{
+    _tags:t="server"
+
+    "gun__initialAmmoHoldersCount:list<i>"{
+      item:i=2
+    }
+  }
+}
+
+blaster_zombie_gun{
+  _use:t="equipable_gun"
+  _use:t="pistol_ww2_preset"
+  _use:t="mauser_c96"
+  _use:t="space_blaster_muzzle_preset"
+  _use:t="hit_effect_group_handgun_big"
+  _use:t="gun_overheat"
+  _use:t="gun_overheat_visual"
+  _use:t="blaster_zombie_gun_sound"
+  _use:t="gun_with_initial_ammo"
+  _use:t="paid_loot_ressuply"
+  paid_loot__ressuplyCost:i=0
+  animchar__res:t="blaster_zombie_char"
+  item__name:t="items/blaster_pistol_germany"
+  item__template:t="blaster_zombie_gun_item"
+  item__weapTemplate:t="blaster_zombie_gun"
+  gun__blk:t="gamedata/templates/zombie/blaster_zombie.blk"
+  item__proto:t="gamedata/templates/zombie/blaster_zombie.blk"
+  item__weapType:t="pistol"
+  item__weight:r=1.2
+  weap__sprintLerpFactor:r=1.0
+  gun__adsSpeedMult:r=0.8
+  gun__overheatReduce:r=0.05
+  gun__overheatReduceOnOverheat:r=0.5
+  gun__overheatPerShot:r=1.0
+  gun__ignoreWeaponVelocity:b=yes
+  gun__shotFreq:r=8.0
+  gun__recoilAmount:r=0.35
+  gun__recoilControlMult:r=0.0
+  gun__recoilDirAmount:r=0.6
+  gun__recoilDir:r=0.0
+  gun__visualRecoilMult:r=1.0
+  gun_spread__maxDeltaAngle:r=0.8
+  gun_deviation__omegaRange:p2=30.0, 90.0
+  gun_deviation__omegaDevInc:p2=0.1, 0.7
+  gun_deviation__movementRange:p2=2.1, 4.0
+  gun_deviation__movementDevInc:p2=0.0, 15.0
+  gun_deviation__onShotDeviationChange:r=0.0
+  gun_deviation__shotTau:r=0.1
+  gun_deviation__extraDeviationTau:r=0.15
+  gun_deviation__maxDeviation:r=15.0
+  gun__reloadTime:r=2.0
+
+  "gun__canPierceHPEntity:tag"{
+  }
+
+  "gun__ammoHolders:array"{
+    ammoHolders:t="blaster_zombie_magazine"
+  }
+
+  "gun__shells:array"{
+    shells:t="gamedata/weapons/bullets/14.5x114_bs41.blk"
+  }
+
+  "gun__firingModes:array"{
+
+    "mode:object"{
+      modeType:t="burst"
+      burstSize:i=1
+    }
+  }
+
+  "gun__firingModeNames:array"{
+    mode:t="semi_auto"
+  }
+}
+
+blaster_zombie_gun_item{
+  _use:t="item_gun"
+  _use:t="blaster_zombie_gun"
+  collres__res:t="blaster_zombie_collision"
+
+  _group{
+    _tags:t="server"
+
+    "gun__initialAmmoHoldersCount:list<i>"{
+      item:i=1
+    }
+  }
+}
+
+blaster_zombie_magazine{
+  _use:t="item_magazine"
+  animchar__res:t="p08_luger_ammo_char"
+  item__template:t="blaster_zombie_magazine"
+  item__proto:t="blaster_zombie_magazine"
+  ammo_holder__templateName:t="blaster_zombie_magazine"
+  ammo_holder__ammoCount:i=50
+  item__weight:r=0.2
+  item__volume:r=0.1
+  item__name:t="items/blaster_zombie_magazine"
+  collres__res:t="p08_luger_ammo_collision"
+}
+
+m1911_colt_zombie_gun{
+  _use:t="m1911_colt_gun"
+  _use:t="gun_with_initial_ammo"
+  _use:t="paid_loot_ressuply"
+  item__template:t="m1911_colt_zombie_gun_item"
+  item__weapTemplate:t="m1911_colt_zombie_gun"
+  paid_loot__ressuplyCost:i=10
+}
+
+m1911_colt_zombie_gun_item{
+  _use:t="item_gun"
+  _use:t="m1911_colt_zombie_gun"
+  collres__res:t="m1911_colt_collision"
+
+  _group{
+    _tags:t="server"
+
+    "gun__initialAmmoHoldersCount:list<i>"{
+      item:i=14
+    }
+  }
+}
+
+mosin_m38_zombie_gun{
+  _use:t="mosin_m38_gun"
+  _use:t="gun_with_initial_ammo"
+  _use:t="paid_loot_ressuply"
+  item__template:t="mosin_m38_zombie_gun_item"
+  item__weapTemplate:t="mosin_m38_zombie_gun"
+  paid_loot__ressuplyCost:i=0
+}
+
+mosin_m38_zombie_gun_item{
+  _use:t="item_gun"
+  _use:t="mosin_m38_zombie_gun"
+  collres__res:t="mosin_m38_collision"
+
+  _group{
+    _tags:t="server"
+
+    "gun__initialAmmoHoldersCount:list<i>"{
+      item:i=10
+    }
+  }
+}
+
+beretta_m31_zombie_gun{
+  _use:t="beretta_m31_gun"
+  _use:t="gun_with_initial_ammo"
+  _use:t="paid_loot_ressuply"
+  item__template:t="beretta_m31_zombie_gun_item"
+  item__weapTemplate:t="beretta_m31_zombie_gun"
+  gun__kineticDamageMult:r=1.4
+  weapon__aimNodeOffset:r=0.3
+  paid_loot__ressuplyCost:i=0
+}
+
+beretta_m31_zombie_gun_item{
+  _use:t="item_gun"
+  _use:t="beretta_m31_zombie_gun"
+  collres__res:t="beretta_m31_collision"
+
+  _group{
+    _tags:t="server"
+
+    "gun__initialAmmoHoldersCount:list<i>"{
+      item:i=10
+    }
+  }
+}
+
+m1_garand_zombie_gun{
+  _use:t="m1_garand_gun"
+  _use:t="gun_with_initial_ammo"
+  _use:t="paid_loot_ressuply"
+  item__template:t="m1_garand_zombie_gun_item"
+  item__weapTemplate:t="m1_garand_zombie_gun"
+  gun__kineticDamageMult:r=1.4
+  weapon__aimNodeOffset:r=0.3
+  paid_loot__ressuplyCost:i=0
+}
+
+m1_garand_zombie_gun_item{
+  _use:t="item_gun"
+  _use:t="m1_garand_zombie_gun"
+  collres__res:t="m1_garand_collision"
+
+  _group{
+    _tags:t="server"
+
+    "gun__initialAmmoHoldersCount:list<i>"{
+      item:i=11
+    }
+  }
+}
+
+stl_mp_40_zombie_gun{
+  _use:t="stl_mp_40_gun"
+  _use:t="gun_with_initial_ammo"
+  _use:t="paid_loot_ressuply"
+  item__template:t="stl_mp_40_zombie_gun_item"
+  item__weapTemplate:t="stl_mp_40_zombie_gun"
+  paid_loot__ressuplyCost:i=0
+}
+
+stl_mp_40_zombie_gun_item{
+  _use:t="item_gun"
+  _use:t="stl_mp_40_zombie_gun"
+  collres__res:t="mp40_collision"
+
+  _group{
+    _tags:t="server"
+
+    "gun__initialAmmoHoldersCount:list<i>"{
+      item:i=7
+    }
+  }
+}
+
+winchester_model_1912_zombie_gun{
+  _use:t="winchester_model_1912_gun"
+  _use:t="gun_with_initial_ammo"
+  _use:t="paid_loot_ressuply"
+  item__template:t="winchester_model_1912_zombie_gun_item"
+  item__weapTemplate:t="winchester_model_1912_zombie_gun"
+  paid_loot__ressuplyCost:i=0
+}
+
+winchester_model_1912_zombie_gun_item{
+  _use:t="item_gun"
+  _use:t="winchester_model_1912_zombie_gun"
+  collres__res:t="winchester_model_1912_collision"
+
+  _group{
+    _tags:t="server"
+
+    "gun__initialAmmoHoldersCount:list<i>"{
+      item:i=8
+    }
+  }
+}
+
+stg_44_zombie_gun{
+  _use:t="stg_44_gun"
+  _use:t="gun_with_initial_ammo"
+  _use:t="paid_loot_ressuply"
+  item__template:t="stg_44_zombie_gun_item"
+  item__weapTemplate:t="stg_44_zombie_gun"
+  paid_loot__ressuplyCost:i=0
+  gun__kineticDamageMult:r=1.25
+}
+
+stg_44_zombie_gun_item{
+  _use:t="item_gun"
+  _use:t="stg_44_zombie_gun"
+  collres__res:t="stg_44_collision"
+
+  _group{
+    _tags:t="server"
+
+    "gun__initialAmmoHoldersCount:list<i>"{
+      item:i=5
+    }
+  }
+}
+
+dp_27_zombie_gun{
+  _use:t="dp_27_gun"
+  _use:t="gun_with_initial_ammo"
+  _use:t="paid_loot_ressuply"
+  gun__kineticDamageMult:r=1.25
+  item__template:t="dp_27_zombie_gun_item"
+  item__weapTemplate:t="dp_27_zombie_gun"
+  paid_loot__ressuplyCost:i=0
+}
+
+dp_27_zombie_gun_item{
+  _use:t="item_gun"
+  _use:t="dp_27_zombie_gun"
+  collres__res:t="dp_27_collision"
+
+  _group{
+    _tags:t="server"
+
+    "gun__initialAmmoHoldersCount:list<i>"{
+      item:i=5
+    }
+  }
+}
+
+nagant_m1895_zombie_gun{
+  _use:t="nagant_m1895_gun"
+  _use:t="gun_with_initial_ammo"
+  _use:t="paid_loot_ressuply"
+  item__template:t="nagant_m1895_zombie_gun_item"
+  item__weapTemplate:t="nagant_m1895_zombie_gun"
+  paid_loot__ressuplyCost:i=0
+}
+
+nagant_m1895_zombie_gun_item{
+  _use:t="item_gun"
+  _use:t="nagant_m1895_zombie_gun"
+  collres__res:t="nagant_m1895_collision"
+
+  _group{
+    _tags:t="server"
+
+    "gun__initialAmmoHoldersCount:list<i>"{
+      item:i=5
+    }
+  }
+}
+
+nambu_type_a_sword_pistol_zombie_gun{
+  _use:t="nambu_type_a_sword_pistol_gun"
+  _use:t="gun_with_initial_ammo"
+  _use:t="paid_loot_ressuply"
+  item__template:t="nambu_type_a_sword_pistol_zombie_gun_item"
+  item__weapTemplate:t="nambu_type_a_sword_pistol_zombie_gun"
+  paid_loot__ressuplyCost:i=0
+}
+
+nambu_type_a_sword_pistol_zombie_gun_item{
+  _use:t="item_gun"
+  _use:t="nambu_type_a_sword_pistol_zombie_gun"
+  collres__res:t="nambu_type_a_sword_pistol_collision"
+
+  _group{
+    _tags:t="server"
+
+    "gun__initialAmmoHoldersCount:list<i>"{
+      item:i=5
+    }
+  }
+}
+
+colt_swartz_zombie_gun{
+  _use:t="colt_swartz_gun"
+  _use:t="gun_with_initial_ammo"
+  _use:t="paid_loot_ressuply"
+  item__template:t="colt_swartz_zombie_gun_item"
+  item__weapTemplate:t="colt_swartz_zombie_gun"
+  paid_loot__ressuplyCost:i=0
+}
+
+colt_swartz_zombie_gun_item{
+  _use:t="item_gun"
+  _use:t="colt_swartz_zombie_gun"
+  collres__res:t="m1911_colt_swartz_automatic_conversion_collision"
+
+  _group{
+    _tags:t="server"
+
+    "gun__initialAmmoHoldersCount:list<i>"{
+      item:i=5
+    }
+  }
+}
+
+mondragon_m1908_zombie_gun{
+  _use:t="mondragon_m1908_gun"
+  _use:t="gun_with_initial_ammo"
+  _use:t="paid_loot_ressuply"
+  item__template:t="mondragon_m1908_zombie_gun_item"
+  item__weapTemplate:t="mondragon_m1908_zombie_gun"
+  gun__kineticDamageMult:r=1.3
+  weapon__aimNodeOffset:r=0.3
+  paid_loot__ressuplyCost:i=0
+}
+
+mondragon_m1908_zombie_gun_item{
+  _use:t="item_gun"
+  _use:t="mondragon_m1908_zombie_gun"
+  collres__res:t="mondragon_m1908_collision"
+
+  _group{
+    _tags:t="server"
+
+    "gun__initialAmmoHoldersCount:list<i>"{
+      item:i=3
+    }
+  }
+}
+
+fg_42_zombie_gun{
+  _use:t="fg_42_gun"
+  _use:t="gun_with_initial_ammo"
+  _use:t="paid_loot_ressuply"
+  item__template:t="fg_42_zombie_gun_item"
+  item__weapTemplate:t="fg_42_zombie_gun"
+  gun__kineticDamageMult:r=1.3
+  weapon__aimNodeOffset:r=0.3
+  paid_loot__ressuplyCost:i=0
+}
+
+fg_42_zombie_gun_item{
+  _use:t="item_gun"
+  _use:t="fg_42_zombie_gun"
+  collres__res:t="fg_42_collision"
+
+  _group{
+    _tags:t="server"
+
+    "gun__initialAmmoHoldersCount:list<i>"{
+      item:i=7
+    }
+  }
+}
+
+pps_42_zombie_gun{
+  _use:t="pps_42_gun"
+  _use:t="gun_with_initial_ammo"
+  _use:t="paid_loot_ressuply"
+  item__template:t="pps_42_zombie_gun_item"
+  item__weapTemplate:t="pps_42_zombie_gun"
+  paid_loot__ressuplyCost:i=0
+}
+
+pps_42_zombie_gun_item{
+  _use:t="item_gun"
+  _use:t="pps_42_zombie_gun"
+  collres__res:t="pps_42_collision"
+
+  _group{
+    _tags:t="server"
+
+    "gun__initialAmmoHoldersCount:list<i>"{
+      item:i=6
+    }
+  }
+}
+
+nambu_type_2_1934_smg_zombie_gun{
+  _use:t="nambu_type_2_1934_smg_gun"
+  _use:t="gun_with_initial_ammo"
+  _use:t="paid_loot_ressuply"
+  item__template:t="nambu_type_2_1934_smg_zombie_gun_item"
+  item__weapTemplate:t="nambu_type_2_1934_smg_zombie_gun"
+  paid_loot__ressuplyCost:i=0
+}
+
+nambu_type_2_1934_smg_zombie_gun_item{
+  _use:t="item_gun"
+  _use:t="nambu_type_2_1934_smg_zombie_gun"
+  collres__res:t="nambu_type_2_1934_collision"
+
+  _group{
+    _tags:t="server"
+
+    "gun__initialAmmoHoldersCount:list<i>"{
+      item:i=4
+    }
+  }
+}
+
+ppsh_41_zombie_gun{
+  _use:t="ppsh_41_gun"
+  _use:t="gun_with_initial_ammo"
+  _use:t="paid_loot_ressuply"
+  item__template:t="ppsh_41_zombie_gun_item"
+  item__weapTemplate:t="ppsh_41_zombie_gun"
+  paid_loot__ressuplyCost:i=0
+}
+
+ppsh_41_zombie_gun_item{
+  _use:t="item_gun"
+  _use:t="ppsh_41_zombie_gun"
+  collres__res:t="ppsh_41_late_collision"
+
+  _group{
+    _tags:t="server"
+
+    "gun__initialAmmoHoldersCount:list<i>"{
+      item:i=4
+    }
+  }
+}
+
+browning_m1919a6_zombie_gun{
+  _use:t="browning_m1919a6_gun"
+  _use:t="gun_with_initial_ammo"
+  _use:t="paid_loot_ressuply"
+  gun__kineticDamageMult:r=1.25
+  item__template:t="browning_m1919a6_zombie_gun_item"
+  item__weapTemplate:t="browning_m1919a6_zombie_gun"
+  paid_loot__ressuplyCost:i=0
+}
+
+browning_m1919a6_zombie_gun_item{
+  _use:t="item_gun"
+  _use:t="browning_m1919a6_zombie_gun"
+  collres__res:t="browning_m1919a6_collision"
+
+  _group{
+    _tags:t="server"
+
+    "gun__initialAmmoHoldersCount:list<i>"{
+      item:i=3
+    }
+  }
+}
+
+ptrs_41_zombie_gun{
+  _use:t="ptrs_41_gun"
+  _use:t="gun_with_initial_ammo"
+  _use:t="paid_loot_ressuply"
+  item__template:t="ptrs_41_zombie_gun_item"
+  item__weapTemplate:t="ptrs_41_zombie_gun"
+  paid_loot__ressuplyCost:i=0
+}
+
+ptrs_41_zombie_gun_item{
+  _use:t="item_gun"
+  _use:t="ptrs_41_zombie_gun"
+  collres__res:t="ptrs_41_collision"
+
+  _group{
+    _tags:t="server"
+
+    "gun__initialAmmoHoldersCount:list<i>"{
+      item:i=10
+    }
+  }
+}
+
+m2_flamethrower_zombie_gun{
+  _use:t="m2_flamethrower_gun"
+  _use:t="gun_with_initial_ammo"
+  _use:t="paid_loot_ressuply"
+  item__template:t="m2_flamethrower_zombie_gun_item"
+  item__weapTemplate:t="m2_flamethrower_zombie_gun"
+  paid_loot__ressuplyCost:i=0
+}
+
+m2_flamethrower_zombie_gun_item{
+  _use:t="item_gun"
+  _use:t="m2_flamethrower_zombie_gun"
+  collres__res:t="m2_flamethrower_collision"
+
+  _group{
+    _tags:t="server"
+
+    "gun__initialAmmoHoldersCount:list<i>"{
+      item:i=1
+    }
+  }
+}
+
+flamethrower_portable_no_2_mk1_lifebuoy_zombie_gun{
+  _use:t="flamethrower_portable_no_2_mk1_lifebuoy_gun"
+  _use:t="gun_with_initial_ammo"
+  _use:t="paid_loot_ressuply"
+  item__template:t="flamethrower_portable_no_2_mk1_lifebuoy_zombie_gun_item"
+  item__weapTemplate:t="flamethrower_portable_no_2_mk1_lifebuoy_zombie_gun"
+  paid_loot__ressuplyCost:i=0
+}
+
+flamethrower_portable_no_2_mk1_lifebuoy_zombie_gun_item{
+  _use:t="item_gun"
+  _use:t="flamethrower_portable_no_2_mk1_lifebuoy_zombie_gun"
+  collres__res:t="flamethrower_portable_no_2_mk1_lifebuoy_collision"
+
+  _group{
+    _tags:t="server"
+
+    "gun__initialAmmoHoldersCount:list<i>"{
+      item:i=1
+    }
+  }
+}
+
+neiman_minethrower_zombie_gun{
+  _use:t="neiman_minethrower_gun"
+  _use:t="gun_with_initial_ammo"
+  _use:t="paid_loot_ressuply"
+  item__template:t="neiman_minethrower_zombie_gun_item"
+  item__weapTemplate:t="neiman_minethrower_zombie_gun"
+  paid_loot__ressuplyCost:i=0
+}
+
+neiman_minethrower_zombie_gun_item{
+  _use:t="item_gun"
+  _use:t="neiman_minethrower_zombie_gun"
+  collres__res:t="neiman_minethrower_collision"
+
+  _group{
+    _tags:t="server"
+
+    "gun__initialAmmoHoldersCount:list<i>"{
+      item:i=6
+    }
+  }
+}
+
+akm_47_zombie_gun{
+  _use:t="akm_47_gun"
+  _use:t="gun_with_initial_ammo"
+  _use:t="paid_loot_ressuply"
+  item__template:t="akm_47_zombie_gun_item"
+  item__weapTemplate:t="akm_47_zombie_gun"
+  paid_loot__ressuplyCost:i=0
+}
+
+akm_47_zombie_gun_item{
+  _use:t="item_gun"
+  _use:t="akm_47_zombie_gun"
+  collres__res:t="akm_collision"
+
+  _group{
+    _tags:t="server"
+
+    "gun__initialAmmoHoldersCount:list<i>"{
+      item:i=7
+    }
+  }
+}
+
+stg_44_gold_zombie_gun{
+  _use:t="stg_44_gold_gun"
+  _use:t="gun_with_initial_ammo"
+  _use:t="paid_loot_ressuply"
+  item__template:t="stg_44_gold_zombie_gun_item"
+  item__weapTemplate:t="stg_44_gold_zombie_gun"
+  paid_loot__ressuplyCost:i=0
+  gun__shotFreq:r=11.913
+  gun__kineticDamageMult:r=1.15
+}
+
+stg_44_gold_zombie_gun_item{
+  _use:t="item_gun"
+  _use:t="stg_44_gold_zombie_gun"
+  collres__res:t="stg_44_collision"
+
+  _group{
+    _tags:t="server"
+
+    "gun__initialAmmoHoldersCount:list<i>"{
+      item:i=7
+    }
+  }
+}
+
+thompson_m1928a1_50_drum_gold_zombie_gun{
+  _use:t="thompson_m1928a1_50_drum_gold_gun"
+  _use:t="gun_with_initial_ammo"
+  _use:t="paid_loot_ressuply"
+  item__template:t="thompson_m1928a1_50_drum_gold_zombie_gun_item"
+  item__weapTemplate:t="thompson_m1928a1_50_drum_gold_zombie_gun"
+  paid_loot__ressuplyCost:i=0
+  gun__shotFreq:r=12.837
+  gun__kineticDamageMult:r=1.15
+}
+
+thompson_m1928a1_50_drum_gold_zombie_gun_item{
+  _use:t="item_gun"
+  _use:t="thompson_m1928a1_50_drum_gold_zombie_gun"
+  collres__res:t="thompson_m1928a1_50_drum_collision"
+
+  _group{
+    _tags:t="server"
+
+    "gun__initialAmmoHoldersCount:list<i>"{
+      item:i=4
+    }
+  }
+}
+
+m1903a1_springfield_halloween_gun{
+  _use:t="m1903a1_springfield_usmc_gun"
+  _use:t="gun_with_initial_ammo"
+  _use:t="paid_loot_ressuply"
+  item__template:t="m1903a1_springfield_halloween_gun_item"
+  item__weapTemplate:t="m1903a1_springfield_halloween_gun"
+}
+
+m1903a1_springfield_halloween_gun_item{
+  _use:t="item_gun"
+  _use:t="m1903a1_springfield_halloween_gun"
+  collres__res:t="m1903a1_springfield_marine_core_collision"
+
+  _group{
+    _tags:t="server"
+
+    "gun__initialAmmoHoldersCount:list<i>"{
+      item:i=10
+    }
+  }
+}
+
+carcano_m41_halloween_gun{
+  _use:t="carcano_m41_gun"
+  _use:t="gun_with_initial_ammo"
+  _use:t="paid_loot_ressuply"
+  item__template:t="carcano_m41_halloween_gun_item"
+  item__weapTemplate:t="carcano_m41_halloween_gun"
+}
+
+carcano_m41_halloween_gun_item{
+  _use:t="item_gun"
+  _use:t="carcano_m41_halloween_gun"
+  collres__res:t="carcano_m41_collision"
+
+  _group{
+    _tags:t="server"
+
+    "gun__initialAmmoHoldersCount:list<i>"{
+      item:i=9
+    }
+  }
+}
+
+arisaka_type_38_halloween_gun{
+  _use:t="arisaka_type_38_gun"
+  _use:t="gun_with_initial_ammo"
+  _use:t="paid_loot_ressuply"
+  item__template:t="arisaka_type_38_halloween_gun_item"
+  item__weapTemplate:t="arisaka_type_38_halloween_gun"
+}
+
+arisaka_type_38_halloween_gun_item{
+  _use:t="item_gun"
+  _use:t="arisaka_type_38_halloween_gun"
+  collres__res:t="arisaka_type_38_carbine_collision"
+
+  _group{
+    _tags:t="server"
+
+    "gun__initialAmmoHoldersCount:list<i>"{
+      item:i=10
+    }
+  }
+}
+
+winchester_1895_halloween_gun{
+  _use:t="winchester_1895_gun"
+  _use:t="gun_with_initial_ammo"
+  _use:t="paid_loot_ressuply"
+  item__template:t="winchester_1895_halloween_gun_item"
+  item__weapTemplate:t="winchester_1895_halloween_gun"
+}
+
+winchester_1895_halloween_gun_item{
+  _use:t="item_gun"
+  _use:t="winchester_1895_halloween_gun"
+  collres__res:t="winchester_1895_collision"
+
+  _group{
+    _tags:t="server"
+
+    "gun__initialAmmoHoldersCount:list<i>"{
+      item:i=10
+    }
+  }
+}
+
+armaguerra_mod_39_halloween_gun{
+  _use:t="armaguerra_mod_39_gun"
+  _use:t="gun_with_initial_ammo"
+  _use:t="paid_loot_ressuply"
+  item__template:t="armaguerra_mod_39_halloween_gun_item"
+  item__weapTemplate:t="armaguerra_mod_39_halloween_gun"
+}
+
+armaguerra_mod_39_halloween_gun_item{
+  _use:t="item_gun"
+  _use:t="armaguerra_mod_39_halloween_gun"
+  collres__res:t="armaguerra_mod_39_collision"
+
+  _group{
+    _tags:t="server"
+
+    "gun__initialAmmoHoldersCount:list<i>"{
+      item:i=9
+    }
+  }
+}
+
+m1_carbine_halloween_gun{
+  _use:t="m1_carbine_gun"
+  _use:t="gun_with_initial_ammo"
+  _use:t="paid_loot_ressuply"
+  item__template:t="m1_carbine_halloween_gun_item"
+  item__weapTemplate:t="m1_carbine_halloween_gun"
+  gun__kineticDamageMult:r=1.4
+}
+
+m1_carbine_halloween_gun_item{
+  _use:t="item_gun"
+  _use:t="m1_carbine_halloween_gun"
+  collres__res:t="m1_carbine_collision"
+
+  _group{
+    _tags:t="server"
+
+    "gun__initialAmmoHoldersCount:list<i>"{
+      item:i=7
+    }
+  }
+}
+
+lee_enfield_no4_mk1_halloween_gun{
+  _use:t="lee_enfield_no4_mk1_gun"
+  _use:t="gun_with_initial_ammo"
+  _use:t="paid_loot_ressuply"
+  item__template:t="lee_enfield_no4_mk1_halloween_gun_item"
+  item__weapTemplate:t="lee_enfield_no4_mk1_halloween_gun"
+}
+
+lee_enfield_no4_mk1_halloween_gun_item{
+  _use:t="item_gun"
+  _use:t="lee_enfield_no4_mk1_halloween_gun"
+  collres__res:t="lee_enfield_no4_mk1_collision"
+
+  _group{
+    _tags:t="server"
+
+    "gun__initialAmmoHoldersCount:list<i>"{
+      item:i=5
+    }
+  }
+}
+
+toz_b_halloween_gun{
+  _use:t="toz_b_gun"
+  _use:t="gun_with_initial_ammo"
+  _use:t="paid_loot_ressuply"
+  item__template:t="toz_b_halloween_gun_item"
+  item__weapTemplate:t="toz_b_halloween_gun"
+}
+
+toz_b_halloween_gun_item{
+  _use:t="item_gun"
+  _use:t="toz_b_halloween_gun"
+  collres__res:t="toz_b_collision"
+
+  _group{
+    _tags:t="server"
+
+    "gun__initialAmmoHoldersCount:list<i>"{
+      item:i=22
+    }
+  }
+}
+
+m50_reising_halloween_gun{
+  _use:t="m50_reising_gun"
+  _use:t="gun_with_initial_ammo"
+  _use:t="paid_loot_ressuply"
+  item__template:t="m50_reising_halloween_gun_item"
+  item__weapTemplate:t="m50_reising_halloween_gun"
+  gun__shotFreq:r=9.5
+}
+
+m50_reising_halloween_gun_item{
+  _use:t="item_gun"
+  _use:t="m50_reising_halloween_gun"
+  collres__res:t="m50_reising_collision"
+
+  _group{
+    _tags:t="server"
+
+    "gun__initialAmmoHoldersCount:list<i>"{
+      item:i=9
+    }
+  }
+}
+
+mp_28_jp_halloween_gun{
+  _use:t="mp_28_jp_gun"
+  _use:t="gun_with_initial_ammo"
+  _use:t="paid_loot_ressuply"
+  item__template:t="mp_28_jp_halloween_gun_item"
+  item__weapTemplate:t="mp_28_jp_halloween_gun"
+  gun__shotFreq:r=9.5
+}
+
+mp_28_jp_halloween_gun_item{
+  _use:t="item_gun"
+  _use:t="mp_28_jp_halloween_gun"
+  collres__res:t="mp_28_jp_collision"
+
+  _group{
+    _tags:t="server"
+
+    "gun__initialAmmoHoldersCount:list<i>"{
+      item:i=4
+    }
+  }
+}
+
+beretta_m38_halloween_gun{
+  _use:t="beretta_m38_halloween_2025_gun"
+  _use:t="gun_with_initial_ammo"
+  _use:t="paid_loot_ressuply"
+  item__template:t="beretta_m38_halloween_gun_item"
+  item__weapTemplate:t="beretta_m38_halloween_gun"
+  gun__shotFreq:r=9.5
+}
+
+beretta_m38_halloween_gun_item{
+  _use:t="item_gun"
+  _use:t="beretta_m38_halloween_gun"
+  collres__res:t="beretta_m38_40_round_collision"
+
+  _group{
+    _tags:t="server"
+
+    "gun__initialAmmoHoldersCount:list<i>"{
+      item:i=5
+    }
+  }
+}
+
+owen_mk1_42_halloween_gun{
+  _use:t="owen_mk1_42_gun"
+  _use:t="gun_with_initial_ammo"
+  _use:t="paid_loot_ressuply"
+  item__template:t="owen_mk1_42_halloween_gun_item"
+  item__weapTemplate:t="owen_mk1_42_halloween_gun"
+  gun__shotFreq:r=9.5
+}
+
+owen_mk1_42_halloween_gun_item{
+  _use:t="item_gun"
+  _use:t="owen_mk1_42_halloween_gun"
+  collres__res:t="owen_mk1_42_collision"
+
+  _group{
+    _tags:t="server"
+
+    "gun__initialAmmoHoldersCount:list<i>"{
+      item:i=6
+    }
+  }
+}
+
+beretta_m1918_halloween_gun{
+  _use:t="beretta_m1918_gun"
+  _use:t="gun_with_initial_ammo"
+  _use:t="paid_loot_ressuply"
+  item__template:t="beretta_m1918_halloween_gun_item"
+  item__weapTemplate:t="beretta_m1918_halloween_gun"
+  gun__shotFreq:r=9.5
+}
+
+beretta_m1918_halloween_gun_item{
+  _use:t="item_gun"
+  _use:t="beretta_m1918_halloween_gun"
+  collres__res:t="beretta_m1918_collision"
+
+  _group{
+    _tags:t="server"
+
+    "gun__initialAmmoHoldersCount:list<i>"{
+      item:i=8
+    }
+  }
+}
+
+fnab_43_halloween_gun{
+  _use:t="fnab_43_gun"
+  _use:t="gun_with_initial_ammo"
+  _use:t="paid_loot_ressuply"
+  item__template:t="fnab_43_halloween_gun_item"
+  item__weapTemplate:t="fnab_43_halloween_gun"
+  gun__shotFreq:r=9.5
+}
+
+fnab_43_halloween_gun_item{
+  _use:t="item_gun"
+  _use:t="fnab_43_halloween_gun"
+  collres__res:t="fnab_43_collision"
+
+  _group{
+    _tags:t="server"
+
+    "gun__initialAmmoHoldersCount:list<i>"{
+      item:i=5
+    }
+  }
+}
+
+m1_thompson_halloween_gun{
+  _use:t="m1_thompson_gun"
+  _use:t="gun_with_initial_ammo"
+  _use:t="paid_loot_ressuply"
+  item__template:t="m1_thompson_halloween_gun_item"
+  item__weapTemplate:t="m1_thompson_halloween_gun"
+  gun__shotFreq:r=9.5
+}
+
+m1_thompson_halloween_gun_item{
+  _use:t="item_gun"
+  _use:t="m1_thompson_halloween_gun"
+  collres__res:t="m1a1_thompson_collision"
+
+  _group{
+    _tags:t="server"
+
+    "gun__initialAmmoHoldersCount:list<i>"{
+      item:i=6
+    }
+  }
+}
+
+bren_mk2_halloween_gun{
+  _use:t="bren_mk2_gun"
+  _use:t="gun_with_initial_ammo"
+  _use:t="paid_loot_ressuply"
+  item__template:t="bren_mk2_halloween_gun_item"
+  item__weapTemplate:t="bren_mk2_halloween_gun"
+}
+
+bren_mk2_halloween_gun_item{
+  _use:t="item_gun"
+  _use:t="bren_mk2_halloween_gun"
+  collres__res:t="bren_lmg_mk_2_collision"
+
+  _group{
+    _tags:t="server"
+
+    "gun__initialAmmoHoldersCount:list<i>"{
+      item:i=8
+    }
+  }
+}
+
+type_11_lmg_halloween_gun{
+  _use:t="type_11_lmg_gun"
+  _use:t="gun_with_initial_ammo"
+  _use:t="paid_loot_ressuply"
+  item__template:t="type_11_lmg_halloween_gun_item"
+  item__weapTemplate:t="type_11_lmg_halloween_gun"
+}
+
+type_11_lmg_halloween_gun_item{
+  _use:t="item_gun"
+  _use:t="type_11_lmg_halloween_gun"
+  collres__res:t="type_11_lmg_collision"
+
+  _group{
+    _tags:t="server"
+
+    "gun__initialAmmoHoldersCount:list<i>"{
+      item:i=8
+    }
+  }
+}
+
+browning_auto_5_halloween_gun{
+  _use:t="browning_auto_5_gun"
+  _use:t="gun_with_initial_ammo"
+  _use:t="paid_loot_ressuply"
+  item__template:t="browning_auto_5_halloween_gun_item"
+  item__weapTemplate:t="browning_auto_5_halloween_gun"
+}
+
+browning_auto_5_halloween_gun_item{
+  _use:t="item_gun"
+  _use:t="browning_auto_5_halloween_gun"
+  collres__res:t="browning_auto_5_collision"
+
+  _group{
+    _tags:t="server"
+
+    "gun__initialAmmoHoldersCount:list<i>"{
+      item:i=10
+    }
+  }
+}
+
+browning_m1918a2_halloween_gun{
+  _use:t="browning_m1918a2_gun"
+  _use:t="gun_with_initial_ammo"
+  _use:t="paid_loot_ressuply"
+  item__template:t="browning_m1918a2_halloween_gun_item"
+  item__weapTemplate:t="browning_m1918a2_halloween_gun"
+}
+
+browning_m1918a2_halloween_gun_item{
+  _use:t="item_gun"
+  _use:t="browning_m1918a2_halloween_gun"
+  collres__res:t="browning_m1918a2_collision"
+
+  _group{
+    _tags:t="server"
+
+    "gun__initialAmmoHoldersCount:list<i>"{
+      item:i=10
+    }
+  }
+}
+
+mg_34_halloween_gun{
+  _use:t="mg_34_gun"
+  _use:t="gun_with_initial_ammo"
+  _use:t="paid_loot_ressuply"
+  item__template:t="mg_34_halloween_gun_item"
+  item__weapTemplate:t="mg_34_halloween_gun"
+}
+
+mg_34_halloween_gun_item{
+  _use:t="item_gun"
+  _use:t="mg_34_halloween_gun"
+  collres__res:t="mg_34_collision"
+
+  _group{
+    _tags:t="server"
+
+    "gun__initialAmmoHoldersCount:list<i>"{
+      item:i=5
+    }
+  }
+}
+
+dt_29_halloween_gun{
+  _use:t="dt_29_gun"
+  _use:t="gun_with_initial_ammo"
+  _use:t="paid_loot_ressuply"
+  item__template:t="dt_29_halloween_gun_item"
+  item__weapTemplate:t="dt_29_halloween_gun"
+}
+
+dt_29_halloween_gun_item{
+  _use:t="item_gun"
+  _use:t="dt_29_halloween_gun"
+  collres__res:t="dt_29_collision"
+
+  _group{
+    _tags:t="server"
+
+    "gun__initialAmmoHoldersCount:list<i>"{
+      item:i=4
+    }
+  }
+}
+
+m1941_johnson_mg_halloween_gun{
+  _use:t="m1941_johnson_mg_gun"
+  _use:t="gun_with_initial_ammo"
+  _use:t="paid_loot_ressuply"
+  item__template:t="m1941_johnson_mg_halloween_gun_item"
+  item__weapTemplate:t="m1941_johnson_mg_halloween_gun"
+}
+
+m1941_johnson_mg_halloween_gun_item{
+  _use:t="item_gun"
+  _use:t="m1941_johnson_mg_halloween_gun"
+  collres__res:t="m1941_johnson_mg_collision"
+
+  _group{
+    _tags:t="server"
+
+    "gun__initialAmmoHoldersCount:list<i>"{
+      item:i=10
+    }
+  }
+}
+
+mg_42_handheld_halloween_gun{
+  _use:t="mg_42_handheld_gun"
+  _use:t="gun_with_initial_ammo"
+  _use:t="paid_loot_ressuply"
+  item__template:t="mg_42_handheld_halloween_gun_item"
+  item__weapTemplate:t="mg_42_handheld_halloween_gun"
+}
+
+mg_42_handheld_halloween_gun_item{
+  _use:t="item_gun"
+  _use:t="mg_42_handheld_halloween_gun"
+  collres__res:t="mg_42_late_collision"
+
+  _group{
+    _tags:t="server"
+
+    "gun__initialAmmoHoldersCount:list<i>"{
+      item:i=5
+    }
+  }
+}
+
+mg_42_beltfed_halloween_gun{
+  _use:t="mg_42_beltfed_gun"
+  _use:t="gun_with_initial_ammo"
+  _use:t="paid_loot_ressuply"
+  item__template:t="mg_42_beltfed_halloween_gun_item"
+  item__weapTemplate:t="mg_42_beltfed_halloween_gun"
+}
+
+mg_42_beltfed_halloween_gun_item{
+  _use:t="item_gun"
+  _use:t="mg_42_beltfed_halloween_gun"
+  collres__res:t="mg_42_late_beltfed_collision"
+
+  _group{
+    _tags:t="server"
+
+    "gun__initialAmmoHoldersCount:list<i>"{
+      item:i=3
+    }
+  }
+}
+
+type_89_te_4_halloween_gun{
+  _use:t="type_89_te_4_gun"
+  _use:t="gun_with_initial_ammo"
+  _use:t="paid_loot_ressuply"
+  item__template:t="type_89_te_4_halloween_gun_item"
+  item__weapTemplate:t="type_89_te_4_halloween_gun"
+}
+
+type_89_te_4_halloween_gun_item{
+  _use:t="item_gun"
+  _use:t="type_89_te_4_halloween_gun"
+  collres__res:t="type_89_te_4_collision"
+
+  _group{
+    _tags:t="server"
+
+    "gun__initialAmmoHoldersCount:list<i>"{
+      item:i=4
+    }
+  }
+}
+
+avt_40_halloween_gun{
+  _use:t="avt_40_gun"
+  _use:t="gun_with_initial_ammo"
+  _use:t="paid_loot_ressuply"
+  item__template:t="avt_40_halloween_gun_item"
+  item__weapTemplate:t="avt_40_halloween_gun"
+}
+
+avt_40_halloween_gun_item{
+  _use:t="item_gun"
+  _use:t="avt_40_halloween_gun"
+  collres__res:t="avt_40_collision"
+
+  _group{
+    _tags:t="server"
+
+    "gun__initialAmmoHoldersCount:list<i>"{
+      item:i=9
+    }
+  }
+}
+
+as_44_halloween_gun{
+  _use:t="as_44_gun"
+  _use:t="gun_with_initial_ammo"
+  _use:t="paid_loot_ressuply"
+  item__template:t="as_44_halloween_gun_item"
+  item__weapTemplate:t="as_44_halloween_gun"
+  gun__kineticDamageMult:r=1.25
+}
+
+as_44_halloween_gun_item{
+  _use:t="item_gun"
+  _use:t="as_44_halloween_gun"
+  collres__res:t="as_44_collision"
+
+  _group{
+    _tags:t="server"
+
+    "gun__initialAmmoHoldersCount:list<i>"{
+      item:i=5
+    }
+  }
+}
+
+t20_rifle_halloween_gun{
+  _use:t="t20_rifle_gun"
+  _use:t="gun_with_initial_ammo"
+  _use:t="paid_loot_ressuply"
+  item__template:t="t20_rifle_halloween_gun_item"
+  item__weapTemplate:t="t20_rifle_halloween_gun"
+}
+
+t20_rifle_halloween_gun_item{
+  _use:t="item_gun"
+  _use:t="t20_rifle_halloween_gun"
+  collres__res:t="t20_rifle_collision"
+
+  _group{
+    _tags:t="server"
+
+    "gun__initialAmmoHoldersCount:list<i>"{
+      item:i=7
+    }
+  }
+}
+
+type_hei_automatic_lmg_halloween_gun{
+  _use:t="type_hei_automatic_lmg_gun"
+  _use:t="gun_with_initial_ammo"
+  _use:t="paid_loot_ressuply"
+  item__template:t="type_hei_automatic_lmg_halloween_gun_item"
+  item__weapTemplate:t="type_hei_automatic_lmg_halloween_gun"
+}
+
+type_hei_automatic_lmg_halloween_gun_item{
+  _use:t="item_gun"
+  _use:t="type_hei_automatic_lmg_halloween_gun"
+  collres__res:t="type_hei_automatic_rifle_shielded_collision"
+
+  _group{
+    _tags:t="server"
+
+    "gun__initialAmmoHoldersCount:list<i>"{
+      item:i=5
+    }
+  }
+}
+
+type_hei_automatic_rifle_halloween_gun{
+  _use:t="type_hei_automatic_rifle_halloween_2025_gun"
+  _use:t="gun_with_initial_ammo"
+  _use:t="paid_loot_ressuply"
+  item__template:t="type_hei_automatic_rifle_halloween_gun_item"
+  item__weapTemplate:t="type_hei_automatic_rifle_halloween_gun"
+}
+
+type_hei_automatic_rifle_halloween_gun_item{
+  _use:t="item_gun"
+  _use:t="type_hei_automatic_rifle_halloween_gun"
+  collres__res:t="type_hei_automatic_rifle_collision"
+
+  _group{
+    _tags:t="server"
+
+    "gun__initialAmmoHoldersCount:list<i>"{
+      item:i=5
+    }
+  }
+}
+
+atr_boys_halloween_gun{
+  _use:t="atr_boys_gun"
+  _use:t="gun_with_initial_ammo"
+  _use:t="paid_loot_ressuply"
+  item__template:t="atr_boys_halloween_gun_item"
+  item__weapTemplate:t="atr_boys_halloween_gun"
+}
+
+atr_boys_halloween_gun_item{
+  _use:t="item_gun"
+  _use:t="atr_boys_halloween_gun"
+  collres__res:t="atr_boys_collision"
+
+  _group{
+    _tags:t="server"
+
+    "gun__initialAmmoHoldersCount:list<i>"{
+      item:i=10
+    }
+  }
+}
+
+thompson_m1928a1_50_drum_zombie_gun{
+  _use:t="thompson_m1928a1_50_drum_gun"
+  _use:t="gun_with_initial_ammo"
+  _use:t="paid_loot_ressuply"
+  item__template:t="thompson_m1928a1_50_drum_zombie_gun_item"
+  item__weapTemplate:t="thompson_m1928a1_50_drum_zombie_gun"
+  gun__kineticDamageMult:r=1.15
+}
+
+thompson_m1928a1_50_drum_zombie_gun_item{
+  _use:t="item_gun"
+  _use:t="thompson_m1928a1_50_drum_zombie_gun"
+  collres__res:t="thompson_m1928a1_50_drum_collision"
+
+  _group{
+    _tags:t="server"
+
+    "gun__initialAmmoHoldersCount:list<i>"{
+      item:i=5
+    }
+  }
+}
+
+type_100_mg_zombie_gun{
+  _use:t="type_100_mg_gun"
+  _use:t="gun_with_initial_ammo"
+  _use:t="paid_loot_ressuply"
+  item__template:t="type_100_mg_zombie_gun_item"
+  item__weapTemplate:t="type_100_mg_zombie_gun"
+}
+
+type_100_mg_zombie_gun_item{
+  _use:t="item_gun"
+  _use:t="type_100_mg_zombie_gun"
+  collres__res:t="type_100_infantry_collision"
+
+  _group{
+    _tags:t="server"
+
+    "gun__initialAmmoHoldersCount:list<i>"{
+      item:i=3
+    }
+  }
+}
+
+madsen_halloween_gun{
+  _use:t="madsen_halloween_2025_gun"
+  _use:t="gun_with_initial_ammo"
+  _use:t="paid_loot_ressuply"
+  item__template:t="madsen_halloween_gun_item"
+  item__weapTemplate:t="madsen_halloween_gun"
+}
+
+madsen_halloween_gun_item{
+  _use:t="item_gun"
+  _use:t="madsen_halloween_gun"
+  collres__res:t="madsen_collision"
+
+  _group{
+    _tags:t="server"
+
+    "gun__initialAmmoHoldersCount:list<i>"{
+      item:i=8
+    }
+  }
+}
+
+hyde_m1944_halloween_gun{
+  _use:t="hyde_m1944_halloween_2025_gun"
+  _use:t="gun_with_initial_ammo"
+  _use:t="paid_loot_ressuply"
+  item__template:t="hyde_m1944_halloween_gun_item"
+  item__weapTemplate:t="hyde_m1944_halloween_gun"
+}
+
+hyde_m1944_halloween_gun_item{
+  _use:t="item_gun"
+  _use:t="hyde_m1944_halloween_gun"
+  collres__res:t="hyde_carbine_m1944_collision"
+
+  _group{
+    _tags:t="server"
+
+    "gun__initialAmmoHoldersCount:list<i>"{
+      item:i=6
+    }
+  }
+}
+
+patchett_mk1_halloween_gun{
+  _use:t="patchett_mk1_gun"
+  _use:t="gun_with_initial_ammo"
+  _use:t="paid_loot_ressuply"
+  item__template:t="patchett_mk1_halloween_gun_item"
+  item__weapTemplate:t="patchett_mk1_halloween_gun"
+  gun__kineticDamageMult:r=1.2
+}
+
+patchett_mk1_halloween_gun_item{
+  _use:t="item_gun"
+  _use:t="patchett_mk1_halloween_gun"
+  collres__res:t="patchett_mk1_collision"
+
+  _group{
+    _tags:t="server"
+
+    "gun__initialAmmoHoldersCount:list<i>"{
+      item:i=7
+    }
+  }
+}

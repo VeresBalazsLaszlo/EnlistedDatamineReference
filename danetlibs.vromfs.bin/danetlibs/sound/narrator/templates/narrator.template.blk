@@ -1,0 +1,18 @@
+narrator{
+  _use:t="replicating"
+  _singleton:b=yes
+
+  _group{
+    _tags:t="sound"
+    narrator__banksPreset:t=""
+
+    "narrator__history:object"{
+    }
+
+    "narrator__queue:array"{
+    }
+
+    "narrator__event:SoundEvent"{
+    }
+  }
+}

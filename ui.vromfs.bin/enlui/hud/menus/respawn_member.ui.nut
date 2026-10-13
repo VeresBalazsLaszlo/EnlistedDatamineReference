@@ -1,0 +1,189 @@
+import "%ui/hud/state/armyData.nut" as armyData
+import "%ui/hud/state/soldiersData.nut" as soldiersData
+import "%ui/hud/state/respawnSelection.nut" as respawnSelection
+import "%ui/components/mkSoldierCard.nut" as mkSoldierCard
+from "%ui/components/squadsPresentation.nut" import getSquadPresentation
+from "%ui/style/fontsStyle.nut" import fontSub
+from "dagor.debug" import logerr
+from "%ui/hud/state/squad_members.nut" import localPlayerSquadMembers
+from "%ui/hud/state/respawnState.nut" import doRequestRespawn, needSpawnMenu
+from "%ui/hud/respawn_parts.nut" import squadBlock, headerBlock, panel, respawnTimer,
+  forceSpawnButton
+from "%ui/hud/state/local_player.nut" import localPlayerEid
+from "%ui/hud/components/squad_member.nut" import mkAiActionIcon, mkGrenadeIcon, mkMineIcon,
+  mkMemberHealsBlock, mkMemberRepairBlock, mkMemberFlaskBlock
+from "dasevents" import sendNetEvent, RequestNextRespawnEntity
+from "%ui/style/designConst.nut" import transpBgColor, defItemBlur, defTxtColor, darkTxtColor,
+  smallPadding, midPadding
+from "%ui/ui_library.nut" import *
+
+const sIconSize = hdpxi(15)
+
+let requestRespawnToEntity = @(eid)
+  sendNetEvent(localPlayerEid.get(), RequestNextRespawnEntity({memberEid=eid}))
+
+let spawnSquadLocId = Computed(function() {
+  if (!needSpawnMenu.get())
+    return null
+  let guid = localPlayerSquadMembers.get()?[0].guid
+  let squadsList = armyData.get()?.squads
+  if (guid == null || (squadsList?.len() ?? 0) == 0)
+    return null
+
+  let squad = squadsList.findvalue(
+    @(sq) sq.squad.findindex(@(soldier) soldier.guid == guid) != null)
+
+  let { squadId = null } = squad
+  let { nameLocId = "unknown" } = getSquadPresentation(squadId)
+  return nameLocId
+})
+
+function currentSquadButtons(membersList, activeTeammateEid, infoByGuid, expToLevel) {
+  let items = []
+  foreach (memberIter in membersList) {
+    let member = memberIter
+    let soldierInfo = infoByGuid?[member.guid]
+    let isCurrent = (member.eid == activeTeammateEid)
+    if (!soldierInfo) {
+      logerr($"Not found member info for respawn screen /*{member.guid}*/")
+      continue
+    }
+
+    let group = ElemGroup()
+    function button(sf) {
+      let color = sf & S_HOVER ? darkTxtColor : defTxtColor
+      return {
+        behavior = (member.isAlive && member.canBeLeader) ? Behaviors.Button : null
+        group = group
+        children = mkSoldierCard({
+          soldierInfo
+          expToLevel
+          sf
+          group
+          isSelected = isCurrent
+          isDead = !member.isAlive
+          isFaded = !member.canBeLeader
+          displayedKind = member?.displayedKind
+          addChild = @(...) {
+            hplace = ALIGN_BOTTOM
+            vplace = ALIGN_BOTTOM
+            flow = FLOW_HORIZONTAL
+            gap = hdpx(2)
+            padding = smallPadding
+            children = [
+              mkMemberRepairBlock(member, sIconSize, color)
+              mkMemberHealsBlock(member, sIconSize, color)
+              mkMemberFlaskBlock(member, sIconSize, color)
+              mkGrenadeIcon(member, sIconSize, color) ?? mkMineIcon(member, sIconSize, color)
+              mkAiActionIcon(member, sIconSize, color)
+            ]
+          }
+        })
+
+        onClick = function() {
+          requestRespawnToEntity(member.eid)
+          if (isCurrent)
+            doRequestRespawn()
+        }
+        onDoubleClick = doRequestRespawn
+
+        animations = [
+          {
+            prop=AnimProp.fillColor
+            from=Color(200,200,200,160)
+            duration=0.25
+            easing=OutCubic
+            trigger=$"squadmate:{member.eid}"
+          }
+        ]
+      }
+    }
+
+    items.append(watchElemState(button))
+  }
+  return items
+}
+
+let memberSpawnList = @() {
+  watch = [localPlayerSquadMembers, respawnSelection, soldiersData, armyData]
+  size = SIZE_TO_CONTENT
+  minHeight = fsh(40)
+  halign = ALIGN_CENTER
+  gap = fsh(1)
+  flow = FLOW_VERTICAL
+  children = localPlayerSquadMembers.get()
+    ? currentSquadButtons(localPlayerSquadMembers.get(), respawnSelection.get(), soldiersData.get(), armyData.get()?.expToLevel)
+    : null
+}
+
+function selectAndForceRespawn(index) {
+  let entity = localPlayerSquadMembers.get()?[index]
+  if ((entity?.isAlive ?? false) && (entity?.canBeLeader ?? true)) {
+    requestRespawnToEntity(entity.eid)
+    doRequestRespawn()
+  }
+}
+
+function changeRespawn(delta) {
+  let alive = []
+  let curEid = respawnSelection.get()
+  local curIdx = 0
+
+  if (localPlayerSquadMembers.get()) {
+    foreach (entity in localPlayerSquadMembers.get()) {
+      if (entity.isAlive && entity.canBeLeader) {
+        alive.append(entity.eid)
+        if (entity.eid == curEid) {
+          curIdx = alive.len()-1
+        }
+      }
+    }
+  }
+
+  if (alive.len()) {
+    let idx = (curIdx + delta + alive.len()) % alive.len()
+    let eid = alive[idx]
+    requestRespawnToEntity(eid)
+    anim_start($"squadmate:{eid}")
+  }
+}
+
+let squadInfoBlock = @() {
+  watch = spawnSquadLocId
+  size = FLEX_H
+  children = squadBlock(loc(spawnSquadLocId.get() ?? "unknown"))
+}
+
+let memberRespawn = @() panel({
+  flow = FLOW_VERTICAL
+  gap = smallPadding
+  children = [
+    headerBlock("\n".concat(loc("Controlled soldier died."), loc("Select another squadmate to control")))
+    {
+      flow = FLOW_VERTICAL
+      gap = smallPadding
+      padding = midPadding
+      rendObj = ROBJ_WORLD_BLUR
+      fillColor = transpBgColor
+      color = defItemBlur
+      children = [
+        squadInfoBlock
+        memberSpawnList
+        forceSpawnButton({ size = const [FLEX, fsh(8)] })
+        respawnTimer(loc("respawn/respawn_in_bot"), fontSub)
+      ]
+    }
+  ]
+}, {
+  size = SIZE_TO_CONTENT
+  rendObj = null
+  hotkeys = [
+    ["^Right | J:D.Right", @() changeRespawn(-1)],
+    ["^Left | J:D.Left",  @() changeRespawn(1)],
+    [$"^Enter| J:Y", doRequestRespawn]
+  ].extend(array(10).map(@(_, n)
+    [$"^{n}", @() selectAndForceRespawn((10 + n - 1) % 10)]
+  ))
+})
+
+return memberRespawn

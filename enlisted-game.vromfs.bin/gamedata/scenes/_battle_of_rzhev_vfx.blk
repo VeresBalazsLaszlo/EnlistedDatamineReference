@@ -1,0 +1,544 @@
+entity{
+  _template:t="projectors_manager"
+  projectors_manager__atmosphereDensity:r=1.0
+  projectors_manager__atmosphereMoveDir:p3=1.0, 0.0, 0.0
+  projectors_manager__atmosphereMoveSpeed:r=0.0
+  projectors_manager__noiseScale:r=30.0
+  projectors_manager__noiseStrength:r=1.0
+}
+
+entity{
+  _template:t="projector"
+  projector__color:p3=0.12, 0.12, 0.12
+  projector__angle:r=2.5
+  projector__sourceWidth:r=1.0
+  projector__xAngleAmplitude:r=17.0
+  projector__period:r=16.0
+  transform:m=[[0.993579, -0.112724, 0.00966169] [0.113137, 0.98995, -0.0848528] [3.27826e-07, 0.085401, 0.996347] [323.273, 10.0, -558.799]]
+}
+
+entity{
+  _template:t="projector"
+  projector__color:p3=0.12, 0.12, 0.12
+  projector__angle:r=2.0
+  projector__sourceWidth:r=1.0
+  projector__zAngleAmplitude:r=27.0
+  projector__period:r=24.0
+  transform:m=[[0.947085, -0.319961, 0.0255969] [-0.320983, -0.944069, 0.0755255] [2.6077e-08, -0.0797452, -0.996815] [11.6582, 9.99988, -405.829]]
+}
+
+entity{
+  _template:t="projector"
+  projector__color:p3=0.12, 0.12, 0.12
+  projector__angle:r=3.0
+  projector__sourceWidth:r=1.0
+  projector__zAngleAmplitude:r=24.0
+  projector__period:r=14.0
+  transform:m=[[0.986453, 0.163682, -0.0109121] [-0.164045, 0.984268, -0.0656179] [-3.72529e-08, 0.066519, 0.997785] [-99.891, 9.99976, -485.78]]
+}
+
+entity{
+  _template:t="projector"
+  projector__color:p3=0.12, 0.12, 0.12
+  projector__angle:r=5.0
+  projector__sourceWidth:r=1.0
+  projector__zAngleAmplitude:r=18.0
+  projector__period:r=20.0
+  transform:m=[[-0.999924, -0.00141054, -0.0122481] [-0.00143672, 0.999997, 0.00212879] [0.0122451, 0.00214622, -0.999923] [435.062, 6.27525, -684.451]]
+}
+
+entity{
+  _template:t="projector"
+  projector__color:p3=0.12, 0.12, 0.12
+  projector__angle:r=6.0
+  projector__sourceWidth:r=1.0
+  projector__zAngleAmplitude:r=27.0
+  projector__period:r=22.0
+  transform:m=[[0.987471, 0.157601, 0.00788019] [-0.157798, 0.986239, 0.049312] [-1.20606e-07, -0.0499377, 0.998752] [3341.05, 10.0, 448.055]]
+}
+
+entity{
+  _template:t="projector"
+  projector__color:p3=0.12, 0.12, 0.12
+  projector__angle:r=7.0
+  projector__sourceWidth:r=1.0
+  projector__zAngleAmplitude:r=22.0
+  projector__period:r=24.0
+  transform:m=[[0.979645, -0.19962, -0.0211718] [-0.20074, -0.974181, -0.103322] [-2.98023e-08, 0.105469, -0.994423] [125.515, 10.0, -401.512]]
+}
+
+entity{
+  _template:t="projector"
+  projector__color:p3=0.12, 0.12, 0.12
+  projector__angle:r=6.0
+  projector__sourceWidth:r=1.0
+  projector__zAngleAmplitude:r=17.0
+  projector__period:r=18.0
+  transform:m=[[0.989228, -0.145985, -0.0108311] [0.146386, 0.986516, 0.0731931] [-4.19095e-08, -0.0739902, 0.997259] [3116.1, 10.0, 457.971]]
+}
+
+entity{
+  _template:t="projector"
+  projector__color:p3=0.12, 0.12, 0.12
+  projector__angle:r=3.0
+  projector__sourceWidth:r=1.0
+  projector__zAngleAmplitude:r=26.0
+  projector__period:r=14.0
+  transform:m=[[0.989783, -0.141161, -0.0201034] [-0.142585, -0.979895, -0.139552] [7.63684e-08, 0.140993, -0.990011] [3499.73, 10.0, 501.163]]
+}
+
+entity{
+  _template:t="projector"
+  projector__color:p3=0.12, 0.12, 0.12
+  projector__angle:r=5.0
+  projector__sourceWidth:r=1.0
+  projector__zAngleAmplitude:r=27.0
+  projector__period:r=28.0
+  transform:m=[[0.990793, -0.135226, 0.00660703] [0.135387, 0.989612, -0.0483524] [9.54606e-08, 0.0488017, 0.998809] [-347.293, 10.0001, -550.501]]
+}
+
+entity{
+  _template:t="projector"
+  projector__color:p3=0.12, 0.12, 0.12
+  projector__angle:r=4.0
+  projector__sourceWidth:r=1.0
+  projector__zAngleAmplitude:r=16.0
+  projector__period:r=24.0
+  transform:m=[[0.983735, -0.178902, 0.0161012] [-0.179625, -0.979775, 0.0881798] [1.11759e-08, -0.0896378, -0.995974] [665.691, 10.0, -219.863]]
+}
+
+entity{
+  _template:t="projector"
+  projector__color:p3=0.12, 0.12, 0.12
+  projector__angle:r=2.0
+  projector__sourceWidth:r=1.0
+  projector__zAngleAmplitude:r=27.0
+  projector__period:r=18.0
+  transform:m=[[0.983822, 0.177945, -0.0207603] [-0.179152, 0.977194, -0.114006] [4.28408e-08, 0.115881, 0.993263] [-152.522, 9.99963, 488.519]]
+}
+
+entity{
+  _template:t="projector"
+  projector__color:p3=0.12, 0.12, 0.12
+  projector__angle:r=5.0
+  projector__sourceWidth:r=1.0
+  projector__zAngleAmplitude:r=18.0
+  projector__period:r=14.0
+  transform:m=[[0.990771, -0.134661, 0.0154529] [0.135545, 0.984311, -0.112954] [4.00469e-08, 0.114006, 0.99348] [35.2291, 10.0, 413.567]]
+}
+
+entity{
+  _template:t="projector"
+  projector__color:p3=0.12, 0.12, 0.12
+  projector__angle:r=4.0
+  projector__sourceWidth:r=1.0
+  projector__zAngleAmplitude:r=25.0
+  projector__period:r=24.0
+  transform:m=[[-0.999373, -0.0281364, 0.0214858] [-0.0288033, 0.999092, -0.0313875] [-0.0205832, -0.0319867, -0.999276] [-231.253, 4.80853, 327.239]]
+}
+
+entity{
+  _template:t="projector"
+  projector__color:p3=0.12, 0.12, 0.12
+  projector__angle:r=6.0
+  projector__sourceWidth:r=1.0
+  projector__zAngleAmplitude:r=27.0
+  projector__period:r=20.0
+  transform:m=[[0.991501, 0.129907, -0.00707848] [-0.1301, 0.990032, -0.0539441] [1.85799e-07, 0.0544066, 0.998519] [38.0151, 9.99948, 419.625]]
+}
+
+entity{
+  _template:t="projector"
+  projector__color:p3=0.12, 0.12, 0.12
+  projector__angle:r=7.0
+  projector__sourceWidth:r=1.0
+  projector__zAngleAmplitude:r=22.0
+  projector__period:r=16.0
+  transform:m=[[0.978409, 0.205454, 0.0224715] [0.206679, -0.972608, -0.106379] [-3.35276e-08, 0.108727, -0.994072] [706.936, 10.0, -219.783]]
+}
+
+entity{
+  _template:t="tracer_launcher"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [219.724, 2.97418, -565.562]]
+  tracer_launcher__shoot_direction:p2=120.0, 50.0
+  tracer_launcher__bullet_speed:r=500.0
+  tracer_launcher__time_to_fire:r=1.1282
+  tracer_launcher__long_cooldown_min_max:p2=0.5, 2.0
+  tracer_launcher__long_cooldown_probability:r=0.2
+  tracer_launcher__short_cooldown:r=0.1
+}
+
+entity{
+  _template:t="tracer_launcher"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-146.499, 2.97375, 415.141]]
+  tracer_launcher__bullet_speed:r=500.0
+  tracer_launcher__time_to_fire:r=1.1282
+  tracer_launcher__long_cooldown_min_max:p2=0.5, 2.0
+  tracer_launcher__long_cooldown_probability:r=0.2
+  tracer_launcher__short_cooldown:r=0.1
+}
+
+entity{
+  _template:t="tracer_launcher"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [46.808, 2.97375, 419.068]]
+  tracer_launcher__bullet_speed:r=500.0
+  tracer_launcher__time_to_fire:r=1.1282
+  tracer_launcher__long_cooldown_min_max:p2=0.5, 2.0
+  tracer_launcher__long_cooldown_probability:r=0.2
+  tracer_launcher__short_cooldown:r=0.1
+}
+
+entity{
+  _template:t="tracer_launcher"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-247.693, 2.97375, 389.766]]
+  tracer_launcher__shoot_direction:p2=45.0, 0.0
+  tracer_launcher__rotate_range:p2=30.0, 60.0
+  tracer_launcher__bullet_speed:r=500.0
+  tracer_launcher__time_to_fire:r=1.1282
+  tracer_launcher__long_cooldown_min_max:p2=0.5, 2.0
+  tracer_launcher__long_cooldown_probability:r=0.2
+  tracer_launcher__short_cooldown:r=0.1
+}
+
+entity{
+  _template:t="tracer_launcher"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [3116.29, 4.3407, 402.693]]
+  tracer_launcher__shoot_direction:p2=180.0, 5.0
+  tracer_launcher__rotate_range:p2=50.0, 120.0
+  tracer_launcher__bullet_speed:r=500.0
+  tracer_launcher__time_to_fire:r=1.1282
+  tracer_launcher__long_cooldown_min_max:p2=0.5, 2.0
+  tracer_launcher__long_cooldown_probability:r=0.2
+  tracer_launcher__short_cooldown:r=0.1
+}
+
+entity{
+  _template:t="tracer_launcher"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [3403.82, 2.97418, 655.47]]
+  tracer_launcher__bullet_speed:r=500.0
+  tracer_launcher__time_to_fire:r=1.1282
+  tracer_launcher__long_cooldown_min_max:p2=0.5, 2.0
+  tracer_launcher__long_cooldown_probability:r=0.2
+  tracer_launcher__short_cooldown:r=0.1
+}
+
+entity{
+  _template:t="tracer_launcher"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [11.2078, 2.97449, -463.222]]
+  tracer_launcher__bullet_speed:r=500.0
+  tracer_launcher__time_to_fire:r=1.1282
+  tracer_launcher__long_cooldown_min_max:p2=0.5, 2.0
+  tracer_launcher__long_cooldown_probability:r=0.2
+  tracer_launcher__short_cooldown:r=0.1
+}
+
+entity{
+  _template:t="tracer_launcher"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-66.871, 2.97418, -337.147]]
+  tracer_launcher__bullet_speed:r=500.0
+  tracer_launcher__time_to_fire:r=1.1282
+  tracer_launcher__long_cooldown_min_max:p2=0.5, 2.0
+  tracer_launcher__long_cooldown_probability:r=0.2
+  tracer_launcher__short_cooldown:r=0.1
+  tracer_launcher__rotate_range:p2=10.0, 50.0
+}
+
+entity{
+  _template:t="envir_background_flash_8s_effect"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [834.678, 4.6709, -332.357]]
+}
+
+entity{
+  _template:t="envir_background_flash_8s_effect"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [281.531, 4.67059, -594.565]]
+}
+
+entity{
+  _template:t="envir_background_flash_11s_effect"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-80.3065, 4.67035, -380.098]]
+}
+
+entity{
+  _template:t="envir_background_flash_8s_effect"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-257.896, 8.36987, 461.17]]
+}
+
+entity{
+  _template:t="envir_background_flash_11s_effect"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [3244.94, 4.67053, 488.193]]
+}
+
+entity{
+  _template:t="envir_background_flash_8s_effect"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [2926.5, 4.6701, 331.114]]
+}
+
+entity{
+  _template:t="envir_smoke_bg_massive_effect"
+  transform:m=[[0.794718, 0.0, -0.606978] [0.0, 1.0, 0.0] [0.606978, -0.0, 0.794718] [2969.08, 14.118, 332.096]]
+}
+
+entity{
+  _template:t="envir_fire_background_small_effect"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-155.508, 29.1493, 441.76]]
+}
+
+entity{
+  _template:t="envir_fire_background_small_effect"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [12.4435, 14.4426, -334.958]]
+}
+
+entity{
+  _template:t="fire_spot_1m_effect"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [34.1974, 15.2978, 19.5912]]
+}
+
+entity{
+  _template:t="fire_spot_1m_effect"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [36.411, 15.3169, 24.4798]]
+}
+
+entity{
+  _template:t="fire_spot_1m_effect"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-105.156, 14.8215, 12.0871]]
+}
+
+entity{
+  _template:t="fire_spot_1m_effect"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [89.9933, 15.8851, 166.738]]
+}
+
+entity{
+  _template:t="fire_spot_1m_effect"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [134.757, 16.1968, 122.169]]
+}
+
+entity{
+  _template:t="fire_spot_1m_effect"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [173.065, 14.3035, 68.8789]]
+}
+
+entity{
+  _template:t="fire_spot_1m_effect"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [167.385, 14.6106, 66.1427]]
+}
+
+entity{
+  _template:t="fire_spot_1m_effect"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [157.821, 12.8964, 38.6072]]
+}
+
+entity{
+  _template:t="fire_spot_1m_effect"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [173.054, 14.6797, 86.6718]]
+}
+
+entity{
+  _template:t="fire_spot_1m_effect"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [499.293, 15.9842, -162.179]]
+}
+
+entity{
+  _template:t="fire_spot_1m_effect"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [498.314, 15.3714, -161.037]]
+}
+
+entity{
+  _template:t="fire_spot_1m_effect"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [477.981, 15.6689, -139.058]]
+}
+
+entity{
+  _template:t="fire_spot_1m_effect"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [487.76, 21.1723, -129.121]]
+}
+
+entity{
+  _template:t="fire_spot_1m_effect"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [425.521, 9.00451, -190.922]]
+}
+
+entity{
+  _template:t="fire_spot_1m_effect"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [482.971, 17.0997, -135.734]]
+}
+
+entity{
+  _template:t="fire_bonfire_big_effect"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [584.017, 23.4117, -189.054]]
+}
+
+entity{
+  _template:t="fire_bonfire_big_effect"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [203.832, 29.3898, -465.896]]
+}
+
+entity{
+  _template:t="fire_bonfire_small_effect"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [338.161, 2.91988, -87.786]]
+}
+
+entity{
+  _template:t="fire_bonfire_small_effect"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [420.878, 11.0474, -187.03]]
+}
+
+entity{
+  _template:t="fire_bonfire_small_effect"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [443.635, 11.2585, -166.337]]
+}
+
+entity{
+  _template:t="fire_bonfire_medium_effect"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [476.92, 15.4329, -137.692]]
+}
+
+entity{
+  _template:t="fire_bonfire_medium_effect"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [508.76, 16.6373, -145.291]]
+}
+
+entity{
+  _template:t="fire_bonfire_small_effect"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [495.931, 15.703, -136.65]]
+}
+
+entity{
+  _template:t="fire_bonfire_small_effect"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [591.357, 17.2755, -174.244]]
+}
+
+entity{
+  _template:t="fire_bonfire_small_effect"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [126.11, 15.3607, -17.0701]]
+}
+
+entity{
+  _template:t="fire_bonfire_small_effect"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [1.8487, 16.6867, 101.036]]
+}
+
+entity{
+  _template:t="fire_bonfire_small_effect"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [144.794, 17.0502, 108.368]]
+}
+
+entity{
+  _template:t="fire_bonfire_small_effect"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [67.3308, 15.6503, 99.6986]]
+}
+
+entity{
+  _template:t="fire_bonfire_small_effect"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-109.624, 7.20946, -20.1145]]
+}
+
+entity{
+  _template:t="fire_bonfire_small_effect"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-242.931, 1.46569, -91.7797]]
+}
+
+entity{
+  _template:t="fire_bonfire_small_effect"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [58.61, 16.0787, 58.47]]
+}
+
+entity{
+  _template:t="fire_spot_1m_effect"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [82.6858, 16.4576, 5.5524]]
+}
+
+entity{
+  _template:t="fire_bonfire_small_effect"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [9.12203, 15.1308, 17.7466]]
+}
+
+entity{
+  _template:t="envir_smoke_medium_effect"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [175.005, 15.8194, 66.3946]]
+}
+
+entity{
+  _template:t="envir_smoke_medium_effect"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-4.47395, 16.1728, 37.3197]]
+}
+
+entity{
+  _template:t="envir_smoke_medium_effect"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [176.514, 15.2553, 155.424]]
+}
+
+entity{
+  _template:t="fire_bonfire_small_effect"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [18.8794, 15.6202, 144.295]]
+}
+
+entity{
+  _template:t="fire_bonfire_small_effect"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-53.3791, 16.6606, 82.326]]
+}
+
+entity{
+  _template:t="fire_spot_1m_effect"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-150.519, 16.8383, 42.9274]]
+}
+
+entity{
+  _template:t="fire_bonfire_small_effect"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-13.81, 4.76413, -45.1843]]
+}
+
+entity{
+  _template:t="envir_smoke_big_effect"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [159.286, 24.5752, 228.964]]
+}
+
+entity{
+  _template:t="envir_smoke_big_effect"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-67.336, 20.1732, 264.998]]
+}
+
+entity{
+  _template:t="fire_bonfire_big_effect"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [39.2126, 20.2759, 311.504]]
+}
+
+entity{
+  _template:t="fire_bonfire_big_effect"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [39.2126, 20.2759, 311.504]]
+}
+
+entity{
+  _template:t="envir_smoke_big_effect"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-122.889, 28.1783, -432.978]]
+}
+
+entity{
+  _template:t="envir_smoke_big_effect"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [207.432, 5.57573, -313.219]]
+}
+
+entity{
+  _template:t="fire_bonfire_big_effect"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [635.374, 14.7864, -197.873]]
+}
+
+entity{
+  _template:t="fire_bonfire_big_effect"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [616.363, 15.2812, -218.288]]
+}
+
+entity{
+  _template:t="fire_bonfire_big_effect"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [610.09, 14.6364, -192.957]]
+}
+
+entity{
+  _template:t="fire_bonfire_big_effect"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [641.685, 15.4635, -225.157]]
+}
+
+entity{
+  _template:t="fire_bonfire_huge_effect"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [660.878, 15.8147, -240.108]]
+}

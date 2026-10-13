@@ -1,0 +1,93 @@
+turret_with_ammo_stowage{
+  _tags:t="server"
+
+  "turret__ammoStowageEid:eid"{
+  }
+}
+
+ammo_cluster{
+  ammo_cluster__isShell:b=yes
+  ammo_cluster__reloadTimeMult:r=1.0
+  ammo_cluster__restoreAfterDead:b=no
+
+  "ammo_cluster__slotNames:shared:list<t>"{
+  }
+
+  "ammo_cluster__mapSlotToPartId:list<i>"{
+  }
+
+  "ammo_cluster__slotsEnabled:list<b>"{
+  }
+
+  "ammo_cluster__slotsAmmo:list<i>"{
+  }
+
+  "ammo_cluster__slotsMaxAmmo:list<i>"{
+  }
+
+  "ammo_cluster__vehicleEid:eid"{
+  }
+}
+
+ammo_cluster_first_stage{
+
+  "ammo_cluster__isFirstStage:tag"{
+  }
+}
+
+ammo_stowage{
+  ammo_stowage__numAmmo:i=0
+  ammo_stowage__maxAmmoFirstStage:i=0
+
+  "ammo_stowage__numAmmoFirstStage:i"{
+    value:i=0
+    _track:b=yes
+  }
+
+  "ammo_stowage__vehicleEid:eid"{
+  }
+
+  "ammo_stowage__clusterTemplates:shared:list<t>"{
+  }
+
+  "ammo_stowage__clusters:list<eid>"{
+  }
+
+  "ammo_stowage__turretNames:shared:list<t>"{
+  }
+
+  "ammo_stowage__gunEids:list<eid>"{
+  }
+
+  _group{
+    _tags:t="server"
+    ammo_stowage__isReloading:b=no
+    ammo_stowage__replenishmentDelay:r=3.0
+    ammo_stowage__replenishmentTime:r=7.0
+
+    "ammo_stowage__replenishmentStartTime:r"{
+      value:r=-1.0
+      _track:b=yes
+    }
+
+    "ammo_stowage__nextReplenishmentAtTime:r"{
+      value:r=-1.0
+      _track:b=yes
+    }
+
+    "ammo_stowage__replenishmentTimeMult:r"{
+      value:r=1.0
+      _track:b=yes
+    }
+  }
+}
+
+vehicle_ammo_stowages{
+  _tags:t="server"
+
+  "ammo_stowage__stowageTemplates:shared:list<t>"{
+  }
+
+  "ammo_stowage__stowages:list<eid>"{
+  }
+}

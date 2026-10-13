@@ -1,0 +1,41 @@
+entity{
+  _template:t="burnt_grass_renderer"
+
+  "burnt_grass_renderer__biomeNames:list<t>"{
+    name:t="forest"
+    name:t="forest_spruce"
+    name:t="forest_leaves"
+    name:t="grass"
+    name:t="sand"
+    name:t="mud"
+    name:t="soil"
+    name:t="hard_soil"
+    name:t="rocks"
+  }
+}
+
+entity{
+  _template:t="burnt_ground_renderer"
+  burnt_ground_renderer__tex_d_res:t="terrain_detail_burnt_grass_ember_c_tex_d"
+  burnt_ground_renderer__tex_n_res:t="terrain_detail_burnt_grass_a_tex_n"
+  burnt_ground_renderer__tex_m_res:t="terrain_detail_burnt_grass_a_tex_r"
+  burnt_ground_renderer__max_clipmap_decal_count:i=1000
+  burnt_ground_renderer__max_animating_decal_count:i=128
+  burnt_ground_renderer__selfillum_color:p4=0.53, 0.0, 0.0, 0.16
+  burnt_ground_renderer__selfillum_strength:r=2.0
+  burnt_ground_renderer__selfillum_worldscale:r=1.0
+  burnt_ground_renderer__edge_noise_frequency:r=2.0
+  burnt_ground_renderer__edge_noise_scale:r=1.0
+  burnt_ground_renderer__edge_width:r=0.3
+  burnt_ground_renderer__tile_size:p2=4.0, 4.0
+  burnt_ground_renderer__fadein_duration_sec:r=10.0
+  burnt_ground_renderer__fadeout_duration_sec:r=5.0
+
+  "burnt_ground_renderer__biomeNames:list<t>"{
+    name:t="forest"
+    name:t="forest_spruce"
+    name:t="forest_leaves"
+    name:t="grass"
+    name:t="soil"
+  }
+}

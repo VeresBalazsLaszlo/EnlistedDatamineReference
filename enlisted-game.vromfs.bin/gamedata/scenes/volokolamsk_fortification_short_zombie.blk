@@ -1,0 +1,1127 @@
+import{
+  scene:t="gamedata/scenes/_volokolamsk_zombie_sounds.blk"
+}
+
+import{
+  scene:t="gamedata/scenes/_volokolamsk_winter_common.blk"
+}
+
+import{
+  scene:t="gamedata/scenes/_volokolamsk_winter_biome_fx.blk"
+}
+
+entity{
+  _template:t="poly_battle_area"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, 0.0, 0.0]]
+  battle_area__team:i=1
+  battleAreaId:t="area1_1"
+
+  "poly_area__points:list<p3>"{
+    item:p3=-330.687, 7.5194, 1327.83
+    item:p3=-337.136, 8.51088, 1340.32
+    item:p3=-351.769, 8.67865, 1347.96
+    item:p3=-360.728, 9.01602, 1347.01
+    item:p3=-366.118, 8.20958, 1341.07
+    item:p3=-369.06, 7.87015, 1337.65
+    item:p3=-378.437, 6.77588, 1334.14
+    item:p3=-385.488, 5.61956, 1329.28
+    item:p3=-390.354, 5.33077, 1326.19
+    item:p3=-393.076, 5.3339, 1322.77
+    item:p3=-396.055, 5.28556, 1321.19
+    item:p3=-400.304, 5.35846, 1320.18
+    item:p3=-403.139, 5.4553, 1319.11
+    item:p3=-406.903, 5.48923, 1314.79
+    item:p3=-408.536, 5.5186, 1309.73
+    item:p3=-410.65, 5.34471, 1303.25
+    item:p3=-412.033, 5.28351, 1299.12
+    item:p3=-415.172, 5.19078, 1296.17
+    item:p3=-420.299, 5.25791, 1292.36
+    item:p3=-425.22, 5.95905, 1287.47
+    item:p3=-427.605, 5.50907, 1282.13
+    item:p3=-429.359, 5.00488, 1272.76
+    item:p3=-426.309, 5.34978, 1267.15
+    item:p3=-412.73, 5.63621, 1260.27
+    item:p3=-400.673, 5.24422, 1256.64
+    item:p3=-387.995, 5.53555, 1256.16
+    item:p3=-379.107, 5.91248, 1262.54
+    item:p3=-370.371, 5.6425, 1269.33
+    item:p3=-361.208, 5.37953, 1274.6
+    item:p3=-352.787, 5.35266, 1282.06
+    item:p3=-344.096, 6.19589, 1293.78
+    item:p3=-330.217, 7.7739, 1312.7
+  }
+}
+
+entity{
+  _template:t="box_battle_area"
+  transform:m=[[256.246, 0.0, -196.262] [0.0, 96.5445, 0.0] [174.635, -0.0, 228.009] [-425.591, 18.9766, 1339.9]]
+  battle_area__team:i=3
+}
+
+entity{
+  _template:t="zombie_level_night"
+  level__blk:t="levels/battle_of_moscow_volokolamsk_countryside_short_winter_night.blk"
+  level__latitude:r=-84.0
+  level__timeOfDay:r=1.32
+}
+
+entity{
+  _template:t="volfog_nbs"
+  volfog_nbs__rootGraph:t="fog_dark_zone_winter.json"
+}
+
+entity{
+  _template:t="minimap_battle_of_moscow_volokolamsk_countryside_winter_zombie"
+}
+
+entity{
+  _template:t="water"
+  water__strength:r=0.1
+  waterTrail__fadeInTime:r=1.0
+}
+
+entity{
+  _template:t="wind"
+}
+
+entity{
+  _template:t="postfx_color_grading_tonemap_zombie_night"
+}
+
+entity{
+  _template:t="postfx_roundctrl"
+}
+
+entity{
+  _template:t="door_mult_ent_generator"
+  ri_extra_gen__blk:t="gamedata/volokolamsk_doors.blk"
+}
+
+entity{
+  _template:t="noBotsMode"
+}
+
+entity{
+  _template:t="briefing_zombie_mode"
+  mission_name:t="volokolamsk_fortification_zombie"
+
+  "loading_images:list<t>"{
+    item:t="ui/breaking_dead_event_login_screen.avif"
+  }
+}
+
+entity{
+  _template:t="custom_profile"
+  customProfile:t="%enlSqGlob/data/zombie_profile_2.json"
+}
+
+entity{
+  _template:t="team_germany+team_narrator_invasion_defence+respawn_creators_team"
+  team__countAdd:r=0.5
+  team__memberCount:r=0.5
+  team__scoreCap:r=5000.0
+  team__capturePenalty:r=1001.0
+  team__score:r=5000.0
+  team__id:i=2
+  team__spawnBotArmy:t="normandy_axis"
+}
+
+entity{
+  _template:t="team_usa+team_narrator_invasion_attack+respawn_creators_team"
+  team__memberCount:r=0.0
+  team__scoreCap:r=50.0
+  team__score:r=50.0
+  team__squadSpawnCost:i=0
+  team__firstSpawnCostMul:r=0.0
+  team__zeroScoreFailTimer:r=0.0
+  team__deathPenalty:r=1.0
+  team__id:i=1
+  team__spawnBotArmy:t="normandy_allies"
+}
+
+entity{
+  _template:t="zombie_spawn_mode"
+}
+
+entity{
+  _template:t="base_fortification_build+tutorial_ammunition_box_a+paid_ammo_box_ressuply+undestroyable_ri_extra"
+  transform:m=[[-0.803144, 0.0, -0.595785] [0.03454, 0.998318, -0.0465614] [0.594783, -0.057974, -0.801793] [-359.81, 5.04669, 1304.67]]
+  team:i=1
+  useful_box__maxUseCount:i=99999
+}
+
+entity{
+  _template:t="tutorial_placed_medic_box_item+placeable_item_in_world+base_ri_building+paid_medkit_box_use+undestroyable_ri_extra"
+  transform:m=[[0.719144, -0.066328, -0.691689] [0.0259412, 0.997303, -0.0686634] [0.694377, 0.0314356, 0.718924] [-357.608, 5.18664, 1306.51]]
+  ri_extra__name:t="dummy_wooden_box_a"
+  team:i=1
+  medic_box__isOpen:b=yes
+  useful_box__maxUseCount:i=99999
+  builder_info__team:i=1
+  placeable_item__ownerTeam:i=1
+  paid_box__ressuplyCost:i=50
+  useful_box__uiPrice:i=50
+}
+
+entity{
+  _template:t="base_fortification_build+tutorial_ammunition_box_a+paid_ammo_box_ressuply+undestroyable_ri_extra"
+  transform:m=[[0.338325, -0.014111, -0.940923] [-0.0206826, 0.999534, -0.0224268] [0.940802, 0.0270483, 0.337876] [-395.173, 5.50356, 1271.31]]
+  team:i=1
+  useful_box__maxUseCount:i=99999
+}
+
+entity{
+  _template:t="tutorial_placed_medic_box_item+placeable_item_in_world+base_ri_building+paid_medkit_box_use+undestroyable_ri_extra"
+  transform:m=[[0.372326, 0.0548139, -0.926482] [0.00915915, 0.997989, 0.0627253] [0.928057, -0.03184, 0.371075] [-392.908, 5.69713, 1271.8]]
+  ri_extra__name:t="dummy_wooden_box_a"
+  team:i=1
+  medic_box__isOpen:b=yes
+  useful_box__maxUseCount:i=99999
+  builder_info__team:i=1
+  placeable_item__ownerTeam:i=1
+  paid_box__ressuplyCost:i=50
+  useful_box__uiPrice:i=50
+}
+
+entity{
+  _template:t="tutorial_placed_medic_box_item+placeable_item_in_world+base_ri_building+paid_medkit_box_use+undestroyable_ri_extra"
+  transform:m=[[0.528428, 0.0, -0.848978] [0.0, 1.0, 0.0] [0.848978, -0.0, 0.528428] [-367.16, 5.69145, 1278.72]]
+  ri_extra__name:t="dummy_wooden_box_a"
+  team:i=1
+  medic_box__isOpen:b=yes
+  useful_box__maxUseCount:i=99999
+  builder_info__team:i=1
+  placeable_item__ownerTeam:i=1
+  paid_box__ressuplyCost:i=50
+  useful_box__uiPrice:i=50
+}
+
+entity{
+  _template:t="random_weapon_box"
+  transform:m=[[-0.752048, 0.0, 0.659109] [0.0, 1.0, 0.0] [-0.659109, 0.0, -0.752048] [-364.992, 6.14261, 1280.96]]
+}
+
+entity{
+  _template:t="base_fortification_build+tutorial_ammunition_box_a+paid_ammo_box_ressuply+undestroyable_ri_extra"
+  transform:m=[[-0.930212, 0.0, 0.367022] [0.0, 1.0, 0.0] [-0.367022, 0.0, -0.930212] [-362.871, 5.36494, 1283.27]]
+  team:i=1
+  useful_box__maxUseCount:i=99999
+}
+
+entity{
+  _template:t="static_cam"
+  camera__active:b=yes
+  transform:m=[[0.965268, 0.0, 0.261261] [0.00544948, 0.999782, -0.020134] [-0.261204, 0.0208584, 0.965058] [-394.717, 7.54257, 1321.29]]
+}
+
+entity{
+  _template:t="respawnChooser+respTeam1"
+  transform:m=[[-0.427514, 0.0, 0.904009] [0.0, 1.0, 0.0] [-0.904009, 0.0, -0.427514] [-379.608, 6.22561, 1279.11]]
+  active:b=yes
+}
+
+entity{
+  _template:t="respawnChooser+respTeam2"
+  transform:m=[[-0.803144, 0.0, -0.595785] [0.0, 1.0, 0.0] [0.595785, 0.0, -0.803144] [-494.394, 4.55051, 1366.09]]
+  active:b=yes
+}
+
+entity{
+  _template:t="respawnChooser+respTeam1"
+  transform:m=[[-0.689359, 0.0, 0.724419] [0.0, 1.0, 0.0] [-0.724419, 0.0, -0.689359] [-369.14, 6.15519, 1284.43]]
+  active:b=yes
+}
+
+entity{
+  _template:t="respawnChooser+respTeam2"
+  transform:m=[[-0.811401, 0.0, 0.584489] [0.0, 1.0, 0.0] [-0.584489, 0.0, -0.811401] [-467.717, 4.55052, 1388.45]]
+  active:b=yes
+}
+
+entity{
+  _template:t="respawnChooser+respTeam1"
+  transform:m=[[-0.762945, 0.0, 0.646464] [0.0, 1.0, 0.0] [-0.646464, 0.0, -0.762945] [-358.356, 5.7407, 1296.02]]
+  active:b=yes
+}
+
+entity{
+  _template:t="respawnChooser+respTeam1"
+  transform:m=[[-0.229754, 0.0, 0.973249] [0.0, 1.0, 0.0] [-0.973249, 0.0, -0.229754] [-396.03, 6.48615, 1265.21]]
+  active:b=yes
+}
+
+entity{
+  _template:t="respawnChooser+respTeam1"
+  transform:m=[[-0.68333, 0.0, 0.730111] [0.0, 1.0, 0.0] [-0.730111, 0.0, -0.68333] [-342.561, 6.08301, 1307.53]]
+  active:b=yes
+}
+
+entity{
+  _template:t="respawnChooser+respTeam2"
+  transform:m=[[0.436987, 0.0, 0.899468] [0.0, 1.0, -0.0] [-0.899468, 0.0, 0.436988] [-457.812, 4.55048, 1409.11]]
+  active:b=yes
+}
+
+entity{
+  _template:t="zombie_spawn_zone"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-476.621, 5.49486, 1332.43]]
+}
+
+entity{
+  _template:t="zombie_spawn_zone"
+  transform:m=[[0.900812, 0.0, -0.434209] [0.0, 1.0, 0.0] [0.434209, -0.0, 0.900812] [-448.451, 5.67562, 1367.73]]
+}
+
+entity{
+  _template:t="zombie_spawn_zone"
+  transform:m=[[0.809922, 0.0, -0.586538] [0.0, 1.0, 0.0] [0.586538, -0.0, 0.809922] [-456.118, 5.57363, 1364.76]]
+}
+
+entity{
+  _template:t="zombie_spawn_zone"
+  transform:m=[[0.993132, 0.0, 0.117] [0.0, 1.0, -0.0] [-0.117, 0.0, 0.993132] [-468.98, 6.02044, 1347.83]]
+}
+
+entity{
+  _template:t="zombie_spawn_zone"
+  transform:m=[[0.695541, 0.0, -0.718486] [0.0, 1.0, 0.0] [0.718486, -0.0, 0.695541] [-425.459, 7.01171, 1396.44]]
+}
+
+entity{
+  _template:t="zombie_spawn_zone"
+  transform:m=[[0.226494, 0.0, -0.974013] [0.0, 1.0, 0.0] [0.974013, -0.0, 0.226494] [-413.39, 6.96181, 1402.11]]
+}
+
+entity{
+  _template:t="zombie_spawn_zone"
+  transform:m=[[0.581862, 0.0, -0.813287] [0.0, 1.0, 0.0] [0.813287, -0.0, 0.581862] [-437.509, 6.95165, 1386.46]]
+}
+
+entity{
+  _template:t="zombie_spawn_zone"
+  transform:m=[[0.878488, 0.0, -0.477764] [0.0, 1.0, 0.0] [0.477764, -0.0, 0.878488] [-441.162, 6.33072, 1373.76]]
+}
+
+entity{
+  _template:t="zombie_spawn_zone"
+  transform:m=[[0.809922, 0.0, -0.586538] [0.0, 1.0, 0.0] [0.586538, -0.0, 0.809922] [-467.424, 5.73862, 1357.17]]
+}
+
+entity{
+  _template:t="zombie_spawn_zone"
+  transform:m=[[0.198675, 0.0, -0.980065] [0.0, 1.0, 0.0] [0.980065, -0.0, 0.198675] [-396.741, 7.96276, 1406.08]]
+}
+
+entity{
+  _template:t="zombie_tank_spawn_zone"
+  transform:m=[[0.750178, 0.0, -0.661236] [0.0, 1.0, 0.0] [0.661236, -0.0, 0.750178] [-487.424, 5.87311, 1303.52]]
+  zombie_tank_spawn_zone__objectiveId:i=0
+}
+
+entity{
+  _template:t="zombie_tank_spawn_zone"
+  transform:m=[[0.750178, 0.0, -0.661236] [0.0, 1.0, 0.0] [0.661236, -0.0, 0.750178] [-381.615, 15.5133, 1442.7]]
+  zombie_tank_spawn_zone__objectiveId:i=1
+}
+
+entity{
+  _template:t="zombie_tank_objective"
+  zombie_tank_objective__id:i=0
+
+  "ai_tank_objective__positionIds:list<i>"{
+    item:i=2
+    item:i=1
+  }
+
+  "ai_tank_objective__aimAtPositionIds:list<i>"{
+    item:i=0
+    item:i=0
+  }
+
+  "ai_tank_objective__positionCountsPerType:list<i>"{
+    item:i=2
+  }
+
+  "ai_tank_objective__probabilityPerPositionType:list<r>"{
+    item:r=1.0
+  }
+}
+
+entity{
+  _template:t="zombie_tank_objective"
+  zombie_tank_objective__id:i=1
+
+  "ai_tank_objective__positionIds:list<i>"{
+    item:i=4
+    item:i=5
+  }
+
+  "ai_tank_objective__aimAtPositionIds:list<i>"{
+    item:i=3
+    item:i=3
+  }
+
+  "ai_tank_objective__positionCountsPerType:list<i>"{
+    item:i=2
+  }
+
+  "ai_tank_objective__probabilityPerPositionType:list<r>"{
+    item:r=1.0
+  }
+}
+
+entity{
+  _template:t="custom_ai_tank_objective_position"
+  ai_tank_objective__positionId:i=0
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-400.0, 7.89482, 1284.0]]
+}
+
+entity{
+  _template:t="custom_ai_tank_objective_position"
+  ai_tank_objective__positionId:i=1
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-424.578, 6.14745, 1296.78]]
+}
+
+entity{
+  _template:t="custom_ai_tank_objective_position"
+  ai_tank_objective__positionId:i=2
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-419.105, 8.0, 1262.18]]
+}
+
+entity{
+  _template:t="custom_ai_tank_objective_position"
+  ai_tank_objective__positionId:i=3
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-358.1, 11.2, 1323.3]]
+}
+
+entity{
+  _template:t="custom_ai_tank_objective_position"
+  ai_tank_objective__positionId:i=4
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-327.351, 9.72989, 1344.85]]
+}
+
+entity{
+  _template:t="custom_ai_tank_objective_position"
+  ai_tank_objective__positionId:i=5
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-359.806, 10.7907, 1356.99]]
+}
+
+entity{
+  _template:t="m1911_colt_zombie_gun_item+item_in_world+ui_visible+disable_update+paid_loot_item"
+  transform:m=[[0.351798, 0.0, -0.936076] [-0.0, 1.0, 0.0] [0.936076, 0.0, 0.351798] [-387.252, 6.57904, 1278.25]]
+  animchar__updatable:b=no
+  paid_loot__cost:i=30
+}
+
+entity{
+  _template:t="mosin_m38_zombie_gun_item+item_in_world+ui_visible+disable_update+paid_loot_item"
+  transform:m=[[0.345938, 0.0, -0.938257] [0.0, 1.0, 0.0] [0.938257, -0.0, 0.345938] [-383.38, 6.69027, 1279.73]]
+  animchar__updatable:b=no
+  paid_loot__cost:i=50
+}
+
+entity{
+  _template:t="m1_garand_zombie_gun_item+item_in_world+ui_visible+disable_update+paid_loot_item"
+  transform:m=[[0.327351, 0.0, -0.944903] [0.0, 1.0, 0.0] [0.944903, -0.0, 0.327351] [-384.661, 6.66118, 1279.21]]
+  animchar__updatable:b=no
+  paid_loot__cost:i=130
+}
+
+entity{
+  _template:t="stl_mp_40_zombie_gun_item+item_in_world+ui_visible+disable_update+paid_loot_item"
+  transform:m=[[0.34869, 0.0, -0.937238] [0.0, 1.0, 0.0] [0.937238, -0.0, 0.34869] [-390.158, 6.67925, 1277.12]]
+  animchar__updatable:b=no
+  paid_loot__cost:i=250
+}
+
+entity{
+  _template:t="winchester_model_1912_zombie_gun_item+item_in_world+ui_visible+disable_update+paid_loot_item"
+  transform:m=[[0.332893, 0.0, -0.942965] [0.0, 1.0, 0.0] [0.942965, -0.0, 0.332893] [-383.978, 6.97056, 1279.45]]
+  animchar__updatable:b=no
+  paid_loot__cost:i=300
+}
+
+entity{
+  _template:t="stg_44_zombie_gun_item+item_in_world+ui_visible+disable_update+paid_loot_item"
+  transform:m=[[0.36858, 0.0, -0.929596] [0.0, 1.0, 0.0] [0.929596, -0.0, 0.36858] [-388.913, 6.69972, 1277.57]]
+  animchar__updatable:b=no
+  paid_loot__cost:i=600
+}
+
+entity{
+  _template:t="dp_27_zombie_gun_item+item_in_world+ui_visible+disable_update+paid_loot_item"
+  transform:m=[[0.358309, 0.0, -0.933603] [0.0, 1.0, 0.0] [0.933603, -0.0, 0.358309] [-389.535, 7.05633, 1277.5]]
+  animchar__updatable:b=no
+  paid_loot__cost:i=1200
+}
+
+entity{
+  _template:t="f1_grenade_item+item_in_world+paid_loot_item"
+  transform:m=[[0.689157, 0.0, -0.724612] [0.0, 1.0, 0.0] [0.724612, -0.0, 0.689157] [-386.889, 6.53272, 1278.37]]
+  paid_loot__cost:i=70
+}
+
+entity{
+  _template:t="explosion_pack_item+item_in_world+paid_loot_item"
+  transform:m=[[0.689157, 0.0, -0.724612] [0.0, 1.0, 0.0] [0.724612, -0.0, 0.689157] [-386.505, 6.60208, 1278.58]]
+  paid_loot__cost:i=120
+}
+
+entity{
+  _template:t="omni_light_huge_flicker"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-402.107, 7.70476, 1346.71]]
+  light__color:c=230, 40, 0, 0
+  light__max_radius:r=10.0
+  light__brightness:r=25.0
+  light__affect_volumes:b=no
+}
+
+entity{
+  _template:t="wall_lamp_c+undestroyable_ri_extra"
+  transform:m=[[-0.0821613, 0.0, 0.214804] [0.0, 0.22998, 0.0] [-0.214804, 0.0, -0.0821613] [-384.239, 7.34224, 1279.33]]
+  ri_extra__destroyed:b=no
+}
+
+entity{
+  _template:t="wall_lamp_c_glass_on+undestroyable_ri_extra"
+  transform:m=[[-0.0821613, 0.0, 0.214804] [0.0, 0.22998, 0.0] [-0.214804, 0.0, -0.0821613] [-384.239, 7.34224, 1279.33]]
+}
+
+entity{
+  _template:t="wall_lamp_c+undestroyable_ri_extra"
+  transform:m=[[-0.0821613, 0.0, 0.214804] [0.0, 0.22998, 0.0] [-0.214804, 0.0, -0.0821613] [-389.675, 7.34224, 1277.24]]
+}
+
+entity{
+  _template:t="wall_lamp_c_glass_on+undestroyable_ri_extra"
+  transform:m=[[-0.0821613, 0.0, 0.214804] [0.0, 0.22998, 0.0] [-0.214804, 0.0, -0.0821613] [-389.675, 7.34224, 1277.24]]
+}
+
+entity{
+  _template:t="omni_light_lamppost_undestr"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-364.978, 7.72244, 1281.0]]
+  light__max_radius:r=5.0
+  light__brightness:r=5.0
+  light__affect_volumes:b=no
+}
+
+entity{
+  _template:t="omni_light_huge_flicker"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-388.963, 9.56089, 1349.98]]
+  light__color:c=230, 40, 0, 0
+  light__max_radius:r=10.0
+  light__brightness:r=20.0
+  light_flicker_updater__template:t="omni_flicker_light_template_b"
+  light__affect_volumes:b=no
+}
+
+entity{
+  _template:t="envir_misc_burned_ground_fire_5m_low_effect"
+  transform:m=[[0.998892, 0.0388234, -0.026611] [-0.038042, 0.998848, 0.0292631] [0.0277164, -0.0282183, 0.999217] [-415.724, 6.76791, 1349.37]]
+}
+
+entity{
+  _template:t="envir_misc_burned_ground_fire_5m_low_effect"
+  transform:m=[[0.997274, -0.0735674, 0.00574745] [0.0737916, 0.994244, -0.0776753] [-0.0, 0.0778877, 0.996962] [-402.042, 6.48181, 1345.19]]
+}
+
+entity{
+  _template:t="envir_misc_burned_ground_fire_5m_low_effect"
+  transform:m=[[0.995292, -0.0966377, 0.00736108] [0.0969177, 0.992418, -0.0755943] [-0.0, 0.0759519, 0.997111] [-406.385, 7.06561, 1348.59]]
+}
+
+entity{
+  _template:t="envir_misc_burned_ground_fire_5m_low_effect"
+  transform:m=[[0.998483, -0.0545597, 0.00745954] [0.0550673, 0.989279, -0.135257] [-0.0, 0.135462, 0.990782] [-402.052, 6.77466, 1350.14]]
+}
+
+entity{
+  _template:t="envir_misc_burned_ground_fire_5m_low_effect"
+  transform:m=[[0.99448, 0.103057, -0.0197259] [-0.104928, 0.976748, -0.186958] [-0.0, 0.187995, 0.98217] [-387.356, 7.41146, 1344.05]]
+}
+
+entity{
+  _template:t="envir_misc_burned_ground_fire_5m_low_effect"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-387.806, 7.49542, 1351.65]]
+}
+
+entity{
+  _template:t="envir_misc_burned_ground_fire_5m_low_effect"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-385.203, 7.48735, 1356.3]]
+}
+
+entity{
+  _template:t="envir_misc_burned_ground_fire_5m_low_effect"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-405.803, 7.67898, 1355.05]]
+}
+
+entity{
+  _template:t="envir_misc_burned_ground_fire_5m_low_effect"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-401.417, 7.3688, 1357.4]]
+}
+
+entity{
+  _template:t="envir_misc_burned_ground_fire_5m_low_effect"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-416.494, 7.63148, 1352.21]]
+}
+
+entity{
+  _template:t="envir_misc_burned_ground_fire_5m_low_effect"
+  transform:m=[[0.999874, 0.0155791, -0.00293021] [-0.0156231, 0.999756, -0.015625] [0.00268607, 0.0156688, 0.999874] [-421.759, 6.62898, 1348.6]]
+}
+
+entity{
+  _template:t="envir_misc_burned_ground_fire_5m_low_effect"
+  transform:m=[[0.990991, -0.132379, 0.0202966] [0.133926, 0.979545, -0.150186] [-0.0, 0.151551, 0.988449] [-421.504, 8.59665, 1370.82]]
+}
+
+entity{
+  _template:t="envir_misc_burned_ground_fire_5m_low_effect"
+  transform:m=[[1.0, -1.84769e-06, 3.32014e-07] [1.87728e-06, 0.984236, -0.176859] [-0.0, 0.176859, 0.984236] [-417.336, 9.20967, 1376.5]]
+}
+
+entity{
+  _template:t="envir_misc_burned_ground_fire_5m_low_effect"
+  transform:m=[[0.989572, 0.139415, -0.0362156] [-0.144042, 0.957784, -0.248803] [-0.0, 0.251425, 0.967877] [-428.844, 7.78497, 1369.41]]
+}
+
+entity{
+  _template:t="envir_misc_burned_ground_fire_5m_low_effect"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-387.777, 8.34446, 1358.53]]
+}
+
+entity{
+  _template:t="envir_smoke_small_effect"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-407.01, 7.32118, 1349.17]]
+}
+
+entity{
+  _template:t="envir_smoke_small_effect"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-386.351, 8.44427, 1353.45]]
+}
+
+entity{
+  _template:t="envir_smoke_small_effect"
+  transform:m=[[0.989262, -0.14546, 0.0142054] [0.146152, 0.984578, -0.0961521] [-0.0, 0.0971958, 0.995265] [-422.126, 8.81664, 1371.98]]
+}
+
+entity{
+  _template:t="omni_light_lamppost_undestr"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-384.317, 7.08664, 1279.58]]
+  light__automatic_box:b=no
+  light__affect_volumes:b=no
+  light__max_radius:r=2.0
+}
+
+entity{
+  _template:t="omni_light_huge_flicker"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-418.493, 7.97149, 1348.13]]
+  light__color:c=230, 40, 0, 0
+  light__max_radius:r=15.0
+  light__brightness:r=5.0
+  light_flicker_updater__template:t="omni_flicker_light_template_b"
+  light__affect_volumes:b=no
+}
+
+entity{
+  _template:t="envir_misc_burned_ground_fire_5m_low_effect"
+  transform:m=[[0.99811, -0.0558591, -0.0256192] [0.0555742, 0.998386, -0.0116998] [0.0262314, 0.010254, 0.999603] [-401.338, 6.5186, 1346.43]]
+}
+
+entity{
+  _template:t="envir_misc_burned_ground_fire_5m_low_effect"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-433.688, 6.78228, 1360.33]]
+}
+
+entity{
+  _template:t="envir_misc_burned_ground_fire_5m_low_effect"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-433.406, 6.99168, 1351.66]]
+}
+
+entity{
+  _template:t="envir_misc_burned_ground_fire_5m_low_effect"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-442.449, 5.61359, 1349.55]]
+}
+
+entity{
+  _template:t="envir_misc_burned_ground_fire_5m_low_effect"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-441.946, 6.036, 1343.53]]
+}
+
+entity{
+  _template:t="envir_misc_burned_ground_fire_5m_low_effect"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-384.767, 7.6557, 1368.09]]
+}
+
+entity{
+  _template:t="envir_misc_burned_ground_fire_5m_low_effect"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-381.149, 8.66309, 1377.55]]
+}
+
+entity{
+  _template:t="envir_misc_burned_ground_fire_5m_low_effect"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-393.834, 7.56588, 1377.36]]
+}
+
+entity{
+  _template:t="envir_misc_burned_ground_fire_5m_low_effect"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-388.272, 7.89362, 1376.82]]
+}
+
+entity{
+  _template:t="envir_misc_burned_ground_fire_5m_low_effect"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-435.736, 5.89894, 1340.1]]
+}
+
+entity{
+  _template:t="omni_light_huge_flicker"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-431.511, 7.63412, 1361.04]]
+  light__color:c=230, 40, 0, 0
+  light__max_radius:r=10.0
+  light__brightness:r=25.0
+  light_flicker_updater__template:t="omni_flicker_light_template_a"
+}
+
+entity{
+  _template:t="omni_light_huge_flicker"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-391.486, 9.03463, 1374.11]]
+  light__color:c=130, 40, 0, 0
+  light__max_radius:r=15.0
+  light__brightness:r=25.0
+  light_flicker_updater__template:t="omni_flicker_light_template_b"
+}
+
+entity{
+  _template:t="omni_light_huge_flicker"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-382.648, 9.39305, 1377.45]]
+  light__color:c=150, 50, 0, 0
+  light__max_radius:r=10.0
+  light__brightness:r=25.0
+  light_flicker_updater__template:t="omni_flicker_light_template_c"
+}
+
+entity{
+  _template:t="omni_light_huge_flicker"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-443.959, 6.11261, 1360.87]]
+  light__color:c=230, 20, 0, 0
+  light__max_radius:r=10.0
+  light__brightness:r=25.0
+  light_flicker_updater__template:t="omni_flicker_light_template_b"
+}
+
+entity{
+  _template:t="omni_light_huge_flicker"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-460.997, 7.62732, 1347.09]]
+  light__color:c=230, 10, 0, 0
+  light__max_radius:r=10.0
+  light__brightness:r=25.0
+  light_flicker_updater__template:t="omni_flicker_light_template_c"
+}
+
+entity{
+  _template:t="omni_light_huge_flicker"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-441.205, 8.54828, 1339.32]]
+  light__color:c=230, 40, 0, 0
+  light__max_radius:r=15.0
+  light__brightness:r=15.0
+  light__affect_volumes:b=no
+}
+
+entity{
+  _template:t="omni_light_huge_flicker"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-427.655, 8.54778, 1370.38]]
+  light__color:c=230, 40, 0, 0
+  light__max_radius:r=10.0
+  light__brightness:r=25.0
+  light_flicker_updater__template:t="omni_flicker_light_template_c"
+}
+
+entity{
+  _template:t="omni_light_huge_flicker"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-419.859, 9.8195, 1372.91]]
+  light__color:c=230, 40, 0, 0
+  light__max_radius:r=10.0
+  light__brightness:r=25.0
+}
+
+entity{
+  _template:t="envir_misc_burned_ground_fire_5m_low_effect"
+  transform:m=[[0.999882, -0.0145712, 0.00483367] [0.0146451, 0.999771, -0.0156214] [-0.00460494, 0.0156904, 0.999866] [-398.271, 6.41557, 1347.55]]
+}
+
+entity{
+  _template:t="envir_misc_burned_ground_fire_5m_low_effect"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-381.646, 7.48735, 1362.73]]
+}
+
+entity{
+  _template:t="omni_light_huge_flicker"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-379.076, 10.2992, 1364.95]]
+  light__color:c=230, 40, 0, 0
+  light__max_radius:r=10.0
+  light__brightness:r=20.0
+  light__affect_volumes:b=no
+}
+
+entity{
+  _template:t="omni_light_huge_flicker"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-443.422, 7.19873, 1350.99]]
+  light__color:c=230, 20, 0, 0
+  light__max_radius:r=10.0
+  light__brightness:r=15.0
+  light_flicker_updater__template:t="omni_flicker_light_template_c"
+  light__affect_volumes:b=no
+}
+
+entity{
+  _template:t="omni_light_huge_flicker"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-410.858, 9.06062, 1365.2]]
+  light__color:c=130, 40, 0, 0
+  light__max_radius:r=10.0
+  light__brightness:r=25.0
+  light_flicker_updater__template:t="omni_flicker_light_template_b"
+}
+
+entity{
+  _template:t="omni_light_huge_flicker"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-414.804, 10.6315, 1378.58]]
+  light__color:c=130, 20, 0, 0
+  light__max_radius:r=10.0
+  light__brightness:r=25.0
+  light_flicker_updater__template:t="omni_flicker_light_template_c"
+}
+
+entity{
+  _template:t="omni_light_huge_flicker"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-392.392, 11.3044, 1389.66]]
+  light__color:c=230, 20, 0, 0
+  light__max_radius:r=10.0
+  light__brightness:r=25.0
+  light_flicker_updater__template:t="omni_flicker_light_template_c"
+}
+
+entity{
+  _template:t="poster_guns_c"
+  transform:m=[[-1.30332, 0.0, -0.487768] [0.0, 1.59119, 0.0] [0.487768, 0.0, -1.30332] [-386.839, 7.034, 1278.35]]
+}
+
+entity{
+  _template:t="omni_light_huge_flicker"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-418.493, 9.49331, 1359.37]]
+  light__color:c=230, 20, 0, 0
+  light__max_radius:r=10.0
+  light__brightness:r=5.0
+  light_flicker_updater__template:t="omni_flicker_light_template_b"
+  light__affect_volumes:b=no
+}
+
+entity{
+  _template:t="omni_light_huge_flicker"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-419.495, 14.9506, 1373.82]]
+  light__color:c=230, 20, 0, 0
+  light__max_radius:r=5.0
+  light__brightness:r=8.0
+  light_flicker_updater__template:t="omni_flicker_light_template_b"
+  light__affect_volumes:b=no
+}
+
+entity{
+  _template:t="omni_light_huge_flicker"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-432.767, 7.57244, 1347.9]]
+  light__color:c=230, 40, 0, 0
+  light__max_radius:r=8.0
+  light__brightness:r=15.0
+  light__affect_volumes:b=no
+  light_flicker_updater__template:t="omni_flicker_light_template_a"
+}
+
+entity{
+  _template:t="omni_light_huge_flicker"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-453.118, 8.54828, 1336.39]]
+  light__color:c=230, 40, 0, 0
+  light__max_radius:r=15.0
+  light__brightness:r=15.0
+  light__affect_volumes:b=no
+  light_flicker_updater__template:t="omni_flicker_light_template_b"
+}
+
+entity{
+  _template:t="omni_light_huge_flicker"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-446.464, 7.53935, 1339.63]]
+  light__color:c=230, 40, 0, 0
+  light__max_radius:r=15.0
+  light__brightness:r=15.0
+  light__affect_volumes:b=no
+  light_flicker_updater__template:t="omni_flicker_light_template_c"
+}
+
+entity{
+  _template:t="omni_light_huge_flicker"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-446.464, 6.40118, 1330.67]]
+  light__color:c=230, 40, 0, 0
+  light__max_radius:r=10.0
+  light__brightness:r=15.0
+  light__affect_volumes:b=no
+  light_flicker_updater__template:t="omni_flicker_light_template_c"
+}
+
+entity{
+  _template:t="omni_light_huge_flicker"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-439.508, 7.28977, 1341.92]]
+  light__color:c=230, 40, 0, 0
+  light__max_radius:r=15.0
+  light__brightness:r=15.0
+  light__affect_volumes:b=no
+  light_flicker_updater__template:t="omni_flicker_light_template_a"
+}
+
+entity{
+  _template:t="omni_light_huge_flicker"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-446.65, 7.28977, 1345.25]]
+  light__color:c=130, 40, 0, 0
+  light__max_radius:r=5.0
+  light__brightness:r=15.0
+  light__affect_volumes:b=no
+  light_flicker_updater__template:t="omni_flicker_light_template_a"
+}
+
+entity{
+  _template:t="omni_light_huge_flicker"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-425.512, 8.70569, 1354.79]]
+  light__color:c=230, 40, 0, 0
+  light__max_radius:r=15.0
+  light__brightness:r=15.0
+  light__affect_volumes:b=no
+  light_flicker_updater__template:t="omni_flicker_light_template_b"
+}
+
+entity{
+  _template:t="envir_misc_burned_ground_fire_5m_low_effect"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-429.352, 6.27809, 1343.95]]
+}
+
+entity{
+  _template:t="omni_light_huge_flicker"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-435.165, 7.25515, 1339.84]]
+  light__color:c=230, 40, 0, 0
+  light__max_radius:r=15.0
+  light__brightness:r=15.0
+  light__affect_volumes:b=no
+  light_flicker_updater__template:t="omni_flicker_light_template_a"
+}
+
+entity{
+  _template:t="omni_light_huge_flicker"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-428.939, 7.70386, 1342.78]]
+  light__color:c=230, 40, 0, 0
+  light__max_radius:r=15.0
+  light__brightness:r=15.0
+  light__affect_volumes:b=no
+  light_flicker_updater__template:t="omni_flicker_light_template_b"
+}
+
+entity{
+  _template:t="omni_light_huge_flicker"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-451.399, 7.19873, 1354.27]]
+  light__color:c=230, 20, 0, 0
+  light__max_radius:r=10.0
+  light__brightness:r=15.0
+  light_flicker_updater__template:t="omni_flicker_light_template_a"
+  light__affect_volumes:b=yes
+}
+
+entity{
+  _template:t="guns_decal_a"
+  transform:m=[[-1.12012, 0.0, -0.417486] [0.0, 1.35131, 0.0] [0.424109, 0.0, -1.13789] [-389.806, 6.84493, 1277.2]]
+  ri_extra__name:t="guns_decal_a"
+}
+
+entity{
+  _template:t="guns_decal_b"
+  transform:m=[[-0.738078, 0.0, -0.275091] [0.0, 0.822022, 0.0] [0.261267, 0.0, -0.700985] [-390.289, 6.61214, 1277.02]]
+  ri_extra__name:t="guns_decal_b"
+}
+
+entity{
+  _template:t="omni_light_lamppost_undestr"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-389.842, 7.41008, 1278.04]]
+  light__automatic_box:b=no
+  light__affect_volumes:b=no
+  light__max_radius:r=2.0
+}
+
+entity{
+  _template:t="guns_decal_c"
+  transform:m=[[-0.839265, 0.0, -0.326031] [0.0, 0.939627, 0.0] [0.309646, 0.0, -0.797087] [-389.096, 6.59561, 1277.47]]
+  ri_extra__name:t="guns_decal_c"
+}
+
+entity{
+  _template:t="guns_decal_d"
+  transform:m=[[-0.98413, -0.000411367, -0.368133] [9.25005e-05, 1.09921, -0.00147559] [0.382786, -0.0014059, -1.0233] [-384.194, 6.852, 1279.35]]
+}
+
+entity{
+  _template:t="guns_decal_d"
+  transform:m=[[-0.896209, -0.000375536, -0.3419] [9.4052e-05, 1.01265, -0.00135881] [0.35823, -0.00129327, -0.939013] [-383.559, 6.52278, 1279.6]]
+  ri_extra__name:t="guns_decal_e"
+}
+
+entity{
+  _template:t="guns_decal_d"
+  transform:m=[[-0.993317, -0.000415206, -0.371559] [8.92352e-05, 1.06053, -0.00142367] [0.371559, -0.0013647, -0.993316] [-384.925, 6.56668, 1279.07]]
+  ri_extra__name:t="guns_decal_f"
+}
+
+entity{
+  _template:t="wall_lamp_c+undestroyable_ri_extra"
+  transform:m=[[-0.0821613, 0.0, 0.214804] [0.0, 0.22998, 0.0] [-0.214804, 0.0, -0.0821613] [-386.854, 7.34224, 1278.33]]
+  ri_extra__destroyed:b=no
+}
+
+entity{
+  _template:t="wall_lamp_c_glass_on+undestroyable_ri_extra"
+  transform:m=[[-0.0821613, 0.0, 0.214804] [0.0, 0.22998, 0.0] [-0.214804, 0.0, -0.0821613] [-386.854, 7.34224, 1278.33]]
+}
+
+entity{
+  _template:t="omni_light_lamppost_undestr"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-386.932, 7.08664, 1278.58]]
+  light__automatic_box:b=no
+  light__affect_volumes:b=no
+  light__max_radius:r=2.0
+}
+
+entity{
+  _template:t="envir_misc_burned_ground_fire_15m_no_dist_effect"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-443.304, 5.42434, 1334.89]]
+}
+
+entity{
+  _template:t="envir_misc_burned_ground_fire_15m_no_dist_effect"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-437.648, 5.82608, 1340.19]]
+}
+
+entity{
+  _template:t="envir_misc_burned_ground_fire_15m_no_dist_effect"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-430.04, 6.99211, 1355.67]]
+}
+
+entity{
+  _template:t="envir_misc_burned_ground_fire_15m_no_dist_effect"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-418.352, 6.71521, 1347.11]]
+}
+
+entity{
+  _template:t="envir_misc_burned_ground_fire_15m_no_dist_effect"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-403.114, 7.17778, 1352.56]]
+}
+
+entity{
+  _template:t="envir_misc_burned_ground_fire_15m_no_dist_effect"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-390.402, 7.58506, 1367.66]]
+}
+
+entity{
+  _template:t="envir_misc_burned_ground_fire_5m_low_effect"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-390.482, 7.07767, 1355.09]]
+}
+
+entity{
+  _template:t="envir_misc_burned_ground_fire_5m_low_effect"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-444.336, 5.40094, 1348.68]]
+}
+
+entity{
+  _template:t="fire_vegetation_tree_leaves_effect"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-407.585, 7.22771, 1349.21]]
+}
+
+entity{
+  _template:t="fire_vegetation_tree_leaves_effect"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-386.781, 7.608, 1353.58]]
+}
+
+entity{
+  _template:t="fire_vegetation_tree_leaves_effect"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-394.995, 8.91817, 1383.22]]
+}
+
+entity{
+  _template:t="envir_smoke_small_effect"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-392.859, 10.3469, 1379.64]]
+}
+
+entity{
+  _template:t="envir_smoke_small_effect"
+  transform:m=[[0.989262, -0.14546, 0.0142054] [0.146152, 0.984578, -0.0961521] [-0.0, 0.0971958, 0.995265] [-449.596, 5.97642, 1341.67]]
+}
+
+entity{
+  _template:t="fire_vegetation_tree_leaves_effect"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-434.093, 6.85105, 1348.53]]
+}
+
+entity{
+  _template:t="fire_vegetation_tree_leaves_effect"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-448.858, 6.11223, 1340.49]]
+}
+
+entity{
+  _template:t="fire_vegetation_tree_leaves_effect"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-424.987, 8.76192, 1371.67]]
+}
+
+entity{
+  _template:t="fire_vegetation_tree_leaves_effect"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-432.251, 6.8509, 1360.99]]
+}
+
+entity{
+  _template:t="fire_vegetation_tree_leaves_effect"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-445.932, 5.45724, 1362.17]]
+}
+
+entity{
+  _template:t="fire_vegetation_tree_leaves_effect"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-382.927, 8.41338, 1376.63]]
+}
+
+entity{
+  _template:t="fire_vegetation_tree_leaves_effect"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-414.723, 9.50514, 1379.21]]
+}
+
+entity{
+  _template:t="fire_vegetation_tree_leaves_effect"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-449.083, 5.18154, 1354.22]]
+}
+
+entity{
+  _template:t="fire_vegetation_tree_leaves_effect"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-461.541, 5.57898, 1340.49]]
+}
+
+entity{
+  _template:t="fire_vegetation_tree_leaves_effect"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-430.085, 7.02551, 1359.74]]
+}
+
+entity{
+  _template:t="omni_light_huge_flicker"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-453.162, 6.82855, 1328.14]]
+  light__color:c=230, 40, 0, 0
+  light__max_radius:r=10.0
+  light__brightness:r=15.0
+  light__affect_volumes:b=no
+  light_flicker_updater__template:t="omni_flicker_light_template_c"
+}
+
+entity{
+  _template:t="omni_light_huge_flicker"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-449.433, 3.13136, 1330.63]]
+  light__color:c=230, 40, 0, 0
+  light__max_radius:r=10.0
+  light__brightness:r=25.0
+  light_flicker_updater__template:t="omni_flicker_light_template_a"
+}

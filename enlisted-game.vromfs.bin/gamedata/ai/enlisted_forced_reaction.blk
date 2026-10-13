@@ -1,0 +1,1836 @@
+orderedSelector{
+  name:t="sub.checkForcedReaction"
+
+  not{
+
+    checkDelayedReaction{
+    }
+  }
+
+  sequencer{
+
+    reaction{
+      event:t="regularCheck"
+
+      findObstaclesAlongsidePath{
+        closeInvDoors:b=yes
+      }
+    }
+
+    reaction{
+      event:t="onDelayedReaction"
+
+      continue{
+      }
+    }
+
+    reaction{
+      event:t="onTraceableDanger"
+
+      continue{
+      }
+    }
+
+    reaction{
+      event:t="onBulletNearby"
+
+      continue{
+      }
+    }
+
+    reaction{
+      event:t="onHit"
+
+      continue{
+      }
+    }
+
+    reaction{
+      event:t="onEnemyPlayerNear"
+
+      orderedSelector{
+
+        sequencer{
+
+          findDanger{
+            paramName:t="meleeEnemy"
+            radiusParamName:t="enemyMeleeRadius"
+            minDanger:r=0.5
+            tag:t="human"
+          }
+
+          decreaseDangerLevel{
+            paramName:t="dangerLevel"
+            decreaseCoef:r=0.1
+          }
+
+          setIntVar{
+            to:t="coverAttack"
+            value:i=0
+          }
+
+          resetDelayedReaction{
+          }
+
+          setDebugSym{
+            r:i=403
+          }
+
+          recalculateTree{
+          }
+        }
+
+        sequencer{
+
+          findDanger{
+            paramName:t="nearEnemy"
+            radiusParamName:t="enemyNearRadius"
+            minDanger:r=0.5
+            tag:t="human"
+          }
+
+          not{
+
+            isVarsIntEqual{
+              lhs:t="nearEnemy"
+              rhs:t="reactEid"
+            }
+          }
+
+          decreaseDangerLevel{
+            paramName:t="dangerLevel"
+            decreaseCoef:r=0.1
+          }
+
+          setIntVar{
+            to:t="coverAttack"
+            value:i=0
+          }
+
+          resetDelayedReaction{
+          }
+
+          setDebugSym{
+            r:i=404
+          }
+
+          recalculateTree{
+          }
+        }
+
+        continue{
+        }
+      }
+    }
+
+    setDebugSym{
+      act:t="d98"
+      r:i=98
+    }
+
+    getDelayedReaction{
+      outPosParam:t="reactPos"
+      outDirParam:t="reactDir"
+      outEidParam:t="reactEid"
+    }
+
+    success{
+
+      orderedSelector{
+
+        sequencer{
+
+          checkDelayedReaction{
+            ofType:t="hide_heal_payback"
+          }
+
+          setDebugSym{
+            act:t="d10"
+            r:i=10
+          }
+
+          setDebugSym{
+            act:t="d18"
+          }
+
+          setCurrentAiAction{
+            state:t="hide"
+          }
+
+          detachFromStationaryGun{
+          }
+
+          subTree{
+            treeName:t="sub.checkForcedReaction.hideJustNow"
+          }
+
+          subTree{
+            treeName:t="sub.checkForcedReaction.resetAttacks"
+          }
+
+          subTree{
+            treeName:t="sub.checkForcedReaction.findHidePos"
+          }
+
+          subTree{
+            treeName:t="sub.tryBeginCoverAttack"
+          }
+
+          orderedSelector{
+
+            sequencer{
+
+              isVarsIntEqual{
+                lhs:t="hiddenPos"
+                rhs_value:i=1
+              }
+
+              orderedSelector{
+
+                sequencer{
+
+                  isDowned{
+                  }
+
+                  setDebugSym{
+                    act:t="d11"
+                  }
+
+                  orderedSelector{
+
+                    not{
+
+                      checkDistance{
+                        posParam:t="hidePos"
+                        radius:r=10.0
+                        yRadius:r=3.0
+                      }
+                    }
+
+                    success{
+
+                      moveToPos{
+                        posParam:t="hidePos"
+                        distThreshold:r=1.0
+                        avoidAiObstacles:b=no
+                        timeToStuck:r=2.0
+                        strafeNearDist:r=2.0
+                        jumpDownTraceCheck:p3=0.4, 1.0, 0.15
+                        rotateDistThreshold:r=0.5
+                        rotateFactors:p4=0.5, 0.3, 0.3, 0.1
+                        rotateStartTime:r=0.5
+                      }
+                    }
+                  }
+                }
+
+                sequencer{
+
+                  ignoreChance{
+                    chance:r=0.5
+                  }
+
+                  setDebugSym{
+                    act:t="d12"
+                  }
+
+                  setIntVar{
+                    to:t="minStance"
+                    value:i=0
+                  }
+
+                  setIntVar{
+                    to:t="maxStance"
+                    value:i=0
+                  }
+
+                  setIntVar{
+                    to:t="minStance"
+                    value:i=2
+                  }
+
+                  setIntVar{
+                    to:t="maxStance"
+                    value:i=2
+                  }
+
+                  changeStance{
+                    stanceName:t="crawl"
+                    maxStanceParam:t="maxStance"
+                  }
+
+                  wait{
+                    range:p2=0.5, 1.5
+                    resetable:b=yes
+                  }
+
+                  orderedSelector{
+
+                    ignoreChance{
+                      chance:r=0.7
+                    }
+
+                    changeStance{
+                      stanceName:t="stand"
+                      maxStanceParam:t="maxStance"
+                    }
+                  }
+
+                  orderedSelector{
+
+                    checkDistance{
+                      posParam:t="hidePos"
+                      radius:r=3.0
+                      yRadius:r=3.0
+                    }
+
+                    rotateToPoint{
+                      posParam:t="hidePos"
+                      aimSpeedCoef:r=0.9
+                      maxSimAngle:p2=60.0, 80.0
+                      strafeChance:r=0.9
+                      strafeTimes:p2=0.4, 0.6
+                      minSimAngle:r=5.0
+                      minSimSpeedCoef:r=0.5
+                    }
+                  }
+
+                  orderedSelector{
+
+                    not{
+
+                      checkDistance{
+                        posParam:t="hidePos"
+                        radius:r=10.0
+                        yRadius:r=3.0
+                      }
+                    }
+
+                    success{
+
+                      moveToPos{
+                        posParam:t="hidePos"
+                        distThreshold:r=0.35
+                        avoidAiObstacles:b=no
+                        timeToStuck:r=2.0
+                        strafeNearDist:r=2.0
+                        jumpDownTraceCheck:p3=0.4, 1.0, 0.15
+                        rotateDistThreshold:r=0.5
+                        rotateFactors:p4=0.5, 0.3, 0.3, 0.1
+                        rotateStartTime:r=0.5
+                      }
+                    }
+                  }
+
+                  rotateToPoint{
+                    posParam:t="reactPos"
+                    aimSpeedCoef:r=0.9
+                    maxSimAngle:p2=60.0, 80.0
+                    strafeChance:r=0.9
+                    strafeTimes:p2=0.4, 0.6
+                    minSimAngle:r=5.0
+                    minSimSpeedCoef:r=0.5
+                  }
+                }
+
+                sequencer{
+
+                  setDebugSym{
+                    act:t="d13"
+                  }
+
+                  setIntVar{
+                    to:t="minStance"
+                    value:i=2
+                  }
+
+                  setIntVar{
+                    to:t="maxStance"
+                    value:i=2
+                  }
+
+                  changeStance{
+                    stanceName:t="stand"
+                    maxStanceParam:t="maxStance"
+                  }
+
+                  orderedSelector{
+
+                    checkDistance{
+                      posParam:t="hidePos"
+                      radius:r=3.0
+                      yRadius:r=3.0
+                    }
+
+                    rotateToPoint{
+                      posParam:t="hidePos"
+                      aimSpeedCoef:r=0.9
+                      maxSimAngle:p2=60.0, 80.0
+                      strafeChance:r=0.9
+                      strafeTimes:p2=0.4, 0.6
+                      minSimAngle:r=5.0
+                      minSimSpeedCoef:r=0.5
+                    }
+                  }
+
+                  orderedSelector{
+
+                    not{
+
+                      checkDistance{
+                        posParam:t="hidePos"
+                        radius:r=10.0
+                        yRadius:r=3.0
+                      }
+                    }
+
+                    success{
+
+                      moveToPos{
+                        posParam:t="hidePos"
+                        distThreshold:r=0.35
+                        avoidAiObstacles:b=no
+                        timeToStuck:r=2.0
+                        strafeNearDist:r=2.0
+                        jumpDownTraceCheck:p3=0.4, 1.0, 0.15
+                        rotateDistThreshold:r=0.5
+                        rotateFactors:p4=0.5, 0.3, 0.3, 0.1
+                        rotateStartTime:r=0.5
+                      }
+                    }
+                  }
+
+                  rotateToPoint{
+                    posParam:t="reactPos"
+                    aimSpeedCoef:r=0.9
+                    maxSimAngle:p2=60.0, 80.0
+                    strafeChance:r=0.9
+                    strafeTimes:p2=0.4, 0.6
+                    minSimAngle:r=5.0
+                    minSimSpeedCoef:r=0.5
+                  }
+                }
+              }
+
+              setDebugSym{
+                act:t="d14"
+              }
+
+              setDebugSym{
+                act:t="d15"
+              }
+
+              setIntVar{
+                to:t="minStance"
+                value:i=0
+              }
+
+              setIntVar{
+                to:t="maxStance"
+                value:i=1
+              }
+
+              changeStance{
+                stanceName:t="crouch"
+                maxStanceParam:t="maxStance"
+              }
+
+              setCurrentAiAction{
+                state:t="heal"
+              }
+
+              setCurrentAiAction{
+                state:t="hide"
+              }
+
+              useMedkit{
+              }
+
+              checkReloadWeapon{
+                waitReloadFinish:b=yes
+              }
+            }
+
+            sequencer{
+
+              setDebugSym{
+                act:t="d16"
+              }
+
+              setDebugSym{
+                act:t="d17"
+              }
+
+              setIntVar{
+                to:t="minStance"
+                value:i=0
+              }
+
+              setIntVar{
+                to:t="maxStance"
+                value:i=0
+              }
+
+              orderedSelector{
+
+                isDowned{
+                }
+
+                changeStance{
+                  stanceName:t="crawl"
+                  maxStanceParam:t="maxStance"
+                }
+              }
+
+              orderedSelector{
+
+                sequencer{
+
+                  ignoreChance{
+                    chance:r=0.3
+                  }
+
+                  success{
+
+                    moveByDir{
+                      endPos:t="posNearTarget"
+                      strafeAlong:b=yes
+                      duration:r=1.5
+                      distThresholsd:r=1.0
+                      traceNavMeshDist:r=0.5
+                    }
+                  }
+                }
+
+                sequencer{
+
+                  ignoreChance{
+                    chance:r=0.5
+                  }
+
+                  success{
+
+                    moveByDir{
+                      endPos:t="posNearTarget"
+                      strafeAlong:b=yes
+                      duration:r=2.0
+                      distThresholsd:r=1.0
+                      traceNavMeshDist:r=0.5
+                    }
+                  }
+                }
+
+                success{
+
+                  moveByDir{
+                    endPos:t="posNearTarget"
+                    strafeAlong:b=yes
+                    duration:r=2.5
+                    distThresholsd:r=1.0
+                    traceNavMeshDist:r=0.5
+                  }
+                }
+              }
+
+              getRandomPointNearTarget{
+                targetUnitParam:t="shootEnemy"
+                posParam:t="posNearTarget"
+                useGenerationByY:b=no
+              }
+
+              rotateToPoint{
+                posParam:t="posNearTarget"
+                aimSpeedCoef:r=0.9
+                maxSimAngle:p2=60.0, 80.0
+                strafeChance:r=0.9
+                strafeTimes:p2=0.4, 0.6
+                minSimAngle:r=5.0
+                minSimSpeedCoef:r=0.5
+              }
+
+              setCurrentAiAction{
+                state:t="heal"
+              }
+
+              setCurrentAiAction{
+                state:t="hide"
+              }
+
+              useMedkit{
+              }
+
+              checkReloadWeapon{
+                waitReloadFinish:b=yes
+              }
+            }
+          }
+
+          orderedSelector{
+
+            isAgentPlayerBot{
+            }
+
+            checkDistance{
+              posParam:t="reactPos"
+              radiusParam:t="enemyNearRadius"
+              yRadius:r=3.0
+            }
+          }
+
+          getTime{
+            to:t="fastReactTime"
+          }
+        }
+
+        sequencer{
+
+          checkDelayedReaction{
+            ofType:t="back_assist"
+          }
+
+          setDebugSym{
+            act:t="d20"
+            r:i=20
+          }
+
+          setDebugSym{
+            act:t="d21"
+          }
+
+          setDebugSym{
+            act:t="d22"
+          }
+
+          setDebugSym{
+            act:t="d23"
+          }
+
+          isReadyForAction{
+          }
+
+          not{
+
+            isLeader{
+            }
+          }
+
+          orderedSelector{
+
+            isAgentPlayerBot{
+            }
+
+            checkDistance{
+              posParam:t="reactPos"
+              radiusParam:t="enemyNearRadius"
+              yRadius:r=3.0
+            }
+          }
+
+          orderedSelector{
+
+            checkDistance{
+              posParam:t="hidePos"
+              radius:r=3.5
+              yRadius:r=3.0
+            }
+
+            rotateToPoint{
+              posParam:t="hidePos"
+              aimSpeedCoef:r=0.9
+              maxSimAngle:p2=60.0, 80.0
+              strafeChance:r=0.9
+              strafeTimes:p2=0.4, 0.6
+              minSimAngle:r=5.0
+              minSimSpeedCoef:r=0.5
+            }
+          }
+
+          orderedSelector{
+
+            not{
+
+              checkDistance{
+                posParam:t="hidePos"
+                radius:r=10.0
+                yRadius:r=3.0
+              }
+            }
+
+            success{
+
+              moveToPos{
+                posParam:t="hidePos"
+                distThreshold:r=0.35
+                avoidAiObstacles:b=no
+                timeToStuck:r=2.0
+                strafeNearDist:r=3.5
+                jumpDownTraceCheck:p3=0.4, 1.0, 0.15
+                rotateDistThreshold:r=0.5
+                rotateFactors:p4=0.5, 0.3, 0.3, 0.1
+                rotateStartTime:r=0.5
+              }
+            }
+          }
+
+          orderedSelector{
+
+            checkDistance{
+              posParam:t="rememberEnemyPos"
+              radius:r=7.0
+              yRadius:r=5.0
+            }
+
+            rotateToPoint{
+              posParam:t="rememberEnemyPos"
+              aimSpeedCoef:r=0.9
+              maxSimAngle:p2=60.0, 80.0
+              strafeChance:r=0.9
+              strafeTimes:p2=0.4, 0.6
+              minSimAngle:r=5.0
+              minSimSpeedCoef:r=0.5
+            }
+          }
+
+          subTree{
+            treeName:t="sub.checkForcedReaction.resetAttacks"
+          }
+
+          subTree{
+            treeName:t="sub.checkForcedReaction.findHidePosNear"
+          }
+
+          subTree{
+            treeName:t="sub.tryBeginCoverAttack"
+          }
+
+          detachFromStationaryGun{
+          }
+
+          setIntVar{
+            to:t="minStance"
+            value:i=1
+          }
+
+          setIntVar{
+            to:t="maxStance"
+            value:i=1
+          }
+
+          setIntVar{
+            to:t="minStance"
+            value:i=1
+          }
+
+          setIntVar{
+            to:t="maxStance"
+            value:i=2
+          }
+
+          changeStance{
+            stanceName:t="crouch"
+            maxStanceParam:t="maxStance"
+          }
+
+          checkReloadWeapon{
+            waitReloadFinish:b=yes
+          }
+
+          getTime{
+            to:t="shootEnemyTime"
+          }
+
+          getTime{
+            to:t="rememberEnemyTime"
+          }
+
+          copyIntVar{
+            to:t="shootEnemy"
+            from:t="reactEid"
+          }
+
+          copyIntVar{
+            to:t="rememberEnemy"
+            from:t="shootEnemy"
+          }
+
+          setPosFromEntity{
+            to:t="rememberEnemyPos"
+            from:t="shootEnemy"
+          }
+        }
+
+        sequencer{
+
+          checkDelayedReaction{
+            ofType:t="front_assist"
+          }
+
+          setDebugSym{
+            act:t="d30"
+            r:i=30
+          }
+
+          setDebugSym{
+            act:t="d31"
+          }
+
+          isReadyForAction{
+          }
+
+          not{
+
+            isLeader{
+            }
+          }
+
+          orderedSelector{
+
+            isAgentPlayerBot{
+            }
+
+            checkDistance{
+              posParam:t="reactPos"
+              radiusParam:t="enemyNearRadius"
+              yRadius:r=3.0
+            }
+          }
+
+          orderedSelector{
+
+            checkDistance{
+              posParam:t="rememberEnemyPos"
+              radius:r=7.0
+              yRadius:r=5.0
+            }
+
+            rotateToPoint{
+              posParam:t="rememberEnemyPos"
+              aimSpeedCoef:r=0.9
+              maxSimAngle:p2=60.0, 80.0
+              strafeChance:r=0.9
+              strafeTimes:p2=0.4, 0.6
+              minSimAngle:r=5.0
+              minSimSpeedCoef:r=0.5
+            }
+          }
+
+          subTree{
+            treeName:t="sub.checkForcedReaction.resetAttacks"
+          }
+
+          getTime{
+            to:t="shootEnemyTime"
+          }
+
+          getTime{
+            to:t="rememberEnemyTime"
+          }
+
+          getTime{
+            to:t="fastReactTime"
+          }
+
+          copyIntVar{
+            to:t="shootEnemy"
+            from:t="reactEid"
+          }
+
+          copyIntVar{
+            to:t="rememberEnemy"
+            from:t="shootEnemy"
+          }
+
+          setPosFromEntity{
+            to:t="rememberEnemyPos"
+            from:t="shootEnemy"
+          }
+
+          setIntVar{
+            to:t="minStance"
+            value:i=1
+          }
+
+          setIntVar{
+            to:t="maxStance"
+            value:i=2
+          }
+        }
+
+        sequencer{
+
+          checkDelayedReaction{
+            ofType:t="spot_assist"
+          }
+
+          setDebugSym{
+            act:t="d40"
+            r:i=40
+          }
+
+          setDebugSym{
+            act:t="d41"
+          }
+
+          setDebugSym{
+            act:t="d42"
+          }
+
+          isReadyForAction{
+          }
+
+          not{
+
+            isLeader{
+            }
+          }
+
+          orderedSelector{
+
+            isAgentPlayerBot{
+            }
+
+            checkDistance{
+              posParam:t="reactPos"
+              radiusParam:t="enemyNearRadius"
+              yRadius:r=3.0
+            }
+          }
+
+          orderedSelector{
+
+            sequencer{
+
+              ignoreChance{
+                chance:r=0.5
+              }
+
+              success{
+
+                moveByDir{
+                  endPos:t="reactPos"
+                  strafeAlong:b=yes
+                  duration:r=0.32
+                  distThresholsd:r=0.2
+                  traceNavMeshDist:r=0.5
+                }
+              }
+            }
+
+            success{
+
+              moveByDir{
+                endPos:t="reactPos"
+                strafeAlong:b=yes
+                duration:r=0.64
+                distThresholsd:r=0.2
+                traceNavMeshDist:r=0.7
+              }
+            }
+          }
+
+          orderedSelector{
+
+            checkTargetTraceable{
+              targetParam:t="reactEid"
+            }
+
+            sequencer{
+
+              setDebugSym{
+                act:t="d43"
+              }
+
+              orderedSelector{
+
+                sequencer{
+
+                  ignoreChance{
+                    chance:r=0.5
+                  }
+
+                  success{
+
+                    moveByDir{
+                      endPos:t="reactPos"
+                      strafeAlong:b=yes
+                      duration:r=0.32
+                      distThresholsd:r=0.2
+                      traceNavMeshDist:r=0.5
+                    }
+                  }
+                }
+
+                success{
+
+                  moveByDir{
+                    endPos:t="reactPos"
+                    strafeAlong:b=yes
+                    duration:r=0.64
+                    distThresholsd:r=0.2
+                    traceNavMeshDist:r=0.7
+                  }
+                }
+              }
+
+              wait{
+                range:p2=0.4, 0.6
+                resetable:b=yes
+              }
+            }
+          }
+
+          orderedSelector{
+
+            checkTargetTraceable{
+              targetParam:t="reactEid"
+            }
+
+            sequencer{
+
+              findCoverForCoverAttack{
+                targetParam:t="reactEid"
+                approachPosParam:t="reactPos"
+              }
+
+              getCoverPosAndDir{
+                coverIndexParam:t="coverAttackCover"
+                coverSlotParam:t="coverAttackCoverSlot"
+                outPosParam:t="coverPos"
+              }
+
+              setDebugSym{
+                act:t="d44"
+              }
+
+              setDebugSym{
+                act:t="d45"
+              }
+
+              setIntVar{
+                to:t="minStance"
+                value:i=1
+              }
+
+              setIntVar{
+                to:t="maxStance"
+                value:i=1
+              }
+
+              setIntVar{
+                to:t="minStance"
+                value:i=1
+              }
+
+              setIntVar{
+                to:t="maxStance"
+                value:i=2
+              }
+
+              changeStance{
+                stanceName:t="crouch"
+                maxStanceParam:t="maxStance"
+              }
+
+              orderedSelector{
+
+                not{
+
+                  checkDistance{
+                    posParam:t="coverPos"
+                    radius:r=10.0
+                    yRadius:r=3.0
+                  }
+                }
+
+                success{
+
+                  moveToPos{
+                    posParam:t="coverPos"
+                    distThreshold:r=0.35
+                    avoidAiObstacles:b=no
+                    timeToStuck:r=2.0
+                    strafeNearDist:r=3.5
+                    jumpDownTraceCheck:p3=0.4, 1.0, 0.15
+                    rotateDistThreshold:r=0.5
+                    rotateFactors:p4=0.5, 0.3, 0.3, 0.1
+                    rotateStartTime:r=0.5
+                  }
+                }
+              }
+
+              orderedSelector{
+
+                checkDistance{
+                  posParam:t="rememberEnemyPos"
+                  radius:r=7.0
+                  yRadius:r=5.0
+                }
+
+                rotateToPoint{
+                  posParam:t="rememberEnemyPos"
+                  aimSpeedCoef:r=0.9
+                  maxSimAngle:p2=60.0, 80.0
+                  strafeChance:r=0.9
+                  strafeTimes:p2=0.4, 0.6
+                  minSimAngle:r=5.0
+                  minSimSpeedCoef:r=0.5
+                }
+              }
+
+              copyPoint3Var{
+                from:t="coverPos"
+                to:t="wishPosition"
+              }
+
+              getTime{
+                to:t="shootEnemyTime"
+              }
+
+              getTime{
+                to:t="rememberEnemyTime"
+              }
+
+              getTime{
+                to:t="fastReactTime"
+              }
+
+              copyIntVar{
+                to:t="shootEnemy"
+                from:t="reactEid"
+              }
+
+              copyIntVar{
+                to:t="rememberEnemy"
+                from:t="shootEnemy"
+              }
+
+              setPosFromEntity{
+                to:t="rememberEnemyPos"
+                from:t="shootEnemy"
+              }
+
+              subTree{
+                treeName:t="sub.tryBeginCoverAttack"
+              }
+            }
+          }
+
+          detachFromStationaryGun{
+          }
+
+          subTree{
+            treeName:t="sub.checkForcedReaction.resetAttacks"
+          }
+
+          rotateToPoint{
+            posParam:t="reactPos"
+            aimSpeedCoef:r=0.9
+            maxSimAngle:p2=60.0, 80.0
+            strafeChance:r=0.9
+            strafeTimes:p2=0.4, 0.6
+            minSimAngle:r=5.0
+            minSimSpeedCoef:r=0.5
+          }
+
+          wait{
+            range:p2=0.4, 0.6
+            resetable:b=yes
+          }
+        }
+
+        sequencer{
+
+          checkDelayedReaction{
+            ofType:t="hide_unhide"
+          }
+
+          setDebugSym{
+            act:t="d50"
+            r:i=50
+          }
+
+          setDebugSym{
+            act:t="d51"
+          }
+
+          isReadyForAction{
+          }
+
+          detachFromStationaryGun{
+          }
+
+          subTree{
+            treeName:t="sub.checkForcedReaction.hideJustNow"
+          }
+
+          subTree{
+            treeName:t="sub.checkForcedReaction.resetAttacks"
+          }
+
+          wait{
+            range:p2=1.0, 2.0
+            resetable:b=yes
+          }
+        }
+
+        sequencer{
+
+          checkDelayedReaction{
+            ofType:t="hide_payback"
+          }
+
+          setDebugSym{
+            act:t="d60"
+            r:i=60
+          }
+
+          setDebugSym{
+            act:t="d61"
+          }
+
+          setDebugSym{
+            act:t="d62"
+          }
+
+          setDebugSym{
+            act:t="d63"
+          }
+
+          isReadyForAction{
+          }
+
+          detachFromStationaryGun{
+          }
+
+          subTree{
+            treeName:t="sub.checkForcedReaction.hideJustNow"
+          }
+
+          subTree{
+            treeName:t="sub.checkForcedReaction.resetAttacks"
+          }
+
+          subTree{
+            treeName:t="sub.checkForcedReaction.findHidePosNear"
+          }
+
+          subTree{
+            treeName:t="sub.tryBeginCoverAttack"
+          }
+
+          setIntVar{
+            to:t="minStance"
+            value:i=1
+          }
+
+          setIntVar{
+            to:t="maxStance"
+            value:i=1
+          }
+
+          setIntVar{
+            to:t="minStance"
+            value:i=1
+          }
+
+          setIntVar{
+            to:t="maxStance"
+            value:i=2
+          }
+
+          changeStance{
+            stanceName:t="crouch"
+            maxStanceParam:t="maxStance"
+          }
+
+          orderedSelector{
+
+            checkDistance{
+              posParam:t="hidePos"
+              radius:r=3.0
+              yRadius:r=3.0
+            }
+
+            rotateToPoint{
+              posParam:t="hidePos"
+              aimSpeedCoef:r=0.9
+              maxSimAngle:p2=60.0, 80.0
+              strafeChance:r=0.9
+              strafeTimes:p2=0.4, 0.6
+              minSimAngle:r=5.0
+              minSimSpeedCoef:r=0.5
+            }
+          }
+
+          orderedSelector{
+
+            not{
+
+              checkDistance{
+                posParam:t="hidePos"
+                radius:r=10.0
+                yRadius:r=3.0
+              }
+            }
+
+            success{
+
+              moveToPos{
+                posParam:t="hidePos"
+                distThreshold:r=0.35
+                avoidAiObstacles:b=no
+                timeToStuck:r=2.0
+                strafeNearDist:r=3.0
+                jumpDownTraceCheck:p3=0.4, 1.0, 0.15
+                rotateDistThreshold:r=0.5
+                rotateFactors:p4=0.5, 0.3, 0.3, 0.1
+                rotateStartTime:r=0.5
+              }
+            }
+          }
+
+          orderedSelector{
+
+            isAgentPlayerBot{
+            }
+
+            checkDistance{
+              posParam:t="reactPos"
+              radiusParam:t="enemyNearRadius"
+              yRadius:r=3.0
+            }
+          }
+
+          orderedSelector{
+
+            checkDistance{
+              posParam:t="rememberEnemyPos"
+              radius:r=7.0
+              yRadius:r=5.0
+            }
+
+            rotateToPoint{
+              posParam:t="rememberEnemyPos"
+              aimSpeedCoef:r=0.9
+              maxSimAngle:p2=60.0, 80.0
+              strafeChance:r=0.9
+              strafeTimes:p2=0.4, 0.6
+              minSimAngle:r=5.0
+              minSimSpeedCoef:r=0.5
+            }
+          }
+
+          checkReloadWeapon{
+            waitReloadFinish:b=yes
+          }
+
+          getTime{
+            to:t="shootEnemyTime"
+          }
+
+          getTime{
+            to:t="rememberEnemyTime"
+          }
+
+          copyIntVar{
+            to:t="shootEnemy"
+            from:t="reactEid"
+          }
+
+          copyIntVar{
+            to:t="rememberEnemy"
+            from:t="shootEnemy"
+          }
+
+          setPosFromEntity{
+            to:t="rememberEnemyPos"
+            from:t="shootEnemy"
+          }
+        }
+
+        sequencer{
+
+          checkDelayedReaction{
+            ofType:t="turn_payback"
+          }
+
+          setDebugSym{
+            act:t="d70"
+            r:i=70
+          }
+
+          setDebugSym{
+            act:t="d71"
+          }
+
+          isReadyForAction{
+          }
+
+          not{
+
+            isLeader{
+            }
+          }
+
+          checkReloadWeapon{
+            checkOnly:b=yes
+          }
+
+          detachFromStationaryGun{
+          }
+
+          changeStance{
+            stanceName:t="crouch"
+            maxStanceParam:t="maxStance"
+          }
+
+          rotateToPoint{
+            posParam:t="reactPos"
+            aimSpeedCoef:r=0.9
+            maxSimAngle:p2=60.0, 80.0
+            strafeChance:r=0.9
+            strafeTimes:p2=0.4, 0.6
+            minSimAngle:r=5.0
+            minSimSpeedCoef:r=0.5
+          }
+
+          wait{
+            range:p2=0.5, 1.0
+            resetable:b=yes
+          }
+
+          orderedSelector{
+
+            isAgentPlayerBot{
+            }
+
+            checkDistance{
+              posParam:t="reactPos"
+              radiusParam:t="enemyNearRadius"
+              yRadius:r=3.0
+            }
+          }
+
+          getTime{
+            to:t="shootEnemyTime"
+          }
+
+          getTime{
+            to:t="rememberEnemyTime"
+          }
+
+          copyIntVar{
+            to:t="shootEnemy"
+            from:t="reactEid"
+          }
+
+          copyIntVar{
+            to:t="rememberEnemy"
+            from:t="shootEnemy"
+          }
+
+          setPosFromEntity{
+            to:t="rememberEnemyPos"
+            from:t="shootEnemy"
+          }
+
+          setIntVar{
+            to:t="minStance"
+            value:i=1
+          }
+
+          setIntVar{
+            to:t="maxStance"
+            value:i=2
+          }
+        }
+
+        sequencer{
+
+          checkDelayedReaction{
+            ofType:t="panic_run"
+          }
+
+          setDebugSym{
+            act:t="d99"
+            r:i=99
+          }
+        }
+
+        sequencer{
+
+          checkDelayedReaction{
+            ofType:t="panic_crawl"
+          }
+
+          setDebugSym{
+            act:t="d99"
+            r:i=99
+          }
+        }
+      }
+    }
+
+    resetDelayedReaction{
+    }
+  }
+}
+
+orderedSelector{
+  name:t="sub.checkForcedReaction.hideJustNow"
+
+  isVarsIntEqual{
+    lhs:t="coverAttack"
+    rhs_value:i=0
+  }
+
+  sequencer{
+
+    getCoverPosAndDir{
+      coverIndexParam:t="coverAttackCover"
+      coverSlotParam:t="coverAttackCoverSlot"
+      outPosParam:t="coverPos"
+    }
+
+    subTree{
+      treeName:t="sub.hideToCoverAttackCover"
+    }
+  }
+
+  sequencer{
+
+    setIntVar{
+      to:t="maxStance"
+      value:i=1
+    }
+
+    detachFromStationaryGun{
+    }
+
+    changeStance{
+      stanceName:t="crawl"
+      maxStanceParam:t="maxStance"
+    }
+  }
+}
+
+sequencer{
+  name:t="sub.checkForcedReaction.resetAttacks"
+
+  setIntVar{
+    to:t="coverAttack"
+    value:i=0
+  }
+
+  setIntVar{
+    to:t="regroupToPit"
+    value:i=0
+  }
+
+  setRealVar{
+    to:t="dangerLevel"
+    value:r=2.0
+  }
+}
+
+sequencer{
+  name:t="sub.checkForcedReaction.findHidePos"
+
+  getAgentAIPos{
+    outPosParam:t="selfPos"
+  }
+
+  copyPoint3Var{
+    from:t="selfPos"
+    to:t="hidePos"
+  }
+
+  copyPoint3Var{
+    from:t="hidePos"
+    to:t="wishPosition"
+  }
+
+  setIntVar{
+    to:t="hiddenPos"
+    value:i=0
+  }
+
+  orderedSelector{
+
+    sequencer{
+
+      isInCover{
+      }
+
+      setIntVar{
+        to:t="hiddenPos"
+        value:i=1
+      }
+    }
+
+    sequencer{
+
+      findCoverForCoverAttack{
+        targetParam:t="reactEid"
+        approachPosParam:t="reactPos"
+      }
+
+      getCoverPosAndDir{
+        coverIndexParam:t="coverAttackCover"
+        coverSlotParam:t="coverAttackCoverSlot"
+        outPosParam:t="hidePos"
+      }
+
+      setIntVar{
+        to:t="coverAttack"
+        value:i=0
+      }
+
+      setIntVar{
+        to:t="hiddenPos"
+        value:i=1
+      }
+
+      orderedSelector{
+
+        not{
+
+          isDowned{
+          }
+        }
+
+        checkDistance{
+          posParam:t="hidePos"
+          radius:r=5.0
+          yRadius:r=1.0
+        }
+      }
+
+      checkDistance{
+        posParam:t="hidePos"
+        otherPosParam:t="reactPos"
+        radius:r=25.0
+        yRadius:r=2.5
+      }
+    }
+
+    sequencer{
+
+      findCoverAroundPoint{
+        invertToCenter:b=yes
+        centerParam:t="reactPos"
+        radius:r=15.0
+        coverPosParam:t="hidePos"
+        minDist:r=0.0
+        maxOccupied:i=5
+      }
+
+      orderedSelector{
+
+        not{
+
+          isDowned{
+          }
+        }
+
+        checkDistance{
+          posParam:t="hidePos"
+          radius:r=5.0
+          yRadius:r=1.0
+        }
+      }
+
+      checkDistance{
+        posParam:t="hidePos"
+        otherPosParam:t="reactPos"
+        radius:r=15.0
+        yRadius:r=2.5
+      }
+
+      setIntVar{
+        to:t="hiddenPos"
+        value:i=1
+      }
+    }
+
+    sequencer{
+
+      checkCover{
+      }
+
+      getCoverPosition{
+        coverPosParam:t="hidePos"
+      }
+
+      checkDistance{
+        posParam:t="hidePos"
+        otherPosParam:t="reactPos"
+        radius:r=15.0
+        yRadius:r=2.5
+      }
+    }
+
+    continue{
+    }
+  }
+}
+
+sequencer{
+  name:t="sub.checkForcedReaction.findHidePosNear"
+
+  getAgentAIPos{
+    outPosParam:t="selfPos"
+  }
+
+  copyPoint3Var{
+    from:t="selfPos"
+    to:t="hidePos"
+  }
+
+  copyPoint3Var{
+    from:t="hidePos"
+    to:t="wishPosition"
+  }
+
+  setIntVar{
+    to:t="hiddenPos"
+    value:i=0
+  }
+
+  orderedSelector{
+
+    sequencer{
+
+      isInCover{
+      }
+
+      setIntVar{
+        to:t="hiddenPos"
+        value:i=1
+      }
+    }
+
+    sequencer{
+
+      findCoverForCoverAttack{
+        targetParam:t="reactEid"
+        approachPosParam:t="reactPos"
+      }
+
+      getCoverPosAndDir{
+        coverIndexParam:t="coverAttackCover"
+        coverSlotParam:t="coverAttackCoverSlot"
+        outPosParam:t="hidePos"
+      }
+
+      setIntVar{
+        to:t="coverAttack"
+        value:i=0
+      }
+
+      setIntVar{
+        to:t="hiddenPos"
+        value:i=1
+      }
+
+      orderedSelector{
+
+        not{
+
+          isDowned{
+          }
+        }
+
+        checkDistance{
+          posParam:t="hidePos"
+          radius:r=5.0
+          yRadius:r=1.0
+        }
+      }
+
+      checkDistance{
+        posParam:t="hidePos"
+        radius:r=6.0
+        yRadius:r=1.5
+      }
+
+      checkDistance{
+        posParam:t="hidePos"
+        otherPosParam:t="reactPos"
+        radius:r=25.0
+        yRadius:r=2.5
+      }
+    }
+
+    sequencer{
+
+      findCoverAroundPoint{
+        invertToCenter:b=yes
+        centerParam:t="reactPos"
+        radius:r=15.0
+        coverPosParam:t="hidePos"
+        minDist:r=0.0
+        maxOccupied:i=5
+      }
+
+      orderedSelector{
+
+        not{
+
+          isDowned{
+          }
+        }
+
+        checkDistance{
+          posParam:t="hidePos"
+          radius:r=5.0
+          yRadius:r=1.0
+        }
+      }
+
+      checkDistance{
+        posParam:t="hidePos"
+        radius:r=6.0
+        yRadius:r=1.5
+      }
+
+      checkDistance{
+        posParam:t="hidePos"
+        otherPosParam:t="reactPos"
+        radius:r=15.0
+        yRadius:r=2.5
+      }
+
+      setIntVar{
+        to:t="hiddenPos"
+        value:i=1
+      }
+    }
+
+    sequencer{
+
+      checkCover{
+      }
+
+      getCoverPosition{
+        coverPosParam:t="hidePos"
+      }
+
+      checkDistance{
+        posParam:t="hidePos"
+        radius:r=6.0
+        yRadius:r=1.5
+      }
+
+      checkDistance{
+        posParam:t="hidePos"
+        otherPosParam:t="reactPos"
+        radius:r=15.0
+        yRadius:r=2.5
+      }
+    }
+
+    continue{
+    }
+  }
+}

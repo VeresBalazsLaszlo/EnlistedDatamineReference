@@ -1,0 +1,67 @@
+import{
+  scene:t="gamedata/scenes/_common_sounds.blk"
+}
+
+entity{
+  _template:t="battle_music"
+}
+
+entity{
+  _template:t="manchuria_ambient_sound"
+}
+
+entity{
+  _template:t="sound_field"
+
+  "sound_field__biomeTypes:array"{
+
+    "obj:object"{
+      gameObject:t="biome_forest_sound_var"
+      alpha2Value:p2=0.25, 1.0
+      extent:r=0.0
+    }
+  }
+
+  "sound_field__vars:list<t>"{
+    var:t="biome_forest"
+  }
+}
+
+entity{
+  _template:t="river_sound+game_object_spline_sound_generator"
+
+  "game_object_spline_sound_generator__gameObjects:list<t>"{
+    gameObject:t="river_sound_spline_a"
+  }
+}
+
+entity{
+  _template:t="river_small_sound+game_object_spline_sound_generator"
+
+  "game_object_spline_sound_generator__gameObjects:list<t>"{
+    gameObject:t="river_sound_spline_b"
+  }
+}
+
+entity{
+  _template:t="lake_mid_river_sound+game_object_ocean_sound_generator"
+
+  "game_object_ocean_sound_generator__gameObjects:list<t>"{
+    gameObject:t="ocean_sound_spline_a"
+  }
+}
+
+entity{
+  _template:t="compound_ambient_sound_type"
+  compound_ambient_sound_type__soundType:t="canyon"
+  compound_ambient_sound_type__path:t="ambient/positioned/canyon"
+  compound_ambient_sound_type__fadeInOutSpeed:p2=0.25, 0.5
+}
+
+entity{
+  _template:t="compound_ambient_sound_controller"
+
+  "compound_ambient_sound_controller__soundTypes:list<t>"{
+    name:t="canyon"
+  }
+}

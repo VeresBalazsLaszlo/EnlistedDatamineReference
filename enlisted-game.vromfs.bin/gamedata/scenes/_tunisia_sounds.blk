@@ -1,0 +1,17 @@
+import{
+  scene:t="gamedata/scenes/_common_sounds.blk"
+}
+
+entity{
+  _template:t="battle_music"
+}
+
+entity{
+  _template:t="desert_ambient_sound"
+}
+
+entity{
+  _template:t="water_sound_field"
+  water_sound_field__worldAABB:p4=-1600.0, -2000.0, 1500.0, 1500.0
+  water_sound_field__cellSize:r=10.0
+}

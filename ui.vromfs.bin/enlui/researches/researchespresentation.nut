@@ -1,0 +1,312 @@
+from "%ui/components/soldierClasses.nut" import soldierClasses, getKindCfg, getClassNameWithGlyph
+from "%ui/components/itemsInfo.nut" import itemNameFromTemplate, trimUpgradeSuffix
+from "%ui/ui_library.nut" import *
+
+function getClassByContext(effect, context) {
+  let { armyId, squadId, squadsCfg } = context
+  let { newClass = "" } = squadsCfg?[armyId][squadId]
+  return newClass in soldierClasses ? newClass : effect.findindex(@(_) true)
+}
+
+let firstValue = @(tbl, def = null) (tbl ?? {}).findvalue(@(_) true) ?? def
+
+function appendSquadSize(effect, _context) {
+  let size = firstValue(effect, 0)
+  return {
+    name = "research/squad_size"
+    description = "research/squad_size_desc"
+    icon_id = "squad_size"
+    params = { size }
+  }
+}
+
+function appendSoldiersReserve(effect, _context) {
+  let size = effect ?? 0
+  return {
+    name = "research/plus_reserve"
+    description = "research/plus_reserve_desc"
+    icon_id = "reserve_upgrade_icon"
+    params = { size }
+  }
+}
+
+function appendSquadXpBoost(effect, _context) {
+  let value = (firstValue(effect, 0) * 100).tointeger()
+  return {
+    name = "research/squad_xp_boost"
+    description = "research/squad_xp_boost_desc"
+    icon_id = "squad_xp_boost_icon"
+    params = { value }
+  }
+}
+
+function appendBuildingUnlocks(effect, _context) {
+  let id = firstValue(effect, {}).findindex(@(_) true) ?? "0"
+  return {
+    name = $"research/buildings_unlock_{id}"
+    description = $"research/buildings_unlock_{id}_desc"
+    icon_id = $"building_unlock_{id}_icon"
+  }
+}
+
+function appendArtilleryTypeUnlocks(effect, _context) {
+  let id = firstValue(effect, {}).findindex(@(_) true) ?? "0"
+  return {
+    name = $"research/artillery_type_unlock_{id}"
+    description = $"research/artillery_type_unlock_{id}_desc"
+    icon_id = $"artillery_type_unlock_{id}_icon"
+    iconOverride = { scale = 0.8, pos = const [0.4, 0.5] }
+  }
+}
+
+function appendParatrooperBox(effect, _context) {
+  let id = firstValue(effect, {}).findindex(@(_) true) ?? "0"
+  return {
+    name = $"research/paratrooper_box{id}"
+    description = $"research/paratrooper_box{id}_desc"
+    icon_id = $"paratrooper_box_icon"
+    iconOverride = { scale = 0.8, pos = const [0.4, 0.5] }
+  }
+}
+
+function appendArtilleryCooldownMul(effect, _context) {
+  let value = (1.0 / firstValue(effect, 1.0)).tointeger()
+  return {
+    name = "research/artillery_cooldown_mul"
+    description = "research/artillery_cooldown_mul_desc"
+    icon_id = "artillery_upgrade_icon"
+    params = { value }
+  }
+}
+
+function appendSquadClassLimit(effect, _context) {
+  let [ kind = "", count = 0 ] = firstValue(effect, {}).topairs()?[0]
+  return {
+    name = "research/plus_class"
+    description = "research/plus_class_desc"
+    icon_id = kind
+    params = {
+      kind = loc(getKindCfg(kind).locId)
+      count
+    }
+  }
+}
+
+function appendMaxTrainingLevel(effect, context) {
+  let sClass = getClassByContext(effect, context)
+  local level = firstValue(effect, 0)
+  let { class_training = {} } = context
+  level += class_training?[sClass] ?? 0
+  class_training[sClass] <- level
+  context.class_training <- class_training
+  ++level
+  return {
+    name = "research/soldier_tier"
+    description = "research/soldier_tier_desc"
+    icon_id = $"soldier_tier{level}"
+    params = {
+      kind = getClassNameWithGlyph(sClass, context?.armyId)
+      level
+    }
+  }
+}
+
+function appendWeaponUpgrades(effect, context) {
+  let itemtpl = effect?[0]
+  let basetpl = trimUpgradeSuffix(itemtpl)
+  let { armyId, alltemplates } = context
+  let templates = alltemplates?[armyId] ?? {}
+  let tmpl = templates?[itemtpl] ?? templates?[basetpl]
+  let { upgradeIdx = 0, itemsubtype = "", gametemplate = "" } = tmpl
+  let params = {
+    item = loc(itemNameFromTemplate(tmpl))
+    tier = upgradeIdx
+  }
+
+  if (itemsubtype == "tank" || itemsubtype == "bike" || itemsubtype == "jeep" || itemsubtype == "truck")
+    return {
+      name = "research/upgrade_vehicle"
+      description = "research/upgrade_vehicle_desc"
+      gametemplate
+      templateOverride = { scale = 0.9, itemOfsY = -0.2 }
+      icon_id = $"soldier_tier{upgradeIdx}"
+      iconOverride = { scale = 0.55, pos = const [0.95, 0] }
+      params
+    }
+
+  if (itemsubtype == "assault_aircraft" || itemsubtype == "fighter_aircraft")
+    return {
+      name = "research/upgrade_vehicle"
+      description = "research/upgrade_vehicle_desc"
+      gametemplate
+      templateOverride = { scale = 0.9, itemPitch = 180, itemYaw = 90, itemRoll = -90, itemOfsY = 0.2 }
+      icon_id = $"soldier_tier{upgradeIdx}"
+      iconOverride = { scale = 0.55, pos = const [0, 0.95] }
+      params
+    }
+
+  return {
+    name = "research/upgrade_weapon"
+    description = "research/upgrade_weapon_desc"
+    gametemplate
+    templateOverride = { itemPitch = -35 }
+    icon_id = $"soldier_tier{upgradeIdx}"
+    iconOverride = { scale = 0.55, pos = const [0, 0.95] }
+    params
+  }
+}
+
+function appendWeaponUpgradeDiscount(effect, context) {
+  local [ itemtpl = "", value = 0 ] = effect?.topairs()[0]
+  value = (value * 100).tointeger()
+  let basetpl = trimUpgradeSuffix(itemtpl)
+  let { armyId, alltemplates } = context
+  let templates = alltemplates?[armyId] ?? {}
+  let tmpl = templates?[itemtpl] ?? templates?[basetpl]
+  let { itemsubtype = "", gametemplate = "" } = tmpl
+  let params = {
+    item = loc(itemNameFromTemplate(tmpl))
+    value
+  }
+
+  if (itemsubtype == "tank" || itemsubtype == "bike" || itemsubtype == "jeep")
+    return {
+      name = "research/weapon_upgrade_discount"
+      description = "research/weapon_upgrade_discount_desc"
+      gametemplate
+      templateOverride = { scale = 0.9, itemOfsY = -0.2 }
+      icon_id = "weapon_upgrade_cost_icon"
+      iconOverride = { scale = 0.4, pos = const [0.9, 0.1] }
+      params
+    }
+
+  if (itemsubtype == "assault_aircraft" || itemsubtype == "fighter_aircraft")
+    return {
+      name = "research/weapon_upgrade_discount"
+      description = "research/weapon_upgrade_discount_desc"
+      gametemplate
+      templateOverride = { scale = 0.9, itemPitch = 180, itemYaw = 90, itemRoll = -90, itemOfsY = 0.2 }
+      icon_id = "weapon_upgrade_cost_icon"
+      iconOverride = { scale = 0.4, pos = const [0.9, 0.95] }
+      params
+    }
+
+  return {
+    name = "research/weapon_upgrade_discount"
+    description = "research/weapon_upgrade_discount_desc"
+    gametemplate
+    templateOverride = { itemPitch = -35 }
+    icon_id = "weapon_upgrade_cost_icon"
+    iconOverride = { scale = 0.40, pos = const [0.2, 0.9] }
+    params
+  }
+}
+
+function appendClassXpBoost(effect, context) {
+  let sClass = getClassByContext(effect, context)
+  local value = firstValue(effect, 0)
+  value = (value * 100).tointeger()
+  return {
+    name = "research/class_xp_boost"
+    description = "research/class_xp_boost_desc"
+    icon_id = "class_xp_boost_icon"
+    params = {
+      kind = getClassNameWithGlyph(sClass, context?.armyId)
+      value
+    }
+  }
+}
+
+function appendSlotUnlock(effect, context) {
+  let sClass = getClassByContext(effect, context)
+  let [ slot = "" ] = firstValue(effect, [])
+  return {
+    name = $"research/{slot}_slot_upgrade"
+    description = $"research/{slot}_slot_upgrade_desc"
+    icon_id = $"{slot}_slot_upgrade_icon"
+    params = {
+      kind = getClassNameWithGlyph(sClass, context?.armyId)
+      slot = loc($"inventory/{slot}", "")
+    }
+  }
+}
+
+function appendDisassembleBonus(effect, context) {
+  local [ itemtpl = "", value = 0 ] = effect?.topairs()[0]
+  value = (value * 100).tointeger()
+  let basetpl = trimUpgradeSuffix(itemtpl)
+  let { armyId, alltemplates } = context
+  let templates = alltemplates?[armyId] ?? {}
+  let tmpl = templates?[itemtpl] ?? templates?[basetpl]
+  let { gametemplate = "" } = tmpl
+  return {
+    name = "research/disassemble_bonus"
+    description = "research/disassemble_bonus_desc"
+    gametemplate
+    templateOverride = { itemPitch = -35 }
+    icon_id = "weapon_parts_boost_icon"
+    iconOverride = { scale = 0.4, pos = const [0.15, 0.85] }
+    params = {
+      item = loc(itemNameFromTemplate(tmpl))
+      value
+    }
+  }
+}
+
+function appendTntCharge(effect, _context) {
+  let count = firstValue(effect, 0)
+  return {
+    name = $"research/tnt_charge"
+    description = "research/tnt_charge_desc"
+    icon_id = "tnt_charge_icon"
+    params = {
+      count
+    }
+  }
+}
+
+function appendAllowArtillery(effect, context) {
+  let sClass = getClassByContext(effect, context)
+  return {
+    name = $"research/allow_artillery"
+    description = "research/allow_artillery_desc"
+    icon_id = $"allow_artillery_icon"
+    params = {
+      kind = getClassNameWithGlyph(sClass, context?.armyId)
+    }
+  }
+}
+
+let RESEARCH_DATA_APPENDERS = {
+  squad_size = appendSquadSize
+  soldiersReserve = appendSoldiersReserve
+  squad_xp_boost = appendSquadXpBoost
+  building_unlock = appendBuildingUnlocks
+  artillery_cooldown_mul = appendArtilleryCooldownMul
+  artillery_type_unlock = appendArtilleryTypeUnlocks
+  paratrooper_box = appendParatrooperBox
+  squad_class_limit = appendSquadClassLimit
+  class_training = appendMaxTrainingLevel
+  weapon_upgrades = appendWeaponUpgrades
+  weapon_upgrade_discount = appendWeaponUpgradeDiscount
+  class_xp_boost = appendClassXpBoost
+  slot_unlock = appendSlotUnlock
+  disassemble_bonus = appendDisassembleBonus
+  tnt_charge = appendTntCharge
+  allow_artillery = appendAllowArtillery
+}
+
+function prepareResearch(research, context) {
+  
+  let effect = (research?.effect ?? {})
+    .filter(@(val) (val?.len() ?? val ?? 0) != 0)
+  research = research.__merge({ effect })
+  let effectId = effect.findindex(@(_) true)
+  if (effectId in effect) {
+    let appender = RESEARCH_DATA_APPENDERS[effectId]
+    research.__update(appender(effect[effectId], context))
+  }
+  return research
+}
+
+return prepareResearch

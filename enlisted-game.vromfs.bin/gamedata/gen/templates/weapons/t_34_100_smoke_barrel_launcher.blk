@@ -1,0 +1,37 @@
+base_t_34_100_smoke_barrel_launcher{
+  item__name:t="guns/t_34_100_smoke_barrel_launcher"
+  gun__blk:t="gamedata/gen/weapons/t_34_100_smoke_barrel_launcher.blk"
+  gun__shotFreq:r=1.0
+  gun__reloadTime:r=8.0
+  gun__locName:t="t_34_100_smoke_barrel_launcher"
+
+  "gun__ammoSetsInfo:shared:array"{
+
+    "defaultSet:array"{
+
+      "shell:object"{
+        blk:t="gamedata/gen/weapons/shells/t_34_100_smoke_barrel_launcher_defaultset.blk"
+        name:t="76mm_smoke_grenade"
+        type:t="smoke_grenade_tank"
+      }
+    }
+  }
+}
+
+tankgun_t_34_100_smoke_barrel_launcher{
+  _use:t="tankgun"
+  _use:t="base_tankgun_smoke_grenade_launcher"
+  _use:t="t_34_100_smoke_barrel_launcher_grenade"
+  _use:t="base_t_34_100_smoke_barrel_launcher"
+  gun__projectileTemplate:t="t_34_100_smoke_barrel_launcher_projectile"
+  turret__triggerGroup:i=3
+}
+
+t_34_100_smoke_barrel_launcher_grenade{
+  animchar__res:t="t_34_100_smoke_barrel_char"
+}
+
+t_34_100_smoke_barrel_launcher_projectile{
+  _use:t="tank_smoke_grenade_projectile"
+  _use:t="t_34_100_smoke_barrel_launcher_grenade"
+}

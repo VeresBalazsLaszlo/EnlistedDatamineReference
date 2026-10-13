@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="coin" xmlns="http://www.w3.org/2000/svg" width="100" height="100" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 100 100">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: url(#linear-gradient);
+        fill-rule: evenodd;
+      }
+
+      .cls-1, .cls-2 {
+        stroke-width: 0px;
+      }
+
+      .cls-2 {
+        fill: #713f24;
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="80.53" y1="1.79" x2="19.29" y2="102.51" gradientTransform="translate(0 102) scale(1 -1)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#c68b37"/>
+      <stop offset=".15" stop-color="#c68b37"/>
+      <stop offset=".3" stop-color="#926d32"/>
+      <stop offset=".48" stop-color="#d09d40"/>
+      <stop offset=".86" stop-color="#f3f294"/>
+      <stop offset="1" stop-color="#fdfcc2"/>
+    </linearGradient>
+  </defs>
+  <circle class="cls-2" cx="50" cy="50" r="48"/>
+  <path id="golden" class="cls-1" d="m66.45,29.68c-3.49-2.76-8.02-4.14-13.57-4.14-7.93,0-14.23,2.3-18.9,6.9-4.67,4.6-7,10.59-7,17.99s2.13,13.36,6.39,17.82,10.06,6.7,17.41,6.7c3.27,0,6.65-.45,10.12-1.35,3.47-.9,6.22-2.09,8.31-3.57v-20.81h-14.86v5.54h7.39v11.19c-2.4,2.09-5.54,3.13-9.42,3.13-5.46,0-9.77-1.69-12.94-5.06-3.17-3.37-4.75-7.82-4.75-13.34,0-5.81,1.61-10.47,4.84-13.99s7.63-5.28,13.21-5.28c3.52,0,7.11,1.22,10.77,3.65l3.02-5.38h-.02Zm-16.42-14.75c19.38,0,35.09,15.7,35.09,35.07s-15.71,35.07-35.09,35.07S14.93,69.37,14.93,50,30.64,14.93,50.02,14.93h0ZM10.03,50.08c0,22.04,17.9,39.91,39.98,39.91s39.98-17.87,39.98-39.91S72.1,10.17,50.02,10.17,10.03,28.04,10.03,50.08ZM50,1c27.06,0,49,21.94,49,49s-21.94,49-49,49S1,77.06,1,50,22.94,1,50,1Z"/>
+</svg>

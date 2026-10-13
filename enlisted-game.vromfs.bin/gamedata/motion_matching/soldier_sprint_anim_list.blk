@@ -1,0 +1,24 @@
+clips{
+  default_animation_mask:t="soldier_lower_nodemask"
+  default_tags:t="sprint"
+
+  lower_sprint{
+    play_speed_multiplier_range:p2=0.5, 2.0
+    fake_trajectory_multiplier:r=1.4
+    costBias:r=-3.0
+    nextClip:t="lower_sprint"
+
+    in_place_animation{
+      velocity_magnitude:r=2.85
+    }
+
+    use_foot_ik_locker{
+      velocity_threshold:r=1.5
+    }
+
+    set_anim_tree_timer{
+      timer_name:t=":sprint_timer"
+      timer_cycle:r=0.566
+    }
+  }
+}

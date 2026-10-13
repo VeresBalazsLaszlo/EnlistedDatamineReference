@@ -1,0 +1,271 @@
+germ_sdkfz_221_s_pz_b_41{
+  _use:t="germ_sdkfz_221_s_pz_b_41_common"
+
+  "turrets__initAmmoDistribution:array"{
+
+    "ammo:object"{
+      slot:i=1
+      fill:b=yes
+    }
+  }
+
+  "disableDMParts:list<t>"{
+    part:t="commander"
+    part:t="driver"
+  }
+}
+
+germ_sdkfz_221_s_pz_b_41_common{
+  _use:t="base_sdkfz_221_s_pz_b_41"
+  _use:t="vehicle_steering_assist"
+  _use:t="germ_sdkfz_234_2_common_vehicle_sound"
+  commanderCockpitFpsCamMaxAngle:p2=40.0, 5.0
+  gunner_cam_limit__useCockpitDir:b=yes
+  item__iconOffset:p2=0.05, 0.13
+
+  _group{
+    _tags:t="render"
+    exhaust_fx__fx:t="car_exhaust_template"
+    exhaust_fx__brokenFx:t="car_broken_exhaust_template"
+  }
+
+  "onlyRootDecorAttach:tag"{
+  }
+
+  "dm_parts_repair_names:list<t>"{
+    part:t="drive_turret_h"
+    part:t="drive_turret_v"
+    part:t="cannon_breech"
+    part:t="engine"
+    part:t="transmission"
+    part:t="gun_barrel"
+    part:t="gun_barrel_01"
+    part:t="gun_barrel_02"
+    part:t="gun_barrel_03"
+    part:t="gun_barrel_04"
+    part:t="gun_barrel_05"
+    part:t="track_r"
+    part:t="track_l"
+    part:t="track_r_01"
+    part:t="track_l_01"
+    part:t="wheel_l_back"
+    part:t="wheel_l_front"
+    part:t="wheel_l_drive"
+    part:t="wheel_r_back"
+    part:t="wheel_r_front"
+    part:t="wheel_r_drive"
+    part:t="wheel_r_01"
+    part:t="wheel_r_02"
+    part:t="wheel_r_03"
+    part:t="wheel_r_04"
+    part:t="wheel_r_05"
+    part:t="wheel_r_06"
+    part:t="wheel_r_07"
+    part:t="wheel_r_08"
+    part:t="wheel_l_01"
+    part:t="wheel_l_02"
+    part:t="wheel_l_03"
+    part:t="wheel_l_04"
+    part:t="wheel_l_05"
+    part:t="wheel_l_06"
+    part:t="wheel_l_07"
+    part:t="wheel_l_08"
+  }
+
+  "vehicle_seats__effectors:array"{
+  }
+
+  "dm_parts__repairGroups:object"{
+  }
+
+  "vehicle_seats__seatsProvideOrder:tag"{
+  }
+
+  "vehicle_seats__seats:shared:array"{
+
+    "seats:object"{
+      name:t="main_gunner"
+      locName:t="vehicle_seats/gunner"
+      attachNode:t="root"
+      ignoreAttachNodeRotation:b=yes
+      attachTm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-0.31, 1.2, 0.0]]
+      seatComponent:t="isGunner"
+      nextSeat:t="driver"
+      shouldHideOwner:b=no
+      receiveDamageFromDMPart:t="gunner"
+      cameraNodeName:t="bone_camera_gunner"
+      cockpitTemplate:t="germ_sdkfz_221_s_pz_b_41_gunner_cockpit"
+      isHoldGunModeAllowed:b=yes
+      maxPosWithOpenHatch:r=0.2
+      hatchRotationAxis:p3=1.5, 0.0, 0.0
+      useHatchEffectors:b=yes
+      canLoadInHatch:b=yes
+
+      "turretNames:array"{
+        turretNames:t="turret_01"
+      }
+
+      "loaderTurretNames:array"{
+        turret:t="turret_01"
+      }
+
+      "hatchTurretNames:array"{
+        turret:t="turret_01"
+      }
+
+      "hatchNodes:array"{
+        node:t="bone_camera_gunner"
+      }
+
+      "effectors:object"{
+
+        "l.hand:object"{
+          rel_tm:m=[[0.8496926, 0.08705582, -0.5200399] [0.5260396, -0.2075201, 0.8247559] [-0.03611887, -0.9743482, -0.2221226] [-0.8070364, -0.04971313, -0.2356567]]
+          node:t="bone_gun"
+        }
+
+        "r.hand:object"{
+          rel_tm:m=[[0.9844869, 0.1573755, -0.0775843] [-0.04340395, -0.2100011, -0.9767393] [-0.1700069, 0.9649503, -0.1999117] [-0.7992144, -0.0530591, -0.06613159]]
+          node:t="bone_gun"
+        }
+
+        "l.foot:object"{
+          rel_tm:m=[[0.02774082, -0.9991679, 0.02986564] [0.9859458, 0.02242478, -0.1655688] [0.1647609, 0.03403883, 0.9857445] [0.252538, 0.9483457, -0.218689]]
+          node:t="root"
+        }
+
+        "r.foot:object"{
+          rel_tm:m=[[0.3115108, -0.9461765, 0.08780719] [0.9464296, 0.3172045, 0.0604567] [-0.08505523, 0.06427015, 0.9942983] [0.143404, 0.9744179, 0.2481384]]
+          node:t="root"
+        }
+      }
+    }
+
+    "seats:object"{
+      name:t="driver"
+      locName:t="vehicle_seats/driver"
+      seatOwnsEntityControl:b=yes
+      attachNode:t="driver"
+      ignoreAttachNodeRotation:b=yes
+      attachTm:m=[[0.8247521, 0.2056333, 0.0] [-0.2056331, 0.8247516, 0.0] [0.0, 0.0, 0.85] [-0.07, -0.23, 0.0]]
+      seatComponent:t="isDriver"
+      shouldHideOwner:b=no
+      receiveDamageFromDMPart:t="driver"
+      cameraNodeName:t="bone_camera_driver"
+      cockpitTemplate:t="germ_sdkfz_221_s_pz_b_41_driver_cockpit"
+      isHoldGunModeAllowed:b=no
+      seatAnimUpper:t="drive_driver"
+      seatAnimLower:t="drive_driver"
+
+      "effectors:object"{
+
+        "l.hand:object"{
+          rel_tm:m=[[0.4753811, -0.8703734, -0.1283101] [0.5073202, 0.3903483, -0.76828] [0.7187752, 0.3001316, 0.6271223] [-0.0836525, -0.04960632, -0.03819275]]
+          node:t="lefthand_1"
+        }
+
+        "r.hand:object"{
+          rel_tm:m=[[0.7912137, -0.2342978, 0.5648761] [-0.06731047, 0.8847183, 0.461241] [-0.607825, -0.4029624, 0.6842309] [0.02917862, -0.01255798, -0.04968262]]
+          node:t="righthand_1"
+        }
+
+        "l.foot:object"{
+          rel_tm:m=[[0.923674, 0.3830373, -0.01041637] [-0.3830905, 0.9237037, -0.003601527] [0.008242201, 0.007317038, 0.9999391] [-0.1336145, 0.1046076, 0.03012085]]
+          node:t="pedal_lfoot_1"
+        }
+
+        "r.foot:object"{
+          rel_tm:m=[[0.993318, -0.1150752, -0.008801691] [0.1137654, 0.989135, -0.09311329] [0.01942116, 0.09148979, 0.995617] [-0.06752396, 0.06117058, -0.02070618]]
+          node:t="pedal_rfoot_1"
+        }
+      }
+    }
+  }
+
+  "dm_phys_parts__wheelsPartIds:list<i>"{
+  }
+
+  "wheelsSpecialOrder:tag"{
+  }
+}
+
+germ_sdkfz_221_s_pz_b_41_driver_cockpit{
+  _use:t="base_driver_cockpit_no_slits"
+  animchar__res:t="pz_2c_driver_char"
+  cockpit__offset:p3=-1.4, -0.27, -0.51
+
+  "cockpit__visibleVehicleNodeNames:list<t>"{
+    node:t="@root"
+    node:t="ex_decor_r_01"
+    node:t="ex_decor_l_02"
+    node:t="ex_decor_l_04"
+    node:t="ex_armor_r_01"
+    node:t="ex_armor_r_01"
+  }
+
+  "cockpit__slitForwardOffset:list<r>"{
+    slit:r=-0.08
+  }
+
+  "cockpit__slitIsGun:list<b>"{
+    slit:b=no
+  }
+
+  "cockpit__slitNodeNames:list<t>"{
+    slit:t="cam_front"
+  }
+}
+
+germ_sdkfz_221_s_pz_b_41_gunner_cockpit{
+  _use:t="base_gunner_cockpit"
+  animchar__res:t="pz_2c_commander_char"
+  cockpit__offset:p3=-0.0, -0.0, -0.0
+
+  "cockpit__attachNodeNames:list<t>"{
+    node:t="bone_camera_gunner"
+  }
+
+  "cockpit__cockpitOffsetBySlit:list<p3>"{
+    slit:p3=-0.7, 0.05, -0.08
+  }
+
+  "cockpit__attachNodeIndices:list<i>"{
+  }
+
+  "cockpit__visibleVehicleNodeNames:list<t>"{
+    node:t="@root"
+    node:t="bone_gun"
+    node:t="gun_barrel"
+  }
+
+  "cockpit__slitForwardOffset:list<r>"{
+    slit:r=0.32
+  }
+
+  "cockpit__slitNodeNames:list<t>"{
+    slit:t="cam_front"
+  }
+
+  "cockpit__slitIsGun:list<b>"{
+    slit:b=yes
+  }
+
+  "cockpit__slitZoom:array"{
+
+    "slit:list<r>"{
+      zoom:r=1.9
+      zoom:r=3.5
+    }
+  }
+
+  "cockpit__slitZoomTime:list<r>"{
+    slit:r=0.05
+  }
+
+  "cockpit__slitTemplates:list<t>"{
+    slit:t="germ_tzf4"
+  }
+
+  "cockpit__slitEids:list<eid>"{
+  }
+}

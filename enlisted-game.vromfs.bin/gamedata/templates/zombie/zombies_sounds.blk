@@ -1,0 +1,1012 @@
+zombie_scene_net_sounds{
+  _use:t="scene_net_sound_descs"
+  _use:t="replicating"
+  _singleton:b=yes
+
+  "net_sound__descs:shared:object"{
+
+    "zombieCraterExplosion:object"{
+      path:t="events/z/enemy/effects/zombie_crater_destroyed"
+      range:r=50.0
+    }
+
+    "zombieArenaObjectiveActivated:object"{
+      path:t="events/z/enemy/effects/altar_activate"
+      range:r=100.0
+    }
+
+    "zombiePatrolSpawn:object"{
+      path:t="events/z/ui/patrol_start"
+      range:r=0.0
+      bringToListener:b=yes
+    }
+
+    "zombieAbilityAgressiveShellsCast:object"{
+      path:t="events/z/enemy/effects/ability_summoner"
+      range:r=40.0
+    }
+
+    "plasmaQuickShellSpawn:object"{
+      path:t="events/z/enemy/effects/ability_plasma_shell"
+      range:r=40.0
+    }
+
+    "plasmaSmallQuickShellSpawn:object"{
+      path:t="events/z/enemy/effects/ability_small_plasma_shell"
+      range:r=40.0
+    }
+
+    "ballsShellSpawn:object"{
+      path:t="events/z/enemy/effects/ability_balls"
+      range:r=40.0
+    }
+
+    "exchangeSouls:object"{
+      path:t="events/z/ui/exchange_souls"
+    }
+
+    "paidDoorOpen:object"{
+      path:t="events/z/ui/door_opened"
+      range:r=100.0
+    }
+  }
+}
+
+zombie_tear_off_limb_sound{
+  _use:t="on_appear_sound"
+
+  _group{
+    _tags:t="sound"
+    on_appear_sound__path:t="events/z/enemy/effects/torn_wound"
+  }
+}
+
+zombie_battle_music_param{
+  _use:t="sound_preset"
+  _use:t="replicating"
+  _singleton:b=yes
+
+  _group{
+    _tags:t="sound"
+    zombie_battle_music_param__name:t="battle"
+    zombie_battle_music_param__active:b=no
+  }
+}
+
+zombie_battle_music_trigger{
+
+  _group{
+    _tags:t="sound"
+    zombie_battle_music_trigger__dropAtTime:r=0.0
+  }
+}
+
+zombie_near_battle_music_trigger{
+  _use:t="replicating"
+  _use:t="zombie_battle_music_trigger"
+  _singleton:b=yes
+
+  _group{
+    _tags:t="sound"
+    zombie_near_battle_music_trigger__duration:r=30.0
+    zombie_near_battle_music_trigger__range:r=100.0
+    zombie_near_battle_music_trigger__updateInterval:r=2.0
+    zombie_near_battle_music_trigger__updateAfter:r=0.0
+  }
+
+  _group{
+    _tags:t="sound"
+    zombie_attack_battle_music_trigger__duration:r=30.0
+  }
+}
+
+zombie_any_shell_sound{
+
+  _group{
+    _tags:t="sound"
+    projectile_wiz_sound__path:t=""
+  }
+
+  "projectile_impact_sound__paths:shared:object"{
+    _tags:t="sound"
+    hitBullet:t="impact/shell"
+    hitShell:t="impact/shell"
+    ricoBullet:t="ricoShell1"
+    ricoShell:t="ricoShell1"
+  }
+}
+
+boss_sphere_spawn_sound{
+  _use:t="oneshot_scene_net_sound"
+  _use:t="zombie_any_shell_sound"
+
+  _group{
+    _tags:t="server"
+    oneshot_scene_net_sound__desc:t="zombieAbilityAgressiveShellsCast"
+  }
+}
+
+plasma_quick_shell_spawn_sound{
+  _use:t="oneshot_scene_net_sound"
+  _use:t="zombie_any_shell_sound"
+
+  _group{
+    _tags:t="server"
+    oneshot_scene_net_sound__desc:t="plasmaQuickShellSpawn"
+  }
+}
+
+plasma_small_quick_shell_spawn_sound{
+  _use:t="oneshot_scene_net_sound"
+  _use:t="zombie_any_shell_sound"
+
+  _group{
+    _tags:t="server"
+    oneshot_scene_net_sound__desc:t="plasmaSmallQuickShellSpawn"
+  }
+}
+
+plasma_shell_spawn_sound{
+  _use:t="oneshot_scene_net_sound"
+
+  _group{
+    _tags:t="server"
+    oneshot_scene_net_sound__desc:t="ballsShellSpawn"
+  }
+}
+
+special_weapon_box_sound{
+  _use:t="sound_effect"
+
+  _group{
+    _tags:t="sound"
+    sound_effect__path:t="events/z/enemy/effects/chest"
+  }
+
+  "specialWeaponBoxSound:tag"{
+    _tags:t="sound"
+  }
+}
+
+zombie_mode_soldier_loot_sound_paths{
+
+  "human_loot_sound__paths:shared:object"{
+    _tags:t="sound"
+
+    "buyAmmo:object"{
+      watched:t="events/z/ui/buy_ammo"
+    }
+
+    "buyWeapon:object"{
+      watched:t="events/z/ui/buy_weapon"
+    }
+  }
+}
+
+zombie_managed_sound{
+  _use:t="base_managed_sound"
+
+  _group{
+    _tags:t="sound"
+    managed_sound__type:t="zombie"
+    managed_sound__maxInstances:i=6
+  }
+}
+
+zombie_loud_managed_sound_override{
+
+  _group{
+    _tags:t="sound"
+    managed_sound__type:t="zombieloud"
+    managed_sound__maxInstances:i=4
+  }
+}
+
+zombie_spitfire_prop_managed_sound_override{
+  _use:t="zombie_loud_managed_sound_override"
+}
+
+zombie_crater_managed_sound{
+  _use:t="base_managed_sound"
+
+  _group{
+    _tags:t="sound"
+    managed_sound__type:t="crater"
+    managed_sound__maxInstances:i=3
+  }
+}
+
+zombie_ability_activated_sound{
+
+  _group{
+    _tags:t="sound"
+    zombie_ability_activated_sound__path:t=""
+  }
+}
+
+zombie_giant_ability_activated_sound{
+  _use:t="zombie_ability_activated_sound"
+
+  _group{
+    _tags:t="sound"
+    zombie_ability_activated_sound__path:t="events/z/enemy/walker/z_giant/voice_fx/ability_activated"
+  }
+}
+
+zombie_aggro_voice{
+
+  _group{
+    _tags:t="sound"
+    zombie_aggro_voice__soundTag:t="isAggressive"
+    zombie_aggro_voice__phrase:t="seeDanger"
+  }
+}
+
+zombie_aggro_net_sound_state{
+  zombie_aggro_net_sound_state__isAggressive:b=no
+  _replicated:t="zombie_aggro_net_sound_state__isAggressive"
+  _tracked:t="zombie_aggro_net_sound_state__isAggressive"
+}
+
+zombie_cry_near_hero{
+
+  _group{
+    _tags:t="sound"
+    zombie_cry_near_hero__isNearHero:b=no
+    zombie_cry_near_hero__nextCheckAfter:r=0.0
+    zombie_cry_near_hero__nextCryAfter:r=0.0
+    zombie_cry_near_hero__distThreshold:r=4.0
+    zombie_cry_near_hero__checkCooldown:r=0.5
+    zombie_cry_near_hero__cryCooldown:r=5.0
+    zombie_cry_near_hero__phrase:t="seeDanger"
+  }
+}
+
+base_nzombie_sound{
+  _use:t="common_human_sound_components"
+  _use:t="human_sound_geomtree_nodes"
+  _use:t="zombie_managed_sound"
+  _use:t="human_voice_effects"
+  _use:t="base_human_steps_sound"
+  _use:t="human_steps_sound_paths"
+  _use:t="base_human_voice_sound"
+  _use:t="human_hit_cry_sound"
+  _use:t="human_death_sound"
+  _use:t="zombie_aggro_voice"
+  _use:t="zombie_aggro_net_sound_state"
+  _use:t="zombie_cry_near_hero"
+  _use:t="human_hit_net_sound"
+  _use:t="human_hit_sound_paths"
+  _use:t="projectile_hit_human_fx_sound"
+  _use:t="human_idle_sound"
+
+  _group{
+    _tags:t="sound"
+    sound_control__range:r=40.0
+  }
+
+  "human_voice_effect__allOrderedEffects:shared:list<t>"{
+    _tags:t="sound"
+    id:t="dead"
+  }
+}
+
+zombie_rush_zombie_sound{
+  _use:t="base_nzombie_sound"
+  _use:t="base_human_melee_impact_sound"
+
+  _group{
+    _tags:t="sound"
+    human_steps_sound__animSpeedMul:r=8.0
+    human_steps_sound__distanceToVolumeEnemy:p4=0.0, 0.0, 3.0, 3.0
+    human_steps_sound_generator__enableAlways:b=yes
+  }
+
+  _group{
+    _tags:t="sound"
+
+    "human_voice_sound__path:shared:object"{
+      isAggressive:b=yes
+      path:t="events/z/enemy/walker/z/voice_fx"
+    }
+
+    "human_voice_sound__descs:shared:object"{
+
+      "death:object"{
+        name:t="death"
+      }
+
+      "melee:object"{
+        name:t="melee"
+      }
+
+      "attack:object"{
+        name:t="melee/hands"
+      }
+
+      "seeDanger:object"{
+        name:t="seedanger"
+      }
+
+      "hitCry:object"{
+        name:t="hit"
+      }
+    }
+
+    "human_voice_sound__irqs:shared:object"{
+
+      "zombie_attack_sound:object"{
+        phrase:t="attack"
+      }
+    }
+  }
+
+  _group{
+    _tags:t="sound"
+
+    "human_idle_sound__paths:shared:object"{
+
+      "idleState:object"{
+        other:t="events/z/enemy/walker/z/voice_fx/idle"
+      }
+    }
+  }
+
+  "human_steps_sound__stepFx:shared:object"{
+    _tags:t="sound"
+
+    "run:object"{
+      isAggressive:b=yes
+      other:t="events/z/enemy/walker/z/voice_fx/run_to_player"
+    }
+
+    "sprint:object"{
+      isAggressive:b=yes
+      other:t="events/z/enemy/walker/z/voice_fx/run_to_player"
+    }
+  }
+}
+
+base_zombie_armored_soldier_sound{
+  _use:t="base_nzombie_sound"
+
+  _group{
+    _tags:t="sound"
+    human_steps_sound__animSpeedMul:r=8.0
+    human_steps_sound__distanceToVolumeEnemy:p4=0.0, 0.0, 2.0, 2.0
+    human_steps_sound_generator__enableAlways:b=yes
+  }
+
+  _group{
+    _tags:t="sound"
+
+    "human_voice_sound__path:shared:object"{
+      isAggressive:b=yes
+      path:t="events/z/enemy/walker/z_soldier/voice_fx"
+    }
+
+    "human_voice_sound__descs:shared:object"{
+
+      "death:object"{
+        name:t="death"
+      }
+
+      "melee:object"{
+        name:t="melee"
+      }
+
+      "hitCry:object"{
+        name:t="hit"
+      }
+
+      "seeDanger:object"{
+        name:t="sprint/scream"
+      }
+    }
+  }
+
+  _group{
+    _tags:t="sound"
+
+    "human_idle_sound__paths:shared:object"{
+
+      "idleState:object"{
+        other:t="events/z/enemy/walker/z_soldier/voice_fx/idle"
+      }
+    }
+  }
+}
+
+zombie_rush_moto_sound_override{
+
+  _group{
+    _tags:t="sound"
+
+    "human_idle_sound__paths:shared:object"{
+
+      "idleState:object"{
+        other:t="events/z/enemy/walker/z_moto/voice_fx/idle"
+      }
+    }
+  }
+}
+
+zombie_giant_sound_override{
+
+  _group{
+    _tags:t="sound"
+    sound_control__range:r=75.0
+  }
+
+  _group{
+    _tags:t="sound"
+
+    "human_voice_sound__path:shared:object"{
+      isAggressive:b=yes
+      path:t="events/z/enemy/walker/z_giant/voice_fx"
+    }
+
+    "human_voice_sound__descs:shared:object"{
+
+      "death:object"{
+        name:t="death"
+      }
+
+      "melee:object"{
+        name:t="melee"
+      }
+
+      "attack:object"{
+        name:t="melee/hands"
+      }
+
+      "hitCry:object"{
+        name:t="hit"
+      }
+
+      "seeDanger:object"{
+        name:t="seedanger"
+      }
+    }
+
+    "human_voice_sound__irqs:shared:object"{
+
+      "zombie_attack_sound:object"{
+        phrase:t="attack"
+      }
+    }
+  }
+
+  "human_steps_sound__stepFx:shared:object"{
+    _tags:t="sound"
+
+    "run:object"{
+      isAggressive:b=yes
+      other:t="events/z/enemy/walker/z_giant/voice_fx/run_to_player"
+    }
+
+    "sprint:object"{
+      isAggressive:b=yes
+      other:t="events/z/enemy/walker/z_giant/voice_fx/run_to_player"
+    }
+  }
+}
+
+zombie_giant_moto_sound_override{
+  _use:t="zombie_giant_sound_override"
+
+  _group{
+    _tags:t="sound"
+
+    "human_idle_sound__paths:shared:object"{
+
+      "idleState:object"{
+        other:t="events/z/enemy/walker/z_moto/voice_fx/idle"
+      }
+    }
+  }
+}
+
+zombie_giant_shield_sound_override{
+  _use:t="zombie_giant_sound_override"
+
+  _group{
+    _tags:t="sound"
+
+    "human_idle_sound__paths:shared:object"{
+
+      "idleState:object"{
+        other:t="events/z/enemy/walker/z_giant/voice_fx/idle"
+      }
+    }
+  }
+}
+
+zombie_rush_spitfire_prop_sound_override{
+  _use:t="zombie_spitfire_prop_managed_sound_override"
+
+  _group{
+    _tags:t="sound"
+
+    "human_idle_sound__paths:shared:object"{
+
+      "idleState:object"{
+        other:t="events/z/enemy/walker/z_spitfire/voice_fx/idle"
+      }
+    }
+  }
+}
+
+zombie_giant_spitfire_prop_sound_override{
+  _use:t="zombie_spitfire_prop_managed_sound_override"
+  _use:t="zombie_giant_sound_override"
+
+  _group{
+    _tags:t="sound"
+
+    "human_idle_sound__paths:shared:object"{
+
+      "idleState:object"{
+        other:t="events/z/enemy/walker/z_spitfire/voice_fx/idle"
+      }
+    }
+  }
+}
+
+zombie_giant_zombie_sound{
+  _use:t="zombie_rush_zombie_sound"
+  _use:t="zombie_giant_sound_override"
+
+  _group{
+    _tags:t="sound"
+    human_steps_sound__animSpeedMul:r=8.0
+    human_steps_sound__distanceToVolumeEnemy:p4=0.0, 0.0, 3.0, 3.0
+    human_steps_sound_generator__enableAlways:b=yes
+  }
+
+  _group{
+    _tags:t="sound"
+
+    "human_idle_sound__paths:shared:object"{
+
+      "idleState:object"{
+        other:t="events/z/enemy/walker/z_giant/voice_fx/idle"
+      }
+    }
+  }
+
+  "human_steps_sound__path:shared:object"{
+    _tags:t="sound"
+    other:t="events/z/enemy/walker/z_giant/foley_mov"
+  }
+}
+
+zombie_elite_zombie_sound{
+  _use:t="zombie_rush_zombie_sound"
+
+  _group{
+    _tags:t="sound"
+    human_steps_sound__animSpeedMul:r=8.0
+    human_steps_sound__distanceToVolumeEnemy:p4=0.0, 0.0, 3.0, 3.0
+    human_steps_sound_generator__enableAlways:b=yes
+  }
+
+  _group{
+    _tags:t="sound"
+
+    "human_voice_sound__path:shared:object"{
+      isAggressive:b=yes
+      path:t="events/z/enemy/walker/z_elite/voice_fx"
+    }
+
+    "human_voice_sound__descs:shared:object"{
+
+      "death:object"{
+        name:t="death"
+      }
+
+      "melee:object"{
+        name:t="melee"
+      }
+
+      "attack:object"{
+        name:t="melee/hands"
+      }
+
+      "hitCry:object"{
+        name:t="hit"
+      }
+
+      "seeDanger:object"{
+        name:t="seedanger"
+      }
+    }
+
+    "human_voice_sound__irqs:shared:object"{
+
+      "zombie_attack_sound:object"{
+        phrase:t="attack"
+      }
+    }
+  }
+
+  _group{
+    _tags:t="sound"
+
+    "human_idle_sound__paths:shared:object"{
+
+      "idleState:object"{
+        other:t="events/z/enemy/walker/z_elite/voice_fx/idle"
+      }
+    }
+  }
+
+  "human_steps_sound__stepFx:shared:object"{
+    _tags:t="sound"
+
+    "run:object"{
+      isAggressive:b=yes
+      other:t="events/z/enemy/walker/z_elite/voice_fx/run_to_player"
+    }
+
+    "sprint:object"{
+      isAggressive:b=yes
+      other:t="events/z/enemy/walker/z_elite/voice_fx/run_to_player"
+    }
+  }
+}
+
+zombie_elite_moto_sound_override{
+
+  _group{
+    _tags:t="sound"
+
+    "human_voice_sound__path:shared:object"{
+      isAggressive:b=yes
+      path:t="events/z/enemy/walker/z_elite/voice_fx"
+    }
+
+    "human_voice_sound__descs:shared:object"{
+
+      "death:object"{
+        name:t="death"
+      }
+
+      "melee:object"{
+        name:t="melee"
+      }
+
+      "attack:object"{
+        name:t="melee/hands"
+      }
+
+      "hitCry:object"{
+        name:t="hit"
+      }
+
+      "seeDanger:object"{
+        name:t="seedanger"
+      }
+    }
+
+    "human_voice_sound__irqs:shared:object"{
+
+      "zombie_attack_sound:object"{
+        phrase:t="attack"
+      }
+    }
+  }
+
+  _group{
+    _tags:t="sound"
+
+    "human_idle_sound__paths:shared:object"{
+
+      "idleState:object"{
+        other:t="events/z/enemy/walker/z_elite_moto/voice_fx/idle"
+      }
+    }
+  }
+
+  "human_steps_sound__stepFx:shared:object"{
+    _tags:t="sound"
+
+    "run:object"{
+      isAggressive:b=yes
+      other:t="events/z/enemy/walker/z_elite_moto/voice_fx/run_to_player"
+    }
+
+    "sprint:object"{
+      isAggressive:b=yes
+      other:t="events/z/enemy/walker/z_elite_moto/voice_fx/run_to_player"
+    }
+  }
+}
+
+zombie_elite_shield_sound_override{
+
+  _group{
+    _tags:t="sound"
+
+    "human_voice_sound__path:shared:object"{
+      isAggressive:b=yes
+      path:t="events/z/enemy/walker/z_elite/voice_fx"
+    }
+
+    "human_voice_sound__descs:shared:object"{
+
+      "death:object"{
+        name:t="death"
+      }
+
+      "melee:object"{
+        name:t="melee"
+      }
+
+      "attack:object"{
+        name:t="melee/hands"
+      }
+
+      "hitCry:object"{
+        name:t="hit"
+      }
+
+      "seeDanger:object"{
+        name:t="seedanger"
+      }
+    }
+
+    "human_voice_sound__irqs:shared:object"{
+
+      "zombie_attack_sound:object"{
+        phrase:t="attack"
+      }
+    }
+  }
+
+  _group{
+    _tags:t="sound"
+
+    "human_idle_sound__paths:shared:object"{
+
+      "idleState:object"{
+        other:t="events/z/enemy/walker/z_elite/voice_fx/idle"
+      }
+    }
+  }
+
+  "human_steps_sound__stepFx:shared:object"{
+    _tags:t="sound"
+
+    "run:object"{
+      isAggressive:b=yes
+      other:t="events/z/enemy/walker/z_elite/voice_fx/run_to_player"
+    }
+
+    "sprint:object"{
+      isAggressive:b=yes
+      other:t="events/z/enemy/walker/z_elite/voice_fx/run_to_player"
+    }
+  }
+}
+
+zombie_elite_spitfire_prop_sound_override{
+  _use:t="zombie_spitfire_prop_managed_sound_override"
+
+  _group{
+    _tags:t="sound"
+
+    "human_voice_sound__path:shared:object"{
+      isAggressive:b=yes
+      path:t="events/z/enemy/walker/z_elite/voice_fx"
+    }
+
+    "human_voice_sound__descs:shared:object"{
+
+      "death:object"{
+        name:t="death"
+      }
+
+      "melee:object"{
+        name:t="melee"
+      }
+
+      "attack:object"{
+        name:t="melee/hands"
+      }
+
+      "hitCry:object"{
+        name:t="hit"
+      }
+
+      "seeDanger:object"{
+        name:t="seedanger"
+      }
+    }
+
+    "human_voice_sound__irqs:shared:object"{
+
+      "zombie_attack_sound:object"{
+        phrase:t="attack"
+      }
+    }
+  }
+
+  _group{
+    _tags:t="sound"
+
+    "human_idle_sound__paths:shared:object"{
+
+      "idleState:object"{
+        other:t="events/z/enemy/walker/z_elite_spitfire/voice_fx/idle"
+      }
+    }
+  }
+
+  "human_steps_sound__stepFx:shared:object"{
+    _tags:t="sound"
+
+    "run:object"{
+      isAggressive:b=yes
+      other:t="events/z/enemy/walker/z_elite/voice_fx/run_to_player"
+    }
+
+    "sprint:object"{
+      isAggressive:b=yes
+      other:t="events/z/enemy/walker/z_elite/voice_fx/run_to_player"
+    }
+  }
+}
+
+zombie_giant_boss_shooting_zombie_sound_override{
+  _use:t="zombie_giant_ability_activated_sound"
+}
+
+zombie_giant_boss_balls_zombie_sound_override{
+  _use:t="zombie_giant_ability_activated_sound"
+}
+
+zombie_giant_boss_flamethrower_zombie_sound_override{
+  _use:t="zombie_giant_ability_activated_sound"
+}
+
+zombie_giant_boss_agressive_shells_zombie_sound_override{
+  _use:t="zombie_giant_ability_activated_sound"
+}
+
+zombie_giant_boss_laser_zombie_sound_override{
+  _use:t="zombie_giant_ability_activated_sound"
+}
+
+blaster_zombie_gun_sound{
+  _use:t="rifle_gun_aim_sound"
+
+  _group{
+    _tags:t="sound"
+    gun_sound__forceOneshot:b=yes
+  }
+
+  "gun_sound__shotPath:shared:object"{
+    _tags:t="sound"
+    watched:t="events/moonbase/player/weapon/laser_mg"
+    other:t="events/moonbase/enemy/weapon/laser_mg"
+  }
+
+  "sound_irqs:shared:object"{
+    _tags:t="sound"
+
+    "reload1:object"{
+      watched:t="events/moonbase/player/weapon/laser_rifle/reload1/change_ammo"
+      other:t="enemy/weapon/rifle/svt40/reload1/change_ammo"
+    }
+
+    "reload2:object"{
+      watched:t="events/moonbase/player/weapon/laser_rifle/reload2/change_ammo"
+      other:t="enemy/weapon/rifle/svt40/reload2/change_ammo"
+    }
+
+    "reload3:object"{
+      watched:t="events/moonbase/player/weapon/laser_rifle/reload3/change_ammo"
+      other:t="enemy/weapon/rifle/svt40/reload3/change_ammo"
+    }
+
+    "reload4:object"{
+      watched:t="events/moonbase/player/weapon/laser_rifle/reload4/change_ammo"
+      other:t="enemy/weapon/rifle/svt40/reload4/change_ammo"
+    }
+
+    "boltAction:object"{
+      watched:t="events/moonbase/player/weapon/laser_rifle/bolt_action"
+      other:t="enemy/weapon/rifle/svt40/bolt_action"
+    }
+  }
+}
+
+zombie_red_laser_gun_sound_override{
+
+  "gun_sound__shotPath:shared:object"{
+    _tags:t="sound"
+    watched:t="events/z/player/weapon/red_laser"
+    other:t="events/z/enemy/weapon/red_laser"
+  }
+}
+
+zombie_flamethrower_gun_sound_override{
+
+  "gun_sound__shotPath:shared:object"{
+    _tags:t="sound"
+    watched:t="events/z/player/weapon/flamethrower"
+    other:t="events/z/enemy/weapon/flamethrower"
+  }
+}
+
+zombie_crater_explosion_net_sound{
+
+  _group{
+    _tags:t="server"
+    zombie_crater_explosion_net_sound__desc:t="zombieCraterExplosion"
+  }
+}
+
+zombie_crater_objective_sound{
+  _use:t="sound_effect"
+  _use:t="zombie_crater_managed_sound"
+  _use:t="zombie_crater_explosion_net_sound"
+
+  _group{
+    _tags:t="sound"
+    sound_effect__path:t="events/z/enemy/effects/zombie_crater"
+  }
+}
+
+zombie_arena_objective_activated_sound{
+
+  _group{
+    _tags:t="server"
+    zombie_objective_activated_net_sound__desc:t="zombieArenaObjectiveActivated"
+  }
+}
+
+zombie_arena_objective_wave_sound{
+
+  _group{
+    _tags:t="sound"
+    zombie_arena_objective_wave_sound__waveId:i=-1
+    zombie_arena_objective_wave_sound__path:t="events/z/music/z_wave_new"
+  }
+}
+
+zombie_arena_objective_sound{
+  _use:t="zombie_arena_objective_wave_sound"
+  _use:t="zombie_arena_objective_activated_sound"
+}
+
+zombie_radio_objective_net_sound{
+  zombie_radio_objective_net_sound__isInProgress:b=no
+  _replicated:t="zombie_radio_objective_net_sound__isInProgress"
+
+  _group{
+    _tags:t="sound"
+    zombie_radio_objective_sound__prevActivationAfterTime:r=0.0
+    zombie_radio_objective_sound__nextHitAfter:r=0.0
+    zombie_radio_objective_sound__hitCooldown:r=1.0
+    zombie_radio_objective_sound__activePath:t="events/z/enemy/effects/zombie_radio"
+    zombie_radio_objective_sound__completedPath:t="events/z/enemy/effects/zombie_radio_complete"
+    zombie_radio_objective_sound__failedPath:t="events/z/enemy/effects/zombie_radio_fail"
+
+    "zombie_radio_objective_sound__activeEvent:SoundEvent"{
+    }
+  }
+}
+
+zombie_patrol_spawn_net_sound{
+
+  _group{
+    _tags:t="server"
+    zombie_patrol_spawn_net_sound__desc:t="zombiePatrolSpawn"
+  }
+}
+
+zombie_patrol_objective_sound{
+  _use:t="zombie_patrol_spawn_net_sound"
+}

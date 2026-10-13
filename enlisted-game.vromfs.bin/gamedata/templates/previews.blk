@@ -1,0 +1,97 @@
+semi_transparent_render{
+  _tracked:t="semi_transparent__placingColor"
+  _tracked:t="semi_transparent__visible"
+
+  _group{
+    _tags:t="render"
+    semi_transparent__placingColor:p3=0.0, 0.0, 0.0
+    semi_transparent__visible:b=yes
+    semi_transparent__lod:i=-1
+
+    "excludeFromAnimcharRender:tag"{
+    }
+  }
+}
+
+base_builder_preview{
+  buildingCost:r=1.0
+  _use:t="semi_transparent_render"
+  nextCheckGridObjectsTime:r=0.0
+  preview_render__enabled:b=yes
+  checkGridObjectsTimeInterval:r=0.3
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, 0.0, 0.0]]
+  avaliableAngles:p2=-30.0, 30.0
+  buildingDistance:r=3.0
+  avaliableColor:p3=0.0, 0.2, 0.0
+  blockedColor:p3=0.5, 0.0, 0.0
+  warningColor:p3=1.0, 0.55, 0.03
+  additionalHeight:r=0.0
+  buildingBoxMin:p3=0.0, 0.0, 0.0
+  buildingBoxMax:p3=0.0, 0.0, 0.0
+  buildingNorm:p3=0.0, 0.0, 0.0
+  additionalBuildingTemplate:t="base_fortification_build"
+  previewCollobjOffset:r=0.5
+  yawRotationSpeed:r=90.0
+  additionalYawRotation:r=0.0
+  _tracked:t="additionalYawRotation"
+  building_inclination_angle__gridWidth:i=2
+  building_inclination_angle__terraformedAvailableAnglesMult:r=2.0
+  building_inclination_angle__modifiedHeightEpsilon:r=0.1
+  building_inclination_angle__maxAllowedHeightDelta:r=1.0
+
+  "build_attach__riexHandle:u64"{
+    value:i64=-1
+    _tags:t="server"
+  }
+
+  "builderGunEid:eid"{
+  }
+
+  "builder_preview:tag"{
+  }
+
+  "building__canDismantle:tag"{
+  }
+
+  "previewCollobj:CollisionObject"{
+  }
+}
+
+base_animchar_builder_preview{
+  _use:t="base_builder_preview"
+  _use:t="animchar"
+  animchar_render__enabled:b=yes
+  animchar__res:t="mortar_rm_40_char"
+
+  "previewCollres:CollisionResource"{
+  }
+}
+
+base_rendinst_builder_preview{
+  _use:t="base_builder_preview"
+  semi_transparent__resIdx:i=-1
+  ri_preview__name:t="sandbags_wall_medium_rounded_a"
+
+  riPreviewResPreload{
+  }
+}
+
+semi_transparent_field_of_view{
+  _tags:t="render"
+  semi_transparent_field_of_view__radius:r=0.0
+  semi_transparent_field_of_view__verticalAngle:r=0.0
+  semi_transparent_field_of_view__height:r=0.0
+  semi_transparent_field_of_view__forward_shift:r=0.0
+  semi_transparent_field_of_view_node_name:t="semi_transparent_field_of_view_node"
+  semi_transparent_field_of_view_shader_name:t="semi_transparent_field_of_view_renderer"
+  builded_stationary_entity_name:t=""
+
+  "semi_transparent_field_of_view_node_handle:dafg::NodeHandle"{
+  }
+
+  "semi_transparent_field_of_view_shader:ShadersECS"{
+  }
+
+  "semi_transparent_field_vb:UniqueBuf"{
+  }
+}

@@ -1,0 +1,101 @@
+base_7_7mm_mg_lewis{
+  item__name:t="guns/7_7mm_mg_lewis"
+  gun__blk:t="gamedata/gen/weapons/april_event/7_7mm_mg_lewis.blk"
+  gun__shotFreq:r=10.0
+  gun__reloadTime:r=5.0
+  gun__maxAmmo:i=50
+  gun__locName:t="7_7mm_mg_lewis"
+
+  "gun__firingModes:array"{
+
+    "mode:object"{
+      modeType:t="automatic"
+    }
+  }
+
+  "gun__firingModeNames:array"{
+    mode:t="automatic"
+  }
+
+  "gun__ammoSetsInfo:shared:array"{
+
+    "defaultSet:array"{
+
+      "shell:object"{
+        blk:t="gamedata/gen/weapons/shells/april_event/7_7mm_mg_lewis_defaultset_bullet_1.blk"
+        type:t="he_ball"
+      }
+
+      "shell:object"{
+        blk:t="gamedata/gen/weapons/shells/april_event/7_7mm_mg_lewis_defaultset_bullet_2.blk"
+        type:t="ap_i_ball"
+      }
+
+      "shell:object"{
+        blk:t="gamedata/gen/weapons/shells/april_event/7_7mm_mg_lewis_defaultset_bullet_3.blk"
+        type:t="ap_i_ball"
+      }
+
+      "shell:object"{
+        blk:t="gamedata/gen/weapons/shells/april_event/7_7mm_mg_lewis_defaultset_bullet_4.blk"
+        type:t="ap_i_ball"
+      }
+
+      "shell:object"{
+        blk:t="gamedata/gen/weapons/shells/april_event/7_7mm_mg_lewis_defaultset_bullet_5.blk"
+        type:t="t_ball"
+      }
+    }
+
+    "7_62mm_DT_universal:array"{
+
+      "shell:object"{
+        blk:t="gamedata/gen/weapons/shells/april_event/7_7mm_mg_lewis_7_62mm_dt_universal_bullet_1.blk"
+        type:t="ap_i_ball"
+      }
+
+      "shell:object"{
+        blk:t="gamedata/gen/weapons/shells/april_event/7_7mm_mg_lewis_7_62mm_dt_universal_bullet_2.blk"
+        type:t="ap_i_ball"
+      }
+
+      "shell:object"{
+        blk:t="gamedata/gen/weapons/shells/april_event/7_7mm_mg_lewis_7_62mm_dt_universal_bullet_3.blk"
+        type:t="t_ball"
+      }
+    }
+
+    "7_62mm_DT_API:array"{
+
+      "shell:object"{
+        blk:t="gamedata/gen/weapons/shells/april_event/7_7mm_mg_lewis_7_62mm_dt_api_bullet_1.blk"
+        type:t="ap_i_ball"
+      }
+
+      "shell:object"{
+        blk:t="gamedata/gen/weapons/shells/april_event/7_7mm_mg_lewis_7_62mm_dt_api_bullet_2.blk"
+        type:t="ap_i_t_ball"
+      }
+
+      "shell:object"{
+        blk:t="gamedata/gen/weapons/shells/april_event/7_7mm_mg_lewis_7_62mm_dt_api_bullet_3.blk"
+        type:t="ap_i_t_ball"
+      }
+    }
+
+    "7_62mm_DT_APIT:array"{
+
+      "shell:object"{
+        blk:t="gamedata/gen/weapons/shells/april_event/7_7mm_mg_lewis_7_62mm_dt_apit.blk"
+        type:t="ap_i_t_ball"
+      }
+    }
+  }
+}
+
+tankgun_7_7mm_mg_lewis{
+  _use:t="tankgun"
+  _use:t="base_tankgun_machinegun"
+  _use:t="base_7_7mm_mg_lewis"
+  turret__triggerGroup:i=2
+}

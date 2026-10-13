@@ -1,0 +1,464 @@
+event_foolmoon_blaster_muzzle_effect{
+  _use:t="base_gun_flash_fx"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, 0.0, 0.0]]
+
+  "node_attached__destroyWithParent:tag"{
+  }
+
+  effect{
+    _tags:t="render"
+  }
+
+  "attachedEffect:tag"{
+  }
+
+  _group{
+    _tags:t="render"
+    effect__name:t="event_foolmoon_blaster_muzzle_cmps_fx"
+    effect__distance_scale:r=1.0
+  }
+}
+
+event_foolmoon_sniper_muzzle{
+  _use:t="base_gun_flash_fx"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, 0.0, 0.0]]
+
+  "node_attached__destroyWithParent:tag"{
+  }
+
+  effect{
+    _tags:t="render"
+  }
+
+  "attachedEffect:tag"{
+  }
+
+  _group{
+    _tags:t="render"
+    effect__name:t="event_foolmoon_sniper_muzzle_cmps_fx"
+    effect__distance_scale:r=1.0
+  }
+}
+
+event_foolmoon_sniper_muzzle_red{
+  _use:t="base_gun_flash_fx"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, 0.0, 0.0]]
+
+  "node_attached__destroyWithParent:tag"{
+  }
+
+  effect{
+    _tags:t="render"
+  }
+
+  "attachedEffect:tag"{
+  }
+
+  _group{
+    _tags:t="render"
+    effect__name:t="event_foolmoon_sniper_muzzle_red_cmps_fx"
+    effect__distance_scale:r=1.0
+  }
+}
+
+event_foolmoon_sniper_charge{
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, 0.0, 0.0]]
+
+  "attachedEffect:tag"{
+  }
+
+  "node_attached__destroyWithParent:tag"{
+  }
+
+  _group{
+    _tags:t="render"
+    effect__name:t="event_foolmoon_sniper_charge_cmps_fx"
+    gun_fx__nodeId:i=-1
+
+    effect{
+    }
+
+    "gun_fx__ownerEid:eid"{
+    }
+  }
+}
+
+event_foolmoon_sniper_charge_red{
+  _use:t="base_gun_flash_fx"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, 0.0, 0.0]]
+
+  "node_attached__destroyWithParent:tag"{
+  }
+
+  effect{
+    _tags:t="render"
+  }
+
+  "attachedEffect:tag"{
+  }
+
+  _group{
+    _tags:t="render"
+    effect__name:t="event_foolmoon_sniper_charge_red_cmps_fx"
+  }
+}
+
+event_foolmoon_energy_trail_effect{
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, 0.0, 0.0]]
+
+  "node_attached__destroyWithParent:tag"{
+  }
+
+  effect{
+    _tags:t="render"
+  }
+
+  _group{
+    _tags:t="render"
+    effect__name:t="event_zombie_altar_trail_cmps_fx"
+    effect__distance_scale:r=1.0
+  }
+}
+
+event_foolmoon_energy_muzzle_effect{
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, 0.0, 0.0]]
+
+  "node_attached__destroyWithParent:tag"{
+  }
+
+  effect{
+    _tags:t="render"
+  }
+
+  _group{
+    _tags:t="render"
+    effect__name:t="event_foolmoon_energy_muzzle_cmps_fx"
+    effect__distance_scale:r=1.0
+  }
+}
+
+event_foolmoon_energy_hit{
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, 0.0, 0.0]]
+
+  _group{
+    _tags:t="render"
+    effect__name:t="event_foolmoon_energy_hit_cmps_fx"
+    effect__distance_scale:r=1.0
+
+    effect{
+    }
+  }
+}
+
+event_foolmoon_plasma{
+
+  "attachedEffect:tag"{
+  }
+
+  _group{
+    _tags:t="render"
+    effect__name:t="event_foolmoon_plasma_cmps_fx"
+
+    effect{
+    }
+  }
+}
+
+event_foolmoon_explosion_plasma{
+  _use:t="explosion_effect_small"
+  _use:t="disable_effect_sfx"
+  effect__scale:r=2.0
+
+  _group{
+    _tags:t="render"
+    effect__name:t="event_foolmoon_explosion_plasma_cmps_fx"
+  }
+}
+
+event_foolmoon_explosion_plasma_small{
+  _use:t="explosion_effect_small"
+  _use:t="disable_effect_sfx"
+
+  _group{
+    _tags:t="render"
+    effect__name:t="event_foolmoon_explosion_plasma_small_cmps_fx"
+  }
+}
+
+event_foolmoon_explosion_plasma_hit{
+  _use:t="explosion_effect_large"
+  _use:t="disable_effect_sfx"
+  effect__scale:r=3.0
+
+  _group{
+    _tags:t="render"
+    effect__name:t="event_foolmoon_explosion_plasma_hit_cmps_fx"
+  }
+}
+
+event_foolmoon_human_explosion{
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, 0.0, 0.0]]
+
+  _group{
+    _tags:t="render"
+    effect__name:t="event_foolmoon_explosion_body_cmps_fx"
+
+    effect{
+    }
+  }
+}
+
+event_mech_muzzle_blue_effect{
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, 0.0, 0.0]]
+
+  "node_attached__destroyWithParent:tag"{
+  }
+
+  effect{
+    _tags:t="render"
+  }
+
+  _group{
+    _tags:t="render"
+    effect__name:t="event_mech_muzzle_blue_cmps_fx"
+    effect__distance_scale:r=1.0
+  }
+}
+
+event_zombie_explosion_grenades_green_effect{
+  _use:t="explosion_effect"
+  _use:t="hit_env_affect_fx"
+  wind_emitter__radius:r=1.0
+  wind_emitter__duration:r=2.0
+  wind_emitter__strength:r=1.0
+  wind_emitter__phaseSin:b=yes
+  wind_emitter__numWaves:i=3
+  wind_emitter__phaseAttack:b=yes
+
+  "wind_emitter__omni:tag"{
+  }
+
+  _group{
+    _tags:t="render"
+    effect__name:t="event_zombie_explosion_grenades_green_cmps_fx"
+    effect__environmentDestructionRadius:r=2.0
+  }
+}
+
+event_zombie_smoke_green_effect{
+  _use:t="smoke_occluders"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, 0.0, 0.0]]
+  effect__scale:r=1.0
+  _tracked:t="effect__scale"
+  smoke_occluders__updateInterval:r=2.0
+
+  _group{
+    _tags:t="render"
+    effect__name:t="event_zombie_explosion_grenades_green_aftersmoke_cmps_fx"
+
+    effect{
+    }
+  }
+
+  "extinguishUnderwater:tag"{
+  }
+
+  "smoke_occluders__isStatic:tag"{
+  }
+
+  "smoke_occluders__info:shared:array"{
+
+    "big:object"{
+      windScale:r=0.0
+      expanseStartTime:r=0.0
+      expanseFullTime:r=2.0
+      fadeStartTime:r=15.0
+      totalTime:r=15.0
+      upSpeed:p3=0.0, 3.0, 0.0
+      normalSpeed:p3=0.0, 0.0, 0.0
+      radius:p3=0.0, 9.5, 1.0
+    }
+  }
+}
+
+event_zombie_fire_spot_2m_nosmoke_effect{
+  _use:t="environment_effect_base"
+  _use:t="fire_mid_managed_sound_effect"
+  _use:t="damage_fire_base"
+  _use:t="range_pauseable_effect"
+  sphere_zone__radius:r=0.9
+  effect__emit_range_limit:r=120.0
+
+  _group{
+    _tags:t="render"
+    effect__name:t="event_zombie_fire_spot_2m_nosmoke_cmps_fx"
+  }
+}
+
+event_zombie_lazer_muzzle_effect{
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, 0.0, 0.0]]
+
+  "node_attached__destroyWithParent:tag"{
+  }
+
+  effect{
+    _tags:t="render"
+  }
+
+  _group{
+    _tags:t="render"
+    effect__name:t="event_zombie_lazer_muzzle_cmps_fx"
+    effect__distance_scale:r=1.0
+  }
+}
+
+event_zombie_firebal_big_effect{
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, 0.0, 0.0]]
+
+  "node_attached__destroyWithParent:tag"{
+  }
+
+  effect{
+    _tags:t="render"
+  }
+
+  _group{
+    _tags:t="render"
+    effect__name:t="event_zombie_fireball_big_cmps_fx"
+    effect__distance_scale:r=1.0
+  }
+}
+
+event_zombie_firebal_small_effect{
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, 0.0, 0.0]]
+
+  "node_attached__destroyWithParent:tag"{
+  }
+
+  effect{
+    _tags:t="render"
+  }
+
+  _group{
+    _tags:t="render"
+    effect__name:t="event_zombie_fireball_small_cmps_fx"
+    effect__distance_scale:r=1.0
+  }
+}
+
+event_zombie_plazma_big_effect{
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, 0.0, 0.0]]
+
+  "node_attached__destroyWithParent:tag"{
+  }
+
+  effect{
+    _tags:t="render"
+  }
+
+  _group{
+    _tags:t="render"
+    effect__name:t="event_zombie_fireball_plazma_big_cmps_fx"
+    effect__distance_scale:r=1.0
+  }
+}
+
+event_zombie_plazma_small_effect{
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, 0.0, 0.0]]
+
+  "node_attached__destroyWithParent:tag"{
+  }
+
+  effect{
+    _tags:t="render"
+  }
+
+  _group{
+    _tags:t="render"
+    effect__name:t="event_zombie_fireball_plazma_small_cmps_fx"
+    effect__distance_scale:r=1.0
+  }
+}
+
+event_zombie_explosion_portal{
+  _use:t="explosion_effect_small"
+  _use:t="disable_effect_sfx"
+  effect__scale:r=2.0
+
+  _group{
+    _tags:t="render"
+    effect__name:t="event_zombie_explosion_portal_cmps_fx"
+  }
+}
+
+event_zombie_explosion_altar{
+  _use:t="explosion_effect_small"
+  _use:t="disable_effect_sfx"
+  effect__scale:r=2.0
+
+  _group{
+    _tags:t="render"
+    effect__name:t="event_zombie_explosion_altar_cmps_fx"
+  }
+}
+
+event_zombie_explosion_fireball_effect{
+  _use:t="explosion_effect_small"
+  _use:t="disable_effect_sfx"
+  effect__scale:r=2.0
+
+  _group{
+    _tags:t="render"
+    effect__name:t="event_zombie_explosion_fireball_cmps_fx"
+  }
+}
+
+event_zombie_altar_trail_effect{
+  _use:t="replicating"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, 0.0, 0.0]]
+
+  "node_attached__destroyWithParent:tag"{
+  }
+
+  effect{
+    _tags:t="render"
+  }
+
+  _group{
+    _tags:t="render"
+    effect__name:t="event_zombie_altar_trail_cmps_fx"
+    effect__distance_scale:r=1.0
+  }
+}
+
+event_zombie_deadzone_effect{
+  _use:t="environment_effect_base"
+  _use:t="range_pauseable_effect"
+  effect__emit_range_limit:r=80.0
+
+  _group{
+    _tags:t="render"
+    effect__name:t="event_zombie_deadzone_cmps_fx"
+  }
+}
+
+event_zombie_door_effect{
+  _use:t="hit_effect_base"
+
+  _group{
+    _tags:t="render"
+    effect__name:t="event_zombie_door_cmps_fx"
+  }
+}
+
+event_gungame_change_effect{
+  _use:t="explosion_effect_small"
+
+  "event_gungame_change_effect__attachedTo:eid"{
+  }
+
+  _group{
+    _tags:t="render"
+    effect__name:t="event_gungame_change_cmps_fx"
+  }
+}

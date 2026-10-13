@@ -1,0 +1,307 @@
+germ_kubelwagen_82_zwillingssockel{
+  _use:t="germ_kubelwagen_82_zwillingssockel_common"
+  _use:t="jeep_respawn_settings"
+  _use:t="vehicle_with_attached_grenade_box_ger"
+  destroyIfNoCrewLeft:b=no
+  fire_damage__timeToExplosion:r=20.0
+
+  "dm_phys_parts__wheelsPartIds:list<i>"{
+  }
+
+  "disableDMParts:list<t>"{
+    part:t="body_top"
+    part:t="commander"
+    part:t="driver"
+  }
+
+  "vehicle_seats__canAcquireControls:shared:object"{
+
+    "driver:object"{
+      movement:b=yes
+      turrets:b=yes
+    }
+
+    "commander:object"{
+      movement:b=yes
+      turrets:b=yes
+      camera:b=yes
+    }
+
+    "passenger1:object"{
+      movement:b=yes
+      camera:b=yes
+    }
+  }
+
+  "vehicle_seats__seatTemplates:shared:object"{
+    default:t="jeep_seat_fire_ready"
+    driver:t="jeep_seat_driver"
+    commander:t="jeep_seat_commander"
+  }
+
+  _group{
+    _tags:t="server"
+
+    "dependent_templates:ecs::TemplatesListToInstantiate"{
+    }
+
+    "dependent_templates_list_shared:shared:list<t>"{
+      template_name:t="jeep_seat_fire_ready"
+      template_name:t="jeep_seat_driver"
+      template_name:t="jeep_seat_commander"
+    }
+  }
+
+  _group{
+    _tags:t="gameClient"
+
+    "dm_parts__specialViewPartNames:shared:list<t>"{
+      name:t="ex_armor_07"
+    }
+  }
+
+  _group{
+    _tags:t="render"
+    exhaust_fx__fx:t="car_exhaust_template"
+    exhaust_fx__brokenFx:t="car_broken_exhaust_template"
+  }
+
+  "attach_decorators__entities:list<eid>"{
+  }
+
+  "attach_decorators__templates:array"{
+
+    "templates:object"{
+      preinited:b=yes
+      relativeTm:m=[[-0.00430278, -0.0090288, -1.19461] [-0.585116, -1.03302, 0.00991301] [-0.866296, 0.490696, -0.000586738] [-1.79479, 0.970889, 0.0273895]]
+      template:t="tank_decor_box_01_decor"
+      nodeName:t="root"
+    }
+  }
+
+  "wheelsSpecialOrder:tag"{
+  }
+}
+
+germ_kubelwagen_82_zwillingssockel_common{
+  vehicle__mapIcon:t="map_icon_car"
+  user_point__icon:t="map_icon_car"
+  _use:t="jeep_brakes"
+  _use:t="base_kubelwagen_82_zwillingssockel"
+  _use:t="forestall"
+  _use:t="willys_mb_vehicle_sound"
+  _use:t="vehicle_anim_steering_deflection"
+  vehicle_seats__enterTime:r=0.5
+  vehicle_seats__exitTime:r=0.5
+  commanderFpsCamMaxAngle:p2=40.0, 40.0
+  passengerFpsCamMaxAngle:p2=40.0, 40.0
+  item__iconOffset:p2=0.0, 0.0
+  item__iconScale:r=1.2
+  cockpit__zoomOutFov:r=1.5
+  cockpit__zoomInFov:r=2.0
+  commanderCockpitFpsCamMaxAngle:p2=40.0, 5.0
+  gunner_cam_limit__useCockpitDir:b=yes
+  vehicle_commander_cam__attachToVehicle:b=yes
+
+  "jeep:tag"{
+  }
+
+  "vehicle__isExplosionFatal:b"{
+    _tags:t="server"
+    value:b=yes
+  }
+
+  "vehicle_seats__effectors:array"{
+  }
+
+  "dm_parts_repair_names:list<t>"{
+    part:t="drive_turret_h"
+    part:t="drive_turret_v"
+    part:t="cannon_breech"
+    part:t="engine"
+    part:t="transmission"
+    part:t="gun_barrel"
+    part:t="gun_barrel_01"
+    part:t="gun_barrel_02"
+    part:t="gun_barrel_03"
+    part:t="gun_barrel_04"
+    part:t="gun_barrel_05"
+    part:t="wheel_r_01"
+    part:t="wheel_l_01"
+    part:t="wheel_r_02"
+    part:t="wheel_l_02"
+  }
+
+  _group{
+    _tags:t="render"
+    animchar_camera_target__node_name:t="bone_camera_gunner"
+    animchar_camera_target__node_offset:p3=0.0, 0.5, 0.0
+    animchar_camera_target__nodeIndex:i=-1
+  }
+
+  "heat_source__turretInfo:shared:array"{
+    _tags:t="render"
+
+    "turretInfo:object"{
+      turretName:t="turret_01"
+      offset:p3=0.6, 0.0, 0.05
+      scale:p3=0.6, 0.5, 0.2
+      radMult:r=0.3
+    }
+
+    "turretInfo:object"{
+      turretName:t="turret_02"
+      offset:p3=0.6, 0.0, 0.05
+      scale:p3=0.6, 0.5, 0.2
+      radMult:r=0.3
+    }
+  }
+
+  "vehicle_seats__seatsProvideOrder:tag"{
+  }
+
+  "vehicle_seats__seats:shared:array"{
+
+    "seats:object"{
+      name:t="commander"
+      locName:t="vehicle_seats/gunner"
+      attachNode:t="bone_turret"
+      ignoreAttachNodeRotation:b=yes
+      attachTm:m=[[0.8863313, -0.1562838, -0.0] [0.1562838, 0.8863313, 0.0] [0.0, -0.0, 0.9000019] [-0.38, 0.21, -0.01]]
+      seatComponent:t="isGunner"
+      nextSeat:t="driver"
+      shouldHideOwner:b=no
+      cameraNodeName:t="bone_roll_06_01"
+      directTurretControl:b=yes
+      canPlaceManually:b=yes
+      isHoldGunModeAllowed:b=no
+      cameraOffset:p3=-0.04, 0.0, 0.088
+      seatAnimUpper:t="drive_passenger"
+      seatAnimLower:t="drive_passenger"
+      useHatchEffectors:b=yes
+
+      "turretNames:array"{
+        turretNames:t="turret_01"
+        turretNames:t="turret_02"
+      }
+
+      "effectors:object"{
+
+        "l.hand:object"{
+          rel_tm:m=[[0.911198, 0.3926148, 0.1247881] [0.4111368, -0.8473893, -0.3360053] [-0.02617658, 0.3574719, -0.9335568] [-0.4763947, -0.06816792, -0.2063837]]
+          node:t="bone_gun"
+        }
+
+        "r.hand:object"{
+          rel_tm:m=[[0.807833, 0.5137264, -0.2889491] [0.5518757, -0.8314101, 0.06473809] [-0.2069775, -0.2117615, -0.9551533] [-0.4890289, -0.03756952, 0.09745312]]
+          node:t="bone_gun"
+        }
+
+        "l.foot:object"{
+          rel_tm:m=[[0.1361973, -0.9895055, -0.04825883] [0.8615524, 0.1423516, -0.487303] [0.4890593, 0.02479186, 0.8718995] [-0.2622261, -0.2732258, -0.1878967]]
+          node:t="bone_turret"
+        }
+
+        "r.foot:object"{
+          rel_tm:m=[[0.04349609, -0.9985629, 0.03132176] [0.9781781, 0.04894183, 0.2019228] [-0.2031657, 0.02185546, 0.9789014] [-0.2413197, -0.2654991, 0.1943817]]
+          node:t="bone_turret"
+        }
+      }
+    }
+
+    "seats:object"{
+      name:t="driver"
+      locName:t="vehicle_seats/driver"
+      seatOwnsEntityControl:b=yes
+      attachNode:t="driver"
+      ignoreAttachNodeRotation:b=yes
+      attachTm:m=[[0.9, 0.0, 0.0] [0.0, 0.9, 0.0] [0.0, 0.0, 0.9] [-0.31, -0.27, 0.02]]
+      seatComponent:t="isDriver"
+      shouldHideOwner:b=no
+      receiveDamageFromDMPart:t="driver"
+      cameraNodeName:t="bone_camera_driver"
+      seatAnimUpper:t="drive_passenger"
+      seatAnimLower:t="drive_passenger"
+      cameraType:t="commander"
+      cameraOffset:p3=0.15, 0.05, 0.0
+      isHoldGunModeAllowed:b=no
+      canPlaceManually:b=yes
+
+      "effectors:object"{
+
+        "l.hand:object"{
+          rel_tm:m=[[-0.6613884, 0.5482886, -0.5118061] [-0.7496775, -0.4619234, 0.4739317] [0.02343601, 0.697141, 0.7165487] [0.07198298, -0.1859965, 0.1152954]]
+          node:t="bone_roll_driver"
+        }
+
+        "r.hand:object"{
+          rel_tm:m=[[-0.09996864, 0.9453835, -0.3102506] [-0.9807176, -0.1462492, -0.1296384] [-0.1679316, 0.2913079, 0.941773] [0.03953779, 0.0885725, -0.09082031]]
+          node:t="bone_roll_driver"
+        }
+
+        "l.foot:object"{
+          rel_tm:m=[[0.8355461, -0.5489998, -0.02147498] [0.5293398, 0.8148646, -0.2362082] [0.1471776, 0.1859955, 0.9714653] [0.7381536, 0.4766083, -0.2706451]]
+          node:t="root"
+        }
+
+        "r.foot:object"{
+          rel_tm:m=[[0.8411643, -0.5355232, -0.07520881] [0.5407672, 0.8320612, 0.1234703] [-0.003542828, -0.1445293, 0.9894939] [0.7294798, 0.4716406, -0.1555023]]
+          node:t="root"
+        }
+      }
+    }
+
+    "seats:object"{
+      name:t="passenger1"
+      cameraType:t="passenger"
+      attachNode:t="root"
+      locName:t="vehicle_seats/shooter"
+      ignoreAttachNodeRotation:b=yes
+      attachTm:m=[[0.9, 0.0, 0.0] [0.0, 0.9, 0.0] [0.0, 0.0, 0.9] [0.06, 0.67, -0.31]]
+      holdingGunAttachTm:m=[[0.9, 0.0, 0.0] [0.0, 0.9, 0.0] [0.0, 0.0, 0.9] [0.1, 0.73, -0.26]]
+      seatComponent:t="isPassenger"
+      shouldHideOwner:b=no
+      cameraNodeName:t="bone_camera_driver"
+      seatEnum:t="right_seat"
+      canPlaceManually:b=yes
+      isHoldGunModeAllowed:b=no
+
+      "effectors:object"{
+
+        "l.hand:object"{
+          rel_tm:m=[[0.8261755, 0.4773317, 0.2993141] [0.5596964, -0.756251, -0.3388588] [0.06460855, 0.4474819, -0.8919569] [0.4568634, 0.9347081, 0.1957245]]
+          node:t="root"
+        }
+
+        "r.hand:object"{
+          rel_tm:m=[[0.2653844, 0.9640449, -0.0137714] [0.959485, -0.2654777, -0.09439928] [-0.09466103, 0.01183858, -0.9954391] [0.5306678, 1.079407, 0.48349]]
+          node:t="root"
+        }
+
+        "l.foot:object"{
+          rel_tm:m=[[0.7328597, -0.6633028, -0.1514778] [0.6442536, 0.748112, -0.1589504] [0.2187548, 0.01889833, 0.9755974] [0.8037415, 0.4822407, 0.1658783]]
+          node:t="root"
+        }
+
+        "r.foot:object"{
+          rel_tm:m=[[0.6987395, -0.6704818, -0.249433] [0.7001984, 0.7124377, 0.046425] [0.1465783, -0.2070915, 0.9672785] [0.800329, 0.4792204, 0.3024445]]
+          node:t="root"
+        }
+      }
+    }
+  }
+}
+
+kubelwagen_82_zwillingssockel_turret_01_7_92mm_mg34{
+  _override:b=yes
+  gun__overheatReduce:r=0.005
+  gun__overheatReduceOnOverheat:r=0.15
+  gun__overheatPerShot:r=0.002
+}
+
+kubelwagen_82_zwillingssockel_turret_02_7_92mm_mg34{
+  _override:b=yes
+  gun__overheatReduce:r=0.005
+  gun__overheatReduceOnOverheat:r=0.15
+  gun__overheatPerShot:r=0.002
+}

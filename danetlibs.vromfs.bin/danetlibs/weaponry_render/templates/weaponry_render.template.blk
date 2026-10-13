@@ -1,0 +1,8 @@
+import:t="%gameLibs/render/beamTracer/templates/beam_tracers.template.blk"
+
+weaponry_render{
+  _tags:t="render"
+  _singleton:b=yes
+  weaponry_render__max_yResolution:i=700
+  dafg_camera_registrator__name:t="tracers"
+}

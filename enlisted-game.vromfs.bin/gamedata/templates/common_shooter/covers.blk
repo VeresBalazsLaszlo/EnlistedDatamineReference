@@ -1,0 +1,30 @@
+covers{
+  _singleton:b=yes
+  nonCreatableObj:b=yes
+  slotRadius:r=0.5
+  nearbyRadius:r=5.0
+
+  covers{
+  }
+}
+
+globalVisibleCoversMapMAX{
+  _singleton:b=yes
+  nonCreatableObj:b=yes
+  cleaner_memory__nextTime:r=-1.0
+  cleaner_memory__deltaTime:r=2.0
+
+  globalVisibleCoversMapMAX{
+  }
+}
+
+globalVisibleCoversMap4{
+  _singleton:b=yes
+  nonCreatableObj:b=yes
+  cleaner_memory__nextTime:r=-1.0
+  cleaner_memory__deltaTime:r=10.0
+  cleaner_memory__convertingToMapMax:b=no
+
+  globalVisibleCoversMap4{
+  }
+}

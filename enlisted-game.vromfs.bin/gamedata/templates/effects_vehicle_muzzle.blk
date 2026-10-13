@@ -1,0 +1,356 @@
+muzzle_ground_8mm{
+  _use:t="turret_gun_flash_effect_base"
+
+  _group{
+    _tags:t="render"
+    effect__name:t="fire_muzzle_rapid_cmps_fx"
+    effect__distance_scale:r=1.0
+    gun_flash_fx__scaleMultiplier:r=1.5
+  }
+}
+
+muzzle_ground_15mm{
+  _use:t="turret_gun_flash_effect_base"
+
+  _group{
+    _tags:t="render"
+    effect__name:t="fire_muzzle_high_caliber_rapid_cmps_fx"
+    effect__distance_scale:r=1.0
+    gun_flash_fx__scaleMultiplier:r=1.2
+  }
+}
+
+muzzle_ground_20mm{
+  _use:t="turret_gun_flash_effect_base"
+
+  _group{
+    _tags:t="render"
+    effect__name:t="fire_muzzle_20_40mm_cmps_fx"
+    effect__distance_scale:r=1.0
+  }
+}
+
+muzzle_ground_30mm{
+  _use:t="turret_gun_flash_effect_base"
+
+  _group{
+    _tags:t="render"
+    effect__name:t="fire_muzzle_20_40mm_cmps_fx"
+    effect__distance_scale:r=1.0
+  }
+}
+
+muzzle_ground_30mm_brake{
+  _use:t="turret_gun_flash_effect_base"
+
+  _group{
+    _tags:t="render"
+    effect__name:t="fire_muzzle_20_40mm_brake_cmps_fx"
+    effect__distance_scale:r=1.0
+  }
+}
+
+muzzle_ground_40mm_event{
+  _use:t="turret_gun_flash_effect_base"
+
+  _group{
+    _tags:t="render"
+    effect__name:t="fire_muzzle_40_60mm_cmps_fx"
+    effect__distance_scale:r=1.0
+  }
+}
+
+muzzle_ground_40mm_slow{
+  _use:t="turret_gun_flash_effect_base"
+
+  _group{
+    _tags:t="render"
+    effect__name:t="fire_muzzle_40_60mm_cmps_fx"
+    effect__distance_scale:r=1.0
+  }
+}
+
+muzzle_ground_40mm_brake{
+  _use:t="turret_gun_flash_effect_base"
+
+  _group{
+    _tags:t="render"
+    effect__name:t="fire_muzzle_40_60mm_brake_cmps_fx"
+    effect__distance_scale:r=1.0
+  }
+}
+
+muzzle_ground_60mm{
+  _use:t="turret_gun_flash_effect_base"
+  _use:t="hit_env_affect_fx"
+  wind_emitter__radius:r=3.0
+  wind_emitter__duration:r=3.0
+  wind_emitter__strength:r=3.0
+  wind_emitter__phaseSin:b=yes
+  wind_emitter__numWaves:i=5
+  wind_emitter__phaseAttack:b=yes
+
+  "wind_emitter__omni:tag"{
+  }
+
+  _group{
+    _tags:t="render"
+    effect__name:t="fire_muzzle_60_100mm_cmps_fx"
+    effect__distance_scale:r=1.0
+    effect__environmentDestructionRadius:r=4.0
+  }
+}
+
+muzzle_ground_60mm_brake{
+  _use:t="turret_gun_flash_effect_base"
+  _use:t="hit_env_affect_fx"
+  wind_emitter__radius:r=3.0
+  wind_emitter__duration:r=3.0
+  wind_emitter__strength:r=3.0
+  wind_emitter__phaseSin:b=yes
+  wind_emitter__numWaves:i=5
+  wind_emitter__phaseAttack:b=yes
+
+  "wind_emitter__omni:tag"{
+  }
+
+  _group{
+    _tags:t="render"
+    effect__name:t="fire_muzzle_60_100mm_brake_cmps_fx"
+    effect__distance_scale:r=1.0
+    effect__environmentDestructionRadius:r=4.0
+  }
+}
+
+muzzle_ground_80mm{
+  _use:t="turret_gun_flash_effect_base"
+  _use:t="hit_env_affect_fx"
+  wind_emitter__radius:r=3.0
+  wind_emitter__duration:r=3.0
+  wind_emitter__strength:r=3.0
+  wind_emitter__phaseSin:b=yes
+  wind_emitter__numWaves:i=5
+  wind_emitter__phaseAttack:b=yes
+
+  "wind_emitter__omni:tag"{
+  }
+
+  _group{
+    _tags:t="render"
+    effect__name:t="fire_muzzle_60_100mm_cmps_fx"
+    effect__distance_scale:r=1.0
+    gun_flash_fx__scaleMultiplier:r=1.4
+    effect__environmentDestructionRadius:r=5.0
+  }
+}
+
+muzzle_ground_80mm_brake{
+  _use:t="turret_gun_flash_effect_base"
+  _use:t="hit_env_affect_fx"
+  wind_emitter__radius:r=4.0
+  wind_emitter__duration:r=3.0
+  wind_emitter__strength:r=4.0
+  wind_emitter__phaseSin:b=yes
+  wind_emitter__numWaves:i=5
+  wind_emitter__phaseAttack:b=yes
+
+  "wind_emitter__omni:tag"{
+  }
+
+  _group{
+    _tags:t="render"
+    effect__name:t="fire_muzzle_60_100mm_brake_cmps_fx"
+    effect__distance_scale:r=1.0
+    gun_flash_fx__scaleMultiplier:r=1.4
+    effect__environmentDestructionRadius:r=5.0
+  }
+}
+
+muzzle_ground_100mm{
+  _use:t="turret_gun_flash_effect_base"
+  _use:t="hit_env_affect_fx"
+  wind_emitter__radius:r=4.0
+  wind_emitter__duration:r=3.0
+  wind_emitter__strength:r=4.0
+  wind_emitter__phaseSin:b=yes
+  wind_emitter__numWaves:i=5
+  wind_emitter__phaseAttack:b=yes
+
+  "wind_emitter__omni:tag"{
+  }
+
+  _group{
+    _tags:t="render"
+    effect__name:t="fire_muzzle_100_150mm_cmps_fx"
+    effect__distance_scale:r=1.0
+    effect__environmentDestructionRadius:r=6.0
+  }
+}
+
+muzzle_ground_100mm_brake{
+  _use:t="turret_gun_flash_effect_base"
+  _use:t="hit_env_affect_fx"
+  wind_emitter__radius:r=4.0
+  wind_emitter__duration:r=3.0
+  wind_emitter__strength:r=4.0
+  wind_emitter__phaseSin:b=yes
+  wind_emitter__numWaves:i=5
+  wind_emitter__phaseAttack:b=yes
+
+  "wind_emitter__omni:tag"{
+  }
+
+  _group{
+    _tags:t="render"
+    effect__name:t="fire_muzzle_100_150mm_brake_cmps_fx"
+    effect__distance_scale:r=1.0
+    effect__environmentDestructionRadius:r=6.0
+  }
+}
+
+muzzle_ground_100mm_recoilless{
+  _use:t="turret_gun_flash_effect_base"
+  _use:t="hit_env_affect_fx"
+  wind_emitter__radius:r=4.0
+  wind_emitter__duration:r=3.5
+  wind_emitter__strength:r=5.0
+  wind_emitter__phaseSin:b=yes
+  wind_emitter__numWaves:i=5
+  wind_emitter__phaseAttack:b=yes
+
+  "wind_emitter__omni:tag"{
+  }
+
+  _group{
+    _tags:t="render"
+    effect__name:t="fire_muzzle_100_150mm_cmps_fx"
+    effect__distance_scale:r=1.0
+    effect__environmentDestructionRadius:r=6.0
+  }
+}
+
+muzzle_ground_125mm{
+  _use:t="turret_gun_flash_effect_base"
+  _use:t="hit_env_affect_fx"
+  wind_emitter__radius:r=4.0
+  wind_emitter__duration:r=3.5
+  wind_emitter__strength:r=5.0
+  wind_emitter__phaseSin:b=yes
+  wind_emitter__numWaves:i=5
+  wind_emitter__phaseAttack:b=yes
+
+  "wind_emitter__omni:tag"{
+  }
+
+  _group{
+    _tags:t="render"
+    effect__name:t="fire_muzzle_100_150mm_cmps_fx"
+    effect__distance_scale:r=1.0
+    gun_flash_fx__scaleMultiplier:r=1.4
+    effect__environmentDestructionRadius:r=7.0
+  }
+}
+
+muzzle_ground_125mm_brake{
+  _use:t="turret_gun_flash_effect_base"
+  _use:t="hit_env_affect_fx"
+  wind_emitter__radius:r=4.0
+  wind_emitter__duration:r=3.5
+  wind_emitter__strength:r=4.0
+  wind_emitter__phaseSin:b=yes
+  wind_emitter__numWaves:i=5
+  wind_emitter__phaseAttack:b=yes
+
+  "wind_emitter__omni:tag"{
+  }
+
+  _group{
+    _tags:t="render"
+    effect__name:t="fire_muzzle_100_150mm_brake_cmps_fx"
+    effect__distance_scale:r=1.0
+    gun_flash_fx__scaleMultiplier:r=1.4
+    effect__environmentDestructionRadius:r=7.0
+  }
+}
+
+muzzle_ground_150mm{
+  _use:t="turret_gun_flash_effect_base"
+  _use:t="hit_env_affect_fx"
+  wind_emitter__radius:r=4.0
+  wind_emitter__duration:r=3.5
+  wind_emitter__strength:r=4.0
+  wind_emitter__phaseSin:b=yes
+  wind_emitter__numWaves:i=5
+  wind_emitter__phaseAttack:b=yes
+
+  "wind_emitter__omni:tag"{
+  }
+
+  _group{
+    _tags:t="render"
+    effect__name:t="fire_muzzle_100_150mm_cmps_fx"
+    effect__distance_scale:r=1.0
+    gun_flash_fx__scaleMultiplier:r=1.7
+    effect__environmentDestructionRadius:r=7.0
+  }
+}
+
+muzzle_ground_150mm_brake{
+  _use:t="turret_gun_flash_effect_base"
+  _use:t="hit_env_affect_fx"
+  wind_emitter__radius:r=4.0
+  wind_emitter__duration:r=3.5
+  wind_emitter__strength:r=4.0
+  wind_emitter__phaseSin:b=yes
+  wind_emitter__numWaves:i=5
+  wind_emitter__phaseAttack:b=yes
+
+  "wind_emitter__omni:tag"{
+  }
+
+  _group{
+    _tags:t="render"
+    effect__name:t="fire_muzzle_100_150mm_brake_cmps_fx"
+    effect__distance_scale:r=1.0
+    gun_flash_fx__scaleMultiplier:r=1.7
+    effect__environmentDestructionRadius:r=7.0
+  }
+}
+
+muzzle_air_8mm{
+  _use:t="muzzle_ground_8mm"
+}
+
+muzzle_air_15mm{
+  _use:t="muzzle_ground_15mm"
+}
+
+muzzle_air_20mm{
+  _use:t="turret_gun_flash_effect_base"
+
+  _group{
+    _tags:t="render"
+    effect__name:t="fire_muzzle_20_40mm_air_cmps_fx"
+    effect__distance_scale:r=1.0
+  }
+}
+
+muzzle_air_30mm{
+  _use:t="turret_gun_flash_effect_base"
+
+  _group{
+    _tags:t="render"
+    effect__name:t="fire_muzzle_20_40mm_air_cmps_fx"
+    effect__distance_scale:r=1.0
+  }
+}
+
+muzzle_air_50mm{
+  _use:t="turret_gun_flash_effect_base"
+
+  _group{
+    _tags:t="render"
+    effect__name:t="fire_muzzle_40_60mm_air_cmps_fx"
+    effect__distance_scale:r=1.0
+  }
+}

@@ -1,0 +1,137 @@
+sandstorm_sound{
+  _use:t="sound_effect_2d"
+
+  _group{
+    _tags:t="sound"
+    sound_effect_2d__path:t="ambient/sandstorm"
+  }
+}
+
+sound_effect_mill_outside{
+  _use:t="sound_effect"
+  _use:t="replicating"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, 0.0, 0.0]]
+
+  _group{
+    _tags:t="sound"
+    sound_effect__path:t="env_effects/mill/mill_outside"
+  }
+}
+
+sound_effect_mill_inside{
+  _use:t="sound_effect"
+  _use:t="replicating"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, 0.0, 0.0]]
+
+  _group{
+    _tags:t="sound"
+    sound_effect__path:t="env_effects/mill/mill_inside"
+  }
+}
+
+sound_effect_is_clock_a{
+  _use:t="destroyable_sound_effect"
+  _use:t="replicating"
+  clock_chime__ringSound:t="events/003/clock_bells"
+  clock_chime__localOffset:p3=0.4, 1.8, 0.0
+  shreddableInDarkZone:b=yes
+
+  "occludedSoundWithSoundControl:tag"{
+  }
+
+  _group{
+    _tags:t="sound"
+    sound_effect__path:t="env_effects/clocks/clock_a"
+    sound_effect__localOffset:p3=0.4, 1.8, 0.0
+  }
+
+  "clock_chime__event:SoundEvent"{
+    _tags:t="sound"
+  }
+}
+
+sound_effect_bamboo_bells_ri_extra_gen{
+  _use:t="destroyable_sound_effect"
+  _use:t="replicating"
+
+  _group{
+    _tags:t="sound"
+    sound_effect__path:t="env_effects/bamboo_bells"
+  }
+}
+
+sound_effect_bamboo_metal_bells_ri_extra_gen{
+  _use:t="destroyable_sound_effect"
+  _use:t="replicating"
+
+  _group{
+    _tags:t="sound"
+    sound_effect__path:t="env_effects/bamboo_metal_bells"
+  }
+}
+
+sound_effect_asian_wind_flute_ri_extra_gen{
+  _use:t="destroyable_sound_effect"
+  _use:t="replicating"
+
+  _group{
+    _tags:t="sound"
+    sound_effect__path:t="env_effects/asian_wind_flute"
+  }
+}
+
+sound_effect_asian_wind_harp_ri_extra_gen{
+  _use:t="destroyable_sound_effect"
+  _use:t="replicating"
+
+  _group{
+    _tags:t="sound"
+    sound_effect__path:t="env_effects/asian_wind_harp"
+  }
+}
+
+geyser_sound{
+  _use:t="sound_effect"
+  geyser_sound__spawnRateThreshold:r=0.5
+
+  _group{
+    _tags:t="sound"
+    sound_effect__path:t="env_effects/geyser"
+  }
+}
+
+lava_sound{
+  _use:t="sound_effect"
+
+  _group{
+    _tags:t="sound"
+    sound_effect__path:t="env_effects/fire/lava"
+  }
+}
+
+pipes_sound{
+  _use:t="spline_sound"
+
+  _group{
+    _tags:t="sound"
+    spline_sound__path:t="ambient/positioned/water_pipe"
+  }
+}
+
+en_biome_sound_query{
+  _use:t="biome_sound_query"
+
+  _group{
+    _tags:t="sound"
+
+    "biome_sound_query__biomeNames:list<t>"{
+      name:t="grass"
+      name:t="swamp"
+    }
+
+    "biome_sound_query__varNames:list<t>"{
+      name:t="biome_grass"
+      name:t="biome_swamp"
+    }
+  }
+}

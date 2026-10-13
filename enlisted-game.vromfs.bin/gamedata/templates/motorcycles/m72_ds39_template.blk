@@ -1,0 +1,257 @@
+m72_ds39{
+  _use:t="simple_damage_model"
+  _use:t="vehicle_seats_effectors"
+  _use:t="base_bike_right_sidecar"
+  _use:t="vehicle_anim_speedometer_kmh"
+  _use:t="david_harleyson_wla_vehicle_sound"
+  _use:t="vehicle_seats_effectors"
+  _use:t="vehicle_with_attached_ammo_box"
+  hitcamera__locked:b=yes
+  skin__template:t="m72_ds39_skins"
+  commanderFpsCamMaxAngle:p2=30.0, 35.0
+  item__name:t="items/m72_ds39"
+  vehicleName:t="m72_ds39"
+  animchar__res:t="m_72_char"
+  collres__res:t="m_72_collision"
+  vehicle_net_phys__blk:t="gamedata/templates/motorcycles/m72_ds39.blk:VehiclePhys"
+  canUseRespawnbaseType:t="motorcycle"
+  damage_model__blk:t="gamedata/templates/motorcycles/m72_ds39.blk"
+  particle_phys__blk:t="gamedata/suspension/empty.blk"
+  vehicle_seats__enumVarName:t="m_72"
+  item__iconOffset:p2=0.0, 0.05
+  item__iconScale:r=1.3
+  vehicle_commander_cam__attachToVehicle:b=no
+
+  _group{
+    _tags:t="gameClient"
+
+    "dm_parts__specialViewPartNames:shared:list<t>"{
+      name:t="ammo_box"
+      name:t="ex_decor_08"
+    }
+  }
+
+  _group{
+    _tags:t="render"
+    vehicle_anim__speedometerMinMax:p2=10.0, 120.0
+  }
+
+  _group{
+    _tags:t="render"
+    animchar_camera_target__node_name:t="bone_ds_aa_v"
+    animchar_camera_target__node_offset:p3=0.0, 0.0, 0.0
+    animchar_camera_target__nodeIndex:i=-1
+  }
+
+  anim_phys{
+  }
+
+  "vehicleDisplayMarkerOverHead:tag"{
+    tags:t="ui"
+  }
+
+  "vehicle_seats__effectors:array"{
+  }
+
+  "vehicle_seats__seatsProvideOrder:tag"{
+  }
+
+  "vehicle_seats__seats:shared:array"{
+
+    "seats:object"{
+      name:t="commander"
+      nextSeat:t="driver"
+      locName:t="vehicle_seats/gunner"
+      ignoreAttachNodeRotation:b=yes
+      seatOwnsEntityControl:b=no
+      attachNode:t="char_passenger_01_pivot"
+      entranceNode:t="char_passenger_01_landing"
+      attachTm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-0.0, 0.0, -0.0]]
+      seatComponent:t="isPassenger"
+      canPlaceManually:b=yes
+      seatEnum:t="right_seat"
+      seatAnimUpper:t="m_72_gunner"
+      seatAnimLower:t="m_72_gunner"
+      smokeScreen:b=no
+      cameraNodeName:t="bone_ds_aa_v"
+      cameraOffset:p3=-0.45, 0.35, -0.0
+      bindCamera:b=yes
+      copySkeletonNodesPostfix:t="_gunner"
+
+      "turretNames:array"{
+        turretNames:t="turret_01"
+      }
+
+      "effectors:object"{
+        l.hand:t="ik_hand_left_gunner"
+        r.hand:t="ik_hand_right_gunner"
+        l.forearm:t="ik_forearm_left_gunner"
+        r.forearm:t="ik_forearm_right_gunner"
+
+        "l.foot:object"{
+          rel_tm:m=[[0.8028228, -0.5961213, 0.01072416] [0.5961183, 0.8028873, 0.003820304] [-0.01088772, 0.003325834, 0.9999353] [0.725008, -0.01559067, -0.1175995]]
+          node:t="char_passenger_01_pivot"
+        }
+
+        "r.foot:object"{
+          rel_tm:m=[[0.8108664, -0.5851387, 0.01044126] [0.585134, 0.810928, 0.003819509] [-0.01070205, 0.003012432, 0.9999385] [0.7001686, -0.01694775, 0.115448]]
+          node:t="char_passenger_01_pivot"
+        }
+      }
+
+      "copySkeletonNodesRecursive:array"{
+        node:t="Bip01 L Hand"
+        node:t="Bip01 R Hand"
+      }
+    }
+
+    "seats:object"{
+      name:t="driver"
+      locName:t="vehicle_seats/driver"
+      seatOwnsEntityControl:b=yes
+      attachNode:t="char_driver_pivot"
+      ignoreAttachNodeRotation:b=yes
+      entranceNode:t="char_driver_landing"
+      attachTm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-0.0, 0.068, -0.0]]
+      seatComponent:t="isGunner"
+      shouldHideOwner:b=no
+      cameraNodeName:t="bone_camera_driver"
+      seatEnum:t="left_seat"
+      seatAnimUpper:t="moto_drive_driver"
+      seatAnimLower:t="moto_drive_driver"
+      smokeScreen:b=no
+
+      "effectors:object"{
+
+        "l.hand:object"{
+          rel_tm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, -0.0, -0.0]]
+          node:t="ik_hand_left"
+        }
+
+        "r.hand:object"{
+          rel_tm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, -0.0, -0.0]]
+          node:t="ik_hand_right"
+        }
+
+        "l.forearm:object"{
+          rel_tm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, -0.0, -0.0]]
+          node:t="ik_forearm_left"
+        }
+
+        "r.forearm:object"{
+          rel_tm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, -0.0, -0.0]]
+          node:t="ik_forearm_right"
+        }
+
+        "l.foot:object"{
+          rel_tm:m=[[-0.1888298, -0.98201, -0.0002230965] [0.9801051, -0.1884493, -0.06229328] [0.06113045, -0.01198148, 0.9980571] [0.1195769, -0.380483, -0.2393951]]
+          node:t="char_driver_pivot"
+        }
+
+        "r.foot:object"{
+          rel_tm:m=[[-0.293101, -0.9538561, 0.06518932] [0.95608, -0.2923339, 0.02122487] [-0.001188444, 0.06854731, 0.9976472] [0.1292067, -0.3864688, 0.2124634]]
+          node:t="char_driver_pivot"
+        }
+      }
+    }
+
+    "seats:object"{
+      name:t="passenger1"
+      locName:t="vehicle_seats/passenger1"
+      seatOwnsEntityControl:b=no
+      attachNode:t="char_passenger_02_pivot"
+      entranceNode:t="char_passenger_02_landing"
+      attachTm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-0.0713, 0.06, 0.0]]
+      seatComponent:t="isPassenger"
+      canPlaceManually:b=yes
+      seatEnum:t="m_72_seat"
+      seatAnimUpper:t="m_72_passenger"
+      seatAnimLower:t="m_72_passenger"
+      cameraType:t="commander"
+      smokeScreen:b=no
+      aimLimits:p4=-180.0, 180.0, -45.0, 15.0
+
+      "effectors:object"{
+
+        "l.hand:object"{
+          rel_tm:m=[[0.2288072, -0.3182725, 0.9199731] [-0.8805489, -0.4706134, 0.05618925] [0.4150681, -0.8229376, -0.3879342] [0.1961555, -0.007966995, -0.1392365]]
+          node:t="char_passenger_02_pivot"
+        }
+
+        "r.hand:object"{
+          rel_tm:m=[[0.07191085, -0.7283472, -0.6814248] [-0.8091666, -0.4420479, 0.3870954] [-0.5831621, 0.52355, -0.6211423] [0.223093, 0.06556606, 0.06863403]]
+          node:t="char_passenger_02_pivot"
+        }
+
+        "l.foot:object"{
+          rel_tm:m=[[-0.1673298, -0.9792864, 0.1140176] [0.9680631, -0.1850994, -0.1690926] [0.1866944, 0.08208193, 0.9789825] [0.1807166, -0.5350094, -0.2154388]]
+          node:t="char_passenger_02_pivot"
+        }
+
+        "r.foot:object"{
+          rel_tm:m=[[-0.3962461, -0.9168777, 0.04821545] [0.9146028, -0.3987808, -0.06689548] [0.08056241, 0.01759092, 0.9965947] [0.1047138, -0.4906054, 0.1996918]]
+          node:t="char_passenger_02_pivot"
+        }
+      }
+    }
+  }
+
+  "turret_gun_flash_fx__flashNodes:shared:array"{
+    node:t="emtr_ds_aa_flame"
+  }
+
+  "turret_gun_flash_fx__flashFx:shared:array"{
+    fx:t="muzzle_ground_15mm"
+  }
+
+  "turret_gun_flash_fx__flashFxScale:shared:array"{
+    scale:r=1.0
+  }
+
+  "turret_control__emitterNodes:shared:array"{
+    node:t="bone_ds_aa_v"
+  }
+
+  "turret_control__animVars:shared:array"{
+
+    "vars:object"{
+      curYawParamName:t="turret_01_yaw"
+      curPitchParamName:t="gun_01_pitch"
+      aimActiveParamName:t="aim_01_active"
+      paramYawSpeed:t="turret_01_yaw_speed"
+      paramYawSpeedMul:t="turret_01_yaw_mul"
+      paramYawAccel:t="turret_01_yaw_accel"
+      paramMinYawAngle:t="turret_01_min_yaw_angle"
+      paramMaxYawAngle:t="turret_01_max_yaw_angle"
+      paramMinPitchAngle:t="turret_01_min_pitch_angle"
+      paramMaxPitchAngle:t="turret_01_max_pitch_angle"
+      paramPitchSpeed:t="gun_01_pitch_speed"
+      paramPitchSpeedMul:t="gun_01_pitch_mul"
+      paramPitchAccel:t="gun_01_pitch_accel"
+      wishYawParamName:t="gun_01_aim:targetYaw"
+      wishPitchParamName:t="gun_01_aim:targetPitch"
+    }
+  }
+
+  "turret_control__turretInfo:shared:array"{
+
+    "turretInfo:object"{
+      turretName:t="turret_01"
+      gun:t="m72_ds39_turret_7_62mm_ds39"
+      salt:i=1
+    }
+  }
+}
+
+m72_ds39_turret_7_62mm_ds39{
+  _use:t="bike_7_62mm_ds39"
+  gun__shootNodeName:t="emtr_ds_aa_flame"
+  turret__yawSpeed:r=150.0
+  turret__pitchSpeed:r=50.0
+  turret__aimNodeName:t="bone_ds_aa_h"
+  turret__limit:p4=-10.0, 10.0, -5.0, 10.0
+
+  "gun__shellsAmmo:array"{
+    ammo:i=500
+  }
+}

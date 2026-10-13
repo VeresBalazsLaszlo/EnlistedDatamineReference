@@ -1,0 +1,70 @@
+from "%ui/helpers/menu_poses_for_weapons.nut" import weaponToAnimState, weaponToSittingAnimState
+from "dagor.random" import rnd
+from "string" import split_by_chars
+from "%sqstd/functools.nut" import kwarg
+from "types" import String
+
+function getWeapTemplate(template){
+  assert(template instanceof String)
+  return split_by_chars(template, "+")?[0] ?? template
+}
+
+let SLOTS_ORDER = ["primary", "secondary", "tertiary"]
+let firstAvailableWeapon = @(tmpls, slot_order)
+  tmpls?[slot_order.findvalue(@(key) (tmpls?[key] ?? "") != "")] ?? ""
+
+function getAnimationBlacklist(itemTemplates) {
+  let animationBlacklist = {}
+  foreach (itemTemplate in itemTemplates) {
+    let itemAnimationBlacklist = itemTemplate.getCompValNullable("animationBlacklistForMenu")
+    if (itemAnimationBlacklist == null)
+      continue
+    foreach (anim in itemAnimationBlacklist) {
+      animationBlacklist[anim] <- true
+    }
+  }
+  return animationBlacklist
+}
+
+function getIdleAnimState(weapTemplates, itemTemplates = null, overridedIdleAnims = null, overridedSlotsOrder = null, seed = null, isSiting = false) {
+  seed = seed ?? rnd()
+  if (seed < 0)
+    seed = -seed
+
+  local idle = overridedIdleAnims?.defaultPoses ?? weaponToAnimState.defaultPoses
+  let weaponTemplate = getWeapTemplate(firstAvailableWeapon(weapTemplates, overridedSlotsOrder ?? SLOTS_ORDER))
+  if (!isSiting)
+    if (weaponTemplate == "")
+      idle = overridedIdleAnims?.unarmedPoses.getAll()
+        ?? weaponToAnimState?.unarmedPoses
+        ?? idle
+    else
+      idle = overridedIdleAnims?[weaponTemplate].getAll()
+        ?? weaponToAnimState?[weaponTemplate]
+        ?? idle
+  else
+    if (weaponTemplate == "")
+      idle = overridedIdleAnims?.unarmedPoses.getAll()
+        ?? weaponToSittingAnimState?.unarmedPoses
+        ?? weaponToSittingAnimState?.defaultPoses
+        ?? idle
+    else
+      idle = overridedIdleAnims?.sittingPoses.getAll()
+        ?? weaponToSittingAnimState?[weaponTemplate]
+        ?? weaponToSittingAnimState?.defaultPoses
+        ?? idle
+
+  if (itemTemplates != null) {
+    idle = clone idle
+    let animationBlacklist = getAnimationBlacklist(itemTemplates)
+    for (local i = idle.len() - 1; i >= 0; --i)
+      if (idle[i] in animationBlacklist)
+        idle.remove(i)
+  }
+
+  return idle.len() > 0 ? idle[seed % idle.len()] : weaponToAnimState.defaultPoses.top()
+}
+
+return {
+  getIdleAnimState = kwarg(getIdleAnimState)
+}

@@ -1,0 +1,9 @@
+heat_haze_renderer{
+  _singleton:b=yes
+  _tags:t="render"
+  heat_haze__lod:i=-1
+  dafg_camera_registrator__name:t="heat_haze"
+
+  "heat_haze__manager:HeatHazeManager"{
+  }
+}

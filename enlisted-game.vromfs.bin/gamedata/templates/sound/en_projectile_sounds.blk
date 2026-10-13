@@ -1,0 +1,208 @@
+shell_fly_sound{
+
+  _group{
+    _tags:t="sound"
+    shell_fly_sound__path:t=""
+
+    "shell_fly_sound__event:SoundEvent"{
+    }
+  }
+}
+
+projectile_hit_entity_fx_sound{
+
+  _group{
+    _tags:t="sound"
+
+    "projectile_hit_entity_fx_sound__paths:shared:object"{
+    }
+  }
+}
+
+projectile_impact_sound{
+
+  _group{
+    _tags:t="sound"
+    projectile_sound__shellCaliberThreshold:r=0.025
+    projectile_sound__ricoThreshold:r=0.0
+
+    "projectile_impact_sound__paths:shared:object"{
+      hitBullet:t="impact/bullet"
+      hitShell:t="impact/shell"
+      explodeBullet:t="impact/bullet"
+      explodeShell:t="impact/shell"
+      ricoBullet:t="impact/rico_bullet"
+      ricoShell:t="impact/rico_shell"
+    }
+  }
+}
+
+bullet_projectile_impact_sound{
+  _use:t="projectile_impact_sound"
+}
+
+rocket_projectile_impact_sound{
+  _use:t="projectile_impact_sound"
+
+  "projectile_impact_sound__paths:shared:object"{
+    _tags:t="sound"
+    explodeBullet:t="impact/rocket"
+    explodeShell:t="impact/rocket"
+  }
+}
+
+rocket_shell_fly_sound{
+  _use:t="shell_fly_sound"
+
+  _group{
+    _tags:t="sound"
+    shell_fly_sound__path:t="impact/fly_rocket_projectile"
+  }
+}
+
+artillery_rocket_projectile_impact_sound{
+  _use:t="rocket_projectile_impact_sound"
+
+  "projectile_impact_sound__paths:shared:object"{
+    _tags:t="sound"
+    explodeBullet:t="impact/artillery_rocket"
+    explodeShell:t="impact/artillery_rocket"
+  }
+}
+
+artillery_rocket_shell_fly_sound{
+  _use:t="shell_fly_sound"
+
+  _group{
+    _tags:t="sound"
+    shell_fly_sound__path:t="impact/fly_artillery_rocket_projectile"
+  }
+}
+
+smoke_grenade_projectile_impact_sound{
+  _use:t="projectile_impact_sound"
+
+  "projectile_impact_sound__paths:shared:object"{
+    _tags:t="sound"
+    explodeBullet:t="impact/smoke_grenade"
+    explodeShell:t="impact/smoke_grenade"
+  }
+}
+
+tank_smoke_grenade_projectile_impact_sound{
+  _use:t="projectile_impact_sound"
+
+  "projectile_impact_sound__paths:shared:object"{
+    _tags:t="sound"
+    explodeBullet:t="impact/artillery_smoke"
+    explodeShell:t="impact/artillery_smoke"
+  }
+}
+
+smoke_artillery_projectile_impact_sound{
+  _use:t="rocket_projectile_impact_sound"
+
+  "projectile_impact_sound__paths:shared:object"{
+    _tags:t="sound"
+    explodeBullet:t="impact/artillery_smoke"
+    explodeShell:t="impact/artillery_smoke"
+  }
+}
+
+bomb_projectile_impact_sound{
+  _use:t="projectile_impact_sound"
+
+  "projectile_impact_sound__paths:shared:object"{
+    _tags:t="sound"
+    hitBullet:t="impact/bomb_hit"
+    hitShell:t="impact/bomb_hit"
+    explodeBullet:t="impact/bomb_explode"
+    explodeShell:t="impact/bomb_explode"
+  }
+}
+
+bomb_shell_fly_sound{
+  _use:t="shell_fly_sound"
+  shell_fly_sound_speed_to_volume:p4=0.0, 100.0, 0.0, 1.0
+
+  _group{
+    _tags:t="sound"
+    shell_fly_sound__path:t="impact/fly_bomb_mid"
+    shell_fly_sound__loudPath:t="impact/fly_bomb_player"
+    shell_fly_sound__isLoud:b=no
+    shell_fly_sound__isLoudMaxRadiusMul:r=1.0
+  }
+}
+
+ai_bomb_shell_fly_sound{
+  _use:t="bomb_shell_fly_sound"
+
+  _group{
+    _tags:t="sound"
+    shell_fly_sound__isLoudMaxRadiusMul:r=5.0
+    shell_fly_sound__shouldPlayForAllTeams:b=yes
+  }
+}
+
+projectile_lifetime_sound{
+
+  _group{
+    _tags:t="sound"
+    projectile_lifetime_sound__path:t=""
+
+    "projectile_lifetime_sound__event:SoundEvent"{
+    }
+  }
+}
+
+bomb_projectile_lifetime_sound{
+  _use:t="projectile_lifetime_sound"
+
+  _group{
+    _tags:t="sound"
+    projectile_lifetime_sound__path:t="impact/bomb_timer"
+  }
+}
+
+projectile_wiz_sound{
+
+  _group{
+    _tags:t="sound"
+    projectile_wiz_sound__nextSoundAt:r=0.0
+    projectile_wiz_sound__caliberToDist:p4=0.005, 0.1, 2.0, 20.0
+    projectile_wiz_sound__dirThresholds:p2=0.75, 0.25
+    projectile_wiz_sound__cooldown:r=0.05
+    projectile_wiz_sound__shellCaliberThreshold:r=0.02
+    projectile_wiz_sound__largeCaliberThreshold:r=0.012
+    projectile_wiz_sound__supersonicThreshold:r=340.0
+    projectile_wiz_sound__shellPath:t="impact/wiz_shell"
+    projectile_wiz_sound__largeCaliberPath:t="impact/wiz_large_caliber"
+    projectile_wiz_sound__supersonicBulletPath:t="impact/wiz_supersonic_bullet"
+    projectile_wiz_sound__subsonicBulletPath:t="impact/wiz_subsonic_bullet"
+  }
+}
+
+shell_shatter_sound_settings{
+
+  _group{
+    _tags:t="sound"
+    shell_shatter_sound__maxRadiusMul:r=1.0
+    shell_shatter_sound__countToSoundCount:p4=1.0, 128.0, 1.0, 5.0
+    shell_shatter_sound__relDistToCountMul:p4=0.5, 1.0, 1.0, 0.0
+    shell_shatter_sound__chance:i=75
+    shell_shatter_sound__nextTime:r=0.0
+    shell_shatter_sound__cooldown:r=4.0
+    shell_shatter_sound__radiusAroundListener:r=8.0
+    shell_shatter_sound__traceStart:r=0.5
+    shell_shatter_sound__hitSoundDistStart:r=2.0
+    shell_shatter_sound__wizPath:t="impact/wiz_fragment"
+    shell_shatter_sound__hitPath:t="impact/fragment"
+  }
+}
+
+projectile_sound_settings{
+  _use:t="projectile_sound_physmat"
+  _use:t="projectile_wiz_sound"
+  _use:t="shell_shatter_sound_settings"
+  _singleton:b=yes
+}

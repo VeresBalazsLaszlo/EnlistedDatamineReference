@@ -1,0 +1,601 @@
+attach_reverb_sound_to_watchable{
+
+  _group{
+    _tags:t="sound"
+    attach_reverb_sound_to_watchable__nodeName:t="Bip01 Pelvis"
+    attach_reverb_sound_to_watchable__nodeId:i=-1
+  }
+}
+
+base_reverb_sound{
+  _use:t="sound_preset"
+  _use:t="replicating"
+  _singleton:b=yes
+
+  _group{
+    _tags:t="sound"
+    reverb_sound__rayId:i=0
+    reverb_sound__offsetId:i=0
+    reverb_sound__intensity_roomSize_absorption_weight:p4=0.0, 0.0, 0.0, 0.0
+    reverb_sound__intensity_roomSize_absorption_blend:p4=0.0, 0.0, 0.0, 0.0
+    reverb_sound__path:t="snapshots/reverb_indoor"
+    reverb_sound__intensityVar:t="reverbIndoor"
+    reverb_sound__roomSizeVar:t="roomSize"
+    reverb_sound__absorptionVar:t="absorption"
+    reverb_sound__intensityMax:r=0.75
+    reverb_sound__roomSizeMax:r=16.0
+    reverb_sound__fadeOutPower:r=10.0
+    reverb_sound__rayLength:r=16.0
+    reverb_sound__numTraces:i=2
+    reverb_sound__decay:r=0.75
+    reverb_sound__defAbsorption:r=0.5
+
+    "reverb_sound__PMIDToAbsorption:list<r>"{
+    }
+
+    "reverb_sound__event:SoundEvent"{
+    }
+
+    "reverb_sound__physmatAbsorption:array"{
+    }
+
+    "reverb_sound__offsets:list<p3>"{
+      offset:p3=1.0, 1.0, 1.0
+      offset:p3=-1.0, 1.0, 1.0
+      offset:p3=1.0, -1.0, 1.0
+      offset:p3=1.0, 1.0, -1.0
+    }
+
+    "reverb_sound__rays:list<p3>"{
+      ray:p3=0.196, 0.866, -0.46
+      ray:p3=0.861, -0.445, 0.245
+      ray:p3=-0.629, -0.437, 0.643
+      ray:p3=-0.748, -0.662, 0.055
+      ray:p3=-0.958, -0.021, 0.285
+      ray:p3=0.395, -0.677, 0.621
+      ray:p3=0.629, 0.433, -0.645
+      ray:p3=0.082, 0.268, 0.96
+      ray:p3=-0.173, 0.756, 0.631
+      ray:p3=-0.73, 0.574, 0.371
+      ray:p3=0.923, 0.186, 0.337
+      ray:p3=0.379, -0.925, 0.033
+      ray:p3=0.533, -0.169, -0.829
+      ray:p3=-0.591, 0.096, -0.801
+      ray:p3=0.517, 0.591, 0.619
+      ray:p3=-0.227, -0.958, -0.178
+      ray:p3=-0.064, -0.355, 0.933
+      ray:p3=-0.523, -0.591, -0.614
+      ray:p3=0.959, 0.018, -0.282
+      ray:p3=0.587, -0.096, 0.804
+      ray:p3=-0.369, 0.929, -0.028
+      ray:p3=0.236, 0.956, 0.174
+      ray:p3=0.174, -0.755, -0.632
+      ray:p3=-0.858, 0.453, -0.241
+      ray:p3=-0.395, 0.679, -0.619
+      ray:p3=-0.195, -0.869, 0.455
+      ray:p3=0.75, 0.658, -0.06
+      ray:p3=-0.926, -0.18, -0.332
+      ray:p3=-0.088, -0.271, -0.959
+      ray:p3=0.06, 0.353, -0.934
+      ray:p3=0.73, -0.574, -0.371
+      ray:p3=-0.537, 0.17, 0.826
+    }
+  }
+}
+
+underwater_sound{
+
+  _group{
+    _tags:t="sound"
+    underwater_sound__frame:i=0
+    underwater_sound__path:t="ambient/camera_underwater"
+
+    "underwater_sound__event:SoundEvent"{
+    }
+  }
+}
+
+shore_sound{
+  _use:t="replicating"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, 0.0, 0.0]]
+
+  _group{
+    _tags:t="sound"
+    shore_sound__path:t="ambient/positioned/ocean"
+    shore_sound__shoreDistanceToVar:p4=0.0, 250.0, 1.0, 0.0
+
+    "shore_sound__event:SoundEvent"{
+    }
+  }
+
+  "shore_sound__offsets:list<p2>"{
+  }
+}
+
+spline_sound{
+  _use:t="replicating"
+
+  _group{
+    _tags:t="sound"
+    spline_sound_update__idx:i=0
+    spline_sound_update__listener:p3=0.0, 0.0, 0.0
+    spline_sound_update__closestPt:p3=0.0, 0.0, 0.0
+    spline_sound_update__closestPtValid:b=no
+    spline_sound_update__splineClosestPt:p3=0.0, 0.0, 0.0
+    spline_sound_update__splineClosestPtValid:b=no
+    spline_sound_update__isInside:b=no
+    spline_sound_update__midPt:p3=0.0, 0.0, 0.0
+    spline_sound_update__weight:r=0.0
+    spline_sound__eventPos:p3=0.0, 0.0, 0.0
+    spline_sound__isInside:b=no
+    spline_sound__range:r=0.0
+    spline_sound__path:t=""
+    spline_sound__floorOnWater:b=no
+    spline_sound__waterLevel:r=1.5
+    spline_sound__distToSoundSize:p4=0.0, 0.0, 0.0, 0.0
+    spline_sound__soundSizeVar:t=""
+
+    "spline_sound__event:SoundEvent"{
+    }
+  }
+
+  "spline_sound__points:list<p4>"{
+  }
+}
+
+river_sound{
+  _use:t="spline_sound"
+
+  _group{
+    _tags:t="sound"
+    spline_sound__floorOnWater:b=yes
+    spline_sound__path:t="ambient/positioned/river_mid"
+    spline_sound__distToSoundSize:p4=0.0, 10.0, 5.0, 50.0
+    spline_sound__soundSizeVar:t="soundSize"
+  }
+}
+
+river_small_sound{
+  _use:t="spline_sound"
+
+  _group{
+    _tags:t="sound"
+    spline_sound__floorOnWater:b=yes
+    spline_sound__path:t="ambient/positioned/river_small"
+    spline_sound__distToSoundSize:p4=0.0, 10.0, 5.0, 50.0
+    spline_sound__soundSizeVar:t="soundSize"
+  }
+}
+
+lake_mid_river_sound{
+  _use:t="river_sound"
+
+  _group{
+    _tags:t="sound"
+    spline_sound__path:t="ambient/positioned/lake_mid"
+  }
+}
+
+game_object_spline_sound_generator{
+  game_object_spline_sound_generator__pointRadiusMul:r=1.0
+
+  "game_object_spline_sound_generator__gameObjects:list<t>"{
+  }
+}
+
+ocean_sound{
+  _use:t="sound_preset"
+  _use:t="replicating"
+
+  _group{
+    _tags:t="sound"
+    ocean_sound__range:r=0.0
+    ocean_sound__path:t="ambient/positioned/ocean"
+    ocean_sound__shoreVar:t="shore"
+    ocean_sound__waterLevel:r=1.5
+    ocean_sound__shoreDistanceToVar:p4=0.0, 250.0, 1.0, 0.0
+    ocean_sound__playSoundInside:b=no
+    ocean_sound_update__idx:i=-1
+    ocean_sound_update__firstSplinePointIdx:i=0
+    ocean_sound_update__numIntersections:i=0
+    ocean_sound_update__shoreParam:r=-1.0
+    ocean_sound_update__closestPtOnSpline:p2=0.0, 0.0
+    ocean_sound_update__closestPtOnSplineInited:b=no
+    ocean_sound_update__closestPtOnShore:p2=0.0, 0.0
+    ocean_sound_update__closestPtOnShoreInited:b=no
+    ocean_sound__closestShorePt:p2=0.0, 0.0
+    ocean_sound__closestPtOnSpline:p2=0.0, 0.0
+    ocean_sound__isInside:b=no
+
+    "ocean_sound__event:SoundEvent"{
+    }
+  }
+
+  "ocean_sound__points:list<p3>"{
+  }
+}
+
+sea_ocean_sound{
+  _use:t="ocean_sound"
+
+  _group{
+    _tags:t="sound"
+    ocean_sound__playSoundInside:b=yes
+    ocean_sound__path:t="ambient/positioned/lake_mid"
+    ocean_sound__shoreVar:t=""
+  }
+}
+
+game_object_ocean_sound_generator{
+
+  "game_object_ocean_sound_generator__gameObjects:list<t>"{
+  }
+}
+
+ambient_sound{
+  _use:t="replicating"
+
+  _group{
+    _tags:t="sound"
+    ambient_sound__shouldPlay:b=no
+    ambient_sound__path:t=""
+    ambient_sound__abandonOnReset:b=no
+
+    "ambient_sound__event:SoundEvent"{
+    }
+  }
+}
+
+volume_ambient_sound{
+  _use:t="game_object_sound"
+
+  _group{
+    _tags:t="sound"
+    volume_ambient_sound__transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, 0.0, 0.0]]
+    volume_ambient_sound__extent_maxRadiusSq:p4=0.0, 0.0, 0.0, 0.0
+    volume_ambient_sound__closestDistSq:r=0.0
+    volume_ambient_sound__volume:r=0.0
+    volume_ambient_sound__range:r=0.0
+    volume_ambient_sound__autoRange:b=yes
+    volume_ambient_sound__fadeInOutSpeed:p2=1.0, 1.0
+    volume_ambient_sound__reverb_intensity_roomSize_absorption_blend:p4=0.0, 0.0, 0.0, 0.0
+
+    "volume_ambient_sound__event:SoundEvent"{
+    }
+  }
+
+  _group{
+    _tags:t="sound"
+    game_object_sound__path:t="ambient/positioned"
+  }
+}
+
+compound_ambient_sound_controller{
+  _use:t="replicating"
+  _singleton:b=yes
+
+  _group{
+    _tags:t="sound"
+    compound_ambient_sound_controller__curTypeId:i=-1
+  }
+
+  "compound_ambient_sound_controller__soundTypes:list<t>"{
+  }
+}
+
+compound_ambient_sound_type{
+  _use:t="replicating"
+  compound_ambient_sound_type__soundType:t="undefined"
+  compound_ambient_sound_type__path:t="positioned/ambient/undefined"
+  compound_ambient_sound_type__fadeInOutSpeed:p2=1.0, 1.0
+  compound_ambient_sound_type__reverb_intensity_roomSize_absorption_weight:p4=0.0, 0.0, 0.0, 0.0
+
+  _group{
+    _tags:t="sound"
+    compound_ambient_sound_type__volume:r=0.0
+    compound_ambient_sound_type__closestPt:p3=0.0, 0.0, 0.0
+    compound_ambient_sound_type__closestDistSq:r=0.0
+    compound_ambient_sound_type__range:r=0.0
+    compound_ambient_sound_type__autoRange:b=yes
+
+    "compound_ambient_sound_type__event:SoundEvent"{
+    }
+  }
+}
+
+replicated_volume_ambient_sound{
+  _use:t="volume_ambient_sound"
+  _use:t="replicating"
+}
+
+box_sound_shape{
+
+  _group{
+    _tags:t="sound"
+    sound_shape__type:t="box"
+
+    "boxSoundShape:tag"{
+    }
+  }
+}
+
+sphere_sound_shape{
+
+  _group{
+    _tags:t="sound"
+    sound_shape__type:t="sphere"
+
+    "sphereSoundShape:tag"{
+    }
+  }
+}
+
+capsule_sound_shape{
+
+  _group{
+    _tags:t="sound"
+    sound_shape__type:t="capsule"
+
+    "capsuleSoundShape:tag"{
+    }
+  }
+}
+
+sound_shape_debug{
+
+  _group{
+    _tags:t="sound"
+
+    "soundShapeDebug:tag"{
+    }
+  }
+}
+
+sound_field{
+  _use:t="replicating"
+  _singleton:b=yes
+  sound_field__cellSize:r=16.0
+
+  _group{
+    _tags:t="sound"
+    sound_field__offset:p2=0.0, 0.0
+    sound_field__numCells:ip2=0, 0
+
+    "sound_field__cells:list<u32>"{
+    }
+
+    "sound_field__tmsDebug:list<m>"{
+    }
+  }
+
+  "sound_field__biomeTypes:array"{
+  }
+
+  "sound_field__vars:list<t>"{
+  }
+}
+
+water_sound_field{
+  _use:t="replicating"
+  _singleton:b=yes
+  water_sound_field__cellSize:r=5.0
+  water_sound_field__depthThreshold:r=0.15
+  water_sound_field__worldAABB:p4=-1000.0, -1000.0, 1000.0, 1000.0
+  water_sound_field__waterLevel:r=1.5
+  water_sound_field__path:t="ambient/positioned/lake_mid"
+
+  _group{
+    _tags:t="sound"
+    water_sound_field__offset:p2=0.0, 0.0
+    water_sound_field__eventPos:p3=0.0, 0.0, 0.0
+    water_sound_field__numCells:ip2=0, 0
+    water_sound_field__eventRadius:r=0.0
+
+    "water_sound_field__cells:list<u8>"{
+    }
+
+    "water_sound_field__event:SoundEvent"{
+    }
+  }
+}
+
+biome_sound_query{
+  _use:t="replicating"
+  _singleton:b=yes
+
+  _group{
+    _tags:t="sound"
+    biome_sound_query__period:r=1.0
+    biome_sound_query__range:r=10.0
+    biome_sound_query__id:i=-1
+    biome_sound_query__nextQueryTime:r=0.0
+    biome_sound_query__timeRange:p2=0.0, 0.0
+
+    "biome_sound_query__values:list<p3>"{
+    }
+
+    "biome_sound_query__biomeNames:list<t>"{
+      name:t="forest"
+      name:t="grass"
+      name:t="swamp"
+    }
+
+    "biome_sound_query__varNames:list<t>"{
+      name:t="biome_forest"
+      name:t="biome_grass"
+      name:t="biome_swamp"
+    }
+  }
+}
+
+global_sound_var_base{
+  _use:t="replicating"
+  _singleton:b=yes
+}
+
+rain_global_sound_var{
+  _use:t="global_sound_var_base"
+
+  _group{
+    _tags:t="sound"
+    rain_global_sound_var__nextTime:r=0.0
+    rain_global_sound_var__name:t="rain"
+    rain_global_sound_var__mult:r=1.0
+    rain_global_sound_var__interval:r=1.0
+
+    "rain_global_sound_var__id:SoundVarId"{
+    }
+  }
+}
+
+daytime_global_sound_var{
+  _use:t="global_sound_var_base"
+
+  _group{
+    _tags:t="sound"
+    daytime_global_sound_var__nextTime:r=0.0
+    daytime_global_sound_var__name:t="daytime"
+    daytime_global_sound_var__interval:r=5.0
+
+    "daytime_global_sound_var__id:SoundVarId"{
+    }
+  }
+}
+
+altitude_global_sound_var{
+  _use:t="global_sound_var_base"
+
+  _group{
+    _tags:t="sound"
+    altitude_global_sound_var__nextTime:r=0.0
+    altitude_global_sound_var__name:t="altitude"
+    altitude_global_sound_var__interval:r=1.5
+    altitude_global_sound_var__altitudeToVar:p2=1.0, 0.0
+
+    "altitude_global_sound_var__id:SoundVarId"{
+    }
+  }
+}
+
+region_global_sound_var{
+  _use:t="global_sound_var_base"
+
+  _group{
+    _tags:t="sound"
+    region_global_sound_var__nextTime:r=0.0
+    region_global_sound_var__updateInterval:r=2.0
+    region_global_sound_var__name:t="region"
+
+    "region_global_sound_var__id:SoundVarId"{
+    }
+  }
+}
+
+birds_global_sound_var{
+  _use:t="global_sound_var_base"
+
+  _group{
+    _tags:t="sound"
+    birds_global_sound_var__value:r=-1.0
+    birds_global_sound_var__name:t="action"
+    birds_global_sound_var__noiseTime:r=-10.0
+    birds_global_sound_var__timeRange:p2=9.5, 10.0
+
+    "birds_global_sound_var__id:SoundVarId"{
+    }
+  }
+}
+
+global_sound_vars{
+  _use:t="rain_global_sound_var"
+  _use:t="daytime_global_sound_var"
+  _use:t="altitude_global_sound_var"
+  _use:t="region_global_sound_var"
+}
+
+base_menu_music{
+  _tracked:t="menu_music__theme"
+  _use:t="replicating"
+  _singleton:b=yes
+
+  _group{
+    _tags:t="sound"
+    menu_music__path:t=""
+    menu_music__var:t="menu_music_theme"
+    menu_music__theme:t=""
+
+    "menu_music__event:SoundEvent"{
+    }
+
+    "menu_music__themes:object"{
+    }
+  }
+}
+
+rendinst_tree_sounds{
+  _use:t="replicating"
+
+  _group{
+    _tags:t="sound"
+    rendinst_tree_sounds__fallingPath:t="env_effects/object_crash/tree"
+    rendinst_tree_sounds__falledPath:t="env_effects/object_crash/tree_fall"
+  }
+}
+
+generated_sound_effect{
+
+  _group{
+    _tags:t="sound"
+
+    "generatedSoundEffect:tag"{
+    }
+  }
+}
+
+game_object_sound_effect_generator{
+  _use:t="replicating"
+  _singleton:b=yes
+
+  "game_object_sound_effect_generator__gameObjectToEventPath:object"{
+  }
+
+  _group{
+    _tags:t="sound"
+    game_object_sound_effect_generator__entityTemplate:t="sound_effect_with_transform+generated_sound_effect"
+    game_object_sound_effect_generator__pathComponentName:t="sound_effect__path"
+  }
+}
+
+sound_occlusion{
+  _use:t="replicating"
+  _singleton:b=yes
+
+  _group{
+    _tags:t="sound"
+    sound_occlusion__indoorMul:r=1.0
+    sound_occlusion__outdoorMul:r=0.8
+    sound_occlusion__sourceIndoorMul:r=1.0
+    sound_occlusion__sourceOutdoorMul:r=0.8
+    sound_occlusion__undergroundDepthDist:r=3.0
+
+    "soundOcclusion:tag"{
+    }
+  }
+
+  _group{
+    _tags:t="sound"
+    _tags:t="dev"
+    sound_occlusion__debug:b=no
+    sound_occlusion__debugDist:r=500.0
+    sound_load_occluders_debug__filepath:t="config/rendinst_dmg.blk"
+    sel_ri_name:t=""
+  }
+
+  "sound_occlusion__occluderTypes:object"{
+    _tags:t="sound"
+  }
+
+  "sound_occlusion__ri_name_to_occluder_type:object"{
+    _tags:t="sound"
+  }
+}

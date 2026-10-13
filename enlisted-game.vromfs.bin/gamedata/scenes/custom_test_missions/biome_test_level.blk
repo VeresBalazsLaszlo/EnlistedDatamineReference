@@ -1,0 +1,131 @@
+entity{
+  _template:t="aircraft_box_battle_area"
+  transform:m=[[18586.6, 0.0, -24824.9] [0.0, 8000.03, 0.0] [24824.0, 0.0, 18587.7] [-102.581, 240.916, -845.005]]
+  battle_area__team:i=-1
+}
+
+entity{
+  _template:t="box_battle_area"
+  transform:m=[[18586.6, 0.0, -24824.9] [0.0, 8000.03, 0.0] [24824.0, 0.0, 18587.7] [-102.581, 240.916, -845.005]]
+  battle_area__team:i=-1
+}
+
+entity{
+  _template:t="static_cam"
+  camera__active:b=yes
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [180.9, 5.0, 104.573]]
+}
+
+entity{
+  _template:t="level"
+  level__blk:t="levels/biome_test_level.blk"
+  level__timeRange:p2=11.0, 13.0
+  level__day:i=16
+
+  "level__weatherChoice:object"{
+    weather_clear_a:r=1.0
+  }
+}
+
+entity{
+  _template:t="postfx_color_grading_tonemap_death_alive_enlisted"
+}
+
+entity{
+  _template:t="shaderVars"
+
+  "shader_vars__vars:object"{
+    hmap_displacement_up:r=0.3
+    ocean1:c=68, 70, 70, 0
+    ocean0:c=56, 59, 62, 0
+    ocean_density:r=1.0
+    land_selfillum_worldscale:r=0.9
+    river1:c=68, 70, 70, 0
+    river0:c=56, 59, 62, 0
+    hmap_displacement_down:r=-0.15
+    autodetect_land_selfillum_color:p4=0.53, 0.0, 0.0, 0.16
+    paint_details_tex:t="normandy_wall_color_tex_palette*"
+    land_selfillum_strength:r=32.0
+    water_color_noise_size:r=71.0
+    river_density:r=3.0
+  }
+}
+
+entity{
+  _template:t="team_usa"
+  team__id:i=1
+  team__roundScore:i=0
+  team__score:r=9000.0
+  team__scoreCap:r=9000.0
+  team__botTemplate:t="usa_npc_summer_soldier_1"
+}
+
+entity{
+  _template:t="team_germany"
+  team__id:i=2
+  team__roundScore:i=0
+  team__score:r=9000.0
+  team__scoreCap:r=9000.0
+}
+
+entity{
+  _template:t="respawnBase"
+  transform:m=[[-0.176704, 0.0, 0.984264] [0.0, 1.0, 0.0] [-0.984264, 0.0, -0.176704] [139.508, 4.42985, -322.546]]
+  team:i=-1
+}
+
+entity{
+  _template:t="water"
+  water__strength:r=0.3
+  water__level:r=0.0
+}
+
+entity{
+  _template:t="respawnChooser+respVehicle"
+  transform:m=[[-0.176704, 0.0, 0.984264] [0.0, 1.0, 0.0] [-0.984264, 0.0, -0.176704] [145.253, 4.42985, -321.69]]
+  team:i=-1
+  respTime:i=10
+  maxVehicleOnSpawn:i=100
+}
+
+entity{
+  _template:t="resupply_in_air_zone"
+  transform:m=[[-0.998928, 0.0, -0.0462803] [0.0, 1.0, 0.0] [0.0462803, 0.0, -0.998928] [-148.987, 313.62, 836.819]]
+  resupply_zone__team:i=-1
+}
+
+entity{
+  _template:t="respAircraftInAir"
+  respawnbaseType:t="aircraft_fighter"
+  transform:m=[[-0.723157, 0.0, 0.690686] [0.0, 1.0, 0.0] [-0.690685, 0.0, -0.723156] [1277.44, 735.23, -1305.65]]
+  team:i=-1
+  maxVehicleOnSpawn:i=10
+  respTime:i=10
+}
+
+entity{
+  _template:t="respAircraftInAir"
+  respawnbaseType:t="aircraft_assault"
+  transform:m=[[-0.78709, 0.0, 0.616839] [0.0, 1.0, 0.0] [-0.616839, 0.0, -0.78709] [1159.03, 535.23, -1437.5]]
+  team:i=-1
+  maxVehicleOnSpawn:i=10
+  respTime:i=10
+}
+
+entity{
+  _template:t="respAircraftInAir"
+  respawnbaseType:t="aircraft_fighter"
+  transform:m=[[-0.752403, 0.0, 0.658704] [0.0, 1.0, 0.0] [-0.658704, 0.0, -0.752403] [1167.3, 735.23, -1417.01]]
+  team:i=-1
+  maxVehicleOnSpawn:i=10
+  respTime:i=10
+}
+
+entity{
+  _template:t="respAircraftInAir"
+  respawnbaseType:t="aircraft_assault"
+  transform:m=[[-0.745794, 0.0, 0.666178] [0.0, 1.0, 0.0] [-0.666177, 0.0, -0.745793] [1277.44, 535.23, -1305.65]]
+  team:i=-1
+  maxVehicleOnSpawn:i=10
+  respTime:i=10
+}

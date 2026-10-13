@@ -1,0 +1,147 @@
+base_driver_cockpit{
+  _use:t="base_driver_cockpit_no_slits"
+  animchar__res:t="t_26_1940_driver_char"
+  cockpit__forwardOffsetDuration:r=0.2
+
+  "cockpit__slitForwardOffset:list<r>"{
+    slit:r=0.0
+  }
+
+  "cockpit__slitAngles:list<r>"{
+    slit:r=0.0
+  }
+
+  "cockpit__slitNodeNames:list<t>"{
+    slit:t="cam_front"
+  }
+}
+
+base_driver_cockpit_no_slits{
+  _use:t="base_cockpit"
+  _use:t="tank_cockpit_adaptation"
+  cockpit__minForwardOffset:r=-0.27
+
+  "animchar_render__nodeVisibleStgFilters:list<u8>"{
+    _tags:t="render"
+  }
+
+  "cockpit__slitZoom:array"{
+
+    "slit:list<r>"{
+      zoom:r=1.0
+    }
+
+    "slit:list<r>"{
+      zoom:r=1.0
+    }
+
+    "slit:list<r>"{
+      zoom:r=1.0
+    }
+
+    "slit:list<r>"{
+      zoom:r=1.0
+    }
+  }
+}
+
+base_gunner_cockpit{
+  _use:t="base_vehicle_sight"
+  _use:t="base_cockpit"
+  _use:t="tank_cockpit_lens_renderer"
+  _use:t="tank_cockpit_adaptation"
+  animchar__res:t="t_26_1940_gunner_char"
+  cockpit__minForwardOffset:r=-0.05
+  cockpit__slitTransitionDuration:r=0.0
+  cockpit__offset:p3=-0.35, -0.01, 0.22
+  cockpit__simplifiedRender:b=yes
+
+  "animchar_render__nodeVisibleStgFilters:list<u8>"{
+    _tags:t="render"
+  }
+
+  "cockpit__visibleVehicleNodeNames:list<t>"{
+    node:t="gun_barrel"
+  }
+
+  "cockpit__slitForwardOffset:list<r>"{
+    slit:r=0.2
+  }
+
+  "cockpit__slitNodeNames:list<t>"{
+    slit:t="cam_front"
+  }
+
+  "cockpit__slitIsGun:list<b>"{
+    slit:b=yes
+  }
+
+  "cockpit__slitZoom:array"{
+
+    "slit:list<r>"{
+      zoom:r=1.0
+    }
+
+    "slit:list<r>"{
+      zoom:r=1.0
+    }
+
+    "slit:list<r>"{
+      zoom:r=1.0
+    }
+  }
+}
+
+base_commander_cockpit{
+  _use:t="base_commander_cockpit_no_slits"
+  animchar__res:t="t_26_1940_commander_char"
+
+  "cockpit__slitForwardOffset:list<r>"{
+    slit:r=0.2
+  }
+
+  "cockpit__slitAngles:list<r>"{
+    slit:r=0.0
+  }
+
+  "cockpit__slitIsGun:list<b>"{
+    slit:b=no
+  }
+
+  "cockpit__slitNodeNames:list<t>"{
+    slit:t="cam_front"
+  }
+}
+
+base_commander_tower_cockpit{
+  _use:t="base_commander_cockpit_no_slits"
+  cockpit__forwardOffsetDuration:r=0.5
+  cockpit__slitTransitionDuration:r=0.2
+}
+
+base_commander_cockpit_no_slits{
+  _use:t="base_cockpit"
+  _use:t="tank_cockpit_lens_renderer"
+  _use:t="tank_cockpit_adaptation"
+
+  "animchar_render__nodeVisibleStgFilters:list<u8>"{
+    _tags:t="render"
+  }
+
+  "cockpit__slitZoom:array"{
+
+    "slit:list<r>"{
+      zoom:r=1.0
+    }
+  }
+}
+
+cockpit_slit_setter{
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, 0.0, 0.0]]
+  box_zone__scale:p3=2.0, 2.0, 2.0
+  cockpit_slit_setter__index:i=-1
+  _tracked:t="transform"
+
+  "cockpit_slit_setter__cockpitId:eid"{
+  }
+}

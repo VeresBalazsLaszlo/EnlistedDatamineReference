@@ -1,0 +1,32 @@
+normalizationPreset:t="heat"
+ricochetPreset:t="he"
+groundRicochetPreset:t="he"
+secondaryShattersPreset:t="ap"
+stabilityThreshold:r=0.5
+stabilityCaliberToArmorThreshold:r=5.0
+stabilityReductionAfterRicochet:r=0.3
+stabilityReductionAfterPenetration:r=0.15
+bulletType:t="he_bomb"
+slopeEffectPreset:t="ap"
+useEffectiveArmorThicknessForShatter:b=yes
+explodeOnRendinst:b=yes
+mass:r=213.1
+explosiveType:t="tnt"
+explosiveMass:r=65.5
+bombType:t="he_bomb"
+bombName:t="gp_500lb_mk_iv"
+dragCx:r=0.0257
+caliber:r=0.327
+length:r=1.793
+distFromCmToStab:r=0.02
+sound:t="weapon.bomb_std"
+
+stabilityRicochetModifier{
+  mod1:p2=0.0, 0.5
+  mod2:p2=15.0, 0.7
+  mod3:p2=30.0, 0.99
+}
+
+pressureDamage{
+  damageType:t="pressure"
+}

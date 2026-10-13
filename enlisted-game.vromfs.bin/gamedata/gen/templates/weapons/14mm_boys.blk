@@ -1,0 +1,44 @@
+base_14mm_boys{
+  item__name:t="guns/atr_boys"
+  gun__blk:t="gamedata/gen/weapons/14mm_boys.blk"
+  gun__shotFreq:r=0.55
+  gun__reloadTime:r=4.4
+  gun__maxAmmo:i=5
+  gun__locName:t="atr_boys"
+
+  "gun__firingModes:array"{
+
+    "mode:object"{
+      modeType:t="automatic"
+    }
+  }
+
+  "gun__firingModeNames:array"{
+    mode:t="automatic"
+  }
+
+  "gun__ammoSetsInfo:shared:array"{
+
+    "defaultSet:array"{
+
+      "shell:object"{
+        blk:t="gamedata/weapons/bullets/13.9x99_boys.blk"
+        name:t="14mm_ap"
+        type:t="ap_ball"
+      }
+    }
+  }
+}
+
+tankgun_14mm_boys{
+  _use:t="tankgun"
+  _use:t="base_tankgun_autocannon"
+  _use:t="base_14mm_boys"
+  _use:t="gunsound_37mm_flak36"
+  turret__triggerGroup:i=0
+
+  "gun_sound__shotPath:shared:object"{
+    _tags:t="sound"
+    path:t="/weapon/antivehicle/ptrs41"
+  }
+}

@@ -1,0 +1,45 @@
+physical_track{
+  _use:t="animchar"
+  _use:t="animchar_act_on_demand"
+  animchar__res:t=""
+  animchar_render__enabled:b=yes
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, 0.0, 0.0]]
+
+  "physical_tracks__parentEid:eid"{
+  }
+}
+
+vehicle_physical_tracks{
+  physical_tracks__blk:t=""
+  physical_tracks__modBlk:t=""
+
+  "physical_tracks__breakPoints:list<p3>"{
+    _replicate:b=yes
+    _track:b=yes
+  }
+
+  _group{
+    _tags:t="render"
+    physical_tracks_force_update:b=no
+
+    physical_tracks{
+    }
+
+    "physical_tracks__eids:list<eid>"{
+    }
+
+    "physical_tracks__isLeft:list<b>"{
+    }
+
+    "physical_tracks__replaceNodeIds:list<i>"{
+    }
+
+    "physical_tracks__replaceNodeDmgIds:list<i>"{
+    }
+  }
+
+  _group{
+    _tags:t="dev"
+    physical_tracks__debug:b=no
+  }
+}

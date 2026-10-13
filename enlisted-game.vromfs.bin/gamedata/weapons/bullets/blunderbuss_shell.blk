@@ -1,0 +1,38 @@
+mass:r=0.0031
+cartridgeMass:r=0.044
+caliber:r=0.0021
+speed:r=100.0
+maxDistance:r=2000.0
+bulletType:t="ball"
+hitPowerMult:r=4.0
+effectiveDistance:r=20.0
+relativeVelHitShift:p2=300.0, 1000.0
+relativeVelArmorShift:p2=200.0, 1000.0
+
+spawn{
+  minCount:i=14
+  maxCount:i=14
+  spread:r=8.0
+}
+
+hitpower{
+  HitPower10m:p2=1.0, 10.0
+  HitPower40m:p2=0.8, 40.0
+  HitPower100m:p2=0.1, 100.0
+  HitPower200m:p2=0.01, 200.0
+}
+
+armorpower{
+  ArmorPower0m:p2=0.5, 300.0
+  ArmorPower1500m:p2=0.1, 1500.0
+}
+
+tracer{
+  ignitionTime:r=0.002
+  smokeColor:c=255, 230, 179, 204
+  smokeTime:r=0.1
+  smokeRadius:r=0.03
+  headColor:c=255, 170, 85, 255
+  luminosity:r=6.0
+  burnTime:r=0.18
+}

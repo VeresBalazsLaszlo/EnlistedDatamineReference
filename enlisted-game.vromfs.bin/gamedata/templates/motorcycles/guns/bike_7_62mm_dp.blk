@@ -1,0 +1,82 @@
+bike_7_62mm_dp{
+  _use:t="tankgun"
+  _use:t="base_tankgun_machinegun"
+  _use:t="tankgun_7_62mm_dt"
+  _use:t="gun_switch_firing_mode_sound"
+  _use:t="mgun_gun_aim_sound"
+  _use:t="machinegun_gun_overheat_sound"
+  _use:t="machinegun_gun_reload_sounds"
+  turret__triggerGroup:i=0
+  item__name:t="guns/7_62mm_dp"
+  gun__blk:t="gamedata/weapons/dp_27.blk"
+  gun__locName:t="7_62mm_dp"
+  gun__shotFreq:r=9.2
+  gun__maxAmmo:i=47
+  gun__reloadTime:r=3.76
+  gun__altReloadTime:r=2.5
+  gun_shell_ejection__timeMult:r=0.35
+  gun__length:r=0.4
+  gun__recoilAmount:r=0.055
+  gun__recoilDirAmount:r=0.65
+  gun__recoilDir:r=0.0
+  gun__visualRecoilMult:r=0.4
+  gun__recoilControlMult:r=0.9
+  gun__recoilOffsMult:r=0.1
+  gun__isOverheat:b=no
+  gun__overheat:r=0.0
+  gun__overheatPerShot:r=0.0
+  gun_spread__maxDeltaAngle:r=0.3
+
+  "gun__ammoSetsInfo:shared:array"{
+
+    "defaultSet:array"{
+
+      "shell:object"{
+        blk:t="gamedata/templates/motorcycles/guns/7_92x57_mauser_bike.blk"
+        type:t="ap_i_ball"
+      }
+    }
+  }
+
+  _group{
+    _tags:t="sound"
+    gun_sound__forceOneshot:b=yes
+  }
+
+  "gun_sound__shotPath:shared:object"{
+    _tags:t="sound"
+    path:t="/weapon/mgun/dp27"
+  }
+
+  "sound_irqs:shared:object"{
+    _tags:t="sound"
+
+    "reload:object"{
+      path:t="/weapon/mgun/dp27/reload"
+    }
+
+    "reload_alt:object"{
+      path:t="/weapon/mgun/dp27/reload_alt"
+    }
+
+    "reload1:object"{
+      path:t="/weapon/mgun/dp27/reload1/change_ammo"
+    }
+
+    "reload2:object"{
+      path:t="/weapon/mgun/dp27/reload2/change_ammo"
+    }
+
+    "reload3:object"{
+      path:t="/weapon/mgun/dp27/reload3/change_ammo"
+    }
+
+    "reload4:object"{
+      path:t="/weapon/mgun/dp27/reload4/change_ammo"
+    }
+
+    "reload5:object"{
+      path:t="/weapon/mgun/dp27/reload5/change_ammo"
+    }
+  }
+}

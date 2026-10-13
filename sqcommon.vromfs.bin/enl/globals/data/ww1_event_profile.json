@@ -1,0 +1,3690 @@
+{
+  "ger_ww1": {
+    "armyId": "ger_ww1",
+    "campaignId": "common",
+    "country": "germany",
+    "curSquadId": "ger_moscow_rifle_1",
+    "disableAnyTeamBonus": false,
+    "hasBadDesertionStats": false,
+    "isFakeSquads": false,
+    "isFirstBattleExp": false,
+    "offerGuid": "",
+    "squads": [
+      {
+        "artilleryCooldownMul": 1.0,
+        "artilleryTypeUnlocks": [],
+        "curVehicle": null,
+        "enableSquadRotationWithVehicle": false,
+        "engineerUnlocks": [],
+        "exp": 0,
+        "expBonus": 1.0,
+        "hasAllArtillery": false,
+        "hasRocketArtillery": false,
+        "isParatroopers": false,
+        "isRented": false,
+        "level": 42,
+        "paratrooperBoxUnlocks": [],
+        "spawnWithoutVehicleAvailable": false,
+        "squad": [
+          {
+            "bodyScale": {
+              "height": 0.9913821816444397,
+              "width": 1.0218707323074341
+            },
+            "callname": "",
+            "country": "germany",
+            "equipment": {
+              "face": {
+                "gametemplate": "attachable_wear_head_male_23_ger_item",
+                "slot": "face"
+              },
+              "gloves": {
+                "gametemplate": "attachable_wear_hands_01_ussr_summer_item",
+                "slot": "gloves"
+              },
+              "skined_helmet": {
+                "gametemplate": "attachable_wear_ger_m17_helmet_item",
+                "slot": "skined_helmet"
+              },
+              "pants": {
+                "gametemplate": "attachable_wear_ger_pants_w_m14_boots_item",
+                "slot": "pants"
+              },
+              "tunic": {
+                "gametemplate": "attachable_wear_ger_m15_bluse_w_equip_item",
+                "slot": "tunic"
+              }
+            },
+            "exp": 0,
+            "gametemplate": "ger_base_soldier",
+            "guid": "2220332996",
+            "human_weap__weapInfo": [
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 6,
+                "reserveAmmoTemplate": "mauser98k_magazine"
+              },
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 0,
+                "reserveAmmoTemplate": ""
+              },
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 0,
+                "reserveAmmoTemplate": ""
+              },
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 0,
+                "reserveAmmoTemplate": ""
+              },
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 0,
+                "reserveAmmoTemplate": ""
+              }
+            ],
+            "human_weap__weapInitialComponents": [{}, {}, {}, {}, {}],
+            "human_weap__weapTemplates": {
+              "grenade": "grenade_thrower",
+              "melee": "gear_trench_club_weapon",
+              "primary": "gewehr_88_gun",
+              "secondary": "",
+              "tertiary": ""
+            },
+            "id": 8,
+            "inventory": [
+              {
+                "gametemplate": "germ_medkit_item"
+              },
+              {
+                "gametemplate": "explosion_pack_item"
+              },
+              {
+                "gametemplate": "ger_ww1_gasmask_weapon_item"
+              }
+            ],
+            "isHero": false,
+            "isPremium": false,
+            "level": 5,
+            "maxLevel": 5,
+            "name": "Johannnes",
+            "perkPoints": {
+              "speed": 17,
+              "vitality": 17,
+              "weapon": 17
+            },
+            "perks": [
+              {
+                "name": "starter_rifle",
+                "stats": [
+                  {
+                    "statKey": "faster_decreasing_of_maximum_shot_spread",
+                    "statValue": 0.10499999672174454
+                  }
+                ]
+              },
+              {
+                "name": "longer_hold_breath_cd",
+                "stats": [
+                  {
+                    "statKey": "longer_hold_breath_cd",
+                    "statValue": 0.5
+                  }
+                ]
+              },
+              {
+                "name": "hp_regeneration",
+                "stats": [
+                  {
+                    "statKey": "hp_regen_speed",
+                    "statValue": 0.10000000149011612
+                  },
+                  {
+                    "statKey": "hp_regeneration",
+                    "statValue": 0.20000000298023224
+                  }
+                ]
+              },
+              {
+                "name": "sprint_speed",
+                "stats": [
+                  {
+                    "statKey": "sprint_speed",
+                    "statValue": 0.15
+                  }
+                ]
+              },
+              {
+                "name": "stamina_regeneration",
+                "stats": [
+                  {
+                    "statKey": "stamina_regeneration",
+                    "statValue": 1.0
+                  }
+                ]
+              },
+              {
+                "name": "crawl_crouch_speed",
+                "stats": [
+                  {
+                    "statKey": "crawl_crouch_speed",
+                    "statValue": 0.20000000298023224
+                  }
+                ]
+              },
+              {
+                "name": "heal_speed",
+                "stats": [
+                  {
+                    "statKey": "heal_speed",
+                    "statValue": 0.25
+                  }
+                ]
+              },
+              {
+                  "name": "stamina_boost",
+                  "stats": [
+                    {
+                      "statKey": "stamina_boost",
+                      "statValue": 1.0
+                    }
+                  ]
+                }
+            ],
+            "sClass": "rifle",
+            "sKind": "rifle",
+            "surname": "Geppert",
+            "tier": 5,
+            "weaponPreset": ""
+          }
+        ],
+        "squadId": "ww1_ger_rifleman_1_event_squad",
+        "squadType": "rifle",
+        "vehicleType": "",
+        "disableSquadRotation" : true,
+        "spawnCostTeamScoreMult" : 1,
+        "spawnScoreGainMult": 1.0,
+        "spawnCostPerSpawnPersonalScore": [0]
+      },
+      {
+        "artilleryCooldownMul": 1.0,
+        "artilleryTypeUnlocks": [],
+        "curVehicle": null,
+        "enableSquadRotationWithVehicle": false,
+        "engineerUnlocks": [3],
+        "exp": 0,
+        "expBonus": 1.0,
+        "hasAllArtillery": false,
+        "hasRocketArtillery": false,
+        "isParatroopers": false,
+        "isRented": false,
+        "level": 41,
+        "paratrooperBoxUnlocks": [],
+        "spawnWithoutVehicleAvailable": false,
+        "squad": [
+          {
+            "bodyScale": {
+              "height": 1.0001434087753296,
+              "width": 1.0248005390167236
+            },
+            "callname": "",
+            "country": "germany",
+            "equipment": {
+              "face": {
+                "gametemplate": "hero_head_ger_halloween_2024",
+                "slot": "face"
+              },
+              "gloves": {
+                "gametemplate": "attachable_wear_hands_01_ussr_summer_item",
+                "slot": "gloves"
+              },
+              "pants": {
+                "gametemplate": "attachable_wear_ger_pants_w_m14_boots_item",
+                "slot": "pants"
+              },
+              "skined_helmet": {
+                "gametemplate": "attachable_wear_ger_m17_helmet_item",
+                "slot": "skined_helmet"
+              },
+              "tunic": {
+                "gametemplate": "attachable_wear_ger_m1907_tunic_item",
+                "slot": "tunic"
+              }
+            },
+            "exp": 0,
+            "gametemplate": "ger_base_soldier",
+            "guid": "2220334840",
+            "human_weap__weapInfo": [
+              {
+                "gunSlots": {
+                  "bayonet": "m1898_05_bayonet_item"
+                },
+                "numReserveAmmo": 6,
+                "reserveAmmoTemplate": "gewehr_41_magazine"
+              },
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 0,
+                "reserveAmmoTemplate": ""
+              },
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 0,
+                "reserveAmmoTemplate": ""
+              },
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 0,
+                "reserveAmmoTemplate": ""
+              },
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 0,
+                "reserveAmmoTemplate": ""
+              }
+            ],
+            "human_weap__weapInitialComponents": [{}, {}, {}, {}, {}],
+            "human_weap__weapTemplates": {
+              "grenade": "grenade_thrower",
+              "melee": "ww1_shovel_weapon",
+              "primary": "mondragon_m1908_10_round_gun",
+              "secondary": "ger_ww1_building_tool_gun",
+              "tertiary": ""
+            },
+            "id": 0,
+            "inventory": [
+              {
+                "gametemplate": "germ_medkit_item"
+              },
+              {
+                "gametemplate": "explosion_pack_item"
+              },
+              {
+                "gametemplate": "ger_ww1_gasmask_weapon_item"
+              }
+            ],
+            "isHero": false,
+            "isPremium": false,
+            "level": 5,
+            "maxLevel": 5,
+            "name": "Reinhard",
+            "perkPoints": {
+              "speed": 17,
+              "vitality": 18,
+              "weapon": 16
+            },
+            "perks": [
+              {
+                "name": "starter_engineer",
+                "stats": [
+                  {
+                    "statKey": "crawl_crouch_speed",
+                    "statValue": 0.20999999344348907
+                  }
+                ]
+              },
+              {
+                "name": "faster_building_speed",
+                "stats": [
+                  {
+                    "statKey": "faster_building_speed",
+                    "statValue": 0.5
+                  }
+                ]
+              },
+              {
+                "name": "longer_hold_breath_cd",
+                "stats": [
+                  {
+                    "statKey": "longer_hold_breath_cd",
+                    "statValue": 0.5
+                  }
+                ]
+              },
+              {
+                "name": "hp_regeneration",
+                "stats": [
+                  {
+                    "statKey": "hp_regen_speed",
+                    "statValue": 0.10000000149011612
+                  },
+                  {
+                    "statKey": "hp_regeneration",
+                    "statValue": 0.20000000298023224
+                  }
+                ]
+              },
+              {
+                "name": "sprint_speed",
+                "stats": [
+                  {
+                    "statKey": "sprint_speed",
+                    "statValue": 0.15
+                  }
+                ]
+              },
+              {
+                "name": "stamina_regeneration",
+                "stats": [
+                  {
+                    "statKey": "stamina_regeneration",
+                    "statValue": 1.0
+                  }
+                ]
+              },
+              {
+                "name": "crawl_crouch_speed",
+                "stats": [
+                  {
+                    "statKey": "crawl_crouch_speed",
+                    "statValue": 0.20000000298023224
+                  }
+                ]
+              },
+              {
+                "name": "heal_speed",
+                "stats": [
+                  {
+                    "statKey": "heal_speed",
+                    "statValue": 0.25
+                  }
+                ]
+              },
+              {
+                  "name": "stamina_boost",
+                  "stats": [
+                    {
+                      "statKey": "stamina_boost",
+                      "statValue": 1.0
+                    }
+                  ]
+                }
+            ],
+            "sClass": "engineer",
+            "sKind": "engineer",
+            "surname": "Rust",
+            "tier": 5,
+            "weaponPreset": ""
+          }
+        ],
+        "squadId": "ww1_ger_engineer_1_event_squad",
+        "squadType": "engineer",
+        "vehicleType": "",
+        "disableSquadRotation" : false,
+        "spawnCostTeamScoreMult" : 1,
+        "spawnScoreGainMult": 1.0,
+        "spawnCostPerSpawnPersonalScore": [250]
+      },
+      {
+        "artilleryCooldownMul": 1.0,
+        "artilleryTypeUnlocks": [],
+        "curVehicle": null,
+        "enableSquadRotationWithVehicle": false,
+        "engineerUnlocks": [],
+        "exp": 0,
+        "expBonus": 1.0,
+        "hasAllArtillery": false,
+        "hasRocketArtillery": false,
+        "isParatroopers": false,
+        "isRented": false,
+        "level": 66,
+        "paratrooperBoxUnlocks": [],
+        "spawnWithoutVehicleAvailable": false,
+        "squad": [
+          {
+            "bodyScale": {
+              "height": 1.017735481262207,
+              "width": 1.0023071765899658
+            },
+            "callname": "",
+            "country": "germany",
+            "equipment": {
+              "face": {
+                "gametemplate": "ger_gen_head_22",
+                "slot": "face"
+              },
+              "gloves": {
+                "gametemplate": "attachable_wear_hands_01_ussr_summer_item",
+                "slot": "gloves"
+              },
+              "pants": {
+                "gametemplate": "attachable_wear_ger_pants_w_m14_boots_item",
+                "slot": "pants"
+              },
+              "skined_helmet": {
+                "gametemplate": "attachable_wear_ger_m17_helmet_item",
+                "slot": "skined_helmet"
+              },
+              "tunic": {
+                "gametemplate": "attachable_wear_ger_m15_bluse_w_equip_item",
+                "slot": "tunic"
+              }
+            },
+            "exp": 0,
+            "gametemplate": "ger_base_soldier",
+            "guid": "2220340154",
+            "human_weap__weapInfo": [
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 7,
+                "reserveAmmoTemplate": "mp_18_magazine"
+              },
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 0,
+                "reserveAmmoTemplate": ""
+              },
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 0,
+                "reserveAmmoTemplate": ""
+              },
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 0,
+                "reserveAmmoTemplate": ""
+              },
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 0,
+                "reserveAmmoTemplate": ""
+              }
+            ],
+            "human_weap__weapInitialComponents": [{}, {}, {}, {}, {}],
+            "human_weap__weapTemplates": {
+              "grenade": "grenade_thrower",
+              "melee": "gear_trench_club_weapon",
+              "primary": "mp_18_ww1_gun",
+              "secondary": "",
+              "tertiary": ""
+            },
+            "id": 0,
+            "inventory": [
+              {
+                "gametemplate": "germ_medkit_item"
+              },
+              {
+                "gametemplate": "m24_grenade_item"
+              },
+              {
+                "gametemplate": "m24_grenade_item"
+              },
+              {
+                "gametemplate": "ger_ww1_gasmask_weapon_item"
+              }
+            ],
+            "isHero": false,
+            "isPremium": false,
+            "level": 5,
+            "maxLevel": 5,
+            "name": "Heinrch",
+            "perkPoints": {
+              "speed": 18,
+              "vitality": 16,
+              "weapon": 17
+            },
+            "perks": [
+              {
+                "name": "starter_assault",
+                "stats": [
+                  {
+                    "statKey": "climb_speed",
+                    "statValue": 0.34999999403953552
+                  }
+                ]
+              },
+              {
+                "name": "longer_hold_breath_cd",
+                "stats": [
+                  {
+                    "statKey": "longer_hold_breath_cd",
+                    "statValue": 0.5
+                  }
+                ]
+              },
+              {
+                "name": "hp_regeneration",
+                "stats": [
+                  {
+                    "statKey": "hp_regen_speed",
+                    "statValue": 0.10000000149011612
+                  },
+                  {
+                    "statKey": "hp_regeneration",
+                    "statValue": 0.20000000298023224
+                  }
+                ]
+              },
+              {
+                "name": "sprint_speed",
+                "stats": [
+                  {
+                    "statKey": "sprint_speed",
+                    "statValue": 0.15
+                  }
+                ]
+              },
+              {
+                "name": "stamina_regeneration",
+                "stats": [
+                  {
+                    "statKey": "stamina_regeneration",
+                    "statValue": 1.0
+                  }
+                ]
+              },
+              {
+                "name": "crawl_crouch_speed",
+                "stats": [
+                  {
+                    "statKey": "crawl_crouch_speed",
+                    "statValue": 0.20000000298023224
+                  }
+                ]
+              },
+              {
+                "name": "heal_speed",
+                "stats": [
+                  {
+                    "statKey": "heal_speed",
+                    "statValue": 0.25
+                  }
+                ]
+              },
+              {
+                  "name": "stamina_boost",
+                  "stats": [
+                    {
+                      "statKey": "stamina_boost",
+                      "statValue": 1.0
+                    }
+                  ]
+                }
+            ],
+            "sClass": "assault",
+            "sKind": "assault",
+            "surname": "Zepner",
+            "tier": 5,
+            "weaponPreset": ""
+          }
+        ],
+        "squadId": "ww1_ger_assaulter_1_event_squad",
+        "squadType": "assault",
+        "vehicleType": "",
+        "disableSquadRotation" : false,
+        "spawnCostTeamScoreMult" : 1,
+        "spawnScoreGainMult": 1.0,
+        "spawnCostPerSpawnPersonalScore": [350]
+      },
+      {
+        "artilleryCooldownMul": 1.0,
+        "artilleryTypeUnlocks": [],
+        "curVehicle": null,
+        "enableSquadRotationWithVehicle": false,
+        "engineerUnlocks": [5],
+        "exp": 0,
+        "expBonus": 1.0,
+        "hasAllArtillery": false,
+        "hasRocketArtillery": false,
+        "isParatroopers": false,
+        "isRented": false,
+        "level": 38,
+        "paratrooperBoxUnlocks": [],
+        "spawnWithoutVehicleAvailable": false,
+        "squad": [
+          {
+            "bodyScale": {
+              "height": 0.99179238080978394,
+              "width": 1.0601483583450317
+            },
+            "callname": "",
+            "country": "germany",
+            "equipment": {
+              "face": {
+                "gametemplate": "attachable_wear_head_male_23_ger_item",
+                "slot": "face"
+              },
+              "gloves": {
+                "gametemplate": "attachable_wear_hands_01_ussr_summer_item",
+                "slot": "gloves"
+              },
+              "pants": {
+                "gametemplate": "attachable_wear_ger_pants_w_m14_boots_item",
+                "slot": "pants"
+              },
+              "skined_helmet": {
+                "gametemplate": "attachable_wear_ger_m17_helmet_item",
+                "slot": "skined_helmet"
+              },
+              "tunic": {
+                "gametemplate": "attachable_wear_ger_m15_bluse_w_equip_item",
+                "slot": "tunic"
+              }
+            },
+            "exp": 0,
+            "gametemplate": "ger_base_soldier",
+            "guid": "2220336746",
+            "human_weap__weapInfo": [
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 6,
+                "reserveAmmoTemplate": "madsen_magazine"
+              },
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 0,
+                "reserveAmmoTemplate": ""
+              },
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 0,
+                "reserveAmmoTemplate": ""
+              },
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 0,
+                "reserveAmmoTemplate": ""
+              },
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 0,
+                "reserveAmmoTemplate": ""
+              }
+            ],
+            "human_weap__weapInitialComponents": [{}, {}, {}, {}, {}],
+            "human_weap__weapTemplates": {
+              "grenade": "grenade_thrower",
+              "melee": "ger_axe_weapon",
+              "primary": "madsen_ww1_gun",
+              "secondary": "",
+              "tertiary": ""
+            },
+            "id": 0,
+            "inventory": [
+              {
+                "gametemplate": "germ_medkit_item"
+              },
+              {
+                "gametemplate": "m24_grenade_item"
+              },
+              {
+                "gametemplate": "ger_ww1_gasmask_weapon_item"
+              }
+            ],
+            "isHero": false,
+            "isPremium": false,
+            "level": 5,
+            "maxLevel": 5,
+            "name": "Luitpold",
+            "perkPoints": {
+              "speed": 16,
+              "vitality": 16,
+              "weapon": 19
+            },
+            "perks": [
+              {
+                "name": "starter_mgun",
+                "stats": [
+                  {
+                    "statKey": "run_speed",
+                    "statValue": 0.035000000149011612
+                  }
+                ]
+              },
+              {
+                "name": "longer_hold_breath_cd",
+                "stats": [
+                  {
+                    "statKey": "longer_hold_breath_cd",
+                    "statValue": 0.5
+                  }
+                ]
+              },
+              {
+                "name": "hp_regeneration",
+                "stats": [
+                  {
+                    "statKey": "hp_regen_speed",
+                    "statValue": 0.10000000149011612
+                  },
+                  {
+                    "statKey": "hp_regeneration",
+                    "statValue": 0.20000000298023224
+                  }
+                ]
+              },
+              {
+                "name": "sprint_speed",
+                "stats": [
+                  {
+                    "statKey": "sprint_speed",
+                    "statValue": 0.15
+                  }
+                ]
+              },
+              {
+                "name": "stamina_regeneration",
+                "stats": [
+                  {
+                    "statKey": "stamina_regeneration",
+                    "statValue": 1.0
+                  }
+                ]
+              },
+              {
+                "name": "crawl_crouch_speed",
+                "stats": [
+                  {
+                    "statKey": "crawl_crouch_speed",
+                    "statValue": 0.20000000298023224
+                  }
+                ]
+              },
+              {
+                "name": "heal_speed",
+                "stats": [
+                  {
+                    "statKey": "heal_speed",
+                    "statValue": 0.25
+                  }
+                ]
+              },
+              {
+                  "name": "stamina_boost",
+                  "stats": [
+                    {
+                      "statKey": "stamina_boost",
+                      "statValue": 1.0
+                    }
+                  ]
+                }
+            ],
+            "sClass": "mgun",
+            "sKind": "mgun",
+            "surname": "Ruehle",
+            "tier": 5,
+            "weaponPreset": ""
+          }
+        ],
+        "squadId": "ww1_ger_mgun_1_event_squad",
+        "squadType": "mgun",
+        "vehicleType": "",
+        "disableSquadRotation" : false,
+        "spawnCostTeamScoreMult" : 1,
+        "spawnScoreGainMult": 1.0,
+        "spawnCostPerSpawnPersonalScore": [400]
+      },
+      {
+        "artilleryCooldownMul": 1.0,
+        "artilleryTypeUnlocks": [],
+        "curVehicle": {
+          "gametemplate": "germ_a7v",
+          "growthTier": 1,
+          "guid": "2220335571",
+          "mods": [
+            {
+              "statKey": "gun_spread__maxDeltaAngle",
+              "statValue": 1.1499999761581421
+            },
+            {
+              "statKey": "track_friction_side_rot_min_speed",
+              "statValue": 1.1000000238418579
+            },
+            {
+              "statKey": "track_friction_side_rot_max_speed",
+              "statValue": 1.1000000238418579
+            },
+            {
+              "statKey": "track_friction_side_rot_min_friction",
+              "statValue": 0.89999997615814209
+            },
+            {
+              "statKey": "track_friction_side_rot_max_friction",
+              "statValue": 0.89999997615814209
+            },
+            {
+              "statKey": "suspension_dampening",
+              "statValue": 0.85000002384185791
+            },
+            {
+              "statKey": "turret_ver_speed",
+              "statValue": 0.80000001192092896
+            },
+            {
+              "statKey": "engine_power",
+              "statValue": 0.85000002384185791
+            },
+            {
+              "statKey": "turret_hor_speed",
+              "statValue": 0.85000002384185791
+            },
+            {
+              "statKey": "track_friction_frontal_static",
+              "statValue": 1.0499999523162842
+            },
+            {
+              "statKey": "braking_force",
+              "statValue": 0.85000002384185791
+            },
+            {
+              "statKey": "track_friction_frontal_sliding",
+              "statValue": 1.1000000238418579
+            }
+          ]
+        },
+        "enableSquadRotationWithVehicle": false,
+        "engineerUnlocks": [],
+        "exp": 0,
+        "expBonus": 1.0,
+        "hasAllArtillery": false,
+        "hasRocketArtillery": false,
+        "isParatroopers": false,
+        "isRented": false,
+        "level": 71,
+        "paratrooperBoxUnlocks": [],
+        "spawnWithoutVehicleAvailable": false,
+        "squad": [
+          {
+            "bodyScale": {
+              "height": 1.0010076761245728,
+              "width": 1.0404602289199829
+            },
+            "callname": "",
+            "country": "germany",
+            "equipment": {
+              "face": {
+                "gametemplate": "attachable_wear_head_male_10_us_item",
+                "slot": "face"
+              },
+              "gloves": {
+                "gametemplate": "attachable_wear_gloves_01_ger_winter_item",
+                "slot": "gloves"
+              },
+              "skined_helmet": {
+                "gametemplate": "attachable_wear_ger_ww1_tank_helmet_item",
+                "slot": "skined_helmet"
+              },
+              "tunic": {
+                "gametemplate": "attachable_wear_ger_ww1_tanker_overcoat_item",
+                "slot": "tunic"
+              }
+            },
+            "exp": 0,
+            "gametemplate": "ger_base_soldier",
+            "guid": "2220346342",
+            "human_weap__weapInfo": [
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 0,
+                "reserveAmmoTemplate": ""
+              },
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 0,
+                "reserveAmmoTemplate": ""
+              },
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 5,
+                "reserveAmmoTemplate": "mauser_c96_magazine"
+              },
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 0,
+                "reserveAmmoTemplate": ""
+              },
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 0,
+                "reserveAmmoTemplate": ""
+              }
+            ],
+            "human_weap__weapInitialComponents": [{}, {}, {}, {}, {}],
+            "human_weap__weapTemplates": {
+              "grenade": "grenade_thrower",
+              "melee": "ger_axe_weapon",
+              "primary": "",
+              "secondary": "",
+              "tertiary": "mauser_c96_gun"
+            },
+            "id": 0,
+            "inventory": [
+              {
+                "gametemplate": "ger_repair_kit_item"
+              }
+            ],
+            "isHero": false,
+            "isPremium": false,
+            "level": 5,
+            "maxLevel": 5,
+            "name": "Heinz",
+            "perkPoints": {
+              "speed": 19,
+              "vitality": 14,
+              "weapon": 18
+            },
+            "perks": [
+              {
+                "name": "starter_tanker",
+                "stats": [
+                  {
+                    "statKey": "seat_change_speed",
+                    "statValue": 0.09960000216960907
+                  }
+                ]
+              }
+            ],
+            "sClass": "tanker",
+            "sKind": "tanker",
+            "surname": "Shmulke",
+            "tier": 5,
+            "weaponPreset": ""
+          },
+          {
+            "bodyScale": {
+              "height": 0.98057007789611816,
+              "width": 1.0495327711105347
+            },
+            "callname": "",
+            "country": "germany",
+            "equipment": {
+              "face": {
+                "gametemplate": "attachable_wear_head_male_31_us_item",
+                "slot": "face"
+              },
+              "gloves": {
+                "gametemplate": "attachable_wear_gloves_01_ger_winter_item",
+                "slot": "gloves"
+              },
+              "skined_helmet": {
+                "gametemplate": "attachable_wear_ger_ww1_tank_helmet_item",
+                "slot": "skined_helmet"
+              },
+              "tunic": {
+                "gametemplate": "attachable_wear_ger_ww1_tanker_overcoat_item",
+                "slot": "tunic"
+              }
+            },
+            "exp": 0,
+            "gametemplate": "ger_base_soldier",
+            "guid": "2220349173",
+            "human_weap__weapInfo": [
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 0,
+                "reserveAmmoTemplate": ""
+              },
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 0,
+                "reserveAmmoTemplate": ""
+              },
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 5,
+                "reserveAmmoTemplate": "mauser_c96_magazine"
+              },
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 0,
+                "reserveAmmoTemplate": ""
+              },
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 0,
+                "reserveAmmoTemplate": ""
+              }
+            ],
+            "human_weap__weapInitialComponents": [{}, {}, {}, {}, {}],
+            "human_weap__weapTemplates": {
+              "grenade": "grenade_thrower",
+              "melee": "ger_axe_weapon",
+              "primary": "",
+              "secondary": "",
+              "tertiary": "mauser_c96_gun"
+            },
+            "id": 1,
+            "inventory": [
+              {
+                "gametemplate": "ger_repair_kit_item"
+              }
+            ],
+            "isHero": false,
+            "isPremium": false,
+            "level": 5,
+            "maxLevel": 5,
+            "name": "Ercih",
+            "perkPoints": {
+              "speed": 19,
+              "vitality": 14,
+              "weapon": 18
+            },
+            "perks": [
+              {
+                "name": "starter_tanker",
+                "stats": [
+                  {
+                    "statKey": "seat_change_speed",
+                    "statValue": 0.09960000216960907
+                  }
+                ]
+              }
+            ],
+            "sClass": "tanker",
+            "sKind": "tanker",
+            "surname": "Laue",
+            "tier": 5,
+            "weaponPreset": ""
+          },
+          {
+            "bodyScale": {
+              "height": 1.0053377151489258,
+              "width": 1.0213873386383057
+            },
+            "callname": "",
+            "country": "germany",
+            "equipment": {
+              "face": {
+                "gametemplate": "attachable_wear_head_male_10_us_item",
+                "slot": "face"
+              },
+              "gloves": {
+                "gametemplate": "attachable_wear_hands_01_ussr_summer_item",
+                "slot": "gloves"
+              },
+              "skined_helmet": {
+                "gametemplate": "attachable_wear_ger_ww1_tank_helmet_item",
+                "slot": "skined_helmet"
+              },
+              "tunic": {
+                "gametemplate": "attachable_wear_ger_ww1_tanker_overcoat_item",
+                "slot": "tunic"
+              }
+            },
+            "exp": 0,
+            "gametemplate": "ger_base_soldier",
+            "guid": "2220349129",
+            "human_weap__weapInfo": [
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 0,
+                "reserveAmmoTemplate": ""
+              },
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 0,
+                "reserveAmmoTemplate": ""
+              },
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 5,
+                "reserveAmmoTemplate": "mauser_c96_magazine"
+              },
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 0,
+                "reserveAmmoTemplate": ""
+              },
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 0,
+                "reserveAmmoTemplate": ""
+              }
+            ],
+            "human_weap__weapInitialComponents": [{}, {}, {}, {}, {}],
+            "human_weap__weapTemplates": {
+              "grenade": "grenade_thrower",
+              "melee": "ger_axe_weapon",
+              "primary": "",
+              "secondary": "",
+              "tertiary": "mauser_c96_gun"
+            },
+            "id": 2,
+            "inventory": [
+              {
+                "gametemplate": "ger_repair_kit_item"
+              }
+            ],
+            "isHero": false,
+            "isPremium": false,
+            "level": 5,
+            "maxLevel": 5,
+            "name": "Eckart",
+            "perkPoints": {
+              "speed": 19,
+              "vitality": 14,
+              "weapon": 18
+            },
+            "perks": [
+              {
+                "name": "starter_tanker",
+                "stats": [
+                  {
+                    "statKey": "seat_change_speed",
+                    "statValue": 0.09960000216960907
+                  }
+                ]
+              }
+            ],
+            "sClass": "tanker",
+            "sKind": "tanker",
+            "surname": "Buetow",
+            "tier": 5,
+            "weaponPreset": ""
+          },
+          {
+            "bodyScale": {
+              "height": 0.9837501049041748,
+              "width": 1.0261824131011963
+            },
+            "callname": "",
+            "country": "germany",
+            "equipment": {
+              "face": {
+                "gametemplate": "attachable_wear_head_male_23_ger_item",
+                "slot": "face"
+              },
+              "gloves": {
+                "gametemplate": "attachable_wear_gloves_01_ger_winter_item",
+                "slot": "gloves"
+              },
+              "skined_helmet": {
+                "gametemplate": "attachable_wear_ger_ww1_tank_helmet_item",
+                "slot": "skined_helmet"
+              },
+              "tunic": {
+                "gametemplate": "attachable_wear_ger_ww1_tanker_overcoat_item",
+                "slot": "tunic"
+              }
+            },
+            "exp": 0,
+            "gametemplate": "ger_base_soldier",
+            "guid": "2220348946",
+            "human_weap__weapInfo": [
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 0,
+                "reserveAmmoTemplate": ""
+              },
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 0,
+                "reserveAmmoTemplate": ""
+              },
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 5,
+                "reserveAmmoTemplate": "mauser_c96_magazine"
+              },
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 0,
+                "reserveAmmoTemplate": ""
+              },
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 0,
+                "reserveAmmoTemplate": ""
+              }
+            ],
+            "human_weap__weapInitialComponents": [{}, {}, {}, {}, {}],
+            "human_weap__weapTemplates": {
+              "grenade": "grenade_thrower",
+              "melee": "ger_axe_weapon",
+              "primary": "",
+              "secondary": "",
+              "tertiary": "mauser_c96_gun"
+            },
+            "id": 3,
+            "inventory": [
+              {
+                "gametemplate": "ger_repair_kit_item"
+              }
+            ],
+            "isHero": false,
+            "isPremium": false,
+            "level": 5,
+            "maxLevel": 5,
+            "name": "Siegmund",
+            "perkPoints": {
+              "speed": 19,
+              "vitality": 14,
+              "weapon": 18
+            },
+            "perks": [
+              {
+                "name": "starter_tanker",
+                "stats": [
+                  {
+                    "statKey": "seat_change_speed",
+                    "statValue": 0.09960000216960907
+                  }
+                ]
+              }
+            ],
+            "sClass": "tanker",
+            "sKind": "tanker",
+            "surname": "Theyerl",
+            "tier": 5,
+            "weaponPreset": ""
+          },
+          {
+            "bodyScale": {
+              "height": 0.99331706762313843,
+              "width": 1.0272371768951416
+            },
+            "callname": "",
+            "country": "germany",
+            "equipment": {
+              "face": {
+                "gametemplate": "attachable_wear_head_male_11_ger_item",
+                "slot": "face"
+              },
+              "gloves": {
+                "gametemplate": "attachable_wear_gloves_01_ger_winter_item",
+                "slot": "gloves"
+              },
+              "skined_helmet": {
+                "gametemplate": "attachable_wear_ger_ww1_tank_helmet_item",
+                "slot": "skined_helmet"
+              },
+              "tunic": {
+                "gametemplate": "attachable_wear_ger_ww1_tanker_overcoat_item",
+                "slot": "tunic"
+              }
+            },
+            "exp": 0,
+            "gametemplate": "ger_base_soldier",
+            "guid": "2220348854",
+            "human_weap__weapInfo": [
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 0,
+                "reserveAmmoTemplate": ""
+              },
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 0,
+                "reserveAmmoTemplate": ""
+              },
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 5,
+                "reserveAmmoTemplate": "mauser_c96_magazine"
+              },
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 0,
+                "reserveAmmoTemplate": ""
+              },
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 0,
+                "reserveAmmoTemplate": ""
+              }
+            ],
+            "human_weap__weapInitialComponents": [{}, {}, {}, {}, {}],
+            "human_weap__weapTemplates": {
+              "grenade": "grenade_thrower",
+              "melee": "ger_axe_weapon",
+              "primary": "",
+              "secondary": "",
+              "tertiary": "mauser_c96_gun"
+            },
+            "id": 4,
+            "inventory": [
+              {
+                "gametemplate": "ger_repair_kit_item"
+              }
+            ],
+            "isHero": false,
+            "isPremium": false,
+            "level": 5,
+            "maxLevel": 5,
+            "name": "Albert",
+            "perkPoints": {
+              "speed": 19,
+              "vitality": 14,
+              "weapon": 18
+            },
+            "perks": [
+              {
+                "name": "starter_tanker",
+                "stats": [
+                  {
+                    "statKey": "seat_change_speed",
+                    "statValue": 0.09960000216960907
+                  }
+                ]
+              }
+            ],
+            "sClass": "tanker",
+            "sKind": "tanker",
+            "surname": "Wrangel",
+            "tier": 5,
+            "weaponPreset": ""
+          }
+        ],
+        "squadId": "ww1_ger_tanker_2_event_squad",
+        "squadType": "tank",
+        "vehicleType": "tank",
+        "disableSquadRotation" : false,
+        "spawnCostTeamScoreMult" : 1,
+        "spawnScoreGainMult": 1.0,
+        "spawnCostPerSpawnPersonalScore": [800]
+      },
+      {
+        "artilleryCooldownMul": 1.0,
+        "artilleryTypeUnlocks": [],
+        "curVehicle": {
+          "gametemplate": "germ_beutepanzer_mk_iv",
+          "growthTier": 1,
+          "guid": "2220330639",
+          "mods": [
+            {
+              "statKey": "gun_spread__maxDeltaAngle",
+              "statValue": 1.1499999761581421
+            },
+            {
+              "statKey": "track_friction_side_rot_min_speed",
+              "statValue": 1.1000000238418579
+            },
+            {
+              "statKey": "track_friction_side_rot_max_speed",
+              "statValue": 1.1000000238418579
+            },
+            {
+              "statKey": "track_friction_side_rot_min_friction",
+              "statValue": 0.89999997615814209
+            },
+            {
+              "statKey": "track_friction_side_rot_max_friction",
+              "statValue": 0.89999997615814209
+            },
+            {
+              "statKey": "suspension_dampening",
+              "statValue": 0.85000002384185791
+            },
+            {
+              "statKey": "turret_ver_speed",
+              "statValue": 0.80000001192092896
+            },
+            {
+              "statKey": "engine_power",
+              "statValue": 0.85000002384185791
+            },
+            {
+              "statKey": "turret_hor_speed",
+              "statValue": 0.85000002384185791
+            },
+            {
+              "statKey": "track_friction_frontal_static",
+              "statValue": 1.0499999523162842
+            },
+            {
+              "statKey": "braking_force",
+              "statValue": 0.85000002384185791
+            },
+            {
+              "statKey": "track_friction_frontal_sliding",
+              "statValue": 1.1000000238418579
+            }
+          ]
+        },
+        "enableSquadRotationWithVehicle": false,
+        "engineerUnlocks": [],
+        "exp": 0,
+        "expBonus": 1.0,
+        "hasAllArtillery": false,
+        "hasRocketArtillery": false,
+        "isParatroopers": false,
+        "isRented": false,
+        "level": 60,
+        "paratrooperBoxUnlocks": [],
+        "spawnWithoutVehicleAvailable": false,
+        "squad": [
+          {
+            "bodyScale": {
+              "height": 1.0061800479888916,
+              "width": 1.0398473739624023
+            },
+            "callname": "",
+            "country": "germany",
+            "equipment": {
+              "face": {
+                "gametemplate": "attachable_wear_head_male_43_ger_item",
+                "slot": "face"
+              },
+              "gloves": {
+                "gametemplate": "attachable_wear_hands_01_ussr_summer_item",
+                "slot": "gloves"
+              },
+              "skined_helmet": {
+                "gametemplate": "attachable_wear_ger_ww1_tank_helmet_item",
+                "slot": "skined_helmet"
+              },
+              "tunic": {
+                "gametemplate": "attachable_wear_ger_ww1_tanker_overcoat_item",
+                "slot": "tunic"
+              }
+            },
+            "exp": 0,
+            "gametemplate": "ger_base_soldier",
+            "guid": "2220346900",
+            "human_weap__weapInfo": [
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 0,
+                "reserveAmmoTemplate": ""
+              },
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 0,
+                "reserveAmmoTemplate": ""
+              },
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 5,
+                "reserveAmmoTemplate": "mauser_c96_magazine"
+              },
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 0,
+                "reserveAmmoTemplate": ""
+              },
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 0,
+                "reserveAmmoTemplate": ""
+              }
+            ],
+            "human_weap__weapInitialComponents": [{}, {}, {}, {}, {}],
+            "human_weap__weapTemplates": {
+              "grenade": "grenade_thrower",
+              "melee": "ger_axe_weapon",
+              "primary": "",
+              "secondary": "",
+              "tertiary": "mauser_c96_gun"
+            },
+            "id": 0,
+            "inventory": [
+              {
+                "gametemplate": "ger_repair_kit_item"
+              }
+            ],
+            "isHero": false,
+            "isPremium": false,
+            "level": 5,
+            "maxLevel": 5,
+            "name": "Waldemar",
+            "perkPoints": {
+              "speed": 19,
+              "vitality": 14,
+              "weapon": 18
+            },
+            "perks": [
+              {
+                "name": "starter_tanker",
+                "stats": [
+                  {
+                    "statKey": "seat_change_speed",
+                    "statValue": 0.09960000216960907
+                  }
+                ]
+              }
+            ],
+            "sClass": "tanker",
+            "sKind": "tanker",
+            "surname": "Appel",
+            "tier": 5,
+            "weaponPreset": ""
+          },
+          {
+            "bodyScale": {
+              "height": 1.0147385597229004,
+              "width": 1.0251985788345337
+            },
+            "callname": "",
+            "country": "germany",
+            "equipment": {
+              "face": {
+                "gametemplate": "attachable_wear_head_male_40_ger_item",
+                "slot": "face"
+              },
+              "gloves": {
+                "gametemplate": "attachable_wear_hands_01_ussr_summer_item",
+                "slot": "gloves"
+              },
+              "skined_helmet": {
+                "gametemplate": "attachable_wear_ger_ww1_tank_helmet_item",
+                "slot": "skined_helmet"
+              },
+              "tunic": {
+                "gametemplate": "attachable_wear_ger_ww1_tanker_overcoat_item",
+                "slot": "tunic"
+              }
+            },
+            "exp": 0,
+            "gametemplate": "ger_base_soldier",
+            "guid": "2220346832",
+            "human_weap__weapInfo": [
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 0,
+                "reserveAmmoTemplate": ""
+              },
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 0,
+                "reserveAmmoTemplate": ""
+              },
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 5,
+                "reserveAmmoTemplate": "mauser_c96_magazine"
+              },
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 0,
+                "reserveAmmoTemplate": ""
+              },
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 0,
+                "reserveAmmoTemplate": ""
+              }
+            ],
+            "human_weap__weapInitialComponents": [{}, {}, {}, {}, {}],
+            "human_weap__weapTemplates": {
+              "grenade": "grenade_thrower",
+              "melee": "ger_axe_weapon",
+              "primary": "",
+              "secondary": "",
+              "tertiary": "mauser_c96_gun"
+            },
+            "id": 1,
+            "inventory": [
+              {
+                "gametemplate": "ger_repair_kit_item"
+              }
+            ],
+            "isHero": false,
+            "isPremium": false,
+            "level": 5,
+            "maxLevel": 5,
+            "name": "Wilhlem",
+            "perkPoints": {
+              "speed": 19,
+              "vitality": 14,
+              "weapon": 18
+            },
+            "perks": [
+              {
+                "name": "starter_tanker",
+                "stats": [
+                  {
+                    "statKey": "seat_change_speed",
+                    "statValue": 0.09960000216960907
+                  }
+                ]
+              }
+            ],
+            "sClass": "tanker",
+            "sKind": "tanker",
+            "surname": "Klausgraber",
+            "tier": 5,
+            "weaponPreset": ""
+          },
+          {
+            "bodyScale": {
+              "height": 0.99559497833251953,
+              "width": 1.0675753355026245
+            },
+            "callname": "",
+            "country": "germany",
+            "equipment": {
+              "face": {
+                "gametemplate": "attachable_wear_head_male_26_us_item",
+                "slot": "face"
+              },
+              "gloves": {
+                "gametemplate": "attachable_wear_gloves_01_ger_winter_item",
+                "slot": "gloves"
+              },
+              "skined_helmet": {
+                "gametemplate": "attachable_wear_ger_ww1_tank_helmet_item",
+                "slot": "skined_helmet"
+              },
+              "tunic": {
+                "gametemplate": "attachable_wear_ger_ww1_tanker_overcoat_item",
+                "slot": "tunic"
+              }
+            },
+            "exp": 0,
+            "gametemplate": "ger_base_soldier",
+            "guid": "2220346989",
+            "human_weap__weapInfo": [
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 0,
+                "reserveAmmoTemplate": ""
+              },
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 0,
+                "reserveAmmoTemplate": ""
+              },
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 5,
+                "reserveAmmoTemplate": "mauser_c96_magazine"
+              },
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 0,
+                "reserveAmmoTemplate": ""
+              },
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 0,
+                "reserveAmmoTemplate": ""
+              }
+            ],
+            "human_weap__weapInitialComponents": [{}, {}, {}, {}, {}],
+            "human_weap__weapTemplates": {
+              "grenade": "grenade_thrower",
+              "melee": "ger_axe_weapon",
+              "primary": "",
+              "secondary": "",
+              "tertiary": "mauser_c96_gun"
+            },
+            "id": 2,
+            "inventory": [
+              {
+                "gametemplate": "ger_repair_kit_item"
+              }
+            ],
+            "isHero": false,
+            "isPremium": false,
+            "level": 5,
+            "maxLevel": 5,
+            "name": "Busso",
+            "perkPoints": {
+              "speed": 19,
+              "vitality": 14,
+              "weapon": 18
+            },
+            "perks": [
+              {
+                "name": "starter_tanker",
+                "stats": [
+                  {
+                    "statKey": "seat_change_speed",
+                    "statValue": 0.09960000216960907
+                  }
+                ]
+              }
+            ],
+            "sClass": "tanker",
+            "sKind": "tanker",
+            "surname": "Rubarth",
+            "tier": 5,
+            "weaponPreset": ""
+          },
+          {
+            "bodyScale": {
+              "height": 1.0188440084457397,
+              "width": 1.0753270387649536
+            },
+            "callname": "",
+            "country": "germany",
+            "equipment": {
+              "face": {
+                "gametemplate": "attachable_wear_head_male_11_ger_item",
+                "slot": "face"
+              },
+              "gloves": {
+                "gametemplate": "attachable_wear_gloves_01_ger_winter_item",
+                "slot": "gloves"
+              },
+              "skined_helmet": {
+                "gametemplate": "attachable_wear_ger_ww1_tank_helmet_item",
+                "slot": "skined_helmet"
+              },
+              "tunic": {
+                "gametemplate": "attachable_wear_ger_ww1_tanker_overcoat_item",
+                "slot": "tunic"
+              }
+            },
+            "exp": 0,
+            "gametemplate": "ger_base_soldier",
+            "guid": "2220347032",
+            "human_weap__weapInfo": [
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 0,
+                "reserveAmmoTemplate": ""
+              },
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 0,
+                "reserveAmmoTemplate": ""
+              },
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 5,
+                "reserveAmmoTemplate": "mauser_c96_magazine"
+              },
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 0,
+                "reserveAmmoTemplate": ""
+              },
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 0,
+                "reserveAmmoTemplate": ""
+              }
+            ],
+            "human_weap__weapInitialComponents": [{}, {}, {}, {}, {}],
+            "human_weap__weapTemplates": {
+              "grenade": "grenade_thrower",
+              "melee": "ger_axe_weapon",
+              "primary": "",
+              "secondary": "",
+              "tertiary": "mauser_c96_gun"
+            },
+            "id": 3,
+            "inventory": [
+              {
+                "gametemplate": "ger_repair_kit_item"
+              }
+            ],
+            "isHero": false,
+            "isPremium": false,
+            "level": 5,
+            "maxLevel": 5,
+            "name": "Willi",
+            "perkPoints": {
+              "speed": 19,
+              "vitality": 14,
+              "weapon": 18
+            },
+            "perks": [
+              {
+                "name": "starter_tanker",
+                "stats": [
+                  {
+                    "statKey": "seat_change_speed",
+                    "statValue": 0.09960000216960907
+                  }
+                ]
+              }
+            ],
+            "sClass": "tanker",
+            "sKind": "tanker",
+            "surname": "Lippolt",
+            "tier": 5,
+            "weaponPreset": ""
+          }
+        ],
+        "squadId": "ww1_ger_tanker_1_event_squad",
+        "squadType": "tank",
+        "vehicleType": "tank",
+        "disableSquadRotation" : false,
+        "spawnCostTeamScoreMult" : 1,
+        "spawnScoreGainMult": 1.0,
+        "spawnCostPerSpawnPersonalScore": [900]
+      }
+    ],
+    "wallPosters": [],
+    "wallPostersCount": 3
+  },
+  "uk_ww1": {
+    "armyId": "uk_ww1",
+    "campaignId": "common",
+    "country": "britain",
+    "curSquadId": "allies_tunisia_rifle_2",
+    "disableAnyTeamBonus": false,
+    "hasBadDesertionStats": false,
+    "isFakeSquads": false,
+    "isFirstBattleExp": false,
+    "offerGuid": "",
+    "squads": [
+      {
+        "artilleryCooldownMul": 1.0,
+        "artilleryTypeUnlocks": [],
+        "curVehicle": null,
+        "enableSquadRotationWithVehicle": false,
+        "engineerUnlocks": [],
+        "exp": 0,
+        "expBonus": 1.0,
+        "hasAllArtillery": false,
+        "hasRocketArtillery": false,
+        "isParatroopers": false,
+        "isRented": false,
+        "level": 29,
+        "paratrooperBoxUnlocks": [],
+        "spawnWithoutVehicleAvailable": false,
+        "squad": [
+          {
+            "bodyScale": {
+              "height": 1.0189794301986694,
+              "width": 1.0309042930603027
+            },
+            "callname": "",
+            "country": "britain",
+            "equipment": {
+              "face": {
+                "gametemplate": "attachable_wear_headgenmesh_english_01_item",
+                "slot": "face"
+              },
+              "gloves": {
+                "gametemplate": "attachable_wear_hands_01_ussr_summer_item",
+                "slot": "gloves"
+              },
+              "pants": {
+                "gametemplate": "attachable_wear_uk_sd_trousers_w_b5_boots_item",
+                "slot": "pants"
+              },
+              "skined_helmet": {
+                "gametemplate": "attachable_wear_uk_mk1_brodie_helmet_item",
+                "slot": "skined_helmet"
+              },
+              "tunic": {
+                "gametemplate": "attachable_wear_uk_sd_tunic_w_webbing_item",
+                "slot": "tunic"
+              }
+            },
+            "exp": 0,
+            "gametemplate": "uk_base_soldier",
+            "guid": "2220303569",
+            "human_weap__weapInfo": [
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 6,
+                "reserveAmmoTemplate": "enfield_p14_magazine"
+              },
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 0,
+                "reserveAmmoTemplate": ""
+              },
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 0,
+                "reserveAmmoTemplate": ""
+              },
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 0,
+                "reserveAmmoTemplate": ""
+              },
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 0,
+                "reserveAmmoTemplate": ""
+              }
+            ],
+            "human_weap__weapInitialComponents": [{}, {}, {}, {}, {}],
+            "human_weap__weapTemplates": {
+              "grenade": "grenade_thrower",
+              "melee": "gear_trench_club_weapon",
+              "primary": "enfield_p14_gun",
+              "secondary": "",
+              "tertiary": ""
+            },
+            "id": 8,
+            "inventory": [
+              {
+                "gametemplate": "uk_medkit_item"
+              },
+              {
+                "gametemplate": "explosion_pack_item"
+              },
+              {
+                "gametemplate": "uk_ww1_gasmask_weapon_item"
+              }
+            ],
+            "isHero": false,
+            "isPremium": false,
+            "level": 5,
+            "maxLevel": 5,
+            "name": "Isaac",
+            "perkPoints": {
+              "speed": 17,
+              "vitality": 17,
+              "weapon": 17
+            },
+            "perks": [
+              {
+                "name": "starter_rifle",
+                "stats": [
+                  {
+                    "statKey": "faster_decreasing_of_maximum_shot_spread",
+                    "statValue": 0.10499999672174454
+                  }
+                ]
+              },
+              {
+                "name": "longer_hold_breath_cd",
+                "stats": [
+                  {
+                    "statKey": "longer_hold_breath_cd",
+                    "statValue": 0.5
+                  }
+                ]
+              },
+              {
+                "name": "hp_regeneration",
+                "stats": [
+                  {
+                    "statKey": "hp_regen_speed",
+                    "statValue": 0.10000000149011612
+                  },
+                  {
+                    "statKey": "hp_regeneration",
+                    "statValue": 0.20000000298023224
+                  }
+                ]
+              },
+              {
+                "name": "sprint_speed",
+                "stats": [
+                  {
+                    "statKey": "sprint_speed",
+                    "statValue": 0.15
+                  }
+                ]
+              },
+              {
+                "name": "stamina_regeneration",
+                "stats": [
+                  {
+                    "statKey": "stamina_regeneration",
+                    "statValue": 1.0
+                  }
+                ]
+              },
+              {
+                "name": "crawl_crouch_speed",
+                "stats": [
+                  {
+                    "statKey": "crawl_crouch_speed",
+                    "statValue": 0.20000000298023224
+                  }
+                ]
+              },
+              {
+                "name": "heal_speed",
+                "stats": [
+                  {
+                    "statKey": "heal_speed",
+                    "statValue": 0.25
+                  }
+                ]
+              },
+              {
+                  "name": "stamina_boost",
+                  "stats": [
+                    {
+                      "statKey": "stamina_boost",
+                      "statValue": 1.0
+                    }
+                  ]
+                }
+            ],
+            "sClass": "rifle",
+            "sKind": "rifle",
+            "surname": "Gibson",
+            "tier": 5,
+            "weaponPreset": ""
+          }
+        ],
+        "squadId": "ww1_uk_rifleman_1_event_squad",
+        "squadType": "rifle",
+        "vehicleType": "",
+        "disableSquadRotation" : true,
+        "spawnCostTeamScoreMult" : 1,
+        "spawnScoreGainMult": 1.0,
+        "spawnCostPerSpawnPersonalScore": [0]
+      },
+      {
+        "artilleryCooldownMul": 1.0,
+        "artilleryTypeUnlocks": [],
+        "curVehicle": null,
+        "enableSquadRotationWithVehicle": false,
+        "engineerUnlocks": [3],
+        "exp": 0,
+        "expBonus": 1.0,
+        "hasAllArtillery": false,
+        "hasRocketArtillery": false,
+        "isParatroopers": false,
+        "isRented": false,
+        "level": 33,
+        "paratrooperBoxUnlocks": [],
+        "spawnWithoutVehicleAvailable": false,
+        "squad": [
+          {
+            "bodyScale": {
+              "height": 1.0164867639541626,
+              "width": 1.0685055255889893
+            },
+            "callname": "",
+            "country": "britain",
+            "equipment": {
+              "face": {
+                "gametemplate": "attachable_wear_headgenmesh_english_03_item",
+                "slot": "face"
+              },
+              "gloves": {
+                "gametemplate": "attachable_wear_hands_01_ussr_summer_item",
+                "slot": "gloves"
+              },
+              "pants": {
+                "gametemplate": "attachable_wear_uk_ww1_breeches_item",
+                "slot": "pants"
+              },
+              "skined_helmet": {
+                "gametemplate": "attachable_wear_uk_mk1_brodie_helmet_item",
+                "slot": "skined_helmet"
+              },
+              "tunic": {
+                "gametemplate": "attachable_wear_uk_sd_tunic_w_webbing_item",
+                "slot": "tunic"
+              }
+            },
+            "exp": 0,
+            "gametemplate": "uk_base_soldier",
+            "guid": "2220307278",
+            "human_weap__weapInfo": [
+              {
+                "gunSlots": {
+                  "bayonet": "smle_mk3_bayonet"
+                },
+                "numReserveAmmo": 5,
+                "reserveAmmoTemplate": "lee_enfield_no4_mk1_magazine"
+              },
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 0,
+                "reserveAmmoTemplate": ""
+              },
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 0,
+                "reserveAmmoTemplate": ""
+              },
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 0,
+                "reserveAmmoTemplate": ""
+              },
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 0,
+                "reserveAmmoTemplate": ""
+              }
+            ],
+            "human_weap__weapInitialComponents": [{}, {}, {}, {}, {}],
+            "human_weap__weapTemplates": {
+              "grenade": "grenade_thrower",
+              "melee": "uk_ww1_shovel_weapon",
+              "primary": "smle_mk3_gun",
+              "secondary": "uk_ww1_building_tool_gun",
+              "tertiary": ""
+            },
+            "id": 0,
+            "inventory": [
+              {
+                "gametemplate": "uk_medkit_item"
+              },
+              {
+                "gametemplate": "explosion_pack_item"
+              },
+              {
+                "gametemplate": "uk_ww1_gasmask_weapon_item"
+              }
+            ],
+            "isHero": false,
+            "isPremium": false,
+            "level": 5,
+            "maxLevel": 5,
+            "name": "Louis",
+            "perkPoints": {
+              "speed": 17,
+              "vitality": 18,
+              "weapon": 16
+            },
+            "perks": [
+              {
+                "name": "starter_engineer",
+                "stats": [
+                  {
+                    "statKey": "crawl_crouch_speed",
+                    "statValue": 0.20999999344348907
+                  }
+                ]
+              },
+              {
+                "name": "hp_regeneration",
+                "stats": [
+                  {
+                    "statKey": "hp_regen_speed",
+                    "statValue": 0.10000000149011612
+                  },
+                  {
+                    "statKey": "hp_regeneration",
+                    "statValue": 0.20000000298023224
+                  }
+                ]
+              },
+              {
+                "name": "faster_building_speed",
+                "stats": [
+                  {
+                    "statKey": "faster_building_speed",
+                    "statValue": 0.5
+                  }
+                ]
+              },
+              {
+                "name": "longer_hold_breath_cd",
+                "stats": [
+                  {
+                    "statKey": "longer_hold_breath_cd",
+                    "statValue": 0.5
+                  }
+                ]
+              },
+              {
+                "name": "sprint_speed",
+                "stats": [
+                  {
+                    "statKey": "sprint_speed",
+                    "statValue": 0.15
+                  }
+                ]
+              },
+              {
+                "name": "stamina_regeneration",
+                "stats": [
+                  {
+                    "statKey": "stamina_regeneration",
+                    "statValue": 1.0
+                  }
+                ]
+              },
+              {
+                "name": "crawl_crouch_speed",
+                "stats": [
+                  {
+                    "statKey": "crawl_crouch_speed",
+                    "statValue": 0.20000000298023224
+                  }
+                ]
+              },
+              {
+                "name": "heal_speed",
+                "stats": [
+                  {
+                    "statKey": "heal_speed",
+                    "statValue": 0.25
+                  }
+                ]
+              },
+              {
+                  "name": "stamina_boost",
+                  "stats": [
+                    {
+                      "statKey": "stamina_boost",
+                      "statValue": 1.0
+                    }
+                  ]
+                }
+            ],
+            "sClass": "engineer",
+            "sKind": "engineer",
+            "surname": "Miracle",
+            "tier": 5,
+            "weaponPreset": ""
+          }
+        ],
+        "squadId": "ww1_uk_engineer_1_event_squad",
+        "squadType": "engineer",
+        "vehicleType": "",
+        "disableSquadRotation" : false,
+        "spawnCostTeamScoreMult" : 1,
+        "spawnScoreGainMult": 1.0,
+        "spawnCostPerSpawnPersonalScore": [250]
+      },
+      {
+        "artilleryCooldownMul": 1.0,
+        "artilleryTypeUnlocks": [],
+        "curVehicle": null,
+        "enableSquadRotationWithVehicle": false,
+        "engineerUnlocks": [],
+        "exp": 0,
+        "expBonus": 1.0,
+        "hasAllArtillery": false,
+        "hasRocketArtillery": false,
+        "isParatroopers": false,
+        "isRented": false,
+        "level": 38,
+        "paratrooperBoxUnlocks": [],
+        "spawnWithoutVehicleAvailable": false,
+        "squad": [
+          {
+            "bodyScale": {
+              "height": 1.0110056400299072,
+              "width": 1.0115360021591187
+            },
+            "callname": "",
+            "country": "britain",
+            "equipment": {
+              "face": {
+                "gametemplate": "attachable_wear_headgenmesh_english_04_item",
+                "slot": "face"
+              },
+              "gloves": {
+                "gametemplate": "attachable_wear_hands_01_ussr_summer_item",
+                "slot": "gloves"
+              },
+              "pants": {
+                "gametemplate": "attachable_wear_uk_sd_trousers_w_b5_boots_item",
+                "slot": "pants"
+              },
+              "skined_helmet": {
+                "gametemplate": "attachable_wear_uk_mk1_brodie_helmet_item",
+                "slot": "skined_helmet"
+              },
+              "tunic": {
+                "gametemplate": "attachable_wear_uk_sd_tunic_w_webbing_item",
+                "slot": "tunic"
+              }
+            },
+            "exp": 0,
+            "gametemplate": "uk_base_soldier",
+            "guid": "2220308980",
+            "human_weap__weapInfo": [
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 7,
+                "reserveAmmoTemplate": "browning_m1918_magazine"
+              },
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 0,
+                "reserveAmmoTemplate": ""
+              },
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 0,
+                "reserveAmmoTemplate": ""
+              },
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 0,
+                "reserveAmmoTemplate": ""
+              },
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 0,
+                "reserveAmmoTemplate": ""
+              }
+            ],
+            "human_weap__weapInitialComponents": [{}, {}, {}, {}, {}],
+            "human_weap__weapTemplates": {
+              "grenade": "grenade_thrower",
+              "melee": "gear_trench_club_weapon",
+              "primary": "browning_m1918_ww1_gun",
+              "secondary": "",
+              "tertiary": ""
+            },
+            "id": 0,
+            "inventory": [
+              {
+                "gametemplate": "uk_medkit_item"
+              },
+              {
+                "gametemplate": "uk_mills_grenade_item"
+              },
+              {
+                "gametemplate": "uk_mills_grenade_item"
+              },
+              {
+                "gametemplate": "uk_ww1_gasmask_weapon_item"
+              }
+            ],
+            "isHero": false,
+            "isPremium": false,
+            "level": 5,
+            "maxLevel": 5,
+            "name": "Mason",
+            "perkPoints": {
+              "speed": 18,
+              "vitality": 16,
+              "weapon": 17
+            },
+            "perks": [
+              {
+                "name": "starter_assault",
+                "stats": [
+                  {
+                    "statKey": "climb_speed",
+                    "statValue": 0.34999999403953552
+                  }
+                ]
+              },
+              {
+                "name": "longer_hold_breath_cd",
+                "stats": [
+                  {
+                    "statKey": "longer_hold_breath_cd",
+                    "statValue": 0.5
+                  }
+                ]
+              },
+              {
+                "name": "hp_regeneration",
+                "stats": [
+                  {
+                    "statKey": "hp_regen_speed",
+                    "statValue": 0.10000000149011612
+                  },
+                  {
+                    "statKey": "hp_regeneration",
+                    "statValue": 0.20000000298023224
+                  }
+                ]
+              },
+              {
+                "name": "sprint_speed",
+                "stats": [
+                  {
+                    "statKey": "sprint_speed",
+                    "statValue": 0.15
+                  }
+                ]
+              },
+              {
+                "name": "stamina_regeneration",
+                "stats": [
+                  {
+                    "statKey": "stamina_regeneration",
+                    "statValue": 1.0
+                  }
+                ]
+              },
+              {
+                "name": "crawl_crouch_speed",
+                "stats": [
+                  {
+                    "statKey": "crawl_crouch_speed",
+                    "statValue": 0.20000000298023224
+                  }
+                ]
+              },
+              {
+                "name": "heal_speed",
+                "stats": [
+                  {
+                    "statKey": "heal_speed",
+                    "statValue": 0.25
+                  }
+                ]
+              },
+              {
+                  "name": "stamina_boost",
+                  "stats": [
+                    {
+                      "statKey": "stamina_boost",
+                      "statValue": 1.0
+                    }
+                  ]
+                }
+            ],
+            "sClass": "assault",
+            "sKind": "assault",
+            "surname": "Turner",
+            "tier": 5,
+            "weaponPreset": ""
+          }
+        ],
+        "squadId": "ww1_uk_assaulter_1_event_squad",
+        "squadType": "assault",
+        "vehicleType": "",
+        "disableSquadRotation" : false,
+        "spawnCostTeamScoreMult" : 1,
+        "spawnScoreGainMult": 1.0,
+        "spawnCostPerSpawnPersonalScore": [350]
+      },
+      {
+        "artilleryCooldownMul": 1.0,
+        "artilleryTypeUnlocks": [],
+        "curVehicle": null,
+        "enableSquadRotationWithVehicle": false,
+        "engineerUnlocks": [5],
+        "exp": 0,
+        "expBonus": 1.0,
+        "hasAllArtillery": false,
+        "hasRocketArtillery": false,
+        "isParatroopers": false,
+        "isRented": false,
+        "level": 45,
+        "paratrooperBoxUnlocks": [],
+        "spawnWithoutVehicleAvailable": false,
+        "squad": [
+          {
+            "bodyScale": {
+              "height": 0.98935210704803467,
+              "width": 1.0412732362747192
+            },
+            "callname": "",
+            "country": "britain",
+            "equipment": {
+              "face": {
+                "gametemplate": "attachable_wear_headgenmesh_english_02_item",
+                "slot": "face"
+              },
+              "gloves": {
+                "gametemplate": "attachable_wear_hands_01_ussr_summer_item",
+                "slot": "gloves"
+              },
+              "pants": {
+                "gametemplate": "attachable_wear_uk_ww1_breeches_item",
+                "slot": "pants"
+              },
+              "skined_helmet": {
+                "gametemplate": "attachable_wear_uk_mk1_brodie_helmet_item",
+                "slot": "skined_helmet"
+              },
+              "tunic": {
+                "gametemplate": "attachable_wear_uk_sd_tunic_w_webbing_item",
+                "slot": "tunic"
+              }
+            },
+            "exp": 0,
+            "gametemplate": "uk_base_soldier",
+            "guid": "2220305966",
+            "human_weap__weapInfo": [
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 4,
+                "reserveAmmoTemplate": "lewis_303_lmg_magazine"
+              },
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 0,
+                "reserveAmmoTemplate": ""
+              },
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 0,
+                "reserveAmmoTemplate": ""
+              },
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 0,
+                "reserveAmmoTemplate": ""
+              },
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 0,
+                "reserveAmmoTemplate": ""
+              }
+            ],
+            "human_weap__weapInitialComponents": [{}, {}, {}, {}, {}],
+            "human_weap__weapTemplates": {
+              "grenade": "grenade_thrower",
+              "melee": "gear_trench_club_weapon",
+              "primary": "lewis_303_lmg_ww1_gun",
+              "secondary": "",
+              "tertiary": ""
+            },
+            "id": 0,
+            "inventory": [
+              {
+                "gametemplate": "uk_medkit_item"
+              },
+              {
+                "gametemplate": "uk_mills_grenade_item"
+              },
+              {
+                "gametemplate": "uk_ww1_gasmask_weapon_item"
+              }
+            ],
+            "isHero": false,
+            "isPremium": false,
+            "level": 5,
+            "maxLevel": 5,
+            "name": "Jayden",
+            "perkPoints": {
+              "speed": 16,
+              "vitality": 16,
+              "weapon": 19
+            },
+            "perks": [
+              {
+                "name": "starter_mgun",
+                "stats": [
+                  {
+                    "statKey": "run_speed",
+                    "statValue": 0.035000000149011612
+                  }
+                ]
+              },
+              {
+                "name": "longer_hold_breath_cd",
+                "stats": [
+                  {
+                    "statKey": "longer_hold_breath_cd",
+                    "statValue": 0.5
+                  }
+                ]
+              },
+              {
+                "name": "hp_regeneration",
+                "stats": [
+                  {
+                    "statKey": "hp_regen_speed",
+                    "statValue": 0.10000000149011612
+                  },
+                  {
+                    "statKey": "hp_regeneration",
+                    "statValue": 0.20000000298023224
+                  }
+                ]
+              },
+              {
+                "name": "sprint_speed",
+                "stats": [
+                  {
+                    "statKey": "sprint_speed",
+                    "statValue": 0.15
+                  }
+                ]
+              },
+              {
+                "name": "stamina_regeneration",
+                "stats": [
+                  {
+                    "statKey": "stamina_regeneration",
+                    "statValue": 1.0
+                  }
+                ]
+              },
+              {
+                "name": "crawl_crouch_speed",
+                "stats": [
+                  {
+                    "statKey": "crawl_crouch_speed",
+                    "statValue": 0.20000000298023224
+                  }
+                ]
+              },
+              {
+                "name": "heal_speed",
+                "stats": [
+                  {
+                    "statKey": "heal_speed",
+                    "statValue": 0.25
+                  }
+                ]
+              },
+              {
+                  "name": "stamina_boost",
+                  "stats": [
+                    {
+                      "statKey": "stamina_boost",
+                      "statValue": 1.0
+                    }
+                  ]
+                }
+            ],
+            "sClass": "mgun",
+            "sKind": "mgun",
+            "surname": "Garfield",
+            "tier": 5,
+            "weaponPreset": ""
+          }
+        ],
+        "squadId": "ww1_uk_mgun_1_event_squad",
+        "squadType": "mgun",
+        "vehicleType": "",
+        "disableSquadRotation" : false,
+        "spawnCostTeamScoreMult" : 1,
+        "spawnScoreGainMult": 1.0,
+        "spawnCostPerSpawnPersonalScore": [400]
+      },
+      {
+        "artilleryCooldownMul": 1.0,
+        "artilleryTypeUnlocks": [],
+        "curVehicle": {
+          "gametemplate": "uk_mark_v",
+          "growthTier": 1,
+          "guid": "2220299101",
+          "mods": [
+            {
+              "statKey": "gun_spread__maxDeltaAngle",
+              "statValue": 1.1499999761581421
+            },
+            {
+              "statKey": "track_friction_side_rot_min_speed",
+              "statValue": 1.1000000238418579
+            },
+            {
+              "statKey": "track_friction_side_rot_max_speed",
+              "statValue": 1.1000000238418579
+            },
+            {
+              "statKey": "track_friction_side_rot_min_friction",
+              "statValue": 0.89999997615814209
+            },
+            {
+              "statKey": "track_friction_side_rot_max_friction",
+              "statValue": 0.89999997615814209
+            },
+            {
+              "statKey": "suspension_dampening",
+              "statValue": 0.85000002384185791
+            },
+            {
+              "statKey": "turret_ver_speed",
+              "statValue": 0.80000001192092896
+            },
+            {
+              "statKey": "engine_power",
+              "statValue": 0.85000002384185791
+            },
+            {
+              "statKey": "turret_hor_speed",
+              "statValue": 0.85000002384185791
+            },
+            {
+              "statKey": "track_friction_frontal_static",
+              "statValue": 1.0499999523162842
+            },
+            {
+              "statKey": "braking_force",
+              "statValue": 0.85000002384185791
+            },
+            {
+              "statKey": "track_friction_frontal_sliding",
+              "statValue": 1.1000000238418579
+            }
+          ]
+        },
+        "enableSquadRotationWithVehicle": false,
+        "engineerUnlocks": [],
+        "exp": 0,
+        "expBonus": 0.25,
+        "hasAllArtillery": false,
+        "hasRocketArtillery": false,
+        "isParatroopers": false,
+        "isRented": false,
+        "level": 0,
+        "paratrooperBoxUnlocks": [],
+        "spawnWithoutVehicleAvailable": false,
+        "squad": [
+          {
+            "bodyScale": {
+              "height": 1.0109152793884277,
+              "width": 1.0348302125930786
+            },
+            "callname": "",
+            "country": "britain",
+            "equipment": {
+              "face": {
+                "gametemplate": "attachable_wear_headgenmesh_english_05_item",
+                "slot": "face"
+              },
+              "skined_helmet": {
+                "gametemplate": "attachable_wear_uk_mk1_brodie_helmet_item",
+                "slot": "skined_helmet"
+              },
+              "gloves": {
+                "gametemplate": "attachable_wear_hands_01_ussr_summer_item",
+                "slot": "gloves"
+              },
+              "tunic": {
+                "gametemplate": "attachable_wear_uk_ww1_tanker_coverall_item",
+                "slot": "tunic"
+              }
+            },
+            "exp": 0,
+            "gametemplate": "uk_base_soldier",
+            "guid": "2220311090",
+            "human_weap__weapInfo": [
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 0,
+                "reserveAmmoTemplate": ""
+              },
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 0,
+                "reserveAmmoTemplate": ""
+              },
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 8,
+                "reserveAmmoTemplate": "webley_mk6_magazine"
+              },
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 0,
+                "reserveAmmoTemplate": ""
+              },
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 0,
+                "reserveAmmoTemplate": ""
+              }
+            ],
+            "human_weap__weapInitialComponents": [{}, {}, {}, {}, {}],
+            "human_weap__weapTemplates": {
+              "grenade": "grenade_thrower",
+              "melee": "gear_trench_club_weapon",
+              "primary": "",
+              "secondary": "",
+              "tertiary": "webley_mk6_gun"
+            },
+            "id": 0,
+            "inventory": [
+              {
+                "gametemplate": "uk_repair_kit_item"
+              }
+            ],
+            "isHero": false,
+            "isPremium": false,
+            "level": 5,
+            "maxLevel": 5,
+            "name": "Lewis",
+            "perkPoints": {
+              "speed": 19,
+              "vitality": 14,
+              "weapon": 18
+            },
+            "perks": [
+              {
+                "name": "starter_tanker",
+                "stats": [
+                  {
+                    "statKey": "seat_change_speed",
+                    "statValue": 0.09960000216960907
+                  }
+                ]
+              }
+            ],
+            "sClass": "tanker",
+            "sKind": "tanker",
+            "surname": "Peterson",
+            "tier": 5,
+            "weaponPreset": ""
+          },
+          {
+            "bodyScale": {
+              "height": 1.017765998840332,
+              "width": 1.0682052373886108
+            },
+            "callname": "",
+            "country": "britain",
+            "equipment": {
+              "face": {
+                "gametemplate": "attachable_wear_headgenmesh_english_06_item",
+                "slot": "face"
+              },
+              "skined_helmet": {
+                "gametemplate": "attachable_wear_uk_mk1_brodie_helmet_item",
+                "slot": "skined_helmet"
+              },
+              "gloves": {
+                "gametemplate": "attachable_wear_hands_01_ussr_summer_item",
+                "slot": "gloves"
+              },
+              "tunic": {
+                "gametemplate": "attachable_wear_uk_ww1_tanker_coverall_item",
+                "slot": "tunic"
+              }
+            },
+            "exp": 0,
+            "gametemplate": "uk_base_soldier",
+            "guid": "2220310955",
+            "human_weap__weapInfo": [
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 0,
+                "reserveAmmoTemplate": ""
+              },
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 0,
+                "reserveAmmoTemplate": ""
+              },
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 8,
+                "reserveAmmoTemplate": "webley_mk6_magazine"
+              },
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 0,
+                "reserveAmmoTemplate": ""
+              },
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 0,
+                "reserveAmmoTemplate": ""
+              }
+            ],
+            "human_weap__weapInitialComponents": [{}, {}, {}, {}, {}],
+            "human_weap__weapTemplates": {
+              "grenade": "grenade_thrower",
+              "melee": "gear_trench_club_weapon",
+              "primary": "",
+              "secondary": "",
+              "tertiary": "webley_mk6_gun"
+            },
+            "id": 1,
+            "inventory": [
+              {
+                "gametemplate": "uk_repair_kit_item"
+              }
+            ],
+            "isHero": false,
+            "isPremium": false,
+            "level": 5,
+            "maxLevel": 5,
+            "name": "Jacob",
+            "perkPoints": {
+              "speed": 19,
+              "vitality": 14,
+              "weapon": 18
+            },
+            "perks": [
+              {
+                "name": "starter_tanker",
+                "stats": [
+                  {
+                    "statKey": "seat_change_speed",
+                    "statValue": 0.09960000216960907
+                  }
+                ]
+              }
+            ],
+            "sClass": "tanker",
+            "sKind": "tanker",
+            "surname": "Hall",
+            "tier": 5,
+            "weaponPreset": ""
+          },
+          {
+            "bodyScale": {
+              "height": 1.0146043300628662,
+              "width": 1.0724412202835083
+            },
+            "callname": "",
+            "country": "britain",
+            "equipment": {
+              "face": {
+                "gametemplate": "attachable_wear_headgenmesh_english_07_item",
+                "slot": "face"
+              },
+              "skined_helmet": {
+                "gametemplate": "attachable_wear_uk_mk1_brodie_helmet_item",
+                "slot": "skined_helmet"
+              },
+              "gloves": {
+                "gametemplate": "attachable_wear_hands_01_ussr_summer_item",
+                "slot": "gloves"
+              },
+              "tunic": {
+                "gametemplate": "attachable_wear_uk_ww1_tanker_coverall_item",
+                "slot": "tunic"
+              }
+            },
+            "exp": 0,
+            "gametemplate": "uk_base_soldier",
+            "guid": "2220311810",
+            "human_weap__weapInfo": [
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 0,
+                "reserveAmmoTemplate": ""
+              },
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 0,
+                "reserveAmmoTemplate": ""
+              },
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 8,
+                "reserveAmmoTemplate": "webley_mk6_magazine"
+              },
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 0,
+                "reserveAmmoTemplate": ""
+              },
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 0,
+                "reserveAmmoTemplate": ""
+              }
+            ],
+            "human_weap__weapInitialComponents": [{}, {}, {}, {}, {}],
+            "human_weap__weapTemplates": {
+              "grenade": "grenade_thrower",
+              "melee": "gear_trench_club_weapon",
+              "primary": "",
+              "secondary": "",
+              "tertiary": "webley_mk6_gun"
+            },
+            "id": 2,
+            "inventory": [
+              {
+                "gametemplate": "uk_repair_kit_item"
+              }
+            ],
+            "isHero": false,
+            "isPremium": false,
+            "level": 5,
+            "maxLevel": 5,
+            "name": "Matthew",
+            "perkPoints": {
+              "speed": 19,
+              "vitality": 14,
+              "weapon": 18
+            },
+            "perks": [
+              {
+                "name": "starter_tanker",
+                "stats": [
+                  {
+                    "statKey": "seat_change_speed",
+                    "statValue": 0.09960000216960907
+                  }
+                ]
+              }
+            ],
+            "sClass": "tanker",
+            "sKind": "tanker",
+            "surname": "Dixon",
+            "tier": 5,
+            "weaponPreset": ""
+          },
+          {
+            "bodyScale": {
+              "height": 0.98294931650161743,
+              "width": 1.0079250335693359
+            },
+            "callname": "",
+            "country": "britain",
+            "equipment": {
+              "face": {
+                "gametemplate": "attachable_wear_headgenmesh_english_08_item",
+                "slot": "face"
+              },
+              "skined_helmet": {
+                "gametemplate": "attachable_wear_uk_mk1_brodie_helmet_item",
+                "slot": "skined_helmet"
+              },
+              "gloves": {
+                "gametemplate": "attachable_wear_hands_01_ussr_summer_item",
+                "slot": "gloves"
+              },
+              "tunic": {
+                "gametemplate": "attachable_wear_uk_ww1_tanker_coverall_item",
+                "slot": "tunic"
+              }
+            },
+            "exp": 0,
+            "gametemplate": "uk_base_soldier",
+            "guid": "2220311130",
+            "human_weap__weapInfo": [
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 0,
+                "reserveAmmoTemplate": ""
+              },
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 0,
+                "reserveAmmoTemplate": ""
+              },
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 8,
+                "reserveAmmoTemplate": "webley_mk6_magazine"
+              },
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 0,
+                "reserveAmmoTemplate": ""
+              },
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 0,
+                "reserveAmmoTemplate": ""
+              }
+            ],
+            "human_weap__weapInitialComponents": [{}, {}, {}, {}, {}],
+            "human_weap__weapTemplates": {
+              "grenade": "grenade_thrower",
+              "melee": "gear_trench_club_weapon",
+              "primary": "",
+              "secondary": "",
+              "tertiary": "webley_mk6_gun"
+            },
+            "id": 3,
+            "inventory": [
+              {
+                "gametemplate": "uk_repair_kit_item"
+              }
+            ],
+            "isHero": false,
+            "isPremium": false,
+            "level": 5,
+            "maxLevel": 5,
+            "name": "Adam",
+            "perkPoints": {
+              "speed": 19,
+              "vitality": 14,
+              "weapon": 18
+            },
+            "perks": [
+              {
+                "name": "starter_tanker",
+                "stats": [
+                  {
+                    "statKey": "seat_change_speed",
+                    "statValue": 0.09960000216960907
+                  }
+                ]
+              }
+            ],
+            "sClass": "tanker",
+            "sKind": "tanker",
+            "surname": "Zelly",
+            "tier": 5,
+            "weaponPreset": ""
+          }
+        ],
+        "squadId": "ww1_uk_tanker_1_event_squad",
+        "squadType": "tank",
+        "toLevelExp": 1120,
+        "vehicleType": "tank",
+        "disableSquadRotation" : false,
+        "spawnCostTeamScoreMult" : 1,
+        "spawnScoreGainMult": 1.0,
+        "spawnCostPerSpawnPersonalScore": [800]
+      },
+      {
+        "artilleryCooldownMul": 1.0,
+        "artilleryTypeUnlocks": [],
+        "curVehicle": {
+          "gametemplate": "fr_saint_chamond",
+          "growthTier": 1,
+          "guid": "2219207186",
+          "mods": [
+            {
+              "statKey": "gun_spread__maxDeltaAngle",
+              "statValue": 1.1499999761581421
+            },
+            {
+              "statKey": "track_friction_side_rot_min_speed",
+              "statValue": 1.1000000238418579
+            },
+            {
+              "statKey": "track_friction_side_rot_max_speed",
+              "statValue": 1.1000000238418579
+            },
+            {
+              "statKey": "track_friction_side_rot_min_friction",
+              "statValue": 0.89999997615814209
+            },
+            {
+              "statKey": "track_friction_side_rot_max_friction",
+              "statValue": 0.89999997615814209
+            },
+            {
+              "statKey": "suspension_dampening",
+              "statValue": 0.85000002384185791
+            },
+            {
+              "statKey": "turret_ver_speed",
+              "statValue": 0.80000001192092896
+            },
+            {
+              "statKey": "engine_power",
+              "statValue": 0.85000002384185791
+            },
+            {
+              "statKey": "turret_hor_speed",
+              "statValue": 0.85000002384185791
+            },
+            {
+              "statKey": "track_friction_frontal_static",
+              "statValue": 1.0499999523162842
+            },
+            {
+              "statKey": "braking_force",
+              "statValue": 0.85000002384185791
+            },
+            {
+              "statKey": "track_friction_frontal_sliding",
+              "statValue": 1.1000000238418579
+            }
+          ]
+        },
+        "enableSquadRotationWithVehicle": false,
+        "engineerUnlocks": [],
+        "exp": 641,
+        "expBonus": 0.0,
+        "hasAllArtillery": false,
+        "hasRocketArtillery": false,
+        "isParatroopers": false,
+        "isRented": false,
+        "level": 0,
+        "paratrooperBoxUnlocks": [],
+        "spawnWithoutVehicleAvailable": false,
+        "squad": [
+          {
+            "bodyScale": {
+              "height": 1.0168761014938354,
+              "width": 1.0506290197372437
+            },
+            "callname": "",
+            "country": "britain",
+            "equipment": {
+              "face": {
+                "gametemplate": "attachable_wear_headgenmesh_english_09_item",
+                "slot": "face"
+              },
+              "skined_helmet": {
+                "gametemplate": "attachable_wear_uk_mk1_brodie_helmet_item",
+                "slot": "skined_helmet"
+              },
+              "gloves": {
+                "gametemplate": "attachable_wear_hands_01_ussr_summer_item",
+                "slot": "gloves"
+              },
+              "tunic": {
+                "gametemplate": "attachable_wear_uk_ww1_tanker_coverall_item",
+                "slot": "tunic"
+              }
+            },
+            "exp": 0,
+            "gametemplate": "uk_base_soldier",
+            "guid": "2220311733",
+            "human_weap__weapInfo": [
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 0,
+                "reserveAmmoTemplate": ""
+              },
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 0,
+                "reserveAmmoTemplate": ""
+              },
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 8,
+                "reserveAmmoTemplate": "webley_mk6_magazine"
+              },
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 0,
+                "reserveAmmoTemplate": ""
+              },
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 0,
+                "reserveAmmoTemplate": ""
+              }
+            ],
+            "human_weap__weapInitialComponents": [{}, {}, {}, {}, {}],
+            "human_weap__weapTemplates": {
+              "grenade": "grenade_thrower",
+              "melee": "gear_trench_club_weapon",
+              "primary": "",
+              "secondary": "",
+              "tertiary": "webley_mk6_gun"
+            },
+            "id": 0,
+            "inventory": [
+              {
+                "gametemplate": "uk_repair_kit_item"
+              }
+            ],
+            "isHero": false,
+            "isPremium": false,
+            "level": 5,
+            "maxLevel": 5,
+            "name": "Daniel",
+            "perkPoints": {
+              "speed": 19,
+              "vitality": 14,
+              "weapon": 18
+            },
+            "perks": [
+              {
+                "name": "starter_tanker",
+                "stats": [
+                  {
+                    "statKey": "seat_change_speed",
+                    "statValue": 0.09960000216960907
+                  }
+                ]
+              }
+            ],
+            "sClass": "tanker",
+            "sKind": "tanker",
+            "surname": "Harris",
+            "tier": 5,
+            "weaponPreset": ""
+          },
+          {
+            "bodyScale": {
+              "height": 0.98142218589782715,
+              "width": 1.0529166460037231
+            },
+            "callname": "",
+            "country": "britain",
+            "equipment": {
+              "face": {
+                "gametemplate": "attachable_wear_headgenmesh_english_10_item",
+                "slot": "face"
+              },
+              "skined_helmet": {
+                "gametemplate": "attachable_wear_uk_mk1_brodie_helmet_item",
+                "slot": "skined_helmet"
+              },
+              "gloves": {
+                "gametemplate": "attachable_wear_hands_01_ussr_summer_item",
+                "slot": "gloves"
+              },
+              "tunic": {
+                "gametemplate": "attachable_wear_uk_ww1_tanker_coverall_item",
+                "slot": "tunic"
+              }
+            },
+            "exp": 0,
+            "gametemplate": "uk_base_soldier",
+            "guid": "2220311579",
+            "human_weap__weapInfo": [
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 0,
+                "reserveAmmoTemplate": ""
+              },
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 0,
+                "reserveAmmoTemplate": ""
+              },
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 8,
+                "reserveAmmoTemplate": "webley_mk6_magazine"
+              },
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 0,
+                "reserveAmmoTemplate": ""
+              },
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 0,
+                "reserveAmmoTemplate": ""
+              }
+            ],
+            "human_weap__weapInitialComponents": [{}, {}, {}, {}, {}],
+            "human_weap__weapTemplates": {
+              "grenade": "grenade_thrower",
+              "melee": "uk_knife_weapon",
+              "primary": "",
+              "secondary": "",
+              "tertiary": "webley_mk6_gun"
+            },
+            "id": 1,
+            "inventory": [
+              {
+                "gametemplate": "uk_repair_kit_item"
+              }
+            ],
+            "isHero": false,
+            "isPremium": false,
+            "level": 5,
+            "maxLevel": 5,
+            "name": "Leon",
+            "perkPoints": {
+              "speed": 19,
+              "vitality": 14,
+              "weapon": 18
+            },
+            "perks": [
+              {
+                "name": "starter_tanker",
+                "stats": [
+                  {
+                    "statKey": "seat_change_speed",
+                    "statValue": 0.09960000216960907
+                  }
+                ]
+              }
+            ],
+            "sClass": "tanker",
+            "sKind": "tanker",
+            "surname": "Brown",
+            "tier": 5,
+            "weaponPreset": ""
+          },
+          {
+            "bodyScale": {
+              "height": 0.98801171779632568,
+              "width": 1.0107449293136597
+            },
+            "callname": "",
+            "country": "britain",
+            "equipment": {
+              "face": {
+                "gametemplate": "attachable_wear_headgenmesh_english_01_item",
+                "slot": "face"
+              },
+              "skined_helmet": {
+                "gametemplate": "attachable_wear_uk_mk1_brodie_helmet_item",
+                "slot": "skined_helmet"
+              },
+              "gloves": {
+                "gametemplate": "attachable_wear_hands_01_ussr_summer_item",
+                "slot": "gloves"
+              },
+              "tunic": {
+                "gametemplate": "attachable_wear_uk_ww1_tanker_coverall_item",
+                "slot": "tunic"
+              }
+            },
+            "exp": 0,
+            "gametemplate": "uk_base_soldier",
+            "guid": "2220312512",
+            "human_weap__weapInfo": [
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 0,
+                "reserveAmmoTemplate": ""
+              },
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 0,
+                "reserveAmmoTemplate": ""
+              },
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 8,
+                "reserveAmmoTemplate": "webley_mk6_magazine"
+              },
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 0,
+                "reserveAmmoTemplate": ""
+              },
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 0,
+                "reserveAmmoTemplate": ""
+              }
+            ],
+            "human_weap__weapInitialComponents": [{}, {}, {}, {}, {}],
+            "human_weap__weapTemplates": {
+              "grenade": "grenade_thrower",
+              "melee": "uk_knife_weapon",
+              "primary": "",
+              "secondary": "",
+              "tertiary": "webley_mk6_gun"
+            },
+            "id": 2,
+            "inventory": [
+              {
+                "gametemplate": "uk_repair_kit_item"
+              }
+            ],
+            "isHero": false,
+            "isPremium": false,
+            "level": 5,
+            "maxLevel": 5,
+            "name": "Stanley",
+            "perkPoints": {
+              "speed": 19,
+              "vitality": 14,
+              "weapon": 18
+            },
+            "perks": [
+              {
+                "name": "starter_tanker",
+                "stats": [
+                  {
+                    "statKey": "seat_change_speed",
+                    "statValue": 0.09960000216960907
+                  }
+                ]
+              }
+            ],
+            "sClass": "tanker",
+            "sKind": "tanker",
+            "surname": "Harrison",
+            "tier": 5,
+            "weaponPreset": ""
+          },
+          {
+            "bodyScale": {
+              "height": 0.98294931650161743,
+              "width": 1.0079250335693359
+            },
+            "callname": "",
+            "country": "britain",
+            "equipment": {
+              "face": {
+                "gametemplate": "attachable_wear_headgenmesh_english_02_item",
+                "slot": "face"
+              },
+              "skined_helmet": {
+                "gametemplate": "attachable_wear_uk_mk1_brodie_helmet_item",
+                "slot": "skined_helmet"
+              },
+              "gloves": {
+                "gametemplate": "attachable_wear_hands_01_ussr_summer_item",
+                "slot": "gloves"
+              },
+              "tunic": {
+                "gametemplate": "attachable_wear_uk_ww1_tanker_coverall_item",
+                "slot": "tunic"
+              }
+            },
+            "exp": 0,
+            "gametemplate": "uk_base_soldier",
+            "guid": "2220311130",
+            "human_weap__weapInfo": [
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 0,
+                "reserveAmmoTemplate": ""
+              },
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 0,
+                "reserveAmmoTemplate": ""
+              },
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 8,
+                "reserveAmmoTemplate": "webley_mk6_magazine"
+              },
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 0,
+                "reserveAmmoTemplate": ""
+              },
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 0,
+                "reserveAmmoTemplate": ""
+              }
+            ],
+            "human_weap__weapInitialComponents": [{}, {}, {}, {}, {}],
+            "human_weap__weapTemplates": {
+              "grenade": "grenade_thrower",
+              "melee": "gear_trench_club_weapon",
+              "primary": "",
+              "secondary": "",
+              "tertiary": "webley_mk6_gun"
+            },
+            "id": 3,
+            "inventory": [
+              {
+                "gametemplate": "uk_repair_kit_item"
+              }
+            ],
+            "isHero": false,
+            "isPremium": false,
+            "level": 5,
+            "maxLevel": 5,
+            "name": "Saul",
+            "perkPoints": {
+              "speed": 19,
+              "vitality": 14,
+              "weapon": 18
+            },
+            "perks": [
+              {
+                "name": "starter_tanker",
+                "stats": [
+                  {
+                    "statKey": "seat_change_speed",
+                    "statValue": 0.09960000216960907
+                  }
+                ]
+              }
+            ],
+            "sClass": "tanker",
+            "sKind": "tanker",
+            "surname": "Decker",
+            "tier": 5,
+            "weaponPreset": ""
+          },
+          {
+            "bodyScale": {
+              "height": 0.98294931650161743,
+              "width": 1.0079250335693359
+            },
+            "callname": "",
+            "country": "britain",
+            "equipment": {
+              "face": {
+                "gametemplate": "attachable_wear_headgenmesh_english_03_item",
+                "slot": "face"
+              },
+              "skined_helmet": {
+                "gametemplate": "attachable_wear_uk_mk1_brodie_helmet_item",
+                "slot": "skined_helmet"
+              },
+              "gloves": {
+                "gametemplate": "attachable_wear_hands_01_ussr_summer_item",
+                "slot": "gloves"
+              },
+              "tunic": {
+                "gametemplate": "attachable_wear_uk_ww1_tanker_coverall_item",
+                "slot": "tunic"
+              }
+            },
+            "exp": 0,
+            "gametemplate": "uk_base_soldier",
+            "guid": "2220311130",
+            "human_weap__weapInfo": [
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 0,
+                "reserveAmmoTemplate": ""
+              },
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 0,
+                "reserveAmmoTemplate": ""
+              },
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 8,
+                "reserveAmmoTemplate": "webley_mk6_magazine"
+              },
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 0,
+                "reserveAmmoTemplate": ""
+              },
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 0,
+                "reserveAmmoTemplate": ""
+              }
+            ],
+            "human_weap__weapInitialComponents": [{}, {}, {}, {}, {}],
+            "human_weap__weapTemplates": {
+              "grenade": "grenade_thrower",
+              "melee": "gear_trench_club_weapon",
+              "primary": "",
+              "secondary": "",
+              "tertiary": "webley_mk6_gun"
+            },
+            "id": 3,
+            "inventory": [
+              {
+                "gametemplate": "uk_repair_kit_item"
+              }
+            ],
+            "isHero": false,
+            "isPremium": false,
+            "level": 5,
+            "maxLevel": 5,
+            "name": "Douglas",
+            "perkPoints": {
+              "speed": 19,
+              "vitality": 14,
+              "weapon": 18
+            },
+            "perks": [
+              {
+                "name": "starter_tanker",
+                "stats": [
+                  {
+                    "statKey": "seat_change_speed",
+                    "statValue": 0.09960000216960907
+                  }
+                ]
+              }
+            ],
+            "sClass": "tanker",
+            "sKind": "tanker",
+            "surname": "Torres",
+            "tier": 5,
+            "weaponPreset": ""
+          }
+        ],
+        "squadId": "ww1_uk_tanker_2_event_squad",
+        "squadType": "tank",
+        "toLevelExp": 2810,
+        "vehicleType": "tank",
+        "disableSquadRotation" : false,
+        "spawnCostTeamScoreMult" : 1,
+        "spawnScoreGainMult": 1.0,
+        "spawnCostPerSpawnPersonalScore": [900]
+      }
+    ],
+    "wallPosters": [],
+    "wallPostersCount": 3
+  }
+}

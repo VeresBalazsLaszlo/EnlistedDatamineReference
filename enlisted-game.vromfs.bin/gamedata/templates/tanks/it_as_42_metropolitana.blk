@@ -1,0 +1,369 @@
+it_as_42_metropolitana{
+  _use:t="it_as_42_metropolitana_common"
+  _use:t="jeep_respawn_settings"
+  _use:t="vehicle_with_attached_grenade_box_ger"
+  destroyIfNoCrewLeft:b=no
+  fire_damage__timeToExplosion:r=20.0
+
+  "animchar__objTexReplace:object"{
+    "it_camo_olive_green*":t="it_camo_desert_yellow*"
+  }
+
+  "dm_phys_parts__wheelsPartIds:list<i>"{
+  }
+
+  "disableDMParts:list<t>"{
+    part:t="gunner"
+    part:t="driver"
+  }
+
+  "vehicle_seats__canAcquireControls:shared:object"{
+
+    "driver:object"{
+      movement:b=yes
+      turrets:b=yes
+    }
+
+    "commander:object"{
+      movement:b=yes
+      turrets:b=yes
+      camera:b=yes
+    }
+
+    "extra_gunner:object"{
+      movement:b=yes
+      turrets:b=yes
+      camera:b=yes
+    }
+
+    "passenger1:object"{
+      movement:b=yes
+      camera:b=yes
+    }
+  }
+
+  "vehicle_seats__seatTemplates:shared:object"{
+    default:t="jeep_seat_fire_ready"
+    driver:t="jeep_seat_driver"
+    commander:t="jeep_seat_commander"
+    extra_gunner:t="vehicle_seat_extra_gunner"
+  }
+
+  _group{
+    _tags:t="server"
+
+    "dependent_templates:ecs::TemplatesListToInstantiate"{
+    }
+
+    "dependent_templates_list_shared:shared:list<t>"{
+      template_name:t="jeep_seat_fire_ready"
+      template_name:t="jeep_seat_driver"
+      template_name:t="jeep_seat_commander"
+      template_name:t="vehicle_seat_extra_gunner"
+    }
+  }
+
+  _group{
+    _tags:t="gameClient"
+
+    "dm_parts__specialViewPartNames:shared:list<t>"{
+      name:t="ex_decor_r_07"
+      name:t="ex_decor_l_06"
+    }
+  }
+
+  _group{
+    _tags:t="server"
+
+    "turret_control__hasTankAiGunners:tag"{
+    }
+  }
+
+  "wheelsSpecialOrder:tag"{
+  }
+}
+
+it_as_42_metropolitana_common{
+  _use:t="jeep_brakes"
+  _use:t="base_as_42_metropolitana"
+  _use:t="it_as_42_metropolitana_vehicle_sound"
+  _use:t="forestall"
+  _use:t="vehicle_anim_steering_deflection"
+  vehicle__mapIcon:t="map_icon_car"
+  user_point__icon:t="map_icon_car"
+  vehicle_seats__enterTime:r=0.5
+  vehicle_seats__exitTime:r=0.5
+  commanderFpsCamMaxAngle:p2=40.0, 40.0
+  passengerFpsCamMaxAngle:p2=40.0, 40.0
+  item__iconOffset:p2=0.0, 0.0
+  commanderCockpitFpsCamMaxAngle:p2=40.0, 5.0
+  gunner_cam_limit__useCockpitDir:b=yes
+  vehicle_commander_cam__attachToVehicle:b=yes
+
+  "jeep:tag"{
+  }
+
+  _group{
+    _tags:t="render"
+    exhaust_fx__fx:t="car_exhaust_template"
+    exhaust_fx__brokenFx:t="car_broken_exhaust_template"
+  }
+
+  "vehicle__isExplosionFatal:b"{
+    _tags:t="server"
+    value:b=yes
+  }
+
+  "vehicle_seats__effectors:array"{
+  }
+
+  "dm_parts_repair_names:list<t>"{
+    part:t="drive_turret_h"
+    part:t="drive_turret_v"
+    part:t="cannon_breech"
+    part:t="engine"
+    part:t="transmission"
+    part:t="gun_barrel"
+    part:t="gun_barrel_01"
+    part:t="gun_barrel_02"
+    part:t="gun_barrel_03"
+    part:t="gun_barrel_04"
+    part:t="gun_barrel_05"
+    part:t="wheel_r_01"
+    part:t="wheel_l_01"
+    part:t="wheel_r_02"
+    part:t="wheel_l_02"
+  }
+
+  "vehicle_seats__seatsProvideOrder:tag"{
+  }
+
+  "vehicle_seats__seats:shared:array"{
+
+    "seats:object"{
+      name:t="commander"
+      locName:t="vehicle_seats/gunner"
+      attachNode:t="gunner"
+      ignoreAttachNodeRotation:b=yes
+      attachTm:m=[[0.9, 0.0, 0.0] [0.0, 0.9, 0.0] [0.0, 0.0, 0.9] [-0.25, -0.25, -0.06]]
+      seatComponent:t="isGunner"
+      nextSeat:t="driver"
+      shouldHideOwner:b=no
+      cameraNodeName:t="bone_gun_02"
+      directTurretControl:b=yes
+      canPlaceManually:b=yes
+      isHoldGunModeAllowed:b=no
+      receiveDamageFromDMPart:t="gunner"
+      cameraOffset:p3=0.0, 0.33, 0.0
+      seatAnimUpper:t="drive_passenger"
+      seatAnimLower:t="drive_passenger"
+      useHatchEffectors:b=yes
+
+      "turretNames:array"{
+        turretNames:t="turret_01"
+      }
+
+      "loaderTurretNames:array"{
+        turret:t="turret_01"
+      }
+
+      "effectors:object"{
+
+        "l.hand:object"{
+          rel_tm:m=[[0.9223158, -0.2282032, -0.3118609] [-0.2591097, -0.9639236, -0.06095815] [-0.2866988, 0.1370286, -0.94817] [-0.4197311, 0.5100877, -0.368866]]
+          node:t="bone_turret"
+        }
+
+        "r.hand:object"{
+          rel_tm:m=[[0.4998951, 0.1435258, 0.8541107] [0.7470641, -0.5703923, -0.3413932] [0.4381794, 0.8087361, -0.3923591] [-0.435041, 0.3888633, 0.3394775]]
+          node:t="bone_turret"
+        }
+
+        "l.foot:object"{
+          rel_tm:m=[[-0.4527197, -0.8760866, 0.1658807] [0.8245627, -0.4821453, -0.2960275] [0.3393247, 0.002761585, 0.940666] [-0.396595, -0.1782734, -0.2958069]]
+          node:t="bone_turret"
+        }
+
+        "r.foot:object"{
+          rel_tm:m=[[-0.526548, -0.8446939, -0.09612725] [0.8278209, -0.5351747, 0.1682286] [-0.1935466, 0.0090043, 0.9810506] [-0.4991379, -0.1560874, 0.2323303]]
+          node:t="bone_turret"
+        }
+      }
+    }
+
+    "seats:object"{
+      name:t="driver"
+      locName:t="vehicle_seats/driver"
+      seatOwnsEntityControl:b=yes
+      attachNode:t="driver"
+      ignoreAttachNodeRotation:b=yes
+      attachTm:m=[[0.9, 0.0, 0.0] [0.0, 0.9, 0.0] [0.0, 0.0, 0.9] [-0.29, -0.25, 0.02000989]]
+      seatComponent:t="isDriver"
+      shouldHideOwner:b=no
+      receiveDamageFromDMPart:t="driver"
+      cameraNodeName:t="bone_camera_driver"
+      seatAnimTurretName:t="turret_01"
+      seatAnimUpper:t="drive_passenger"
+      seatAnimLower:t="drive_passenger"
+      cameraType:t="commander"
+      isHoldGunModeAllowed:b=no
+      canPlaceManually:b=yes
+      cameraOffset:p3=-0.45, 0.05, 0.0
+
+      "effectors:object"{
+
+        "l.hand:object"{
+          rel_tm:m=[[-0.555441, -0.1327037, -0.8208992] [-0.8315562, 0.08895648, 0.5482717] [0.0002665855, 0.9871543, -0.1597604] [0.04599106, 0.09367371, -0.1704776]]
+          node:t="bone_roll_driver"
+        }
+
+        "r.hand:object"{
+          rel_tm:m=[[-0.5982757, 0.02116555, -0.8010099] [-0.7980877, -0.1050336, 0.593318] [-0.07157492, 0.9942423, 0.07973076] [0.04242915, -0.1035004, -0.1611068]]
+          node:t="bone_roll_driver"
+        }
+
+        "l.foot:object"{
+          rel_tm:m=[[0.7233958, -0.06530946, -0.6873371] [0.6890892, 0.1303776, 0.7128513] [0.04305747, -0.9893115, 0.1393188] [1.219262, 0.1975555, 0.7853305]]
+          node:t="root"
+        }
+
+        "r.foot:object"{
+          rel_tm:m=[[0.6673641, -0.01733801, -0.7445293] [0.728396, -0.1930466, 0.6573983] [-0.1551268, -0.9810362, -0.1162034] [1.20083, -0.1138763, 0.7938447]]
+          node:t="root"
+        }
+      }
+    }
+
+    "seats:object"{
+      name:t="extra_gunner"
+      locName:t="vehicle_seats/additional_gunner"
+      attachNode:t="root"
+      ignoreAttachNodeRotation:b=yes
+      attachTm:m=[[0.9000091, 2.877324e-16, -7.426935e-32] [-2.877311e-16, 0.900005, -1.1983e-08] [-3.830973e-24, 1.198305e-08, 0.9000082] [-0.06, 1.29, -0.62]]
+      seatComponent:t="isGunner"
+      shouldHideOwner:b=no
+      cameraNodeName:t="bone_mg_aa_v_01"
+      directTurretControl:b=yes
+      canPlaceManually:b=yes
+      seatAnimTurretName:t="turret_01"
+      seatAnimUpper:t="as_42_metropolitana_gunner_pose_front_right"
+      seatAnimLower:t="as_42_metropolitana_gunner_pose_front_right"
+      cameraOffset:p3=-0.7, 0.1, 0.0
+
+      "turretNames:array"{
+        turret:t="turret_02"
+      }
+
+      "effectors:object"{
+
+        "l.hand:object"{
+          rel_tm:m=[[0.9409598, 0.2484158, 0.2299667] [-0.1735572, -0.2292362, 0.9577747] [0.2906422, -0.9411371, -0.1725872] [-0.5722275, -0.0367384, -0.1068726]]
+          node:t="bone_mg_aa_v_01"
+        }
+
+        "r.hand:object"{
+          rel_tm:m=[[0.9366645, 0.1106472, 0.3322891] [0.3436995, -0.1080742, -0.9328412] [-0.06730432, 0.9879672, -0.1392587] [-0.5847206, -0.02739668, 0.06762695]]
+          node:t="bone_mg_aa_v_01"
+        }
+
+        "l.foot:object"{
+          rel_tm:m=[[0.1352437, -0.0732838, -0.9880981] [0.8394483, 0.5382425, 0.07497799] [0.5263422, -0.8395987, 0.134312] [0.2493336, -0.2608337, 1.012771]]
+          node:t="root"
+        }
+
+        "r.foot:object"{
+          rel_tm:m=[[0.4399014, 0.05018034, -0.8966433] [0.8853171, -0.1917423, 0.4236138] [-0.1506675, -0.9801626, -0.1287733] [0.6524255, -0.6625671, 1.310023]]
+          node:t="root"
+        }
+      }
+    }
+
+    "seats:object"{
+      name:t="extra_gunner"
+      locName:t="vehicle_seats/additional_gunner"
+      attachNode:t="root"
+      ignoreAttachNodeRotation:b=yes
+      attachTm:m=[[-0.9000089, -1.438663e-15, 1.637949e-06] [-1.712142e-07, 0.8950891, -0.09407755] [-1.628975e-06, -0.09407636, -0.8950776] [-0.55, 1.36, -0.6]]
+      seatComponent:t="isGunner"
+      shouldHideOwner:b=no
+      cameraNodeName:t="bone_mg_aa_v_02"
+      directTurretControl:b=yes
+      canPlaceManually:b=yes
+      seatAnimTurretName:t="turret_01"
+      seatAnimUpper:t="as_42_metropolitana_gunner_pose_rear_right"
+      seatAnimLower:t="as_42_metropolitana_gunner_pose_rear_right"
+      cameraOffset:p3=-0.7, 0.1, 0.0
+
+      "turretNames:array"{
+        turret:t="turret_03"
+      }
+
+      "effectors:object"{
+
+        "l.hand:object"{
+          rel_tm:m=[[0.9409598, 0.2484158, 0.2299667] [-0.1735572, -0.2292362, 0.9577747] [0.2906422, -0.9411371, -0.1725872] [-0.5722275, -0.0367384, -0.1068726]]
+          node:t="bone_mg_aa_v_02"
+        }
+
+        "r.hand:object"{
+          rel_tm:m=[[0.9366645, 0.1106472, 0.3322891] [0.3436995, -0.1080742, -0.9328412] [-0.06730432, 0.9879672, -0.1392587] [-0.5847206, -0.02739668, 0.06762695]]
+          node:t="bone_mg_aa_v_02"
+        }
+
+        "l.foot:object"{
+          rel_tm:m=[[-0.05184679, 0.1391607, -0.9889112] [-0.9915411, 0.1108131, 0.0675784] [0.1189887, 0.9840512, 0.1322384] [-1.104212, -0.6856232, 1.100017]]
+          node:t="root"
+        }
+
+        "r.foot:object"{
+          rel_tm:m=[[-0.4348662, -0.02275603, -0.9002077] [-0.8747707, 0.2479141, 0.4163114] [0.2137007, 0.9685158, -0.1277158] [-1.030867, -0.3648071, 1.045628]]
+          node:t="root"
+        }
+      }
+    }
+
+    "seats:object"{
+      name:t="extra_gunner"
+      locName:t="vehicle_seats/additional_gunner"
+      attachNode:t="root"
+      ignoreAttachNodeRotation:b=yes
+      attachTm:m=[[-0.900003, 1.988157e-15, -1.637939e-06] [1.988163e-15, 0.9000056, 3.618309e-21] [1.637939e-06, 7.731896e-29, -0.9000033] [-0.66, 1.4, 0.73]]
+      seatComponent:t="isGunner"
+      shouldHideOwner:b=no
+      cameraNodeName:t="bone_mg_aa_v_03"
+      directTurretControl:b=yes
+      canPlaceManually:b=yes
+      seatAnimTurretName:t="turret_01"
+      seatAnimUpper:t="as_42_metropolitana_gunner_pose_rear_left"
+      seatAnimLower:t="as_42_metropolitana_gunner_pose_rear_left"
+      cameraOffset:p3=-0.7, 0.1, 0.0
+
+      "turretNames:array"{
+        turret:t="turret_04"
+      }
+
+      "effectors:object"{
+
+        "l.hand:object"{
+          rel_tm:m=[[0.9409598, 0.2484158, 0.2299667] [-0.1735572, -0.2292362, 0.9577747] [0.2906422, -0.9411371, -0.1725872] [-0.5722275, -0.0367384, -0.1068726]]
+          node:t="bone_mg_aa_v_03"
+        }
+
+        "r.hand:object"{
+          rel_tm:m=[[0.9366645, 0.1106472, 0.3322891] [0.3436995, -0.1080742, -0.9328412] [-0.06730432, 0.9879672, -0.1392587] [-0.5847206, -0.02739668, 0.06762695]]
+          node:t="bone_mg_aa_v_03"
+        }
+
+        "l.foot:object"{
+          rel_tm:m=[[-0.09484777, -0.104904, -0.9899486] [-0.9724939, -0.2027528, 0.1146609] [-0.2127435, 0.9735957, -0.08278792] [-1.135919, 0.4781799, 1.027635]]
+          node:t="root"
+        }
+
+        "r.foot:object"{
+          rel_tm:m=[[-0.4348662, -0.02275612, -0.9002079] [-0.8747708, 0.247914, 0.4163112] [0.2137006, 0.968516, -0.1277159] [-1.12514, 0.8180084, 1.030949]]
+          node:t="root"
+        }
+      }
+    }
+  }
+}

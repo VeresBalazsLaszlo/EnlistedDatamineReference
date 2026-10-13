@@ -1,0 +1,1092 @@
+entity{
+  _template:t="poly_battle_area"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, 0.0, 0.0]]
+  battleAreaId:t="area_1_a_1"
+
+  "poly_area__points:list<p3>"{
+    item:p3=76.6248, 5.26037, 59.7882
+    item:p3=41.1404, 5.21125, 27.3154
+    item:p3=52.0848, 5.9217, 15.4751
+    item:p3=52.0186, 6.24461, 14.8894
+    item:p3=67.5721, 5.8046, -2.48748
+    item:p3=68.5871, 5.25905, -2.56157
+    item:p3=79.4619, 5.21125, -14.5187
+    item:p3=114.938, 5.21125, 17.9686
+  }
+}
+
+entity{
+  _template:t="gun_game_mode_sounds"
+}
+
+entity{
+  _template:t="custom_profile"
+  customProfile:t="%enlSqGlob/data/aprilfools_2025_gun_game_profile.json"
+}
+
+entity{
+  _template:t="chars_gun_game_mode_logic"
+}
+
+entity{
+  _template:t="static_cam"
+  camera__active:b=yes
+  transform:m=[[0.910585, 0.0, 0.413323] [-0.0744883, 0.983626, 0.164104] [-0.406555, -0.180219, 0.895676] [84.102, 14.0361, 11.9308]]
+}
+
+entity{
+  _template:t="normandy_level"
+  level__blk:t="levels/normandy_smn_2x2.blk"
+}
+
+entity{
+  _template:t="volfog_nbs"
+  volfog_nbs__rootGraph:t="fog_normandy_morning.json"
+}
+
+entity{
+  _template:t="briefing_gun_game"
+  mission_name:t="normandy_factory_gun_game"
+  mission_outfit:t="normandy"
+
+  "loading_images:list<t>"{
+    item:t="ui/normandy_smn_10_result.avif"
+  }
+}
+
+entity{
+  _template:t="gun_game_respawn_base"
+  transform:m=[[-0.469746, 0.0, -0.882801] [0.0, 1.0, 0.0] [0.882801, 0.0, -0.469746] [61.6668, 6.15699, 36.1822]]
+  gun_game__respawnFriendlyRadius:r=15.0
+}
+
+entity{
+  _template:t="gun_game_respawn_base"
+  transform:m=[[0.313864, 0.0, -0.949468] [0.0, 1.0, 0.0] [0.949468, -0.0, 0.313864] [52.4406, 6.22375, 22.9543]]
+  gun_game__respawnFriendlyRadius:r=18.0
+}
+
+entity{
+  _template:t="gun_game_respawn_base"
+  transform:m=[[0.733717, 0.0, 0.679455] [0.0, 1.0, -0.0] [-0.679455, 0.0, 0.733717] [69.5166, 18.1515, 1.91057]]
+  gun_game__respawnFriendlyRadius:r=17.0
+}
+
+entity{
+  _template:t="gun_game_respawn_base"
+  transform:m=[[-0.530605, 0.0, 0.847619] [0.0, 1.0, 0.0] [-0.847619, 0.0, -0.530605] [59.4314, 18.0462, 12.5331]]
+  gun_game__respawnFriendlyRadius:r=17.0
+}
+
+entity{
+  _template:t="gun_game_respawn_base"
+  transform:m=[[0.697717, 0.0, -0.716373] [0.0, 1.0, 0.0] [0.716373, -0.0, 0.697717] [65.5512, 6.15699, 44.4583]]
+  gun_game__respawnFriendlyRadius:r=15.0
+}
+
+entity{
+  _template:t="gun_game_respawn_base"
+  transform:m=[[-0.765527, 0.0, -0.643404] [0.0, 1.0, 0.0] [0.643404, 0.0, -0.765527] [112.552, 6.15699, 18.0543]]
+  gun_game__respawnFriendlyRadius:r=24.0
+}
+
+entity{
+  _template:t="gun_game_respawn_base"
+  transform:m=[[0.801727, 0.0, 0.59769] [-0.0, 1.0, 0.0] [-0.59769, -0.0, 0.801727] [58.4517, 24.1089, 14.7017]]
+  gun_game__respawnFriendlyRadius:r=15.0
+}
+
+entity{
+  _template:t="gun_game_respawn_base"
+  transform:m=[[-0.861022, 0.0, 0.508567] [0.0, 1.0, 0.0] [-0.508567, 0.0, -0.861022] [80.9292, 6.15698, -9.54242]]
+  gun_game__respawnFriendlyRadius:r=19.0
+}
+
+entity{
+  _template:t="gun_game_respawn_base"
+  transform:m=[[-0.469746, 0.0, -0.882801] [0.0, 1.0, 0.0] [0.882801, 0.0, -0.469746] [61.6668, 11.9176, 36.1822]]
+  gun_game__respawnFriendlyRadius:r=15.0
+}
+
+entity{
+  _template:t="gun_game_respawn_base"
+  transform:m=[[0.697717, 0.0, -0.716373] [0.0, 1.0, 0.0] [0.716373, -0.0, 0.697717] [65.5512, 12.2295, 44.4583]]
+  gun_game__respawnFriendlyRadius:r=15.0
+}
+
+entity{
+  _template:t="gun_game_respawn_base"
+  transform:m=[[-0.92216, 0.0, 0.386808] [0.0, 1.0, 0.0] [-0.386808, 0.0, -0.92216] [78.3036, 12.2295, -4.03322]]
+  gun_game__respawnFriendlyRadius:r=20.0
+}
+
+entity{
+  _template:t="gun_game_respawn_base"
+  transform:m=[[-0.777682, 0.0, -0.628657] [0.0, 1.0, 0.0] [0.628657, 0.0, -0.777682] [96.7062, 12.2295, 28.6454]]
+  gun_game__respawnFriendlyRadius:r=15.0
+}
+
+entity{
+  _template:t="rendinsts_removes"
+
+  "rirmv:array"{
+
+    "rirmv:object"{
+      name:t="metal_barrels_pile_c"
+      tm:m=[[-0.793354, 0.0, -0.608761] [0.0, 1.0, 0.0] [0.608761, 0.0, -0.793354] [56.6146, 5.2558, 18.1004]]
+    }
+
+    "rirmv:object"{
+      name:t="ammunition_box_piles_b"
+      tm:m=[[-0.743555, 0.0, -0.668675] [0.0, 1.0, 0.0] [0.668675, 0.0, -0.743555] [76.5591, 11.4289, -1.80518]]
+    }
+
+    "rirmv:object"{
+      name:t="is_work_table_a"
+      tm:m=[[0.675589, 0.0, -0.737279] [0.0, 1.0, 0.0] [0.737279, 0.0, 0.675589] [136.179, 18.2903, 96.9559]]
+    }
+
+    "rirmv:object"{
+      name:t="is_file_cabinet_a"
+      tm:m=[[0.675589, 0.0, -0.737279] [0.0, 1.0, 0.0] [0.737279, 0.0, 0.675589] [89.2788, 18.473, 80.4545]]
+    }
+
+    "rirmv:object"{
+      name:t="is_work_table_c"
+      tm:m=[[0.675589, 0.0, -0.737279] [0.0, 1.0, 0.0] [0.737279, 0.0, 0.675589] [89.8931, 18.473, 81.0266]]
+    }
+
+    "rirmv:object"{
+      name:t="is_work_table_b"
+      tm:m=[[-0.737279, 0.0, -0.675589] [0.0, 1.0, 0.0] [0.675589, 0.0, -0.737279] [156.302, 18.2903, 61.5699]]
+    }
+
+    "rirmv:object"{
+      name:t="is_work_table_c"
+      tm:m=[[0.737278, 0.0, 0.67559] [0.0, 1.0, 0.0] [-0.67559, 0.0, 0.737278] [156.742, 18.2903, 62.3209]]
+    }
+
+    "rirmv:object"{
+      name:t="is_work_table_c"
+      tm:m=[[0.67559, 0.0, -0.737278] [0.0, 1.0, 0.0] [0.737278, 0.0, 0.67559] [154.543, 18.2903, 75.363]]
+    }
+
+    "rirmv:object"{
+      name:t="workshop_crane_rail_truss_a"
+      tm:m=[[-0.737278, 0.0, -0.67559] [0.0, 1.0, 0.0] [0.67559, 0.0, -0.737278] [129.497, 5.25834, 90.143]]
+    }
+
+    "rirmv:object"{
+      name:t="ammunition_box_f"
+      tm:m=[[-0.67559, 0.0, 0.737278] [0.0, 1.0, 0.0] [-0.737278, 0.0, -0.67559] [71.8357, 11.2657, 48.8207]]
+    }
+
+    "rirmv:object"{
+      name:t="ammunition_box_g"
+      tm:m=[[-0.67559, 0.0, 0.737278] [0.0, 1.0, 0.0] [-0.737278, 0.0, -0.67559] [72.4171, 11.2657, 48.1694]]
+    }
+
+    "rirmv:object"{
+      name:t="ammunition_box_b"
+      tm:m=[[-0.67559, 0.0, 0.737278] [0.0, 1.0, 0.0] [-0.737278, 0.0, -0.67559] [71.8266, 11.2657, 48.0768]]
+    }
+
+    "rirmv:object"{
+      name:t="ammunition_box_e"
+      tm:m=[[-0.67559, 0.0, 0.737278] [0.0, 1.0, 0.0] [-0.737278, 0.0, -0.67559] [71.9478, 11.2657, 47.6067]]
+    }
+
+    "rirmv:object"{
+      name:t="ammunition_box_n"
+      tm:m=[[-0.737278, 0.0, -0.67559] [0.0, 1.0, 0.0] [0.67559, 0.0, -0.737278] [72.4768, 11.2657, 47.323]]
+    }
+
+    "rirmv:object"{
+      name:t="ammunition_box_d"
+      tm:m=[[-0.67559, 0.0, 0.737278] [0.0, 1.0, 0.0] [-0.737278, 0.0, -0.67559] [72.2092, 11.2657, 47.8461]]
+    }
+
+    "rirmv:object"{
+      name:t="ammunition_box_i"
+      tm:m=[[-0.608761, 0.0, 0.793354] [0.0, 1.0, 0.0] [-0.793354, 0.0, -0.608761] [71.7805, 11.2657, 46.8282]]
+    }
+
+    "rirmv:object"{
+      name:t="ammunition_box_piles_f"
+      tm:m=[[0.991445, 0.0, 0.130526] [0.0, 1.0, 0.0] [-0.130526, 0.0, 0.991445] [64.1, 11.4289, 9.73633]]
+    }
+
+    "rirmv:object"{
+      name:t="metal_barrels_pile_d"
+      tm:m=[[-0.991445, 0.0, -0.130526] [0.0, 1.0, 0.0] [0.130526, 0.0, -0.991445] [64.4344, 11.2824, 8.67366]]
+    }
+
+    "rirmv:object"{
+      name:t="metal_barrel_squashed_b"
+      tm:m=[[-0.382683, 0.0, 0.92388] [0.0, 1.0, 0.0] [-0.92388, 0.0, -0.382683] [62.9424, 11.2824, 9.13487]]
+    }
+
+    "rirmv:object"{
+      name:t="welding_items_b_a"
+      tm:m=[[-0.460767, -0.247555, -1.11239] [1.13565, -5.96046e-08, -0.470403] [0.0947353, -1.20404, 0.228711] [81.9421, 11.621, 0.759587]]
+    }
+
+    "rirmv:object"{
+      name:t="welding_items_a_a"
+      tm:m=[[-0.295157, -0.000157714, -0.477655] [0.020068, 0.560991, -0.0125853] [0.477233, -0.0236872, -0.294888] [82.7419, 11.2785, 1.00464]]
+    }
+
+    "rirmv:object"{
+      name:t="welding_items_c_b"
+      tm:m=[[0.982683, 0.0115504, -0.0453167] [-0.0130044, 0.983208, -0.0313953] [0.0449203, 0.0319584, 0.982249] [82.2058, 11.2824, 0.631819]]
+    }
+
+    "rirmv:object"{
+      name:t="welding_items_d_a"
+      tm:m=[[-0.547196, -0.00392538, -0.836996] [-0.634838, 0.653654, 0.411967] [0.545489, 0.756783, -0.36017] [82.8772, 11.2904, 0.421972]]
+    }
+
+    "rirmv:object"{
+      name:t="welding_mask_c"
+      tm:m=[[-0.57939, -0.0367272, 0.547808] [-0.0316221, 0.79733, 0.0200121] [-0.548127, -0.00717592, -0.580207] [81.9164, 11.2977, 0.763775]]
+    }
+
+    "rirmv:object"{
+      name:t="sandbags_wall_high_l2000_a_dmg"
+      tm:m=[[-0.292883, 0.0, 0.956148] [5.96046e-08, 1.0, 5.96046e-08] [-0.956148, 5.96046e-08, -0.292883] [84.2866, 11.2824, 0.699579]]
+    }
+
+    "rirmv:object"{
+      name:t="welding_items_b_c"
+      tm:m=[[-0.264979, 0.0282985, -0.610075] [0.011507, 0.665135, 0.0258545] [0.610623, -0.000254273, -0.265228] [83.1025, 11.3007, 0.557898]]
+    }
+
+    "rirmv:object"{
+      name:t="coil_cable_a"
+      tm:m=[[-0.976297, 0.0, -0.216439] [0.0, 1.0, 0.0] [0.216439, 0.0, -0.976297] [90.7232, 11.2824, 6.21322]]
+    }
+
+    "rirmv:object"{
+      name:t="metal_barrel_firepit_b"
+      tm:m=[[0.991445, 0.0, 0.130526] [0.0, 1.0, 0.0] [-0.130526, 0.0, 0.991445] [89.5941, 11.2824, 6.25884]]
+    }
+
+    "rirmv:object"{
+      name:t="welding_items_c_a"
+      tm:m=[[1.17892, 0.0300151, 0.0514712] [-0.0299869, 1.18004, -0.00130051] [-0.0514876, -8.64267e-06, 1.1793] [100.465, 11.2824, 12.1053]]
+    }
+
+    "rirmv:object"{
+      name:t="welding_items_b_b"
+      tm:m=[[-0.28999, 0.383833, -0.606262] [-0.333867, 0.50663, 0.480452] [0.635148, 0.441558, -0.0242503] [100.84, 11.9009, 12.2852]]
+    }
+
+    "rirmv:object"{
+      name:t="welding_items_b_a"
+      tm:m=[[0.999048, 0.0, 0.0436183] [0.0, 1.0, 0.0] [-0.0436183, 0.0, 0.999048] [100.767, 11.2824, 12.4565]]
+    }
+
+    "rirmv:object"{
+      name:t="welding_items_c_a"
+      tm:m=[[0.807789, 0.0, -0.589472] [0.589472, 0.0, 0.807789] [0.0, -1.0, 0.0] [100.868, 11.4171, 11.7804]]
+    }
+
+    "rirmv:object"{
+      name:t="welding_items_b_c"
+      tm:m=[[-0.0729352, 0.28094, 0.956951] [-0.338785, 0.895472, -0.288712] [-0.938033, -0.345258, 0.0298666] [100.894, 11.4058, 11.8882]]
+    }
+
+    "rirmv:object"{
+      name:t="welding_mask_a"
+      tm:m=[[0.526689, 0.0, -0.850058] [-5.96046e-08, 1.0, 5.96046e-08] [0.850058, 0.0, 0.526689] [101.061, 11.2824, 12.8949]]
+    }
+
+    "rirmv:object"{
+      name:t="metal_barrel_squashed_a"
+      tm:m=[[-0.300706, -5.96046e-08, -0.953717] [8.34465e-07, 1.0, -3.57628e-07] [0.953717, -9.53674e-07, -0.300706] [100.265, 11.2824, 13.084]]
+    }
+
+    "rirmv:object"{
+      name:t="welding_items_a_a"
+      tm:m=[[0.754915, 0.0974672, 0.480213] [-0.480493, -0.0256958, 0.760571] [0.0960779, -0.894338, 0.0304822] [95.9104, 11.5578, 14.7795]]
+    }
+
+    "rirmv:object"{
+      name:t="welding_items_a_a"
+      tm:m=[[0.421266, 0.0, 0.253589] [-0.421026, 0.0352618, 0.699413] [-0.0109433, -0.491245, 0.0181792] [95.9724, 11.4306, 14.676]]
+    }
+
+    "rirmv:object"{
+      name:t="welding_items_d_a"
+      tm:m=[[0.21961, -1.0787, 0.132199] [0.571821, -1.78814e-07, -0.949916] [0.924177, 0.25633, 0.556327] [95.6687, 11.3416, 15.705]]
+    }
+
+    "rirmv:object"{
+      name:t="welding_items_c_b"
+      tm:m=[[0.775234, 1.3113e-06, 0.45718] [-0.45718, -0.000150084, 0.775234] [7.73668e-05, -0.9, -0.000128567] [96.2032, 11.6036, 15.0219]]
+    }
+
+    "rirmv:object"{
+      name:t="welding_items_b_a"
+      tm:m=[[-0.405747, 0.255698, -0.271319] [-0.315165, -0.0210235, 0.451504] [0.199165, 0.487651, 0.16173] [96.4237, 11.4344, 15.1121]]
+    }
+
+    "rirmv:object"{
+      name:t="welding_mask_b"
+      tm:m=[[0.391025, 0.00489748, -0.621825] [-0.0405277, 0.733184, -0.0197107] [0.620522, 0.0447997, 0.390558] [96.1037, 11.6363, 15.1778]]
+    }
+
+    "rirmv:object"{
+      name:t="welding_items_d_a"
+      tm:m=[[0.185215, -0.909765, 0.111494] [0.482266, -1.19209e-07, -0.801145] [0.779439, 0.216184, 0.469199] [95.7409, 11.4295, 15.7485]]
+    }
+
+    "rirmv:object"{
+      name:t="welding_items_d_a"
+      tm:m=[[0.771073, 0.0, 0.464163] [-0.464163, -5.96046e-08, 0.771073] [0.0, -0.9, -5.96046e-08] [96.4376, 11.3301, 14.6525]]
+    }
+
+    "rirmv:object"{
+      name:t="metal_barrel_squashed_b"
+      tm:m=[[-0.608762, 0.0, -0.793353] [0.0, 1.0, 0.0] [0.793353, 0.0, -0.608762] [101.703, 11.2824, 16.8247]]
+    }
+
+    "rirmv:object"{
+      name:t="is_work_table_a"
+      tm:m=[[0.737278, 0.0, 0.67559] [0.0, 1.0, 0.0] [-0.67559, 0.0, 0.737278] [95.2933, 11.2852, 28.2437]]
+    }
+
+    "rirmv:object"{
+      name:t="is_work_table_a"
+      tm:m=[[0.67559, 0.0, -0.737278] [0.0, 1.0, 0.0] [0.737278, 0.0, 0.67559] [94.2952, 11.2852, 27.8483]]
+    }
+
+    "rirmv:object"{
+      name:t="is_metal_desk_drawer_a"
+      tm:m=[[0.737278, 0.0, 0.67559] [0.0, 1.0, 0.0] [-0.67559, 0.0, 0.737278] [95.8736, 11.2852, 27.5535]]
+    }
+
+    "rirmv:object"{
+      name:t="is_work_table_a"
+      tm:m=[[0.67559, 0.0, -0.737278] [0.0, 1.0, 0.0] [0.737278, 0.0, 0.67559] [106.829, 17.286, 16.3039]]
+    }
+
+    "rirmv:object"{
+      name:t="ammunition_box_piles_e"
+      tm:m=[[-0.608761, 0.0, 0.793354] [0.0, 1.0, 0.0] [-0.793354, 0.0, -0.608761] [120.854, 18.4184, 32.8738]]
+    }
+
+    "rirmv:object"{
+      name:t="ammunition_box_piles_a"
+      tm:m=[[-0.737278, 0.0, -0.67559] [0.0, 1.0, 0.0] [0.67559, 0.0, -0.737278] [119.117, 18.4184, 26.0302]]
+    }
+
+    "rirmv:object"{
+      name:t="is_table_b"
+      tm:m=[[0.249675, -0.968044, -0.0235082] [0.966329, 0.250646, -0.0581816] [0.0622149, -0.00818962, 0.99803] [59.6609, 23.6073, 15.7307]]
+    }
+
+    "rirmv:object"{
+      name:t="is_table_a"
+      tm:m=[[-0.55195, 0.0, -0.833877] [0.0, 1.0, 0.0] [0.833877, 0.0, -0.55195] [59.0778, 23.2743, 13.2947]]
+    }
+
+    "rirmv:object"{
+      name:t="ammunition_box_f"
+      tm:m=[[0.0136097, 0.0, -0.999908] [0.0, 1.0, 0.0] [0.999908, 0.0, 0.0136097] [60.7066, 23.2779, 15.5043]]
+    }
+
+    "rirmv:object"{
+      name:t="ammunition_box_d"
+      tm:m=[[-0.0260979, 0.0545458, 0.99817] [0.999646, 0.00650007, 0.0257808] [-0.00508207, 0.99849, -0.0546962] [60.5228, 23.6272, 15.8527]]
+    }
+
+    "rirmv:object"{
+      name:t="ammunition_box_g"
+      tm:m=[[0.0136097, 0.0, -0.999908] [0.0, 1.0, 0.0] [0.999908, 0.0, 0.0136097] [60.7061, 23.2779, 16.3773]]
+    }
+
+    "rirmv:object"{
+      name:t="is_chair_b"
+      tm:m=[[0.857143, 1.19209e-07, -0.51508] [1.19209e-07, -1.0, -5.96046e-08] [-0.51508, 0.0, -0.857143] [58.5526, 24.5474, 13.6429]]
+    }
+
+    "rirmv:object"{
+      name:t="is_chair_a"
+      tm:m=[[0.688366, 1.19209e-07, 0.725364] [5.96046e-08, -1.0, 5.96046e-08] [0.725364, 0.0, -0.688366] [58.5252, 24.5474, 13.1943]]
+    }
+
+    "rirmv:object"{
+      name:t="is_plates_b1"
+      tm:m=[[0.737278, 0.0, 0.67559] [0.0, 1.0, 0.0] [-0.67559, 0.0, 0.737278] [59.1935, 24.0639, 13.2154]]
+    }
+
+    "rirmv:object"{
+      name:t="is_plates_a2"
+      tm:m=[[0.737278, 0.0, 0.67559] [0.0, 1.0, 0.0] [-0.67559, 0.0, 0.737278] [59.0477, 24.0639, 13.5643]]
+    }
+
+    "rirmv:object"{
+      name:t="is_chair_b"
+      tm:m=[[-0.540872, 1.19209e-07, -0.841105] [-5.96046e-08, -1.0, -1.19209e-07] [-0.841105, 0.0, 0.540872] [58.9866, 24.5474, 13.8158]]
+    }
+
+    "rirmv:object"{
+      name:t="is_chair_b"
+      tm:m=[[-0.359827, 1.19209e-07, -0.933019] [0.0, -1.0, -1.19209e-07] [-0.933019, 0.0, 0.359827] [59.323, 24.5474, 13.6167]]
+    }
+
+    "rirmv:object"{
+      name:t="is_chair_a"
+      tm:m=[[-0.605613, 1.19209e-07, -0.79576] [-5.96046e-08, -1.0, -1.19209e-07] [-0.79576, 0.0, 0.605613] [59.6545, 24.5474, 13.3907]]
+    }
+
+    "rirmv:object"{
+      name:t="is_chair_a"
+      tm:m=[[-0.851038, 1.19209e-07, 0.525103] [-1.19209e-07, -1.0, 5.96046e-08] [0.525103, 0.0, 0.851038] [59.5968, 24.5474, 12.9464]]
+    }
+
+    "rirmv:object"{
+      name:t="is_chair_b"
+      tm:m=[[0.642132, 1.19209e-07, 0.766594] [5.96046e-08, -1.0, 5.96046e-08] [0.766594, 0.0, -0.642132] [59.1927, 24.5474, 12.7433]]
+    }
+
+    "rirmv:object"{
+      name:t="is_chair_b"
+      tm:m=[[0.55195, 1.19209e-07, 0.833877] [5.96046e-08, -1.0, 1.19209e-07] [0.833877, 0.0, -0.55195] [58.887, 24.5474, 12.9623]]
+    }
+
+    "rirmv:object"{
+      name:t="is_metal_desk_drawer_a"
+      tm:m=[[0.67559, 0.0, -0.737278] [0.0, 1.0, 0.0] [0.737278, 0.0, 0.67559] [60.3985, 17.286, 23.3771]]
+    }
+
+    "rirmv:object"{
+      name:t="is_work_table_c"
+      tm:m=[[0.67559, 0.0, -0.737278] [0.0, 1.0, 0.0] [0.737278, 0.0, 0.67559] [59.8187, 17.286, 22.8424]]
+    }
+
+    "rirmv:object"{
+      name:t="is_metal_desk_drawer_a"
+      tm:m=[[0.737278, 0.0, 0.67559] [0.0, 1.0, 0.0] [-0.67559, 0.0, 0.737278] [68.8265, 17.286, 45.3737]]
+    }
+
+    "rirmv:object"{
+      name:t="is_work_table_c"
+      tm:m=[[0.737278, 0.0, 0.67559] [0.0, 1.0, 0.0] [-0.67559, 0.0, 0.737278] [68.2818, 17.286, 45.9497]]
+    }
+
+    "rirmv:object"{
+      name:t="is_work_table_c"
+      tm:m=[[-0.737278, 0.0, -0.67559] [0.0, 1.0, 0.0] [0.67559, 0.0, -0.737278] [68.1451, 17.286, 45.1352]]
+    }
+
+    "rirmv:object"{
+      name:t="is_metal_desk_drawer_a"
+      tm:m=[[-0.737278, 0.0, -0.67559] [0.0, 1.0, 0.0] [0.67559, 0.0, -0.737278] [67.6004, 17.286, 45.7113]]
+    }
+
+    "rirmv:object"{
+      name:t="is_metal_desk_drawer_a"
+      tm:m=[[-0.67559, 0.0, 0.737278] [0.0, 1.0, 0.0] [-0.737278, 0.0, -0.67559] [67.3041, 17.286, 46.1904]]
+    }
+
+    "rirmv:object"{
+      name:t="is_work_table_a"
+      tm:m=[[0.67559, 0.0, -0.737278] [0.0, 1.0, 0.0] [0.737278, 0.0, 0.67559] [69.5262, 17.286, 48.6744]]
+    }
+
+    "rirmv:object"{
+      name:t="ammunition_box_piles_b"
+      tm:m=[[-0.737278, 0.0, -0.67559] [0.0, 1.0, 0.0] [0.67559, 0.0, -0.737278] [141.83, 18.2882, 81.3613]]
+    }
+
+    "rirmv:object"{
+      name:t="ammunition_box_k"
+      tm:m=[[0.737278, 0.0, 0.67559] [0.0, 1.0, 0.0] [-0.67559, 0.0, 0.737278] [143.615, 18.2882, 80.4327]]
+    }
+
+    "rirmv:object"{
+      name:t="ammunition_box_j"
+      tm:m=[[-0.737277, 0.0, 0.675591] [0.0, 1.0, 0.0] [-0.675591, 0.0, -0.737277] [141.059, 18.2882, 83.4778]]
+    }
+
+    "rirmv:object"{
+      name:t="ammunition_box_g"
+      tm:m=[[0.67559, 0.0, -0.737278] [0.0, 1.0, 0.0] [0.737278, 0.0, 0.67559] [146.765, 18.2882, 76.9446]]
+    }
+
+    "rirmv:object"{
+      name:t="ammunition_box_l"
+      tm:m=[[0.67559, 0.0, -0.737278] [0.0, 1.0, 0.0] [0.737278, 0.0, 0.67559] [147.799, 18.2882, 76.1383]]
+    }
+
+    "rirmv:object"{
+      name:t="ammunition_box_piles_e"
+      tm:m=[[0.726247, 0.0, -0.687435] [0.0, 1.0, 0.0] [0.687435, 0.0, 0.726247] [137.594, 18.2882, 77.714]]
+    }
+
+    "rirmv:object"{
+      name:t="welding_items_a_a"
+      tm:m=[[0.27156, 0.0974672, -0.8525] [0.858039, -0.0256958, 0.270386] [0.00494224, -0.894338, -0.100676] [144.34, 18.5657, 76.6925]]
+    }
+
+    "rirmv:object"{
+      name:t="welding_mask_b"
+      tm:m=[[-0.701049, 0.00489748, -0.219307] [-0.00871027, 0.733184, 0.0442169] [0.219188, 0.0447997, -0.699671] [144.675, 18.6442, 76.404]]
+    }
+
+    "rirmv:object"{
+      name:t="welding_items_a_a"
+      tm:m=[[0.137631, 0.0, -0.472048] [0.783726, 0.0352618, 0.228505] [0.0203707, -0.491245, 0.0059393] [144.224, 18.4385, 76.659]]
+    }
+
+    "rirmv:object"{
+      name:t="welding_items_c_a"
+      tm:m=[[0.244102, 1.3113e-06, -0.866264] [0.866264, -0.000150084, 0.244102] [-0.000144064, -0.9, -4.19617e-05] [144.499, 18.6116, 76.3475]]
+    }
+
+    "rirmv:object"{
+      name:t="welding_items_d_a"
+      tm:m=[[0.0605118, -0.909765, -0.207543] [-0.897721, -1.19209e-07, -0.261741] [0.25465, 0.216184, -0.873399] [145.32, 18.4375, 76.609]]
+    }
+
+    "rirmv:object"{
+      name:t="welding_items_b_a"
+      tm:m=[[-0.158735, 0.255698, 0.461571] [0.517005, -0.0210235, 0.189445] [0.105521, 0.487651, -0.233856] [144.53, 18.4423, 76.1112]]
+    }
+
+    "rirmv:object"{
+      name:t="welding_items_d_a"
+      tm:m=[[0.251916, 0.0, -0.864024] [0.864024, -5.96046e-08, 0.251916] [-5.96046e-08, -0.9, 0.0] [144.082, 18.338, 76.2152]]
+    }
+
+    "rirmv:object"{
+      name:t="welding_items_d_a"
+      tm:m=[[0.0717487, -1.0787, -0.246084] [-1.06443, -1.78814e-07, -0.310346] [0.301937, 0.25633, -1.03559] [145.296, 18.3496, 76.6899]]
+    }
+
+    "rirmv:object"{
+      name:t="welding_items_c_b"
+      tm:m=[[0.251916, 0.0, -0.864024] [0.0, 0.9, 0.0] [0.864024, 0.0, 0.251916] [145.136, 18.2904, 76.8447]]
+    }
+
+    "rirmv:object"{
+      name:t="welding_table_a"
+      tm:m=[[-0.382683, 0.0, 0.92388] [2.98023e-07, -1.0, 1.19209e-07] [0.92388, 2.98023e-07, 0.382683] [133.486, 19.1088, 47.308]]
+    }
+
+    "rirmv:object"{
+      name:t="ammunition_box_piles_f"
+      tm:m=[[0.976728, 0.0, 0.214486] [0.0, 1.0, 0.0] [-0.214486, 0.0, 0.976728] [130.671, 18.4184, 38.6681]]
+    }
+
+    "rirmv:object"{
+      name:t="is_work_table_c"
+      tm:m=[[-0.382683, 5.96046e-08, 0.92388] [0.0, -1.0, 5.96046e-08] [0.92388, 0.0, 0.382683] [126.684, 18.9832, 38.7784]]
+    }
+
+    "rirmv:object"{
+      name:t="billet_pile_b"
+      tm:m=[[-0.737278, 0.0, -0.67559] [0.0, 1.0, 0.0] [0.67559, 0.0, -0.737278] [155.886, 5.25639, 71.6729]]
+    }
+
+    "rirmv:object"{
+      name:t="metal_profile_3m_a"
+      tm:m=[[-0.477715, -0.707107, 0.521334] [0.477715, -0.707107, -0.521334] [0.737277, 1.78814e-07, 0.675591] [155.754, 5.23217, 72.62]]
+    }
+
+    "rirmv:object"{
+      name:t="billet_pile_a"
+      tm:m=[[0.737278, 0.0, 0.67559] [0.0, 1.0, 0.0] [-0.67559, 0.0, 0.737278] [157.766, 5.25639, 70.7616]]
+    }
+
+    "rirmv:object"{
+      name:t="workshop_crane_rail_truss_a"
+      tm:m=[[-0.737278, 0.0, -0.67559] [0.0, 1.0, 0.0] [0.67559, 0.0, -0.737278] [154.208, 5.25834, 72.0804]]
+    }
+
+    "rirmv:object"{
+      name:t="metal_stair_9_1m_b"
+      tm:m=[[0.67559, 0.0, -0.737278] [0.0, 1.0, 0.0] [0.737278, 0.0, 0.67559] [77.9884, 22.8638, 5.96407]]
+    }
+
+    "rirmv:object"{
+      name:t="metal_stair_9_1m_b"
+      tm:m=[[-0.67559, 0.0, 0.737278] [0.0, 1.0, 0.0] [-0.737278, 0.0, -0.67559] [61.5286, 22.8747, 24.492]]
+    }
+
+    "rirmv:object"{
+      name:t="ammunition_box_piles_c"
+      tm:m=[[-0.737278, 0.0, -0.67559] [0.0, 1.0, 0.0] [0.67559, 0.0, -0.737278] [53.3174, 5.24416, 22.1074]]
+    }
+
+    "rirmv:object"{
+      name:t="ammunition_box_n"
+      tm:m=[[-0.737278, 0.0, -0.67559] [0.0, 1.0, 0.0] [0.67559, 0.0, -0.737278] [52.1625, 5.24416, 22.8252]]
+    }
+
+    "rirmv:object"{
+      name:t="ammunition_box_piles_c"
+      tm:m=[[0.67559, 0.0, -0.737278] [0.0, 1.0, 0.0] [0.737278, 0.0, 0.67559] [53.4782, 5.24416, 23.8669]]
+    }
+
+    "rirmv:object"{
+      name:t="ammunition_box_l"
+      tm:m=[[0.793353, 0.0, -0.608762] [0.0, 1.0, 0.0] [0.608762, 0.0, 0.793353] [54.2973, 5.24416, 20.7491]]
+    }
+
+    "rirmv:object"{
+      name:t="ammunition_box_piles_b"
+      tm:m=[[-0.737278, 0.0, -0.67559] [0.0, 1.0, 0.0] [0.67559, 0.0, -0.737278] [55.1067, 5.24416, 22.221]]
+    }
+  }
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[-0.731617, 0.0, -0.681715] [0.0, 1.0, 0.0] [0.681715, 0.0, -0.731617] [113.29, 18.2903, 33.9826]]
+  ri_extra__name:t="welding_stand_a_b"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[0.552714, 0.0, 0.833372] [-0.0, 1.0, 0.0] [-0.833372, -0.0, 0.552714] [63.2986, 11.274, 4.9758]]
+  ri_extra__name:t="welding_stand_d_b"
+}
+
+entity{
+  _template:t="base_fortification_build+tutorial_ammunition_box_a+undestroyable_ri_extra"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [64.3271, 17.2829, 14.5755]]
+  useful_box__maxUseCount:i=99999
+  hud_icon__maxDistance:r=20.0
+}
+
+entity{
+  _template:t="base_fortification_build+tutorial_ammunition_box_a+undestroyable_ri_extra"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [91.9558, 11.2785, 5.25755]]
+  useful_box__maxUseCount:i=99999
+  hud_icon__maxDistance:r=20.0
+}
+
+entity{
+  _template:t="base_fortification_build+tutorial_ammunition_box_a+undestroyable_ri_extra"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [67.9192, 11.2786, 31.5176]]
+  useful_box__maxUseCount:i=99999
+  hud_icon__maxDistance:r=20.0
+}
+
+entity{
+  _template:t="base_fortification_build+tutorial_ammunition_box_a+undestroyable_ri_extra"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [81.7919, 5.26046, 13.9002]]
+  useful_box__maxUseCount:i=99999
+  hud_icon__maxDistance:r=20.0
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[-0.766044, 0.0, -0.642788] [0.0, 1.0, 0.0] [0.642788, 0.0, -0.766044] [59.0762, 6.44214, -124.45]]
+  ri_extra__name:t="sandbags_wall_high_l2000_a"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[-0.766044, 0.0, -0.642788] [0.0, 1.0, 0.0] [0.642788, 0.0, -0.766044] [105.835, 5.03996, 28.0373]]
+  ri_extra__name:t="sandbags_wall_high_l2000_a"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[0.757105, 0.0, 0.653293] [0.0, 1.0, -0.0] [-0.653293, 0.0, 0.757105] [105.933, 5.72991, 28.0214]]
+  ri_extra__name:t="sandbags_wall_high_l2000_a"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[0.757105, 0.0, 0.653293] [0.0, 1.0, -0.0] [-0.653293, 0.0, 0.757105] [86.3954, 5.72991, 49.3985]]
+  ri_extra__name:t="sandbags_wall_high_l2000_a"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[-0.766044, 0.0, -0.642788] [0.0, 1.0, 0.0] [0.642788, 0.0, -0.766044] [86.2976, 5.03996, 49.4144]]
+  ri_extra__name:t="sandbags_wall_high_l2000_a"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[0.749788, 0.0, 0.661678] [0.0, 1.0, -0.0] [-0.661678, 0.0, 0.749788] [86.5821, 11.9293, 49.1506]]
+  ri_extra__name:t="sandbags_wall_high_l2000_a"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[-0.758844, 0.0, -0.651273] [0.0, 1.0, 0.0] [0.651273, 0.0, -0.758844] [86.4841, 11.2393, 49.1654]]
+  ri_extra__name:t="sandbags_wall_high_l2000_a"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[0.739521, 0.0, 0.673133] [0.0, 1.0, -0.0] [-0.673133, 0.0, 0.739521] [77.9676, 11.9293, 58.53]]
+  ri_extra__name:t="sandbags_wall_high_l2000_a"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[-0.748736, 0.0, -0.662869] [0.0, 1.0, 0.0] [0.662869, 0.0, -0.748736] [77.8694, 11.2393, 58.5434]]
+  ri_extra__name:t="sandbags_wall_high_l2000_a"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[0.739521, 0.0, 0.673133] [0.0, 1.0, -0.0] [-0.673133, 0.0, 0.739521] [78.5563, 18.6434, 57.8929]]
+  ri_extra__name:t="sandbags_wall_high_l2000_a"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[-0.748736, 0.0, -0.662869] [0.0, 1.0, 0.0] [0.662869, 0.0, -0.748736] [78.4581, 17.9535, 57.9063]]
+  ri_extra__name:t="sandbags_wall_high_l2000_a"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[-0.723984, 0.0, -0.689816] [0.0, 1.0, 0.0] [0.689816, 0.0, -0.723984] [86.7188, 18.6434, 49.16]]
+  ri_extra__name:t="sandbags_wall_high_l2000_a"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[0.73343, 0.0, 0.679765] [0.0, 1.0, -0.0] [-0.679765, 0.0, 0.73343] [86.7527, 17.9535, 49.0923]]
+  ri_extra__name:t="sandbags_wall_high_l2000_a"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[0.757105, 0.0, 0.653293] [0.0, 1.0, -0.0] [-0.653293, 0.0, 0.757105] [105.61, 11.7219, 28.3443]]
+  ri_extra__name:t="sandbags_wall_high_l2000_a"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[-0.766044, 0.0, -0.642788] [0.0, 1.0, 0.0] [0.642788, 0.0, -0.766044] [105.531, 11.0319, 28.3736]]
+  ri_extra__name:t="sandbags_wall_high_l2000_a"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[0.730741, 0.0, 0.682655] [0.0, 1.0, -0.0] [-0.682655, 0.0, 0.730741] [105.222, 18.8037, 28.8213]]
+  ri_extra__name:t="sandbags_wall_high_l2000_a"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[-0.740087, 0.0, -0.672511] [0.0, 1.0, 0.0] [0.672511, 0.0, -0.740087] [105.141, 18.1137, 28.8474]]
+  ri_extra__name:t="sandbags_wall_high_l2000_a"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[0.730741, 0.0, 0.682655] [0.0, 1.0, -0.0] [-0.682655, 0.0, 0.730741] [113.39, 18.8037, 20.0505]]
+  ri_extra__name:t="sandbags_wall_high_l2000_a"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[-0.740087, 0.0, -0.672511] [0.0, 1.0, 0.0] [0.672511, 0.0, -0.740087] [113.309, 18.1137, 20.0765]]
+  ri_extra__name:t="sandbags_wall_high_l2000_a"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[-0.699607, 0.0, 0.714528] [0.0, 1.0, 0.0] [-0.714528, 0.0, -0.699607] [98.4237, 5.54134, 37.225]]
+  ri_extra__name:t="freight_car_g_munchen_dmg"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[-0.677676, 0.0, 0.735361] [0.0, 1.0, 0.0] [-0.735361, 0.0, -0.677676] [96.1239, 5.55992, 43.1713]]
+  ri_extra__name:t="freight_car_g_munchen_dmg"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[0.763577, 0.0, 0.645716] [0.0, 1.0, -0.0] [-0.645716, 0.0, 0.763577] [101.94, 6.3043, 32.377]]
+  ri_extra__name:t="sandbags_wall_high_l2000_a"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[-0.766044, 0.0, -0.642788] [0.0, 1.0, 0.0] [0.642788, 0.0, -0.766044] [101.859, 5.03996, 32.3949]]
+  ri_extra__name:t="sandbags_wall_high_l2000_a"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[-0.743241, 0.0, -0.669024] [0.0, 1.0, 0.0] [0.669024, 0.0, -0.743241] [110.471, 5.23233, 21.0723]]
+  ri_extra__name:t="normandy_steam_boiler_b"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[-0.577593, 0.0, 0.816325] [0.0, 1.0, 0.0] [-0.816325, 0.0, -0.577593] [107.42, 5.24892, 15.2649]]
+  ri_extra__name:t="welding_stand_d_b"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[0.685983, 0.0, -0.727618] [0.0, 1.0, 0.0] [0.727618, -0.0, 0.685983] [84.9978, 5.26007, -5.79882]]
+  ri_extra__name:t="welding_stand_d_b"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[-0.913088, 0.0, 0.407763] [0.0, 1.0, 0.0] [-0.407763, 0.0, -0.913088] [83.0248, 5.26007, -4.49252]]
+  ri_extra__name:t="welding_stand_a_b"
+}
+
+entity{
+  _template:t="gun_game_respawn_base"
+  transform:m=[[0.313864, 0.0, -0.949468] [0.0, 1.0, 0.0] [0.949468, -0.0, 0.313864] [52.4406, 12.2588, 22.9543]]
+  gun_game__respawnFriendlyRadius:r=18.0
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[-0.577593, 0.0, 0.816325] [0.0, 1.0, 0.0] [-0.816325, 0.0, -0.577593] [105.959, 11.2659, 12.9617]]
+  ri_extra__name:t="welding_stand_d_b"
+}
+
+entity{
+  _template:t="gun_game_respawn_base"
+  transform:m=[[0.561278, 0.0, 0.827627] [0.0, 1.0, -0.0] [-0.827627, 0.0, 0.561278] [107.901, 12.0607, 14.8922]]
+  gun_game__respawnFriendlyRadius:r=17.0
+}
+
+entity{
+  _template:t="gun_game_respawn_base"
+  transform:m=[[-0.553634, 0.0, -0.83276] [0.0, 1.0, 0.0] [0.83276, 0.0, -0.553634] [83.1106, 12.2295, 39.6417]]
+  gun_game__respawnFriendlyRadius:r=15.0
+}
+
+entity{
+  _template:t="gun_game_respawn_base"
+  transform:m=[[-0.553634, 0.0, -0.83276] [0.0, 1.0, 0.0] [0.83276, 0.0, -0.553634] [74.4143, 12.2295, 53.7729]]
+  gun_game__respawnFriendlyRadius:r=15.0
+}
+
+entity{
+  _template:t="gun_game_respawn_base"
+  transform:m=[[0.44025, 0.0, 0.897875] [0.0, 1.0, -0.0] [-0.897875, 0.0, 0.44025] [80.4578, 22.8455, 5.39093]]
+  gun_game__respawnFriendlyRadius:r=20.0
+}
+
+entity{
+  _template:t="gun_game_respawn_base"
+  transform:m=[[0.897423, 0.0, 0.441171] [0.0, 1.0, -0.0] [-0.441171, 0.0, 0.897423] [60.669, 22.8455, 26.6658]]
+  gun_game__respawnFriendlyRadius:r=20.0
+}
+
+entity{
+  _template:t="gun_game_respawn_base"
+  transform:m=[[0.697717, 0.0, -0.716373] [0.0, 1.0, 0.0] [0.716373, -0.0, 0.697717] [63.479, 6.15699, 42.2695]]
+  gun_game__respawnFriendlyRadius:r=15.0
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[0.814847, 0.0, 0.579677] [0.0, 1.0, -0.0] [-0.579677, 0.0, 0.814847] [79.5202, 11.2659, 29.7493]]
+  ri_extra__name:t="welding_stand_d_b"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[0.266102, 0.0, -0.963945] [0.0, 1.0, 0.0] [0.963945, -0.0, 0.266102] [80.6293, 17.2824, -6.10073]]
+  ri_extra__name:t="welding_stand_d_b"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[-0.616419, 0.0, 0.787418] [0.0, 1.0, 0.0] [-0.787418, 0.0, -0.616419] [79.4961, 17.2824, -4.02342]]
+  ri_extra__name:t="welding_stand_a_b"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[-0.823807, 0.0, 0.566871] [0.0, 1.0, 0.0] [-0.566871, 0.0, -0.823807] [51.0105, 17.2824, 27.0657]]
+  ri_extra__name:t="welding_stand_a_b"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[0.542369, 0.0, -0.840141] [0.0, 1.0, 0.0] [0.840141, -0.0, 0.542369] [52.7134, 17.2824, 25.4227]]
+  ri_extra__name:t="welding_stand_d_b"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[0.781108, 0.0, 0.624397] [0.0, 1.0, -0.0] [-0.624397, 0.0, 0.781108] [76.1253, 17.2824, 53.6029]]
+  ri_extra__name:t="welding_stand_a_b"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[-0.472905, 0.0, 0.881114] [0.0, 1.0, 0.0] [-0.881114, 0.0, -0.472905] [71.5285, 17.2824, 51.7858]]
+  ri_extra__name:t="welding_stand_d_b"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[0.437815, 0.0, -0.899065] [0.0, 1.0, 0.0] [0.899066, -0.0, 0.437815] [73.3103, 17.2824, 49.5722]]
+  ri_extra__name:t="welding_stand_d_b"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[-0.616419, 0.0, 0.787418] [0.0, 1.0, 0.0] [-0.787418, 0.0, -0.616419] [106.983, 17.2824, 13.8807]]
+  ri_extra__name:t="welding_stand_a_b"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[-0.834656, 0.0, -0.550772] [0.0, 1.0, 0.0] [0.550772, 0.0, -0.834656] [110.3, 17.2824, 18.2236]]
+  ri_extra__name:t="welding_stand_d_b"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[0.619555, 0.0, -0.784953] [0.0, 1.0, 0.0] [0.784953, -0.0, 0.619556] [105.587, 17.2824, 15.1885]]
+  ri_extra__name:t="welding_stand_a_b"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[0.619555, 0.0, -0.784953] [0.0, 1.0, 0.0] [0.784953, -0.0, 0.619556] [101.346, 17.2824, 15.3736]]
+  ri_extra__name:t="welding_stand_a_b"
+}
+
+entity{
+  _template:t="gun_game_respawn_base"
+  transform:m=[[0.979333, 0.0, -0.202254] [0.0, 1.0, 0.0] [0.202254, -0.0, 0.979333] [48.6385, 18.0462, 23.4695]]
+  gun_game__respawnFriendlyRadius:r=17.0
+}
+
+entity{
+  _template:t="gun_game_respawn_base"
+  transform:m=[[-0.369584, 0.0, -0.929197] [0.0, 1.0, 0.0] [0.929197, 0.0, -0.369584] [74.25, 18.0462, 54.4382]]
+  gun_game__respawnFriendlyRadius:r=17.0
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[0.781108, 0.0, 0.624397] [0.0, 1.0, -0.0] [-0.624397, 0.0, 0.781108] [74.6387, 17.2824, 52.4684]]
+  ri_extra__name:t="welding_stand_a_b"
+}
+
+entity{
+  _template:t="gun_game_respawn_base"
+  transform:m=[[-0.502161, 0.0, 0.864774] [0.0, 1.0, 0.0] [-0.864774, 0.0, -0.502161] [78.3309, 18.1515, -7.10229]]
+  gun_game__respawnFriendlyRadius:r=20.0
+}
+
+entity{
+  _template:t="gun_game_respawn_base"
+  transform:m=[[-0.822291, 0.0, -0.569067] [0.0, 1.0, 0.0] [0.569067, 0.0, -0.822291] [111.448, 18.1515, 17.4842]]
+  gun_game__respawnFriendlyRadius:r=21.0
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[0.887884, 0.0, -0.460065] [0.0, 1.0, 0.0] [0.460065, -0.0, 0.887885] [79.4811, 4.6677, -1.87942]]
+  ri_extra__name:t="sandbags_wall_high_l2000_a"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[-0.908756, 0.0, 0.417327] [0.0, 1.0, 0.0] [-0.417327, 0.0, -0.908756] [78.7155, 4.6677, -3.46309]]
+  ri_extra__name:t="sandbags_wall_high_l2000_a"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[0.450483, 0.0, 0.892785] [0.0, 1.0, -0.0] [-0.892785, 0.0, 0.450483] [81.7997, 5.26007, -5.4328]]
+  ri_extra__name:t="welding_stand_a_b"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[0.813824, 0.0, -0.581111] [0.0, 1.0, 0.0] [0.581111, -0.0, 0.813824] [73.8689, 5.54134, -13.6256]]
+  ri_extra__name:t="freight_car_g_munchen_dmg"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[-0.766044, 0.0, -0.642788] [0.0, 1.0, 0.0] [0.642788, 0.0, -0.766044] [58.3128, 5.03996, 7.73923]]
+  ri_extra__name:t="sandbags_wall_high_l2000_a"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[0.757105, 0.0, 0.653293] [0.0, 1.0, -0.0] [-0.653293, 0.0, 0.757105] [58.4106, 5.72991, 7.72333]]
+  ri_extra__name:t="sandbags_wall_high_l2000_a"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[-0.741626, 0.0, -0.670814] [0.0, 1.0, 0.0] [0.670814, 0.0, -0.741626] [61.6065, 5.03996, 4.17321]]
+  ri_extra__name:t="sandbags_wall_high_l2000_a"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[-0.730736, 0.0, -0.68266] [0.0, 1.0, 0.0] [0.68266, 0.0, -0.730736] [61.6406, 5.75655, 4.09236]]
+  ri_extra__name:t="sandbags_wall_high_l2000_a"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[-0.67559, 0.0, 0.737278] [0.0, 1.0, 0.0] [-0.737278, 0.0, -0.67559] [63.6156, 11.2709, 11.448]]
+  ri_extra__name:t="wood_crates_b"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[-0.67559, 0.0, 0.737278] [0.0, 1.0, 0.0] [-0.737278, 0.0, -0.67559] [62.1313, 11.2709, 10.7554]]
+  ri_extra__name:t="wood_crates_b"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[-1.49419e-07, -1.0, 2.84082e-07] [-0.714293, -9.20855e-08, -0.699847] [0.699847, -3.07488e-07, -0.714293] [67.5716, 26.341, 21.2422]]
+  ri_extra__name:t="electrical_control_panel_a_c_dmg"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[-0.714292, -0.00154715, -0.699846] [-0.0011049, 0.999999, -0.00108299] [0.699847, -3.07395e-07, -0.714293] [67.7554, 25.8416, 20.5629]]
+  ri_extra__name:t="electrical_control_panel_a_c_dmg"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[0.640571, 0.00153939, 0.767898] [-0.0011049, 0.999999, -0.00108299] [-0.767898, -0.000154721, 0.640572] [66.8692, 25.84, 20.0181]]
+  ri_extra__name:t="electrical_control_panel_a_c_dmg"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[0.0160818, 0.999736, -0.0164139] [-0.714293, -9.31323e-08, -0.699847] [-0.699662, 0.0229792, 0.714104] [68.3214, 28.4515, 21.09]]
+  ri_extra__name:t="electrical_control_panel_a_c_dmg"
+}
+
+entity{
+  _template:t="unbaked_rendinst"
+  transform:m=[[0.73546, 0.0, 0.677569] [0.0, 1.0, -0.0] [-0.677569, 0.0, 0.73546] [81.1067, 4.28639, 60.4083]]
+  ri_extra__name:t="building_plaster_barn_walls_1story_a_03"
+  rebake__tm:m=[[0.743563, 0.0, 0.668667] [0.0, 1.0, 0.0] [-0.668667, 0.0, 0.743563] [72.5147, 4.28639, 292.999]]
+  rebake__name:t="building_plaster_barn_walls_1story_a_03"
+}
+
+import{
+  scene:t="gamedata/scenes/_normandy_smn_common.blk"
+}

@@ -1,0 +1,79 @@
+from "%darg/ui_imports.nut" import *
+from "types" import Table
+
+let curAnimations = [] 
+let generation = Watched(0)
+let incGen = @() generation.modify(@(v) v + 1)
+
+let compToCompAnimations = @() {
+  watch = generation
+  size = flex()
+  children = curAnimations.map(@(a) a.comp)
+}
+
+function removeCompAnim(id) {
+  let idx = curAnimations.findindex(@(a) a.id == id)
+  if (idx == null)
+    return
+  curAnimations.remove(idx)
+  incGen()
+}
+
+let isAABB = @(o): bool o instanceof Table && "l" in o && "r" in o && "b" in o && "t" in o
+
+let getAABB = @(aabbOrKey) isAABB(aabbOrKey) ? aabbOrKey : gui_scene.getCompAABBbyKey(aabbOrKey)
+let mkSize = @(aabb): array [aabb.r - aabb.l, aabb.b - aabb.t]
+
+
+
+function addCompToCompAnim(from, to, component, easing = InOutQuad, duration = 1.0, fadeOutDuration = 0.1) {
+  let fromBox = getAABB(from)
+  let toBox = getAABB(to)
+  if (fromBox == null || toBox == null) {
+    logerr($"Not found aabb for objects. (from = {from}, to = {to})")
+    return null
+  }
+
+  let id = generation.get()
+  let fromSize = mkSize(fromBox)
+  let toSize = mkSize(toBox)
+  let animations = []
+  if (toSize[0] > 0 && toSize[1] > 0 && (toSize[0] != fromSize[0] || toSize[1] != fromSize[1]))
+    animations.append({ prop = AnimProp.scale, duration, easing, play = true,
+      from = fromSize.map(@(v, i) v.tofloat() / toSize[i]), to = [1, 1] })
+  if (fromBox.l != toBox.l || fromBox.t != toBox.t)
+    animations.append({ prop = AnimProp.translate, duration, easing, play = true,
+      from = [fromBox.l - toBox.l, fromBox.t - toBox.t], to = [0, 0] })
+
+  if (animations.len() == 0)
+    return null
+
+  animations.top().onFinish <- @() removeCompAnim(id)
+  if (fadeOutDuration > 0)
+    animations.append({ prop = AnimProp.opacity, easing = InOutQuad, playFadeOut = true,
+      duration = fadeOutDuration,
+      from = 1.0, to = 0.0
+    })
+
+
+  curAnimations.append({
+    id
+    comp = {
+      key = id
+      size = toSize
+      pos = [toBox.l, toBox.t]
+      transform = const { pivot = [0, 0] }
+      children = component
+      animations
+      onDetach = @() removeCompAnim(id)
+    }
+  })
+  incGen()
+  return id
+}
+
+return freeze({
+  addCompToCompAnim = kwarg(addCompToCompAnim)
+  removeCompAnim
+  compToCompAnimations
+})

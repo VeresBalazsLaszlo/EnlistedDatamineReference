@@ -1,0 +1,1090 @@
+{
+  "usa": {
+    "armyId": "usa",
+    "boosters": [],
+    "campaignId": "common",
+    "classBonus": {
+      "medic_2_event_halloween_2024": 1.0,
+      "rifle": 1.0,
+      "uk_rifle": 1.0
+    },
+    "country": "usa",
+    "curSquadId": "squad_usa_medic_2_event_halloween_2024",
+    "disableAnyTeamBonus": false,
+    "exp": 0,
+    "expExchangeRate": 0.019999999552965164,
+    "expHeroAwardsLimit": 5,
+    "expPerHeroAward": 100,
+    "expToLevel": [
+      0,
+      800,
+      1600,
+      3200,
+      6400,
+      12800
+    ],
+    "globalData": {
+      "globalGiftsCfg": [
+        {
+          "army": "common_army",
+          "basetpl": "enlisted_silver",
+          "loopCount": 5,
+          "loopExp": 47,
+          "startCount": 5,
+          "startExp": 47
+        }
+      ]
+    },
+    "growthExp": 0,
+    "growthProgress": {
+      "exp": 0,
+      "growthCfg": {
+        "expRequired": 5000,
+        "id": "m50_reising",
+        "reward": {
+          "armyId": "usa",
+          "itemTemplate": "m50_reising",
+          "squadId": "allies_pacific_medic_1"
+        }
+      },
+      "item": {
+        "gametemplate": "m50_reising_gun",
+        "growthTier": 1,
+        "itemsubtype": "m50_reising",
+        "itemtype": "submgun"
+      },
+      "status": 1
+    },
+    "isFakeSquads": false,
+    "isFirstBattleExp": true,
+    "level": 0,
+    "offerGuid": "",
+    "squads": [
+      {
+        "artilleryCooldownMul": 1.0,
+        "artilleryTypeUnlocks": [],
+        "curVehicle": null,
+        "engineerUnlocks": [5, 3, 2, 1],
+        "exp": 0,
+        "expBonus": 1.0,
+        "isParatroopers": false,
+        "isRented": false,
+        "level": 0,
+        "paratrooperBoxUnlocks": [],
+        "spawnWithoutVehicleAvailable": false,
+        "squad": [
+          {
+            "bodyScale": {
+              "height": 1.0196069478988647,
+              "width": 1.0392565727233887
+            },
+            "callname": "",
+            "country": "germany",
+            "equipment": {
+              "belt_1": {
+                "gametemplate": "attachable_wear_belt_1_volksstrum_civil_ger_summer_item",
+                "slot": "belt_1"
+              },
+              "belt_2": {
+                "gametemplate": "attachable_wear_belt_2_volksstrum_civil_ger_summer_item",
+                "slot": "belt_2"
+              },
+              "face": {
+                "gametemplate": "hero_head_ger_partisan_2_premium_1",
+                "slot": "face"
+              },
+              "front_belt_l": {
+                "gametemplate": "attachable_wear_pouch_gewehr_front_belt_l_item",
+                "slot": "front_belt_l"
+              },
+              "front_belt_r": {
+                "gametemplate": "attachable_wear_pouch_gewehr_front_belt_r_item",
+                "slot": "front_belt_r"
+              },
+              "gloves": {
+                "gametemplate": "attachable_wear_hands_01_ussr_summer_item",
+                "slot": "gloves"
+              },
+              "pants": {
+                "gametemplate": "attachable_wear_pants_gray_01_ger_summer_item",
+                "slot": "pants"
+              },
+              "shovel": {
+                "gametemplate": "attachable_wear_shovel_m44_ger_summer_item",
+                "slot": "shovel"
+              },
+              "side_belt_r": {
+                "gametemplate": "attachable_wear_map_case_on_side_01_ger_summer_item",
+                "slot": "side_belt_r"
+              },
+              "skined_helmet": {
+                "gametemplate": "fur_cap_01_ger_winter_item",
+                "slot": "skined_helmet"
+              },
+              "tunic": {
+                "gametemplate": "attachable_wear_tunic_01_volkssturm_ger_summer_hero_gray_item",
+                "slot": "tunic"
+              }
+            },
+            "exp": 0,
+            "gametemplate": "ger_base_soldier",
+            "guid": "13371816597763018",
+            "heroExpBonus": 0.20000000298023224,
+            "human_weap__weapInfo": [
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 0,
+                "reserveAmmoTemplate": ""
+              },
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 0,
+                "reserveAmmoTemplate": ""
+              },
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 0,
+                "reserveAmmoTemplate": ""
+              },
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 0,
+                "reserveAmmoTemplate": ""
+              },
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 0,
+                "reserveAmmoTemplate": ""
+              }
+            ],
+            "human_weap__weapInitialComponents": [{}, {}, {}, {}, {}],
+            "human_weap__weapTemplates": {
+              "grenade": "grenade_thrower",
+              "melee": "ger_knife_weapon",
+              "primary": "",
+              "secondary": "ger_building_tool_halloween_gun",
+              "tertiary": ""
+            },
+            "id": 0,
+            "inventory": [
+              {
+                "gametemplate": "germ_medkit_item"
+              },
+              {
+                "gametemplate": "m24_grenade_item"
+              },
+              {
+                "gametemplate": "selfres_syringe_item"
+              }
+            ],
+            "isHero": true,
+            "isPremium": true,
+            "level": 1,
+            "maxLevel": 3,
+            "name": "Reinhard",
+            "perkPoints": {
+              "speed": 4,
+              "vitality": 4,
+              "weapon": 4
+            },
+            "perks": [
+              {
+                "name": "stamina_boost",
+                "stats": [
+                  {
+                    "statKey": "stamina_boost",
+                    "statValue": 0.7
+                  }
+                ]
+              },
+              {
+                "name": "sprint_speed",
+                "stats": [
+                  {
+                    "statKey": "stamina_boost",
+                    "statValue": 0.052499998360872269
+                  }
+                ]
+              },
+              {
+                "name": "hp_regeneration",
+                "stats": [
+                  {
+                    "statKey": "hp_regen_speed",
+                    "statValue": 0.5
+                  },
+                  {
+                    "statKey": "hp_regeneration",
+                    "statValue": 1.0
+                  }
+                ]
+              },
+              {
+                "name": "faster_change_pose_speed",
+                "stats": [
+                  {
+                    "statKey": "faster_change_pose_speed",
+                    "statValue": 0.5
+                  }
+                ]
+              },
+              {
+                "name": "run_speed",
+                "stats": [
+                  {
+                    "statKey": "run_speed",
+                    "statValue": 0.10000000149011612
+                  }
+                ]
+              },
+              {
+                "name": "heal_effectivity",
+                "stats": [
+                  {
+                    "statKey": "heal_effectivity",
+                    "statValue": 1.0
+                  }
+                ]
+              },
+              {
+                "name": "faster_building_speed",
+                "stats": [
+                  {
+                    "statKey": "faster_building_speed",
+                    "statValue": 0.5
+                  }
+                ]
+              },
+              {
+                "name": "faster_reload",
+                "stats": [
+                  {
+                    "statKey": "faster_reload",
+                    "statValue": 0.11999999731779099
+                  }
+                ]
+              },
+              {
+                "name": "faster_self_fire_putout",
+                "stats": [
+                  {
+                    "statKey": "faster_self_fire_putout",
+                    "statValue": 1.0
+                  }
+                ]
+              }
+            ],
+            "sClass": "engineer_2_event_halloween_2024",
+            "sKind": "engineer",
+            "surname": "Rust",
+            "tier": 5,
+            "weaponPreset": ""
+          }
+        ],
+        "squadId": "squad_ger_engineer_2_event_halloween_2024",
+        "squadType": "engineer",
+        "vehicleType": ""
+      },
+      {
+        "artilleryCooldownMul": 1.0,
+        "artilleryTypeUnlocks": [],
+        "curVehicle": null,
+        "engineerUnlocks": [],
+        "exp": 0,
+        "expBonus": 1.0,
+        "isParatroopers": false,
+        "isRented": false,
+        "level": 0,
+        "paratrooperBoxUnlocks": [],
+        "spawnWithoutVehicleAvailable": false,
+        "squad": [
+          {
+            "bodyScale": {
+              "height": 0.95544630289077759,
+              "width": 1.0008853673934937
+            },
+            "callname": "",
+            "country": "japan",
+            "equipment": {
+              "bag_l": {
+                "gametemplate": "attachable_wear_jap_bread_bag_medic_squad_item",
+                "slot": "bag_l"
+              },
+              "belt_1": {
+                "gametemplate": "attachable_wear_jap_belt_tool_pouch_medic_squad_item",
+                "slot": "belt_1"
+              },
+              "face": {
+                "gametemplate": "jap_gen_head_20",
+                "slot": "face"
+              },
+              "front_belt_l": {
+                "gametemplate": "attachable_wear_jap_type99_pouch_l_medic_squad_item",
+                "slot": "front_belt_l"
+              },
+              "front_belt_r": {
+                "gametemplate": "attachable_wear_jap_type89_mortar_pouch_belt_fr_item",
+                "slot": "front_belt_r"
+              },
+              "gloves": {
+                "gametemplate": "attachable_wear_hands_01_jap_summer_item",
+                "slot": "gloves"
+              },
+              "hair": {
+                "gametemplate": "hair_01_ger_summer_item",
+                "slot": "hair"
+              },
+              "pants": {
+                "gametemplate": "attachable_wear_jap_tropical_shorts_gray_medic_squad_item",
+                "slot": "pants"
+              },
+              "side_belt_l": {
+                "gametemplate": "attachable_wear_jap_sheath_medic_squad_item",
+                "slot": "side_belt_l"
+              },
+              "skined_helmet": {
+                "gametemplate": "attachable_wear_jap_type90_helmet_medic_squad_item",
+                "slot": "skined_helmet"
+              },
+              "tunic": {
+                "gametemplate": "attachable_wear_jap_white_shirt_medic_item",
+                "slot": "tunic"
+              }
+            },
+            "exp": 0,
+            "gametemplate": "jap_base_soldier",
+            "guid": "13371816597763042",
+            "heroExpBonus": 0.20000000298023224,
+            "human_weap__weapInfo": [
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 0,
+                "reserveAmmoTemplate": ""
+              },
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 1,
+                "reserveAmmoTemplate": "type_4_at_7cm_item"
+              },
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 0,
+                "reserveAmmoTemplate": ""
+              },
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 0,
+                "reserveAmmoTemplate": ""
+              },
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 0,
+                "reserveAmmoTemplate": ""
+              }
+            ],
+            "human_weap__weapInitialComponents": [{}, {}, {}, {}, {}],
+            "human_weap__weapTemplates": {
+              "grenade": "grenade_thrower",
+              "melee": "type_95_shin_gunto_weapon",
+              "primary": "",
+              "secondary": "type_4_70_at_rocket_launcher_halloween_gun",
+              "tertiary": ""
+            },
+            "id": 0,
+            "inventory": [
+              {
+                "gametemplate": "jap_medkit_item"
+              },
+              {
+                "gametemplate": "type_97_grenade_item"
+              },
+              {
+                "gametemplate": "type_97_grenade_item"
+              },
+              {
+                "gametemplate": "jap_tnt_block"
+              },
+              {
+                "gametemplate": "tnt_block_exploder"
+              },
+              {
+                "gametemplate": "selfres_syringe_item"
+              }
+            ],
+            "isHero": true,
+            "isPremium": true,
+            "level": 1,
+            "maxLevel": 3,
+            "name": "Katsu",
+            "perkPoints": {
+              "speed": 4,
+              "vitality": 4,
+              "weapon": 4
+            },
+            "perks": [
+              {
+                "name": "stamina_boost",
+                "stats": [
+                  {
+                    "statKey": "stamina_boost",
+                    "statValue": 1.0
+                  }
+                ]
+              },
+              {
+                "name": "melee_damage",
+                "stats": [
+                  {
+                    "statKey": "faster_melee",
+                    "statValue": 0.20000000298023224
+                  },
+                  {
+                    "statKey": "melee_damage",
+                    "statValue": 1.0
+                  }
+                ]
+              },
+              {
+                "name": "faster_change_weapon",
+                "stats": [
+                  {
+                    "statKey": "faster_change_weapon",
+                    "statValue": 0.25
+                  }
+                ]
+              },
+              {
+                "name": "hp_regeneration",
+                "stats": [
+                  {
+                    "statKey": "hp_regen_speed",
+                    "statValue": 0.5
+                  },
+                  {
+                    "statKey": "hp_regeneration",
+                    "statValue": 1.0
+                  }
+                ]
+              },
+              {
+                "name": "hp_boost",
+                "stats": [
+                  {
+                    "statKey": "hp_boost",
+                    "statValue": 0.34999999403953552
+                  }
+                ]
+              },
+              {
+                "name": "heal_effectivity",
+                "stats": [
+                  {
+                    "statKey": "heal_effectivity",
+                    "statValue": 1.0
+                  }
+                ]
+              },
+              {
+                "name": "faster_self_fire_putout",
+                "stats": [
+                  {
+                    "statKey": "faster_self_fire_putout",
+                    "statValue": 1.0
+                  }
+                ]
+              }
+            ],
+            "sClass": "anti_tank_2_event_halloween_2024",
+            "sKind": "anti_tank",
+            "surname": "Kato",
+            "tier": 5,
+            "weaponPreset": ""
+          }
+        ],
+        "squadId": "squad_jap_antitank_2_event_halloween_2024",
+        "squadType": "anti_tank",
+        "vehicleType": ""
+      },
+      {
+        "artilleryCooldownMul": 1.0,
+        "artilleryTypeUnlocks": [],
+        "curVehicle": null,
+        "engineerUnlocks": [],
+        "exp": 0,
+        "expBonus": 1.0,
+        "isParatroopers": false,
+        "isRented": false,
+        "level": 0,
+        "paratrooperBoxUnlocks": [],
+        "spawnWithoutVehicleAvailable": false,
+        "squad": [
+          {
+            "bodyScale": {
+              "height": 1.0700000524520874,
+              "width": 1.0800000429153442
+            },
+            "callname": "",
+            "country": "ussr",
+            "equipment": {
+              "belt_1": {
+                "gametemplate": "attachable_wear_belt_1_02_ussr_winter_item",
+                "slot": "belt_1"
+              },
+              "face": {
+                "gametemplate": "hero_head_ussr_halloween_2024",
+                "slot": "face"
+              },
+              "flask_r": {
+                "gametemplate": "attachable_wear_flask_07_ussr_winter_item",
+                "slot": "flask_r"
+              },
+              "front_belt_l": {
+                "gametemplate": "attachable_wear_nagan_holster_l_07_ussr_winter_item",
+                "slot": "front_belt_l"
+              },
+              "gloves": {
+                "gametemplate": "attachable_wear_hands_01_ussr_summer_item",
+                "slot": "gloves"
+              },
+              "pants": {
+                "gametemplate": "attachable_wear_hw_event_padded_pants_item",
+                "slot": "pants"
+              },
+              "rear_belt_l": {
+                "gametemplate": "attachable_wear_officer_tablet_07_ussr_winter_item",
+                "slot": "rear_belt_l"
+              },
+              "skined_helmet": {
+                "gametemplate": "event_ushanka_item",
+                "slot": "skined_helmet"
+              },
+              "tunic": {
+                "gametemplate": "attachable_wear_hw_event_padded_jacket_item",
+                "slot": "tunic"
+              }
+            },
+            "exp": 0,
+            "gametemplate": "ussr_base_soldier",
+            "guid": "13371816597762947",
+            "heroExpBonus": 0.20000000298023224,
+            "human_weap__weapInfo": [
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 0,
+                "reserveAmmoTemplate": ""
+              },
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 0,
+                "reserveAmmoTemplate": ""
+              },
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 0,
+                "reserveAmmoTemplate": ""
+              },
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 0,
+                "reserveAmmoTemplate": ""
+              },
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 0,
+                "reserveAmmoTemplate": ""
+              }
+            ],
+            "human_weap__weapInitialComponents": [{}, {}, {}, {}, {}],
+            "human_weap__weapTemplates": {
+              "grenade": "grenade_thrower",
+              "melee": "knife_weapon",
+              "primary": "",
+              "secondary": "",
+              "tertiary": ""
+            },
+            "id": 0,
+            "inventory": [
+              {
+                "gametemplate": "ussr_medkit_item"
+              },
+              {
+                "gametemplate": "f1_grenade_item"
+              },
+              {
+                "gametemplate": "selfres_syringe_item"
+              }
+            ],
+            "isHero": true,
+            "isPremium": true,
+            "level": 1,
+            "maxLevel": 3,
+            "name": "Emelyan",
+            "perkPoints": {
+              "speed": 4,
+              "vitality": 4,
+              "weapon": 4
+            },
+            "perks": [
+              {
+                "name": "stamina_boost",
+                "stats": [
+                  {
+                    "statKey": "stamina_boost",
+                    "statValue": 0.7
+                  }
+                ]
+              },
+              {
+                "name": "less_recoil",
+                "stats": [
+                  {
+                    "statKey": "less_recoil",
+                    "statValue": 0.40000000596046448
+                  }
+                ]
+              },
+              {
+                "name": "more_predictable_recoil",
+                "stats": [
+                  {
+                    "statKey": "more_predictable_recoil",
+                    "statValue": 0.30000001192092896
+                  }
+                ]
+              },
+              {
+                "name": "hp_regeneration",
+                "stats": [
+                  {
+                    "statKey": "hp_regen_speed",
+                    "statValue": 0.5
+                  },
+                  {
+                    "statKey": "hp_regeneration",
+                    "statValue": 1.0
+                  }
+                ]
+              },
+              {
+                "name":"less_shot_spread_after_turn",
+                "stats":[
+                  {
+                    "statKey" : "less_maximum_shot_spread_after_turn",
+                    "statValue" : 0.250
+                  },
+                  {
+                    "statKey" : "faster_decreasing_of_maximum_shot_spread",
+                    "statValue" : 0.1500000059604645
+                  }
+                ]
+              },
+              {
+                "name": "heal_effectivity",
+                "stats": [
+                  {
+                    "statKey": "heal_effectivity",
+                    "statValue": 1.0
+                  }
+                ]
+              },
+              {
+                "name": "faster_self_fire_putout",
+                "stats": [
+                  {
+                    "statKey": "faster_self_fire_putout",
+                    "statValue": 1.0
+                  }
+                ]
+              }
+            ],
+            "sClass": "assault_2_event_halloween_2024",
+            "sKind": "assault",
+            "surname": "Barykin",
+            "tier": 5,
+            "weaponPreset": ""
+          }
+        ],
+        "squadId": "squad_ussr_assault_2_event_halloween_2024",
+        "squadType": "assault",
+        "toLevelExp": 31800,
+        "vehicleType": ""
+      },
+      {
+        "artilleryCooldownMul": 1.0,
+        "artilleryTypeUnlocks": [],
+        "curVehicle": null,
+        "engineerUnlocks": [],
+        "exp": 0,
+        "expBonus": 1.0,
+        "isParatroopers": false,
+        "isRented": false,
+        "level": 0,
+        "paratrooperBoxUnlocks": [],
+        "spawnWithoutVehicleAvailable": false,
+        "squad": [
+          {
+            "bodyScale": {
+              "height": 0.99299842119216919,
+              "width": 1.0598406791687012
+            },
+            "callname": "",
+            "country": "usa",
+            "equipment": {
+              "backpack": {
+                "gametemplate": "attachable_wear_medic_webbing_pouches_m44_shirt_item",
+                "slot": "backpack"
+              },
+              "belt_1": {
+                "gametemplate": "attachable_wear_ammo_belt_m43_shirt_m44_camo_item",
+                "slot": "belt_1"
+              },
+              "face": {
+                "gametemplate": "attachable_wear_head_americ_prem_06_item",
+                "slot": "face"
+              },
+              "gloves": {
+                "gametemplate": "attachable_wear_hands_01_ussr_summer_item",
+                "slot": "gloves"
+              },
+              "hair": {
+                "gametemplate": "hair_01_us_summer_item",
+                "slot": "hair"
+              },
+              "pants": {
+                "gametemplate": "attachable_wear_pants_02_us_summer_item",
+                "slot": "pants"
+              },
+              "skined_helmet": {
+                "gametemplate": "attachable_wear_us_m1_helmet_w_br_cover_tunic_04_summer_item",
+                "slot": "skined_helmet"
+              },
+              "tunic": {
+                "gametemplate": "attachable_wear_shirt_camo_M44_green_item",
+                "slot": "tunic"
+              }
+            },
+            "exp": 0,
+            "gametemplate": "usa_base_soldier",
+            "guid": "13371816597762972",
+            "heroExpBonus": 0.20000000298023224,
+            "human_weap__weapInfo": [
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 0,
+                "reserveAmmoTemplate": ""
+              },
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 0,
+                "reserveAmmoTemplate": ""
+              },
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 0,
+                "reserveAmmoTemplate": ""
+              },
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 0,
+                "reserveAmmoTemplate": ""
+              },
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 0,
+                "reserveAmmoTemplate": ""
+              }
+            ],
+            "human_weap__weapInitialComponents": [{}, {}, {}, {}, {}],
+            "human_weap__weapTemplates": {
+              "grenade": "grenade_thrower",
+              "melee": "usa_knife_weapon",
+              "primary": "",
+              "secondary": "medic_box_item_with_cooldown",
+              "tertiary": ""
+            },
+            "id": 0,
+            "inventory": [
+              {
+                "gametemplate": "medkit_item"
+              },
+              {
+                "gametemplate": "medkit_item"
+              },
+              {
+                "gametemplate": "medkit_item"
+              },
+              {
+                "gametemplate": "mk2_grenade_item"
+              },
+              {
+                "gametemplate": "medic_medkit_item"
+              },
+              {
+                "gametemplate": "selfres_syringe_item"
+              }
+            ],
+            "isHero": true,
+            "isPremium": true,
+            "level": 1,
+            "maxLevel": 3,
+            "name": "Waverly",
+            "perkPoints": {
+              "speed": 4,
+              "vitality": 4,
+              "weapon": 4
+            },
+            "perks": [
+              {
+                "name": "stamina_boost",
+                "stats": [
+                  {
+                    "statKey": "stamina_boost",
+                    "statValue": 0.7
+                  }
+                ]
+              },
+              {
+                "name": "medic_more_medpacks",
+                "stats": [
+                  {
+                    "statKey": "medic_more_medpacks",
+                    "statValue": 1.0
+                  }
+                ]
+              },
+              {
+                "name": "hp_regeneration",
+                "stats": [
+                  {
+                    "statKey": "hp_regen_speed",
+                    "statValue": 0.5
+                  },
+                  {
+                    "statKey": "hp_regeneration",
+                    "statValue": 1.0
+                  }
+                ]
+              },
+              {
+                "name": "heal_speed_target",
+                "stats": [
+                  {
+                    "statKey": "heal_speed_target",
+                    "statValue": 0.5
+                  }
+                ]
+              },
+              {
+                "name": "heal_speed",
+                "stats": [
+                  {
+                    "statKey": "heal_speed",
+                    "statValue": 0.75
+                  }
+                ]
+              },
+              {
+                "name": "medic_more_medbox_packs",
+                "stats": [
+                  {
+                    "statKey": "medic_more_medbox_packs",
+                    "statValue": 0.44999998807907104
+                  }
+                ]
+              },
+              {
+                "name": "heal_effectivity",
+                "stats": [
+                  {
+                    "statKey": "heal_effectivity",
+                    "statValue": 2.0
+                  }
+                ]
+              },
+              {
+                "name": "faster_self_fire_putout",
+                "stats": [
+                  {
+                    "statKey": "faster_self_fire_putout",
+                    "statValue": 1.0
+                  }
+                ]
+              },
+              {
+                "name": "heal_effectivity_target",
+                "stats": [
+                  {
+                    "statKey": "heal_effectivity_target",
+                    "statValue": 2.0
+                  }
+                ]
+              }
+            ],
+            "sClass": "medic_2_event_halloween_2024",
+            "sKind": "medic",
+            "surname": "Woodson ",
+            "tier": 5,
+            "weaponPreset": ""
+          }
+        ],
+        "squadId": "squad_usa_medic_2_event_halloween_2024",
+        "squadType": "medic",
+        "vehicleType": ""
+      },
+      {
+        "artilleryCooldownMul": 1.0,
+        "artilleryTypeUnlocks": [],
+        "curVehicle": null,
+        "engineerUnlocks": [],
+        "exp": 0,
+        "expBonus": 0.25,
+        "isParatroopers": false,
+        "isRented": false,
+        "level": 0,
+        "paratrooperBoxUnlocks": [],
+        "spawnWithoutVehicleAvailable": false,
+        "squad": [
+          {
+            "bodyScale": {
+              "height": 1.0167332887649536,
+              "width": 1.0108182430267334
+            },
+            "callname": "",
+            "country": "usa",
+            "equipment": {
+              "belt_1": {
+                "gametemplate": "attachable_wear_us_belt_m36_jacket_m43_item",
+                "slot": "belt_1"
+              },
+              "face": {
+                "gametemplate": "usa_gen_head_02",
+                "slot": "face"
+              },
+              "gloves": {
+                "gametemplate": "attachable_wear_hands_01_ussr_summer_item",
+                "slot": "gloves"
+              },
+              "hair": {
+                "gametemplate": "hair_01_us_summer_item",
+                "slot": "hair"
+              },
+              "pants": {
+                "gametemplate": "attachable_wear_pants_m43_khaki_item",
+                "slot": "pants"
+              },
+              "skined_helmet": {
+                "gametemplate": "helmet_04_us_summer_item",
+                "slot": "skined_helmet"
+              },
+              "tunic": {
+                "gametemplate": "attachable_wear_jacket_m43_khaki_item",
+                "slot": "tunic"
+              }
+            },
+            "exp": 0,
+            "gametemplate": "usa_base_soldier",
+            "guid": "13371816597762997",
+            "human_weap__weapInfo": [
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 0,
+                "reserveAmmoTemplate": ""
+              },
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 0,
+                "reserveAmmoTemplate": ""
+              },
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 0,
+                "reserveAmmoTemplate": ""
+              },
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 0,
+                "reserveAmmoTemplate": ""
+              },
+              {
+                "gunSlots": {},
+                "numReserveAmmo": 0,
+                "reserveAmmoTemplate": ""
+              }
+            ],
+            "human_weap__weapInitialComponents": [{}, {}, {}, {}, {}],
+            "human_weap__weapTemplates": {
+              "grenade": "grenade_thrower",
+              "melee": "usa_knife_weapon",
+              "primary": "",
+              "secondary": "",
+              "tertiary": ""
+            },
+            "id": 0,
+            "inventory": [
+              {
+                "gametemplate": "medkit_item"
+              },
+              {
+                "gametemplate": "m24_grenade_item"
+              }
+            ],
+            "isHero": false,
+            "isPremium": false,
+            "level": 1,
+            "maxLevel": 3,
+            "name": "Walter",
+            "perkPoints": {
+              "speed": 4,
+              "vitality": 4,
+              "weapon": 4
+            },
+            "perks": [
+              {
+                "name": "stamina_boost",
+                "stats": [
+                  {
+                    "statKey": "stamina_boost",
+                    "statValue": 0.7
+                  }
+                ]
+              },
+              {
+                "name": "hp_regeneration",
+                "stats": [
+                  {
+                    "statKey": "hp_regen_speed",
+                    "statValue": 0.5
+                  },
+                  {
+                    "statKey": "hp_regeneration",
+                    "statValue": 1.0
+                  }
+                ]
+              },
+              {
+                "name": "heal_effectivity",
+                "stats": [
+                  {
+                    "statKey": "heal_effectivity",
+                    "statValue": 1.0
+                  }
+                ]
+              }
+            ],
+            "sClass": "rifle",
+            "sKind": "rifle",
+            "surname": "Ramirez",
+            "tier": 1,
+            "weaponPreset": ""
+          }
+        ],
+        "squadId": "allies_pacific_rifle_1",
+        "squadType": "rifle",
+        "toLevelExp": 1140,
+        "vehicleType": ""
+      }
+    ],
+    "wallPosters": [],
+    "wallPostersCount": 3
+  }
+}

@@ -1,0 +1,51 @@
+base_pbj_1h{
+  plane_phys_damage__blk:t="gamedata/units/pbj_1h.blk"
+  animchar__res:t="pbj_1h_char"
+}
+
+pbj_1h_wreckage{
+  _use:t="base_pbj_1h"
+  _use:t="plane_wreckage"
+  plane_wreckage__nodeName:t=""
+  plane_wreckage__typeName:t=""
+}
+
+pbj_1h_base{
+  _use:t="plane_with_cockpit"
+  _use:t="base_pbj_1h"
+  _use:t="plane_with_bomb_bay"
+  collres__res:t="pbj_1h_collision"
+  plane_net_phys__blk:t="gamedata/units/pbj_1h.blk"
+  damage_model__blk:t="gamedata/units/pbj_1h.blk"
+  plane_collision__blk:t="gamedata/units/pbj_1h.blk"
+  plane_anim__blk:t="gamedata/units/pbj_1h.blk"
+  plane_sight__blk:t="gamedata/units/pbj_1h.blk"
+  plane_input__autopilotImpl:t="No"
+  canUseRespawnbaseType:t="aircraft_assault"
+  is_seaplane:b=no
+  plane_wreckage__template:t="pbj_1h_wreckage"
+  killLogName:t="pbj_1h"
+  animchar__res:t="pbj_1h_char"
+  vehicle_seats_camera_nodes__defaultNode:t=""
+
+  _group{
+    _tags:t="render"
+    animchar_camera_target__node_name:t=""
+    animchar_camera_target__node_offset:p3=0.0, 0.0, 0.0
+  }
+
+  "vehicle_seats_can_acquire_controls:list<i>"{
+  }
+
+  "vehicle_seats__canAcquireControls:shared:object"{
+
+    "driver:object"{
+      movement:b=yes
+      turrets:b=yes
+    }
+
+    "main_gunner:object"{
+      turrets:b=yes
+    }
+  }
+}

@@ -1,0 +1,107 @@
+import "%ui/hud/huds/player_info/medkitIcon.nut" as mkMedkitIcon
+import "%ui/hud/huds/player_info/repairIcon.nut" as mkRepairIcon
+import "%ui/hud/huds/player_info/flaskIcon.nut" as mkFlaskIcon
+from "%enlSqGlob/dasenums.nut" import HitResult
+from "%ui/hud/state/squad_members.nut" import HEAL_RES_COMMON, HEAL_RES_REVIVE, ATTACK_RES
+from "%ui/hud/style.nut" import DEFAULT_TEXT_COLOR, DEAD_TEXT_COLOR
+from "%ui/hud/huds/player_info/grenadeIcon.nut" import mkGrenadeIcon
+from "%ui/hud/huds/player_info/mineIcon.nut" import mkMineIcon
+from "%ui/components/soldiersUiComps.nut" import kindIcon
+from "%ui/hud/state/controlled_hero.nut" import controlledHeroEid
+from "ai" import AI_ACTION_UNKNOWN, AI_ACTION_STAND, AI_ACTION_HEAL, AI_ACTION_HIDE, AI_ACTION_MOVE, AI_ACTION_ATTACK, AI_ACTION_IN_COVER
+  , AI_ACTION_RELOADING, AI_ACTION_DOWNED
+from "%ui/style/designConst.nut" import defTxtColor
+from "%ui/ui_library.nut" import *
+
+let calcIconHpColor = @(ratio, defColor) ratio < 0.3 ? Color(200,50,50)
+  : ratio < 0.75 ? Color(200,100,100)
+  : defColor
+
+let mkGrenadeIconByMember = @(member, size, color = defTxtColor)
+  member.isAlive && member.grenadeType != null
+    ? mkGrenadeIcon(member.grenadeType, size, color)
+    : null
+
+let mkMineIconByMember = @(member, size, color = defTxtColor)
+  member.isAlive && member.mineType != null
+    ? mkMineIcon(member.mineType, size, color)
+    : null
+
+let mkMemberHealsBlock = @(member, size, color = defTxtColor)
+  member.isAlive && member.targetHealCount > 0 ? mkMedkitIcon(size, color) : null
+
+let mkMemberRepairBlock = @(member, size, color = defTxtColor)
+  member.isAlive && member.targetRepairCount > 0 ? mkRepairIcon(size, color) : null
+
+let mkMemberFlaskBlock = @(member, size, color = defTxtColor)
+  member.isAlive && member.hasFlask ? mkFlaskIcon(size, color) : null
+
+let animByTrigger = @(color, time, trigger) trigger
+  ? { prop=AnimProp.color, from=color, easing=OutCubic, duration=time, trigger=trigger }
+  : null
+
+let aiActionIcons = {
+  [AI_ACTION_UNKNOWN] = null,
+  [AI_ACTION_STAND]   = "stand_icon.svg",
+  [AI_ACTION_HEAL]    = "healing_icon.svg",
+  [AI_ACTION_HIDE]    = "hide_tree_icon.svg",
+  [AI_ACTION_MOVE]    = "move_icon.svg",
+  [AI_ACTION_ATTACK]  = "attack_icon.svg",
+  [AI_ACTION_IN_COVER]  = "stand_icon.svg",
+  [AI_ACTION_RELOADING]  = "semiauto_rifle.svg",
+  [AI_ACTION_DOWNED]  = "heartbeat.svg",
+}
+
+let mkAiImage = memoize(function(image, size) {
+  return Picture($"ui/skin#{image}:{size}:{size}")
+})
+
+function mkAiActionIcon(member, size, color = defTxtColor) {
+  let image = aiActionIcons?[member.currentAiAction]
+  if (member.eid == controlledHeroEid.get() || !member.isAlive || !member.hasAI || !image)
+    return null
+
+  return {
+    hplace = ALIGN_RIGHT
+    vplace = ALIGN_BOTTOM
+    size = [size, size]
+    rendObj = ROBJ_IMAGE
+    image = mkAiImage(image, size)
+    color = member.maxHp > 0 ? calcIconHpColor(member.hp / member.maxHp, color) : color
+    animations = [
+      animByTrigger(Color(200, 0, 0, 200), 1.0, member.hitTriggers[HitResult.HIT_RES_NORMAL])
+      animByTrigger(Color(200, 0, 0, 200), 1.0, member.hitTriggers[ATTACK_RES])
+    ]
+  }
+}
+let deaths = freeze({
+        rendObj = ROBJ_IMAGE
+        size = FLEX
+        vplace = ALIGN_CENTER
+        image = Picture("ui/skin#lb_deaths.avif")
+        tint = DEAD_TEXT_COLOR
+      })
+
+let mkStatusIcon = @(member, size, color=DEFAULT_TEXT_COLOR) {
+  size = FLEX
+  animations = [
+    animByTrigger(Color(200, 0, 0, 200), 1.0, member?.hitTriggers[HitResult.HIT_RES_NORMAL])
+    animByTrigger(Color(200, 100, 0, 200), 3.0, member?.hitTriggers[HitResult.HIT_RES_DOWNED])
+    animByTrigger(Color(200, 0, 0, 200), 3.0, member?.hitTriggers[HitResult.HIT_RES_KILLED])
+    animByTrigger(Color(0, 200, 100, 200), 1.0, member?.hitTriggers[HEAL_RES_COMMON])
+    animByTrigger(Color(0, 100, 200, 200), 3.0, member?.hitTriggers[HEAL_RES_REVIVE])
+  ]
+  children = member.isAlive
+    ? kindIcon(member?.displayedKind ?? member?.sKind, size).__update({color, vplace = ALIGN_CENTER})
+    : deaths
+}
+
+return {
+  mkGrenadeIcon = mkGrenadeIconByMember
+  mkMineIcon = mkMineIconByMember
+  mkMemberHealsBlock
+  mkMemberRepairBlock
+  mkStatusIcon
+  mkAiActionIcon
+  mkMemberFlaskBlock
+}

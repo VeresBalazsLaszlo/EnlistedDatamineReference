@@ -1,0 +1,160 @@
+import{
+  scene:t="gamedata/scenes/_normandy_ardennes_gpu.blk"
+}
+
+import{
+  scene:t="gamedata/scenes/_normandy_ardennes_biome_fx.blk"
+}
+
+import{
+  scene:t="gamedata/scenes/_normandy_ardennes_winter_sounds.blk"
+}
+
+import{
+  scene:t="gamedata/scenes/_normandy_ardennes_winter_vfx.blk"
+}
+
+entity{
+  _template:t="water"
+  water__flowmap:b=yes
+  water__flowmap_tex:t="normandy_ardennes_water_det_flowmap"
+  water__flowmap_area:p4=-2048.0, 2048.0, 2048.0, -2048.0
+  water__flowmap_foam_scale:r=0.8
+  water__flowmap_foam_threshold:r=0.2
+  water__flowmap_foam_power:r=1.0
+  water__flowmap_foam_softness:r=0.8
+  water__flowmap_foam_smoothness:r=0.0
+  water__flowmap_foam_depth_max:r=2.0
+  shore__amplitude_to_length:r=800.0
+  shore__hmap_size:r=512.0
+  shore__parallelism_to_wind:r=0.5
+  shore__rivers_width:r=30.0
+  shore__texture_size:i=512
+  shore__wave_gspeed:r=0.4
+  shore__waves_dist:p4=20.0, 10.0, 1.0, 50.0
+  shore__width_k:r=0.6
+  waterTrail__useObstacle:b=yes
+  water__level:r=0.0
+  water__strength:r=2.3
+  water__wind_dir:r=280.0
+  water__wind_strength:r=0.2
+  water__smallWaterAIWalkHeight:r=0.5
+  water__deepWaterAIAreaCost:r=2.0
+}
+
+entity{
+  _template:t="normandy_level_winter"
+  level__blk:t="levels/normandy_ardennes.blk"
+  level__useGroundHolesCollision:b=yes
+}
+
+entity{
+  _template:t="volfog_nbs"
+  volfog_nbs__rootGraph:t="fog_normandy_morning.json"
+}
+
+entity{
+  _template:t="envi_cover_optional_graph"
+  envi_cover_optional_graph:t="pm_envi_cover_snow.json"
+}
+
+entity{
+  _template:t="envi_cover_nbs"
+  envi_cover_nbs__rootGraph:t="envi_cover_manchuria.json"
+}
+
+entity{
+  _template:t="envi_cover_template"
+  envi_cover_rt:b=yes
+  envi_cover_reflectance:r=1.436
+  envi_cover_intensity_map_left_top_right_bottom:p4=-1024.0, 1024.0, 1024.0, -1024.0
+  envi_cover_normal_mask_threshold:r=0.5
+  envi_cover_intensity_map:t="normandy_ardennes_det_snow_cover_tex_m*"
+  envi_cover_translucency:r=1.0
+  envi_cover_noise_high_frequency:r=10.0
+  envi_cover_normal_infl:r=0.8
+  envi_cover_normal:p4=0.1, 1.0, 0.1, 0.0
+  envi_cover_smoothness:r=0.2
+  envi_cover_albedo:p4=0.65, 0.729, 0.718, 0.0
+}
+
+entity{
+  _template:t="ground_holes_updater"
+}
+
+entity{
+  _template:t="door_mult_ent_generator"
+  ri_extra_gen__blk:t="gamedata/normandy_doors.blk"
+}
+
+entity{
+  _template:t="enemy_attack_marker"
+}
+
+entity{
+  _template:t="normandy_ardens_minimap"
+}
+
+entity{
+  _template:t="shaderVars"
+
+  "shader_vars__vars:object"{
+    hmap_displacement_up:r=0.5
+    ocean1:c=67, 65, 42, 0
+    ocean0:c=51, 45, 18, 0
+    ocean_density:r=1.0
+    puddle_hardness:r=15.0
+    puddle_increase:r=0.01
+    puddle_flat_noise_normal_effect:r=0.015
+    puddle_flat_normal_hardness:r=25.0
+    land_selfillum_worldscale:r=0.9
+    river0:c=30, 55, 55, 0
+    river1:c=40, 50, 100, 0
+    hmap_displacement_down:r=-0.05
+    puddle_flat_hmap_reduce:r=-0.2
+    autodetect_land_selfillum_color:p4=0.53, 0.0, 0.0, 0.16
+    paint_details_tex:t="normandy_ardennes_color_tex_palette*"
+    land_selfillum_strength:r=32.0
+    water_color_noise_size:r=71.0
+    puddle_flat_noise_height_reduce:r=0.09
+    river_density:r=1.0
+    needs_sparkles:r=1.0
+    sparkles_enable__size__density:p4=1.0, 1.1, 1.0, 0.0
+  }
+}
+
+entity{
+  _template:t="bloom"
+}
+
+entity{
+  _template:t="postfx_roundctrl"
+
+  "post_fx:object"{
+  }
+}
+
+entity{
+  _template:t="wind"
+  wind__strength:r=6.0
+  wind__dir:r=240.0
+  wind__noiseSpeed:r=1.0
+  wind__noiseScale:r=25.0
+}
+
+entity{
+  _template:t="battle_music"
+}
+
+entity{
+  _template:t="postfx_color_grading_tonemap_death_alive_enlisted"
+}
+
+entity{
+  _template:t="volfog_camera_snow_affect"
+
+  "volfog_snow__intensityByCamera:object"{
+    plane_fps_cam:r=0.1
+    respawn_cam:r=0.1
+  }
+}

@@ -1,0 +1,1398 @@
+entity{
+  _template:t="poly_battle_area"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-136.391, 2.45473, -1106.96]]
+  battleAreaId:t="1a_area1"
+  battle_area__team:i=1
+  active:b=yes
+
+  "poly_area__points:list<p3>"{
+    item:p3=1.69647, 4.30713, -1186.85
+    item:p3=141.075, 0.0383453, -1231.12
+    item:p3=215.611, -0.0168152, -1197.4
+    item:p3=290.484, 0.051239, -1045.45
+    item:p3=397.146, -0.0309448, -879.712
+    item:p3=416.362, -0.0309296, -824.358
+    item:p3=432.07, 3.25851, -768.014
+    item:p3=385.071, 7.5567, -714.404
+    item:p3=350.563, 11.792, -676.516
+    item:p3=297.531, 12.6342, -653.697
+    item:p3=208.697, 21.7262, -666.574
+    item:p3=73.5739, 37.1293, -737.544
+    item:p3=-129.001, 44.352, -665.668
+    item:p3=-306.973, 39.2578, -539.853
+    item:p3=-377.226, 40.7442, -465.0
+    item:p3=-483.298, 32.2931, -414.306
+    item:p3=-590.589, 36.5213, -397.058
+    item:p3=-623.299, 32.4295, -402.401
+    item:p3=-662.167, 24.0998, -424.286
+    item:p3=-719.577, 16.3618, -456.133
+    item:p3=-753.524, 9.85132, -600.814
+    item:p3=-742.19, 2.79944, -644.93
+    item:p3=-709.89, 2.8101, -648.102
+    item:p3=-652.716, 2.3141, -665.604
+    item:p3=-635.523, 2.09715, -687.484
+    item:p3=-610.31, 1.73943, -703.206
+    item:p3=-585.244, 1.55559, -753.26
+    item:p3=-567.98, 0.582611, -837.475
+    item:p3=-575.7, -0.00624084, -892.875
+    item:p3=-546.621, -0.00511169, -955.268
+    item:p3=-513.654, -0.120743, -1001.28
+    item:p3=-481.467, -0.03936, -1001.66
+    item:p3=-462.93, 0.728867, -1008.45
+    item:p3=-436.816, 0.292282, -1002.52
+    item:p3=-418.867, 0.0960999, -1017.93
+    item:p3=-394.699, 0.716766, -1016.95
+    item:p3=-369.802, 4.49751, -1021.02
+    item:p3=-344.267, 2.46751, -1025.21
+    item:p3=-320.445, 3.88504, -1009.6
+    item:p3=-296.227, 3.87615, -1023.33
+    item:p3=-273.049, 5.90973, -1025.5
+    item:p3=-241.95, 6.93015, -1040.66
+    item:p3=-192.245, 11.6167, -1046.32
+    item:p3=-129.567, 13.365, -1062.26
+  }
+}
+
+entity{
+  _template:t="poly_battle_area"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-135.348, 2.45473, -1106.96]]
+  battleAreaId:t="1a_area2"
+  battle_area__team:i=2
+  active:b=yes
+
+  "poly_area__points:list<p3>"{
+    item:p3=-1.31094, 5.6839, -1183.06
+    item:p3=142.252, -0.00909424, -1230.05
+    item:p3=216.317, 0.0443573, -1200.06
+    item:p3=290.67, 0.0792542, -1044.81
+    item:p3=397.944, -0.0055542, -880.164
+    item:p3=416.492, 0.0178986, -823.181
+    item:p3=431.557, 3.47839, -766.942
+    item:p3=385.728, 7.28516, -715.276
+    item:p3=353.011, 12.0275, -676.67
+    item:p3=297.182, 12.5211, -654.572
+    item:p3=207.764, 21.7162, -666.602
+    item:p3=73.5801, 37.3143, -736.428
+    item:p3=-129.635, 44.2156, -664.355
+    item:p3=-310.617, 39.6711, -535.487
+    item:p3=-375.778, 41.3339, -463.849
+    item:p3=-483.298, 32.2931, -414.306
+    item:p3=-590.589, 36.5213, -397.058
+    item:p3=-623.299, 32.4295, -402.401
+    item:p3=-662.167, 24.0998, -424.286
+    item:p3=-719.577, 16.3618, -456.133
+    item:p3=-753.524, 9.85132, -600.814
+    item:p3=-742.19, 2.79944, -644.93
+    item:p3=-709.89, 2.8101, -648.102
+    item:p3=-652.716, 2.3141, -665.604
+    item:p3=-635.523, 2.09715, -687.484
+    item:p3=-610.31, 1.73943, -703.206
+    item:p3=-585.244, 1.55559, -753.26
+    item:p3=-568.331, -0.0557404, -836.461
+    item:p3=-575.007, -0.0366364, -892.928
+    item:p3=-547.952, -0.0614014, -955.051
+    item:p3=-513.227, -0.0985413, -1001.41
+    item:p3=-481.467, -0.03936, -1001.66
+    item:p3=-462.93, 0.728867, -1008.45
+    item:p3=-436.816, 0.292282, -1002.52
+    item:p3=-418.66, 0.093338, -1017.99
+    item:p3=-394.699, 0.716766, -1016.95
+    item:p3=-369.802, 4.49751, -1021.02
+    item:p3=-344.267, 2.46751, -1025.21
+    item:p3=-320.445, 3.88504, -1009.6
+    item:p3=-296.227, 3.87615, -1023.33
+    item:p3=-273.049, 5.90973, -1025.5
+    item:p3=-241.95, 6.93015, -1040.66
+    item:p3=-192.245, 11.6167, -1046.32
+    item:p3=-129.567, 13.365, -1062.26
+  }
+}
+
+entity{
+  _template:t="zombie_travel_mode_easy"
+  team__scoreCap:r=5000.0
+  team__capturePenalty:r=1001.0
+  team__score:r=5000.0
+}
+
+entity{
+  _template:t="briefing_zombie_mode"
+  mission_name:t="pacific_new_georgia_caves_halloween_easy"
+
+  "loading_images:list<t>"{
+    item:t="ui/1920x1080_enlisted_halloween_2024.avif"
+  }
+}
+
+entity{
+  _template:t="custom_profile"
+  customProfile:t="%enlSqGlob/data/halloween_2024_event_profile.json"
+  joinProfile:b=yes
+}
+
+entity{
+  _template:t="team_usa+team_narrator_invasion_attack+respawn_creators_team"
+  team__memberCount:r=0.0
+  team__scoreCap:r=50.0
+  team__score:r=50.0
+  team__squadSpawnCost:i=0
+  team__firstSpawnCostMul:r=0.0
+  team__zeroScoreFailTimer:r=0.0
+  team__deathPenalty:r=1.0
+  team__id:i=1
+  team__spawnBotArmy:t="normandy_allies"
+}
+
+entity{
+  _template:t="mission_specified_team"
+  mission_specified_team_id:i=1
+  mission_specified_team__ignoreMatchingTeam:b=yes
+}
+
+entity{
+  _template:t="static_cam"
+  transform:m=[[0.997487, 0.0, -0.0708456] [0.0, 1.0, 0.0] [0.0708456, -0.0, 0.997487] [-256.484, 22.1493, -923.682]]
+  camera__active:b=yes
+}
+
+entity{
+  _template:t="respawn_camera"
+  respawnCameraForTeam:i=1
+  moveCameraToHeight:r=170.0
+  respawnSelectorDistanceMult:r=1.0
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [30.0, 20.0, -1130.0]]
+}
+
+entity{
+  _template:t="respawn_camera"
+  respawnCameraForTeam:i=2
+  moveCameraToHeight:r=170.0
+  respawnSelectorDistanceMult:r=1.0
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [30.0, 20.0, -1130.0]]
+}
+
+entity{
+  _template:t="group_activator"
+
+  "activator__activateChoice:object"{
+    sector_1:r=1.0
+  }
+}
+
+entity{
+  _template:t="bomb_site_zone_chained_box+defend_zone_respawnbase+zombie_zone_gui_hider"
+  transform:m=[[28.0866, 0.0, 5.83825] [0.0, 11.223, -0.0] [-6.36105, 0.0, 30.6017] [-527.529, 12.2704, -464.535]]
+  capzone__capRewardPartCap:r=1.8
+  capzone__mustBeCapturedByTeam:i=1
+  capzone_timer__timeLeft:r=2400.0
+  groupName:t="sector_1"
+  active:b=no
+  ui_order:i=1
+  capzone__capReward:r=500.0
+  capzone__caption:t="capzone/headquarters"
+  capzone__checkAllZonesInGroup:b=yes
+  capzone__deactivateAfterTimeout:r=25.0
+  capzone__spawnAtZoneTimeout:r=25.0
+  capzone__createRespawnBaseForTeam:i=2
+  capzone__icon:t="ui/skin#radio.svg"
+  capzone__createRespawnBase:t="respawnBaseGroupActivator"
+  capzone__createdRespawnBaseGroup:i=3
+  capzone__plantingTeam:i=1
+  capzone__timeToPlant:r=40.0
+  capzone__timeToDefuse:r=30.0
+  capzone__timeToExplosion:r=20.0
+  capzone__bombTemplate:t="zombie_radio_objective_easy_close_respawn"
+  capzone__bombTransformLocalPos:m=[[-0.884777, 0.0, -0.466013] [0.0, 1.0, 0.0] [0.466013, 0.0, -0.884777] [-0.209595, -1.7252, -0.314819]]
+
+  "capzone__activateChoice:object"{
+    sector_2:r=1.0
+  }
+}
+
+entity{
+  _template:t="bomb_site_zone_chained_box+defend_zone_respawnbase+zombie_zone_gui_hider"
+  transform:m=[[-2.59145, 0.107283, -1.18116] [0.0736085, 1.56889, -0.0189966] [1.16631, -0.0857983, -2.56666] [-416.492, 3.08016, -596.175]]
+  capzone__capRewardPartCap:r=1.8
+  capzone__mustBeCapturedByTeam:i=1
+  capzone_timer__timeLeft:r=2400.0
+  groupName:t="sector_2"
+  active:b=no
+  ui_order:i=1
+  capzone__capReward:r=500.0
+  capzone__caption:t="capzone/banquet_hall"
+  capzone__checkAllZonesInGroup:b=yes
+  capzone__deactivateAfterTimeout:r=25.0
+  capzone__spawnAtZoneTimeout:r=25.0
+  capzone__createRespawnBaseForTeam:i=2
+  capzone__icon:t="ui/skin#launcher.svg"
+  capzone__createRespawnBase:t="respawnBaseGroupActivator"
+  capzone__createdRespawnBaseGroup:i=3
+  capzone__plantingTeam:i=1
+  capzone__timeToPlant:r=15.0
+  capzone__timeToDefuse:r=30.0
+  capzone__timeToExplosion:r=15.0
+  capzone__bombTemplate:t="zombie_crater_objective_easy"
+  capzone__bombTransformLocalPos:m=[[0.785329, -0.0225102, 1.18395] [0.0665885, 1.41924, -0.0171851] [-1.18229, 0.0649817, 0.785463] [-0.0678101, -0.438664, -0.0336914]]
+
+  "capzone__activateChoice:object"{
+    sector_3:r=1.0
+  }
+}
+
+entity{
+  _template:t="bomb_site_zone_chained_box+defend_zone_respawnbase+zombie_zone_gui_hider"
+  transform:m=[[-1.41629, 0.123494, -1.74528] [-0.0193319, 1.23619, 0.103159] [1.73124, 0.143463, -1.39474] [-422.848, 2.82907, -662.755]]
+  capzone__capRewardPartCap:r=1.8
+  capzone__mustBeCapturedByTeam:i=1
+  capzone_timer__timeLeft:r=2400.0
+  groupName:t="sector_2"
+  active:b=no
+  ui_order:i=1
+  capzone__capReward:r=500.0
+  capzone__caption:t="capzone/banquet_hall"
+  capzone__checkAllZonesInGroup:b=yes
+  capzone__deactivateAfterTimeout:r=25.0
+  capzone__spawnAtZoneTimeout:r=25.0
+  capzone__createRespawnBaseForTeam:i=2
+  capzone__icon:t="ui/skin#launcher.svg"
+  capzone__createRespawnBase:t="respawnBaseGroupActivator"
+  capzone__createdRespawnBaseGroup:i=3
+  capzone__plantingTeam:i=1
+  capzone__timeToPlant:r=15.0
+  capzone__timeToDefuse:r=30.0
+  capzone__timeToExplosion:r=15.0
+  capzone__bombTemplate:t="zombie_crater_objective_easy"
+  capzone__bombTransformLocalPos:m=[[0.137582, -0.0904889, 1.11015] [-0.0174874, 1.11827, 0.0933177] [-1.1137, -0.0287381, 0.135678] [-0.0140686, -0.34363, -0.072998]]
+
+  "capzone__activateChoice:object"{
+    sector_3:r=1.0
+  }
+}
+
+entity{
+  _template:t="bomb_site_zone_chained_box+defend_zone_respawnbase+zombie_zone_gui_hider"
+  transform:m=[[-2.79438, 0.116019, 0.547951] [0.0743933, 1.56825, 0.0473331] [-0.537977, 0.109022, -2.7666] [-410.33, -0.364948, -631.064]]
+  capzone__capRewardPartCap:r=1.8
+  capzone__mustBeCapturedByTeam:i=1
+  capzone_timer__timeLeft:r=2400.0
+  groupName:t="sector_2"
+  active:b=no
+  ui_order:i=1
+  capzone__capReward:r=500.0
+  capzone__caption:t="capzone/banquet_hall"
+  capzone__checkAllZonesInGroup:b=yes
+  capzone__deactivateAfterTimeout:r=25.0
+  capzone__spawnAtZoneTimeout:r=25.0
+  capzone__createRespawnBaseForTeam:i=2
+  capzone__icon:t="ui/skin#launcher.svg"
+  capzone__createRespawnBase:t="respawnBaseGroupActivator"
+  capzone__createdRespawnBaseGroup:i=3
+  capzone__plantingTeam:i=1
+  capzone__timeToPlant:r=15.0
+  capzone__timeToDefuse:r=30.0
+  capzone__timeToExplosion:r=15.0
+  capzone__bombTemplate:t="zombie_crater_objective_easy"
+  capzone__bombTransformLocalPos:m=[[1.32554, -0.0781454, 0.505781] [0.067298, 1.41867, 0.0428175] [-0.507338, -0.0159885, 1.32715] [-0.0818787, -0.4372, -0.0177002]]
+
+  "capzone__activateChoice:object"{
+    sector_3:r=1.0
+  }
+}
+
+entity{
+  _template:t="bomb_site_zone_chained_box+defend_zone_respawnbase+zombie_zone_gui_hider"
+  transform:m=[[-2.41628, 0.217365, 1.49553] [0.0619752, 1.56434, -0.127235] [-1.49149, -0.135308, -2.39009] [-401.706, 2.65544, -595.312]]
+  capzone__capRewardPartCap:r=1.8
+  capzone__mustBeCapturedByTeam:i=1
+  capzone_timer__timeLeft:r=2400.0
+  groupName:t="sector_2"
+  active:b=no
+  ui_order:i=1
+  capzone__capReward:r=500.0
+  capzone__caption:t="capzone/banquet_hall"
+  capzone__checkAllZonesInGroup:b=yes
+  capzone__deactivateAfterTimeout:r=25.0
+  capzone__spawnAtZoneTimeout:r=25.0
+  capzone__createRespawnBaseForTeam:i=2
+  capzone__icon:t="ui/skin#launcher.svg"
+  capzone__createRespawnBase:t="respawnBaseGroupActivator"
+  capzone__createdRespawnBaseGroup:i=3
+  capzone__plantingTeam:i=1
+  capzone__timeToPlant:r=15.0
+  capzone__timeToDefuse:r=30.0
+  capzone__timeToExplosion:r=15.0
+  capzone__bombTemplate:t="zombie_crater_objective_easy_explosive"
+  capzone__bombTransformLocalPos:m=[[1.4198, -0.0558792, 0.00454493] [0.0560637, 1.41513, -0.1151] [3.2772e-10, 0.115189, 1.41623] [-0.0759888, -0.43539, 0.0531006]]
+
+  "capzone__activateChoice:object"{
+    sector_3:r=1.0
+  }
+}
+
+entity{
+  _template:t="bomb_site_zone_chained_box+defend_zone_respawnbase+zombie_zone_gui_hider"
+  transform:m=[[-2.55138, -0.0457889, 1.2691] [-0.12593, 1.55321, -0.19713] [-1.2363, -0.417594, -2.50051] [-400.018, 1.4077, -608.331]]
+  capzone__capRewardPartCap:r=1.8
+  capzone__mustBeCapturedByTeam:i=1
+  capzone_timer__timeLeft:r=2400.0
+  groupName:t="sector_2"
+  active:b=no
+  ui_order:i=1
+  capzone__capReward:r=500.0
+  capzone__caption:t="capzone/banquet_hall"
+  capzone__checkAllZonesInGroup:b=yes
+  capzone__deactivateAfterTimeout:r=25.0
+  capzone__spawnAtZoneTimeout:r=25.0
+  capzone__createRespawnBaseForTeam:i=2
+  capzone__icon:t="ui/skin#launcher.svg"
+  capzone__createRespawnBase:t="respawnBaseGroupActivator"
+  capzone__createdRespawnBaseGroup:i=3
+  capzone__plantingTeam:i=1
+  capzone__timeToPlant:r=15.0
+  capzone__timeToDefuse:r=30.0
+  capzone__timeToExplosion:r=15.0
+  capzone__bombTemplate:t="zombie_crater_objective_easy"
+  capzone__bombTransformLocalPos:m=[[1.40892, 0.130702, 0.129773] [-0.113919, 1.40506, -0.178328] [-0.144729, 0.166419, 1.40369] [-0.0245972, -0.439335, 0.0672607]]
+
+  "capzone__activateChoice:object"{
+    sector_3:r=1.0
+  }
+}
+
+entity{
+  _template:t="bomb_site_zone_chained_box+defend_zone_respawnbase+zombie_zone_gui_hider"
+  transform:m=[[-2.41482, -0.078044, 1.51156] [0.0361206, 1.5642, 0.138467] [-1.49654, 0.24508, -2.37817] [-382.303, 6.62574, -633.684]]
+  capzone__capRewardPartCap:r=1.8
+  capzone__mustBeCapturedByTeam:i=1
+  capzone_timer__timeLeft:r=2400.0
+  groupName:t="sector_2"
+  active:b=no
+  ui_order:i=1
+  capzone__capReward:r=500.0
+  capzone__caption:t="capzone/banquet_hall"
+  capzone__checkAllZonesInGroup:b=yes
+  capzone__deactivateAfterTimeout:r=25.0
+  capzone__spawnAtZoneTimeout:r=25.0
+  capzone__createRespawnBaseForTeam:i=2
+  capzone__icon:t="ui/skin#launcher.svg"
+  capzone__createRespawnBase:t="respawnBaseGroupActivator"
+  capzone__createdRespawnBaseGroup:i=3
+  capzone__plantingTeam:i=1
+  capzone__timeToPlant:r=15.0
+  capzone__timeToDefuse:r=30.0
+  capzone__timeToExplosion:r=15.0
+  capzone__bombTemplate:t="zombie_crater_objective_easy"
+  capzone__bombTransformLocalPos:m=[[1.42053, -0.0323238, -0.00541425] [0.0326754, 1.415, 0.125259] [0.00254227, -0.125349, 1.41536] [-0.0686646, -0.439303, -0.0210571]]
+
+  "capzone__activateChoice:object"{
+    sector_3:r=1.0
+  }
+}
+
+entity{
+  _template:t="bomb_site_zone_chained_sphere+defend_zone_respawnbase+zombie_zone_gui_hider"
+  transform:m=[[-1.29352, 0.0, 0.129622] [0.0, 1.3, 0.0] [-0.129622, 0.0, -1.29352] [-257.586, 12.9317, -883.283]]
+  groupName:t="sector_3"
+  capzone__capRewardPartCap:r=1.8
+  capzone__mustBeCapturedByTeam:i=1
+  capzone_timer__timeLeft:r=2400.0
+  capzone__caption:t="capzone/hitlers_office"
+  active:b=no
+  capzone__initOnlyActive:b=yes
+  ui_order:i=2
+  capzone__owningTeam:i=2
+  capzone__capReward:r=500.0
+  capzone__checkAllZonesInGroup:b=yes
+  capzone__deactivateAfterTimeout:r=25.0
+  capzone__spawnAtZoneTimeout:r=25.0
+  capzone__createRespawnBaseForTeam:i=2
+  sphere_zone__radius:r=30.0
+  capzone__icon:t="ui/skin#skull.svg"
+  capzone__createRespawnBase:t="respawnBaseGroupActivator"
+  capzone__createdRespawnBaseGroup:i=4
+  capzone__plantingTeam:i=1
+  capzone__timeToPlant:r=20.0
+  capzone__timeToDefuse:r=30.0
+  capzone__timeToExplosion:r=40.0
+  capzone__bombTemplate:t="zombie_elite_zombie+zone_zombie_additional"
+  capzone__bombTransformLocalPos:m=[[0.17761, 0.0, 1.28781] [0.0, 1.3, 0.0] [-1.28781, 0.0, 0.17761] [0.0, 0.0, 0.0]]
+
+  "capzone__activateChoice:object"{
+    sector_4:r=1.0
+  }
+}
+
+entity{
+  _template:t="bomb_site_zone_chained_sphere+defend_zone_respawnbase+zombie_zone_gui_hider"
+  transform:m=[[1.082, 0.0, -0.720615] [0.0, 1.3, 0.0] [0.720616, -0.0, 1.082] [-260.008, 12.9317, -879.999]]
+  groupName:t="sector_3"
+  capzone__capRewardPartCap:r=1.8
+  capzone__mustBeCapturedByTeam:i=1
+  capzone_timer__timeLeft:r=2400.0
+  capzone__caption:t="capzone/hitlers_office"
+  active:b=no
+  capzone__initOnlyActive:b=yes
+  ui_order:i=2
+  capzone__owningTeam:i=2
+  capzone__capReward:r=500.0
+  capzone__checkAllZonesInGroup:b=yes
+  capzone__deactivateAfterTimeout:r=25.0
+  capzone__spawnAtZoneTimeout:r=25.0
+  capzone__createRespawnBaseForTeam:i=2
+  sphere_zone__radius:r=30.0
+  capzone__icon:t="ui/skin#skull.svg"
+  capzone__createRespawnBase:t="respawnBaseGroupActivator"
+  capzone__createdRespawnBaseGroup:i=4
+  capzone__plantingTeam:i=1
+  capzone__timeToPlant:r=20.0
+  capzone__timeToDefuse:r=30.0
+  capzone__timeToExplosion:r=40.0
+  capzone__bombTemplate:t="zombie_giant_zombie_easy+zone_zombie_additional"
+  capzone__bombTransformLocalPos:m=[[0.17761, 0.0, 1.28781] [0.0, 1.3, 0.0] [-1.28781, 0.0, 0.17761] [0.0, 0.0, 0.0]]
+
+  "capzone__activateChoice:object"{
+    sector_4:r=1.0
+  }
+}
+
+entity{
+  _template:t="bomb_site_zone_chained_sphere+defend_zone_respawnbase+zombie_zone_gui_hider"
+  transform:m=[[-1.20427, 0.0, 0.489615] [0.0, 1.3, 0.0] [-0.489615, 0.0, -1.20427] [-262.498, 12.9317, -895.492]]
+  groupName:t="sector_3"
+  capzone__capRewardPartCap:r=1.8
+  capzone__mustBeCapturedByTeam:i=1
+  capzone_timer__timeLeft:r=2400.0
+  capzone__caption:t="capzone/hitlers_office"
+  active:b=no
+  capzone__initOnlyActive:b=yes
+  ui_order:i=2
+  capzone__owningTeam:i=2
+  capzone__capReward:r=500.0
+  capzone__checkAllZonesInGroup:b=yes
+  capzone__deactivateAfterTimeout:r=25.0
+  capzone__spawnAtZoneTimeout:r=25.0
+  capzone__createRespawnBaseForTeam:i=2
+  sphere_zone__radius:r=30.0
+  capzone__icon:t="ui/skin#skull.svg"
+  capzone__createRespawnBase:t="respawnBaseGroupActivator"
+  capzone__createdRespawnBaseGroup:i=4
+  capzone__plantingTeam:i=1
+  capzone__timeToPlant:r=20.0
+  capzone__timeToDefuse:r=30.0
+  capzone__timeToExplosion:r=40.0
+  capzone__bombTemplate:t="zombie_elite_zombie+zone_zombie_additional"
+  capzone__bombTransformLocalPos:m=[[0.17761, 0.0, 1.28781] [0.0, 1.3, 0.0] [-1.28781, 0.0, 0.17761] [0.0, 0.0, 0.0]]
+
+  "capzone__activateChoice:object"{
+    sector_4:r=1.0
+  }
+}
+
+entity{
+  _template:t="bomb_site_zone_chained_sphere+defend_zone_respawnbase+zombie_zone_gui_hider"
+  transform:m=[[1.29878, 0.0, -0.0562597] [0.0, 1.3, 0.0] [0.0562597, -0.0, 1.29878] [-266.861, 12.9317, -894.479]]
+  groupName:t="sector_3"
+  capzone__capRewardPartCap:r=1.8
+  capzone__mustBeCapturedByTeam:i=1
+  capzone_timer__timeLeft:r=2400.0
+  capzone__caption:t="capzone/hitlers_office"
+  active:b=no
+  capzone__initOnlyActive:b=yes
+  ui_order:i=2
+  capzone__owningTeam:i=2
+  capzone__capReward:r=500.0
+  capzone__checkAllZonesInGroup:b=yes
+  capzone__deactivateAfterTimeout:r=25.0
+  capzone__spawnAtZoneTimeout:r=25.0
+  capzone__createRespawnBaseForTeam:i=2
+  sphere_zone__radius:r=30.0
+  capzone__icon:t="ui/skin#skull.svg"
+  capzone__createRespawnBase:t="respawnBaseGroupActivator"
+  capzone__createdRespawnBaseGroup:i=4
+  capzone__plantingTeam:i=1
+  capzone__timeToPlant:r=20.0
+  capzone__timeToDefuse:r=30.0
+  capzone__timeToExplosion:r=40.0
+  capzone__bombTemplate:t="zombie_elite_zombie+zone_zombie_additional"
+  capzone__bombTransformLocalPos:m=[[0.17761, 0.0, 1.28781] [0.0, 1.3, 0.0] [-1.28781, 0.0, 0.17761] [0.0, 0.0, 0.0]]
+
+  "capzone__activateChoice:object"{
+    sector_4:r=1.0
+  }
+}
+
+entity{
+  _template:t="bomb_site_zone_chained_sphere+defend_zone_respawnbase+zombie_zone_gui_hider"
+  transform:m=[[0.986324, 0.0, 0.164815] [0.0, 1.0, -0.0] [-0.164815, 0.0, 0.986324] [-74.9707, 29.2458, -951.439]]
+  groupName:t="sector_4"
+  capzone__capRewardPartCap:r=1.8
+  capzone__mustBeCapturedByTeam:i=1
+  capzone_timer__timeLeft:r=2400.0
+  capzone__caption:t="capzone/arena_activator"
+  active:b=no
+  ui_order:i=2
+  capzone__owningTeam:i=2
+  capzone__capReward:r=500.0
+  capzone__checkAllZonesInGroup:b=yes
+  capzone__deactivateAfterTimeout:r=25.0
+  capzone__spawnAtZoneTimeout:r=25.0
+  capzone__createRespawnBaseForTeam:i=2
+  sphere_zone__radius:r=37.0
+  capzone__icon:t="ui/skin#attack_icon.svg"
+  capzone__createRespawnBase:t="respawnBaseGroupActivator"
+  capzone__createdRespawnBaseGroup:i=4
+  capzone__plantingTeam:i=1
+  capzone__timeToPlant:r=20.0
+  capzone__timeToDefuse:r=30.0
+  capzone__timeToExplosion:r=40.0
+  capzone__bombTemplate:t="zombie_flamethrower_arena_objective_easy"
+  capzone__bombTransformLocalPos:m=[[-0.216619, 0.0, -1.03825] [0.0, 1.06061, 0.0] [1.03825, 0.0, -0.216619] [-0.000396729, -0.0414028, -0.00146484]]
+
+  "capzone__activateChoice:object"{
+    sector_5_b:r=1.0
+    sector_5_a:r=1.0
+  }
+}
+
+entity{
+  _template:t="bomb_site_zone_chained_sphere+defend_zone_respawnbase+zombie_zone_gui_hider"
+  transform:m=[[1.28883, 0.0102525, -1.10852] [-0.0199984, 1.69986, -0.0075295] [1.10838, 0.0187487, 1.28885] [260.997, 11.029, -763.734]]
+  groupName:t="sector_5_a"
+  capzone__capRewardPartCap:r=1.8
+  capzone__mustBeCapturedByTeam:i=1
+  capzone_timer__timeLeft:r=2400.0
+  capzone__caption:t="capzone/zombie_evacuation"
+  active:b=no
+  ui_order:i=2
+  capzone__owningTeam:i=2
+  capzone__capReward:r=500.0
+  capzone__checkAllZonesInGroup:b=yes
+  capzone__deactivateAfterTimeout:r=25.0
+  capzone__spawnAtZoneTimeout:r=25.0
+  capzone__createRespawnBaseForTeam:i=2
+  sphere_zone__radius:r=15.0
+  capzone__icon:t="ui/skin#map_icon_car.svg"
+  capzone__createRespawnBase:t="respawnBaseGroupActivator"
+  capzone__createdRespawnBaseGroup:i=4
+  capzone__plantingTeam:i=1
+  capzone__timeToPlant:r=20.0
+  capzone__timeToDefuse:r=30.0
+  capzone__timeToExplosion:r=40.0
+  capzone__bombTemplate:t="zombie_evacuation_objective_easy"
+  capzone__initOnlyActive:b=yes
+  capzone__bombTransformLocalPos:m=[[0.745177, -0.00936712, 0.666802] [0.00735395, 0.999956, 0.00582889] [-0.666827, 0.000560075, 0.745213] [-0.00427246, -1.46782, -0.240356]]
+}
+
+entity{
+  _template:t="bomb_site_zone_chained_sphere+defend_zone_respawnbase+zombie_zone_gui_hider"
+  transform:m=[[1.28883, 0.0102525, -1.10852] [-0.0199984, 1.69986, -0.0075295] [1.10838, 0.0187487, 1.28885] [-499.979, 4.01567, -902.635]]
+  groupName:t="sector_5_b"
+  capzone__capRewardPartCap:r=1.8
+  capzone__mustBeCapturedByTeam:i=1
+  capzone_timer__timeLeft:r=2400.0
+  capzone__caption:t="capzone/zombie_evacuation"
+  active:b=no
+  ui_order:i=2
+  capzone__owningTeam:i=2
+  capzone__capReward:r=500.0
+  capzone__checkAllZonesInGroup:b=yes
+  capzone__deactivateAfterTimeout:r=25.0
+  capzone__spawnAtZoneTimeout:r=25.0
+  capzone__createRespawnBaseForTeam:i=2
+  sphere_zone__radius:r=15.0
+  capzone__icon:t="ui/skin#map_icon_car.svg"
+  capzone__createRespawnBase:t="respawnBaseGroupActivator"
+  capzone__createdRespawnBaseGroup:i=4
+  capzone__plantingTeam:i=1
+  capzone__timeToPlant:r=20.0
+  capzone__timeToDefuse:r=30.0
+  capzone__timeToExplosion:r=40.0
+  capzone__bombTemplate:t="zombie_evacuation_objective_easy"
+  capzone__initOnlyActive:b=yes
+  capzone__bombTransformLocalPos:m=[[-0.0456382, 0.0348796, 0.998349] [-0.00208127, 0.999385, -0.035011] [-0.998956, -0.00367567, -0.0455375] [0.00314331, -1.83688, -0.205505]]
+}
+
+entity{
+  _template:t="respawnChooser+respTeam1"
+  groupName:t="sector_1"
+  active:b=no
+  transform:m=[[0.890954, 0.0, 0.454094] [0.0, 1.0, -0.0] [-0.454094, 0.0, 0.890954] [-700.868, 5.67227, -506.482]]
+}
+
+entity{
+  _template:t="respawnChooser+respTeam1"
+  groupName:t="sector_1"
+  active:b=no
+  transform:m=[[0.850695, 0.0, 0.525659] [0.0, 1.0, -0.0] [-0.525659, 0.0, 0.850695] [-699.597, 5.67227, -508.212]]
+}
+
+entity{
+  _template:t="respawnChooser+respTeam1"
+  groupName:t="sector_1"
+  active:b=no
+  transform:m=[[0.903939, 0.0, 0.427661] [0.0, 1.0, -0.0] [-0.427661, 0.0, 0.903939] [-698.272, 5.67227, -510.198]]
+}
+
+entity{
+  _template:t="respawnChooser+respTeam1"
+  groupName:t="sector_1"
+  active:b=no
+  transform:m=[[0.925399, 0.0, 0.378994] [0.0, 1.0, -0.0] [-0.378994, 0.0, 0.925399] [-696.911, 5.67227, -512.078]]
+}
+
+entity{
+  _template:t="respawnChooser+respTeam1"
+  groupName:t="sector_2"
+  active:b=no
+  transform:m=[[0.367507, 0.0, -0.930021] [-0.0, 1.0, 0.0] [0.930021, 0.0, 0.367507] [-529.551, 11.1553, -453.286]]
+}
+
+entity{
+  _template:t="respawnChooser+respTeam1"
+  groupName:t="sector_2"
+  active:b=no
+  transform:m=[[0.215557, 0.0, -0.976491] [0.0, 1.0, 0.0] [0.976491, -0.0, 0.215557] [-527.193, 11.1553, -452.706]]
+}
+
+entity{
+  _template:t="respawnChooser+respTeam1"
+  groupName:t="sector_3"
+  active:b=no
+  transform:m=[[0.778537, 0.0, -0.627598] [0.0, 1.0, 0.0] [0.627598, -0.0, 0.778537] [-421.795, 3.50943, -591.585]]
+}
+
+entity{
+  _template:t="respawnChooser+respTeam1"
+  groupName:t="sector_3"
+  active:b=no
+  transform:m=[[0.986276, 0.0, 0.165104] [0.0, 1.0, -0.0] [-0.165104, 0.0, 0.986276] [-422.406, 3.50943, -595.431]]
+}
+
+entity{
+  _template:t="respawnChooser+respTeam1"
+  groupName:t="sector_4"
+  active:b=no
+  transform:m=[[0.808862, 0.0, -0.587998] [0.0, 1.0, 0.0] [0.587998, -0.0, 0.808862] [-258.434, 13.2385, -879.984]]
+}
+
+entity{
+  _template:t="respawnChooser+respTeam1"
+  groupName:t="sector_4"
+  active:b=no
+  transform:m=[[0.808862, 0.0, -0.587998] [0.0, 1.0, 0.0] [0.587998, -0.0, 0.808862] [-259.477, 13.2385, -881.411]]
+}
+
+entity{
+  _template:t="respawnChooser+respTeam1"
+  groupName:t="sector_5_a"
+  active:b=no
+  transform:m=[[0.982222, 0.0, 0.18772] [0.0, 1.0, -0.0] [-0.18772, 0.0, 0.982222] [-102.68, 26.2858, -957.859]]
+}
+
+entity{
+  _template:t="respawnChooser+respTeam1"
+  groupName:t="sector_5_a"
+  active:b=no
+  transform:m=[[0.982222, 0.0, 0.18772] [0.0, 1.0, -0.0] [-0.18772, 0.0, 0.982222] [-102.285, 26.2858, -960.07]]
+}
+
+entity{
+  _template:t="respawnChooser+respTeam1"
+  groupName:t="sector_5_b"
+  active:b=no
+  transform:m=[[-0.92948, 0.0, -0.368871] [0.0, 1.0, 0.0] [0.368871, 0.0, -0.929481] [-68.4452, 29.9758, -951.427]]
+}
+
+entity{
+  _template:t="respawnChooser+respTeam1"
+  groupName:t="sector_5_b"
+  active:b=no
+  transform:m=[[-0.92948, 0.0, -0.368871] [0.0, 1.0, 0.0] [0.368871, 0.0, -0.929481] [-68.8358, 29.9758, -949.253]]
+}
+
+entity{
+  _template:t="base_fortification_build+tutorial_ammunition_box_a+undestroyable_ri_extra"
+  transform:m=[[0.999686, 0.0250557, 0.0] [-0.0250557, 0.999686, 0.0] [0.0, -0.0, 1.0] [-610.41, 10.1737, -461.101]]
+  team:i=1
+  grenadeResupplyItem:t="type_97_grenade_item"
+  useful_box__maxUseCount:i=99999
+  hud_icon__maxDistance:r=20.0
+}
+
+entity{
+  _template:t="tutorial_placed_medic_box_item+placeable_item_in_world+base_ri_building+paid_medkit_box_use+undestroyable_ri_extra"
+  transform:m=[[0.848831, 0.0225443, 0.528182] [-0.0163465, 0.999733, -0.0164012] [-0.52841, 0.00528789, 0.848973] [-613.938, 10.3367, -459.955]]
+  ri_extra__name:t="dummy_wooden_box_a"
+  team:i=1
+  medic_box__isOpen:b=yes
+  useful_box__maxUseCount:i=99999
+  hud_icon__maxDistance:r=20.0
+  builder_info__team:i=1
+  placeable_item__ownerTeam:i=1
+  paid_box__ressuplyCost:i=0
+  useful_box__uiPrice:i=0
+}
+
+entity{
+  _template:t="tutorial_placed_medic_box_item+placeable_item_in_world+base_ri_building+paid_medkit_box_use+undestroyable_ri_extra"
+  transform:m=[[0.763298, -0.0712216, 0.642108] [0.0512968, 0.997449, 0.049657] [-0.644007, -0.00496501, 0.765004] [-493.851, 10.889, -485.005]]
+  ri_extra__name:t="dummy_wooden_box_a"
+  team:i=1
+  medic_box__isOpen:b=yes
+  useful_box__maxUseCount:i=99999
+  hud_icon__maxDistance:r=20.0
+  builder_info__team:i=1
+  placeable_item__ownerTeam:i=1
+  paid_box__ressuplyCost:i=0
+  useful_box__uiPrice:i=0
+}
+
+entity{
+  _template:t="base_fortification_build+tutorial_ammunition_box_a+undestroyable_ri_extra"
+  transform:m=[[-0.212265, 0.0159928, -0.977081] [0.00339514, 0.999872, 0.0156283] [0.977206, 2.32831e-10, -0.212292] [-496.85, 10.7331, -483.793]]
+  team:i=1
+  grenadeResupplyItem:t="type_97_grenade_item"
+  useful_box__maxUseCount:i=99999
+  hud_icon__maxDistance:r=20.0
+}
+
+entity{
+  _template:t="tutorial_placed_medic_box_item+placeable_item_in_world+base_ri_building+paid_medkit_box_use+undestroyable_ri_extra"
+  transform:m=[[0.960693, -0.00857111, -0.277481] [0.0408832, 0.992994, 0.110873] [0.274587, -0.117859, 0.954312] [-457.317, 10.4599, -563.651]]
+  ri_extra__name:t="dummy_wooden_box_a"
+  team:i=1
+  medic_box__isOpen:b=yes
+  useful_box__maxUseCount:i=99999
+  hud_icon__maxDistance:r=20.0
+  builder_info__team:i=1
+  placeable_item__ownerTeam:i=1
+  paid_box__ressuplyCost:i=0
+  useful_box__uiPrice:i=0
+}
+
+entity{
+  _template:t="base_fortification_build+tutorial_ammunition_box_a+undestroyable_ri_extra"
+  transform:m=[[-0.984869, 0.000635499, 0.173299] [-0.0182977, 0.994022, -0.107632] [-0.172331, -0.109175, -0.97897] [-465.77, 11.2762, -560.658]]
+  team:i=1
+  grenadeResupplyItem:t="type_97_grenade_item"
+  useful_box__maxUseCount:i=99999
+  hud_icon__maxDistance:r=20.0
+}
+
+entity{
+  _template:t="base_fortification_build+tutorial_ammunition_box_a+undestroyable_ri_extra"
+  transform:m=[[-0.983, -0.0606454, 0.173299] [-0.0801114, 0.990958, -0.107632] [-0.165204, -0.119686, -0.97897] [-486.017, 9.93137, -614.928]]
+  team:i=1
+  grenadeResupplyItem:t="type_97_grenade_item"
+  useful_box__maxUseCount:i=99999
+  hud_icon__maxDistance:r=20.0
+}
+
+entity{
+  _template:t="tutorial_placed_medic_box_item+placeable_item_in_world+base_ri_building+paid_medkit_box_use+undestroyable_ri_extra"
+  transform:m=[[0.960561, 0.0295466, -0.276495] [-0.0170941, 0.998733, 0.0473401] [0.277543, -0.0407466, 0.959849] [-467.98, 8.94092, -611.735]]
+  ri_extra__name:t="dummy_wooden_box_a"
+  team:i=1
+  medic_box__isOpen:b=yes
+  useful_box__maxUseCount:i=99999
+  hud_icon__maxDistance:r=20.0
+  builder_info__team:i=1
+  placeable_item__ownerTeam:i=1
+  paid_box__ressuplyCost:i=0
+  useful_box__uiPrice:i=0
+}
+
+entity{
+  _template:t="tutorial_placed_medic_box_item+placeable_item_in_world+base_ri_building+paid_medkit_box_use+undestroyable_ri_extra"
+  transform:m=[[0.22595, 0.0142073, -0.974035] [-0.00432016, 0.999899, 0.0135824] [0.974129, 0.00113905, 0.225989] [-267.176, 12.6683, -833.369]]
+  ri_extra__name:t="dummy_wooden_box_a"
+  team:i=1
+  medic_box__isOpen:b=yes
+  useful_box__maxUseCount:i=99999
+  hud_icon__maxDistance:r=20.0
+  builder_info__team:i=1
+  placeable_item__ownerTeam:i=1
+  paid_box__ressuplyCost:i=0
+  useful_box__uiPrice:i=0
+}
+
+entity{
+  _template:t="base_fortification_build+tutorial_ammunition_box_a+undestroyable_ri_extra"
+  transform:m=[[-0.987353, 0.0326545, 0.155136] [0.0514657, 0.99158, 0.118833] [-0.14995, 0.125314, -0.98072] [-268.274, 12.5523, -835.21]]
+  team:i=1
+  grenadeResupplyItem:t="type_97_grenade_item"
+  useful_box__maxUseCount:i=99999
+  hud_icon__maxDistance:r=20.0
+}
+
+entity{
+  _template:t="base_fortification_build+tutorial_ammunition_box_a+undestroyable_ri_extra"
+  transform:m=[[-0.988505, -0.0136792, 0.150566] [-0.0192999, 0.999168, -0.0359325] [-0.14995, -0.0384254, -0.987947] [-377.249, 11.6126, -712.614]]
+  team:i=1
+  grenadeResupplyItem:t="type_97_grenade_item"
+  useful_box__maxUseCount:i=99999
+  hud_icon__maxDistance:r=20.0
+}
+
+entity{
+  _template:t="tutorial_placed_medic_box_item+placeable_item_in_world+base_ri_building+paid_medkit_box_use+undestroyable_ri_extra"
+  transform:m=[[0.175411, 0.0142073, 0.984392] [-0.00137087, 0.999899, -0.0141868] [-0.984494, 0.00113905, 0.175413] [-379.231, 11.9809, -709.621]]
+  ri_extra__name:t="dummy_wooden_box_a"
+  team:i=1
+  medic_box__isOpen:b=yes
+  useful_box__maxUseCount:i=99999
+  hud_icon__maxDistance:r=20.0
+  builder_info__team:i=1
+  placeable_item__ownerTeam:i=1
+  paid_box__ressuplyCost:i=0
+  useful_box__uiPrice:i=0
+}
+
+entity{
+  _template:t="tutorial_placed_medic_box_item+placeable_item_in_world+base_ri_building+paid_medkit_box_use+undestroyable_ri_extra"
+  transform:m=[[0.836144, -0.03147, 0.547606] [0.0817545, 0.994353, -0.0676878] [-0.542382, 0.101366, 0.833994] [-98.3415, 25.9172, -940.271]]
+  ri_extra__name:t="dummy_wooden_box_a"
+  team:i=1
+  medic_box__isOpen:b=yes
+  useful_box__maxUseCount:i=99999
+  hud_icon__maxDistance:r=20.0
+  builder_info__team:i=1
+  placeable_item__ownerTeam:i=1
+  paid_box__ressuplyCost:i=0
+  useful_box__uiPrice:i=0
+}
+
+entity{
+  _template:t="base_fortification_build+tutorial_ammunition_box_a+undestroyable_ri_extra"
+  transform:m=[[-0.987353, 0.0299025, 0.15569] [0.0305213, 0.999533, 0.00158519] [-0.15557, 0.00631701, -0.987805] [-94.9204, 25.1838, -959.587]]
+  team:i=1
+  grenadeResupplyItem:t="type_97_grenade_item"
+  useful_box__maxUseCount:i=99999
+  hud_icon__maxDistance:r=20.0
+}
+
+entity{
+  _template:t="tutorial_placed_medic_box_item+placeable_item_in_world+base_ri_building+paid_medkit_box_use+undestroyable_ri_extra"
+  transform:m=[[0.907982, -0.0352053, 0.417527] [0.0290648, 0.999357, 0.021058] [-0.418, -0.00698496, 0.90842] [102.323, 20.6711, -873.614]]
+  ri_extra__name:t="dummy_wooden_box_a"
+  team:i=1
+  medic_box__isOpen:b=yes
+  useful_box__maxUseCount:i=99999
+  hud_icon__maxDistance:r=20.0
+  builder_info__team:i=1
+  placeable_item__ownerTeam:i=1
+  paid_box__ressuplyCost:i=0
+  useful_box__uiPrice:i=0
+}
+
+entity{
+  _template:t="base_fortification_build+tutorial_ammunition_box_a+undestroyable_ri_extra"
+  transform:m=[[-0.987353, 0.0299025, 0.15569] [0.0305213, 0.999533, 0.00158519] [-0.15557, 0.00631701, -0.987805] [106.103, 20.3221, -870.965]]
+  team:i=1
+  grenadeResupplyItem:t="type_97_grenade_item"
+  useful_box__maxUseCount:i=99999
+  hud_icon__maxDistance:r=20.0
+}
+
+entity{
+  _template:t="tutorial_placed_medic_box_item+placeable_item_in_world+base_ri_building+paid_medkit_box_use+undestroyable_ri_extra"
+  transform:m=[[0.893796, -0.178328, 0.411493] [0.167467, 0.983887, 0.0626327] [-0.416032, 0.0129308, 0.909258] [190.492, 16.362, -822.603]]
+  ri_extra__name:t="dummy_wooden_box_a"
+  team:i=1
+  medic_box__isOpen:b=yes
+  useful_box__maxUseCount:i=99999
+  hud_icon__maxDistance:r=20.0
+  builder_info__team:i=1
+  placeable_item__ownerTeam:i=1
+  paid_box__ressuplyCost:i=0
+  useful_box__uiPrice:i=0
+}
+
+entity{
+  _template:t="base_fortification_build+tutorial_ammunition_box_a+undestroyable_ri_extra"
+  transform:m=[[-0.97592, 0.149738, 0.158616] [0.156184, 0.987305, 0.0289173] [-0.152273, 0.0529943, -0.986917] [194.24, 15.5194, -819.954]]
+  team:i=1
+  grenadeResupplyItem:t="type_97_grenade_item"
+  useful_box__maxUseCount:i=99999
+  hud_icon__maxDistance:r=20.0
+}
+
+entity{
+  _template:t="tutorial_placed_medic_box_item+placeable_item_in_world+base_ri_building+paid_medkit_box_use+undestroyable_ri_extra"
+  transform:m=[[0.622771, -0.0352053, 0.781611] [0.0164716, 0.999357, 0.0318887] [-0.78223, -0.00698496, 0.62295] [254.045, 9.71622, -773.651]]
+  ri_extra__name:t="dummy_wooden_box_a"
+  team:i=1
+  medic_box__isOpen:b=yes
+  useful_box__maxUseCount:i=99999
+  hud_icon__maxDistance:r=20.0
+  builder_info__team:i=1
+  placeable_item__ownerTeam:i=1
+  paid_box__ressuplyCost:i=0
+  useful_box__uiPrice:i=0
+}
+
+entity{
+  _template:t="base_fortification_build+tutorial_ammunition_box_a+undestroyable_ri_extra"
+  transform:m=[[-0.987788, 0.00963013, 0.155506] [0.00626889, 0.999736, -0.0220909] [-0.155678, -0.0208462, -0.987588] [257.824, 9.59307, -771.002]]
+  team:i=1
+  grenadeResupplyItem:t="type_97_grenade_item"
+  useful_box__maxUseCount:i=99999
+  hud_icon__maxDistance:r=20.0
+}
+
+entity{
+  _template:t="tutorial_placed_medic_box_item+placeable_item_in_world+base_ri_building+paid_medkit_box_use+undestroyable_ri_extra"
+  transform:m=[[-0.89091, 0.0320253, 0.453049] [-0.0153661, 0.994816, -0.100539] [-0.45392, -0.0965327, -0.885798] [-271.866, 11.1042, -938.312]]
+  ri_extra__name:t="dummy_wooden_box_a"
+  team:i=1
+  medic_box__isOpen:b=yes
+  useful_box__maxUseCount:i=99999
+  hud_icon__maxDistance:r=20.0
+  builder_info__team:i=1
+  placeable_item__ownerTeam:i=1
+  paid_box__ressuplyCost:i=0
+  useful_box__uiPrice:i=0
+}
+
+entity{
+  _template:t="base_fortification_build+tutorial_ammunition_box_a+undestroyable_ri_extra"
+  transform:m=[[-0.987754, 0.00320501, 0.155985] [-0.00998106, 0.996443, -0.0836776] [-0.155698, -0.0842098, -0.984209] [-272.721, 10.6437, -940.926]]
+  team:i=1
+  grenadeResupplyItem:t="type_97_grenade_item"
+  useful_box__maxUseCount:i=99999
+  hud_icon__maxDistance:r=20.0
+}
+
+entity{
+  _template:t="tutorial_placed_medic_box_item+placeable_item_in_world+base_ri_building+paid_medkit_box_use+undestroyable_ri_extra"
+  transform:m=[[-0.890123, 0.0239627, 0.45509] [0.0321788, 0.99943, 0.0103147] [-0.454583, 0.0238256, -0.890386] [-436.611, 4.16236, -907.133]]
+  ri_extra__name:t="dummy_wooden_box_a"
+  team:i=1
+  medic_box__isOpen:b=yes
+  useful_box__maxUseCount:i=99999
+  hud_icon__maxDistance:r=20.0
+  builder_info__team:i=1
+  placeable_item__ownerTeam:i=1
+  paid_box__ressuplyCost:i=0
+  useful_box__uiPrice:i=0
+}
+
+entity{
+  _template:t="base_fortification_build+tutorial_ammunition_box_a+undestroyable_ri_extra"
+  transform:m=[[-0.987777, 0.00250379, 0.155851] [-0.000153743, 0.999855, -0.0170373] [-0.155871, -0.016853, -0.987634] [-437.572, 3.93037, -910.269]]
+  team:i=1
+  grenadeResupplyItem:t="type_97_grenade_item"
+  useful_box__maxUseCount:i=99999
+  hud_icon__maxDistance:r=20.0
+}
+
+entity{
+  _template:t="tutorial_placed_medic_box_item+placeable_item_in_world+base_ri_building+paid_medkit_box_use+undestroyable_ri_extra"
+  transform:m=[[-0.889805, -0.0253141, 0.455637] [-0.0283761, 0.999599, 0.000120164] [-0.455457, -0.0128223, -0.890166] [-495.056, 2.3587, -908.165]]
+  ri_extra__name:t="dummy_wooden_box_a"
+  team:i=1
+  medic_box__isOpen:b=yes
+  useful_box__maxUseCount:i=99999
+  hud_icon__maxDistance:r=20.0
+  builder_info__team:i=1
+  placeable_item__ownerTeam:i=1
+  paid_box__ressuplyCost:i=0
+  useful_box__uiPrice:i=0
+}
+
+entity{
+  _template:t="base_fortification_build+tutorial_ammunition_box_a+undestroyable_ri_extra"
+  transform:m=[[-0.987159, -0.0340175, 0.156074] [-0.0349496, 0.999384, -0.00323092] [-0.155867, -0.00864414, -0.98774] [-496.016, 2.12088, -911.302]]
+  team:i=1
+  grenadeResupplyItem:t="type_97_grenade_item"
+  useful_box__maxUseCount:i=99999
+  hud_icon__maxDistance:r=20.0
+}
+
+entity{
+  _template:t="base_fortification_build+tutorial_ammunition_box_a+undestroyable_ri_extra"
+  transform:m=[[0.862515, 0.0892196, -0.498104] [-0.116485, 0.992906, -0.0238568] [0.492442, 0.0785984, 0.866789] [-421.569, 3.10813, -588.976]]
+  team:i=1
+  grenadeResupplyItem:t="type_97_grenade_item"
+  useful_box__maxUseCount:i=99999
+  hud_icon__maxDistance:r=20.0
+}
+
+entity{
+  _template:t="base_fortification_build+tutorial_ammunition_box_a+undestroyable_ri_extra"
+  transform:m=[[-0.984243, -0.100514, 0.145473] [-0.0939839, 0.994262, 0.0511064] [-0.149775, 0.036629, -0.988042] [-222.999, 12.8481, -912.665]]
+  team:i=1
+  grenadeResupplyItem:t="type_97_grenade_item"
+  useful_box__maxUseCount:i=99999
+  hud_icon__maxDistance:r=20.0
+}
+
+entity{
+  _template:t="tutorial_placed_medic_box_item+placeable_item_in_world+base_ri_building+paid_medkit_box_use+undestroyable_ri_extra"
+  transform:m=[[0.857815, 0.0646661, -0.509873] [-0.0396447, 0.997423, 0.0598023] [0.512426, -0.0310855, 0.858168] [-222.115, 12.9953, -911.321]]
+  ri_extra__name:t="dummy_wooden_box_a"
+  team:i=1
+  medic_box__isOpen:b=yes
+  useful_box__maxUseCount:i=99999
+  hud_icon__maxDistance:r=20.0
+  builder_info__team:i=1
+  placeable_item__ownerTeam:i=1
+  paid_box__ressuplyCost:i=0
+  useful_box__uiPrice:i=0
+}
+
+entity{
+  _template:t="base_fortification_build+tutorial_ammunition_box_a+undestroyable_ri_extra"
+  transform:m=[[-0.987353, 0.0299025, 0.15569] [0.0305213, 0.999533, 0.00158519] [-0.15557, 0.00631701, -0.987805] [-1.84103, 25.3237, -941.672]]
+  team:i=1
+  grenadeResupplyItem:t="type_97_grenade_item"
+  useful_box__maxUseCount:i=99999
+  hud_icon__maxDistance:r=20.0
+}
+
+entity{
+  _template:t="tutorial_placed_medic_box_item+placeable_item_in_world+base_ri_building+paid_medkit_box_use+undestroyable_ri_extra"
+  transform:m=[[0.836144, -0.113062, 0.53673] [0.0817546, 0.993285, 0.0818749] [-0.542382, -0.024579, 0.839772] [-1.58496, 25.3526, -939.2]]
+  ri_extra__name:t="dummy_wooden_box_a"
+  team:i=1
+  medic_box__isOpen:b=yes
+  useful_box__maxUseCount:i=99999
+  hud_icon__maxDistance:r=20.0
+  builder_info__team:i=1
+  placeable_item__ownerTeam:i=1
+  paid_box__ressuplyCost:i=0
+  useful_box__uiPrice:i=0
+}
+
+entity{
+  _template:t="rendinsts_removes"
+
+  "rirmv:array"{
+
+    "rirmv:object"{
+      name:t="fortification_concrete_middle_a"
+      tm:m=[[3.57628e-07, 0.0, -1.0] [-7.7486e-07, -1.0, 0.0] [-1.0, 7.7486e-07, -3.57628e-07] [-77.3356, 31.65, -957.326]]
+    }
+
+    "rirmv:object"{
+      name:t="fortification_concrete_middle_a"
+      tm:m=[[3.57628e-07, 0.0, -1.0] [0.0, 1.0, 0.0] [1.0, 0.0, 3.57628e-07] [-77.3196, 29.25, -957.326]]
+    }
+
+    "rirmv:object"{
+      name:t="fortification_concrete_middle_f"
+      tm:m=[[1.0, 0.0, 4.17233e-07] [0.0, 1.0, 0.0] [-4.17233e-07, 0.0, 1.0] [-76.3196, 29.25, -958.831]]
+    }
+
+    "rirmv:object"{
+      name:t="fortification_concrete_low_d"
+      tm:m=[[1.0, 0.0, 4.17233e-07] [0.0, 1.0, 0.0] [-4.17233e-07, 0.0, 1.0] [-77.3196, 30.45, -958.831]]
+    }
+
+    "rirmv:object"{
+      name:t="fortification_concrete_high_a"
+      tm:m=[[1.0, 0.0, 4.17233e-07] [0.0, 1.0, 0.0] [-4.17233e-07, 0.0, 1.0] [-73.8196, 29.25, -958.831]]
+    }
+
+    "rirmv:object"{
+      name:t="fortification_concrete_low_b"
+      tm:m=[[1.0, -3.57628e-07, 5.36442e-07] [3.57628e-07, 1.0, 0.0] [-5.36442e-07, 0.0, 1.0] [-75.3196, 30.45, -958.831]]
+    }
+
+    "rirmv:object"{
+      name:t="fortification_concrete_low_d"
+      tm:m=[[1.0, 0.0, 4.17233e-07] [0.0, 1.0, 0.0] [-4.17233e-07, 0.0, 1.0] [-73.3196, 30.45, -957.826]]
+    }
+
+    "rirmv:object"{
+      name:t="fortification_concrete_middle_a"
+      tm:m=[[-6.55651e-07, 0.0, 1.0] [0.0, 1.0, 0.0] [-1.0, 0.0, -6.55651e-07] [-73.3196, 29.25, -957.326]]
+    }
+
+    "rirmv:object"{
+      name:t="fortification_concrete_middle_f"
+      tm:m=[[-1.0, 0.0, -1.78814e-07] [0.0, 1.0, 0.0] [1.78814e-07, 0.0, -1.0] [-71.3898, 29.25, -956.825]]
+    }
+
+    "rirmv:object"{
+      name:t="fortification_concrete_middle_f"
+      tm:m=[[-1.0, 0.0, -1.78814e-07] [0.0, 1.0, 0.0] [1.78814e-07, 0.0, -1.0] [-79.3398, 29.25, -956.825]]
+    }
+
+    "rirmv:object"{
+      name:t="fortification_concrete_middle_a"
+      tm:m=[[1.0, 0.0, 5.96046e-07] [0.0, 1.0, 0.0] [-5.96046e-07, 0.0, 1.0] [-65.5271, 29.2554, -955.525]]
+    }
+
+    "rirmv:object"{
+      name:t="fortification_concrete_middle_e"
+      tm:m=[[-5.96046e-07, 0.0, 1.0] [0.0, 1.0, 0.0] [-1.0, 0.0, -5.96046e-07] [-64.0271, 29.2554, -954.525]]
+    }
+
+    "rirmv:object"{
+      name:t="fortification_concrete_high_a"
+      tm:m=[[1.54972e-06, 0.0, -1.0] [0.0, 1.0, 0.0] [1.0, 0.0, 1.54972e-06] [-64.0379, 29.2554, -951.031]]
+    }
+
+    "rirmv:object"{
+      name:t="fortification_concrete_high_a"
+      tm:m=[[-5.96046e-07, 0.0, 1.0] [0.0, 1.0, 0.0] [-1.0, 0.0, -5.96046e-07] [-64.0379, 29.2401, -949.031]]
+    }
+
+    "rirmv:object"{
+      name:t="fortification_concrete_middle_b"
+      tm:m=[[-1.0, 0.0, -5.96046e-07] [0.0, 1.0, 0.0] [5.96046e-07, 0.0, -1.0] [-65.5379, 29.2447, -948.531]]
+    }
+
+    "rirmv:object"{
+      name:t="japan_radar_scr_268_antenna"
+      tm:m=[[-1.0, 0.0, -4.17233e-07] [0.0, 1.0, 0.0] [4.17233e-07, 0.0, -1.0] [-74.9321, 30.1721, -952.075]]
+    }
+
+    "rirmv:object"{
+      name:t="japan_radar_scr_268_trailer"
+      tm:m=[[-1.0, 0.0, -4.17233e-07] [0.0, 1.0, 0.0] [4.17233e-07, 0.0, -1.0] [-74.9398, 29.25, -952.075]]
+    }
+
+    "rirmv:object"{
+      name:t="fortification_concrete_middle_a"
+      tm:m=[[-1.0, 0.0, -4.17233e-07] [0.0, 1.0, 0.0] [4.17233e-07, 0.0, -1.0] [-83.7025, 29.2554, -948.475]]
+    }
+
+    "rirmv:object"{
+      name:t="fortification_concrete_middle_e"
+      tm:m=[[4.76837e-07, 0.0, -1.0] [0.0, 1.0, 0.0] [1.0, 0.0, 4.76837e-07] [-85.2025, 29.2554, -949.475]]
+    }
+
+    "rirmv:object"{
+      name:t="fortification_concrete_middle_c"
+      tm:m=[[4.76837e-07, 0.0, -1.0] [0.0, 1.0, 0.0] [1.0, 0.0, 4.76837e-07] [-85.2025, 29.2554, -951.475]]
+    }
+
+    "rirmv:object"{
+      name:t="fortification_concrete_high_a"
+      tm:m=[[-1.37091e-06, 0.0, 1.0] [0.0, 1.0, 0.0] [-1.0, 0.0, -1.37091e-06] [-85.1918, 29.2554, -952.969]]
+    }
+
+    "rirmv:object"{
+      name:t="fortification_concrete_high_a"
+      tm:m=[[4.76837e-07, 0.0, -1.0] [0.0, 1.0, 0.0] [1.0, 0.0, 4.76837e-07] [-85.1918, 29.2554, -954.969]]
+    }
+
+    "rirmv:object"{
+      name:t="fortification_concrete_middle_b"
+      tm:m=[[1.0, 0.0, 4.76837e-07] [0.0, 1.0, 0.0] [-4.76837e-07, 0.0, 1.0] [-83.6917, 29.2554, -955.469]]
+    }
+
+    "rirmv:object"{
+      name:t="sandbags_wall_high_l2000_a"
+      tm:m=[[-4.76837e-07, 0.0, 1.0] [0.0, 1.0, 0.0] [-1.0, 0.0, -4.76837e-07] [-82.6398, 29.2554, -947.625]]
+    }
+
+    "rirmv:object"{
+      name:t="sandbags_wall_high_l2000_side_l"
+      tm:m=[[6.55651e-07, 0.0, -1.0] [0.0, 1.0, 0.0] [1.0, 0.0, 6.55651e-07] [-80.7398, 29.2554, -947.625]]
+    }
+
+    "rirmv:object"{
+      name:t="sandbags_wall_high_rounded_hole_a"
+      tm:m=[[-3.57628e-07, 0.0, 1.0] [0.0, 1.0, 0.0] [-1.0, 0.0, -3.57628e-07] [-74.8245, 29.25, -946.911]]
+    }
+
+    "rirmv:object"{
+      name:t="sandbags_wall_medium_l1000_side_l"
+      tm:m=[[-5.96046e-08, 0.0, 1.0] [0.0, 1.0, 0.0] [-1.0, 0.0, -5.96046e-08] [-75.3609, 28.7134, -946.064]]
+    }
+
+    "rirmv:object"{
+      name:t="sandbags_wall_medium_l1000_side_l"
+      tm:m=[[-0.819152, 0.0, 0.573576] [0.0, 1.0, 0.0] [-0.573576, 0.0, -0.819152] [-76.9839, 29.25, -947.825]]
+    }
+
+    "rirmv:object"{
+      name:t="sandbags_wall_medium_l1000_side_l"
+      tm:m=[[2.38419e-07, 0.0, -1.0] [0.0, 1.0, 0.0] [1.0, 0.0, 2.38419e-07] [-73.9371, 28.7134, -946.051]]
+    }
+
+    "rirmv:object"{
+      name:t="ammunition_box_h"
+      tm:m=[[0.573576, 0.0, 0.819152] [0.0, 1.0, 0.0] [-0.819152, 0.0, 0.573576] [-76.5239, 29.25, -948.019]]
+    }
+
+    "rirmv:object"{
+      name:t="sandbags_wall_medium_l1000_side_r"
+      tm:m=[[0.819152, 0.0, 0.573576] [0.0, 1.0, 0.0] [-0.573576, 0.0, 0.819152] [-72.7025, 29.25, -947.774]]
+    }
+
+    "rirmv:object"{
+      name:t="sandbag_single_b"
+      tm:m=[[0.939693, 0.0, 0.34202] [0.0, 1.0, 0.0] [-0.34202, 0.0, 0.939693] [-72.0175, 29.25, -948.666]]
+    }
+
+    "rirmv:object"{
+      name:t="sandbag_single_a"
+      tm:m=[[0.984808, 0.0, -0.173648] [0.0, 1.0, 0.0] [0.173648, 0.0, 0.984808] [-75.1794, 29.25, -947.048]]
+    }
+
+    "rirmv:object"{
+      name:t="sandbag_single_d"
+      tm:m=[[-0.34202, 0.0, 0.939693] [0.0, 1.0, 0.0] [-0.939693, 0.0, -0.34202] [-75.9247, 29.25, -947.79]]
+    }
+
+    "rirmv:object"{
+      name:t="sandbag_single_a"
+      tm:m=[[-0.258819, 0.0, 0.965926] [0.0, 1.0, 0.0] [-0.965926, 0.0, -0.258819] [-79.1166, 29.2554, -947.749]]
+    }
+
+    "rirmv:object"{
+      name:t="sandbag_single_b"
+      tm:m=[[-0.573577, 0.0, -0.819152] [0.0, 1.0, 0.0] [0.819152, 0.0, -0.573577] [-78.8951, 29.2554, -947.087]]
+    }
+
+    "rirmv:object"{
+      name:t="sandbag_single_f"
+      tm:m=[[-0.965926, 0.0, 0.258819] [0.0, 1.0, 0.0] [-0.258819, 0.0, -0.965926] [-79.6398, 29.2554, -947.025]]
+    }
+
+    "rirmv:object"{
+      name:t="sandbags_wall_high_l2000_side_l"
+      tm:m=[[-4.76837e-07, 0.0, 1.0] [0.0, 1.0, 0.0] [-1.0, 0.0, -4.76837e-07] [-68.8898, 29.2554, -947.775]]
+    }
+
+    "rirmv:object"{
+      name:t="sandbags_wall_high_l2000_a"
+      tm:m=[[3.57628e-07, 0.0, -1.0] [0.0, 1.0, 0.0] [1.0, 0.0, 3.57628e-07] [-66.9898, 29.2518, -947.775]]
+    }
+
+    "rirmv:object"{
+      name:t="fortification_concrete_middle_c"
+      tm:m=[[-5.96046e-07, 0.0, 1.0] [0.0, 1.0, 0.0] [-1.0, 0.0, -5.96046e-07] [-64.0271, 29.2554, -952.525]]
+    }
+  }
+
+  "riunb:array"{
+  }
+}
+
+entity{
+  _template:t="tutorial_placed_medic_box_item+placeable_item_in_world+base_ri_building+paid_medkit_box_use+undestroyable_ri_extra"
+  transform:m=[[-0.969493, 0.21386, 0.11978] [0.21248, 0.976864, -0.0243305] [-0.122212, 0.00186266, -0.992502] [27.9025, 13.4857, -1024.8]]
+  ri_extra__name:t="dummy_wooden_box_a"
+  team:i=1
+  medic_box__isOpen:b=yes
+  useful_box__maxUseCount:i=99999
+  hud_icon__maxDistance:r=20.0
+  builder_info__team:i=1
+  placeable_item__ownerTeam:i=1
+  paid_box__ressuplyCost:i=0
+  useful_box__uiPrice:i=0
+}
+
+entity{
+  _template:t="base_fortification_build+tutorial_ammunition_box_a+undestroyable_ri_extra"
+  transform:m=[[-0.960953, 0.223395, 0.163291] [0.234092, 0.970966, 0.0492513] [-0.147548, 0.0855534, -0.985348] [28.6664, 13.0689, -1026.81]]
+  team:i=1
+  grenadeResupplyItem:t="type_97_grenade_item"
+  useful_box__maxUseCount:i=99999
+  hud_icon__maxDistance:r=20.0
+}
+
+entity{
+  _template:t="tutorial_placed_medic_box_item+placeable_item_in_world+base_ri_building+paid_medkit_box_use+undestroyable_ri_extra"
+  transform:m=[[0.657082, 0.0150491, -0.753669] [0.133365, 0.98171, 0.135876] [0.741928, -0.189794, 0.643055] [111.0, 1.4803, -1072.74]]
+  ri_extra__name:t="dummy_wooden_box_a"
+  team:i=1
+  medic_box__isOpen:b=yes
+  useful_box__maxUseCount:i=99999
+  hud_icon__maxDistance:r=20.0
+  builder_info__team:i=1
+  placeable_item__ownerTeam:i=1
+  paid_box__ressuplyCost:i=0
+  useful_box__uiPrice:i=0
+}
+
+entity{
+  _template:t="base_fortification_build+tutorial_ammunition_box_a+undestroyable_ri_extra"
+  transform:m=[[-0.985496, 0.0371973, 0.165569] [0.0666506, 0.982119, 0.17607] [-0.15606, 0.184552, -0.970354] [107.646, 2.05136, -1074.48]]
+  team:i=1
+  grenadeResupplyItem:t="type_97_grenade_item"
+  useful_box__maxUseCount:i=99999
+  hud_icon__maxDistance:r=20.0
+}
+
+entity{
+  _template:t="tutorial_placed_medic_box_item+placeable_item_in_world+base_ri_building+paid_medkit_box_use+undestroyable_ri_extra"
+  transform:m=[[-0.826518, 0.221493, 0.517502] [0.181962, 0.975106, -0.126733] [-0.532689, -0.0105813, -0.846244] [65.6482, 11.0276, -1105.87]]
+  ri_extra__name:t="dummy_wooden_box_a"
+  team:i=1
+  medic_box__isOpen:b=yes
+  useful_box__maxUseCount:i=99999
+  hud_icon__maxDistance:r=20.0
+  builder_info__team:i=1
+  placeable_item__ownerTeam:i=1
+  paid_box__ressuplyCost:i=0
+  useful_box__uiPrice:i=0
+}
+
+entity{
+  _template:t="base_fortification_build+tutorial_ammunition_box_a+undestroyable_ri_extra"
+  transform:m=[[-0.579659, 0.120252, -0.805937] [0.166291, 0.985694, 0.0274707] [0.797711, -0.118097, -0.591364] [65.3344, 10.3354, -1110.21]]
+  team:i=1
+  grenadeResupplyItem:t="type_97_grenade_item"
+  useful_box__maxUseCount:i=99999
+  hud_icon__maxDistance:r=20.0
+}
+
+entity{
+  _template:t="tutorial_placed_medic_box_item+placeable_item_in_world+base_ri_building+paid_medkit_box_use+undestroyable_ri_extra"
+  transform:m=[[0.999325, -0.0339423, 0.0140338] [0.0332238, 0.998267, 0.0486027] [-0.0156591, -0.0481036, 0.998719] [137.281, 0.543785, -1143.29]]
+  ri_extra__name:t="dummy_wooden_box_a"
+  team:i=1
+  medic_box__isOpen:b=yes
+  useful_box__maxUseCount:i=99999
+  hud_icon__maxDistance:r=20.0
+  builder_info__team:i=1
+  placeable_item__ownerTeam:i=1
+  paid_box__ressuplyCost:i=0
+  useful_box__uiPrice:i=0
+}
+
+entity{
+  _template:t="base_fortification_build+tutorial_ammunition_box_a+undestroyable_ri_extra"
+  transform:m=[[-0.987353, 0.0299025, 0.15569] [0.0305213, 0.999533, 0.00158519] [-0.15557, 0.00631701, -0.987805] [136.814, 0.412589, -1145.66]]
+  team:i=1
+  grenadeResupplyItem:t="type_97_grenade_item"
+  useful_box__maxUseCount:i=99999
+  hud_icon__maxDistance:r=20.0
+}
+
+entity{
+  _template:t="base_fortification_build+tutorial_ammunition_box_a+undestroyable_ri_extra"
+  transform:m=[[-0.212664, 0.0234027, -0.976845] [-0.0281371, 0.999152, 0.0300627] [0.97672, 0.0338789, -0.211825] [-552.164, 10.6086, -440.23]]
+  team:i=1
+  grenadeResupplyItem:t="type_97_grenade_item"
+  useful_box__maxUseCount:i=99999
+  hud_icon__maxDistance:r=20.0
+}
+
+entity{
+  _template:t="tutorial_placed_medic_box_item+placeable_item_in_world+base_ri_building+paid_medkit_box_use+undestroyable_ri_extra"
+  transform:m=[[0.00972882, -0.00858264, 0.999916] [-0.116599, 0.993133, 0.00965888] [-0.993132, -0.116683, 0.00866128] [-422.344, 2.97586, -590.775]]
+  ri_extra__name:t="dummy_wooden_box_a"
+  team:i=1
+  medic_box__isOpen:b=yes
+  useful_box__maxUseCount:i=99999
+  hud_icon__maxDistance:r=20.0
+  builder_info__team:i=1
+  placeable_item__ownerTeam:i=1
+  paid_box__ressuplyCost:i=0
+  useful_box__uiPrice:i=0
+}
+
+import{
+  scene:t="gamedata/scenes/halloween_event_missions/_pacific_new_georgia_halloween_common.blk"
+}
+
+import{
+  scene:t="gamedata/scenes/halloween_event_missions/_pacific_new_georgia_caves_halloween_easy_boxes.blk"
+}

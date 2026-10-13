@@ -1,0 +1,68 @@
+normalizationPreset:t="heat"
+ricochetPreset:t="he"
+secondaryShattersPreset:t="ap"
+stabilityThreshold:r=0.5
+stabilityCaliberToArmorThreshold:r=5.0
+stabilityReductionAfterRicochet:r=0.3
+stabilityReductionAfterPenetration:r=0.15
+bulletType:t="he_bomb"
+slopeEffectPreset:t="ap"
+useEffectiveArmorThicknessForShatter:b=yes
+explodeOnRendinst:b=yes
+mass:r=60.0
+explosiveType:t="shimose"
+explosiveMass:r=23.0
+bombType:t="he_bomb"
+bombName:t="type94_mod6"
+caliber:r=0.199
+length:r=1.016
+distFromCmToStab:r=0.3
+dragCx:r=0.02
+sound:t="weapon.bomb_mid"
+explodeTreshold:r=0.0
+explodeHitPower:r=120.0
+hitPowerMult:r=1.0
+explodeArmorPower:r=35.0
+nearHitPower:p2=1.0, 50.0
+explodeRadius:p2=1.0, 3.0
+midHitPower:p2=0.9, 400.0
+farHitPower:p2=0.1, 1000.0
+rendinstDamageRadius:r=9.0
+endHitPower:p2=0.01, 1500.0
+relativeVelHitShift:p2=300.0, 1000.0
+shutterDamage:b=yes
+nearArmorPower:p2=10.0, 50.0
+shutterDamageRadius:r=40.0
+midArmorPower:p2=7.0, 400.0
+shutterAmount:i=2000
+farArmorPower:p2=0.2, 700.0
+shutterArmorPower:r=10.0
+relativeVelArmorShift:p2=200.0, 1000.0
+shutterHit:r=10.0
+entityTemplate:t="navy_type_97mod_6_60kg_bomb_projectile"
+entityPhysTemplate:t=""
+
+stabilityRicochetModifier{
+  mod1:p2=0.0, 0.5
+  mod2:p2=15.0, 0.7
+  mod3:p2=30.0, 0.99
+}
+
+pressureDamage{
+  damageType:t="pressure"
+}
+
+DamageParts{
+
+  body{
+    hp:r=35.0
+    armorClass:t="tank_structural_steel"
+    armorThickness:r=5.0
+    explosionArmorQuality:r=45.0
+    shatterArmorQuality:r=45.0
+  }
+}
+
+explFx{
+  effectTemplName:t="bomb_expl_50kg"
+}

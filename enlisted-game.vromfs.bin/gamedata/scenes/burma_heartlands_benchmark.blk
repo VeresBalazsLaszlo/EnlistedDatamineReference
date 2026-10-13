@@ -1,0 +1,393 @@
+import{
+  scene:t="gamedata/scenes/_burma_heartlands_benchmark_common.blk"
+}
+
+entity{
+  _template:t="briefing_invasion"
+  mission_name:t="burma_heartlands_inv"
+  mission_campaign:t="burma"
+
+  "loading_images:list<t>"{
+    item:t="ui/pacific_new_georgia_japan_fortification_01.avif"
+    item:t="ui/pacific_new_georgia_h8k_01.avif"
+    item:t="ui/pacific_new_georgia_ship_01.avif"
+  }
+}
+
+entity{
+  _template:t="screen_fade_anim"
+  screen_fade:r=0.9
+  anim_track_on:b=yes
+}
+
+entity{
+  _template:t="benchmark"
+  benchmark_name:t="burma_heartlands_dynamic"
+
+  "camera_tracks:array"{
+
+    "camera_tracks:object"{
+      from_fov:r=90.0
+      from_pos:p3=34.3068, 8.21135, 410.553
+      to_dir:p3=-0.450428, -0.113333, -0.88559
+      duration:r=25.0
+      to_pos:p3=39.3441, 8.60274, 322.11
+      to_fov:r=90.0
+      from_dir:p3=0.0587586, -0.0694791, -0.995851
+    }
+
+    "camera_tracks:object"{
+      from_fov:r=90.0
+      from_pos:p3=-42.3194, 14.6425, 364.65
+      to_dir:p3=-0.702669, -0.232873, -0.672329
+      duration:r=25.0
+      to_pos:p3=-41.8013, 12.1963, 256.025
+      to_fov:r=90.0
+      from_dir:p3=-0.185555, -0.156631, -0.97007
+    }
+
+    "camera_tracks:object"{
+      from_fov:r=90.0
+      from_pos:p3=100.815, 7.21799, 191.356
+      to_dir:p3=-0.262605, -0.239598, -0.934682
+      duration:r=25.0
+      to_pos:p3=96.5445, 18.708, 121.853
+      to_fov:r=90.0
+      from_dir:p3=-0.239847, 0.132871, -0.961675
+    }
+
+    "camera_tracks:object"{
+      from_fov:r=90.0
+      from_pos:p3=-54.5143, 13.9904, 229.577
+      to_dir:p3=0.842865, -0.365233, -0.395201
+      duration:r=25.0
+      to_pos:p3=-94.4482, 17.3574, 82.6498
+      to_fov:r=90.0
+      from_dir:p3=-0.0540654, -0.12427, -0.990774
+    }
+
+    "camera_tracks:object"{
+      from_fov:r=90.0
+      from_pos:p3=1.33383, 16.04, 46.2722
+      to_dir:p3=0.0498679, -0.186878, -0.981117
+      duration:r=25.0
+      to_pos:p3=23.7956, 16.2796, -31.9843
+      to_fov:r=90.0
+      from_dir:p3=0.255165, -0.133168, -0.957683
+    }
+
+    "camera_tracks:object"{
+      from_fov:r=90.0
+      from_pos:p3=39.58, 17.4553, -76.8217
+      to_dir:p3=-0.696167, -0.0809934, -0.713296
+      duration:r=25.0
+      to_pos:p3=29.7932, 15.3404, -151.321
+      to_fov:r=90.0
+      from_dir:p3=-0.424187, -0.224731, -0.877246
+    }
+
+    "camera_tracks:object"{
+      from_fov:r=90.0
+      from_pos:p3=195.994, 45.2668, -104.735
+      to_dir:p3=0.435961, -0.419748, -0.796084
+      duration:r=25.0
+      to_pos:p3=30.8268, 29.6423, -316.483
+      to_fov:r=90.0
+      from_dir:p3=-0.582666, -0.405716, -0.704198
+    }
+
+    "camera_tracks:object"{
+      from_fov:r=90.0
+      from_pos:p3=14.0604, 16.9627, -247.498
+      to_dir:p3=0.620762, 0.00319556, -0.783993
+      duration:r=25.0
+      to_pos:p3=-49.5225, 16.7928, -352.32
+      to_fov:r=90.0
+      from_dir:p3=-0.582666, -0.405716, -0.704198
+    }
+  }
+}
+
+entity{
+  _template:t="ui_disabled"
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [33.3013, 2.0339, 349.107]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [46.5087, 3.01334, 326.321]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [21.9824, 0.53635, 316.146]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [12.0905, 1.37595, 325.45]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-57.5171, 4.31231, 289.675]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-56.8451, 3.62239, 264.623]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-72.1466, 3.70739, 266.146]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-44.743, 3.39317, 249.635]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-79.4084, 3.57975, 161.373]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-79.5987, 6.58256, 132.589]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-93.1806, 5.53993, 127.275]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-73.2145, 6.91965, 71.0861]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [95.9852, 7.49438, 170.739]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [102.841, 7.50169, 140.671]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [95.666, 7.392, 147.52]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [95.131, 7.38951, 107.272]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [87.8074, 7.49114, 101.695]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [6.34287, 7.43919, 16.9574]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [14.169, 7.42356, 5.53261]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [22.2425, 7.40794, -24.7986]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [29.9308, 7.39231, -61.3649]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [39.7357, 7.37669, -84.3144]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [38.8581, 7.36106, -98.3327]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [46.6522, 7.45481, -113.84]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [16.532, 7.45481, -114.336]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [27.5707, 7.47044, -119.008]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [13.6684, 7.46517, -161.813]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [5.71381, 7.45481, -179.963]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [150.332, 24.6107, -152.058]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [151.312, 24.5352, -159.019]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [146.141, 24.6864, -174.021]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [130.259, 24.9024, -192.472]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [93.4127, 18.6115, -267.396]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [100.471, 21.6933, -268.351]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [55.3675, 8.50729, -338.135]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [47.0378, 9.24774, -348.289]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [33.7738, 9.16976, -356.725]]
+}
+
+entity{
+  _template:t="m4a2_sherman_1944_destroyed"
+  transform:m=[[0.827158, 0.0459601, -0.560087] [-0.0281766, 0.998788, 0.0403472] [0.561263, -0.0175922, 0.827451] [21.7307, 0.513298, 324.862]]
+}
+
+entity{
+  _template:t="m4a2_sherman_1944_destroyed"
+  transform:m=[[0.999964, 0.00459545, -0.00716657] [-0.00451309, 0.999924, 0.0114673] [0.00721873, -0.0114345, 0.999909] [36.9935, 0.513298, 312.117]]
+}
+
+entity{
+  _template:t="m4a2_sherman_1944_destroyed"
+  transform:m=[[0.999836, -0.0028824, -0.0178543] [0.00336981, 0.999621, 0.0273297] [0.0177687, -0.0273854, 0.999467] [-54.4002, 1.59029, 301.788]]
+}
+
+entity{
+  _template:t="m4a2_sherman_1944_destroyed"
+  transform:m=[[0.999151, 0.00496754, -0.0409006] [-0.000964351, 0.995253, 0.0973195] [0.0411899, -0.0971974, 0.994412] [-62.9238, 4.43987, 263.456]]
+}
+
+entity{
+  _template:t="m4a2_sherman_1944_destroyed"
+  transform:m=[[-0.0622032, 0.0959048, 0.993445] [-0.135104, 0.985402, -0.103588] [-0.988877, -0.140662, -0.048338] [-59.0435, 6.91965, 111.71]]
+}
+
+entity{
+  _template:t="m4a2_sherman_1944_destroyed"
+  transform:m=[[0.999249, -0.00186548, -0.0386998] [-0.00142228, 0.996401, -0.0847544] [0.0387186, 0.0847458, 0.99565] [-65.8358, 7.55663, 69.9194]]
+}
+
+entity{
+  _template:t="m4a2_sherman_1944_destroyed"
+  transform:m=[[0.983002, -0.0116528, 0.183225] [0.00549332, 0.999404, 0.0340887] [-0.183513, -0.0325027, 0.98248] [89.6549, 7.3884, 148.002]]
+}
+
+entity{
+  _template:t="m4a2_sherman_1944_destroyed"
+  transform:m=[[0.995268, 0.0474109, 0.0848123] [-0.0433499, 0.997853, -0.0491] [-0.0869581, 0.045191, 0.995186] [94.4731, 7.38407, 107.411]]
+}
+
+entity{
+  _template:t="m4a2_sherman_1944_destroyed"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [14.8309, 7.42356, -3.22842]]
+}
+
+entity{
+  _template:t="m4a2_sherman_1944_destroyed"
+  transform:m=[[0.99981, 0.0191393, 0.00382648] [-0.0190552, 0.999599, -0.0209357] [-0.00422564, 0.0208588, 0.999774] [23.2517, 7.40794, -34.5212]]
+}
+
+entity{
+  _template:t="m4a2_sherman_1944_destroyed"
+  transform:m=[[0.999727, -0.0086857, -0.0216956] [0.00861782, 0.999958, -0.00322023] [0.0217227, 0.00303238, 0.999759] [37.9479, 7.37669, -90.0485]]
+}
+
+entity{
+  _template:t="m4a2_sherman_1944_destroyed"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [7.87763, 7.45481, -116.104]]
+}
+
+entity{
+  _template:t="m4a2_sherman_1944_destroyed"
+  transform:m=[[0.999732, -0.00216048, 0.0230328] [0.00203958, 0.999984, 0.00527143] [-0.0230438, -0.00522304, 0.999721] [12.1171, 7.45481, -178.988]]
+}
+
+entity{
+  _template:t="m4a2_sherman_1944_destroyed"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [157.711, 24.5356, -148.297]]
+}
+
+entity{
+  _template:t="m4a2_sherman_1944_destroyed"
+  transform:m=[[0.993332, 0.114963, 0.00870088] [-0.115046, 0.993313, 0.00972205] [-0.00752502, -0.0106582, 0.999915] [137.182, 24.8516, -189.625]]
+}
+
+entity{
+  _template:t="m4a2_sherman_1944_destroyed"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [99.4096, 20.3921, -240.889]]
+}
+
+entity{
+  _template:t="m4a2_sherman_1944_destroyed"
+  transform:m=[[0.998959, -0.0409941, 0.0200004] [0.0425679, 0.995393, -0.0859199] [-0.016386, 0.0866818, 0.996101] [44.1523, 7.66165, -324.3]]
+}
+
+entity{
+  _template:t="artillery_strike_requester"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-60.1418, 5.51814, 131.972]]
+}
+
+entity{
+  _template:t="artillery_strike_requester"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-65.5391, 6.91965, 114.552]]
+}

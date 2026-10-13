@@ -1,0 +1,16 @@
+options no_aot
+
+require ecs
+require ecs.fs
+require ECSGlobalTags
+
+[export]
+def load_ai(base_path : string) : bool
+  var ok = true
+
+  ok = load_sub_folder(base_path, "main") && ok
+
+  return ok
+
+
+

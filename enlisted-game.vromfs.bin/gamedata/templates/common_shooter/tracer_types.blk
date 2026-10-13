@@ -1,0 +1,678 @@
+tracer__base_tracer{
+  ignitionTime:r=0.005
+  burnTime:r=1.1
+  smokeTime:r=1.0
+  luminosity:r=10.0
+  smokeColor:p4=1.0, 0.902, 0.702, 0.8
+  headColor:p3=1.0, 0.667, 0.333
+  startHeadColor:p3=1.0, 0.667, 0.333
+  startTime:r=0.0
+  smokeRadius:r=0.01
+}
+
+tracer__infantry_base{
+  _use:t="tracer__base_tracer"
+  ignitionTime:r=0.002
+  burnTime:r=1.8
+}
+
+tracer_start__invisible{
+  startHeadColor:p3=0.0, 0.0, 0.0
+  startTime:r=0.0
+}
+
+tracer_start__yellow_flash{
+  startHeadColor:p3=1.0, 0.973, 0.235
+  startTime:r=0.025
+}
+
+tracer_color__invisible{
+  headColor:p3=0.0, 0.0, 0.0
+  startHeadColor:p3=0.0, 0.0, 0.0
+}
+
+tracer_color__orange_red{
+  headColor:p3=1.0, 0.431, 0.314
+  startHeadColor:p3=1.0, 0.431, 0.314
+}
+
+tracer_color__orange{
+  headColor:p3=1.0, 0.667, 0.333
+  startHeadColor:p3=1.0, 0.667, 0.333
+}
+
+tracer_color__red_orange{
+  headColor:p3=1.0, 0.471, 0.176
+  startHeadColor:p3=1.0, 0.471, 0.176
+}
+
+tracer_color__hot_orange{
+  headColor:p3=1.0, 0.392, 0.294
+  startHeadColor:p3=1.0, 0.392, 0.294
+}
+
+tracer_color__infantry_green{
+  headColor:p3=0.667, 1.0, 0.333
+  startHeadColor:p3=0.667, 1.0, 0.333
+}
+
+tracer_color__white{
+  headColor:p3=1.0, 1.0, 1.0
+  startHeadColor:p3=1.0, 1.0, 1.0
+}
+
+tracer_color__bright_red{
+  headColor:p3=1.0, 0.059, 0.059
+  startHeadColor:p3=1.0, 0.059, 0.059
+}
+
+tracer_color__dark_red{
+  headColor:p3=1.0, 0.278, 0.212
+  startHeadColor:p3=1.0, 0.278, 0.212
+}
+
+tracer_color__crimson{
+  headColor:p3=0.918, 0.098, 0.098
+  startHeadColor:p3=0.918, 0.098, 0.098
+}
+
+tracer_color__green{
+  headColor:p3=0.4, 1.0, 0.4
+  startHeadColor:p3=0.4, 1.0, 0.4
+}
+
+tracer_color__pink{
+  headColor:p3=1.0, 0.925, 0.973
+  startHeadColor:p3=1.0, 0.925, 0.973
+}
+
+tracer_color__warm_white{
+  headColor:p3=1.0, 0.969, 0.831
+  startHeadColor:p3=1.0, 0.969, 0.831
+}
+
+tracer_color__light_green{
+  headColor:p3=0.816, 1.0, 0.749
+  startHeadColor:p3=0.816, 1.0, 0.749
+}
+
+tracer_color__yellow_orange{
+  headColor:p3=1.0, 0.973, 0.235
+  startHeadColor:p3=1.0, 0.973, 0.235
+}
+
+tracer_smoke__none{
+  smokeColor:p4=0.0, 0.0, 0.0, 0.0
+}
+
+tracer_smoke__dark_gray{
+  smokeColor:p4=0.314, 0.314, 0.314, 0.729
+}
+
+tracer_smoke__medium_gray{
+  smokeColor:p4=0.502, 0.502, 0.502, 0.502
+}
+
+tracer_smoke__light_gray{
+  smokeColor:p4=0.62, 0.62, 0.62, 0.62
+}
+
+tracer_smoke__white{
+  smokeColor:p4=0.894, 0.894, 0.894, 0.894
+}
+
+tracer__default_tracer{
+  _use:t="tracer__infantry_base"
+  _use:t="tracer_color__orange"
+  smokeTime:r=0.01
+}
+
+tracer__infantry_tracer{
+  _use:t="tracer__infantry_base"
+  _use:t="tracer_color__orange_red"
+  smokeTime:r=0.05
+  luminosity:r=12.0
+}
+
+tracer__infantry_tracer_red{
+  _use:t="tracer__infantry_base"
+  _use:t="tracer_color__red_orange"
+  smokeTime:r=0.01
+}
+
+tracer__infantry_tracer_green{
+  _use:t="tracer__infantry_base"
+  _use:t="tracer_color__infantry_green"
+  smokeTime:r=0.01
+}
+
+tracer__infantry_shotgun_tracer{
+  _use:t="tracer__infantry_base"
+  _use:t="tracer_color__orange"
+  smokeTime:r=0.001
+  luminosity:r=6.0
+  burnTime:r=0.18
+  smokeRadius:r=0.001
+}
+
+tracer__infantry_tracer_shell{
+  _use:t="tracer__base_tracer"
+  _use:t="tracer_color__orange"
+  burnTime:r=2.1
+  smokeTime:r=0.01
+}
+
+tracer__infantry_heavy_mg{
+  _use:t="tracer__infantry_base"
+  _use:t="tracer_color__hot_orange"
+  ignitionTime:r=0.001
+  smokeTime:r=0.13
+  luminosity:r=100.0
+  smokeRadius:r=0.05
+}
+
+tracer__infantry_rifle_smoky{
+  _use:t="tracer__infantry_base"
+  _use:t="tracer_color__orange"
+  smokeTime:r=0.9
+  smokeRadius:r=0.05
+}
+
+tracer__infantry_shell_minimal{
+  _use:t="tracer__base_tracer"
+  burnTime:r=10.0
+  smokeTime:r=0.01
+}
+
+tracer__infantry_blunderbuss{
+  _use:t="tracer__infantry_base"
+  _use:t="tracer_color__orange"
+  smokeTime:r=0.1
+  luminosity:r=6.0
+  burnTime:r=0.18
+  smokeRadius:r=0.03
+}
+
+tracer__shell_invisible{
+  _use:t="tracer__base_tracer"
+  _use:t="tracer_color__invisible"
+  _use:t="tracer_start__invisible"
+  _use:t="tracer_smoke__none"
+}
+
+tracer__shell_invisible_minimal{
+  _use:t="tracer__base_tracer"
+  _use:t="tracer_color__invisible"
+  _use:t="tracer_smoke__none"
+}
+
+tracer__shell_invisible_smoke_only{
+  _use:t="tracer__base_tracer"
+  _use:t="tracer_color__invisible"
+  _use:t="tracer_start__invisible"
+  _use:t="tracer_smoke__dark_gray"
+}
+
+tracer__shell_invisible_smoke_only_minimal{
+  _use:t="tracer__base_tracer"
+  _use:t="tracer_color__invisible"
+  _use:t="tracer_smoke__dark_gray"
+}
+
+tracer__shell_white_medium{
+  _use:t="tracer__base_tracer"
+  _use:t="tracer_color__white"
+  _use:t="tracer_start__yellow_flash"
+  _use:t="tracer_smoke__dark_gray"
+  smokeRadius:r=0.04
+}
+
+tracer__shell_white_big{
+  _use:t="tracer__base_tracer"
+  _use:t="tracer_color__white"
+  _use:t="tracer_start__yellow_flash"
+  _use:t="tracer_smoke__dark_gray"
+  smokeRadius:r=0.09
+}
+
+tracer__shell_white_large{
+  _use:t="tracer__base_tracer"
+  _use:t="tracer_color__white"
+  _use:t="tracer_start__yellow_flash"
+  _use:t="tracer_smoke__dark_gray"
+  smokeRadius:r=0.12
+}
+
+tracer__shell_white_xlarge{
+  _use:t="tracer__base_tracer"
+  _use:t="tracer_color__white"
+  _use:t="tracer_start__yellow_flash"
+  _use:t="tracer_smoke__dark_gray"
+  smokeRadius:r=0.14
+}
+
+tracer__shell_white_no_smoke{
+  _use:t="tracer__base_tracer"
+  _use:t="tracer_color__white"
+  _use:t="tracer_start__yellow_flash"
+  _use:t="tracer_smoke__none"
+  smokeRadius:r=0.03
+}
+
+tracer__shell_white_no_smoke_10{
+  _use:t="tracer__base_tracer"
+  _use:t="tracer_color__white"
+  _use:t="tracer_start__yellow_flash"
+  _use:t="tracer_smoke__none"
+  smokeRadius:r=0.01
+}
+
+tracer__shell_white_no_smoke_40{
+  _use:t="tracer__base_tracer"
+  _use:t="tracer_color__white"
+  _use:t="tracer_start__yellow_flash"
+  _use:t="tracer_smoke__none"
+  smokeRadius:r=0.04
+}
+
+tracer__shell_white_light_smoke_20mm{
+  _use:t="tracer__base_tracer"
+  _use:t="tracer_color__white"
+  _use:t="tracer_start__yellow_flash"
+  _use:t="tracer_smoke__white"
+  smokeRadius:r=0.04
+}
+
+tracer__shell_white_light_smoke_small{
+  _use:t="tracer__base_tracer"
+  _use:t="tracer_color__white"
+  _use:t="tracer_start__yellow_flash"
+  _use:t="tracer_smoke__white"
+  smokeRadius:r=0.03
+}
+
+tracer__shell_white_simple{
+  _use:t="tracer__base_tracer"
+  _use:t="tracer_color__white"
+  _use:t="tracer_smoke__dark_gray"
+}
+
+tracer__shell_white_medium_smoke_simple{
+  _use:t="tracer__base_tracer"
+  _use:t="tracer_color__white"
+  _use:t="tracer_smoke__medium_gray"
+}
+
+tracer__shell_white_light_smoke_simple{
+  _use:t="tracer__base_tracer"
+  _use:t="tracer_color__white"
+  _use:t="tracer_smoke__white"
+}
+
+tracer__shell_white_r04{
+  _use:t="tracer__base_tracer"
+  _use:t="tracer_color__white"
+  _use:t="tracer_start__yellow_flash"
+  _use:t="tracer_smoke__dark_gray"
+}
+
+tracer__shell_red_large{
+  _use:t="tracer__base_tracer"
+  _use:t="tracer_color__bright_red"
+  _use:t="tracer_start__yellow_flash"
+  _use:t="tracer_smoke__dark_gray"
+  smokeRadius:r=0.09
+}
+
+tracer__shell_red_medium_50{
+  _use:t="tracer__base_tracer"
+  _use:t="tracer_color__bright_red"
+  _use:t="tracer_start__yellow_flash"
+  _use:t="tracer_smoke__dark_gray"
+  smokeRadius:r=0.05
+}
+
+tracer__shell_red_medium_45{
+  _use:t="tracer__base_tracer"
+  _use:t="tracer_color__bright_red"
+  _use:t="tracer_start__yellow_flash"
+  _use:t="tracer_smoke__dark_gray"
+  smokeRadius:r=0.045
+}
+
+tracer__shell_red_medium_35{
+  _use:t="tracer__base_tracer"
+  _use:t="tracer_color__bright_red"
+  _use:t="tracer_start__yellow_flash"
+  _use:t="tracer_smoke__dark_gray"
+  smokeRadius:r=0.035
+}
+
+tracer__shell_red_small{
+  _use:t="tracer__base_tracer"
+  _use:t="tracer_color__bright_red"
+  _use:t="tracer_start__yellow_flash"
+  _use:t="tracer_smoke__dark_gray"
+  smokeRadius:r=0.01
+}
+
+tracer__shell_red_no_smoke_38{
+  _use:t="tracer__base_tracer"
+  _use:t="tracer_color__bright_red"
+  _use:t="tracer_start__yellow_flash"
+  _use:t="tracer_smoke__none"
+  smokeRadius:r=0.038
+}
+
+tracer__shell_red_no_smoke_30{
+  _use:t="tracer__base_tracer"
+  _use:t="tracer_color__bright_red"
+  _use:t="tracer_start__yellow_flash"
+  _use:t="tracer_smoke__none"
+  smokeRadius:r=0.03
+}
+
+tracer__shell_red_no_smoke_10{
+  _use:t="tracer__base_tracer"
+  _use:t="tracer_color__bright_red"
+  _use:t="tracer_start__yellow_flash"
+  _use:t="tracer_smoke__none"
+  smokeRadius:r=0.01
+}
+
+tracer__shell_red_light_gray_45{
+  _use:t="tracer__base_tracer"
+  _use:t="tracer_color__bright_red"
+  _use:t="tracer_start__yellow_flash"
+  _use:t="tracer_smoke__light_gray"
+  smokeRadius:r=0.045
+}
+
+tracer__shell_red_light_smoke_30{
+  _use:t="tracer__base_tracer"
+  _use:t="tracer_color__bright_red"
+  _use:t="tracer_start__yellow_flash"
+  _use:t="tracer_smoke__white"
+  smokeRadius:r=0.03
+}
+
+tracer__shell_red_simple{
+  _use:t="tracer__base_tracer"
+  _use:t="tracer_color__bright_red"
+  _use:t="tracer_smoke__dark_gray"
+}
+
+tracer__shell_red_no_smoke_simple{
+  _use:t="tracer__base_tracer"
+  _use:t="tracer_color__bright_red"
+  _use:t="tracer_smoke__none"
+}
+
+tracer__shell_red_light_smoke_simple{
+  _use:t="tracer__base_tracer"
+  _use:t="tracer_color__bright_red"
+  _use:t="tracer_smoke__white"
+}
+
+tracer__shell_red_r045_no_smoke{
+  _use:t="tracer__base_tracer"
+  _use:t="tracer_color__bright_red"
+  _use:t="tracer_start__yellow_flash"
+  _use:t="tracer_smoke__none"
+}
+
+tracer__shell_red_r045_smoke{
+  _use:t="tracer__base_tracer"
+  _use:t="tracer_color__bright_red"
+  _use:t="tracer_start__yellow_flash"
+  _use:t="tracer_smoke__dark_gray"
+}
+
+tracer__shell_red_r05{
+  _use:t="tracer__base_tracer"
+  _use:t="tracer_color__bright_red"
+  _use:t="tracer_start__yellow_flash"
+  _use:t="tracer_smoke__dark_gray"
+}
+
+tracer__shell_red_r04_no_smoke{
+  _use:t="tracer__base_tracer"
+  _use:t="tracer_color__bright_red"
+  _use:t="tracer_start__yellow_flash"
+  _use:t="tracer_smoke__none"
+  smokeRadius:r=0.04
+}
+
+tracer__shell_red_r04_smoke{
+  _use:t="tracer__base_tracer"
+  _use:t="tracer_color__bright_red"
+  _use:t="tracer_start__yellow_flash"
+  _use:t="tracer_smoke__dark_gray"
+}
+
+tracer__shell_darkred_large{
+  _use:t="tracer__base_tracer"
+  _use:t="tracer_color__dark_red"
+  _use:t="tracer_start__yellow_flash"
+  _use:t="tracer_smoke__dark_gray"
+  smokeRadius:r=0.09
+}
+
+tracer__shell_darkred_medium{
+  _use:t="tracer__base_tracer"
+  _use:t="tracer_color__dark_red"
+  _use:t="tracer_start__yellow_flash"
+  _use:t="tracer_smoke__dark_gray"
+  smokeRadius:r=0.08
+}
+
+tracer__shell_darkred_medium_smoke{
+  _use:t="tracer__base_tracer"
+  _use:t="tracer_color__dark_red"
+  _use:t="tracer_start__yellow_flash"
+  _use:t="tracer_smoke__medium_gray"
+  smokeRadius:r=0.09
+}
+
+tracer__shell_darkred_simple{
+  _use:t="tracer__base_tracer"
+  _use:t="tracer_color__dark_red"
+  _use:t="tracer_smoke__dark_gray"
+}
+
+tracer__shell_darkred_no_smoke_simple{
+  _use:t="tracer__base_tracer"
+  _use:t="tracer_color__dark_red"
+  _use:t="tracer_smoke__none"
+}
+
+tracer__shell_darkred_light_smoke_simple{
+  _use:t="tracer__base_tracer"
+  _use:t="tracer_color__dark_red"
+  _use:t="tracer_smoke__white"
+}
+
+tracer__shell_darkred_medium_smoke_simple{
+  _use:t="tracer__base_tracer"
+  _use:t="tracer_color__dark_red"
+  _use:t="tracer_smoke__medium_gray"
+}
+
+tracer__shell_darkred_r08{
+  _use:t="tracer__base_tracer"
+  _use:t="tracer_color__dark_red"
+  _use:t="tracer_start__yellow_flash"
+  _use:t="tracer_smoke__dark_gray"
+}
+
+tracer__shell_darkred_r09{
+  _use:t="tracer__base_tracer"
+  _use:t="tracer_color__dark_red"
+  _use:t="tracer_start__yellow_flash"
+  _use:t="tracer_smoke__dark_gray"
+}
+
+tracer__shell_brightred_simple{
+  _use:t="tracer__base_tracer"
+  _use:t="tracer_color__crimson"
+  _use:t="tracer_smoke__dark_gray"
+}
+
+tracer__shell_brightred_no_smoke{
+  _use:t="tracer__base_tracer"
+  _use:t="tracer_color__crimson"
+  _use:t="tracer_start__yellow_flash"
+  _use:t="tracer_smoke__none"
+  smokeRadius:r=0.05
+}
+
+tracer__shell_brightred_light_smoke{
+  _use:t="tracer__base_tracer"
+  _use:t="tracer_color__crimson"
+  _use:t="tracer_smoke__white"
+}
+
+tracer__shell_green_light_smoke{
+  _use:t="tracer__base_tracer"
+  _use:t="tracer_color__green"
+  _use:t="tracer_start__yellow_flash"
+  _use:t="tracer_smoke__white"
+  smokeRadius:r=0.04
+}
+
+tracer__shell_green_lightgray{
+  _use:t="tracer__base_tracer"
+  _use:t="tracer_color__green"
+  _use:t="tracer_start__yellow_flash"
+  _use:t="tracer_smoke__light_gray"
+  smokeRadius:r=0.04
+}
+
+tracer__shell_green_no_smoke{
+  _use:t="tracer__base_tracer"
+  _use:t="tracer_color__green"
+  _use:t="tracer_start__yellow_flash"
+  _use:t="tracer_smoke__none"
+  smokeRadius:r=0.03
+}
+
+tracer__shell_green_no_smoke_10{
+  _use:t="tracer__base_tracer"
+  _use:t="tracer_color__green"
+  _use:t="tracer_start__yellow_flash"
+  _use:t="tracer_smoke__none"
+  smokeRadius:r=0.01
+}
+
+tracer__shell_green_light_smoke_simple{
+  _use:t="tracer__base_tracer"
+  _use:t="tracer_color__green"
+  _use:t="tracer_smoke__white"
+}
+
+tracer__shell_pink_large{
+  _use:t="tracer__base_tracer"
+  _use:t="tracer_color__pink"
+  _use:t="tracer_start__yellow_flash"
+  _use:t="tracer_smoke__dark_gray"
+  smokeRadius:r=0.09
+}
+
+tracer__shell_pink_medium{
+  _use:t="tracer__base_tracer"
+  _use:t="tracer_color__pink"
+  _use:t="tracer_start__yellow_flash"
+  _use:t="tracer_smoke__dark_gray"
+  smokeRadius:r=0.08
+}
+
+tracer__shell_pink_small{
+  _use:t="tracer__base_tracer"
+  _use:t="tracer_color__pink"
+  _use:t="tracer_start__yellow_flash"
+  _use:t="tracer_smoke__dark_gray"
+  smokeRadius:r=0.04
+}
+
+tracer__shell_pink_45{
+  _use:t="tracer__base_tracer"
+  _use:t="tracer_color__pink"
+  _use:t="tracer_start__yellow_flash"
+  _use:t="tracer_smoke__dark_gray"
+  smokeRadius:r=0.045
+}
+
+tracer__shell_pink_no_smoke{
+  _use:t="tracer__base_tracer"
+  _use:t="tracer_color__pink"
+  _use:t="tracer_start__yellow_flash"
+  _use:t="tracer_smoke__none"
+  smokeRadius:r=0.03
+}
+
+tracer__shell_warm_white_medium{
+  _use:t="tracer__base_tracer"
+  _use:t="tracer_color__warm_white"
+  _use:t="tracer_start__yellow_flash"
+  _use:t="tracer_smoke__dark_gray"
+  smokeRadius:r=0.05
+}
+
+tracer__shell_warm_white_lightgray{
+  _use:t="tracer__base_tracer"
+  _use:t="tracer_color__warm_white"
+  _use:t="tracer_start__yellow_flash"
+  _use:t="tracer_smoke__light_gray"
+}
+
+tracer__shell_warm_white_simple{
+  _use:t="tracer__base_tracer"
+  _use:t="tracer_color__warm_white"
+  _use:t="tracer_smoke__dark_gray"
+}
+
+tracer__shell_warm_white_r08{
+  _use:t="tracer__base_tracer"
+  _use:t="tracer_color__warm_white"
+  _use:t="tracer_start__yellow_flash"
+  _use:t="tracer_smoke__dark_gray"
+}
+
+tracer__shell_lightgreen_light_smoke{
+  _use:t="tracer__base_tracer"
+  _use:t="tracer_color__light_green"
+  _use:t="tracer_start__yellow_flash"
+  _use:t="tracer_smoke__white"
+  smokeRadius:r=0.038
+}
+
+tracer__shell_lightgreen_light_smoke_simple{
+  _use:t="tracer__base_tracer"
+  _use:t="tracer_color__light_green"
+  _use:t="tracer_smoke__white"
+}
+
+tracer__shell_lightgreen_no_smoke{
+  _use:t="tracer__base_tracer"
+  _use:t="tracer_color__light_green"
+  _use:t="tracer_smoke__none"
+}
+
+tracer__shell_lightgreen_r038{
+  _use:t="tracer__base_tracer"
+  _use:t="tracer_color__light_green"
+  _use:t="tracer_start__yellow_flash"
+  _use:t="tracer_smoke__white"
+}
+
+tracer__shell_yellow_light_smoke{
+  _use:t="tracer__base_tracer"
+  _use:t="tracer_color__yellow_orange"
+  _use:t="tracer_smoke__white"
+}
+
+tracer__shell_yellow_medium_smoke{
+  _use:t="tracer__base_tracer"
+  _use:t="tracer_color__yellow_orange"
+  _use:t="tracer_smoke__medium_gray"
+}

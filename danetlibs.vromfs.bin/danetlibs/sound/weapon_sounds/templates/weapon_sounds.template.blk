@@ -1,0 +1,114 @@
+projectile_sound_physmat{
+  _use:t="sound_physmat"
+
+  _group{
+    _tags:t="sound"
+
+    "sound_physmat__soundMaterials:list<t>"{
+      mat:t="default"
+      mat:t="concrete"
+      mat:t="water"
+      mat:t="wood"
+      mat:t="metal"
+      mat:t="cactus"
+      mat:t="plastic"
+      mat:t="rubber"
+      mat:t="glass"
+    }
+
+    "sound_physmat__physmatToSoundmat:object"{
+      dirt:t="default"
+      concrete:t="concrete"
+      stone:t="concrete"
+      buildings:t="concrete"
+      rocks:t="concrete"
+      rocksSlippery:t="concrete"
+      gravel:t="concrete"
+      ceramic:t="concrete"
+      water:t="water"
+      water3d:t="water"
+      waterPuddle:t="water"
+      wood:t="wood"
+      wood_railway:t="wood"
+      wood_solid:t="wood"
+      window_wood:t="wood"
+      cactus:t="cactus"
+      softWoodDoor:t="wood"
+      metal:t="metal"
+      steel:t="metal"
+      train:t="metal"
+      softSteelDoor:t="metal"
+      plastic:t="plastic"
+      rubber:t="rubber"
+      glass:t="glass"
+    }
+  }
+
+  "projectileSoundPhysmat:tag"{
+  }
+}
+
+human_melee_impact_sound_physmat{
+  _use:t="sound_physmat"
+
+  _group{
+    _tags:t="sound"
+
+    "sound_physmat__soundMaterials:list<t>"{
+      mat:t="default"
+      mat:t="concrete"
+      mat:t="water"
+      mat:t="wood"
+      mat:t="metal"
+      mat:t="cactus"
+      mat:t="plastic"
+      mat:t="rubber"
+      mat:t="glass"
+    }
+
+    "sound_physmat__physmatToSoundmat:object"{
+      concrete:t="concrete"
+      stone:t="concrete"
+      buildings:t="concrete"
+      rocks:t="concrete"
+      rocksSlippery:t="concrete"
+      gravel:t="concrete"
+      ceramic:t="concrete"
+      water:t="water"
+      water3d:t="water"
+      waterPuddle:t="water"
+      wood:t="wood"
+      wood_railway:t="wood"
+      wood_solid:t="wood"
+      window_wood:t="wood"
+      cactus:t="cactus"
+      softWoodDoor:t="wood"
+      metal:t="metal"
+      steel:t="metal"
+      train:t="metal"
+      softSteelDoor:t="metal"
+      plastic:t="plastic"
+      rubber:t="rubber"
+      glass:t="glass"
+      flesh:t=""
+    }
+  }
+
+  "humanMeleeImpactSoundPhysmat:tag"{
+  }
+}
+
+gun_guidance_state_sound{
+
+  _group{
+    _tags:t="sound"
+    gun_guidance_state_sound__guidanceState:i=-1
+    gun_guidance_state_sound__isWatched:b=no
+    gun_guidance_state_sound__warmingUpPath:t="/weapon/antivehicle/igla/pzrk_target_prepare"
+    gun_guidance_state_sound__activePath:t="/weapon/antivehicle/igla/pzrk_target_active"
+    gun_guidance_state_sound__trackingPath:t="/weapon/antivehicle/igla/pzrk_target_locked"
+
+    "gun_guidance_state_sound__event:SoundEvent"{
+    }
+  }
+}

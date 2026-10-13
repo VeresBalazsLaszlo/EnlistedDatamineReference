@@ -1,0 +1,267 @@
+kikka{
+  _use:t="kikka_base"
+  _use:t="squad_controlled_plane"
+  _use:t="me_262a_1a_early_plane_sound"
+  item__name:t="items/kitsuka"
+
+  "plane_glassCanopyNodes:list<t>"{
+    name:t="fuse_dm"
+  }
+
+  "vehicle_seats__seats:shared:array"{
+
+    "seats:object"{
+      name:t="driver"
+      locName:t="vehicle_seats/pilot"
+      seatOwnsEntityControl:b=yes
+      attachNode:t="pilot1"
+      ignoreAttachNodeRotation:b=yes
+      attachTm:m=[[1.09, 0.0, 0.0] [0.0, 1.09, 0.0] [0.0, 0.0, 1.0] [-0.2, 0.1, -0.15]]
+      seatComponent:t="isDriver"
+      receiveDamageFromDMPart:t="pilot_dm"
+      cameraNodeName:t=""
+      cameraOffset:p3=-1.25, 0.86, 0.0
+      cockpitTemplate:t="kikka_driver_cockpit"
+      roomSpace:i=0
+
+      "turretNames:array"{
+        turret:t="turret_01"
+        turret:t="turret_02"
+        turret:t="turret_03"
+      }
+
+      "cockpitEffectors:object"{
+        r.hand:t="stick_rhand_1"
+        l.hand:t="throttle_lhand_1"
+        r.foot:t="pedal_rfoot_1"
+        l.foot:t="pedal_lfoot_1"
+      }
+    }
+  }
+
+  "turret_control__emitterNodes:shared:array"{
+    node:t="bomb_800"
+    node:t="flare1"
+    node:t="flare2"
+  }
+
+  "turret_control__animVars:shared:array"{
+
+    "vars:object"{
+      curYawParamName:t="weapon_01_yaw"
+      curPitchParamName:t="weapon_01_pitch"
+    }
+
+    "vars:object"{
+      curYawParamName:t="weapon_02_yaw"
+      curPitchParamName:t="weapon_02_pitch"
+    }
+
+    "vars:object"{
+      curYawParamName:t="weapon_03_yaw"
+      curPitchParamName:t="weapon_03_pitch"
+    }
+  }
+
+  "turret_control__turretInfo:shared:array"{
+
+    "turretInfo:object"{
+      turretName:t="turret_01"
+      turretGroup:t="bomb_turrets"
+      trigger:t="bombs"
+      gun:t="planegun_kikka_navy_mod80mark1_800kg_launcher_01"
+    }
+
+    "turretInfo:object"{
+      turretName:t="turret_02"
+      turretGroup:t="cannon_turrets"
+      trigger:t="cannons"
+      gun:t="planegun_kikka_30mm_type5_01"
+    }
+
+    "turretInfo:object"{
+      turretName:t="turret_03"
+      turretGroup:t="cannon_turrets"
+      trigger:t="cannons"
+      gun:t="planegun_kikka_30mm_type5_02"
+    }
+  }
+
+  "turret_gun_flash_fx__flashNodes:shared:array"{
+    node:t="bomb_800"
+    node:t="flare1"
+    node:t="flare2"
+  }
+
+  "turret_gun_flash_fx__flashFx:shared:array"{
+    fx:t=""
+    fx:t="muzzle_air_15mm"
+    fx:t="muzzle_air_15mm"
+  }
+
+  "turret_gun_flash_fx__flashFxScale:shared:array"{
+    scale:r=1.0
+    scale:r=1.0
+    scale:r=1.0
+  }
+
+  "disableDMParts:list<t>"{
+    part:t="no_cannon_l"
+    part:t="no_cannon_r"
+    part:t="engine3_dm"
+    part:t="engine4_dm"
+  }
+}
+
+base_kikka_navy_mod80mark1_800kg_launcher{
+  item__name:t="guns/navy_mod80mark1_800kg"
+  gun__blk:t="gamedata/weapons/planes/kikka/navy_mod80mark1_800kg_launcher.blk"
+  gun__shotFreq:r=10.0
+  gun__locName:t="navy_mod80mark1_800kg"
+  gun__shootNodeName:t="bone_mg_gun_twin"
+  gun__maxAmmo:i=1
+
+  "gun__firingModes:array"{
+
+    "mode:object"{
+      modeType:t="manual"
+    }
+  }
+
+  "gun__firingModeNames:array"{
+    mode:t="bolt_action"
+  }
+
+  "gun__shellsAmmo:array"{
+    ammo:i=1
+  }
+
+  "gun__ammoSetsInfo:shared:array"{
+
+    "default:array"{
+
+      "shell:object"{
+        blk:t="gamedata/weapons/shells/planes/bombs/navy_mod80mark1_800kg.blk"
+        name:t="navy_mod80mark1_800kg"
+        type:t="he_frag_tank"
+      }
+    }
+  }
+}
+
+base_kikka_30mm_type5{
+  item__name:t="guns/cannontype5"
+  gun__blk:t="gamedata/weapons/planes/kikka/30mm_type5.blk"
+  gun__shotFreq:r=8.333
+  gun__locName:t="cannontype5"
+  gun__shootNodeName:t="bone_mg_gun_twin"
+  gun__maxAmmo:i=50
+
+  "gun__firingModes:array"{
+
+    "mode:object"{
+      modeType:t="automatic"
+    }
+  }
+
+  "gun__firingModeNames:array"{
+    mode:t="automatic"
+  }
+
+  "gun__shellsAmmo:array"{
+    ammo:i=50
+  }
+
+  "gun__ammoSetsInfo:shared:array"{
+
+    "default:array"{
+
+      "shell:object"{
+        blk:t="gamedata/weapons/shells/planes/bullets/30x122mm_he_bullet.blk"
+        name:t="he"
+        type:t="he_frag"
+      }
+
+      "shell:object"{
+        blk:t="gamedata/weapons/shells/planes/bullets/30x122mm_ap_bullet.blk"
+        name:t="ap"
+        type:t="ap_t"
+      }
+
+      "shell:object"{
+        blk:t="gamedata/weapons/shells/planes/bullets/30x122mm_hei_bullet.blk"
+        name:t="hei"
+        type:t="he_frag_i"
+      }
+
+      "shell:object"{
+        blk:t="gamedata/weapons/shells/planes/bullets/30x122mm_het_bullet.blk"
+        name:t="het"
+        type:t="he_frag_t"
+      }
+
+      "shell:object"{
+        blk:t="gamedata/weapons/shells/planes/bullets/30x122mm_ap_he_bullet.blk"
+        name:t="he"
+        type:t="aphe"
+      }
+    }
+  }
+}
+
+planegun_kikka_navy_mod80mark1_800kg_launcher_01{
+  _use:t="navy_mod80mark1_800kg_launcher"
+  _use:t="base_kikka_navy_mod80mark1_800kg_launcher"
+  _use:t="gunsound_500lbs_launcher_aircraft"
+  gun__shootNodeName:t="bomb_800"
+  slot_attach__slotName:t="bomb_800"
+  gun__maxAmmo:i=1
+}
+
+planegun_kikka_30mm_type5_01{
+  _use:t="tankgun"
+  _use:t="base_plane_machinegun"
+  _use:t="base_kikka_30mm_type5"
+  _use:t="gunsound_30mm_mk108_aircraft"
+  gun__shootNodeName:t="flare1"
+  gun__maxAmmo:i=50
+}
+
+planegun_kikka_30mm_type5_02{
+  _use:t="tankgun"
+  _use:t="base_plane_machinegun"
+  _use:t="base_kikka_30mm_type5"
+  _use:t="gunsound_30mm_mk108_aircraft"
+  gun__shootNodeName:t="flare2"
+  gun__maxAmmo:i=50
+}
+
+kikka_driver_cockpit{
+  _use:t="base_plane_cockpit"
+  cockpit__offset:p3=0.0, 0.0, 0.0
+  cockpit__angles:p3=0.0, 0.0, 0.0
+  cockpit__scale:p3=1.0, 1.0, 1.0
+  animchar__res:t="kitsuka_cockpit_char"
+  plane_anim__blk:t="gamedata/units/kikka.blk"
+  plane_sight__blk:t="gamedata/units/kikka.blk"
+
+  "move_cockpit_node__nodeName:list<t>"{
+    node:t="stick_rhand_1"
+    node:t="throttle_lhand_1"
+  }
+
+  "move_cockpit_node__nodeId:list<i>"{
+    nodeId:i=-1
+    nodeId:i=-1
+  }
+
+  "move_cockpit_node__offset:list<p3>"{
+    item:p3=0.021, 0.0475, -0.0025
+    item:p3=0.0485, -0.012, 0.0015
+  }
+
+  "move_cockpit_node__rotation:list<p2>"{
+    item:p2=-2.1, 20.7
+    item:p2=-15.6, -14.4
+  }
+}

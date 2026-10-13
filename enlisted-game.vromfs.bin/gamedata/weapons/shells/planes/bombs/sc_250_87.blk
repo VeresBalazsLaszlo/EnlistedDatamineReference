@@ -1,0 +1,35 @@
+mass:r=250.0
+explosiveType:t="fp60_40"
+explosiveMass:r=125.0
+bombType:t="he_bomb"
+bombName:t="fab250_43"
+dragCx:r=0.07
+caliber:r=0.368
+length:r=1.638
+distFromCmToStab:r=0.7
+sound:t="weapon.bomb_std"
+bulletType:t="he_bomb"
+hitPowerMult:r=1.0
+explodeArmorPower:r=100.0
+nearHitPower:p2=1.0, 50.0
+explodeRadius:p2=4.0, 10.0
+midHitPower:p2=0.9, 400.0
+farHitPower:p2=0.1, 1000.0
+rendinstDamageRadius:r=18.0
+endHitPower:p2=0.01, 1500.0
+relativeVelHitShift:p2=300.0, 1000.0
+shutterDamage:b=yes
+nearArmorPower:p2=10.0, 50.0
+shutterDamageRadius:r=80.0
+midArmorPower:p2=7.0, 400.0
+shutterAmount:i=3000
+farArmorPower:p2=0.2, 700.0
+shutterArmorPower:r=12.0
+relativeVelArmorShift:p2=200.0, 1000.0
+shutterHit:r=15.0
+entityTemplate:t="sc_250_87_bomb_projectile"
+entityPhysTemplate:t=""
+
+pressureDamage{
+  damageType:t="pressure"
+}

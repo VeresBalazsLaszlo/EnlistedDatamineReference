@@ -1,0 +1,285 @@
+us_m18_hellcat_normandy{
+  _use:t="us_m18_hellcat_common"
+
+  "turrets__initAmmoDistribution:array"{
+
+    "ammo:object"{
+      slot:i=0
+      fill:b=yes
+    }
+
+    "ammo:object"{
+      slot:i=1
+      fill:b=yes
+    }
+
+    "ammo:object"{
+      slot:i=4
+      count:i=7
+    }
+  }
+}
+
+us_m18_hellcat_common{
+  _use:t="base_m18_hellcat"
+  _use:t="us_m18_hellcat_common_vehicle_sound"
+  commanderCockpitFpsCamMaxAngle:p2=40.0, 5.0
+  gunner_cam_limit__useCockpitDir:b=yes
+  item__iconOffset:p2=0.05, 0.1
+  item__iconScale:r=1.33
+
+  "disableDMParts:list<t>"{
+    part:t="gunner"
+    part:t="loader"
+    part:t="commander"
+    part:t="machine_gunner"
+    part:t="driver"
+  }
+
+  "vehicle_seats__effectors:array"{
+  }
+
+  "vehicle_seats__seatsProvideOrder:tag"{
+  }
+
+  "vehicle_seats__seats:shared:array"{
+
+    "seats:object"{
+      name:t="commander"
+      nextSeat:t="main_gunner"
+      locName:t="vehicle_seats/commander"
+      attachNode:t="commander"
+      shouldHideOwner:b=no
+      ignoreAttachNodeRotation:b=yes
+      attachTm:m=[[0.9, 0.0, 0.0] [0.0, 0.9, 0.0] [0.0, 0.0, 0.9] [-0.09, -0.75, -0.1]]
+      maxPosWithOpenHatch:r=0.6
+      seatComponent:t="isDriver"
+      receiveDamageFromDMPart:t="commander"
+      hatchRotationAxis:p3=0.0, 0.0, 0.0
+      isHoldGunModeAllowed:b=yes
+      seatAnimUpper:t="drive_passenger"
+      seatAnimLower:t="drive_passenger"
+
+      "hatchTurretNames:array"{
+        turret:t="turret_02"
+      }
+
+      "hatchNodes:array"{
+        node:t="bone_camera_gunner"
+      }
+
+      "effectors:object"{
+
+        "l.hand:object"{
+          rel_tm:m=[[0.9581146, 0.2824352, -0.04738456] [0.1311883, -0.2857732, 0.9492759] [0.2545675, -0.9157307, -0.3108556] [-0.04313356, 0.3571267, -0.1062622]]
+          node:t="bone_mg_aa_h_01"
+        }
+
+        "r.hand:object"{
+          rel_tm:m=[[0.8678828, 0.4313786, -0.2463598] [0.4716236, -0.8712758, 0.1358349] [-0.1560508, -0.2340772, -0.9596112] [-0.1664124, 0.03666687, 0.1240387]]
+          node:t="bone_mg_aa_v_01"
+        }
+
+        "l.foot:object"{
+          rel_tm:m=[[-0.09689005, -0.9946523, 0.03574941] [0.991287, -0.0996583, -0.08614194] [0.0892439, 0.02709159, 0.9956408] [-0.4645414, 0.200871, -0.7257996]]
+          node:t="bone_turret"
+        }
+
+        "r.foot:object"{
+          rel_tm:m=[[-0.3280833, -0.9430636, 0.05471171] [0.8742982, -0.2812077, 0.3956339] [-0.3577217, 0.1776347, 0.9167759] [-0.7037141, 0.190536, -0.4269104]]
+          node:t="bone_turret"
+        }
+      }
+    }
+
+    "seats:object"{
+      name:t="main_gunner"
+      locName:t="vehicle_seats/gunner"
+      attachNode:t="gunner"
+      ignoreAttachNodeRotation:b=yes
+      attachTm:m=[[0.878189, -0.275636, -0.390977] [0.215401, 0.95763, -0.191303] [0.427126, 0.0837805, 0.900322] [-0.3, -0.28, 0.1]]
+      seatComponent:t="isGunner"
+      nextSeat:t="driver"
+      shouldHideOwner:b=no
+      receiveDamageFromDMPart:t="gunner"
+      cameraNodeName:t="bone_camera_gunner"
+      cockpitTemplate:t="us_m18_hellcat_gunner_cockpit"
+      maxPosWithOpenHatch:r=0.0
+      isHoldGunModeAllowed:b=no
+      seatAnimUpper:t="drive_passenger"
+      seatAnimLower:t="drive_passenger"
+
+      "turretNames:array"{
+        turretNames:t="turret_01"
+      }
+
+      "effectors:object"{
+        r.hand:t="righthand_2"
+        l.hand:t="lefthand_2"
+        r.foot:t="pedal_rfoot_2"
+        l.foot:t="pedal_lfoot_2"
+      }
+    }
+
+    "seats:object"{
+      name:t="driver"
+      locName:t="vehicle_seats/driver"
+      seatOwnsEntityControl:b=yes
+      attachNode:t="driver"
+      ignoreAttachNodeRotation:b=yes
+      attachTm:m=[[0.965927, 0.258819, 0.0] [-0.258819, 0.965927, 0.0] [0.0, 0.0, 1.00007] [-0.06, -0.45, -0.03]]
+      seatComponent:t="isDriver"
+      shouldHideOwner:b=no
+      receiveDamageFromDMPart:t="driver"
+      cameraNodeName:t="bone_camera_driver"
+      cockpitTemplate:t="us_m18_hellcat_driver_cockpit"
+      isHoldGunModeAllowed:b=no
+      seatAnimUpper:t="drive_passenger"
+      seatAnimLower:t="drive_passenger"
+
+      "effectors:object"{
+        r.hand:t="righthand_4"
+        l.hand:t="lefthand_4"
+        r.foot:t="pedal_rfoot_4"
+        l.foot:t="pedal_lfoot_4"
+      }
+    }
+
+    "seats:object"{
+      name:t="loader"
+      canPlaceManually:b=no
+      attachNode:t="loader"
+      locName:t="vehicle_seats/loader"
+      ignoreAttachNodeRotation:b=yes
+      attachTm:m=[[0.964932, -0.139163, -0.222701] [0.102984, 0.980669, -0.166592] [0.241571, 0.137811, 0.960575] [-0.24, -0.25, -0.12]]
+      seatComponent:t="isPassenger"
+      shouldHideOwner:b=no
+      receiveDamageFromDMPart:t="loader"
+      cameraNodeName:t="bone_camera_driver"
+      seatAnimUpper:t="drive_passenger"
+      seatAnimLower:t="drive_passenger"
+      isHoldGunModeAllowed:b=no
+
+      "loaderTurretNames:array"{
+        turret:t="turret_01"
+      }
+
+      "effectors:object"{
+        r.hand:t="righthand_1"
+        l.hand:t="lefthand_1"
+        r.foot:t="pedal_rfoot_1"
+        l.foot:t="pedal_lfoot_1"
+      }
+    }
+
+    "seats:object"{
+      attachNode:t="machine_gunner"
+      locName:t="vehicle_seats/radioman"
+      ignoreAttachNodeRotation:b=yes
+      attachTm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-0.25, -0.5, 0.0]]
+      seatComponent:t="isPassenger"
+      shouldHideOwner:b=no
+      receiveDamageFromDMPart:t="machine_gunner"
+      cameraNodeName:t="bone_camera_driver"
+      isHoldGunModeAllowed:b=no
+      seatAnimUpper:t="drive_passenger"
+      seatAnimLower:t="drive_passenger"
+
+      "effectors:object"{
+        r.hand:t="righthand_3"
+        l.hand:t="lefthand_3"
+        r.foot:t="pedal_rfoot_3"
+        l.foot:t="pedal_lfoot_3"
+      }
+    }
+  }
+}
+
+us_m18_hellcat_driver_cockpit{
+  _use:t="base_driver_cockpit"
+  animchar__res:t="ba_11_driver_char"
+  cockpit__offset:p3=0.0, 0.0, 0.0
+
+  "cockpit__cockpitOffsetBySlit:list<p3>"{
+    item:p3=-0.285047, -0.35, 0.0704271
+  }
+
+  "cockpit__slitForwardOffset:list<r>"{
+    slit:r=-0.05
+  }
+
+  "cockpit__visibleVehicleNodeNames:list<t>"{
+    node:t="gun_barrel"
+  }
+
+  "cockpit__periscopeLimits:list<p4>"{
+    slit:p4=-45.0, 45.0, -0.0, 0.0
+  }
+
+  "cockpit__periscopeSpeed:list<p2>"{
+    slit:p2=35.0, 35.0
+  }
+
+  "cockpit__slitZoom:array"{
+
+    "slit:list<r>"{
+      zoom:r=1.44
+    }
+  }
+
+  "cockpit__slitZoomTime:list<r>"{
+    slit:r=0.0
+  }
+}
+
+us_m18_hellcat_gunner_cockpit{
+  _use:t="base_gunner_cockpit"
+  animchar__res:t="ba_11_gunner_char"
+  cockpit__offset:p3=0.0, 0.0, 0.0
+
+  "cockpit__cockpitOffsetBySlit:list<p3>"{
+    item:p3=-0.657582, -0.0415063, 0.23394
+  }
+
+  "cockpit__visibleVehicleNodeNames:list<t>"{
+    node:t="gun_barrel"
+  }
+
+  "cockpit__slitNodeNames:list<t>"{
+    slit:t="cam_front_right"
+  }
+
+  "cockpit__slitForwardOffset:list<r>"{
+    slit:r=0.21
+  }
+
+  "cockpit__slitIsGun:list<b>"{
+    slit:b=yes
+  }
+
+  "cockpit__cockpit__attachNodeNames:list<t>"{
+    node:t="bone_camera_gunner"
+  }
+
+  "cockpit__cockpit__attachNodeIndices:list<i>"{
+  }
+
+  "cockpit__slitZoom:array"{
+
+    "slit:list<r>"{
+      zoom:r=1.9
+      zoom:r=3.5
+    }
+  }
+
+  "cockpit__slitZoomTime:list<r>"{
+    slit:r=0.05
+  }
+
+  "cockpit__slitTemplates:list<t>"{
+    slit:t="us_m70g"
+  }
+
+  "cockpit__slitEids:list<eid>"{
+  }
+}

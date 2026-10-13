@@ -1,0 +1,171 @@
+me_262a_1a_u4{
+  _use:t="me_262a_1a_u4_base"
+  _use:t="squad_controlled_plane"
+  _use:t="me_262a_1a_early_plane_sound"
+  item__name:t="items/me_262a_1a_u4"
+
+  "plane_glassCanopyNodes:list<t>"{
+    name:t="fuse_dm"
+  }
+
+  "vehicle_seats__seats:shared:array"{
+
+    "seats:object"{
+      name:t="driver"
+      locName:t="vehicle_seats/pilot"
+      seatOwnsEntityControl:b=yes
+      attachNode:t="pilot1"
+      ignoreAttachNodeRotation:b=yes
+      attachTm:m=[[1.09, 0.0, 0.0] [0.0, 1.09, 0.0] [0.0, 0.0, 1.01] [-0.15, -0.01, -0.15]]
+      seatComponent:t="isDriver"
+      receiveDamageFromDMPart:t="pilot_dm"
+      cameraNodeName:t=""
+      cameraOffset:p3=-0.56, 0.807, -0.074
+      cockpitTemplate:t="me_262a_1a_u4_driver_cockpit"
+      roomSpace:i=0
+
+      "turretNames:array"{
+        turret:t="turret_01"
+      }
+
+      "cockpitEffectors:object"{
+        r.hand:t="stick_rhand_1"
+        l.hand:t="throttle_lhand_1"
+        r.foot:t="pedal_rfoot_1"
+        l.foot:t="pedal_lfoot_1"
+      }
+    }
+  }
+
+  "turret_control__emitterNodes:shared:array"{
+    node:t="flare1"
+  }
+
+  "turret_control__animVars:shared:array"{
+
+    "vars:object"{
+      curYawParamName:t="weapon_01_yaw"
+      curPitchParamName:t="weapon_01_pitch"
+    }
+  }
+
+  "turret_control__turretInfo:shared:array"{
+
+    "turretInfo:object"{
+      turretName:t="turret_01"
+      turretGroup:t="cannon_turrets"
+      trigger:t="cannons"
+      gun:t="planegun_me_262a_1a_u4_50mm_mk214a_01"
+    }
+  }
+
+  "turret_gun_flash_fx__flashNodes:shared:array"{
+    node:t="flare1"
+  }
+
+  "turret_gun_flash_fx__flashFx:shared:array"{
+    fx:t="muzzle_air_15mm"
+  }
+
+  "turret_gun_flash_fx__flashFxScale:shared:array"{
+    scale:r=1.0
+  }
+
+  "disableDMParts:list<t>"{
+    part:t="rocket_pylon1"
+    part:t="rocket_pylon2"
+    part:t="rocket_pylon3"
+    part:t="rocket_pylon4"
+    part:t="pylon1"
+    part:t="pylon2"
+    part:t="210mm_tube_l"
+    part:t="210mm_tube_r"
+  }
+}
+
+base_me_262a_1a_u4_50mm_mk214a{
+  item__name:t="guns/cannonmk214a"
+  gun__blk:t="gamedata/weapons/planes/me_262a_1a_u4/50mm_mk214a.blk"
+  gun__shotFreq:r=2.6666
+  gun__locName:t="cannonmk214a"
+  gun__shootNodeName:t="bone_mg_gun_twin"
+  gun__maxAmmo:i=32
+
+  "gun__firingModes:array"{
+
+    "mode:object"{
+      modeType:t="automatic"
+    }
+  }
+
+  "gun__firingModeNames:array"{
+    mode:t="automatic"
+  }
+
+  "gun__shellsAmmo:array"{
+    ammo:i=32
+  }
+
+  "gun__ammoSetsInfo:shared:array"{
+
+    "default:array"{
+
+      "shell:object"{
+        blk:t="gamedata/weapons/shells/planes/bullets/50x419rmm_pzgr_39_bullet.blk"
+        name:t="39"
+        type:t="apc_tank"
+      }
+
+      "shell:object"{
+        blk:t="gamedata/weapons/shells/planes/bullets/50x419rmm_pzgr_39_bullet.blk"
+        name:t="39"
+        type:t="apc_tank"
+      }
+
+      "shell:object"{
+        blk:t="gamedata/weapons/shells/planes/bullets/50x419rmm_mgesch_l_spur_bullet.blk"
+        name:t="mgesch"
+        type:t="he_frag_i"
+      }
+    }
+  }
+}
+
+planegun_me_262a_1a_u4_50mm_mk214a_01{
+  _use:t="tankgun"
+  _use:t="base_plane_machinegun"
+  _use:t="base_me_262a_1a_u4_50mm_mk214a"
+  _use:t="gunsound_45mm_ns45_aircraft"
+  gun__shootNodeName:t="flare1"
+  gun__maxAmmo:i=32
+}
+
+me_262a_1a_u4_driver_cockpit{
+  _use:t="base_plane_cockpit"
+  cockpit__offset:p3=0.0, 0.0, 0.0
+  cockpit__angles:p3=0.0, 0.0, 0.0
+  cockpit__scale:p3=1.0, 1.0, 1.0
+  animchar__res:t="me_262a_1_u4_cockpit_char"
+  plane_anim__blk:t="gamedata/units/me_262a_1a_u4.blk"
+  plane_sight__blk:t="gamedata/units/me_262a_1a_u4.blk"
+
+  "move_cockpit_node__nodeName:list<t>"{
+    node:t="stick_rhand_1"
+    node:t="throttle_lhand_1"
+  }
+
+  "move_cockpit_node__nodeId:list<i>"{
+    nodeId:i=-1
+    nodeId:i=-1
+  }
+
+  "move_cockpit_node__offset:list<p3>"{
+    item:p3=0.012, 0.0475, -0.017
+    item:p3=0.021, -0.0245, -0.0135
+  }
+
+  "move_cockpit_node__rotation:list<p2>"{
+    item:p2=14.9, 28.8
+    item:p2=-29.4, -11.0
+  }
+}

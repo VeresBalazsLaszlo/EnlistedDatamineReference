@@ -1,0 +1,25 @@
+import{
+  scene:t="gamedata/scenes/_common_sounds.blk"
+}
+
+entity{
+  _template:t="battle_music"
+}
+
+entity{
+  _template:t="stalingrad_plant_ambient_sound"
+}
+
+entity{
+  _template:t="compound_ambient_sound_type"
+  compound_ambient_sound_type__soundType:t="plant"
+  compound_ambient_sound_type__path:t="ambient/positioned/plant"
+}
+
+entity{
+  _template:t="compound_ambient_sound_controller"
+
+  "compound_ambient_sound_controller__soundTypes:list<t>"{
+    name:t="plant"
+  }
+}

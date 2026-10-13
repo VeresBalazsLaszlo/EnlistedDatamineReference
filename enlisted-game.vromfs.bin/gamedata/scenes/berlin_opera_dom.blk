@@ -1,0 +1,405 @@
+entity{
+  _template:t="poly_battle_area"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-414.655, 5.68434e-14, 220.357]]
+  battle_area__team:i=1
+  battleAreaId:t="area1"
+
+  "poly_area__points:list<p3>"{
+    item:p3=-374.441, 3.42462, 364.27
+    item:p3=-420.249, 4.77962, 362.582
+    item:p3=-418.788, 4.77942, 337.2
+    item:p3=-473.9, 3.29913, 257.991
+    item:p3=-474.377, 3.29861, 220.446
+    item:p3=-491.343, 3.29861, 177.608
+    item:p3=-512.892, 3.29865, 117.996
+    item:p3=-530.456, 3.29791, 70.0195
+    item:p3=-508.92, 4.08411, 25.399
+    item:p3=-163.881, 3.29959, -7.22729
+    item:p3=-166.423, -2.00003, 367.206
+  }
+}
+
+entity{
+  _template:t="poly_battle_area"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-441.107, -1.7053e-13, 101.223]]
+  battle_area__team:i=2
+  battleAreaId:t="area2"
+
+  "poly_area__points:list<p3>"{
+    item:p3=-356.26, 4.24963, 1.74007
+    item:p3=-357.804, 4.95958, 226.27
+    item:p3=-360.473, 3.6174, 273.683
+    item:p3=-380.059, 3.27762, 301.499
+    item:p3=-419.163, 3.29961, 330.792
+    item:p3=-445.04, 3.30138, 374.686
+    item:p3=-617.013, 3.30008, 277.062
+    item:p3=-591.774, 3.29961, 233.222
+    item:p3=-657.188, 3.31866, 194.212
+    item:p3=-684.466, -2.922, 35.1596
+  }
+}
+
+entity{
+  _template:t="aircraft_box_battle_area"
+  transform:m=[[25814.7, 0.0, 112.793] [0.0, 8000.36, 0.0] [-111.84, 0.0, 25814.3] [-133.617, 240.916, 428.499]]
+  battle_area__team:i=-1
+}
+
+entity{
+  _template:t="enemy_attack_marker"
+}
+
+entity{
+  _template:t="briefing_domination"
+  mission_name:t="berlin_opera_dom"
+  mission_campaign:t="berlin"
+
+  "loading_images:list<t>"{
+    item:t="ui/berlin_opera_inv_01.avif"
+    item:t="ui/berlin_opera_inv_02.avif"
+    item:t="ui/berlin_opera_inv_03.avif"
+  }
+}
+
+entity{
+  _template:t="static_cam"
+  camera__active:b=yes
+  transform:m=[[-0.0095154, 0.0, 0.999955] [0.0110107, 0.999939, 0.000104769] [-0.999894, 0.0110112, -0.00951449] [-330.258, 14.1895, 185.161]]
+}
+
+entity{
+  _template:t="spawn_switcher"
+  swapProbability:r=0.5
+  team1:i=2
+  team2:i=1
+}
+
+entity{
+  _template:t="team_ussr_berlin+team_narrator_domination+respawn_creators_team"
+  team__id:i=1
+  team__score:r=4000.0
+  team__scoreCap:r=4000.0
+  score_bleed__domBleed:r=4.0
+  score_bleed__domBleedOn:b=no
+  score_bleed__totalDomZoneCount:i=3
+  score_bleed__totalDomBleedMul:r=2.0
+  score_bleed__totalDomBleedOn:b=no
+  team__briefing:t="domination/common_goals"
+  team__winTitle:t="debriefing/won_invasion_subtitle"
+  team__numZonesCaptured:i=0
+  team__deathPenalty:r=2.0
+  team__spawnBotArmy:t="berlin_allies"
+}
+
+entity{
+  _template:t="team_germany_berlin+team_narrator_domination+respawn_creators_team"
+  team__id:i=2
+  team__score:r=4000.0
+  team__scoreCap:r=4000.0
+  score_bleed__domBleed:r=4.0
+  score_bleed__domBleedOn:b=no
+  score_bleed__totalDomZoneCount:i=3
+  score_bleed__totalDomBleedMul:r=2.0
+  score_bleed__totalDomBleedOn:b=no
+  team__briefing:t="domination/common_goals"
+  team__winTitle:t="debriefing/won_invasion_subtitle"
+  team__numZonesCaptured:i=0
+  team__deathPenalty:r=2.0
+  team__spawnBotArmy:t="berlin_axis"
+}
+
+entity{
+  _template:t="respawnChooser+respVehicle"
+  transform:m=[[-0.817301, 0.0, -0.576207] [0.0, 1.0, 0.0] [0.576207, 0.0, -0.817301] [-251.711, 3.48489, 123.312]]
+  team:i=1
+  maxVehicleOnSpawn:i=2
+  respTime:i=120
+  respawnBaseGroup:i=1
+}
+
+entity{
+  _template:t="respawnChooser+respVehicle"
+  transform:m=[[0.99723, 0.0, -0.074354] [0.0, 1.0, 0.0] [0.074354, -0.0, 0.99723] [-608.243, 3.64994, 77.8896]]
+  team:i=2
+  maxVehicleOnSpawn:i=2
+  respTime:i=120
+  respawnBaseGroup:i=1
+}
+
+entity{
+  _template:t="domination_box_capzone"
+  transform:m=[[29.0537, 0.0, 0.0] [0.0, 9.90216, 0.0] [0.0, 0.0, 32.0646] [-393.469, 5.62361, 192.66]]
+  capzone__title:t="C"
+  capzone__caption:t="capzone/main_hall"
+  decal__thickness:r=0.15
+  decal__height:r=0.4
+}
+
+entity{
+  _template:t="domination_poly_capzone"
+  transform:m=[[2.73417, 0.0, 0.0] [0.0, 2.42812, 0.0] [0.0, 0.0, 2.04384] [-453.973, 6.14622, 140.341]]
+  capzone__defenseRadiusAdd:r=25.0
+  capzone__caption:t="capzone/opera_restaurant"
+  capzone__title:t="A"
+  capzone__iconOffsetY:r=2.0
+
+  "poly_area__points:list<p3>"{
+    item:p3=-458.97, 6.10257, 156.135
+    item:p3=-455.923, 6.14035, 156.358
+    item:p3=-453.74, 9.39153, 156.367
+    item:p3=-449.93, 6.11503, 156.078
+    item:p3=-446.702, 6.16762, 155.443
+    item:p3=-443.67, 6.24722, 154.445
+    item:p3=-441.067, 6.13642, 153.184
+    item:p3=-439.425, 6.21348, 152.145
+    item:p3=-437.056, 6.16216, 150.26
+    item:p3=-435.122, 6.17101, 148.054
+    item:p3=-433.534, 6.11427, 145.24
+    item:p3=-432.88, 6.08139, 143.033
+    item:p3=-432.654, 6.18353, 141.559
+    item:p3=-432.658, 6.15276, 139.611
+    item:p3=-433.42, 6.14167, 136.186
+    item:p3=-435.544, 6.1025, 130.445
+    item:p3=-436.844, 6.14286, 129.657
+    item:p3=-438.548, 6.10249, 127.547
+    item:p3=-439.156, 6.13869, 125.03
+    item:p3=-442.988, 6.13287, 124.289
+    item:p3=-446.223, 6.11964, 123.77
+    item:p3=-450.249, 6.36116, 123.527
+    item:p3=-453.377, 6.18797, 123.263
+    item:p3=-457.013, 6.17237, 123.289
+    item:p3=-461.047, 6.20484, 123.547
+    item:p3=-464.278, 6.14627, 123.901
+    item:p3=-467.241, 6.35902, 124.485
+    item:p3=-471.27, 6.11424, 125.219
+    item:p3=-471.092, 6.10249, 126.427
+    item:p3=-471.119, 6.19756, 127.872
+    item:p3=-471.889, 6.20979, 129.861
+    item:p3=-473.276, 6.18125, 131.645
+    item:p3=-474.644, 6.11433, 132.505
+    item:p3=-475.94, 6.12594, 133.006
+    item:p3=-477.304, 6.10251, 133.261
+    item:p3=-478.42, 6.29536, 133.331
+    item:p3=-475.394, 6.11685, 136.703
+    item:p3=-475.783, 6.10547, 138.759
+    item:p3=-475.791, 6.13782, 141.387
+    item:p3=-475.464, 6.12102, 143.273
+    item:p3=-474.768, 6.10254, 145.762
+    item:p3=-474.007, 6.12449, 147.322
+    item:p3=-472.541, 6.16647, 149.286
+    item:p3=-471.387, 5.51801, 150.417
+    item:p3=-469.266, 6.10257, 157.226
+    item:p3=-467.771, 6.12544, 156.311
+    item:p3=-466.04, 6.18967, 155.653
+    item:p3=-464.176, 6.15367, 155.663
+    item:p3=-462.628, 6.10257, 156.051
+    item:p3=-461.106, 6.10257, 156.926
+  }
+}
+
+entity{
+  _template:t="domination_sphere_capzone"
+  transform:m=[[1.38873, 0.0, -0.0141412] [0.0, 1.03658, 0.0] [0.00018669, 0.0, 1.11258] [-436.368, 5.96825, 192.688]]
+  capzone__title:t="B"
+  capzone__caption:t="capzone/conference_hall"
+  sphere_zone__radius:r=10.7
+  capzone__iconOffsetY:r=1.2
+  decal__height:r=0.1
+}
+
+entity{
+  _template:t="resupply_for_ground_vehicle_zone"
+  transform:m=[[1.93274, 0.0, 0.0] [0.0, 1.93274, 0.0] [0.0, 0.0, 1.93274] [-371.775, 1.06837, 338.329]]
+  resupply_zone__team:i=1
+  sphere_zone__radius:r=5.0
+}
+
+entity{
+  _template:t="resupply_for_ground_vehicle_zone"
+  transform:m=[[1.52734, 0.0, 0.0] [0.0, 1.52734, 0.0] [0.0, 0.0, 1.52734] [-627.51, 3.94317, 63.844]]
+  resupply_zone__team:i=2
+  sphere_zone__radius:r=5.0
+}
+
+entity{
+  _template:t="resupply_in_air_zone"
+  transform:m=[[-0.999999, 0.0, -0.000445871] [0.0, 1.0, 0.0] [0.000445871, 0.0, -0.999999] [1106.7, 399.937, 2911.05]]
+  resupply_zone__team:i=1
+}
+
+entity{
+  _template:t="respAircraftInAir"
+  respawnbaseType:t="aircraft_fighter"
+  transform:m=[[-0.101394, 0.0, 0.994847] [0.0, 1.0, 0.0] [-0.994847, 0.0, -0.101394] [129.963, 1023.92, -3263.3]]
+  team:i=2
+  maxVehicleOnSpawn:i=1
+  respTime:i=120
+}
+
+entity{
+  _template:t="respAircraftInAir"
+  respawnbaseType:t="aircraft_assault"
+  transform:m=[[-0.197967, 0.0, 0.980209] [0.0, 1.0, 0.0] [-0.980209, 0.0, -0.197967] [-45.7103, 823.92, -3286.67]]
+  team:i=2
+  maxVehicleOnSpawn:i=1
+  respTime:i=120
+}
+
+entity{
+  _template:t="respAircraftInAir"
+  respawnbaseType:t="aircraft_fighter"
+  transform:m=[[-0.144404, 0.0, 0.989519] [0.0, 1.0, 0.0] [-0.98952, 0.0, -0.144404] [-26.1114, 1023.92, -3276.47]]
+  team:i=2
+  maxVehicleOnSpawn:i=1
+  respTime:i=120
+}
+
+entity{
+  _template:t="respAircraftInAir"
+  respawnbaseType:t="aircraft_assault"
+  transform:m=[[-0.134523, 0.0, 0.990911] [0.0, 1.0, 0.0] [-0.990911, 0.0, -0.134523] [129.963, 823.92, -3263.3]]
+  team:i=2
+  maxVehicleOnSpawn:i=1
+  respTime:i=120
+}
+
+entity{
+  _template:t="resupply_in_air_zone"
+  transform:m=[[0.327869, 0.0, -0.944724] [0.0, 1.0, 0.0] [0.944724, 0.0, 0.327869] [-1783.29, 423.857, -2195.48]]
+  resupply_zone__team:i=2
+}
+
+entity{
+  _template:t="respAircraftInAir"
+  respawnbaseType:t="aircraft_fighter"
+  transform:m=[[0.0886321, 0.0, -0.996064] [0.0, 1.0, 0.0] [0.996064, -0.0, 0.0886321] [-541.843, 1000.0, 3844.38]]
+  team:i=1
+  maxVehicleOnSpawn:i=1
+  respTime:i=120
+}
+
+entity{
+  _template:t="respAircraftInAir"
+  respawnbaseType:t="aircraft_assault"
+  transform:m=[[0.0886321, 0.0, -0.996064] [0.0, 1.0, 0.0] [0.996064, -0.0, 0.0886321] [-541.843, 800.0, 3844.38]]
+  team:i=1
+  maxVehicleOnSpawn:i=1
+  respTime:i=120
+}
+
+entity{
+  _template:t="respAircraftInAir"
+  respawnbaseType:t="aircraft_fighter"
+  transform:m=[[0.0886321, 0.0, -0.996064] [0.0, 1.0, 0.0] [0.996064, -0.0, 0.0886321] [-397.184, 1000.0, 3886.21]]
+  team:i=1
+  maxVehicleOnSpawn:i=1
+  respTime:i=120
+}
+
+entity{
+  _template:t="respAircraftInAir"
+  respawnbaseType:t="aircraft_assault"
+  transform:m=[[0.0886321, 0.0, -0.996064] [0.0, 1.0, 0.0] [0.996064, -0.0, 0.0886321] [-363.358, 800.0, 3857.04]]
+  team:i=1
+  maxVehicleOnSpawn:i=1
+  respTime:i=120
+}
+
+entity{
+  _template:t="respawn_camera"
+  respawnCameraForTeam:i=1
+  moveCameraToHeight:r=150.0
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-515.279, 499.419, 468.497]]
+}
+
+entity{
+  _template:t="respawn_camera"
+  respawnCameraForTeam:i=2
+  moveCameraToHeight:r=150.0
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-690.115, 500.34, -34.056]]
+}
+
+entity{
+  _template:t="respawnChooser+respMotorcycle"
+  transform:m=[[-0.970848, 0.0, -0.239688] [0.0, 1.0, 0.0] [0.239688, 0.0, -0.970848] [-293.081, 3.72289, 324.389]]
+  team:i=1
+}
+
+entity{
+  _template:t="respawnChooser+respMotorcycle"
+  transform:m=[[0.99723, 0.0, -0.074354] [0.0, 1.0, 0.0] [0.074354, -0.0, 0.99723] [-608.165, 3.64994, 78.5102]]
+  team:i=2
+}
+
+entity{
+  _template:t="respawnChooser+respTeam1"
+  transform:m=[[0.203729, 0.0, -0.979027] [-0.0, 1.0, 0.0] [0.979027, 0.0, 0.203729] [-348.945, 3.92278, 293.915]]
+}
+
+entity{
+  _template:t="respawnChooser+respTeam1"
+  transform:m=[[0.203729, 0.0, -0.979027] [-0.0, 1.0, 0.0] [0.979027, 0.0, 0.203729] [-342.336, 3.45776, 299.326]]
+}
+
+entity{
+  _template:t="respawnChooser+respTeam1"
+  transform:m=[[-0.959474, 0.0, -0.281796] [0.0, 1.0, 0.0] [0.281796, 0.0, -0.959474] [-291.972, 3.74889, 240.107]]
+  respawnBaseGroup:i=2
+}
+
+entity{
+  _template:t="respawnChooser+respTeam1"
+  transform:m=[[-0.969977, 0.0, 0.243195] [0.0, 1.0, 0.0] [-0.243195, 0.0, -0.969977] [-292.216, 3.74889, 235.144]]
+  respawnBaseGroup:i=2
+}
+
+entity{
+  _template:t="respawnChooser+respTeam2"
+  transform:m=[[0.993948, 0.0, -0.109853] [0.0, 1.0, 0.0] [0.109853, -0.0, 0.993948] [-526.325, 3.72372, 206.533]]
+}
+
+entity{
+  _template:t="respawnChooser+respTeam2"
+  transform:m=[[0.61863, 0.0, -0.785682] [0.0, 1.0, 0.0] [0.785682, -0.0, 0.61863] [-519.056, 4.52294, 230.442]]
+}
+
+entity{
+  _template:t="respawnChooser+respTeam2"
+  transform:m=[[0.934644, 0.0, 0.355585] [0.0, 1.0, -0.0] [-0.355585, 0.0, 0.934644] [-562.769, 4.03707, 133.732]]
+  respawnBaseGroup:i=2
+}
+
+entity{
+  _template:t="respawnChooser+respTeam2"
+  transform:m=[[0.934644, 0.0, 0.355585] [0.0, 1.0, -0.0] [-0.355585, 0.0, 0.934644] [-560.093, 4.03707, 127.193]]
+  respawnBaseGroup:i=2
+}
+
+entity{
+  _template:t="session_timer"
+  session_timer__time_end:r=3600.0
+}
+
+import{
+  scene:t="gamedata/scenes/_berlin_opera_gpu_objects.blk"
+}
+
+import{
+  scene:t="gamedata/scenes/_berlin_opera_biom_fx.blk"
+}
+
+import{
+  scene:t="gamedata/scenes/_berlin_opera_background_fx.blk"
+}
+
+import{
+  scene:t="gamedata/scenes/_berlin_opera_projectors.blk"
+}
+
+import{
+  scene:t="gamedata/scenes/_berlin_opera_tracers.blk"
+}
+
+import{
+  scene:t="gamedata/scenes/_berlin_opera_level.blk"
+}

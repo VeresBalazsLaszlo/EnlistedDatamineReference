@@ -1,0 +1,355 @@
+base_kv_2_1940{
+  _use:t="base_tank"
+  _use:t="kv_2_1940_ammo_stowages"
+  _use:t="vehicle_physical_tracks"
+  killLogName:t="ussr_kv_2_1940"
+  animchar__res:t="kv_2_1940_char"
+  animchar_fast_phys__res:t="kv_2_1940_fastphys"
+  collres__res:t="kv_2_1940_collision"
+  vehicle_net_phys__blk:t="gamedata/gen/units/tanks/kv_2_1940.blk:VehiclePhys"
+  particle_phys__blk:t="gamedata/gen/units/tanks/kv_2_1940.blk:PhysSys"
+  dmg_animchar__res:t="kv_2_1940_dmg_char"
+  xray_resource__modelName:t="kv_2_1940"
+  cockpit__zoomOutFov:r=2.7475
+  cockpit__zoomInFov:r=5.3955
+  cockpit__sightName:t="sight_model/default_tank_spg"
+  cockpit__sightFov:r=20.0
+  drowningHeight:r=2.592
+  damage_model__blk:t="gamedata/gen/units/tanks/kv_2_1940.blk"
+  item__name:t="items/ussr_kv_2_1940"
+  physical_tracks__blk:t="gamedata/gen/units/tanks/kv_2_1940.blk"
+  skin__template:t="kv_2_1940_skins"
+  losable_turret__detachBone:t="bone_turret"
+  losable_turret__detachCollNode:t="cls_turret_01"
+  losable_turret__mass:r=8500.0
+  losable_turret__deviation:r=0.5
+  losable_turret__rotation:r=0.5
+  fire_damage__openHatchesOnExplosion:b=yes
+
+  animchar_fast_phys{
+    _tags:t="gameClient"
+  }
+
+  "turret_gun_flash_fx__flashNodes:shared:array"{
+    node:t="emtr_gun_flame"
+    node:t="emtr_mg_flame_02"
+    node:t="emtr_mg_flame_01"
+  }
+
+  "turret_gun_flash_fx__flashFx:shared:array"{
+    fx:t="muzzle_ground_150mm"
+    fx:t="muzzle_ground_8mm"
+    fx:t="muzzle_ground_8mm"
+  }
+
+  "turret_gun_flash_fx__flashFxScale:shared:array"{
+    scale:r=1.0
+    scale:r=1.0
+    scale:r=1.0
+  }
+
+  "turret_control__emitterNodes:shared:array"{
+    node:t="bone_gun_barrel"
+    node:t="bone_mg_gun_twin"
+    node:t="bone_mg_v_02"
+  }
+
+  "turret_control__animVars:shared:array"{
+
+    "vars:object"{
+      curYawParamName:t="turret_01_yaw"
+      curPitchParamName:t="gun_01_pitch"
+      aimActiveParamName:t="aim_01_active"
+      paramYawSpeed:t="turret_01_yaw_speed"
+      paramYawSpeedMul:t="turret_01_yaw_mul"
+      paramYawAccel:t="turret_01_yaw_accel"
+      paramMinYawAngle:t="turret_01_min_yaw_angle"
+      paramMaxYawAngle:t="turret_01_max_yaw_angle"
+      paramMinPitchAngle:t="turret_01_min_pitch_angle"
+      paramMaxPitchAngle:t="turret_01_max_pitch_angle"
+      paramPitchSpeed:t="gun_01_pitch_speed"
+      paramPitchSpeedMul:t="gun_01_pitch_mul"
+      paramPitchAccel:t="gun_01_pitch_accel"
+      wishYawParamName:t="gun_01_aim:targetYaw"
+      wishPitchParamName:t="gun_01_aim:targetPitch"
+      gunRecoilParamName:t="gun_01_recoil"
+    }
+
+    "vars:object"{
+      curYawParamName:t="turret_02_yaw"
+      curPitchParamName:t="gun_02_pitch"
+    }
+
+    "vars:object"{
+      curYawParamName:t="turret_03_yaw"
+      curPitchParamName:t="gun_03_pitch"
+      aimActiveParamName:t="aim_03_active"
+      paramYawSpeed:t="turret_03_yaw_speed"
+      paramYawSpeedMul:t="turret_03_yaw_mul"
+      paramYawAccel:t="turret_03_yaw_accel"
+      paramMinYawAngle:t="turret_03_min_yaw_angle"
+      paramMaxYawAngle:t="turret_03_max_yaw_angle"
+      paramMinPitchAngle:t="turret_03_min_pitch_angle"
+      paramMaxPitchAngle:t="turret_03_max_pitch_angle"
+      paramPitchSpeed:t="gun_03_pitch_speed"
+      paramPitchSpeedMul:t="gun_03_pitch_mul"
+      paramPitchAccel:t="gun_03_pitch_accel"
+      wishYawParamName:t="gun_03_aim:targetYaw"
+      wishPitchParamName:t="gun_03_aim:targetPitch"
+    }
+  }
+
+  "turret_control__turretInfo:shared:array"{
+
+    "turretInfo:object"{
+      turretName:t="turret_01"
+      gun:t="kv_2_1940_turret_01_152mm_m10t+turret_with_several_types_of_shells+main_turret"
+      barrelDm:t="gun_barrel"
+      breechDm:t="cannon_breech"
+      verDriveDm:t="drive_turret_v"
+      horDriveDm:t="drive_turret_h"
+      salt:i=1
+    }
+
+    "turretInfo:object"{
+      turretName:t="turret_02"
+      gun:t="kv_2_1940_turret_02_7_62mm_dt"
+      barrelDm:t="gun_barrel_01"
+      salt:i=1
+    }
+
+    "turretInfo:object"{
+      turretName:t="turret_03"
+      gun:t="kv_2_1940_turret_03_7_62mm_dt"
+      barrelDm:t="gun_barrel_03"
+      salt:i=1
+    }
+  }
+}
+
+kv_2_1940_turret_01_152mm_m10t{
+  _use:t="tankgun_152mm_m10t"
+  gun__shootNodeName:t="bone_gun_barrel"
+  turret__yawSpeed:r=6.0
+  turret__pitchSpeed:r=3.0
+  turret__aimNodeName:t="bone_turret"
+  turret__limit:p4=-180.0, 180.0, -5.0, 12.0
+
+  "gun__shellsAmmo:array"{
+    ammo:i=12
+    ammo:i=12
+    ammo:i=12
+  }
+}
+
+kv_2_1940_turret_02_7_62mm_dt{
+  _use:t="tankgun_7_62mm_dt"
+  gun__shootNodeName:t="bone_mg_gun_twin"
+
+  "gun__shellsAmmo:array"{
+    ammo:i=1544
+    ammo:i=1543
+  }
+}
+
+kv_2_1940_turret_03_7_62mm_dt{
+  _use:t="tankgun_7_62mm_dt"
+  gun__shootNodeName:t="emtr_mg_flame_01"
+  turret__yawSpeed:r=35.0
+  turret__pitchSpeed:r=35.0
+  turret__aimNodeName:t="bone_mg_h_02"
+  turret__limit:p4=-17.0, 17.0, -10.0, 17.0
+
+  "gun__shellsAmmo:array"{
+    ammo:i=945
+    ammo:i=945
+  }
+}
+
+kv_2_1940_ammo_stowages{
+  _tags:t="server"
+  _use:t="vehicle_ammo_stowages"
+
+  "ammo_stowage__stowageTemplates:shared:list<t>"{
+    stowage:t="kv_2_1940_ammo_stowage_1"
+  }
+}
+
+kv_2_1940_ammo_stowage_1{
+  _use:t="ammo_stowage"
+
+  "ammo_stowage__clusterTemplates:shared:list<t>"{
+    cluster:t="kv_2_1940_ammo_cluster_1_1"
+    cluster:t="kv_2_1940_ammo_cluster_1_2"
+  }
+
+  "ammo_stowage__turretNames:shared:list<t>"{
+    gun:t="turret_01"
+  }
+}
+
+kv_2_1940_ammo_cluster_1_1{
+  _use:t="ammo_cluster"
+  ammo_cluster__isShell:b=yes
+
+  "ammo_cluster__slotNames:shared:list<t>"{
+    part:t="ammo_body_01"
+    part:t="ammo_body_02"
+    part:t="ammo_body_03"
+    part:t="ammo_body_04"
+    part:t="ammo_body_05"
+    part:t="ammo_body_06"
+    part:t="ammo_body_07"
+    part:t="ammo_body_08"
+    part:t="ammo_body_09"
+    part:t="ammo_body_10"
+    part:t="ammo_body_11"
+    part:t="ammo_body_12"
+    part:t="ammo_body_13"
+    part:t="ammo_body_14"
+    part:t="ammo_body_15"
+    part:t="ammo_body_16"
+    part:t="ammo_body_17"
+    part:t="ammo_body_18"
+    part:t="ammo_body_19"
+    part:t="ammo_body_20"
+    part:t="ammo_body_21"
+    part:t="ammo_body_22"
+    part:t="ammo_body_23"
+    part:t="ammo_body_24"
+    part:t="ammo_body_25"
+    part:t="ammo_body_26"
+    part:t="ammo_body_27"
+    part:t="ammo_body_28"
+    part:t="ammo_body_29"
+    part:t="ammo_body_30"
+    part:t="ammo_body_31"
+    part:t="ammo_body_32"
+    part:t="ammo_body_33"
+    part:t="ammo_body_34"
+    part:t="ammo_body_35"
+    part:t="ammo_body_36"
+  }
+
+  "ammo_cluster__slotsMaxAmmo:list<i>"{
+    count:i=1
+    count:i=1
+    count:i=1
+    count:i=1
+    count:i=1
+    count:i=1
+    count:i=1
+    count:i=1
+    count:i=1
+    count:i=1
+    count:i=1
+    count:i=1
+    count:i=1
+    count:i=1
+    count:i=1
+    count:i=1
+    count:i=1
+    count:i=1
+    count:i=1
+    count:i=1
+    count:i=1
+    count:i=1
+    count:i=1
+    count:i=1
+    count:i=1
+    count:i=1
+    count:i=1
+    count:i=1
+    count:i=1
+    count:i=1
+    count:i=1
+    count:i=1
+    count:i=1
+    count:i=1
+    count:i=1
+    count:i=1
+  }
+}
+
+kv_2_1940_ammo_cluster_1_2{
+  _use:t="ammo_cluster"
+  ammo_cluster__isShell:b=no
+
+  "ammo_cluster__slotNames:shared:list<t>"{
+    part:t="ammo_turret_01"
+    part:t="ammo_turret_02"
+    part:t="ammo_turret_03"
+    part:t="ammo_turret_04"
+    part:t="ammo_turret_05"
+    part:t="ammo_turret_06"
+    part:t="ammo_turret_07"
+    part:t="ammo_turret_08"
+    part:t="ammo_turret_09"
+    part:t="ammo_turret_10"
+    part:t="ammo_turret_11"
+    part:t="ammo_turret_12"
+    part:t="ammo_turret_13"
+    part:t="ammo_turret_14"
+    part:t="ammo_turret_15"
+    part:t="ammo_turret_16"
+    part:t="ammo_turret_17"
+    part:t="ammo_turret_18"
+    part:t="ammo_turret_19"
+    part:t="ammo_turret_20"
+    part:t="ammo_turret_21"
+    part:t="ammo_turret_22"
+    part:t="ammo_turret_23"
+    part:t="ammo_turret_24"
+    part:t="ammo_turret_25"
+    part:t="ammo_turret_26"
+    part:t="ammo_turret_27"
+    part:t="ammo_turret_28"
+    part:t="ammo_turret_29"
+    part:t="ammo_turret_30"
+    part:t="ammo_turret_31"
+    part:t="ammo_turret_32"
+    part:t="ammo_turret_33"
+    part:t="ammo_turret_34"
+    part:t="ammo_turret_35"
+    part:t="ammo_turret_36"
+  }
+
+  "ammo_cluster__slotsMaxAmmo:list<i>"{
+    count:i=1
+    count:i=1
+    count:i=1
+    count:i=1
+    count:i=1
+    count:i=1
+    count:i=1
+    count:i=1
+    count:i=1
+    count:i=1
+    count:i=1
+    count:i=1
+    count:i=1
+    count:i=1
+    count:i=1
+    count:i=1
+    count:i=1
+    count:i=1
+    count:i=1
+    count:i=1
+    count:i=1
+    count:i=1
+    count:i=1
+    count:i=1
+    count:i=1
+    count:i=1
+    count:i=1
+    count:i=1
+    count:i=1
+    count:i=1
+    count:i=1
+    count:i=1
+    count:i=1
+    count:i=1
+    count:i=1
+    count:i=1
+  }
+}

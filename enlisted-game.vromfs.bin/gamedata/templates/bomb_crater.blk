@@ -1,0 +1,368 @@
+bomb_crater_config_override{
+  _use:t="replicating"
+  bomb_crater_config_override__decalName:t="explosion"
+}
+
+bomb_crater_config{
+  _use:t="replicating"
+
+  _group{
+    _tags:t="server"
+    crater_config__maxRIRadiusToRemove:r=2.0
+    crater_config__uncollideOffset:r=0.05
+    bullet_crater_config__innerRadiusScale:r=0.8
+    bullet_crater_config__innerDepthScale:r=0.4
+    bullet_crater_config__outerAltScale:r=0.35
+    bullet_crater_config__outerRadiusScale:r=1.2
+    bullet_crater_config__maxHeightAtLand:r=1.0
+    bomb_crater_config__innerRadiusScale:r=0.8
+    bomb_crater_config__innerDepthScale:r=0.3
+    bomb_crater_config__outerAltScale:r=0.35
+    bomb_crater_config__outerRadiusScale:r=0.7
+    bomb_crater_config__maxHeightAtLand:r=1.0
+
+    "crater_config__disabledPhysMatNames:list<t>"{
+      name:t="concrete"
+      name:t="stone"
+      name:t="rocks"
+      name:t="gravel"
+      name:t="hardSnow"
+    }
+
+    "crater_config__disabledPhysMatIds:list<i>"{
+    }
+
+    "crater_config__isRIPoolRemovable:object"{
+      sandbox_3x5_a:b=yes
+      sandbags_wall_high_l4000_a_dmg:b=yes
+      career_stuff_m:b=yes
+      normandy_fence_flat_b_debris_a:b=yes
+      normandy_fence_flat_a_debris_a:b=yes
+      scaffold_decor_base_walls_a:b=yes
+      debris_spruce_stump_b:b=yes
+      stones_coast_a:b=yes
+      stones_coast_b:b=yes
+      stones_coast_c:b=yes
+      stones_coast_d:b=yes
+      stones_coast_e:b=yes
+      bobbin_cable_set_a:b=no
+      bobbin_cable_a:b=no
+      zis_5_b:b=no
+      zis_5_damaged_d_trailer:b=no
+      zis_5_damaged_a:b=no
+      zis_5_damaged_b:b=no
+      zis_5_damaged_c:b=no
+      refueler_kfz_384_damaged_a:b=no
+      refueler_kfz_384_damaged_b:b=no
+      refueler_kfz_384:b=no
+      mercedes_benz_lg3000:b=no
+      mercedes_benz_lg3000_a:b=no
+      mercedes_benz_lg3000_b:b=no
+      mercedes_benz_lg3000_c:b=no
+      mercedes_benz_lg3000_destroyed:b=no
+      mercedes_benz_lg3000_tent:b=no
+      steyer_1500a:b=no
+      steyer_1500a_a:b=no
+      steyer_1500a_b:b=no
+      steyer_1500a_destroyed:b=no
+      opel_blitz_kfz_305:b=no
+      opel_blitz_kfz_305_destroyed:b=no
+      opel_blitz_kfz_305_broken:b=no
+      nissan_80:b=no
+      nissan_80_broken:b=no
+      nissan_80_destroyed:b=no
+      gmc_cckw_353_a:b=no
+      gmc_cckw_353_b:b=no
+      gmc_cckw_353_a_broken:b=no
+      gmc_cckw_353_b_broken:b=no
+      gmc_cckw_353_destroyed:b=no
+      pv_opel_blitz_kfz_305_destroyed_a:b=no
+      pv_opel_blitz_kfz_305_destroyed_b:b=no
+      gaz_0330_destroyed_a_burnt:b=no
+      gaz_0330_destroyed_b_burnt:b=no
+      gaz_0330_destroyed_c_burnt:b=no
+      gaz_0330_destroyed_a_painted:b=no
+      gaz_0330_destroyed_b_painted:b=no
+      gaz_0330_destroyed_c_painted:b=no
+      gaz_aa_destroyed_a_burnt:b=no
+      gaz_aa_destroyed_b_burnt:b=no
+      gaz_aa_destroyed_c_burnt:b=no
+      gaz_aa_destroyed_a_painted:b=no
+      gaz_aa_destroyed_b_painted:b=no
+      gaz_aa_destroyed_c_painted:b=no
+      ford_model_aa_bus_body_damaged:b=no
+      150cm_flak_sw_37_basement:b=no
+      150cm_flak_sw_37_basement_dmg:b=no
+      24kw_flak_generator:b=no
+      24kw_flak_generator_dmg:b=no
+      european_barn_constructor_wall_a:b=no
+      european_barn_constructor_wall_b:b=no
+      european_railway_station_ruins_funnel_soil_a:b=no
+      european_railway_station_ruins_funnel_soil_b:b=no
+      sandbags_wall_high_l2000_hard_a:b=no
+      tunisia_ruins_pillar_big_base_a:b=no
+      tunisia_ruins_pillar_big_base_b:b=no
+      tunisia_ruins_pillar_small_base_a:b=no
+      tunisia_ruins_pillar_small_base_b:b=no
+      aborigen_village_module_column_a_a:b=no
+      aborigen_village_module_column_a_b:b=no
+      aborigen_village_module_column_a_c:b=no
+      aborigen_village_module_stairs_c_a:b=no
+      aborigen_village_module_stairs_b_a:b=no
+      aborigen_village_module_floor_a_a:b=no
+      aborigen_village_module_floor_a_b:b=no
+      aborigen_village_module_floor_b_a:b=no
+      frame_stairs_outdoor_a:b=no
+      frame_stairs_outdoor_b_a:b=no
+      frame_stairs_outdoor_b_b:b=no
+      frame_stairs_outdoor_b_c:b=no
+      frame_stairs_outdoor_c:b=no
+      frame_stairs_outdoor_d:b=no
+      frame_stairs_outdoor_e:b=no
+      frame_horsehouse_b_stair_a:b=no
+      debris_pile_wood_burnt_a_a:b=no
+      debris_pile_wood_burnt_a_b:b=no
+      debris_pile_wood_burnt_a_c:b=no
+      aborigen_village_module_floor_burned_a_a:b=no
+      aborigen_village_module_floor_burned_a_b:b=no
+      aborigen_village_module_floor_burned_a_c:b=no
+      aborigen_village_module_floor_burned_b_a:b=no
+      aborigen_village_module_stairs_burned_c_a:b=no
+      aborigen_village_module_column_burned_a_a:b=no
+      aborigen_village_module_column_burned_a_b:b=no
+      sandbox_a:b=no
+      sandbox_a_destroyed:b=no
+      sandbox_b:b=no
+      sandbox_b_destroyed:b=no
+      sandbox_c:b=no
+      sandbox_c_destroyed:b=no
+      sandbox_d:b=no
+      sandbox_d_destroyed:b=no
+      sandbox_e:b=no
+      antitank_block_a:b=no
+      antitank_block_damaged_a:b=no
+      antitank_block_b:b=no
+      antitank_block_damaged_b:b=no
+      antitank_block_c:b=no
+      antitank_block_damaged_c:b=no
+      antitank_block_d:b=no
+      antitank_block_damaged_d:b=no
+      russia_sawmill_b_decor_exhaust:b=no
+      is_african_bed_a:b=no
+      is_african_bed_b:b=no
+      is_african_bed_c:b=no
+      is_african_bed_d:b=no
+      is_african_bed_e:b=no
+      military_barracks_decor_jamb_flat_a_1900:b=no
+      well_concrete_a_ring:b=no
+      well_concrete_a_cap:b=no
+      concrete_barrier_a:b=no
+      sample_box_gray_1000x1000x1000:b=no
+      sample_box_red_1000x1000x1000:b=no
+      sample_box_orange_1000x1000x1000:b=no
+      sample_box_green_1000x1000x1000:b=no
+      sample_box_blue_1000x1000x1000:b=no
+      sample_box_purple_1000x1000x1000:b=no
+      obstacle_czech_hedgehog_a:b=no
+      fortification_concrete_high_a:b=no
+      fortification_concrete_low_a:b=no
+      fortification_concrete_low_b:b=no
+      fortification_concrete_low_c:b=no
+      fortification_concrete_low_d:b=no
+      fortification_concrete_middle_a:b=no
+      fortification_concrete_middle_b:b=no
+      fortification_concrete_middle_c:b=no
+      fortification_concrete_middle_d:b=no
+      fortification_concrete_middle_e:b=no
+      fortification_concrete_middle_f:b=no
+      fortification_concrete_middle_g:b=no
+      military_tent_big_a_a_dmg:b=no
+      military_tent_big_a_b_dmg:b=no
+      military_tent_big_b_a_dmg:b=no
+      military_tent_big_a_a_section_a_dmg:b=no
+      military_tent_big_a_a_section_b_dmg:b=no
+      military_tent_big_a_a_section_c_dmg:b=no
+      manchur_water_well_a_base_a:b=no
+      manchur_water_well_a_base_a_dmg:b=no
+      manchur_village_gate_wooden_a_a:b=no
+      manchur_canopy_a_foundation:b=no
+      manchur_canopy_b_base:b=no
+      manchur_canopy_c_foundation:b=no
+      bunker_regelbau_134_terrain_patch:b=no
+    }
+
+    "crater_config__unremovableRIPoolsByNamePart:list<t>"{
+      name:t="_door_"
+      name:t="_window_"
+      name:t="_gate_jamb_"
+      name:t="_hull_rendinst"
+      name:t="_turret_rendinst"
+      name:t="_gun_a_rendinst"
+      name:t="_gun_b_rendinst"
+      name:t="_trench_decor_"
+      name:t="trench_trunk_"
+      name:t="scaffold_"
+      name:t="platform_wooden_"
+      name:t="_flag_ring"
+      name:t="_flag_base_"
+    }
+
+    "crater_config__riPoolFlags:list<i>"{
+    }
+
+    "bullet_crater_config__explosiveMassToCraterRadius:list<p2>"{
+      p:p2=0.03, 0.4
+      p:p2=1.5, 0.8
+      p:p2=2.5, 1.0
+      p:p2=4.0, 2.0
+      p:p2=5.0, 2.7
+      p:p2=12.0, 3.3
+    }
+
+    "bomb_crater_config__splashToCraterRadius:list<p2>"{
+      p:p2=1.2, 1.3
+      p:p2=2.0, 2.0
+      p:p2=5.0, 3.3
+      p:p2=10.0, 4.6
+      p:p2=12.0, 5.9
+      p:p2=15.0, 7.2
+      p:p2=20.0, 7.9
+      p:p2=27.0, 8.1
+      p:p2=35.0, 9.4
+      p:p2=120.0, 10.4
+      p:p2=140.0, 11.1
+      p:p2=160.0, 12.4
+      p:p2=180.0, 13.5
+      p:p2=200.0, 14.8
+      p:p2=220.0, 16.1
+      p:p2=240.0, 17.4
+    }
+
+    "crater_config__scaleByPhysmats:object"{
+      sand:p4=1.0, 0.6, 1.3, 0.1
+      soil:p4=1.0, 1.0, 1.0, 0.8
+      leaves:p4=1.0, 1.1, 1.0, 0.8
+      mud:p4=1.1, 1.2, 1.2, 0.3
+      snow:p4=1.1, 1.1, 1.2, 0.5
+      sand_slope:p4=0.6, 0.5, 0.9, 0.1
+      road_sand:p4=0.6, 0.5, 0.9, 0.1
+      roadmud:p4=0.8, 0.8, 1.0, 0.1
+      roadSoil:p4=0.7, 0.6, 0.7, 0.1
+    }
+  }
+
+  _group{
+    _tags:t="render"
+    bomb_crater_config__decalScale:r=1.35
+    bomb_crater_config__minOuterRadiusForSoundEffect:r=1.2
+    bomb_crater_config__smokeEffectTemplate:t="explosion_smoke_crater_effect"
+    bomb_crater_config__smokeEffectWithSoundTemplate:t="explosion_smoke_crater_effect_with_sound"
+
+    "bomb_crater_config__decalNames:list<t>"{
+      name:t="explosion"
+      name:t="explosion_sand"
+      name:t="explosion_sand"
+      name:t="explosion_sand"
+      name:t="explosion_sand"
+      name:t="explosion_sand"
+      name:t="explosion_sand"
+      name:t="explosion_snow"
+    }
+
+    "bomb_crater_config__decalPhysmats:list<t>"{
+      name:t="default"
+      name:t="sand"
+      name:t="sand_slope"
+      name:t="roadSand"
+      name:t="roadSoil"
+      name:t="quickSand"
+      name:t="quarrySand"
+      name:t="snow"
+    }
+
+    "bomb_crater_config__decalIds:list<i>"{
+    }
+
+    "bomb_crater_config__decalPhysmatsIds:list<i>"{
+    }
+  }
+}
+
+bomb_crater_terraformer{
+
+  _group{
+    _tags:t="server"
+    bomb_crater_terraformer__processPartsPerFrame:i=7
+    bomb_crater_terraformer__gridWidth:i=5
+    bomb_crater_terraformer__railroadHalfWidth:r=3.0
+    bomb_crater_terraformer__processedPartsCount:i=0
+    bomb_crater_terraformer__position:p3=0.0, 0.0, 0.0
+    bomb_crater_terraformer__innerRadius:r=0.0
+    bomb_crater_terraformer__innerDepth:r=0.0
+    bomb_crater_terraformer__outerAlt:r=0.0
+    bomb_crater_terraformer__outerRadius:r=0.0
+    bomb_crater_terraformer__expectedRiHandlesToRemoveCount:i=32
+    bomb_crater_terraformer__mainPhysmatId:i=-1
+    bomb_crater_terraformer__disableRiRemoval:b=no
+    bomb_crater_terraformer__disableSmoke:b=no
+
+    "bomb_crater_terraformer__availablePartsMask:u64"{
+      value:i64=0
+    }
+
+    "bomb_crater_terraformer__availableDigPartsMask:u64"{
+      value:i64=0
+    }
+
+    "bomb_crater_terraformer__riHandlesToRemove:list<u64>"{
+    }
+  }
+}
+
+bomb_crater{
+  _use:t="replicating"
+  bomb_crater__removeRiCountPerFrame:i=7
+  bomb_crater__position:p3=0.0, 0.0, 0.0
+  bomb_crater__innerRadius:r=0.0
+  bomb_crater__innerDepth:r=0.0
+  bomb_crater__outerRadius:r=0.0
+  bomb_crater__outerAlt:r=0.0
+  bomb_crater__partRadius:r=0.0
+  bomb_crater__gridWidth:i=0
+  bomb_crater__riHandlesRemovedCount:i=0
+  bomb_crater__isTerraformed:b=no
+  bomb_crater__mainPhysmatId:i=-1
+  bomb_crater__disableSmoke:b=no
+  bomb_crater__disableRiRemoval:b=no
+
+  "bomb_crater__availablePartsMask:u64"{
+    value:i64=0
+  }
+
+  "bomb_crater__availableDigPartsMask:u64"{
+    value:i64=0
+  }
+
+  "bomb_crater__riHandlesToRemove:list<u64>"{
+  }
+}
+
+bomb_crater_applied_client{
+
+  _group{
+    _tags:t="gameClient"
+
+    "bombCraterAppliedClient:tag"{
+    }
+  }
+}
+
+bomb_crater_applied_server{
+
+  _group{
+    _tags:t="server"
+
+    "bombCraterAppliedServer:tag"{
+    }
+  }
+}

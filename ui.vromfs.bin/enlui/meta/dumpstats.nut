@@ -1,0 +1,349 @@
+import "io" as io
+import "DataBlock" as DataBlock
+import "%dngscripts/ecs.nut" as ecs
+from "dagor.system" import DBGLEVEL
+from "%dngscripts/localizations.nut" import nativeLoc
+from "dagor.localize" import initLocalization, getCurrentLanguage
+from "%ui/soldiers/model/all_items_templates.nut" import allItemTemplates
+from "%ui/soldiers/model/collectWeaponData.nut" import getWeaponData, getVehicleData
+from "%ui/vehicles/physSpecs.nut" import requireItemSpec
+from "%ui/soldiers/model/mkItemModifyData.nut" import mkItemUpgradeData
+from "%ui/components/itemsInfo.nut" import getItemDetails, PLANE_DETAILS, TANK_DETAILS, ARMOR_ORDER, getArmaments
+from "%sqstd/math.nut" import round_by_value
+from "%sqstd/string.nut" import floatToStringRounded
+from "dagor.debug" import logerr
+from "dagor.fs" import mkdir
+from "%ui/soldiers/model/config/squadsConfig.nut" import squadsCfgOrdered
+from "%ui/ui_library.nut" import *
+
+if (DBGLEVEL <= 0)
+  return
+
+
+
+
+
+
+let signToText = {
+  [0] = "",
+  [1] = "PREMIUM",
+  [2] = "EVENT",
+  [3] = "BP",
+}
+
+let armorCtor = @(data, detail) "; ".join(ARMOR_ORDER
+  .filter(@(key) key in data)
+  .map(@(armorType) $"{armorType}: {data[armorType]} {detail?.measure}"))
+
+function defaultCtor(data, detail) {
+  local { key, mult = 1, measure = "", altLimit = 0.0,
+    altMeasure = "", precision = 1 } = detail
+  let dataType = typeof data
+  if (dataType == "table" || dataType == "array") {
+    logerr($"Trying to export /*{dataType}*/ in /*{key}*/. Custom text constructor is needed")
+    return ""
+  }
+
+  if (altLimit != 0.0 && data >= altLimit)
+    measure = altMeasure
+  else
+    data *= mult
+
+  let printData = floatToStringRounded(data, precision)
+  data = round_by_value(data, precision).tointeger()
+
+  return measure != ""
+    ? "{0}{1}".subst(printData, nativeLoc($"itemDetails/{measure}", { val=data }))
+    : printData
+}
+
+let VEHICLE_TEXT_CONSTRUCTORS = {
+  "armor__body" : armorCtor
+  "armor__turret" : armorCtor
+  "armament" : function(data, _) {
+    local guns = getArmaments(data)
+    if (!guns)
+      return "none"
+    guns = guns
+      .map(@(gun) "{0}{1} - {2}{3}"
+        .subst(
+          nativeLoc("guns/{0}".subst(gun?["gun__locName"])),
+          gun.count > 1 ? $" x{gun.count}" : "",
+          gun["gun__maxAmmo"],
+          nativeLoc("itemDetails/count")))
+    return "; ".join(guns)
+  }
+}
+
+function getVehicleStats(db, vehicle_template_name, header) {
+  let template = db.getTemplateByName(vehicle_template_name)
+  let localizationKey = template?.getCompValNullable("item__name")
+
+  
+  
+  let vehicleData = getVehicleData(vehicle_template_name)
+  let stats = ", ".join(header.map(function(detail) {
+    let data = vehicleData?[detail.key]
+    if (data == null)
+      return ""
+    if (detail.key in VEHICLE_TEXT_CONSTRUCTORS)
+      return VEHICLE_TEXT_CONSTRUCTORS[detail.key](data, detail)
+    return defaultCtor(data, detail)
+  }))
+  return { localizationKey, stats }
+}
+
+
+let arrayCtor = @(data, detail) " - ".join(typeof data == "array"
+  ? data.map(@(d) defaultCtor(d, detail))
+  : [defaultCtor(data, detail)])
+
+function tableCtor(data, detail) {
+  let { mult = 1, measure = "", altMeasure = "", precision = 1 } = detail
+  if (mult == 0)
+    return null
+  return "; ".join(data.values()
+  .filter(@(p) (p?.x ?? 0) != 0 || (p?.y ?? 0) != 0)
+  .sort(@(a, b) (a?.y ?? 0) <=> (b?.y ?? 0))
+  .map(function(col) {
+    let ref = col?.y ?? 0
+    local val = (col?.x ?? 0) * mult
+    let printVal = floatToStringRounded(val, precision)
+    val = round_by_value(val, precision).tointeger()
+
+    let text = measure != ""
+      ? "{0}{1}".subst(ref, nativeLoc($"itemDetails/{measure}", { val = ref }))
+      : ref
+
+    let altText = altMeasure != ""
+      ? "{0}{1}".subst(printVal, nativeLoc($"itemDetails/{altMeasure}", { val = val }))
+      : printVal
+
+    return $"{altText} - {text}"
+  }))
+}
+
+let ITEMS_TEXT_CONSTRUCTORS = {
+  "gun__firingModeNames" : @(data, _) data.len() == 0 ? null
+    : "; ".join(data.map(@(name) nativeLoc($"firing_mode/{name}")))
+  "splashDamage" :  function(val, _) {
+    let dist = nativeLoc("itemDetails/splashDamage", { from = val.radius.x, to = val.radius.y })
+    let dmg = nativeLoc("itemDetails/splashDamage/damage", { to = val.damage })
+    return $"{dist} {dmg}"
+  }
+  "rateOfFire" : arrayCtor
+  "kineticArmorPower" : tableCtor
+  "hitpower" : tableCtor
+}
+
+function getItemStats(db, item_template_name, header) {
+  let template = db.getTemplateByName(item_template_name)
+  let localizationKey = template?.getCompValNullable("item__name")
+
+  let weaponData = getWeaponData(item_template_name)
+  let stats = ", ".join(header.map(function(detail) {
+    let data = weaponData?[detail.key]
+    if (data == null)
+      return ""
+    if (detail.key in ITEMS_TEXT_CONSTRUCTORS)
+      return ITEMS_TEXT_CONSTRUCTORS[detail.key](data, detail)
+    return defaultCtor(data, detail)
+  }))
+  return { localizationKey, stats }
+}
+
+
+let getSaveFolderPath = @(army) $".meta_stats/{army}"
+
+function saveTemplateStatsToFile(army, file_name, header, items, text_generator) {
+  let path = $"{getSaveFolderPath(army)}/{file_name}"
+  let file = io.file(path, "wt")
+
+  let headerString = ", ".join(header.map(@(v) nativeLoc(v?.locId ?? $"itemDetails/{v.key}")))
+  let genericItemHeaderString = ", ".join([
+    "Template name:"
+    "Localization key:"
+    "Localized name:"
+    "Type:"
+    "Max tier:"
+    "Access:"
+    "Battle Rating:"
+  ])
+  file.writestring($"{genericItemHeaderString}, {headerString}, Description:\n")
+
+  let db = ecs.g_entity_mgr.getTemplateDB()
+
+  let itemTexts = items.map(function(item_info, template_name) {
+    let { localizationKey, stats } = text_generator(db, template_name, header)
+    let genericStatsString = ", ".join([
+      template_name
+      localizationKey
+      nativeLoc(localizationKey)
+      item_info.type != null ? nativeLoc($"itemtype/{item_info.type}", "") : ""
+      item_info?.tierMax ?? ""
+      signToText[item_info?.sign ?? 0]
+      item_info?.br ?? "-"
+    ])
+    let descText = nativeLoc($"{localizationKey}/desc", "")
+    return $"{genericStatsString}, {stats}, \"{descText}\"\n"
+  })
+
+  items.keys().sort().each(@(item_key) file.writestring(itemTexts[item_key]))
+
+  file.close()
+
+  console_print($"Stats saved to {path}")
+}
+
+let locEscaped = @(str) $"\"{nativeLoc(str)}\""
+
+let squadInfoHeader = [
+  { name = "id" }
+  { name = "squadType" }
+  { name = "vehicleType" }
+  { name = "startVehicle" }
+  { name = "newWeapon" generator = @(v) ", ".join(v ?? [])}
+  { name = "nameLocId" }
+  { name = "nameLocId" generator = nativeLoc header_text = "localized nameLocId" }
+  { name = "manageLocId" }
+  { name = "manageLocId" generator = nativeLoc header_text = "localized manageLocId" }
+  { name = "announceLocId" }
+  { name = "announceLocId" generator = locEscaped header_text = "localized announceLocId" }
+  { name = "icon" }
+  { name = "image" }
+]
+
+
+function saveSquadStatsToFile(folder, file_name) {
+  let path = $"{getSaveFolderPath(folder)}/{file_name}"
+  mkdir(getSaveFolderPath(folder))
+
+  let file = io.file(path, "wt")
+
+  file.writestring(", ".join(squadInfoHeader.map(@(v) v?.header_text ?? v.name)))
+  file.writestring("\n")
+  foreach (squad in squadsCfgOrdered.get())
+    foreach (s in squad) {
+      let fields = squadInfoHeader.map(@(v) (v?.generator ?? @(x) x ?? "")(s?[v.name]))
+      file.writestring(", ".join(fields))
+      file.writestring("\n")
+    }
+
+  file.close()
+
+  console_print($"Squads saved to {path}")
+}
+
+
+let aircraftSubitemType = {
+  fighter_aircraft = true
+  assault_aircraft = true
+}
+
+
+let itemTypeWhitelist = {
+  medkits = true
+  repair_kit = true
+  building_tool = true
+  grenade = true
+  mine = true
+  scope = true
+  bayonet = true
+  radio = true
+  melee = true
+  shovel_weapon = true
+  molotov = true
+  lunge_mine = true
+  antitank_mine = true
+  antipersonnel_mine = true
+  explosion_pack = true
+  smoke_grenade = true
+  impact_grenade = true
+  flask_usable = true
+  binoculars_usable = true
+  sword = true
+}
+
+function gatherUsedTemplates(armyItems) {
+  let tanks = {}
+  let planes = {}
+  let items = {}
+
+  let templateData = @(v) {
+    type = v?.itemtype
+    sign = v?.sign
+    upgradeMax = mkItemUpgradeData(v).get()?.upgradeMax ?? 0
+    br = v?.growthTier
+  }
+
+  armyItems.each(function(v) {
+    if (v?.itemtype == "vehicle") {
+      requireItemSpec({ gametemplate = v.gametemplate itemType = "vehicle" })
+      if (v?.itemsubtype in aircraftSubitemType)
+        planes[v.gametemplate] <- templateData(v)
+      else
+        tanks[v.gametemplate] <- templateData(v)
+    }
+    else if (v?.ammoholder != null || v?.ammotemplate != null || v?.itemtype in itemTypeWhitelist) {
+      items[v.gametemplate] <- templateData(v)
+    }
+  })
+
+  return { tanks, planes, items }
+}
+
+let languagesToDump = [
+  "English"
+  "Chinese"
+  "HChinese"
+]
+
+function dumpStats(file_name_prefix = "") {
+  foreach (armyId, armyItems in allItemTemplates.get()) {
+    let { tanks, planes, items } = gatherUsedTemplates(armyItems)
+
+    let anythingToDump = tanks.len() + planes.len() + items.len() > 0
+    if (!anythingToDump)
+      continue
+
+    mkdir(getSaveFolderPath(armyId))
+
+    if (tanks.len() != 0)
+      saveTemplateStatsToFile(armyId, $"{file_name_prefix}_tanks.csv", TANK_DETAILS, tanks, getVehicleStats)
+    if (planes.len() != 0)
+      saveTemplateStatsToFile(armyId, $"{file_name_prefix}_planes.csv", PLANE_DETAILS, planes, getVehicleStats)
+    if (items.len() != 0)
+      saveTemplateStatsToFile(armyId, $"{file_name_prefix}_items.csv", getItemDetails(true), items, getItemStats)
+  }
+
+  saveSquadStatsToFile("squads", $"{file_name_prefix}_squads.csv")
+
+  console_print($"Stats Dump Finished!")
+}
+
+function getLocLoadSettingsBlk() {
+  let locBlk = DataBlock()
+  
+  locBlk.addStr("english_us", "English")
+  locBlk.addStr("default_audio", "English")
+  locBlk.addStr("default_lang", "English")
+
+  let langsBlk = locBlk.addNewBlock("locTable")
+  langsBlk.addStr("file", "lang/common/common.csv")
+  langsBlk.addStr("file", "lang/pkg_dev/pkg_dev.csv")
+
+  return locBlk
+}
+
+function dumpMultipleLanguagesStats() {
+  let currentLang = getCurrentLanguage()
+  let locBlk = getLocLoadSettingsBlk()
+  foreach (lang in languagesToDump) {
+    initLocalization(locBlk, lang)
+    dumpStats($"_{lang}")
+  }
+  initLocalization(locBlk, currentLang)
+}
+
+console_register_command(dumpStats, "meta.dumpStats")
+console_register_command(dumpMultipleLanguagesStats, "meta.dumpStatsMultipleLanguages", "Dump stats for multiple languages (English, Chinese, HChinese by default)")

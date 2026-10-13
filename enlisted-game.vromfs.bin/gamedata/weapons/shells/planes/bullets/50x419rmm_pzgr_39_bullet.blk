@@ -1,0 +1,90 @@
+mass:r=2.05
+caliber:r=0.05
+speed:r=835.0
+maxDistance:r=7000.0
+Cx:r=0.54
+explosiveType:t="np_10"
+explosiveMass:r=0.017
+normalizationPreset:t="apbc"
+ricochetPreset:t="apbc"
+groundRicochetPreset:t="apbc_ground"
+fuseDelayDist:r=1.2
+secondaryShattersPreset:t="ap_large_caliber"
+stabilityCaliberToArmorThreshold:r=5.0
+stabilityReductionAfterRicochet:r=0.3
+stabilityReductionAfterPenetration:r=0.0
+relativeVelHitShift:p2=300.0, 1000.0
+stucking:r=0.7
+stuckingAngle:r=45.0
+explodeTreshold:r=9.0
+bulletType:t="ap_t"
+slopeEffectPreset:t="ap"
+recoilMultiplier:r=0.35
+
+stabilityRicochetModifier{
+  mod1:p2=0.0, 0.2
+  mod2:p2=20.0, 0.4
+  mod3:p2=30.0, 0.6
+  mod3:p2=45.0, 0.9
+}
+
+hitpower{
+  HitPower0m:p2=1.0, 0.0
+  HitPower1000m:p2=0.9, 0.0
+  HitPower10000m:p2=0.8, 10000.0
+}
+
+damage{
+
+  kinetic{
+    damageType:t="generic"
+    demarrePenetrationK:r=1.0
+    demarreSpeedPow:r=1.43
+    demarreMassPow:r=0.71
+    demarreCaliberPow:r=1.07
+  }
+
+  shatter{
+    useRealShatters:b=yes
+    countPortion:r=0.6
+
+    segment{
+      radiusScale:r=1.0
+      penetrationScale:r=0.75
+      damageScale:r=1.5
+      angles:p2=0.0, 180.0
+      countPortion:r=0.4
+    }
+
+    segment{
+      radiusScale:r=1.0
+      penetrationScale:r=1.0
+      damageScale:r=1.75
+      angles:p2=45.0, 105.0
+      countPortion:r=0.5
+    }
+
+    segment{
+      radiusScale:r=1.0
+      penetrationScale:r=1.0
+      damageScale:r=1.5
+      angles:p2=130.0, 180.0
+      countPortion:r=0.1
+    }
+  }
+}
+
+armorpower{
+  ArmorPower0m:p2=106.0, 10.0
+  ArmorPower100m:p2=101.0, 100.0
+  ArmorPower300m:p2=83.0, 300.0
+  ArmorPower500m:p2=65.0, 600.0
+  ArmorPower1000m:p2=50.0, 1000.0
+  ArmorPower1500m:p2=39.0, 1500.0
+  ArmorPower1600m:p2=37.0, 1600.0
+}
+
+tracer{
+  headColor:c=255, 255, 255, 120
+  smokeColor:c=80, 80, 80, 186
+}

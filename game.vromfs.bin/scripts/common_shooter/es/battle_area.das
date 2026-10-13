@@ -1,0 +1,309 @@
+require app
+require ecs
+require ecs.common
+require ecs.safe
+require DagorMath
+require math.base
+require math.linear
+require zones
+require enlisted.events_enlisted
+require game.events_game
+require game.utils.team
+require DagorSystem
+require game.es.battle_area_common
+require DngNet
+require DngDm
+
+
+def find_index_in_kill_list(killList : ecs::Array; visitor : EntityId)
+  return find_index_if(each(killList)) <| $(elem) : bool
+    let elemObj = get_ecs_object(elem)
+    return elemObj != null && visitor == get_Eid(elemObj, "eid") ?? ecs::INVALID_ENTITY_ID
+
+
+def is_in_next_active_battle_area(zonesIn : EidList; team : int)
+  var found = false
+  let curTime = get_sync_time()
+  for zoneEid in zonesIn
+    ecs::query(zoneEid) <| $ [es(REQUIRE=battle_area)] (battle_area__deactivatedAtTime : float = -1.0;
+                                                        battle_area__timeToWarn : float = 0.0;
+                                                        battle_area__team : int = TEAM_UNASSIGNED)
+      if battle_area__team != TEAM_UNASSIGNED && team != battle_area__team
+        return
+      if battle_area__deactivatedAtTime < 0.0 || curTime < battle_area__deactivatedAtTime + battle_area__timeToWarn
+        found = true
+    if found
+      break
+  return found
+
+
+def get_vehicle_time_to_damage(vehicleEid : EntityId; timeByType : Object const?; defTime : float) : float
+  var vehicleTime : float const?
+  if timeByType == null
+    return defTime
+  ecs::query(vehicleEid) <| $ [es] (battle_area__timeToDamageType : string)
+    vehicleTime = get_float(*timeByType, battle_area__timeToDamageType)
+  return vehicleTime ?? defTime
+
+def get_time_to_damage(timeType : das_string const?; timeByType : Object const?; defTime : float) : float
+  if timeType == null || timeByType == null
+    return defTime
+  return get_float(*timeByType, string(*timeType)) ?? defTime
+
+def is_entity_outside_warning_border(victim_eid, zone_eid : EntityId; border_width : float)
+  let victimTm = get_TMatrix(victim_eid, "transform")
+  if victimTm == null || border_width <= 0.0
+    return true
+  let victimPos = (*victimTm)[3]
+  var isOutside = true
+  query(zone_eid) <| $ [es] (battleAreaPoints : Point2List) // assuming that point is outside poly
+    isOutside = !is_distance_to_poly_border_is_less_than(victimPos.xz, battleAreaPoints, border_width)
+  query(zone_eid) <| $ [es(REQUIRE=box_zone)] (transform : float3x4)
+    var transformWithBorder : float3x4
+    extend_zone_by(transform, border_width, transformWithBorder)
+    isOutside = !is_point_in_box_zone(victimPos, transformWithBorder)
+  return isOutside
+
+def get_vehicle_battle_area_border_width_or(eid : EntityId; default_value : float)
+  return get_float(eid, "battle_areas_visitor__noDamageBorderWidth") ?? default_value
+
+[es(tag=server, REQUIRE=battle_area)]
+def battle_area_zone_about_to_deactivate_es(evt : EventEntityAboutToDeactivate;
+                                            deactivationDelay : float;
+                                            var battle_area__deactivatedAtTime : float&;
+                                            var battle_area__deactivateEndTime : float&)
+  battle_area__deactivatedAtTime = get_sync_time()
+  battle_area__deactivateEndTime = battle_area__deactivatedAtTime + deactivationDelay
+
+[es(tag=server, no_order, REQUIRE=battle_area)]
+def battle_area_deactivation_timer(info : ParallelUpdateFrameDelayed; eid : EntityId; var battle_area__deactivateEndTime : float&)
+  if battle_area__deactivateEndTime > 0. && info.curTime > battle_area__deactivateEndTime
+    sendEvent(eid, EventEntityActivate(activate = false))
+    battle_area__deactivateEndTime = -1.
+
+[es(tag=server, REQUIRE=battle_area)]
+def battle_area_zone_reset_time_on_active_changed(evt : EventEntityActivate;
+                                                  var battle_area__deactivatedAtTime : float&;
+                                                  var battle_area__deactivateEndTime : float&)
+  battle_area__deactivatedAtTime = -1.
+  battle_area__deactivateEndTime = -1.
+
+[es(tag=server, REQUIRE=battle_area)]
+def battle_area_zone_deactivate_es(evt : EventEntityActivate; var zone__keepDead : bool&)
+  let activate = evt.activate
+  if activate == false
+    zone__keepDead = false
+
+
+[es(tag=server, no_order)]
+def old_battle_area_warning_es(info : ParallelUpdateFrameDelayed; battle_area__deactivatedAtTime : float; battle_area__timeToWarn : float)
+  if battle_area__deactivatedAtTime >= 0.0
+    let timeFromWarnStart = info.curTime - (battle_area__deactivatedAtTime + battle_area__timeToWarn)
+    if timeFromWarnStart >= 0.0 && timeFromWarnStart <= info.dt
+      ecs::query() <| $ [es] (battle_areas_visitor__zonesIn : EidList; team : int; var isInDeactivatingBattleArea : bool&)
+        isInDeactivatingBattleArea = !is_in_next_active_battle_area(battle_areas_visitor__zonesIn, team)
+
+
+def partisan_near_enemy_respawns_update_es(eid : EntityId)
+  query(eid) <| $ [es] (transform aka soldier_transform : float3x4;
+                        team aka soldier_team : int;
+                        battle_areas_visitor__distSqToEnemyRespawnDamageWarning : float;
+                        battle_areas_visitor__distSqToEnemyRespawnWarning : float;
+                        isOutsideBattleArea : bool;
+                        var isNearEnemyRespawnWarningDamage : bool&;
+                        var isNearEnemyRespawnWarning : bool&;
+                        var nearEnemyRespawnPos : float3&;
+                        battle_areas_visitor__zonesIn : EidList;
+                        battle_areas_visitor__isInEnemyArea : bool;
+                        battle_areas_visitor__canVisitAnyTeamArea : bool;
+                        human_anim__vehicleSelected : ecs::EntityId = INVALID_ENTITY_ID;
+                        battle_area__timeToDamageType : das_string const?)
+    if !battle_areas_visitor__canVisitAnyTeamArea
+      return
+    isNearEnemyRespawnWarningDamage = false
+    isNearEnemyRespawnWarning = false
+    var closestSpawnPointDistSq = -1.
+    if battle_areas_visitor__isInEnemyArea
+      query() <| $ [es(REQUIRE=respbase, REQUIRE_NOT=(playerRespawnBase, customRespawnBase, mobileRespawnTag))] (transform aka resp_transform : float3x4;
+                                                                                                                 team aka resp_team : int;
+                                                                                                                 active : bool)
+        if active && resp_team != soldier_team
+          let distSq = distance_sq(soldier_transform[3], resp_transform[3])
+          if distSq < battle_areas_visitor__distSqToEnemyRespawnWarning
+            isNearEnemyRespawnWarning = true
+            if distance_sq(soldier_transform[3], resp_transform[3]) < battle_areas_visitor__distSqToEnemyRespawnDamageWarning
+              isNearEnemyRespawnWarningDamage = true
+
+            if closestSpawnPointDistSq == -1. || distSq < closestSpawnPointDistSq
+              nearEnemyRespawnPos = resp_transform[3]
+              closestSpawnPointDistSq = distSq
+
+    if isNearEnemyRespawnWarningDamage
+      let anyZoneWasIn = battle_areas_visitor__zonesIn?[0] ?? INVALID_ENTITY_ID
+      query(anyZoneWasIn) <| $ [es] (var battle_area__killList : Array; // put to kill list
+                                     battle_area__timeToDamage : float;
+                                     battle_area__timeToDamageByType : Object const?)
+        let defaultTime = battle_area__timeToDamage
+        let timeByType  = battle_area__timeToDamageByType
+        let visitorType = battle_area__timeToDamageType
+        var timeToDamage = get_time_to_damage(visitorType, timeByType, defaultTime)
+        timeToDamage     = get_vehicle_time_to_damage(human_anim__vehicleSelected, timeByType, timeToDamage)
+        push_to_array(battle_area__killList) <| $(var obj : Object)
+          set(obj, "eid", eid)
+          set(obj, "timer", timeToDamage)
+    elif !isOutsideBattleArea
+      find_query() <| $ [es] (var battle_area__killList : Array) // remove from kill list
+        let idx = find_index_in_kill_list(battle_area__killList, eid)
+        if idx >= 0
+          erase(battle_area__killList, idx)
+          return true // found
+        else
+          return false
+
+[es(tag=server, after=after_net_phys_sync, REQUIRE_NOT=notTakeDamageFromBattleArea)]
+def battle_areas_visitor_update_es(info : ParallelUpdateFrameDelayed;
+                                   eid : EntityId;
+                                   transform : float3x4;
+                                   var battle_areas_visitor__zonesIn : EidList;
+                                   battle_areas_visitor__updateInterval : float;
+                                   var battle_areas_visitor__nextUpdateAt : float&;
+                                   var isOutsideBattleArea : bool&;
+                                   isNearEnemyRespawnWarningDamage : bool;
+                                   zones_visitor__triggerTag : string;
+                                   team : int = TEAM_UNASSIGNED;
+                                   beh_tree__enabled : bool = false;
+                                   battle_area__timeToDamageType : das_string const?;
+                                   human_anim__vehicleSelected : ecs::EntityId = INVALID_ENTITY_ID;
+                                   battle_areas_visitor__canVisitAnyTeamArea : bool = false)
+  if info.curTime < battle_areas_visitor__nextUpdateAt
+    return
+  let updateTimeOveflow = info.curTime - battle_areas_visitor__nextUpdateAt
+  if updateTimeOveflow < battle_areas_visitor__updateInterval
+    battle_areas_visitor__nextUpdateAt += battle_areas_visitor__updateInterval
+  else // either initial update, huge dt or small interval
+    battle_areas_visitor__nextUpdateAt = info.curTime + battle_areas_visitor__updateInterval * eid_frnd(eid)
+
+  let anyZoneWasIn = battle_areas_visitor__zonesIn?[0] ?? INVALID_ENTITY_ID
+
+  var isInFriendlyArea = false
+  clear(battle_areas_visitor__zonesIn)
+  query_active_battle_areas(transform[3], team, zones_visitor__triggerTag) <| $(area_eid)
+    push(battle_areas_visitor__zonesIn, area_eid)
+    isInFriendlyArea = true
+  if battle_areas_visitor__canVisitAnyTeamArea
+    query(eid) <| $ [es] (var battle_areas_visitor__isInEnemyArea : bool&)
+      battle_areas_visitor__isInEnemyArea = false
+      query() <| $ [es] (team__id : int)
+        if team != team__id
+          query_active_battle_areas(transform[3], team__id, zones_visitor__triggerTag) <| $(area_eid)
+            push(battle_areas_visitor__zonesIn, area_eid)
+            if !isInFriendlyArea
+              battle_areas_visitor__isInEnemyArea = true
+  let zonesInLen = length(battle_areas_visitor__zonesIn)
+  if isOutsideBattleArea && zonesInLen > 0 // return to battle area
+    isOutsideBattleArea = false
+    if !isNearEnemyRespawnWarningDamage
+      find_query() <| $ [es] (var battle_area__killList : Array) // remove from kill list
+        let idx = find_index_in_kill_list(battle_area__killList, eid)
+        if idx >= 0
+          erase(battle_area__killList, idx)
+          return true // found
+        else
+          return false
+  elif !!anyZoneWasIn && !isOutsideBattleArea && zonesInLen == 0 // go outside of battle areas
+    print("Entity left the battle area eid={eid} pos={transform[3]} beh_tree={beh_tree__enabled}")
+    isOutsideBattleArea = true
+    query(anyZoneWasIn) <| $ [es] (var battle_area__killList : Array; // put to kill list
+                                   battle_area__timeToDamage : float;
+                                   battle_area__timeToDamageByType : Object const?)
+      let defaultTime = battle_area__timeToDamage
+      let timeByType  = battle_area__timeToDamageByType
+      let visitorType = battle_area__timeToDamageType
+      var timeToDamage = get_time_to_damage(visitorType, timeByType, defaultTime)
+      timeToDamage     = get_vehicle_time_to_damage(human_anim__vehicleSelected, timeByType, timeToDamage)
+      push_to_array(battle_area__killList) <| $(var obj : Object)
+        set(obj, "eid", eid)
+        set(obj, "timer", timeToDamage)
+
+  partisan_near_enemy_respawns_update_es(eid)
+
+[es(tag=server, track=battle_areas_visitor__zonesIn)]
+def battle_areas_visitor_check_deactivating(evt : Event;
+                                            team : int;
+                                            battle_areas_visitor__zonesIn : EidList;
+                                            var isInDeactivatingBattleArea : bool&)
+  isInDeactivatingBattleArea = !is_in_next_active_battle_area(battle_areas_visitor__zonesIn, team)
+
+[es(tag=server, no_order)]
+def battle_area_damage_es(info : ParallelUpdateFrameDelayed;
+                          eid : EntityId;
+                          var battle_area__lastDamageAtTime : float&;
+                          var battle_area__killList : ecs::Array;
+                          battle_area__damage : float;
+                          battle_area__damageInterval : float = 1.0;
+                          battle_area__noDamageBorderWidth : float = 0.0;
+                          transform : float3x4)
+  let dt = info.curTime - battle_area__lastDamageAtTime
+  if dt < battle_area__damageInterval
+    return
+  battle_area__lastDamageAtTime += battle_area__damageInterval
+
+  for elem in battle_area__killList
+    var elemObj = getRW_ecs_object(elem)
+    if elemObj != null
+      var victimTimer = getRW_float(*elemObj, "timer")
+      if victimTimer != null
+        *victimTimer -= dt
+        if *victimTimer > 0.0
+          continue
+        let victimEid = get_Eid(*elemObj, "eid") ?? ecs::INVALID_ENTITY_ID
+        let vehicleEid = get_Eid(victimEid, "human_anim__vehicleSelected") ?? INVALID_ENTITY_ID
+        let borderWidth = get_vehicle_battle_area_border_width_or(vehicleEid, battle_area__noDamageBorderWidth)
+        let isAlive = get_bool(victimEid, "isAlive") ?? false
+        if isAlive && is_entity_outside_warning_border(victimEid, eid, borderWidth)
+          let damageDesc = DamageDesc(DamageType.DM_ZONE, battle_area__damage, transform[3])
+          damage_entity(victimEid, eid, damageDesc)
+
+[es(tag=server, on_event=EventLevelLoaded, REQUIRE=battle_area, REQUIRE=humanTriggerable)]
+def human_battle_area_check_es(evt : Event; eid : EntityId)
+  var bad = false
+  find_query() <| $ [es] (level__fixedBattleAreas : bool; level__navAreas : EidList)
+    if level__fixedBattleAreas
+      bad = true
+      for navAreaEid in level__navAreas
+        if navAreaEid == eid
+          bad = false
+          break
+      return bad
+    return false
+  if bad
+    logerr("This level is using fixed human battle areas, entity /*{eid}*/ should be created before level entity in /*{get_current_scene()}*/")
+
+[es(on_appear)]
+def any_zone_visitor_init(evt : Event; soldier__sKind : string; var battle_areas_visitor__canVisitAnyTeamArea : bool&; var soldier__vehicleUseBlockedByClass : bool&)
+  soldier__vehicleUseBlockedByClass = (soldier__sKind == "partisan") || (soldier__sKind == "saboteur")
+  battle_areas_visitor__canVisitAnyTeamArea = soldier__vehicleUseBlockedByClass
+
+[es(tag=gameClient, REQUIRE=localPlayer, track=possessed)]
+def update_battle_area_ui_on_partisan_soldier_appear(evt : Event; possessed : EntityId)
+  if !!possessed
+    query() <| $ [es] (var battle_area__requireUpdate : bool&)
+      battle_area__requireUpdate = true
+
+[es(tag=gameClient, on_appear, REQUIRE=hero, track=(nearEnemyRespawnPos, isNearEnemyRespawnWarning))]
+def create_ui_damage_zone_for_near_enemy_respawn(evt : Event;
+                                                 isNearEnemyRespawnWarning : bool;
+                                                 nearEnemyRespawnPos : float3)
+  if isNearEnemyRespawnWarning
+    var oneSuitablePointExist = false
+    query() <| $ [es(REQUIRE=enemyRespawnUiDamageZone)] (respawn__targetPos : float3; eid : EntityId)
+      if !oneSuitablePointExist && distance_sq(respawn__targetPos, nearEnemyRespawnPos) < 1.
+        oneSuitablePointExist = true
+      else
+        destroyEntity(eid)
+    if !oneSuitablePointExist
+      createEntity("near_enemy_respawn_ui_damage_zone") <| $(init)
+        set(init, "respawn__targetPos", nearEnemyRespawnPos)
+  else
+    query() <| $ [es(REQUIRE=enemyRespawnUiDamageZone)] (eid : EntityId)
+      destroyEntity(eid)

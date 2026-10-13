@@ -1,0 +1,207 @@
+import:t="%gameBase/gamedata/templates/e_ww2_common/ww2_items.blk"
+
+ger_ww1_gasmask_item{
+  _use:t="attachable_face_equipment"
+  _use:t="node_collapser"
+  animchar__res:t="ger_ww1_gasmask_char"
+  collres__res:t="ger_ww1_gasmask_collision"
+  item__uniqueName:t="ger_ww1_gasmask_item"
+
+  "gasMaskFace:tag"{
+  }
+
+  _group{
+    _tags:t="render"
+
+    "animchar_node_collapser__nodes:object"{
+      "Bip01 Neck":t=""
+      "Bip01 Head":t=""
+    }
+  }
+
+  "skeleton_attach__remapParentSlots:list<t>"{
+    slot:t="face"
+  }
+}
+
+attachable_wear_ger_m17_helmet_item{
+  _use:t="attachable_skined_helmet"
+  item__uniqueName:t="attachable_wear_ger_m17_helmet_item"
+  animchar__res:t="ger_m17_helmet_char"
+  collres__res:t="ger_m17_helmet_collision"
+  animchar_hider__camThreshold:r=0.4
+  item__armorAmount:r=0.1
+
+  "skeleton_attach__remapParentSlots:list<t>"{
+    slot:t="face"
+  }
+}
+
+attachable_wear_ger_ww1_tank_helmet_item{
+  _use:t="attachable_skined_helmet"
+  item__uniqueName:t="attachable_wear_ger_ww1_tank_helmet_item"
+  animchar__res:t="ger_ww1_tank_helmet_char"
+  collres__res:t="ger_ww1_tank_helmet_collision"
+}
+
+attachable_wear_ger_ww1_tanker_overcoat_item{
+  _use:t="attachable_tunic"
+  item__uniqueName:t="attachable_wear_ger_ww1_tanker_overcoat_item"
+  animchar__res:t="ger_ww1_tanker_overcoat_char"
+  collres__res:t="ger_ww1_tanker_overcoat_collision"
+}
+
+attachable_wear_ger_m1907_tunic_item{
+  _use:t="attachable_tunic"
+  item__uniqueName:t="attachable_wear_ger_m1907_tunic_item"
+  animchar__res:t="ger_m1907_tunic_char"
+  collres__res:t="ger_m1907_tunic_collision"
+}
+
+attachable_wear_ger_m15_bluse_w_equip_item{
+  _use:t="attachable_tunic"
+  item__uniqueName:t="attachable_wear_ger_m15_bluse_w_equip_item"
+  animchar__res:t="ger_m15_bluse_w_equip_char"
+  collres__res:t="ger_m15_bluse_w_equip_collision"
+  animchar_fast_phys__res:t="ger_m15_bluse_w_equip_fastphys"
+
+  animchar_fast_phys{
+    _tags:t="gameClient"
+  }
+}
+
+attachable_wear_ger_pants_w_m14_boots_item{
+  _use:t="attachable_pants"
+  item__uniqueName:t="attachable_wear_gangster_pants_item"
+  animchar__res:t="ger_pants_w_m14_boots_char"
+  collres__res:t="ger_pants_w_m14_boots_collision"
+}
+
+uk_ww1_1917_gasmask_item{
+  _use:t="attachable_face_equipment"
+  _use:t="node_collapser"
+  animchar__res:t="uk_ww1_1917_gasmask_char"
+  collres__res:t="uk_ww1_1917_gasmask_collision"
+  item__uniqueName:t="uk_ww1_1917_gasmask_item"
+
+  "gasMaskFace:tag"{
+  }
+
+  _group{
+    _tags:t="render"
+
+    "animchar_node_collapser__nodes:object"{
+      "Bip01 Neck":t=""
+      "Bip01 Head":t=""
+    }
+  }
+
+  "skeleton_attach__remapParentSlots:list<t>"{
+    slot:t="face"
+  }
+}
+
+attachable_wear_uk_mk1_brodie_helmet_item{
+  _use:t="attachable_skined_helmet"
+  item__uniqueName:t="attachable_wear_uk_mk1_brodie_helmet_item"
+  animchar__res:t="uk_mk1_brodie_helmet_char"
+  collres__res:t="uk_mk1_brodie_helmet_collision"
+  animchar_hider__camThreshold:r=0.4
+  item__armorAmount:r=0.1
+}
+
+attachable_wear_uk_sd_tunic_w_webbing_item{
+  _use:t="attachable_tunic"
+  item__uniqueName:t="attachable_wear_uk_sd_tunic_w_webbing_item"
+  animchar__res:t="uk_sd_tunic_w_webbing_char"
+  collres__res:t="uk_sd_tunic_w_webbing_collision"
+  animchar_fast_phys__res:t="uk_sd_tunic_w_webbing_fastphys"
+
+  animchar_fast_phys{
+    _tags:t="gameClient"
+  }
+}
+
+attachable_wear_uk_ww1_tanker_coverall_item{
+  _use:t="attachable_tunic"
+  item__uniqueName:t="attachable_wear_uk_ww1_tanker_coverall_item"
+  animchar__res:t="uk_ww1_tanker_coverall_char"
+  collres__res:t="uk_ww1_tanker_coverall_collision"
+}
+
+attachable_wear_uk_sd_trousers_w_b5_boots_item{
+  _use:t="attachable_pants"
+  item__uniqueName:t="attachable_wear_gangster_pants_item"
+  animchar__res:t="uk_sd_trousers_w_b5_boots_char"
+  collres__res:t="uk_sd_trousers_w_b5_boots_collision"
+}
+
+attachable_wear_uk_ww1_breeches_item{
+  _use:t="attachable_pants"
+  item__uniqueName:t="attachable_wear_uk_ww1_breeches_item"
+  animchar__res:t="uk_ww1_breeches_char"
+  collres__res:t="uk_ww1_breeches_collision"
+}
+
+gas_mask_cockpit{
+  _use:t="binocular_cockpit_base"
+  animchar__res:t="gasmask_visor_char"
+  cockpit__offset:p3=0.0, 0.0, 0.01
+  cockpit__scale:p3=0.08, 0.08, 1.4
+}
+
+ger_ww1_gasmask_weapon_item{
+  _use:t="item"
+  _use:t="animchar"
+  _use:t="weapon_slot_attachable"
+  animchar__res:t="ger_ww1_gasmask_weapon_char"
+  collres__res:t="ger_ww1_gasmask_weapon_collision"
+  item__uniqueName:t="ger_ww1_gasmask_weapon_item"
+  animchar_render__enabled:b=yes
+  gun__visible:b=yes
+  human_gun_attached:b=no
+  gun_attach__slot:t="weapon"
+  gun_attach__mainSlotId:i=-1
+  gun_attach__alternativeSlot:t="weapon"
+  gun_attach__altSlotId:i=-1
+  gas_mask__animEnumName:t="ger_ww1_gasmask_weapon"
+  gas_mask__animEnumValue:i=-1
+  gas_mask__faceItemTemplate:t="ger_ww1_gasmask_item"
+
+  "gasMask:tag"{
+  }
+
+  "attachmentUpdate:tag"{
+  }
+
+  "gun__owner:eid"{
+  }
+}
+
+uk_ww1_gasmask_weapon_item{
+  _use:t="item"
+  _use:t="animchar"
+  _use:t="weapon_slot_attachable"
+  animchar__res:t="uk_ww1_gasmask_weapon_char"
+  collres__res:t="uk_ww1_gasmask_weapon_collision"
+  item__uniqueName:t="uk_ww1_gasmask_weapon_item"
+  animchar_render__enabled:b=yes
+  gun__visible:b=yes
+  human_gun_attached:b=no
+  gun_attach__slot:t="weapon"
+  gun_attach__mainSlotId:i=-1
+  gun_attach__alternativeSlot:t="weapon"
+  gun_attach__altSlotId:i=-1
+  gas_mask__animEnumName:t="uk_ww1_gasmask_weapon"
+  gas_mask__animEnumValue:i=-1
+  gas_mask__faceItemTemplate:t="uk_ww1_1917_gasmask_item"
+
+  "gasMask:tag"{
+  }
+
+  "attachmentUpdate:tag"{
+  }
+
+  "gun__owner:eid"{
+  }
+}

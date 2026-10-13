@@ -1,0 +1,20 @@
+disable_update{
+
+  "disableUpdate:tag"{
+  }
+
+  "attachmentUpdate:tag"{
+  }
+}
+
+phys_sleepable{
+  phys__isAsleep:b=no
+  _replicated:t="phys__isAsleep"
+  _tracked:t="phys__isAsleep"
+  sleep_phys__animInterpTimeDef:r=1.0
+  sleep_phys__animInterpTime:r=0.0
+  sleep_phys__lastUpdateAtControls:i=0
+
+  "animchar__actOnCreate:tag"{
+  }
+}

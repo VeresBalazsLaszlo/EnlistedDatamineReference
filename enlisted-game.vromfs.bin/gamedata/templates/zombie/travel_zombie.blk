@@ -1,0 +1,6172 @@
+halloween_ger_base_soldier{
+  _use:t="ger_base_soldier"
+  human_net_phys__blk:t="content/enlisted_extra/gamedata/units/walkers/halloween_event_soldier.blk"
+}
+
+halloween_jap_base_soldier{
+  _use:t="jap_base_soldier"
+  human_net_phys__blk:t="content/enlisted_extra/gamedata/units/walkers/halloween_event_soldier.blk"
+}
+
+halloween_ussr_base_soldier{
+  _use:t="ussr_base_soldier"
+  human_net_phys__blk:t="content/enlisted_extra/gamedata/units/walkers/halloween_event_soldier.blk"
+}
+
+halloween_usa_base_soldier{
+  _use:t="usa_base_soldier"
+  human_net_phys__blk:t="content/enlisted_extra/gamedata/units/walkers/halloween_event_soldier.blk"
+}
+
+movement_zombie_boss_very_slow{
+  navmesh_phys__maxWalkSpeed:r=1.5
+  path_corridor_ai__slowDownCoef:r=0.5
+}
+
+movement_zombie_boss_slow{
+  navmesh_phys__maxWalkSpeed:r=2.0
+  path_corridor_ai__slowDownCoef:r=0.5
+}
+
+movement_zombie_boss_normal{
+  navmesh_phys__maxWalkSpeed:r=3.0
+  path_corridor_ai__slowDownCoef:r=0.35
+}
+
+movement_zombie_boss_fast{
+  navmesh_phys__maxWalkSpeed:r=3.5
+  path_corridor_ai__slowDownCoef:r=0.3
+}
+
+movement_zombie_elite{
+  navmesh_phys__maxWalkSpeed:r=3.5
+  path_corridor_ai__slowDownCoef:r=0.35
+}
+
+zombie_force_dome_resources{
+  _use:t="force_dome_resources"
+  _singleton:b=yes
+
+  _group{
+    _tags:t="render"
+    force_dome__texture_res:t="force_field_stone_noise_a_tex_n"
+    force_dome__texture_var:t="forcedome_diffuse_texture"
+  }
+
+  _group{
+    _track:b=yes
+    force_dome__edge_intensity:r=120.0
+    force_dome__edge_thinness:r=10.0
+    force_dome__texture_scale:r=0.09
+    force_dome__brightness:r=0.05
+    force_dome__maxBrightness:r=1.0
+    force_dome__restoreBrightnessTime:r=1.0
+    force_dome__restoreBrightnessAtTime:r=-1.0
+    force_dome__initBrightness:r=0.05
+    force_dome__color:p4=0.3, 0.0, 0.5, 0.11
+  }
+}
+
+zombie_spawner_mode_soldier_easy{
+  _use:t="zombie_spawner_mode_soldier"
+  zombie_mode__maxSelfresCount:i=3
+  zombie__navmeshMaxSpawnEnemyNearMinMaxCount:p2=35.0, 0.0
+
+  "zombie__navmeshAutoSpawnerWeight:list<r>"{
+    chance:r=2.0
+    chance:r=24.0
+    chance:r=6.0
+    chance:r=0.0
+    chance:r=1.0
+    chance:r=8.0
+    chance:r=0.0
+    chance:r=0.0
+    chance:r=0.5
+    chance:r=0.0
+    chance:r=0.5
+    chance:r=0.0
+    chance:r=0.0
+    chance:r=0.0
+    chance:r=0.0
+    chance:r=0.0
+    chance:r=0.0
+    chance:r=0.0
+    chance:r=0.0
+    chance:r=0.0
+    chance:r=0.0
+    chance:r=0.0
+    chance:r=0.0
+    chance:r=0.0
+    chance:r=16.0
+    chance:r=0.0
+    chance:r=0.0
+    chance:r=0.0
+    chance:r=0.0
+    chance:r=0.0
+    chance:r=0.0
+    chance:r=0.0
+    chance:r=0.0
+    chance:r=0.0
+    chance:r=0.0
+    chance:r=0.0
+    chance:r=0.0
+    chance:r=0.0
+    chance:r=0.0
+  }
+}
+
+block_slot_weap{
+  _use:t="replicating"
+  _use:t="disable_item_drop"
+
+  "emptyGunHolder:tag"{
+  }
+}
+
+zombie_spawner_mode_soldier{
+  hitpoints__alwaysDowned:b=yes
+  zombie_mode__resupplyGrenadesNum:i=1
+  zombie_mode__antiTankResupplyGrenadesNum:i=2
+  zombie_mode__resupplyMedkitsNum:i=1
+  zombie_mode__medicResupplyMedkitsNum:i=3
+  zombie_mode__medicBoxPlaceCooldown:r=300.0
+  zombie_mode__maxSelfresCount:i=1
+  human_hit_tagging__override:r=0.0
+  _tracked:t="human_hit_tagging__override"
+  human__minRessuplyTime:r=0.5
+  human__lastRessuplyAt:r=-1.0
+  human__lastRessuplyMedkitAt:r=-1.0
+  human__lastRessuplyGrenadeAt:r=-1.0
+  _use:t="heal_anim_item"
+  _use:t="zombie_mode_soldier_loot_sound_paths"
+  item__healTargetAnimEnumName:t="first_aid_revive"
+  item__targetUseVisEntityTemplateName:t="germ_syringe_in_use"
+  item__reviveAmount:r=2.0
+  item__useTimeToTarget:r=5.0
+  item__lootSoundType:t="healing"
+  zombie_laser__alreadyTargeted:b=no
+  human_inventory__canSelfRevive:b=no
+  zombie__navmeshNextCheckSpawnAt:r=-1.0
+  zombie__nearestNavmeshSearchRadius:r=50.0
+  zombie__nearestNavmeshSpawnSpread:r=6.0
+  zombie__navmeshCheckEnemyRadius:r=65.0
+  zombie__navmeshAutoSpawnerMinPeriod:r=0.5
+  zombie__navmeshMaxSpawnEnemyNear:i=0
+  zombie__navmeshMaxSpawnEnemyNearMinMaxCount:p2=42.0, 0.0
+  zombie__navmeshMaxSpawnEnemyNearZoneMaxDist:r=60.0
+  zombie__navmeshCapzoneNextCheckAtTime:r=-1.0
+  zombie__navmeshAgressionLimits:p2=20.0, 20.0
+
+  "still_obstacles__disable:tag"{
+  }
+
+  "canReviveWithoutItem:tag"{
+  }
+
+  "canBeUsedOutOfInventory:tag"{
+  }
+
+  "zombie_mode_human:tag"{
+  }
+
+  "zombie__navmeshAutoSpawnerTemplates:list<t>"{
+    zombie:t="zombie_walk_zombie"
+    zombie:t="zombie_rush_zombie"
+    zombie:t="zombie_rush_shield"
+    zombie:t="zombie_rush_shield_fun"
+    zombie:t="zombie_rush_cart_wheel"
+    zombie:t="zombie_rush_metal_bucket"
+    zombie:t="zombie_rush_bmw_wheel"
+    zombie:t="zombie_rush_bmw_wheel_fast"
+    zombie:t="zombie_rush_moto"
+    zombie:t="zombie_rush_moto_fast"
+    zombie:t="zombie_rush_train_door"
+    zombie:t="zombie_rush_train_door_fast"
+    zombie:t="zombie_rush_spitfire_prop"
+    zombie:t="zombie_rush_zombie_explosive"
+    zombie:t="zombie_rush_zombie_explosive_fast"
+    zombie:t="zombie_rush_zombie_explosive_very_fast"
+    zombie:t="zombie_rush_zombie_phosphor"
+    zombie:t="zombie_rush_zombie_phosphor_fast"
+    zombie:t="zombie_rush_zombie_phosphor_very_fast"
+    zombie:t="zombie_rush_zombie_fire"
+    zombie:t="zombie_rush_bomb"
+    zombie:t="zombie_rush_bomb_fast"
+    zombie:t="zombie_rush_bomb_down"
+    zombie:t="zombie_rush_bomb_down_fast"
+    zombie:t="imp_zombie_shooter"
+    zombie:t="zombie_mp_3008_armored"
+    zombie:t="zombie_mp40_armored"
+    zombie:t="zombie_ppd_armored"
+    zombie:t="zombie_stg_44_armored"
+    zombie:t="zombie_gewehr_armored"
+    zombie:t="zombie_rush_zombie_paratrooper"
+    zombie:t="zombie_flammenwerfer_armored"
+    zombie:t="zombie_sturmpistole_armored"
+    zombie:t="zombie_panzerfaust_armored"
+    zombie:t="zombie_giant_zombie"
+    zombie:t="zombie_elite_zombie"
+    zombie:t="zombie_elite_moto"
+    zombie:t="zombie_elite_shield"
+    zombie:t="zombie_elite_spitfire_prop"
+  }
+
+  "zombie__navmeshAutoSpawnerWeight:list<r>"{
+    chance:r=2.0
+    chance:r=16.0
+    chance:r=6.0
+    chance:r=0.0
+    chance:r=1.0
+    chance:r=3.0
+    chance:r=0.0
+    chance:r=0.0
+    chance:r=0.5
+    chance:r=0.0
+    chance:r=0.5
+    chance:r=0.0
+    chance:r=0.0
+    chance:r=0.0
+    chance:r=0.0
+    chance:r=0.0
+    chance:r=0.0
+    chance:r=0.0
+    chance:r=0.0
+    chance:r=0.0
+    chance:r=0.0
+    chance:r=0.0
+    chance:r=0.0
+    chance:r=0.0
+    chance:r=8.0
+    chance:r=1.0
+    chance:r=0.0
+    chance:r=0.0
+    chance:r=0.0
+    chance:r=0.0
+    chance:r=0.0
+    chance:r=0.0
+    chance:r=0.0
+    chance:r=0.0
+    chance:r=0.0
+    chance:r=0.0
+    chance:r=0.0
+    chance:r=0.0
+    chance:r=0.0
+  }
+
+  "zombie__navmeshAutoSpawnerChanceRange:list<r>"{
+  }
+
+  "unlocked_special_weapons:list<t>"{
+  }
+}
+
+zombie_travel_paratrooper_base{
+  simple_spawner__nextSpawnPeriod:r=3.0
+  simple_spawner__nextSpawnAtTime:r=-1.0
+  simple_spawner__spawnsCount:i=1
+  simple_spawner__additionalHeight:r=400.0
+  simple_spawner__randomRadius:r=20.0
+  simple_spawner__template:t="zombie_rush_zombie_paratrooper"
+  isAlive:b=yes
+  zombie__skipReactHumansInDome:b=no
+
+  "simple_spawner__zonesPos:list<p3>"{
+  }
+
+  "zombie:tag"{
+  }
+}
+
+zombie_travel_paratrooper_position_one_spawner{
+  _use:t="zombie_travel_paratrooper_base"
+  simple_spawner__spawnsCount:i=5
+  killLogName:t="zombie/uber_paratrooper"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, 0.0, 0.0]]
+  simple_spawner__template:t="zombie_rush_zombie_paratroopertravel_zombie_additional"
+
+  "simple_spawner__useOwnPos:tag"{
+  }
+}
+
+zombie_travel_paratrooper_one_spawner{
+  _use:t="zombie_travel_paratrooper_base"
+  simple_spawner__spawnsCount:i=5
+  killLogName:t="zombie/uber_paratrooper"
+  simple_spawner__template:t="zombie_rush_zombie_paratrooper+travel_zombie_additional"
+
+  "simple_spawner__useHumansAsSpawn:tag"{
+  }
+}
+
+zombie_arena_paratrooper_one_spawner{
+  _use:t="zombie_travel_paratrooper_base"
+  simple_spawner__spawnsCount:i=5
+  killLogName:t="zombie/uber_paratrooper"
+  simple_spawner__template:t="zombie_rush_zombie_paratrooper+arena_zombie"
+
+  "simple_spawner__useArenaAsSpawn:tag"{
+  }
+}
+
+player_zombie_mode_comps{
+
+  "player__ownedPersonalBoxEids:list<eid>"{
+  }
+
+  "player_zombieMode:tag"{
+  }
+}
+
+zone_zombie_additional{
+  zombie__reactOnlyOnClosest:b=yes
+  _tracked:t="zombie__reactOnlyOnClosest"
+  _tracked:t="active"
+  _tracked:t="zombie_zone__hp"
+  _tracked:t="zombie_zone__agressive"
+  zombie__deadEffect:t="hit_blood_explosion_effect"
+  zombie__deadEffectNode:t="Bip01 Spine"
+  active:b=no
+  _replicated:t="active"
+  _replicated:t="zombie_zone__hp"
+  _replicated:t="zombie_zone__agressive"
+  zombie_zone__hp:i=0
+  zombie_zone__agressive:b=no
+  beh_tree__blackboard__enemyRadius:r=35.0
+  zombie__findClosestTargetDist:r=35.0
+  zone_zombie__completed:b=no
+  bomb_site__plantingTeam:i=-1
+  bomb_site__isBombPlanted:b=no
+  objective__activationBriefing:t="objective/eliteActive"
+  objective__deactivationBriefing:t="objective/eliteDeactivate"
+
+  "zone_zombie:tag"{
+  }
+
+  "zombie_objective:tag"{
+  }
+
+  "bomb_site__disableDestoy:tag"{
+  }
+
+  "bomb_site__capzoneEid:eid"{
+  }
+}
+
+travel_zombie_additional{
+  zombie__reactOnlyOnClosest:b=yes
+  zombie__maxDistanceToHuman:r=70.0
+  zombie__minDistToObjectiveCleaner:r=30.0
+  zombie__readyForObjectiveCleaner:b=no
+  zombie__maxDistanceCheckAtTime:r=-1.0
+  zombie__maxDistanceCheckPeriod:r=5.0
+
+  "travel_zombie:tag"{
+  }
+}
+
+build__mark_all_teams{
+
+  "build__markForAllTeams:tag"{
+  }
+}
+
+marker_for_guns{
+  _tracked:t="outline__enabled"
+  _replicated:t="outline__enabled"
+  outline__enabled:b=no
+  outline__always_visible:b=yes
+  outline__color:c=255, 0, 0, 255
+  buildingRadius:r=0.5
+  building_menu__image:t="pistol"
+  marker_for_guns__yOffset:r=0.2
+
+  "marker_for_gunsTag:tag"{
+  }
+}
+
+zombie_travel_mode{
+  _use:t="replicating"
+  _use:t="team_bots_data"
+  _use:t="zombie_patrol_objective_controller"
+  _use:t="zombie_crater_projector_manager"
+  _use:t="zombie_force_dome_resources"
+  _use:t="zone_force_field"
+  _use:t="navmesh_disabler"
+  _use:t="zombie_postfx_ovveride"
+  team__id:i=3
+  team__capturePenalty:r=1001.0
+  team__scoreCap:r=3000.0
+  team__score:r=3000.0
+  travel_zombie__isFirstObjective:b=yes
+  travel_zombie__lastObjectivePos:p3=0.0, 0.0, 0.0
+  travel_zombie__delayedActivateObjName:t=""
+  travel_zombie__delayedActivateObjAtTime:r=-1.0
+  entity_spawner__aliveZombiesLimit:i=100
+  entity_spawner__aliveZombiesCount:i=0
+  _tracked:t="entity_spawner__aliveZombiesCount"
+  _tracked:t="zombie_mode_sessionWaitTime"
+  _tracked:t="zombie_mode_sessionEndTime"
+  _tracked:t="entity_spawner__activeCratersCount"
+  _tracked:t="entity_spawner__aliveCratersCount"
+  _replicated:t="entity_spawner__aliveZombiesCount"
+  _replicated:t="zombie_mode_sessionWaitTime"
+  _replicated:t="zombie_mode_sessionEndTime"
+  _replicated:t="entity_spawner__activeCratersCount"
+  _replicated:t="entity_spawner__aliveCratersCount"
+  entity_spawner__soldierAddTempl:t="zombie_spawner_mode_soldier"
+  entity_spawner__playerAddTempl:t="player_zombie_mode_comps"
+  zombie_mode__sessionFinished:b=no
+  zombie_mode_sessionWaitTime:r=15.0
+  zombie_mode_sessionEndTime:r=-1.0
+  entity_spawner__activeCratersCount:i=0
+  entity_spawner__aliveCratersCount:i=0
+  zombie_mode__tokenNominal:i=40
+  zombie_mode__maxTokensAmount:i=120
+  zombie_mode__overrideBuildingsHp:r=1200.0
+
+  "disableBombCrater:tag"{
+  }
+
+  "entity_spawner__aliveHumans:list<eid>"{
+  }
+
+  "fire_obstacle__disabler:tag"{
+  }
+
+  "entity_spawner__activeCraters:list<eid>"{
+  }
+
+  "zombie_travel_mode:tag"{
+  }
+
+  "zombie_team_ui:tag"{
+  }
+
+  "zombie_mode__tokenParams:tag"{
+  }
+
+  "zombie_mode__unlocksIds:list<t>"{
+    value:t="fg_42_model_2_blood_unlock"
+    value:t="stg_44_blood_unlock"
+    value:t="thompson_m1928a1_50_drum_blood_unlock"
+    value:t="ppsh_41_blood_unlock"
+    value:t="type_100_mg_blood_unlock"
+    value:t="browning_m1919a6_blood_unlock"
+    value:t="rd_44_blood_unlock"
+  }
+
+  "zombie_mode__unlocksTemplates:list<t>"{
+    value:t="fg_42_halloween_gun_item+item_in_world+ui_visible+disable_update"
+    value:t="stg_44_halloween_gun_item+item_in_world+ui_visible+disable_update"
+    value:t="thompson_m1928a1_50_drum_halloween_gun_item+item_in_world+ui_visible+disable_update"
+    value:t="ppsh_41_halloween_gun_item+item_in_world+ui_visible+disable_update"
+    value:t="type_100_mg_halloween_gun_item+item_in_world+ui_visible+disable_update"
+    value:t="browning_m1919a6_halloween_gun_item+item_in_world+ui_visible+disable_update"
+    value:t="rd_44_halloween_gun_item+item_in_world+ui_visible+disable_update"
+  }
+
+  "zombie_mode__awardsSectorNames:list<t>"{
+    value:t="sector_1"
+    value:t="sector_2"
+    value:t="sector_3"
+    value:t="sector_4"
+  }
+
+  "zombie_mode__awardsSectorTokens:list<i>"{
+    item:i=0
+    item:i=10
+    item:i=10
+    item:i=20
+  }
+}
+
+zombie_travel_mode_easy{
+  _use:t="zombie_travel_mode"
+  entity_spawner__soldierAddTempl:t="zombie_spawner_mode_soldier_easy"
+  zombie_patrol__spawnPeriod:p2=120.0, 180.0
+
+  "objective_spawner__waves:array"{
+
+    "wave:object"{
+      zombie_rush_zombie:i=15
+      zombie_rush_metal_bucket:i=2
+      zombie_rush_cart_wheel:i=1
+      imp_zombie_shooter:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=5
+      zombie_rush_metal_bucket:i=2
+      zombie_rush_cart_wheel:i=1
+      imp_zombie_shooter:i=3
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=5
+      zombie_rush_metal_bucket:i=2
+      zombie_rush_cart_wheel:i=1
+      zombie_rush_zombie_explosive:i=1
+      imp_zombie_shooter:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=6
+      zombie_rush_metal_bucket:i=1
+      zombie_rush_cart_wheel:i=1
+      imp_zombie_shooter:i=3
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=3
+      zombie_rush_metal_bucket:i=1
+      zombie_rush_cart_wheel:i=1
+      zombie_rush_spitfire_prop:i=1
+      imp_zombie_shooter:i=3
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=6
+      imp_zombie_shooter:i=6
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=3
+      zombie_rush_metal_bucket:i=2
+      zombie_rush_bmw_wheel:i=1
+      zombie_rush_moto:i=1
+      imp_zombie_shooter:i=3
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=5
+      zombie_rush_metal_bucket:i=3
+      zombie_rush_bmw_wheel:i=2
+      zombie_rush_moto:i=1
+      imp_zombie_shooter:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=5
+      zombie_rush_metal_bucket:i=3
+      zombie_rush_bmw_wheel:i=2
+      zombie_rush_moto:i=2
+      imp_zombie_shooter:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=10
+      zombie_rush_metal_bucket:i=3
+      zombie_rush_bmw_wheel:i=1
+      zombie_rush_moto:i=1
+      zombie_rush_spitfire_prop:i=2
+    }
+  }
+}
+
+zombie_wave_objective_base{
+  active:b=no
+  _tracked:t="active"
+  _tracked:t="objective_spawner__active"
+  _tracked:t="objective_spawner__alreadySpawnInWave"
+  _tracked:t="objective_spawner__nextActivationAfterTime"
+  _tracked:t="objective_spawner__curWaveId"
+  _tracked:t="objective_spawner__counstSpawnInWave"
+  _replicated:t="active"
+  _replicated:t="objective_spawner__active"
+  _replicated:t="objective_spawner__alreadySpawnInWave"
+  _replicated:t="objective_spawner__nextActivationAfterTime"
+  _replicated:t="objective_spawner__curWaveId"
+  _replicated:t="objective_spawner__wavesCount"
+  _replicated:t="objective_spawner__counstSpawnInWave"
+  objective_spawner__active:b=no
+  objective_spawner__waveEndTime:b=no
+  objective_spawner__alreadySpawnInWave:i=-1
+  objective_spawner__nextActivationAfterTime:r=-1.0
+  objective_spawner__activationPeriod:r=30.0
+  objective_spawner__curWaveId:i=0
+  objective_spawner__wavesCount:i=0
+  objective_spawner__counstSpawnInWave:i=-1
+  objective_spawner__briefing:t=""
+  objective_spawner__briefingTime:r=7.0
+  objective_spawner__retriggerAtTime:r=-1.0
+
+  "objective_spawner__waves:array"{
+
+    "wave:object"{
+      zombie_rush_zombie:i=16
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=16
+    }
+  }
+
+  _group{
+    _tags:t="server"
+    objective_spawner__radius:r=35.0
+    objective_spawner__spawnsCount:i=100
+    objective_spawner__aliveZombiesLimit:i=150
+    objective_spawner__nextSpawnPeriod:r=1.0
+    objective_spawner__nextSpawnAtTime:r=-1.0
+    objective_spawner__minDistToHuman:r=10.0
+
+    "objective_spawner__spawns:list<p3>"{
+    }
+
+    "objective_spawner__wavesTemplates:list<t>"{
+    }
+
+    "objective_spawner__count:list<i>"{
+    }
+  }
+}
+
+zombie_arise{
+  _use:t="replicated_game_effect"
+  game_effect__forceAnimState:t="arise"
+  game_effect__forceAnimStateId:i=-1
+  travelzombie__zombieEnableTime:r=2.5
+  travelzombie__zombieEnableAt:r=0.0
+
+  "zombie_arise:tag"{
+  }
+}
+
+zombie_ability{
+  _use:t="replicated_game_effect"
+  game_effect__forceAnimState:t="attack_ability1"
+  game_effect__forceAnimStateId:i=-1
+  zombie_ability__endTime:r=0.0
+}
+
+imp_zombie_shoot_ability{
+  _use:t="replicated_game_effect"
+  game_effect__forceAnimState:t="attack_shoot"
+  game_effect__forceAnimStateId:i=-1
+  zombie_ability__endTime:r=0.0
+}
+
+imp_zombie_bomb_ability{
+  _use:t="replicated_game_effect"
+  game_effect__forceAnimState:t="attack_bomb"
+  game_effect__forceAnimStateId:i=-1
+  zombie_ability__endTime:r=0.0
+}
+
+zombie_imp_base_mode{
+  _tracked:t="random_animchar_vars__varLimits"
+
+  "random_animchar_vars__varNames:list<t>"{
+    name:t="run_anim_selecror"
+    name:t="walk_anim_selecror"
+  }
+
+  "random_animchar_vars__varLimits:list<p2>"{
+    range:p2=0.5, 4.49
+    range:p2=0.5, 2.49
+  }
+}
+
+zombie_imp_soldier{
+  _use:t="zombie_rush_zombie"
+  _use:t="zombie_imp_base_mode"
+  animchar__res:t="imp_soldier"
+  collres__res:t="imp_soldier_collision"
+  visual_entity_offset__nodeName:t="Bip01 HeadNub"
+  navmesh_phys__maxWalkSpeed:r=3.3
+  path_corridor_ai__slowDownCoef:r=0.4
+  human_broken_bones__tearOffImpulse:r=7.5
+  human_broken_bones__tearOffImpulseUp:r=1.0
+  human_broken_bones__tearOffFxTemplate:t="hit_blood_limb_effect+zombie_tear_off_limb_sound"
+  human_broken_bones__disableBloodFxForTornOffPart:b=yes
+
+  "torn_wounds__name_list:list<t>"{
+    name:t="imp_neck"
+  }
+}
+
+imp_zombie_shooter{
+  _use:t="zombie_imp_soldier"
+  _use:t="zombie_red_emissive"
+  killLogName:t="zombie/imp_shooting"
+  zombie_ability__animTime:r=1.0
+  zombie_ability__activated:b=no
+  zombie_avility__subTemplate:t="imp_zombie_shoot_ability"
+  _tracked:t="zombie_ability__activated"
+  _replicated:t="zombie_ability__activated"
+  zombie_boss__abilityActivatedLastTime:r=-1.0
+  zombie_boss__abilityActivatePeriod:r=-1.0
+  zombie_boss__abilityActivatePeriodRange:p2=5.0, 15.0
+  zombie_boss__abilityActivateDist:r=30.0
+  zombie_giant_boss_shell__speedRange:p2=5.0, 5.0
+  zombie_giant_boss_shell__xAngleRange:p2=0.0, 0.0
+  zombie_giant_boss_shell__yAngleRange:p2=0.0, 0.0
+  zombie_giant_boss__activation_delay_time:r=1.0
+  zombie_giant_boss_shell__periodTime:r=0.25
+  zombie_giant_boss_shell__spawn_count:i=1
+  zombie_giant_boss_shell__nodeName:t="Bip01 Neck"
+  zombie_giant_boss_shell__templateName:t="small_quick_shell_auto_gun_item"
+  zombie_boss__ability_random_target:b=yes
+  zombie_boss__ability_random_target_trace:b=yes
+
+  "zombie_giant_boss_shell__itemEid:eid"{
+  }
+
+  "shell_auto_gun__shootTarget:tag"{
+  }
+}
+
+imp_zombie_bomb{
+  _use:t="zombie_imp_soldier"
+  _use:t="zombie_pink_emissive"
+  killLogName:t="zombie/imp_ball"
+  zombie_ability__animTime:r=1.5
+  zombie_ability__activated:b=no
+  zombie_avility__subTemplate:t="imp_zombie_bomb_ability"
+  _tracked:t="zombie_ability__activated"
+  _replicated:t="zombie_ability__activated"
+  zombie_boss__abilityActivatedLastTime:r=-1.0
+  zombie_boss__abilityActivatePeriod:r=-1.0
+  zombie_boss__abilityActivatePeriodRange:p2=5.0, 15.0
+  zombie_boss__abilityActivateDist:r=45.0
+  zombie_giant_boss_shell__speedRange:p2=10.0, 14.0
+  zombie_giant_boss_shell__xAngleRange:p2=-25.0, -25.0
+  zombie_giant_boss_shell__yAngleRange:p2=20.0, 20.0
+  zombie_giant_boss__activation_delay_time:r=0.6
+  zombie_giant_boss_shell__periodTime:r=3.0
+  zombie_giant_boss_shell__spawn_count:i=1
+  zombie_giant_boss_shell__nodeName:t="Bip01 Neck"
+  zombie_giant_boss_shell__templateName:t="shell_auto_gun_item"
+  zombie_boss__ability_random_target:b=yes
+
+  "zombie_giant_boss_shell__itemEid:eid"{
+  }
+}
+
+zombie_giant_zombie_easy{
+  _use:t="zombie_giant_zombie"
+  _use:t="movement_zombie_boss_normal"
+  hitpoints__hp:r=1250.0
+  hitpoints__maxHp:r=1250.0
+  hitpoints__scaleHp:r=1250.0
+}
+
+zombie_giant_boss_balls_zombie_easy{
+  _use:t="zombie_giant_boss_balls_zombie"
+  hitpoints__hp:r=10000.0
+  hitpoints__maxHp:r=10000.0
+  hitpoints__scaleHp:r=10000.0
+}
+
+zombie_giant_boss_balls_zombie{
+  _use:t="zombie_giant_zombie"
+  _use:t="zombie_giant_boss_balls_zombie_sound_override"
+  _use:t="zombie_pink_bright_emissive"
+  _use:t="movement_zombie_boss_normal"
+  killLogName:t="zombie/boss_balls"
+  hitpoints__hp:r=20000.0
+  hitpoints__maxHp:r=20000.0
+  hitpoints__scaleHp:r=20000.0
+  zombie_ability__animTime:r=2.2
+  zombie_ability__activated:b=no
+  zombie_avility__subTemplate:t="zombie_ability"
+  _tracked:t="zombie_ability__activated"
+  _replicated:t="zombie_ability__activated"
+  zombie_boss__abilityActivatedLastTime:r=-1.0
+  zombie_boss__abilityActivatePeriod:r=-1.0
+  zombie_boss__abilityActivatePeriodRange:p2=5.0, 10.0
+  zombie_boss__abilityActivateDist:r=60.0
+  zombie_giant_boss_shell__speedRange:p2=12.0, 16.0
+  zombie_giant_boss_shell__xAngleRange:p2=0.0, 360.0
+  zombie_giant_boss_shell__yAngleRange:p2=20.0, 20.0
+  zombie_giant_boss__activation_delay_time:r=0.6
+  zombie_giant_boss_shell__periodTime:r=3.0
+  zombie_giant_boss_shell__spawn_count:i=12
+  zombie_giant_boss_shell__nodeName:t="Bip01 Neck"
+  zombie_giant_boss_shell__templateName:t="shell_auto_gun_item"
+  zombie_boss__ability_random_target:b=yes
+
+  "zombie_giant_boss_shell__itemEid:eid"{
+  }
+}
+
+zombie_giant_boss_shooting_zombie_easy{
+  _use:t="zombie_giant_boss_shooting_zombie"
+  hitpoints__hp:r=10000.0
+  hitpoints__maxHp:r=10000.0
+  hitpoints__scaleHp:r=10000.0
+}
+
+zombie_imp_boss_mode{
+  _tracked:t="random_animchar_vars__varLimits"
+
+  "random_animchar_vars__varNames:list<t>"{
+    name:t="run_anim_selecror"
+    name:t="walk_anim_selecror"
+  }
+
+  "random_animchar_vars__varLimits:list<p2>"{
+    range:p2=0.5, 4.49
+    range:p2=0.5, 1.4
+  }
+}
+
+zombie_giant_boss_shooting_zombie{
+  _use:t="imp_zombie_shooter"
+  _use:t="zombie_imp_boss_mode"
+  _use:t="zombie_giant_boss_shooting_zombie_sound_override"
+  _use:t="movement_zombie_boss_very_slow"
+  killLogName:t="zombie/boss_shooting"
+  hitpoints__hp:r=20000.0
+  hitpoints__maxHp:r=20000.0
+  hitpoints__scaleHp:r=20000.0
+  navmesh_phys__walkSpeedModifier:r=1.0
+  nPhys__animcharScale:r=1.7
+  zombie_ability__animTime:r=2.5
+  zombie_ability__activated:b=no
+  zombie_avility__subTemplate:t="imp_zombie_shoot_ability"
+  _tracked:t="zombie_ability__activated"
+  _replicated:t="zombie_ability__activated"
+  zombie_boss__abilityActivatedLastTime:r=-1.0
+  zombie_boss__abilityActivatePeriod:r=-1.0
+  zombie_boss__abilityActivatePeriodRange:p2=1.0, 5.0
+  zombie_boss__abilityActivateDist:r=60.0
+  zombie_giant_boss_shell__speedRange:p2=10.0, 10.0
+  zombie_giant_boss_shell__xAngleRange:p2=-10.0, 10.0
+  zombie_giant_boss_shell__yAngleRange:p2=-3.0, 3.0
+  zombie_giant_boss__activation_delay_time:r=0.25
+  zombie_giant_boss_shell__periodTime:r=0.25
+  zombie_giant_boss_shell__spawn_count:i=1
+  zombie_giant_boss_shell__nodeName:t="Bip01 Neck"
+  zombie_giant_boss_shell__templateName:t="quick_shell_auto_gun_item"
+  zombie_boss__ability_random_target:b=yes
+  zombie_boss__ability_random_target_trace:b=yes
+
+  "loc_snapshots__scaledTransform:tag"{
+  }
+
+  "zombie_giant_boss_shell__itemEid:eid"{
+  }
+
+  "shell_auto_gun__shootTarget:tag"{
+  }
+
+  "actions__actions:array"{
+
+    "action:object"{
+      name:t="stand_melee"
+      state:t="attack"
+      actionTime:r=1.0
+      applyAt:r=0.3
+      props:t="gamedata/actions_enlisted/zombie_big_claw.blk"
+      irq:t="claw_attack"
+      varName:t="attack_progress"
+    }
+  }
+}
+
+zombie_flamethrower_gun{
+  _use:t="flamethrower_portable_no_2_lifebuoy_gun_item"
+  _use:t="zombie_flamethrower_gun_sound_override"
+  flamethrower__streamDamagePerSecond:r=400.0
+  flamethrower__cloudDamagePerSecond:r=100.0
+}
+
+zombie_flamethrower_base{
+  _use:t="zombie_giant_zombie"
+  zombie_ability__animTime:r=4.0
+  zombie_ability__activated:b=no
+  zombie_avility__subTemplate:t="zombie_ability"
+  _tracked:t="zombie_ability__activated"
+  _replicated:t="zombie_ability__activated"
+  _replicated:t="zombie_giant_boss_flamethrower__itemEid"
+  _replicated:t="zombie_giant_boss_flamethrower__targetPos"
+  zombie_boss__abilityActivatedLastTime:r=-1.0
+  zombie_boss__abilityActivatePeriod:r=-1.0
+  zombie_boss__abilityActivatePeriodRange:p2=10.0, 20.0
+  zombie_boss__abilityActivateDist:r=60.0
+  zombie_giant_boss_flamethrower__targetPos:p3=0.0, 0.0, 0.0
+  zombie_giant_boss_flamethrower__template:t="zombie_flamethrower_gun+flamethrower_auto_shot"
+  zombie_giant_boss_flamethrower__lastState:i=0
+  zombie_giant_boss_flamethrower__lastApplyedState:i=0
+
+  "zombie_giant_boss_flamethrower__itemEid:eid"{
+  }
+
+  "zombie_giant_boss_flamethrower__targetPath:object"{
+
+    "20:object"{
+      start:p2=10.0, 70.0
+      end:p2=-10.0, 70.0
+    }
+
+    "40:object"{
+      start:p2=-10.0, 70.0
+      end:p2=0.0, 70.0
+    }
+
+    "70:object"{
+      start:p2=0.0, 70.0
+      end:p2=40.0, 5.0
+    }
+
+    "100:object"{
+      start:p2=40.0, 5.0
+      end:p2=-40.0, -10.0
+    }
+  }
+}
+
+zombie_giant_boss_laser_zombie_easy{
+  _use:t="zombie_giant_boss_laser_zombie"
+  hitpoints__hp:r=10000.0
+  hitpoints__maxHp:r=10000.0
+  hitpoints__scaleHp:r=10000.0
+}
+
+zombie_red_laser_gun{
+  _use:t="lightthrower_germany_gun_item"
+  _use:t="zombie_red_laser_gun_sound_override"
+  beamColor:p3=255.0, 10.0, 10.0
+  burnTime:r=0.005
+  flamethrower__streamEffectTemplate:t="event_zombie_lazer_muzzle_effect"
+  flamethrower__hitEffectTemplate:t="event_zombie_lazer_muzzle_effect"
+  flamethrower__maxFlameLength:r=75.0
+  flamethrower__streamDamagePerSecond:r=400.0
+  flamethrower__cloudDamagePerSecond:r=400.0
+
+  "zombie__lazerGun:tag"{
+  }
+}
+
+zombie_giant_boss_laser_zombie{
+  _use:t="zombie_flamethrower_base"
+  _use:t="zombie_giant_boss_laser_zombie_sound_override"
+  _use:t="movement_zombie_boss_normal"
+  killLogName:t="zombie/boss_laser"
+  hitpoints__hp:r=20000.0
+  hitpoints__maxHp:r=20000.0
+  hitpoints__scaleHp:r=20000.0
+  zombie_ability__animTime:r=4.0
+  zombie_giant_boss_flamethrower__offset:p3=0.0, 1.2, 0.0
+  zombie_giant_boss_flamethrower__template:t="zombie_red_laser_gun+flamethrower_auto_shot"
+
+  "zombie_giant_boss_flamethrower__staticY:tag"{
+  }
+
+  "zombie_giant_boss_flamethrower__targetPath:object"{
+
+    "50:object"{
+      start:p2=-20.0, -45.0
+      end:p2=-20.0, 0.0
+    }
+
+    "60:object"{
+      start:p2=-20.0, 0.0
+      end:p2=52.0, 0.0
+    }
+
+    "100:object"{
+      start:p2=52.0, 0.0
+      end:p2=340.0, 0.0
+    }
+  }
+}
+
+zombie_giant_boss_flamethrower_zombie_easy{
+  _use:t="zombie_giant_boss_flamethrower_zombie"
+  hitpoints__hp:r=10000.0
+  hitpoints__maxHp:r=10000.0
+  hitpoints__scaleHp:r=10000.0
+}
+
+zombie_giant_boss_flamethrower_zombie{
+  _use:t="zombie_flamethrower_base"
+  _use:t="zombie_giant_boss_flamethrower_zombie_sound_override"
+  _use:t="zombie_orange_bright_emissive"
+  _use:t="movement_zombie_boss_normal"
+  killLogName:t="zombie/boss_flamethrower"
+  zombie_giant_boss_flamethrower__nodeName:t="Bip01 Head"
+  hitpoints__hp:r=20000.0
+  hitpoints__maxHp:r=20000.0
+  hitpoints__scaleHp:r=20000.0
+  zombie_ability__animTime:r=3.0
+  zombie_boss__abilityActivatePeriodRange:p2=8.0, 18.0
+}
+
+flamethrower_auto_shot{
+  _use:t="replicating"
+  animchar__turnDir:b=yes
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, 0.0, 0.0]]
+  gun__ammo:i=100000
+  gun__maxAmmo:i=100000
+  flamethrower_auto_shoot__nodeIndex:i=-1
+  flamethrower_auto_shoot__offset:p3=0.0, 0.0, 0.0
+  flamethrower_auto_shoot__canShoot:b=no
+  flamethrower_auto_shoot__gunDir:p3=0.0, 0.0, -1.0
+  _replicated:t="flamethrower_auto_shoot__ownerEid"
+  animchar_render__enabled:b=no
+  gun__visible:b=no
+  animchar__updatable:b=yes
+
+  "flamethrower_auto_shoot__ownerEid:eid"{
+  }
+
+  "animchar__physSymDependence:tag"{
+  }
+}
+
+zombie_lava_crater_a{
+  _use:t="rendinst"
+  _use:t="replicating"
+  ri_extra__name:t="lava_crater_a"
+  effect__scale:r=1.0
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, 0.0, 0.0]]
+  zombie_crater__shellsNum:i=0
+  zombie_crater__shellsMax:i=1
+  zombie_crater__autoSpawnHumanDist:r=40.0
+  zombie_crater__spawnPeriod:r=1.5
+  zombie_crater__next_spawnAtTime:r=0.0
+  effect__colorMult:c=255, 15, 0, 200
+
+  effect{
+    _tags:t="render"
+  }
+
+  _group{
+    _tags:t="render"
+    effect__name:t="envir_smoke_checkpoint_cmps_fx"
+  }
+}
+
+arena_zombie_not_count{
+
+  "arena_zombie_not_count:tag"{
+  }
+}
+
+arena_zombie{
+
+  "arena_zombie:tag"{
+  }
+
+  "objective_spawner__owner:eid"{
+  }
+}
+
+arena_zombie_boss_base{
+  zombie__deadEffect:t="hit_blood_explosion_effect"
+  zombie__deadEffectNode:t="Bip01 Spine"
+  zombie_arena__killsCost:i=1000
+
+  "arena_zombie:tag"{
+  }
+
+  "arena_zombie_boss:tag"{
+  }
+}
+
+arena_activator_tombstone{
+  _use:t="rendinst"
+  _use:t="replicating"
+  _use:t="undestroyable_ri_extra"
+  _use:t="animchar"
+  ri_extra__name:t="demon_altar_cls"
+  animchar__res:t="demon_altar_char"
+
+  "zombie_arena_activator:tag"{
+  }
+
+  "isRendinstDestr:tag"{
+    _tags:t="render"
+  }
+}
+
+event_zombie_arena_trail_effect{
+  _use:t="replicating"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, 0.0, 0.0]]
+
+  effect{
+    _tags:t="render"
+  }
+
+  _group{
+    _tags:t="render"
+    effect__name:t="event_foolmoon_energy_trail_cmps_fx"
+    effect__distance_scale:r=1.0
+  }
+}
+
+force_dome_disable_change_transform{
+
+  "force_dome__disableChangeTransform:tag"{
+  }
+}
+
+human_enable_invulnerable{
+
+  "invulnerable:tag"{
+  }
+}
+
+random_weapon_box_travel_mode{
+  _use:t="item"
+  _use:t="animchar"
+  _use:t="item_in_world"
+  _use:t="ui_visible"
+  _use:t="disable_update"
+  _use:t="main_weap_slots"
+  item__iconYaw:r=-90.0
+  item__ui_priority:i=2
+  item__lootType:t="gun"
+  item__lootSoundType:t="weapon"
+  gun__propsId:i=-1
+  gun__maxAmmo:i=0
+  dropTm:m=[[0.0, 1.0, 0.0] [0.0, 0.0, -1.0] [-1.0, 0.0, 0.0] [0.0, 0.03, 0.0]]
+  gun__customSkin:t=""
+  item__weapTemplate:t="random_weapon_box"
+  item__name:t="items/random_weapon_box"
+  item__weapType:t="random_weapon_box"
+  item__weight:r=4.7
+  gun__locName:t="Weapon Box"
+  item__template:t="random_weapon_box"
+  item__proto:t="gamedata/weapons/empty.blk"
+  gun__blk:t="gamedata/weapons/empty.blk"
+  animchar__res:t="jap_toolbox_char"
+  collres__res:t="jap_toolbox_collision"
+
+  "item__specialPickup:tag"{
+  }
+
+  "paid_loot_item:tag"{
+  }
+
+  "paid_loot__weapTemplates:list<t>"{
+    item:t="ppd_34_halloween_gun_item+item_in_world+ui_visible+disable_update"
+    item:t="m3a1_grease_halloween_gun_item+item_in_world+ui_visible+disable_update"
+    item:t="sten_mk2_halloween_gun_item+item_in_world+ui_visible+disable_update"
+    item:t="type_100_smg_early_halloween_gun_item+item_in_world+ui_visible+disable_update"
+    item:t="m1_garand_halloween_gun_item+item_in_world+ui_visible+disable_update"
+    item:t="svt_40_halloween_gun_item+item_in_world+ui_visible+disable_update"
+    item:t="winchester_model_1912_halloween_gun_item+item_in_world+ui_visible+disable_update"
+  }
+
+  "paid_loot__weapRandomizeWeight:list<r>"{
+    item:r=10.0
+    item:r=10.0
+    item:r=10.0
+    item:r=10.0
+    item:r=10.0
+    item:r=10.0
+    item:r=10.0
+  }
+
+  "paid_loot__weapChanceRange:list<r>"{
+  }
+
+  "item__id:i"{
+    value:i=0
+    _hide:b=yes
+  }
+}
+
+zombie_patrol_objective_controller{
+  _use:t="zombie_patrol_objective_waves"
+  zombie_patrol__objectiveWavesCount:i=0
+  zombie_patrol__objectiveCheckPeriod:r=1.0
+  zombie_patrol__humansInObjective:b=no
+  zombie_patrol__objectiveCheckAtTime:r=-1.0
+  zombie_patrol__spawnPeriod:p2=100.0, 135.0
+  zombie_patrol__spawnTimer:r=-1.0
+  patrols_spawner__selectedState:i=-1
+  _tracked:t="patrols_spawner__selectedState"
+  _tracked:t="patrols_spawner__percentProgressUI"
+  _tracked:t="zombie_patrol__spawnTimerDebugUIInfo"
+  _tracked:t="zombie_patrol__spawnCountDebugUIInfo"
+  _tracked:t="zombie_patrol__selectedWaveDebugUIInfo"
+  _replicated:t="patrols_spawner__selectedState"
+  _replicated:t="patrols_spawner__percentProgressUI"
+  _replicated:t="zombie_patrol__spawnTimerDebugUIInfo"
+  _replicated:t="zombie_patrol__spawnCountDebugUIInfo"
+  _replicated:t="zombie_patrol__selectedWaveDebugUIInfo"
+  patrols_spawner__percentProgressUI:i=0
+  zombie_patrol__spawnTimerDebugUIInfo:i=-1
+  zombie_patrol__spawnCountDebugUIInfo:i=0
+  zombie_patrol__selectedWaveDebugUIInfo:i=0
+  zombie_patrol__spawnRadius:r=70.0
+  zombie_patrol__humanObjectiveDist:r=50.0
+  zombie_patrol__distToRandHuman:r=30.0
+
+  "patrol_objective_controller:tag"{
+  }
+}
+
+zombie_ragdoll_soldier{
+  _use:t="animchar"
+  _use:t="ragdoll_common"
+  _use:t="dead_entity"
+  animchar__res:t="ger_summer_1_char"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, 0.0, 0.0]]
+  ragdoll__active:b=yes
+  ragdoll__deactivationFactor:r=0.1
+  ragdoll__use_ccd:b=yes
+}
+
+zombie_patrol_objective_waves{
+
+  "objective_spawner__waves:array"{
+
+    "wave:object"{
+      zombie_rush_zombie:i=30
+      zombie_rush_metal_bucket:i=3
+      zombie_rush_cart_wheel:i=3
+      imp_zombie_shooter:i=6
+      imp_zombie_bomb:i=2
+      zombie_elite_moto:i=1
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=20
+      zombie_rush_metal_bucket:i=3
+      zombie_rush_cart_wheel:i=3
+      zombie_rush_zombie_explosive:i=1
+      zombie_elite_zombie:i=2
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=20
+      zombie_rush_metal_bucket:i=3
+      zombie_rush_cart_wheel:i=3
+      zombie_rush_zombie_explosive:i=1
+      imp_zombie_shooter:i=4
+      zombie_elite_zombie:i=2
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=20
+      zombie_rush_metal_bucket:i=15
+      zombie_rush_cart_wheel:i=3
+      zombie_elite_zombie:i=2
+      zombie_elite_shield:i=1
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=20
+      zombie_rush_metal_bucket:i=5
+      zombie_rush_cart_wheel:i=2
+      zombie_rush_spitfire_prop:i=6
+      zombie_elite_zombie:i=2
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=30
+      zombie_rush_metal_bucket:i=3
+      imp_zombie_shooter:i=8
+      imp_zombie_bomb:i=4
+      zombie_elite_shield:i=2
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=20
+      zombie_rush_metal_bucket:i=3
+      zombie_rush_bmw_wheel:i=4
+      zombie_rush_moto:i=3
+      zombie_rush_train_door:i=4
+      imp_zombie_shooter:i=2
+      zombie_elite_shield:i=1
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=20
+      zombie_rush_metal_bucket:i=3
+      zombie_rush_bmw_wheel:i=4
+      zombie_rush_moto:i=3
+      zombie_rush_train_door:i=4
+      zombie_rush_zombie_explosive:i=1
+      imp_zombie_shooter:i=5
+      zombie_elite_moto:i=1
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=20
+      zombie_rush_metal_bucket:i=3
+      zombie_rush_bmw_wheel:i=4
+      zombie_rush_moto:i=3
+      zombie_rush_train_door:i=4
+      zombie_rush_zombie_phosphor:i=1
+      imp_zombie_shooter:i=3
+      imp_zombie_bomb:i=2
+      zombie_elite_shield:i=1
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=20
+      zombie_rush_metal_bucket:i=3
+      zombie_rush_bmw_wheel:i=4
+      zombie_rush_moto:i=3
+      zombie_rush_train_door:i=2
+      zombie_rush_spitfire_prop:i=4
+      zombie_rush_zombie_explosive:i=1
+      zombie_elite_zombie:i=2
+    }
+  }
+}
+
+zombie_patrol_objective{
+  _use:t="zombie_wave_objective_base"
+  _use:t="zombie_patrol_objective_waves"
+  _use:t="zombie_patrol_objective_sound"
+  objective_spawner__checkSpawnPath:b=no
+  objective_spawners__walkSpeedMultRange:p2=0.95, 1.04
+  objective_spawner__destroyOnComplete:b=yes
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, 0.0, 0.0]]
+
+  "zombie_patrol:tag"{
+  }
+
+  _group{
+    _tags:t="server"
+    objective_spawner__spawnsCount:i=5
+    objective_spawner__nextSpawnPeriod:r=0.1
+    objective_spawner__radius:r=4.0
+
+    "objective_spawner__priorityTarget:eid"{
+    }
+  }
+}
+
+zombie_build_target{
+
+  "zombie_objective__buildTarget:tag"{
+  }
+}
+
+radio_lights{
+  _use:t="dynmat_params_base"
+  radio_lights__count:i=8
+  radio_lights__curRelState:i=0
+  radio_light__nextBlinkPeriod:r=0.5
+  radio_light__nextBlinkAtTime:r=-1.0
+  radio_light__blinkState:b=no
+  radio_light__completeBlinkingCount:i=5
+  radio_light__completeBlinkingMaxCount:i=5
+  radio_light__completeState:b=no
+  radio_light__completeBlinkStateChangedMul:r=0.4
+  radio_light__nextBlinkStateChangedMul:r=1.5
+  radio_lights__completedColor:p4=0.0, 1.0, 0.0, 1.0
+  radio_lights__failedColor:p4=1.0, 0.0, 0.0, 1.0
+
+  "dynamic_material_channels_arr:array"{
+    _tags:t="render"
+
+    "dynamic_material_channel:object"{
+      dynamic_material_type:t="emissive"
+      dynmat_param__emissive_color:p4=1.0, 0.0, 0.0, 10.0
+      dynmat_param__emission_albedo_mult:r=1.0
+    }
+
+    "dynamic_material_channel:object"{
+      dynamic_material_type:t="emissive"
+      dynmat_param__emissive_color:p4=1.0, 0.0, 0.0, 1.0
+      dynmat_param__emission_albedo_mult:r=1.0
+    }
+
+    "dynamic_material_channel:object"{
+      dynamic_material_type:t="emissive"
+      dynmat_param__emissive_color:p4=1.0, 0.0, 0.0, 10.0
+      dynmat_param__emission_albedo_mult:r=1.0
+    }
+
+    "dynamic_material_channel:object"{
+      dynamic_material_type:t="emissive"
+      dynmat_param__emissive_color:p4=1.0, 0.0, 0.0, 1.0
+      dynmat_param__emission_albedo_mult:r=1.0
+    }
+
+    "dynamic_material_channel:object"{
+      dynamic_material_type:t="emissive"
+      dynmat_param__emissive_color:p4=1.0, 0.0, 0.0, 10.0
+      dynmat_param__emission_albedo_mult:r=1.0
+    }
+
+    "dynamic_material_channel:object"{
+      dynamic_material_type:t="emissive"
+      dynmat_param__emissive_color:p4=1.0, 0.0, 0.0, 1.0
+      dynmat_param__emission_albedo_mult:r=1.0
+    }
+
+    "dynamic_material_channel:object"{
+      dynamic_material_type:t="emissive"
+      dynmat_param__emissive_color:p4=1.0, 0.0, 0.0, 10.0
+      dynmat_param__emission_albedo_mult:r=1.0
+    }
+
+    "dynamic_material_channel:object"{
+      dynamic_material_type:t="emissive"
+      dynmat_param__emissive_color:p4=1.0, 0.0, 0.0, 1.0
+      dynmat_param__emission_albedo_mult:r=1.0
+    }
+  }
+}
+
+sleeping_zombie{
+  beh_tree__enabled:b=no
+
+  "loc_snapshots__dontUpdate:tag"{
+  }
+
+  "loc_snaphots__disabled:tag"{
+  }
+}
+
+zombie_radar_animchar{
+  _use:t="rendinst"
+  _use:t="radio_lights"
+  _use:t="replicating"
+  _use:t="animchar"
+  animchar__res:t="radar_hardware_02_with_indicator_char"
+  ri_extra__name:t="radar_hardware_02_with_indicator_cls"
+}
+
+zombie_radio_objective{
+  _use:t="zombie_wave_objective_base"
+  _use:t="zombie_radio_objective_net_sound"
+  _use:t="zombie_radar_animchar"
+  objective_spawner__addSubTemplate:t="zombie_arise"
+  objective__activationBriefing:t="objective/radioActive"
+  objective__deactivationBriefing:t="objective/radioDeactivate"
+  objective_spawner__activationPeriod:r=60.0
+  objective_radio__addTimeOnDamage:r=1.0
+  zombie__nearestNavmeshSearchRadius:r=15.0
+  objective_radio__objectiveSpawnerTimeRange:p2=0.3, 1.0
+  objective_radio__spawnerTimeRangePeriod:r=35.0
+  objective_radio__spawnerTimeRangeEndTime:r=-1.0
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, 0.0, 0.0]]
+  bomb_site__plantingTeam:i=-1
+  bomb_site__isBombPlanted:b=no
+  bomb_site__canResetProgressByInteraction:b=no
+  bomb_site__maxDist:r=3.0
+  active:b=yes
+  _tracked:t="active"
+  _replicated:t="active"
+  zombie_radio_objective__useText:t="hud/action_radio_plant"
+
+  "bomb_site__disableDestoy:tag"{
+  }
+
+  "zombie_radio:tag"{
+  }
+
+  "zombie_objective:tag"{
+  }
+
+  "zombie_objective__priorityTarget:tag"{
+  }
+
+  "objective_spawner__waves:array"{
+
+    "wave:object"{
+      wave_briefing:t="wave_briefing/radio_activated"
+      zombie_rush_zombie:i=25
+      zombie_rush_metal_bucket:i=3
+      zombie_rush_cart_wheel:i=5
+      imp_zombie_shooter:i=5
+    }
+
+    "wave:object"{
+      wave_briefing:t="wave_briefing/radio_activated"
+      zombie_rush_zombie:i=14
+      zombie_rush_metal_bucket:i=5
+      zombie_rush_cart_wheel:i=7
+      zombie_rush_bmw_wheel:i=5
+      zombie_rush_moto:i=3
+      zombie_rush_shield:i=7
+      zombie_rush_train_door:i=3
+      zombie_rush_spitfire_prop:i=6
+      zombie_rush_zombie_phosphor:i=2
+      zombie_rush_zombie_explosive:i=1
+      imp_zombie_shooter:i=10
+      imp_zombie_bomb:i=3
+    }
+
+    "wave:object"{
+      wave_briefing:t="wave_briefing/radio_activated"
+      zombie_rush_zombie:i=13
+      zombie_rush_metal_bucket:i=8
+      zombie_rush_cart_wheel:i=6
+      zombie_rush_bmw_wheel:i=6
+      zombie_rush_moto:i=4
+      zombie_rush_shield:i=4
+      zombie_rush_train_door:i=6
+      zombie_rush_spitfire_prop:i=8
+      zombie_rush_zombie_phosphor:i=2
+      zombie_rush_zombie_explosive:i=1
+      imp_zombie_shooter:i=10
+      imp_zombie_bomb:i=5
+    }
+  }
+
+  _group{
+    _tags:t="server"
+    objective_spawner__nextSpawnPeriod:r=0.5
+    objective_spawner__radius:r=45.0
+  }
+
+  "bomb_site__capzoneEid:eid"{
+  }
+
+  "bomb_site__operator:eid"{
+  }
+
+  "item__customUsePrompt:t"{
+    _tag:t="ui"
+    value:t=""
+  }
+}
+
+zombie_radio_objective_gunners{
+  _use:t="zombie_radio_objective"
+
+  "objective_spawner__waves:array"{
+
+    "wave:object"{
+      wave_briefing:t="wave_briefing/radio_activated"
+      zombie_rush_zombie:i=25
+      zombie_rush_metal_bucket:i=3
+      zombie_rush_cart_wheel:i=5
+      imp_zombie_shooter:i=5
+    }
+
+    "wave:object"{
+      wave_briefing:t="wave_briefing/radio_activated"
+      zombie_rush_zombie:i=14
+      zombie_rush_metal_bucket:i=5
+      zombie_rush_cart_wheel:i=5
+      zombie_rush_bmw_wheel:i=5
+      zombie_rush_moto:i=3
+      zombie_rush_shield:i=7
+      zombie_rush_train_door:i=3
+      zombie_rush_spitfire_prop:i=6
+      zombie_rush_zombie_phosphor:i=2
+      zombie_rush_zombie_explosive:i=1
+      zombie_luger_armored:i=2
+      zombie_mp_3008_armored:i=2
+      imp_zombie_shooter:i=8
+      imp_zombie_bomb:i=3
+    }
+
+    "wave:object"{
+      wave_briefing:t="wave_briefing/radio_activated"
+      zombie_rush_zombie:i=13
+      zombie_rush_metal_bucket:i=6
+      zombie_rush_cart_wheel:i=6
+      zombie_rush_bmw_wheel:i=4
+      zombie_rush_moto:i=4
+      zombie_rush_shield:i=4
+      zombie_rush_train_door:i=4
+      zombie_rush_spitfire_prop:i=8
+      zombie_rush_zombie_phosphor:i=2
+      zombie_rush_zombie_explosive:i=1
+      zombie_luger_armored:i=3
+      zombie_mp_3008_armored:i=1
+      zombie_mp40_armored:i=2
+      imp_zombie_shooter:i=10
+      imp_zombie_bomb:i=5
+    }
+  }
+}
+
+zombie_radio_objective_open_space{
+  _use:t="zombie_radio_objective"
+
+  _group{
+    _tags:t="server"
+    objective_spawner__nextSpawnPeriod:r=0.5
+    objective_spawner__radius:r=45.0
+  }
+}
+
+zombie_radio_objective_medium{
+  _use:t="zombie_radio_objective"
+  objective_spawner__activationPeriod:r=45.0
+
+  "objective_spawner__waves:array"{
+
+    "wave:object"{
+      wave_briefing:t="wave_briefing/radio_activated"
+      zombie_rush_zombie:i=17
+      zombie_rush_metal_bucket:i=1
+      zombie_rush_cart_wheel:i=2
+      imp_zombie_shooter:i=3
+    }
+
+    "wave:object"{
+      wave_briefing:t="wave_briefing/radio_activated"
+      zombie_rush_zombie:i=10
+      zombie_rush_metal_bucket:i=3
+      zombie_rush_cart_wheel:i=4
+      zombie_rush_bmw_wheel:i=3
+      zombie_rush_moto:i=2
+      zombie_rush_shield:i=3
+      zombie_rush_train_door:i=2
+      zombie_rush_spitfire_prop:i=4
+      zombie_rush_zombie_phosphor:i=1
+      zombie_rush_zombie_explosive:i=1
+      imp_zombie_shooter:i=9
+    }
+
+    "wave:object"{
+      wave_briefing:t="wave_briefing/radio_activated"
+      zombie_rush_zombie:i=10
+      zombie_rush_metal_bucket:i=6
+      zombie_rush_cart_wheel:i=4
+      zombie_rush_bmw_wheel:i=4
+      zombie_rush_moto:i=3
+      zombie_rush_shield:i=3
+      zombie_rush_train_door:i=4
+      zombie_rush_spitfire_prop:i=6
+      zombie_rush_zombie_phosphor:i=1
+      zombie_rush_zombie_explosive:i=1
+      imp_zombie_shooter:i=9
+      imp_zombie_bomb:i=3
+    }
+  }
+}
+
+zombie_radio_objective_medium_close_respawn{
+  _use:t="zombie_radio_objective_medium"
+
+  _group{
+    _tags:t="server"
+    objective_spawner__nextSpawnPeriod:r=0.5
+    objective_spawner__radius:r=35.0
+  }
+}
+
+zombie_radio_objective_open_space_medium{
+  _use:t="zombie_radio_objective_medium"
+
+  _group{
+    _tags:t="server"
+    objective_spawner__nextSpawnPeriod:r=0.5
+    objective_spawner__radius:r=45.0
+  }
+}
+
+zombie_radio_objective_easy{
+  _use:t="zombie_radio_objective"
+  objective_spawner__activationPeriod:r=40.0
+
+  "objective_spawner__waves:array"{
+
+    "wave:object"{
+      wave_briefing:t="wave_briefing/radio_activated"
+      zombie_rush_zombie:i=12
+      zombie_rush_metal_bucket:i=2
+      zombie_rush_cart_wheel:i=2
+      imp_zombie_shooter:i=3
+    }
+
+    "wave:object"{
+      wave_briefing:t="wave_briefing/radio_activated"
+      zombie_rush_zombie:i=15
+      zombie_rush_metal_bucket:i=4
+      zombie_rush_shield:i=8
+      imp_zombie_shooter:i=6
+      imp_zombie_bomb:i=2
+    }
+
+    "wave:object"{
+      wave_briefing:t="wave_briefing/radio_activated"
+      zombie_rush_zombie:i=15
+      zombie_rush_metal_bucket:i=5
+      zombie_rush_cart_wheel:i=1
+      zombie_rush_bmw_wheel:i=1
+      zombie_rush_shield:i=1
+      zombie_rush_train_door:i=2
+      zombie_rush_zombie_phosphor:i=2
+      zombie_rush_zombie_explosive:i=1
+      imp_zombie_shooter:i=8
+      imp_zombie_bomb:i=2
+    }
+  }
+}
+
+zombie_radio_objective_easy_close_respawn{
+  _use:t="zombie_radio_objective_easy"
+
+  _group{
+    _tags:t="server"
+    objective_spawner__nextSpawnPeriod:r=0.5
+    objective_spawner__radius:r=35.0
+  }
+}
+
+zombie_radio_objective_gunners_easy{
+  _use:t="zombie_radio_objective_easy"
+  objective_spawner__activationPeriod:r=40.0
+
+  "objective_spawner__waves:array"{
+
+    "wave:object"{
+      wave_briefing:t="wave_briefing/radio_activated"
+      zombie_rush_zombie:i=12
+      zombie_rush_metal_bucket:i=2
+      zombie_rush_cart_wheel:i=2
+      imp_zombie_shooter:i=3
+    }
+
+    "wave:object"{
+      wave_briefing:t="wave_briefing/radio_activated"
+      zombie_rush_zombie:i=15
+      zombie_rush_metal_bucket:i=4
+      zombie_rush_shield:i=7
+      zombie_luger_armored:i=1
+      imp_zombie_shooter:i=6
+      imp_zombie_bomb:i=2
+    }
+
+    "wave:object"{
+      wave_briefing:t="wave_briefing/radio_activated"
+      zombie_rush_zombie:i=15
+      zombie_rush_metal_bucket:i=4
+      zombie_rush_cart_wheel:i=1
+      zombie_rush_bmw_wheel:i=1
+      zombie_rush_shield:i=1
+      zombie_rush_train_door:i=2
+      zombie_rush_zombie_phosphor:i=2
+      zombie_rush_zombie_explosive:i=1
+      zombie_luger_armored:i=2
+      imp_zombie_shooter:i=8
+      imp_zombie_bomb:i=2
+    }
+  }
+}
+
+zombie_radio_objective_open_space_easy{
+  _use:t="zombie_radio_objective_easy"
+  objective_spawner__activationPeriod:r=40.0
+
+  _group{
+    _tags:t="server"
+    objective_spawner__nextSpawnPeriod:r=0.5
+    objective_spawner__radius:r=45.0
+  }
+}
+
+zombie_crater_projector_manager{
+  _use:t="projectors_manager"
+  projectors_manager__atmosphereDensity:r=1.0
+  projectors_manager__atmosphereMoveDir:p3=1.0, 0.0, 0.0
+  projectors_manager__atmosphereMoveSpeed:r=0.0
+  projectors_manager__noiseScale:r=30.0
+  projectors_manager__noiseStrength:r=1.0
+}
+
+zombie_crater_projector{
+  _use:t="projector"
+  projector__color:p3=1.0, 0.2, 0.784
+  _tracked:t="projector__color"
+  projector__angle:r=2.0
+  projector__sourceWidth:r=6.0
+  projector__length:r=35.0
+  projector__zAngleAmplitude:r=0.0
+  projector__period:r=18.0
+}
+
+zombie_crater_objective{
+  _use:t="rendinst"
+  _use:t="replicating"
+  _use:t="undestroyable_ri_extra"
+  _use:t="zombie_wave_objective_base"
+  _use:t="zombie_crater_objective_sound"
+  _use:t="demon_portal_placeable"
+  _use:t="replicating"
+  zombie_crater__effectOnDestroy:t="event_zombie_explosion_portal"
+  zombie_crater__nextRes:t="demon_portal_dmg_placeable"
+  zombie_objective__overridePatrolsDistSq:r=0.0
+  zombie_objective__overrideCratersDistOnDestroy:r=100.0
+  objective__activationBriefing:t="objective/craterActive"
+  objective__deactivationBriefing:t="objective/craterDeactivate"
+  objective_spawner__checkSpawnPath:b=no
+  objective_spawner__multiplier:r=1.0
+  _tracked:t="objective_spawner__multiplier"
+  _tracked:t="zombie_crater__humansNear"
+  _tracked:t="active"
+  _replicated:t="objective_spawner__multiplier"
+  _replicated:t="zombie_crater__humansNear"
+  _replicated:t="active"
+  objective_spawner__multiplierRange:p2=5.0, 1.0
+  zombie_crater__humansNear:b=no
+  zombie_crater__shellsNum:i=0
+  zombie_crater__shellsMax:i=1
+  zombie_crater__firstWaveHumanDist:r=25.0
+  zombie_crater__waveHumanDist:r=25.0
+  zombie_crater__minWaveTime:r=50.0
+  zombie_crater__spawnPeriod:r=0.5
+  zombie_crater__checkHumansPeriod:r=2.0
+  zombie_crater__checkHumansNextTime:r=-1.0
+  bomb_site__plantingTeam:i=-1
+  bomb_site__isBombPlanted:b=no
+  active:b=no
+
+  "objective_spawner__waves:array"{
+
+    "wave:object"{
+      zombie_rush_zombie:i=4
+      zombie_rush_cart_wheel:i=1
+    }
+  }
+
+  effect{
+    _tags:t="render"
+  }
+
+  _group{
+    _tags:t="server"
+    objective_spawner__radius:r=1.0
+    objective_spawner__spawnsCount:i=3
+    objective_spawner__minDistToHuman:r=-1.0
+    objective_spawner__nextSpawnPeriod:r=1.0
+  }
+
+  "isRendinstDestr:tag"{
+    _tags:t="render"
+  }
+
+  "zombie_crater:tag"{
+  }
+
+  "zombie_objective:tag"{
+  }
+
+  "bomb_site__capzoneEid:eid"{
+  }
+}
+
+zombie_crater_objective_easy{
+  _use:t="zombie_crater_objective"
+  zombie_crater__minWaveTime:r=65.0
+
+  "objective_spawner__waves:array"{
+
+    "wave:object"{
+      zombie_rush_zombie:i=2
+      imp_zombie_shooter:i=1
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=1
+      zombie_rush_cart_wheel:i=1
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=1
+      zombie_rush_shield:i=1
+      imp_zombie_shooter:i=1
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=1
+      zombie_rush_shield:i=1
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=1
+      zombie_rush_moto:i=1
+      imp_zombie_shooter:i=1
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=1
+      zombie_rush_train_door:i=1
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=1
+      zombie_rush_moto:i=1
+      imp_zombie_bomb:i=1
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=1
+      zombie_rush_train_door:i=1
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=1
+      zombie_rush_train_door:i=1
+      imp_zombie_shooter:i=1
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=1
+      zombie_rush_train_door:i=1
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=1
+      zombie_rush_train_door:i=1
+      imp_zombie_shooter:i=1
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=1
+      zombie_rush_train_door:i=1
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=1
+      zombie_rush_train_door:i=1
+      imp_zombie_shooter:i=1
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=1
+      zombie_rush_train_door:i=1
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=1
+      zombie_rush_train_door:i=1
+      imp_zombie_bomb:i=1
+    }
+  }
+}
+
+zombie_crater_objective_easy_explosive{
+  _use:t="zombie_crater_objective"
+
+  "objective_spawner__waves:array"{
+
+    "wave:object"{
+      zombie_rush_zombie:i=1
+      zombie_rush_shield:i=1
+      imp_zombie_shooter:i=1
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=1
+      zombie_rush_zombie_phosphor:i=1
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=1
+      zombie_rush_zombie_phosphor:i=1
+      imp_zombie_shooter:i=1
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=1
+      zombie_rush_zombie_explosive:i=1
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=1
+      zombie_rush_zombie_phosphor:i=1
+      imp_zombie_shooter:i=1
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=1
+      zombie_rush_zombie_explosive:i=1
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=1
+      zombie_rush_zombie_phosphor:i=1
+      imp_zombie_shooter:i=1
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=1
+      zombie_rush_zombie_phosphor:i=1
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=1
+      zombie_rush_zombie_explosive:i=1
+      imp_zombie_bomb:i=1
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=1
+      zombie_rush_zombie_phosphor:i=1
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=1
+      zombie_rush_zombie_phosphor:i=1
+      imp_zombie_shooter:i=1
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=1
+      zombie_rush_zombie_phosphor:i=1
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=1
+      zombie_rush_zombie_explosive:i=1
+      imp_zombie_shooter:i=1
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=1
+      zombie_rush_zombie_phosphor:i=1
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=1
+      zombie_rush_bmw_wheel:i=1
+      zombie_rush_zombie_phosphor:i=1
+    }
+  }
+}
+
+zombie_crater_objective_medium{
+  _use:t="zombie_crater_objective"
+  zombie_crater__minWaveTime:r=65.0
+
+  "objective_spawner__waves:array"{
+
+    "wave:object"{
+      zombie_rush_zombie:i=2
+      zombie_rush_cart_wheel:i=1
+      imp_zombie_shooter:i=1
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=4
+      zombie_rush_metal_bucket:i=1
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=3
+      zombie_rush_cart_wheel:i=1
+      imp_zombie_shooter:i=1
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=3
+      zombie_rush_shield:i=1
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=3
+      zombie_rush_moto:i=1
+      imp_zombie_shooter:i=1
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=3
+      zombie_rush_cart_wheel:i=1
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=2
+      zombie_rush_shield:i=1
+      imp_zombie_bomb:i=1
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=4
+      zombie_rush_train_door:i=1
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=2
+      zombie_rush_metal_bucket:i=1
+      zombie_rush_train_door:i=1
+      imp_zombie_shooter:i=1
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=4
+      zombie_rush_shield:i=1
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=3
+      zombie_rush_train_door:i=1
+      imp_zombie_shooter:i=1
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=4
+      zombie_rush_metal_bucket:i=1
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=2
+      zombie_rush_moto:i=1
+      zombie_rush_cart_wheel:i=1
+      imp_zombie_shooter:i=1
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=4
+      zombie_rush_train_door:i=1
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=2
+      zombie_rush_moto:i=1
+      zombie_rush_shield:i=1
+      imp_zombie_bomb:i=1
+    }
+  }
+}
+
+zombie_crater_objective_medium_explosive{
+  _use:t="zombie_crater_objective"
+
+  "objective_spawner__waves:array"{
+
+    "wave:object"{
+      zombie_rush_zombie:i=1
+      zombie_rush_cart_wheel:i=1
+      imp_zombie_shooter:i=1
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=3
+      zombie_rush_zombie_phosphor:i=1
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=2
+      zombie_rush_shield:i=1
+      imp_zombie_shooter:i=1
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=3
+      zombie_rush_zombie_explosive:i=1
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=3
+      imp_zombie_shooter:i=1
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=1
+      zombie_rush_shield:i=1
+      zombie_rush_zombie_explosive:i=1
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=1
+      zombie_rush_cart_wheel:i=1
+      imp_zombie_shooter:i=1
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=1
+      zombie_rush_cart_wheel:i=1
+      zombie_rush_zombie_phosphor:i=1
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=1
+      zombie_rush_cart_wheel:i=1
+      zombie_rush_zombie_explosive:i=1
+      imp_zombie_bomb:i=1
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=3
+      zombie_rush_shield:i=1
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=1
+      zombie_rush_shield:i=1
+      zombie_rush_zombie_phosphor:i=1
+      imp_zombie_shooter:i=1
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=3
+      zombie_rush_zombie_phosphor:i=1
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=2
+      zombie_rush_cart_wheel:i=1
+      imp_zombie_shooter:i=1
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=2
+      zombie_rush_shield:i=1
+      zombie_rush_zombie_phosphor:i=1
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=1
+      zombie_rush_bmw_wheel:i=1
+      zombie_rush_zombie_phosphor:i=1
+      imp_zombie_bomb:i=1
+    }
+  }
+}
+
+zombie_crater_objective_hard{
+  _use:t="zombie_crater_objective"
+
+  "objective_spawner__waves:array"{
+
+    "wave:object"{
+      zombie_rush_zombie:i=3
+      zombie_rush_cart_wheel:i=1
+      imp_zombie_shooter:i=1
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=4
+      zombie_rush_cart_wheel:i=1
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=3
+      zombie_rush_shield:i=1
+      imp_zombie_shooter:i=1
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=4
+      zombie_rush_shield:i=1
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=3
+      zombie_rush_moto:i=1
+      imp_zombie_shooter:i=1
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=4
+      zombie_rush_train_door:i=1
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=3
+      zombie_rush_moto:i=1
+      imp_zombie_bomb:i=1
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=4
+      zombie_rush_train_door:i=1
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=2
+      zombie_rush_moto:i=1
+      zombie_rush_train_door:i=1
+      imp_zombie_shooter:i=1
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=4
+      zombie_rush_train_door:i=1
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=3
+      zombie_rush_train_door:i=1
+      imp_zombie_shooter:i=1
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=4
+      zombie_rush_train_door:i=1
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=2
+      zombie_rush_moto:i=1
+      zombie_rush_train_door:i=1
+      imp_zombie_shooter:i=1
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=4
+      zombie_rush_train_door:i=1
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=2
+      zombie_rush_moto:i=1
+      zombie_rush_train_door:i=1
+      imp_zombie_bomb:i=1
+    }
+  }
+}
+
+zombie_crater_objective_hard_explosive{
+  _use:t="zombie_crater_objective"
+
+  "objective_spawner__waves:array"{
+
+    "wave:object"{
+      zombie_rush_zombie:i=2
+      zombie_rush_shield:i=1
+      imp_zombie_shooter:i=1
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=3
+      zombie_rush_zombie_phosphor:i=1
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=2
+      zombie_rush_zombie_phosphor:i=1
+      imp_zombie_shooter:i=1
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=2
+      zombie_rush_cart_wheel:i=1
+      zombie_rush_zombie_explosive:i=1
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=2
+      zombie_rush_zombie_phosphor:i=1
+      imp_zombie_shooter:i=1
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=2
+      zombie_rush_shield:i=1
+      zombie_rush_zombie_explosive:i=1
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=1
+      zombie_rush_cart_wheel:i=1
+      zombie_rush_zombie_phosphor:i=1
+      imp_zombie_shooter:i=1
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=2
+      zombie_rush_bmw_wheel:i=1
+      zombie_rush_zombie_phosphor:i=1
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=1
+      zombie_rush_cart_wheel:i=1
+      zombie_rush_zombie_explosive:i=1
+      imp_zombie_bomb:i=1
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=2
+      zombie_rush_shield:i=1
+      zombie_rush_zombie_phosphor:i=1
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=1
+      zombie_rush_bmw_wheel:i=1
+      zombie_rush_zombie_phosphor:i=1
+      imp_zombie_shooter:i=1
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=3
+      zombie_rush_zombie_phosphor:i=1
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=1
+      zombie_rush_cart_wheel:i=1
+      zombie_rush_zombie_explosive:i=1
+      imp_zombie_shooter:i=1
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=2
+      zombie_rush_shield:i=1
+      zombie_rush_zombie_phosphor:i=1
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=1
+      zombie_rush_bmw_wheel:i=1
+      zombie_rush_zombie_phosphor:i=1
+      imp_zombie_bomb:i=1
+    }
+  }
+}
+
+zombie_crater_objective_normal_armored{
+  _use:t="zombie_crater_objective"
+
+  "objective_spawner__waves:array"{
+
+    "wave:object"{
+      zombie_rush_zombie:i=1
+      zombie_rush_cart_wheel:i=1
+      zombie_rush_spitfire_prop:i=1
+      imp_zombie_shooter:i=1
+    }
+  }
+}
+
+dynamic_spot_light{
+  _use:t="base_spot_light"
+  _use:t="replicating"
+
+  spot_light{
+    _tags:t="render"
+  }
+
+  _group{
+    _tags:t="render"
+    _replicate:b=yes
+    _track:b=yes
+    spot_light__inner_attenuation:r=0.9
+    spot_light__dynamic_light:b=yes
+    spot_light__shadows:b=yes
+    spot_light__dynamic_obj_shadows:b=no
+    spot_light__shadow_shrink:i=0
+  }
+}
+
+attached_light_base{
+  light__stored_brightness:r=0.0
+}
+
+boss_sphere_activated_grenade{
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, 0.0, 0.0]]
+  on_create__spawnActivatedShellBlk:t="gamedata/weapons/grenades/srcm_mod_35_impact_grenade.blk"
+  on_create__spawnShellTimer:r=0.0
+
+  "ownerEid:eid"{
+  }
+}
+
+boss_sphere{
+  _use:t="nphys_levitating"
+  _use:t="navmesh_creature_base"
+  _use:t="navmesh_phys_locomotion"
+  _use:t="capturer"
+  _use:t="navmesh_phys_jumplinks"
+  _use:t="navmesh_phys_jumplinks_climb"
+  _use:t="nzombie_ai_without_bullet_reaction"
+  _use:t="human_backstab"
+  _use:t="base_dm_parts"
+  _use:t="nphys_pair_collision"
+  _use:t="nphys_homo_erectus"
+  _use:t="nphys_pushable"
+  _use:t="teammate_outline"
+  _use:t="boss_sphere_spawn_sound"
+  _use:t="base_effect"
+  sleep_mode__isSleeping:b=yes
+  _replicated:t="sleep_mode__isSleeping"
+  _replicated:t="actions__enabled"
+  _tracked:t="sleep_mode__isSleeping"
+  _tracked:t="hitpoints__hp"
+  sphere_zombie__grenadeTemplate:t="boss_sphere_activated_grenade"
+  paid_loot__pointsForKill:i=10
+  hitpoints__penetrationStopPower:r=15.0
+  navmesh_phys__maxWalkSpeed:r=5.0
+  attract_point__checkPath:b=no
+  nphys_coll__capsuleRadius:r=0.5
+  nphys_coll__capsuleHeight:r=1.5
+  nphys__mass:r=60.0
+  nphys__ccdOffset:p3=0.0, 0.5, 0.0
+  collision_damage__threshold:r=5.0
+  collision_damage__velDeltaMult:r=10.0
+  collision_damage__velDeltaPower:r=2.0
+  collision_damage__pushThreshold:r=5.0
+  collision_damage__pushVelDeltaMult:r=1.0
+  collision_damage__pushVelDeltaPower:r=2.0
+  collision_damage__friendDamageMult:r=0.1
+  collision_damage__lastVehicleImmunity:r=1.0
+  collision_damage__inVehicleDamageMult:r=0.3
+  collision_damage__crawlMult:r=3.0
+  collision_damage__downedMult:r=3.0
+  zones_visitor__triggerTag:t="zombieTriggerable"
+  _skipInitialReplication:t="dm_parts__parts"
+  spawn_immunity__initialPos:p3=0.0, 0.0, 0.0
+  spawn_immunity__immuneDistance:r=0.0
+  spawn_immunity__timer:r=0.0
+  spawnedInRegion:t=""
+  collres__centerNode:t="weapon"
+  hitpoints__stoppingPowerThreshold:r=20.0
+  agent_dangers__tag:t="human"
+  aim_assist__nodeName:t="Bip01 Spine1"
+  aim_assist__nodeIdx:i=-1
+  mainAttackIsMelee:b=yes
+  action__running:b=no
+  entity_mods__zoneDamageMult:r=0.001
+  visual_entity_offset__visNodeId:i=-1
+  countAsAlive:b=no
+  killLogName:t="zombie/summon"
+  killing_sun__damageStacks:i=0
+  kill_reward__exp:r=2.0
+  kill_reward__expHint:t="kill_zombie"
+  ai_target__invisibleTimeTo:r=0.0
+  ai_target__bulletInvisibleDist:r=40.0
+  ai_target_node__node:t="Bip01 Spine1"
+  actions__enabled:b=yes
+  visual_entity_offset__radius:r=0.15
+  visual_entity_offset__nodeName:t="weapon"
+  backstab__nodeName:t="weapon"
+  visual_entity_offset__crawlFactor:r=0.0
+  visual_entity_offset__crawlFactorSpeed:r=8.0
+  visual_entity_offset__crawlRadius:r=0.9
+  zombie__skipReactHumansInDome:b=no
+  ai_target__noiseLevel:r=0.0
+  meleeHitThroughRi:b=yes
+  agent_dangers__targetAirplanePilots:b=no
+  agent_dangers__targetParachuterMaxHeight:r=15.0
+  zombie__findTargetCooldown:r=60.0
+  zombie__findClosestTargetDist:r=0.0
+  zombie__findTargetTime:r=-1.0
+  team:i=3
+  rush_zombie__switchToPriorityTargetChance:r=0.1
+  rush_zombie__attackChance:r=0.025
+  beh_tree__node:t="nzombie_attacker"
+  beh_tree__refs__wander:t="sub.nAttackPriorityTarget"
+  nPhys__animcharScale:r=0.5
+  hitpoints__hp:r=1.0
+  hitpoints__maxHp:r=1.0
+  hitpoints__scaleHp:r=1.0
+  hitpoints__hpThreshold:r=1.0
+  hitpoints__hpRecoverySpd:r=0.0
+  beh_tree__blackboard__enemyRadius:r=200.0
+  bodyCleanupTime:r=120.0
+  collision_physMatId:i=-1
+  collision_physMatName:t="walker"
+  ragdoll__use_ccd:b=yes
+  navmesh_phys__upDir:p3=0.0, 1.0, 0.0
+  projectile_impulse__impulseSaveDeltaTime:r=0.5
+  projectile_impulse__maxCount:i=5
+  grid_obj__gridType:t="interactable"
+  animchar__res:t="plasma_ammo_char"
+  collres__res:t="plasma_ammo_collision"
+  needsBlood:b=no
+  hitpoints__shellSplashDmgMult:r=1.1
+  nphys_levitating__prefferedElevation:r=1.5
+  nphys_levitating__elevation:r=2.5
+  nphys_levitating__elevationChangeSpeed:r=0.75
+  material:t="steel"
+  zombie__destroyOnTargetRadius:r=1.2
+  navmesh_phys__climbSpeed:r=4.0
+  navmesh_phys__climbJumpMaxDistSq:r=16.0
+  navmesh_phys__climbJumpStartSpeed:r=7.0
+
+  "collidableToHuman:tag"{
+  }
+
+  "override__riextraDamage:tag"{
+  }
+
+  _group{
+    _replicate:b=yes
+    human_hit_tagging__tagStart:r=-1.0
+    human_hit_tagging__tagEnd:r=-1.0
+    human_hit_tagging__currentTagPower:r=1.0
+    human_hit_tagging__tagPower:r=0.7
+  }
+
+  _group{
+    _tags:t="render"
+    effect__name:t="event_foolmoon_energy_hit_cmps_fx"
+
+    effect{
+    }
+  }
+
+  "grid_obj__updateAlways:tag"{
+  }
+
+  "zombie:tag"{
+  }
+
+  "human:tag"{
+  }
+
+  "aliveCreature:tag"{
+  }
+
+  anim_phys{
+  }
+
+  "possessedByPlr:eid"{
+  }
+
+  animchar_attaches_bbox{
+    _tags:t="render"
+  }
+
+  animchar_attaches_bbox_precalculated{
+    _tags:t="render"
+  }
+
+  "nphys__no_obstacle_navigation:tag"{
+  }
+
+  "zombie__destroyOnDie:tag"{
+  }
+
+  "loc_snapshots__scaledTransform:tag"{
+  }
+
+  "deathDrop:array"{
+  }
+
+  "walker_agent__priorityTarget:eid"{
+  }
+
+  "ragdoll__enabled:b"{
+    _tags:t="render"
+    value:b=no
+  }
+
+  "ragdoll__enabledAt:r"{
+    _tags:t="render"
+    value:r=0.0
+  }
+
+  "attachedEffect:tag"{
+  }
+
+  "capsule_approximation__nodeNames:array"{
+    capsule_approximation__nodeNames:t="volumeBox_1"
+  }
+
+  "capsule_approximation__complexNodeNames:array"{
+  }
+
+  "zombie_sphere:tag"{
+  }
+}
+
+zombie_giant_boss_agressive_shells_zombie_easy{
+  _use:t="zombie_giant_boss_agressive_shells_zombie"
+  hitpoints__hp:r=10000.0
+  hitpoints__maxHp:r=10000.0
+  hitpoints__scaleHp:r=10000.0
+  zombie_boss__entitiesInGroup:i=3
+}
+
+zombie_giant_boss_agressive_shells_zombie{
+  _use:t="zombie_giant_zombie"
+  _use:t="zombie_giant_boss_agressive_shells_zombie_sound_override"
+  _use:t="zombie_aqua_bright_emissive"
+  _use:t="movement_zombie_boss_slow"
+  hitpoints__hp:r=20000.0
+  hitpoints__maxHp:r=20000.0
+  hitpoints__scaleHp:r=20000.0
+  zombie_ability__animTime:r=2.2
+  zombie_ability__activated:b=no
+  zombie_avility__subTemplate:t="zombie_ability"
+  _tracked:t="zombie_ability__activated"
+  _replicated:t="zombie_ability__activated"
+  zombie_boss__abilityActivatedLastTime:r=-1.0
+  zombie_boss__abilityActivatePeriod:r=-1.0
+  zombie_boss__abilityActivatePeriodRange:p2=10.0, 20.0
+  zombie_boss__abilityActivateDist:r=100.0
+  zombie_boss__entityOnAbility:t="boss_sphere"
+  zombie_boss__goupsRequireSpawn:i=3
+  zombie_boss__goupsSpawned:i=0
+  zombie_boss__entitiesInGroup:i=4
+  zombie_boss__entitiesRadius:r=2.0
+  zombie_boss__entityOnAbilityPeriod:r=1.0
+  zombie_boss__entityOnAbilityNextTime:r=-1.0
+  zombie_boss__entityOnAbilityOffstet:p3=0.0, 2.5, 0.0
+  zombie_boss__ability_random_target:b=yes
+  killLogName:t="zombie/boss_summoner"
+}
+
+beam_light{
+  _use:t="attached_light_base"
+  _use:t="dynamic_spot_light"
+  light__max_radius:r=50.0
+  light__offset:p3=0.0, 0.0, 0.0
+  light__color:c=210, 235, 255, 255
+  light__brightness:r=30.0
+
+  spot_light{
+    _tags:t="render"
+  }
+
+  _group{
+    _tags:t="render"
+    spot_light__inner_attenuation:r=0.3
+    spot_light__shadow_shrink:i=0
+  }
+}
+
+highbeam_light{
+  _use:t="beam_light"
+  light_type:i=0
+}
+
+attached_lights{
+  _tracked:t="attached_lights_enabled"
+
+  "attached_lights_eids:list<eid>"{
+  }
+
+  "attached_lights_enabled:list<b>"{
+    enabled:b=yes
+    enabled:b=yes
+  }
+
+  "attached_lights:array"{
+
+    "light:object"{
+      template:t="highbeam_light"
+      node:t="emtr_lantern_l_01"
+      tm:m=[[0.0, 0.0, -1.0] [0.0, 1.0, 0.0] [1.0, 0.0, 0.0] [0.0, 0.0, 0.0]]
+    }
+
+    "light:object"{
+      template:t="highbeam_light"
+      node:t="emtr_lantern_r_01"
+      tm:m=[[0.0, 0.0, -1.0] [0.0, 1.0, 0.0] [1.0, 0.0, 0.0] [0.0, 0.0, 0.0]]
+    }
+  }
+}
+
+vehicle_lights{
+  _use:t="dynmat_params_base"
+  vehicle__stopLightsState:b=no
+  vehicle__stopLightsChannel:i=1
+  vehicle__stopLightsActiveColor:p4=1.0, 0.0, 0.0, 16.0
+  vehicle__stopLightsPassiveColor:p4=1.0, 0.0, 0.0, 1.0
+
+  "dynamic_material_channels_arr:array"{
+    _tags:t="render"
+
+    "dynamic_material_channel:object"{
+      dynamic_material_type:t="emissive"
+      dynmat_param__emissive_color:p4=1.0, 1.0, 0.0, 10.0
+      dynmat_param__emission_albedo_mult:r=1.0
+    }
+
+    "dynamic_material_channel:object"{
+      dynamic_material_type:t="emissive"
+      dynmat_param__emissive_color:p4=1.0, 0.0, 0.0, 1.0
+      dynmat_param__emission_albedo_mult:r=0.5
+    }
+  }
+}
+
+evacuation_patrols_override{
+  patrols_spawner__percentProgress:i=0
+
+  "patrols_spawner__wavesStates:object"{
+
+    "10:object"{
+      patrolsTimer:p2=40.0, 50.0
+
+      "waves:array"{
+
+        "wave:object"{
+          zombie_rush_zombie:i=3
+          zombie_rush_cart_wheel:i=1
+          zombie_rush_spitfire_prop:i=5
+        }
+
+        "wave:object"{
+          zombie_rush_zombie:i=4
+          zombie_rush_metal_bucket:i=1
+          zombie_rush_spitfire_prop:i=4
+        }
+      }
+    }
+
+    "60:object"{
+      patrolsTimer:p2=30.0, 40.0
+
+      "waves:array"{
+
+        "wave:object"{
+          zombie_rush_zombie:i=3
+          zombie_rush_cart_wheel:i=1
+          zombie_rush_spitfire_prop:i=7
+        }
+
+        "wave:object"{
+          zombie_rush_zombie:i=4
+          zombie_rush_metal_bucket:i=1
+          zombie_rush_spitfire_prop:i=6
+        }
+
+        "wave:object"{
+          zombie_rush_zombie:i=3
+          zombie_rush_metal_bucket:i=1
+          zombie_rush_spitfire_prop:i=7
+        }
+      }
+    }
+
+    "99:object"{
+      patrolsTimer:p2=25.0, 30.0
+
+      "waves:array"{
+
+        "wave:object"{
+          zombie_rush_zombie:i=4
+          zombie_rush_metal_bucket:i=1
+          zombie_rush_cart_wheel:i=1
+          zombie_rush_bmw_wheel:i=1
+          zombie_rush_moto:i=1
+          imp_zombie_shooter:i=3
+          imp_zombie_bomb:i=2
+        }
+
+        "wave:object"{
+          zombie_rush_zombie:i=5
+          zombie_rush_metal_bucket:i=1
+          zombie_rush_cart_wheel:i=2
+          zombie_rush_train_door:i=1
+          zombie_rush_zombie_phosphor:i=1
+          imp_zombie_shooter:i=5
+          imp_zombie_bomb:i=1
+        }
+
+        "wave:object"{
+          zombie_rush_zombie:i=5
+          zombie_rush_cart_wheel:i=1
+          zombie_rush_bmw_wheel:i=1
+          zombie_rush_zombie_explosive:i=1
+          imp_zombie_bomb:i=5
+        }
+      }
+    }
+
+    "100:object"{
+      patrolsTimer:p2=15.0, 17.0
+
+      "waves:array"{
+
+        "wave:object"{
+          zombie_rush_zombie:i=8
+          zombie_rush_metal_bucket:i=2
+          zombie_rush_cart_wheel:i=1
+          zombie_rush_shield:i=2
+          zombie_rush_bmw_wheel:i=2
+          zombie_rush_train_door:i=1
+          imp_zombie_shooter:i=5
+          imp_zombie_bomb:i=1
+        }
+
+        "wave:object"{
+          zombie_rush_zombie:i=5
+          zombie_rush_cart_wheel:i=1
+          zombie_rush_shield:i=1
+          zombie_rush_bmw_wheel:i=1
+          zombie_rush_moto:i=1
+          zombie_rush_train_door:i=1
+          zombie_rush_zombie_phosphor:i=1
+          imp_zombie_shooter:i=3
+          imp_zombie_bomb:i=2
+        }
+
+        "wave:object"{
+          zombie_rush_zombie:i=10
+          zombie_rush_metal_bucket:i=1
+          zombie_rush_cart_wheel:i=1
+          zombie_rush_shield:i=1
+          zombie_rush_train_door:i=1
+          zombie_rush_zombie_explosive:i=1
+          imp_zombie_shooter:i=1
+          imp_zombie_bomb:i=4
+        }
+      }
+    }
+  }
+}
+
+evacuation__security_additional{
+  _use:t="travel_zombie_additional"
+
+  "evacuation_zombie:tag"{
+  }
+}
+
+zombie_evacuation_objective{
+  _use:t="base_zombie_evacuation_objective"
+  _use:t="attached_lights"
+  _use:t="vehicle_lights"
+  _use:t="us_halftrack_m3_a1_apc_zombie_event"
+  vehicle__brokenUsePrompt:t=""
+  vehicle__lockUsePrompt:t=""
+  dm__ignoreDamage:b=no
+  vehicle_seats__enterTime:r=0.5
+  objective__activationBriefing:t="objective/evacuationTruckActive"
+
+  "vehicle_seats__seats:shared:array"{
+
+    "seats:object"{
+      name:t="main_gunner"
+      locName:t="vehicle_seats/gunner"
+      attachNode:t="gunner"
+      ignoreAttachNodeRotation:b=yes
+      attachTm:m=[[0.999369, -0.0348149, 4.42826e-15] [0.0348149, 0.999369, 5.83212e-09] [-2.03054e-10, -5.82859e-09, 0.999977] [-0.15, -2.802597e-45, 0.0]]
+      seatComponent:t="isGunner"
+      shouldHideOwner:b=no
+      receiveDamageFromDMPart:t="gunner"
+      cameraNodeName:t="bone_mg_aa_h_01"
+      directTurretControl:b=yes
+      canPlaceManually:b=yes
+      cameraOffset:p3=-0.6, 0.6, 0.0
+      isHoldGunModeAllowed:b=no
+
+      "turretNames:array"{
+        turretNames:t="turret_01"
+      }
+
+      "loaderTurretNames:array"{
+        turret:t="turret_01"
+      }
+
+      "effectors:object"{
+
+        "l.hand:object"{
+          rel_tm:m=[[0.946154, 0.314319, 0.0774297] [-0.0772435, -0.0130678, 0.996927] [0.314365, -0.949227, 0.0119149] [-0.607666, -0.00865978, -0.0884418]]
+          node:t="bone_mg_aa_v_01"
+        }
+
+        "r.hand:object"{
+          rel_tm:m=[[0.946638, 0.315281, 0.0668975] [0.125997, -0.170965, -0.977188] [-0.296652, 0.933471, -0.201566] [-0.612503, -0.00964385, 0.093379]]
+          node:t="bone_mg_aa_v_01"
+        }
+
+        "l.foot:object"{
+          rel_tm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-0.0, -0.0, 0.0]]
+          node:t="pedal_lfoot_3"
+        }
+
+        "r.foot:object"{
+          rel_tm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-0.0, -0.0, 0.0]]
+          node:t="pedal_rfoot_3"
+        }
+      }
+    }
+
+    "seats:object"{
+      name:t="passenger"
+      locName:t="vehicle_seats/driver"
+      seatOwnsEntityControl:b=no
+      attachNode:t="driver"
+      ignoreAttachNodeRotation:b=yes
+      attachTm:m=[[0.947681, -0.066265, -0.0] [0.0662656, 0.94769, 0.0] [0.0, -0.0, 0.949999] [-0.38, -0.28, 0.0]]
+      seatComponent:t="isPassenger"
+      shouldHideOwner:b=no
+      receiveDamageFromDMPart:t="driver"
+      cameraNodeName:t="bone_camera_driver"
+      seatAnimUpper:t="drive_passenger"
+      seatAnimLower:t="drive_passenger"
+      cameraType:t="commander"
+      cameraOffset:p3=-0.1, -0.04, -0.07
+      isHoldGunModeAllowed:b=no
+      canPlaceManually:b=yes
+      canPlaceOnlyOwner:b=yes
+
+      "effectors:object"{
+
+        "l.hand:object"{
+          rel_tm:m=[[0.950533, 0.104804, -0.29241] [0.224297, 0.419659, 0.879533] [0.214891, -0.901611, 0.375393] [0.14946, 0.0634537, -0.138252]]
+          node:t="lefthand_1"
+        }
+
+        "r.hand:object"{
+          rel_tm:m=[[0.734617, -0.649416, 0.196463] [0.642886, 0.758814, 0.104397] [-0.216878, 0.0496121, 0.974938] [0.0180359, 0.0352173, -0.0165787]]
+          node:t="righthand_1"
+        }
+
+        "l.foot:object"{
+          rel_tm:m=[[0.712418, 0.700576, 0.0406819] [-0.700238, 0.713492, -0.0244167] [-0.0461318, -0.0110921, 0.998874] [-0.0641327, -0.0190277, 0.0110579]]
+          node:t="pedal_lfoot_1"
+        }
+
+        "r.foot:object"{
+          rel_tm:m=[[0.991465, -0.130371, 0.00129172] [0.130363, 0.991455, 0.00481451] [-0.00190832, -0.00460509, 0.999988] [-0.0964966, -0.0799866, -0.00249863]]
+          node:t="pedal_rfoot_1"
+        }
+      }
+    }
+
+    "seats:object"{
+      name:t="passenger"
+      attachNode:t="root"
+      locName:t="vehicle_seats/shooter"
+      ignoreAttachNodeRotation:b=yes
+      attachTm:m=[[-0.132196, 1.08003e-13, 0.940766] [1.50267e-14, 0.949872, -1.06937e-13] [-0.940762, 3.21874e-21, -0.132195] [-1.0, 1.3, -0.62]]
+      seatComponent:t="isPassenger"
+      shouldHideOwner:b=no
+      canPlaceManually:b=yes
+      holdingGunPassengerVertLookLimit:p2=0.0, 85.0
+      seatEnum:t="stool_seat"
+    }
+
+    "seats:object"{
+      name:t="passenger"
+      attachNode:t="root"
+      locName:t="vehicle_seats/shooter"
+      ignoreAttachNodeRotation:b=yes
+      attachTm:m=[[0.132201, 0.0, -0.940655] [0.0, 0.949865, 0.0] [0.940738, 0.0, 0.132212] [-1.0, 1.3, 0.62]]
+      seatComponent:t="isPassenger"
+      shouldHideOwner:b=no
+      canPlaceManually:b=yes
+      holdingGunPassengerVertLookLimit:p2=0.0, 85.0
+      seatEnum:t="stool_seat"
+    }
+
+    "seats:object"{
+      name:t="passenger"
+      attachNode:t="root"
+      locName:t="vehicle_seats/shooter"
+      ignoreAttachNodeRotation:b=yes
+      attachTm:m=[[-0.132196, 1.08003e-13, 0.940766] [1.50267e-14, 0.949872, -1.06937e-13] [-0.940762, 3.21874e-21, -0.132195] [-1.5, 1.3, -0.62]]
+      seatComponent:t="isPassenger"
+      shouldHideOwner:b=no
+      canPlaceManually:b=yes
+      holdingGunPassengerVertLookLimit:p2=0.0, 85.0
+      seatEnum:t="stool_seat"
+    }
+
+    "seats:object"{
+      name:t="passenger"
+      attachNode:t="root"
+      locName:t="vehicle_seats/shooter"
+      ignoreAttachNodeRotation:b=yes
+      attachTm:m=[[0.132201, 0.0, -0.940655] [0.0, 0.949865, 0.0] [0.940738, 0.0, 0.132212] [-1.5, 1.3, 0.62]]
+      seatComponent:t="isPassenger"
+      shouldHideOwner:b=no
+      canPlaceManually:b=yes
+      holdingGunPassengerVertLookLimit:p2=0.0, 85.0
+      seatEnum:t="stool_seat"
+    }
+
+    "seats:object"{
+      name:t="passenger"
+      attachNode:t="root"
+      locName:t="vehicle_seats/shooter"
+      ignoreAttachNodeRotation:b=yes
+      attachTm:m=[[-0.132196, 1.08003e-13, 0.940766] [1.50267e-14, 0.949872, -1.06937e-13] [-0.940762, 3.21874e-21, -0.132195] [-2.0, 1.3, -0.62]]
+      seatComponent:t="isPassenger"
+      shouldHideOwner:b=no
+      canPlaceManually:b=yes
+      holdingGunPassengerVertLookLimit:p2=0.0, 85.0
+      seatEnum:t="stool_seat"
+    }
+
+    "seats:object"{
+      name:t="passenger"
+      locName:t="vehicle_seats/shooter"
+      attachNode:t="commander"
+      shouldHideOwner:b=no
+      ignoreAttachNodeRotation:b=yes
+      attachTm:m=[[0.987694, 0.156435, 0.0] [-0.156435, 0.987694, 0.0] [0.0, 0.0, 1.00001] [-0.23, -0.38, -0.04]]
+      seatComponent:t="isPassenger"
+      receiveDamageFromDMPart:t="commander"
+      seatAnimUpper:t="drive_passenger"
+      seatAnimLower:t="drive_passenger"
+      canPlaceManually:b=yes
+      seatEnum:t="right_seat"
+
+      "effectors:object"{
+
+        "l.hand:object"{
+          rel_tm:m=[[0.714184, 0.559374, 0.420765] [0.212735, 0.399229, -0.89183] [-0.666846, 0.726442, 0.166124] [-0.179199, 0.192134, 0.0994596]]
+          node:t="lefthand_2"
+        }
+
+        "r.hand:object"{
+          rel_tm:m=[[0.203114, -0.896495, -0.393754] [0.918763, 0.31354, -0.239932] [0.338554, -0.313033, 0.88735] [-0.249939, -0.166687, -0.0487995]]
+          node:t="righthand_2"
+        }
+
+        "l.foot:object"{
+          rel_tm:m=[[0.854991, -0.517125, 0.0396488] [0.518529, 0.853899, -0.0445425] [-0.0108218, 0.0586418, 0.998221] [-0.0995026, 0.0289764, 0.00847626]]
+          node:t="pedal_lfoot_2"
+        }
+
+        "r.foot:object"{
+          rel_tm:m=[[0.833926, -0.542366, 0.102011] [0.547047, 0.836784, -0.0230712] [-0.0728486, 0.0750449, 0.994516] [-0.120911, 0.0315475, 0.00581932]]
+          node:t="pedal_rfoot_2"
+        }
+      }
+    }
+
+    "seats:object"{
+      name:t="passenger"
+      attachNode:t="root"
+      locName:t="vehicle_seats/shooter"
+      ignoreAttachNodeRotation:b=yes
+      attachTm:m=[[0.132201, 0.0, -0.940655] [0.0, 0.949865, 0.0] [0.940738, 0.0, 0.132212] [-2.0, 1.3, 0.62]]
+      seatComponent:t="isPassenger"
+      shouldHideOwner:b=no
+      canPlaceManually:b=yes
+      holdingGunPassengerVertLookLimit:p2=0.0, 85.0
+      seatEnum:t="stool_seat"
+    }
+
+    "seats:object"{
+      name:t="passenger"
+      attachNode:t="root"
+      locName:t="vehicle_seats/shooter"
+      ignoreAttachNodeRotation:b=yes
+      attachTm:m=[[-0.132196, 1.08003e-13, 0.940766] [1.50267e-14, 0.949872, -1.06937e-13] [-0.940762, 3.21874e-21, -0.132195] [-2.5, 1.3, -0.62]]
+      seatComponent:t="isPassenger"
+      shouldHideOwner:b=no
+      canPlaceManually:b=yes
+      holdingGunPassengerVertLookLimit:p2=0.0, 85.0
+      seatEnum:t="stool_seat"
+    }
+
+    "seats:object"{
+      name:t="passenger"
+      attachNode:t="root"
+      locName:t="vehicle_seats/shooter"
+      ignoreAttachNodeRotation:b=yes
+      attachTm:m=[[0.132201, 0.0, -0.940655] [0.0, 0.949865, 0.0] [0.940738, 0.0, 0.132212] [-2.5, 1.3, 0.62]]
+      seatComponent:t="isPassenger"
+      shouldHideOwner:b=no
+      canPlaceManually:b=yes
+      holdingGunPassengerVertLookLimit:p2=0.0, 85.0
+      seatEnum:t="stool_seat"
+    }
+
+    "seats:object"{
+      name:t="passenger"
+      attachNode:t="root"
+      locName:t="vehicle_seats/shooter"
+      ignoreAttachNodeRotation:b=yes
+      attachTm:m=[[1.90355e-06, -0.258413, 0.964424] [-1.43542e-06, 0.962215, 0.257821] [-0.998741, -1.87868e-06, 1.46732e-06] [-1.0, 1.3, -0.62]]
+      seatComponent:t="isPassenger"
+      shouldHideOwner:b=yes
+      isHoldGunModeAllowed:b=no
+      seatEnum:t="right_seat"
+    }
+
+    "seats:object"{
+      name:t="passenger"
+      attachNode:t="root"
+      locName:t="vehicle_seats/shooter"
+      ignoreAttachNodeRotation:b=yes
+      attachTm:m=[[1.90355e-06, -0.258413, 0.964424] [-1.43542e-06, 0.962215, 0.257821] [-0.998741, -1.87868e-06, 1.46732e-06] [-1.5, 1.3, -0.62]]
+      seatComponent:t="isPassenger"
+      shouldHideOwner:b=yes
+      isHoldGunModeAllowed:b=no
+      seatEnum:t="right_seat"
+    }
+
+    "seats:object"{
+      name:t="passenger"
+      attachNode:t="root"
+      locName:t="vehicle_seats/shooter"
+      ignoreAttachNodeRotation:b=yes
+      attachTm:m=[[-2.36466e-07, -0.0697057, 0.996863] [-1.43542e-06, 0.962215, 0.257821] [-0.998741, -1.87868e-06, 1.46732e-06] [-2.0, 1.3, -0.62]]
+      seatComponent:t="isPassenger"
+      shouldHideOwner:b=yes
+      isHoldGunModeAllowed:b=no
+      seatEnum:t="right_seat"
+    }
+
+    "seats:object"{
+      name:t="passenger"
+      attachNode:t="root"
+      locName:t="vehicle_seats/shooter"
+      ignoreAttachNodeRotation:b=yes
+      attachTm:m=[[-2.36466e-07, -0.0697057, 0.996863] [-1.43542e-06, 0.962215, 0.257821] [-0.998741, -1.87868e-06, 1.46732e-06] [-2.5, 1.3, -0.62]]
+      seatComponent:t="isPassenger"
+      shouldHideOwner:b=yes
+      isHoldGunModeAllowed:b=no
+      seatEnum:t="right_seat"
+    }
+
+    "seats:object"{
+      name:t="passenger"
+      attachNode:t="root"
+      locName:t="vehicle_seats/shooter"
+      ignoreAttachNodeRotation:b=yes
+      attachTm:m=[[7.94122e-07, -0.104399, -0.993303] [2.42817e-06, 0.991231, -0.104181] [0.998935, -2.32787e-06, 1.04379e-06] [-1.0, 1.3, 0.57]]
+      seatComponent:t="isPassenger"
+      shouldHideOwner:b=yes
+      isHoldGunModeAllowed:b=no
+      seatEnum:t="left_seat"
+    }
+
+    "seats:object"{
+      name:t="passenger"
+      attachNode:t="root"
+      locName:t="vehicle_seats/shooter"
+      ignoreAttachNodeRotation:b=yes
+      attachTm:m=[[7.94122e-07, -0.104399, -0.993303] [2.42817e-06, 0.991231, -0.104181] [0.998935, -2.32787e-06, 1.04379e-06] [-1.5, 1.3, 0.57]]
+      seatComponent:t="isPassenger"
+      shouldHideOwner:b=yes
+      isHoldGunModeAllowed:b=no
+      seatEnum:t="left_seat"
+    }
+
+    "seats:object"{
+      name:t="passenger"
+      attachNode:t="root"
+      locName:t="vehicle_seats/shooter"
+      ignoreAttachNodeRotation:b=yes
+      attachTm:m=[[7.94122e-07, -0.104399, -0.993303] [2.42817e-06, 0.991231, -0.104181] [0.998935, -2.32787e-06, 1.04379e-06] [-2.0, 1.3, 0.57]]
+      seatComponent:t="isPassenger"
+      shouldHideOwner:b=yes
+      isHoldGunModeAllowed:b=no
+      seatEnum:t="left_seat"
+    }
+
+    "seats:object"{
+      name:t="passenger"
+      attachNode:t="root"
+      locName:t="vehicle_seats/shooter"
+      ignoreAttachNodeRotation:b=yes
+      attachTm:m=[[7.94122e-07, -0.104399, -0.993303] [2.42817e-06, 0.991231, -0.104181] [0.998935, -2.32787e-06, 1.04379e-06] [-2.5, 1.3, 0.57]]
+      seatComponent:t="isPassenger"
+      shouldHideOwner:b=yes
+      isHoldGunModeAllowed:b=no
+      seatEnum:t="left_seat"
+    }
+  }
+}
+
+zombie_ship_evacuation_objective{
+  _use:t="base_zombie_evacuation_objective"
+  _use:t="poluglisser_pg_117"
+  vehicle_seats__enterTime:r=0.5
+  objective__activationBriefing:t="objective/evacuationShipActive"
+
+  "vehicle_seats__seats:shared:array"{
+
+    "seats:object"{
+      name:t="driver"
+      seatOwnsEntityControl:b=no
+      attachNode:t="bone_camera_driver"
+      attachTm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, 0.0, 0.0]]
+      seatComponent:t="isDriver"
+      shouldHideOwner:b=yes
+      isHoldGunModeAllowed:b=no
+      cameraNodeName:t="bone_camera_driver"
+    }
+
+    "seats:object"{
+      name:t="passenger"
+      seatOwnsEntityControl:b=no
+      attachNode:t="root"
+      ignoreAttachNodeRotation:b=yes
+      attachTm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, 0.0, 0.0]]
+      seatComponent:t="isPassenger"
+      shouldHideOwner:b=yes
+      isHoldGunModeAllowed:b=no
+      cameraNodeName:t="bone_camera_driver"
+    }
+
+    "seats:object"{
+      name:t="passenger"
+      seatOwnsEntityControl:b=no
+      attachNode:t="root"
+      ignoreAttachNodeRotation:b=yes
+      attachTm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, 0.0, 0.0]]
+      seatComponent:t="isPassenger"
+      shouldHideOwner:b=yes
+      isHoldGunModeAllowed:b=no
+      cameraNodeName:t="bone_camera_driver"
+    }
+
+    "seats:object"{
+      name:t="passenger"
+      seatOwnsEntityControl:b=no
+      attachNode:t="root"
+      ignoreAttachNodeRotation:b=yes
+      attachTm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, 0.0, 0.0]]
+      seatComponent:t="isPassenger"
+      shouldHideOwner:b=yes
+      isHoldGunModeAllowed:b=no
+      cameraNodeName:t="bone_camera_driver"
+    }
+
+    "seats:object"{
+      name:t="passenger"
+      seatOwnsEntityControl:b=no
+      attachNode:t="root"
+      ignoreAttachNodeRotation:b=yes
+      attachTm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, 0.0, 0.0]]
+      seatComponent:t="isPassenger"
+      shouldHideOwner:b=yes
+      isHoldGunModeAllowed:b=no
+      cameraNodeName:t="bone_camera_driver"
+    }
+
+    "seats:object"{
+      name:t="passenger"
+      seatOwnsEntityControl:b=no
+      attachNode:t="root"
+      ignoreAttachNodeRotation:b=yes
+      attachTm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, 0.0, 0.0]]
+      seatComponent:t="isPassenger"
+      shouldHideOwner:b=yes
+      isHoldGunModeAllowed:b=no
+      cameraNodeName:t="bone_camera_driver"
+    }
+
+    "seats:object"{
+      name:t="passenger"
+      seatOwnsEntityControl:b=no
+      attachNode:t="root"
+      ignoreAttachNodeRotation:b=yes
+      attachTm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, 0.0, 0.0]]
+      seatComponent:t="isPassenger"
+      shouldHideOwner:b=yes
+      isHoldGunModeAllowed:b=no
+      cameraNodeName:t="bone_camera_driver"
+    }
+
+    "seats:object"{
+      name:t="passenger"
+      seatOwnsEntityControl:b=no
+      attachNode:t="root"
+      ignoreAttachNodeRotation:b=yes
+      attachTm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, 0.0, 0.0]]
+      seatComponent:t="isPassenger"
+      shouldHideOwner:b=yes
+      isHoldGunModeAllowed:b=no
+      cameraNodeName:t="bone_camera_driver"
+    }
+  }
+}
+
+base_zombie_evacuation_objective{
+  _use:t="evacuation_patrols_override"
+  vehicle__isPlayerCanExit:b=no
+  zombie_evacuation__time:r=35.0
+  zombie_evacuation__atTime:r=-1.0
+  _tracked:t="zombie_evacuation__atTime"
+  _tracked:t="active"
+  _replicated:t="zombie_evacuation__atTime"
+  _replicated:t="active"
+  vehicle_seats__enterTime:r=0.5
+  zombie_evacuation__activatedAtTime:r=-1.0
+  bomb_site__plantingTeam:i=-1
+  zombie_evacuation__finalized:b=no
+  active:b=no
+  vehicle__brokenUsePrompt:t=""
+  vehicle__lockUsePrompt:t=""
+  dm__ignoreDamage:b=no
+
+  _group{
+    _tags:t="server"
+    evacuation__securitySubTemplate:t="evacuation__security_additional"
+    evacuation__securityAgressiveDist:r=40.0
+    evacuation__securityMinRadToObjective:r=4.0
+    evacuation__securitySearchRadToObjective:r=25.0
+    evacuation__securitySpawnPeriod:r=0.5
+    evacuation__securitySpawnNextTime:r=-1.0
+
+    "evacuation__security:object"{
+      zombie_rush_zombie:i=3
+      zombie_rush_metal_bucket:i=3
+      zombie_rush_shield:i=4
+      zombie_rush_bmw_wheel:i=3
+      zombie_rush_moto:i=3
+      zombie_rush_train_door:i=2
+      zombie_rush_spitfire_prop:i=7
+      zombie_rush_zombie_phosphor:i=1
+      zombie_rush_zombie_explosive:i=1
+      imp_zombie_shooter:i=10
+      imp_zombie_bomb:i=4
+    }
+
+    "evacuation__securitySpawnsPos:list<p3>"{
+    }
+
+    "evacuation__securitywavesTemplates:list<t>"{
+    }
+
+    "evacuation__securitycount:list<i>"{
+    }
+  }
+
+  "dontCreateNphysObstacle:tag"{
+  }
+
+  "zombie_evacuation:tag"{
+  }
+
+  "bomb_site__disableDestoy:tag"{
+  }
+
+  "bomb_site__capzoneEid:eid"{
+  }
+}
+
+zombie_evacuation_objective_easy{
+  _use:t="zombie_evacuation_objective"
+  _use:t="evacuation_patrols_override_easy"
+
+  _group{
+    _tags:t="server"
+    evacuation__securitySubTemplate:t="evacuation__security_additional"
+    evacuation__securityAgressiveDist:r=40.0
+    evacuation__securityMinRadToObjective:r=4.0
+    evacuation__securitySearchRadToObjective:r=25.0
+    evacuation__securitySpawnPeriod:r=0.5
+    evacuation__securitySpawnNextTime:r=-1.0
+
+    "evacuation__security:object"{
+      zombie_rush_zombie:i=5
+      zombie_rush_metal_bucket:i=1
+      zombie_rush_spitfire_prop:i=2
+      zombie_rush_zombie_explosive:i=1
+      imp_zombie_shooter:i=5
+      imp_zombie_bomb:i=3
+    }
+
+    "evacuation__securitySpawnsPos:list<p3>"{
+    }
+
+    "evacuation__securitywavesTemplates:list<t>"{
+    }
+
+    "evacuation__securitycount:list<i>"{
+    }
+  }
+}
+
+zombie_ship_evacuation_objective_easy{
+  _use:t="zombie_ship_evacuation_objective"
+  _use:t="evacuation_patrols_override_easy"
+
+  _group{
+    _tags:t="server"
+    evacuation__securitySubTemplate:t="evacuation__security_additional"
+    evacuation__securityAgressiveDist:r=40.0
+    evacuation__securityMinRadToObjective:r=4.0
+    evacuation__securitySearchRadToObjective:r=25.0
+    evacuation__securitySpawnPeriod:r=0.5
+    evacuation__securitySpawnNextTime:r=-1.0
+
+    "evacuation__security:object"{
+      zombie_rush_zombie:i=5
+      zombie_rush_metal_bucket:i=1
+      zombie_rush_spitfire_prop:i=2
+      zombie_rush_zombie_explosive:i=1
+      imp_zombie_shooter:i=5
+      imp_zombie_bomb:i=3
+    }
+
+    "evacuation__securitySpawnsPos:list<p3>"{
+    }
+
+    "evacuation__securitywavesTemplates:list<t>"{
+    }
+
+    "evacuation__securitycount:list<i>"{
+    }
+  }
+}
+
+evacuation_patrols_override_easy{
+  patrols_spawner__percentProgress:i=0
+
+  "patrols_spawner__wavesStates:object"{
+
+    "10:object"{
+      patrolsTimer:p2=40.0, 50.0
+
+      "waves:array"{
+
+        "wave:object"{
+          zombie_rush_zombie:i=3
+          zombie_rush_metal_bucket:i=1
+          zombie_rush_spitfire_prop:i=3
+        }
+
+        "wave:object"{
+          zombie_rush_zombie:i=4
+          zombie_rush_spitfire_prop:i=3
+        }
+      }
+    }
+
+    "60:object"{
+      patrolsTimer:p2=35.0, 45.0
+
+      "waves:array"{
+
+        "wave:object"{
+          zombie_rush_zombie:i=3
+          zombie_rush_metal_bucket:i=2
+          zombie_rush_spitfire_prop:i=3
+        }
+
+        "wave:object"{
+          zombie_rush_zombie:i=5
+          zombie_rush_spitfire_prop:i=3
+        }
+      }
+    }
+
+    "99:object"{
+      patrolsTimer:p2=30.0, 40.0
+
+      "waves:array"{
+
+        "wave:object"{
+          zombie_rush_zombie:i=5
+          zombie_rush_metal_bucket:i=4
+          imp_zombie_shooter:i=2
+        }
+
+        "wave:object"{
+          zombie_rush_zombie:i=5
+          zombie_rush_metal_bucket:i=2
+          zombie_rush_zombie_phosphor:i=1
+          imp_zombie_shooter:i=3
+        }
+
+        "wave:object"{
+          zombie_rush_zombie:i=6
+          zombie_rush_cart_wheel:i=1
+          zombie_rush_shield:i=1
+          imp_zombie_shooter:i=2
+          imp_zombie_bomb:i=1
+        }
+      }
+    }
+
+    "100:object"{
+      patrolsTimer:p2=25.0, 35.0
+
+      "waves:array"{
+
+        "wave:object"{
+          zombie_rush_zombie:i=9
+          zombie_rush_metal_bucket:i=6
+          imp_zombie_shooter:i=3
+          imp_zombie_bomb:i=2
+        }
+
+        "wave:object"{
+          zombie_rush_zombie:i=9
+          zombie_rush_cart_wheel:i=6
+          zombie_rush_zombie_phosphor:i=1
+          imp_zombie_shooter:i=4
+        }
+
+        "wave:object"{
+          zombie_rush_zombie:i=13
+          zombie_rush_cart_wheel:i=1
+          zombie_rush_shield:i=1
+          zombie_rush_train_door:i=1
+          zombie_rush_moto:i=1
+          imp_zombie_shooter:i=2
+          imp_zombie_bomb:i=1
+        }
+      }
+    }
+  }
+}
+
+zombie_zone_gui_hider{
+  capzone__alwaysVisibleOnMinimap:b=yes
+  _tracked:t="capzone__alwaysVisibleOnMinimap"
+  _replicated:t="capzone__alwaysVisibleOnMinimap"
+  capzone__alwaysHide:b=yes
+  capzone__clipThreshold:r=0.97
+
+  "zombie_zone_gui_hider:tag"{
+  }
+}
+
+zombie_arena_activate_fx{
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, 0.0, 0.0]]
+
+  _group{
+    _tags:t="render"
+    effect__name:t="event_foolmoon_lights_cmps_fx"
+
+    effect{
+    }
+  }
+}
+
+zombie_arena_objective_test{
+  _use:t="zombie_shooting_arena_objective"
+  zombie_arena__killsRequire:i=10
+
+  "objective_spawner__waves:array"{
+
+    "wave:object"{
+      zombie_rush_zombie:i=10
+    }
+  }
+}
+
+zombie_imp_arena_test_objective{
+  _use:t="zombie_shooting_arena_objective"
+
+  "objective_spawner__waves:array"{
+
+    "wave:object"{
+      imp_zombie_shooter:i=1
+      imp_zombie_bomb:i=1
+    }
+
+    "wave:object"{
+      imp_zombie_shooter:i=1
+      imp_zombie_bomb:i=1
+    }
+
+    "wave:object"{
+      imp_zombie_shooter:i=1
+      imp_zombie_bomb:i=1
+    }
+
+    "wave:object"{
+      imp_zombie_shooter:i=1
+      imp_zombie_bomb:i=1
+    }
+  }
+
+  _group{
+    _tags:t="server"
+    zombie_arena__zombieWavePeriod:r=3000.0
+  }
+}
+
+zombie_shooting_boss_arena_test_objective{
+  _use:t="zombie_shooting_arena_objective"
+
+  "objective_spawner__waves:array"{
+
+    "wave:object"{
+      "zombie_giant_boss_shooting_zombie+arena_zombie_boss_base":i=1
+      nextWavePeriod:i=3000
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=2
+      zombie_rush_metal_bucket:i=2
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=2
+      zombie_rush_metal_bucket:i=2
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=2
+      zombie_rush_metal_bucket:i=2
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=2
+      zombie_rush_metal_bucket:i=2
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=2
+      zombie_rush_metal_bucket:i=2
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=2
+      zombie_rush_metal_bucket:i=2
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=2
+      zombie_rush_metal_bucket:i=2
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=2
+      zombie_rush_metal_bucket:i=2
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=2
+      zombie_rush_metal_bucket:i=2
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=2
+      zombie_rush_metal_bucket:i=2
+    }
+  }
+
+  _group{
+    _tags:t="server"
+    zombie_arena__zombieWavePeriod:r=30.0
+  }
+}
+
+zombie_summoner_boss_arena_test_objective{
+  _use:t="zombie_shooting_arena_objective"
+
+  "objective_spawner__waves:array"{
+
+    "wave:object"{
+      "zombie_giant_boss_agressive_shells_zombie+arena_zombie_boss_base":i=1
+    }
+
+    "wave:object"{
+      imp_zombie_shooter:i=4
+    }
+
+    "wave:object"{
+      imp_zombie_shooter:i=4
+    }
+
+    "wave:object"{
+      imp_zombie_shooter:i=4
+    }
+
+    "wave:object"{
+      imp_zombie_shooter:i=4
+    }
+
+    "wave:object"{
+      imp_zombie_shooter:i=4
+    }
+
+    "wave:object"{
+      imp_zombie_shooter:i=4
+    }
+
+    "wave:object"{
+      imp_zombie_shooter:i=4
+    }
+
+    "wave:object"{
+      imp_zombie_shooter:i=4
+    }
+
+    "wave:object"{
+      imp_zombie_shooter:i=4
+    }
+
+    "wave:object"{
+      imp_zombie_shooter:i=4
+    }
+
+    "wave:object"{
+      imp_zombie_shooter:i=4
+    }
+
+    "wave:object"{
+      imp_zombie_shooter:i=4
+    }
+
+    "wave:object"{
+      imp_zombie_shooter:i=4
+    }
+
+    "wave:object"{
+      imp_zombie_shooter:i=4
+    }
+
+    "wave:object"{
+      imp_zombie_shooter:i=4
+    }
+
+    "wave:object"{
+      imp_zombie_shooter:i=4
+    }
+  }
+
+  _group{
+    _tags:t="server"
+    zombie_arena__zombieWavePeriod:r=45.0
+  }
+}
+
+zombie_balls_boss_arena_test_objective{
+  _use:t="zombie_shooting_arena_objective"
+
+  "objective_spawner__waves:array"{
+
+    "wave:object"{
+      "zombie_giant_boss_balls_zombie+arena_zombie_boss_base":i=1
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=4
+      zombie_rush_cart_wheel:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=2
+      zombie_rush_cart_wheel:i=2
+      imp_zombie_shooter:i=3
+      zombie_rush_shield:i=1
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=4
+      zombie_rush_cart_wheel:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=2
+      zombie_rush_cart_wheel:i=2
+      imp_zombie_shooter:i=3
+      zombie_rush_shield:i=1
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=4
+      zombie_rush_cart_wheel:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=2
+      zombie_rush_cart_wheel:i=2
+      imp_zombie_shooter:i=3
+      zombie_rush_shield:i=1
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=4
+      zombie_rush_cart_wheel:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=2
+      zombie_rush_cart_wheel:i=2
+      imp_zombie_shooter:i=3
+      zombie_rush_shield:i=1
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=4
+      zombie_rush_cart_wheel:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=2
+      zombie_rush_cart_wheel:i=2
+      imp_zombie_shooter:i=3
+      zombie_rush_shield:i=1
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=4
+      zombie_rush_cart_wheel:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=2
+      zombie_rush_cart_wheel:i=2
+      imp_zombie_shooter:i=3
+      zombie_rush_shield:i=1
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=4
+      zombie_rush_cart_wheel:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=2
+      zombie_rush_cart_wheel:i=2
+      imp_zombie_shooter:i=3
+      zombie_rush_shield:i=1
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=4
+      zombie_rush_cart_wheel:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=2
+      zombie_rush_cart_wheel:i=2
+      imp_zombie_shooter:i=3
+      zombie_rush_shield:i=1
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=4
+      zombie_rush_cart_wheel:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=2
+      zombie_rush_cart_wheel:i=2
+      imp_zombie_shooter:i=3
+      zombie_rush_shield:i=1
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=4
+      zombie_rush_cart_wheel:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=2
+      zombie_rush_cart_wheel:i=2
+      imp_zombie_shooter:i=3
+    }
+  }
+
+  _group{
+    _tags:t="server"
+    zombie_arena__zombieWavePeriod:r=45.0
+  }
+}
+
+zombie_flamethrower_boss_arena_test_objective{
+  _use:t="zombie_shooting_arena_objective"
+
+  "objective_spawner__waves:array"{
+
+    "wave:object"{
+      "zombie_giant_boss_flamethrower_zombie+arena_zombie_boss_base":i=1
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=3
+      imp_zombie_shooter:i=2
+      imp_zombie_bomb:i=1
+      nextWavePeriod:i=30
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=3
+      imp_zombie_shooter:i=2
+      imp_zombie_bomb:i=1
+      nextWavePeriod:i=30
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=3
+      imp_zombie_shooter:i=2
+      imp_zombie_bomb:i=1
+      nextWavePeriod:i=30
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=3
+      imp_zombie_shooter:i=2
+      imp_zombie_bomb:i=1
+      nextWavePeriod:i=30
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=3
+      imp_zombie_shooter:i=2
+      imp_zombie_bomb:i=1
+      nextWavePeriod:i=30
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=3
+      imp_zombie_shooter:i=2
+      imp_zombie_bomb:i=1
+      nextWavePeriod:i=30
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=3
+      imp_zombie_shooter:i=2
+      imp_zombie_bomb:i=1
+      nextWavePeriod:i=30
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=3
+      imp_zombie_shooter:i=2
+      imp_zombie_bomb:i=1
+      nextWavePeriod:i=30
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=3
+      imp_zombie_shooter:i=2
+      imp_zombie_bomb:i=1
+      nextWavePeriod:i=30
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=3
+      imp_zombie_shooter:i=2
+      imp_zombie_bomb:i=1
+      nextWavePeriod:i=30
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=3
+      imp_zombie_shooter:i=2
+      imp_zombie_bomb:i=1
+      nextWavePeriod:i=30
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=3
+      imp_zombie_shooter:i=2
+      imp_zombie_bomb:i=1
+      nextWavePeriod:i=30
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=3
+      imp_zombie_shooter:i=2
+      imp_zombie_bomb:i=1
+      nextWavePeriod:i=30
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=3
+      imp_zombie_shooter:i=2
+      imp_zombie_bomb:i=1
+      nextWavePeriod:i=30
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=3
+      imp_zombie_shooter:i=2
+      imp_zombie_bomb:i=1
+      nextWavePeriod:i=30
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=3
+      imp_zombie_shooter:i=2
+      imp_zombie_bomb:i=1
+      nextWavePeriod:i=30
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=3
+      imp_zombie_shooter:i=2
+      imp_zombie_bomb:i=1
+      nextWavePeriod:i=30
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=3
+      imp_zombie_shooter:i=2
+      imp_zombie_bomb:i=1
+      nextWavePeriod:i=30
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=3
+      imp_zombie_shooter:i=2
+      imp_zombie_bomb:i=1
+      nextWavePeriod:i=30
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=3
+      imp_zombie_shooter:i=2
+      imp_zombie_bomb:i=1
+      nextWavePeriod:i=3000
+    }
+  }
+
+  _group{
+    _tags:t="server"
+    zombie_arena__zombieWavePeriod:r=30.0
+  }
+}
+
+zombie_laser_boss_arena_test_objective{
+  _use:t="zombie_shooting_arena_objective"
+
+  "objective_spawner__waves:array"{
+
+    "wave:object"{
+      "zombie_giant_boss_laser_zombie+arena_zombie_boss_base":i=1
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=4
+      zombie_rush_cart_wheel:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=2
+      zombie_rush_cart_wheel:i=2
+      imp_zombie_shooter:i=3
+      zombie_rush_shield:i=1
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=4
+      zombie_rush_cart_wheel:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=2
+      zombie_rush_cart_wheel:i=2
+      imp_zombie_shooter:i=3
+      zombie_rush_shield:i=1
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=4
+      zombie_rush_cart_wheel:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=2
+      zombie_rush_cart_wheel:i=2
+      imp_zombie_shooter:i=3
+      zombie_rush_shield:i=1
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=4
+      zombie_rush_cart_wheel:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=2
+      zombie_rush_cart_wheel:i=2
+      imp_zombie_shooter:i=3
+      zombie_rush_shield:i=1
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=4
+      zombie_rush_cart_wheel:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=2
+      zombie_rush_cart_wheel:i=2
+      imp_zombie_shooter:i=3
+      zombie_rush_shield:i=1
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=4
+      zombie_rush_cart_wheel:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=2
+      zombie_rush_cart_wheel:i=2
+      imp_zombie_shooter:i=3
+      zombie_rush_shield:i=1
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=4
+      zombie_rush_cart_wheel:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=2
+      zombie_rush_cart_wheel:i=2
+      imp_zombie_shooter:i=3
+      zombie_rush_shield:i=1
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=4
+      zombie_rush_cart_wheel:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=2
+      zombie_rush_cart_wheel:i=2
+      imp_zombie_shooter:i=3
+      zombie_rush_shield:i=1
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=4
+      zombie_rush_cart_wheel:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=2
+      zombie_rush_cart_wheel:i=2
+      imp_zombie_shooter:i=3
+      zombie_rush_shield:i=1
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=4
+      zombie_rush_cart_wheel:i=4
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=2
+      zombie_rush_cart_wheel:i=2
+      imp_zombie_shooter:i=3
+    }
+  }
+
+  _group{
+    _tags:t="server"
+    objective_spawner__nextSpawnPeriod:r=0.1
+    objective_spawner__radius:r=30.0
+  }
+}
+
+zombie_render_forcefield{
+  _use:t="replicating"
+  _use:t="render_forcefield"
+  render_forcefield__color:p4=0.15, 0.05, 0.9, 0.11
+  _tracked:t="render_forcefield__color"
+  _replicated:t="render_forcefield__color"
+
+  "zombie_forcefield:tag"{
+  }
+}
+
+zombie_shooting_arena_objective{
+  _use:t="rendinst"
+  _use:t="replicating"
+  _use:t="undestroyable_ri_extra"
+  _use:t="zombie_wave_objective_base"
+  _use:t="zombie_arena_objective_sound"
+  _use:t="animchar"
+  _use:t="replicating"
+  objective__activationBriefing:t="objective/arenaActive"
+  objective__deactivationBriefing:t="objective/arenaDeactivate"
+  zombie_arena__bossRelHp:r=-1.0
+  zombie_arena__bossName:t=""
+  _tracked:t="zombie_arena__bossRelHp"
+  _tracked:t="zombie_arena__bossName"
+  _tracked:t="zombie_arena__zombieNextWaveAtTime"
+  _tracked:t="zombie_arena__killsRequire"
+  _tracked:t="zombie_arena__kills"
+  _replicated:t="zombie_arena__bossRelHp"
+  _replicated:t="zombie_arena__bossName"
+  _replicated:t="zombie_arena__zombieNextWaveAtTime"
+  _replicated:t="zombie_arena__killsRequire"
+  _replicated:t="zombie_arena__kills"
+  zombie_arena__waveFxTemplate:t="zombie_arena_activate_fx"
+  zombie_arena__waveFxDestroyTime:r=2.0
+  zombie_arena__waveFxDestroyAtTime:r=-1.0
+  zombie_arena__waveFxTm:m=[[0.0, 1.0, 0.0] [-1.0, 0.0, 0.0] [0.0, 0.0, 1.0] [0.0, 1.0, 0.0]]
+  zombie_arena__zombieNextWaveAtTime:r=-1.0
+  ri_extra__name:t="demon_altar_cls"
+  animchar__res:t="demon_altar_char"
+  zombie_arena__fxOnActivate:t="event_zombie_altar_trail_effect"
+  zombie_arena__createDomeOnActivate:t="zombie_render_forcefield"
+  zombie_arena__fxScale:p3=3.0, 3.0, 3.0
+  objective_spawner__useZoneRadius:b=yes
+  objective_spawner__addSubTemplate:t="arena_zombie"
+  zombie_arena__effectOnDestroy:t="event_zombie_explosion_altar"
+  zombie_arena__killsRequire:i=350
+  zombie_arena__kills:i=0
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, 0.0, 0.0]]
+  bomb_site__plantingTeam:i=-1
+  bomb_site__isBombPlanted:b=no
+  bomb_site__canResetProgressByInteraction:b=no
+  bomb_site__maxDist:r=3.0
+  active:b=yes
+  zombie_radio_objective__useText:t="hud/action_arena_activate"
+
+  "zombie_arena__waveFxEid:eid"{
+  }
+
+  "zombie_arena__zombieWavePeriodList:list<r>"{
+  }
+
+  "zombie_objective:tag"{
+  }
+
+  "objective_spawner__waves:array"{
+
+    "wave:object"{
+      wave_briefing:t="wave_briefing/altar_new_wave_common"
+      zombie_rush_zombie:i=5
+      zombie_rush_metal_bucket:i=7
+      zombie_rush_cart_wheel:i=6
+      zombie_rush_shield:i=4
+      zombie_rush_bmw_wheel:i=4
+      zombie_rush_moto:i=4
+      zombie_rush_train_door:i=4
+      zombie_rush_spitfire_prop:i=2
+      imp_zombie_shooter:i=8
+      imp_zombie_bomb:i=4
+    }
+
+    "wave:object"{
+      wave_briefing:t="wave_briefing/altar_new_wave_common"
+      zombie_rush_zombie:i=16
+      zombie_rush_metal_bucket:i=9
+      zombie_rush_shield:i=3
+      zombie_rush_bmw_wheel:i=4
+      zombie_rush_moto:i=10
+      zombie_rush_train_door:i=8
+      zombie_rush_spitfire_prop:i=8
+      zombie_rush_zombie_phosphor:i=3
+      zombie_rush_zombie_explosive:i=2
+      imp_zombie_shooter:i=12
+      imp_zombie_bomb:i=6
+    }
+
+    "wave:object"{
+      wave_briefing:t="wave_briefing/altar_new_wave_common"
+      zombie_rush_zombie:i=20
+      zombie_rush_metal_bucket:i=8
+      zombie_rush_shield:i=11
+      zombie_rush_bmw_wheel:i=5
+      zombie_rush_moto:i=8
+      zombie_rush_train_door:i=7
+      zombie_rush_spitfire_prop:i=8
+      zombie_rush_zombie_phosphor:i=3
+      zombie_rush_zombie_explosive:i=2
+      imp_zombie_shooter:i=14
+      imp_zombie_bomb:i=6
+      zombie_elite_zombie:i=3
+      zombie_elite_moto:i=2
+      zombie_elite_shield:i=1
+    }
+
+    "wave:object"{
+      wave_briefing:t="wave_briefing/shooting_boss"
+      "zombie_giant_boss_shooting_zombie+arena_zombie_boss_base":i=1
+      nextWavePeriod:i=30
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=4
+      nextWavePeriod:i=30
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=2
+      zombie_rush_metal_bucket:i=2
+      nextWavePeriod:i=30
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=4
+      nextWavePeriod:i=30
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=2
+      zombie_rush_metal_bucket:i=2
+      nextWavePeriod:i=30
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=4
+      nextWavePeriod:i=30
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=2
+      zombie_rush_metal_bucket:i=2
+      nextWavePeriod:i=30
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=4
+      nextWavePeriod:i=30
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=2
+      zombie_rush_metal_bucket:i=2
+      nextWavePeriod:i=30
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=4
+      nextWavePeriod:i=30
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=2
+      zombie_rush_metal_bucket:i=2
+      nextWavePeriod:i=30
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=4
+      nextWavePeriod:i=30
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=2
+      zombie_rush_metal_bucket:i=2
+      nextWavePeriod:i=30
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=4
+      nextWavePeriod:i=30
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=2
+      zombie_rush_metal_bucket:i=2
+      nextWavePeriod:i=30
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=4
+      nextWavePeriod:i=30
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=2
+      zombie_rush_metal_bucket:i=2
+      nextWavePeriod:i=30
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=4
+      nextWavePeriod:i=30
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=2
+      zombie_rush_metal_bucket:i=2
+      nextWavePeriod:i=30
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=4
+      nextWavePeriod:i=30
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=2
+      zombie_rush_metal_bucket:i=2
+      nextWavePeriod:i=3000
+    }
+  }
+
+  _group{
+    _tags:t="server"
+    objective_spawner__nextSpawnPeriod:r=0.1
+    objective_spawner__radius:r=37.0
+  }
+
+  _group{
+    _tags:t="server"
+    zombie_arena__zombieFirstWaveDelay:r=5.0
+    zombie_arena__zombieNextWaveDelay:r=5.0
+    zombie_arena__zombieNextWaveActivationAfter:r=-1.0
+    zombie_arena__zombieFirstWaveActivateAtTime:r=-1.0
+    zombie_arena__zombieWavePeriod:r=85.0
+  }
+
+  "zombie_arena_activator:tag"{
+  }
+
+  "zombie_arena__domOnActivateEid:eid"{
+  }
+
+  "zombie_arena__fxOnActivateEid:eid"{
+  }
+
+  "isRendinstDestr:tag"{
+    _tags:t="render"
+  }
+
+  "zombie_arena:tag"{
+  }
+
+  "bomb_site__capzoneEid:eid"{
+  }
+
+  "bomb_site__operator:eid"{
+  }
+
+  "item__customUsePrompt:t"{
+    _tag:t="ui"
+    value:t=""
+  }
+}
+
+zombie_balls_arena_objective{
+  _use:t="zombie_shooting_arena_objective"
+
+  "objective_spawner__waves:array"{
+
+    "wave:object"{
+      wave_briefing:t="wave_briefing/altar_new_wave_common"
+      zombie_rush_zombie:i=5
+      zombie_rush_metal_bucket:i=7
+      zombie_rush_cart_wheel:i=6
+      zombie_rush_shield:i=4
+      zombie_rush_bmw_wheel:i=4
+      zombie_rush_moto:i=4
+      zombie_rush_train_door:i=4
+      zombie_rush_spitfire_prop:i=2
+      imp_zombie_shooter:i=8
+      imp_zombie_bomb:i=4
+    }
+
+    "wave:object"{
+      wave_briefing:t="wave_briefing/altar_new_wave_common"
+      zombie_rush_zombie:i=16
+      zombie_rush_metal_bucket:i=9
+      zombie_rush_shield:i=3
+      zombie_rush_bmw_wheel:i=4
+      zombie_rush_moto:i=10
+      zombie_rush_train_door:i=8
+      zombie_rush_spitfire_prop:i=8
+      zombie_rush_zombie_phosphor:i=3
+      zombie_rush_zombie_explosive:i=2
+      imp_zombie_shooter:i=12
+      imp_zombie_bomb:i=6
+    }
+
+    "wave:object"{
+      wave_briefing:t="wave_briefing/altar_new_wave_common"
+      zombie_rush_zombie:i=20
+      zombie_rush_metal_bucket:i=8
+      zombie_rush_shield:i=11
+      zombie_rush_bmw_wheel:i=5
+      zombie_rush_moto:i=8
+      zombie_rush_train_door:i=7
+      zombie_rush_spitfire_prop:i=8
+      zombie_rush_zombie_phosphor:i=3
+      zombie_rush_zombie_explosive:i=2
+      imp_zombie_shooter:i=14
+      imp_zombie_bomb:i=6
+      zombie_elite_zombie:i=3
+      zombie_elite_moto:i=2
+      zombie_elite_shield:i=1
+    }
+
+    "wave:object"{
+      wave_briefing:t="wave_briefing/balls_boss"
+      "zombie_giant_boss_balls_zombie+arena_zombie_boss_base":i=1
+      nextWavePeriod:i=45
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=4
+      zombie_rush_cart_wheel:i=4
+      nextWavePeriod:i=45
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=2
+      zombie_rush_cart_wheel:i=2
+      zombie_rush_metal_bucket:i=3
+      zombie_rush_shield:i=1
+      nextWavePeriod:i=45
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=4
+      zombie_rush_cart_wheel:i=4
+      nextWavePeriod:i=45
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=2
+      zombie_rush_cart_wheel:i=2
+      zombie_rush_metal_bucket:i=3
+      zombie_rush_shield:i=1
+      nextWavePeriod:i=45
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=4
+      zombie_rush_cart_wheel:i=4
+      nextWavePeriod:i=45
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=2
+      zombie_rush_cart_wheel:i=2
+      zombie_rush_metal_bucket:i=3
+      zombie_rush_shield:i=1
+      nextWavePeriod:i=45
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=4
+      zombie_rush_cart_wheel:i=4
+      nextWavePeriod:i=45
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=2
+      zombie_rush_cart_wheel:i=2
+      zombie_rush_metal_bucket:i=3
+      zombie_rush_shield:i=1
+      nextWavePeriod:i=45
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=4
+      zombie_rush_cart_wheel:i=4
+      nextWavePeriod:i=45
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=2
+      zombie_rush_cart_wheel:i=2
+      zombie_rush_metal_bucket:i=3
+      zombie_rush_shield:i=1
+      nextWavePeriod:i=45
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=4
+      zombie_rush_cart_wheel:i=4
+      nextWavePeriod:i=45
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=2
+      zombie_rush_cart_wheel:i=2
+      zombie_rush_metal_bucket:i=3
+      zombie_rush_shield:i=1
+      nextWavePeriod:i=45
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=4
+      zombie_rush_cart_wheel:i=4
+      nextWavePeriod:i=3000
+    }
+  }
+}
+
+zombie_summoner_arena_objective{
+  _use:t="zombie_shooting_arena_objective"
+
+  "objective_spawner__waves:array"{
+
+    "wave:object"{
+      wave_briefing:t="wave_briefing/altar_new_wave_common"
+      zombie_rush_zombie:i=5
+      zombie_rush_metal_bucket:i=7
+      zombie_rush_cart_wheel:i=6
+      zombie_rush_shield:i=4
+      zombie_rush_bmw_wheel:i=4
+      zombie_rush_moto:i=4
+      zombie_rush_train_door:i=4
+      zombie_rush_spitfire_prop:i=2
+      imp_zombie_shooter:i=8
+      imp_zombie_bomb:i=4
+    }
+
+    "wave:object"{
+      wave_briefing:t="wave_briefing/altar_new_wave_common"
+      zombie_rush_zombie:i=16
+      zombie_rush_metal_bucket:i=9
+      zombie_rush_shield:i=3
+      zombie_rush_bmw_wheel:i=4
+      zombie_rush_moto:i=10
+      zombie_rush_train_door:i=8
+      zombie_rush_spitfire_prop:i=8
+      zombie_rush_zombie_phosphor:i=3
+      zombie_rush_zombie_explosive:i=2
+      imp_zombie_shooter:i=12
+      imp_zombie_bomb:i=6
+    }
+
+    "wave:object"{
+      wave_briefing:t="wave_briefing/altar_new_wave_common"
+      zombie_rush_zombie:i=20
+      zombie_rush_metal_bucket:i=8
+      zombie_rush_shield:i=11
+      zombie_rush_bmw_wheel:i=5
+      zombie_rush_moto:i=8
+      zombie_rush_train_door:i=7
+      zombie_rush_spitfire_prop:i=8
+      zombie_rush_zombie_phosphor:i=3
+      zombie_rush_zombie_explosive:i=2
+      imp_zombie_shooter:i=14
+      imp_zombie_bomb:i=6
+      zombie_elite_zombie:i=3
+      zombie_elite_moto:i=2
+      zombie_elite_shield:i=1
+    }
+
+    "wave:object"{
+      wave_briefing:t="wave_briefing/summoner_boss"
+      "zombie_giant_boss_agressive_shells_zombie+arena_zombie_boss_base":i=1
+      nextWavePeriod:i=45
+    }
+
+    "wave:object"{
+      zombie_rush_metal_bucket:i=4
+      nextWavePeriod:i=45
+    }
+
+    "wave:object"{
+      zombie_rush_metal_bucket:i=4
+      nextWavePeriod:i=45
+    }
+
+    "wave:object"{
+      zombie_rush_metal_bucket:i=4
+      nextWavePeriod:i=45
+    }
+
+    "wave:object"{
+      zombie_rush_metal_bucket:i=4
+      nextWavePeriod:i=45
+    }
+
+    "wave:object"{
+      zombie_rush_metal_bucket:i=4
+      nextWavePeriod:i=45
+    }
+
+    "wave:object"{
+      zombie_rush_metal_bucket:i=4
+      nextWavePeriod:i=45
+    }
+
+    "wave:object"{
+      zombie_rush_metal_bucket:i=4
+      nextWavePeriod:i=45
+    }
+
+    "wave:object"{
+      zombie_rush_metal_bucket:i=4
+      nextWavePeriod:i=45
+    }
+
+    "wave:object"{
+      zombie_rush_metal_bucket:i=4
+      nextWavePeriod:i=45
+    }
+
+    "wave:object"{
+      zombie_rush_metal_bucket:i=4
+      nextWavePeriod:i=45
+    }
+
+    "wave:object"{
+      zombie_rush_metal_bucket:i=4
+      nextWavePeriod:i=45
+    }
+
+    "wave:object"{
+      zombie_rush_metal_bucket:i=4
+      nextWavePeriod:i=3000
+    }
+  }
+}
+
+zombie_flamethrower_arena_objective{
+  _use:t="zombie_shooting_arena_objective"
+
+  "objective_spawner__waves:array"{
+
+    "wave:object"{
+      wave_briefing:t="wave_briefing/altar_new_wave_common"
+      zombie_rush_zombie:i=5
+      zombie_rush_metal_bucket:i=7
+      zombie_rush_cart_wheel:i=6
+      zombie_rush_shield:i=4
+      zombie_rush_bmw_wheel:i=4
+      zombie_rush_moto:i=4
+      zombie_rush_train_door:i=4
+      zombie_rush_spitfire_prop:i=2
+      imp_zombie_shooter:i=8
+      imp_zombie_bomb:i=4
+    }
+
+    "wave:object"{
+      wave_briefing:t="wave_briefing/altar_new_wave_common"
+      zombie_rush_zombie:i=16
+      zombie_rush_metal_bucket:i=9
+      zombie_rush_shield:i=3
+      zombie_rush_bmw_wheel:i=4
+      zombie_rush_moto:i=10
+      zombie_rush_train_door:i=8
+      zombie_rush_spitfire_prop:i=8
+      zombie_rush_zombie_phosphor:i=3
+      zombie_rush_zombie_explosive:i=2
+      imp_zombie_shooter:i=12
+      imp_zombie_bomb:i=6
+    }
+
+    "wave:object"{
+      wave_briefing:t="wave_briefing/altar_new_wave_common"
+      zombie_rush_zombie:i=20
+      zombie_rush_metal_bucket:i=8
+      zombie_rush_shield:i=11
+      zombie_rush_bmw_wheel:i=5
+      zombie_rush_moto:i=8
+      zombie_rush_train_door:i=7
+      zombie_rush_spitfire_prop:i=8
+      zombie_rush_zombie_phosphor:i=3
+      zombie_rush_zombie_explosive:i=2
+      imp_zombie_shooter:i=14
+      imp_zombie_bomb:i=6
+      zombie_elite_zombie:i=3
+      zombie_elite_moto:i=2
+      zombie_elite_shield:i=1
+    }
+
+    "wave:object"{
+      wave_briefing:t="wave_briefing/flamethrower_boss"
+      "zombie_giant_boss_flamethrower_zombie+arena_zombie_boss_base":i=1
+      nextWavePeriod:i=30
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=3
+      imp_zombie_shooter:i=2
+      imp_zombie_bomb:i=1
+      nextWavePeriod:i=30
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=3
+      imp_zombie_shooter:i=2
+      imp_zombie_bomb:i=1
+      nextWavePeriod:i=30
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=3
+      imp_zombie_shooter:i=2
+      imp_zombie_bomb:i=1
+      nextWavePeriod:i=30
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=3
+      imp_zombie_shooter:i=2
+      imp_zombie_bomb:i=1
+      nextWavePeriod:i=30
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=3
+      imp_zombie_shooter:i=2
+      imp_zombie_bomb:i=1
+      nextWavePeriod:i=30
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=3
+      imp_zombie_shooter:i=2
+      imp_zombie_bomb:i=1
+      nextWavePeriod:i=30
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=3
+      imp_zombie_shooter:i=2
+      imp_zombie_bomb:i=1
+      nextWavePeriod:i=30
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=3
+      imp_zombie_shooter:i=2
+      imp_zombie_bomb:i=1
+      nextWavePeriod:i=30
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=3
+      imp_zombie_shooter:i=2
+      imp_zombie_bomb:i=1
+      nextWavePeriod:i=30
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=3
+      imp_zombie_shooter:i=2
+      imp_zombie_bomb:i=1
+      nextWavePeriod:i=30
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=3
+      imp_zombie_shooter:i=2
+      imp_zombie_bomb:i=1
+      nextWavePeriod:i=30
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=3
+      imp_zombie_shooter:i=2
+      imp_zombie_bomb:i=1
+      nextWavePeriod:i=30
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=3
+      imp_zombie_shooter:i=2
+      imp_zombie_bomb:i=1
+      nextWavePeriod:i=30
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=3
+      imp_zombie_shooter:i=2
+      imp_zombie_bomb:i=1
+      nextWavePeriod:i=30
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=3
+      imp_zombie_shooter:i=2
+      imp_zombie_bomb:i=1
+      nextWavePeriod:i=30
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=3
+      imp_zombie_shooter:i=2
+      imp_zombie_bomb:i=1
+      nextWavePeriod:i=30
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=3
+      imp_zombie_shooter:i=2
+      imp_zombie_bomb:i=1
+      nextWavePeriod:i=30
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=3
+      imp_zombie_shooter:i=2
+      imp_zombie_bomb:i=1
+      nextWavePeriod:i=30
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=3
+      imp_zombie_shooter:i=2
+      imp_zombie_bomb:i=1
+      nextWavePeriod:i=30
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=3
+      imp_zombie_shooter:i=2
+      imp_zombie_bomb:i=1
+      nextWavePeriod:i=3000
+    }
+  }
+}
+
+zombie_laser_arena_objective{
+  _use:t="zombie_shooting_arena_objective"
+
+  "objective_spawner__waves:array"{
+
+    "wave:object"{
+      wave_briefing:t="wave_briefing/altar_new_wave_common"
+      zombie_rush_zombie:i=5
+      zombie_rush_metal_bucket:i=7
+      zombie_rush_cart_wheel:i=6
+      zombie_rush_shield:i=4
+      zombie_rush_bmw_wheel:i=4
+      zombie_rush_moto:i=4
+      zombie_rush_train_door:i=4
+      zombie_rush_spitfire_prop:i=2
+      imp_zombie_shooter:i=8
+      imp_zombie_bomb:i=4
+    }
+
+    "wave:object"{
+      wave_briefing:t="wave_briefing/altar_new_wave_common"
+      zombie_rush_zombie:i=16
+      zombie_rush_metal_bucket:i=9
+      zombie_rush_shield:i=3
+      zombie_rush_bmw_wheel:i=4
+      zombie_rush_moto:i=10
+      zombie_rush_train_door:i=8
+      zombie_rush_spitfire_prop:i=8
+      zombie_rush_zombie_phosphor:i=3
+      zombie_rush_zombie_explosive:i=2
+      imp_zombie_shooter:i=12
+      imp_zombie_bomb:i=6
+    }
+
+    "wave:object"{
+      wave_briefing:t="wave_briefing/altar_new_wave_common"
+      zombie_rush_zombie:i=20
+      zombie_rush_metal_bucket:i=8
+      zombie_rush_shield:i=11
+      zombie_rush_bmw_wheel:i=5
+      zombie_rush_moto:i=8
+      zombie_rush_train_door:i=7
+      zombie_rush_spitfire_prop:i=8
+      zombie_rush_zombie_phosphor:i=3
+      zombie_rush_zombie_explosive:i=2
+      imp_zombie_shooter:i=14
+      imp_zombie_bomb:i=6
+      zombie_elite_zombie:i=3
+      zombie_elite_moto:i=2
+      zombie_elite_shield:i=1
+    }
+
+    "wave:object"{
+      wave_briefing:t="wave_briefing/laser_boss"
+      "zombie_giant_boss_laser_zombie+arena_zombie_boss_base":i=1
+      nextWavePeriod:i=45
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=4
+      zombie_rush_cart_wheel:i=4
+      nextWavePeriod:i=45
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=2
+      zombie_rush_cart_wheel:i=2
+      zombie_rush_metal_bucket:i=3
+      zombie_rush_shield:i=1
+      nextWavePeriod:i=45
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=4
+      zombie_rush_cart_wheel:i=4
+      nextWavePeriod:i=45
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=2
+      zombie_rush_cart_wheel:i=2
+      zombie_rush_metal_bucket:i=3
+      zombie_rush_shield:i=1
+      nextWavePeriod:i=45
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=4
+      zombie_rush_cart_wheel:i=4
+      nextWavePeriod:i=45
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=2
+      zombie_rush_cart_wheel:i=2
+      zombie_rush_metal_bucket:i=3
+      zombie_rush_shield:i=1
+      nextWavePeriod:i=45
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=4
+      zombie_rush_cart_wheel:i=4
+      nextWavePeriod:i=45
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=2
+      zombie_rush_cart_wheel:i=2
+      zombie_rush_metal_bucket:i=3
+      zombie_rush_shield:i=1
+      nextWavePeriod:i=45
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=4
+      zombie_rush_cart_wheel:i=4
+      nextWavePeriod:i=45
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=2
+      zombie_rush_cart_wheel:i=2
+      zombie_rush_metal_bucket:i=3
+      zombie_rush_shield:i=1
+      nextWavePeriod:i=45
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=4
+      zombie_rush_cart_wheel:i=4
+      nextWavePeriod:i=45
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=2
+      zombie_rush_cart_wheel:i=2
+      zombie_rush_metal_bucket:i=3
+      zombie_rush_shield:i=1
+      nextWavePeriod:i=45
+    }
+
+    "wave:object"{
+      zombie_rush_zombie:i=4
+      zombie_rush_cart_wheel:i=4
+      nextWavePeriod:i=3000
+    }
+  }
+
+  _group{
+    _tags:t="server"
+    objective_spawner__nextSpawnPeriod:r=0.1
+    objective_spawner__radius:r=30.0
+  }
+}
+
+zombie_shooting_arena_objective_easy{
+  _use:t="zombie_shooting_arena_objective"
+  zombie_arena__killsRequire:i=200
+
+  "objective_spawner__waves:array"{
+
+    "wave:object"{
+      wave_briefing:t="wave_briefing/altar_new_wave_common"
+      zombie_rush_zombie:i=14
+      zombie_rush_metal_bucket:i=4
+      zombie_rush_cart_wheel:i=3
+      zombie_rush_train_door:i=3
+      imp_zombie_shooter:i=8
+      imp_zombie_bomb:i=3
+    }
+
+    "wave:object"{
+      wave_briefing:t="wave_briefing/altar_new_wave_common"
+      zombie_rush_zombie:i=15
+      zombie_rush_metal_bucket:i=10
+      zombie_rush_moto:i=3
+      zombie_rush_zombie_phosphor:i=2
+      zombie_rush_zombie_explosive:i=2
+      imp_zombie_shooter:i=10
+      imp_zombie_bomb:i=5
+    }
+
+    "wave:object"{
+      wave_briefing:t="wave_briefing/altar_new_wave_common"
+      zombie_rush_zombie:i=23
+      zombie_rush_metal_bucket:i=10
+      zombie_rush_cart_wheel:i=2
+      zombie_rush_shield:i=2
+      zombie_rush_bmw_wheel:i=2
+      zombie_rush_moto:i=2
+      zombie_rush_spitfire_prop:i=1
+      imp_zombie_shooter:i=12
+      imp_zombie_bomb:i=5
+    }
+
+    "wave:object"{
+      wave_briefing:t="wave_briefing/shooting_boss"
+      "zombie_giant_boss_shooting_zombie_easy+arena_zombie_boss_base":i=1
+      nextWavePeriod:i=3000
+    }
+  }
+}
+
+zombie_balls_arena_objective_easy{
+  _use:t="zombie_shooting_arena_objective_easy"
+
+  "objective_spawner__waves:array"{
+
+    "wave:object"{
+      wave_briefing:t="wave_briefing/altar_new_wave_common"
+      zombie_rush_zombie:i=14
+      zombie_rush_metal_bucket:i=4
+      zombie_rush_cart_wheel:i=3
+      zombie_rush_train_door:i=3
+      imp_zombie_shooter:i=8
+      imp_zombie_bomb:i=3
+    }
+
+    "wave:object"{
+      wave_briefing:t="wave_briefing/altar_new_wave_common"
+      zombie_rush_zombie:i=15
+      zombie_rush_metal_bucket:i=10
+      zombie_rush_moto:i=3
+      zombie_rush_zombie_phosphor:i=2
+      zombie_rush_zombie_explosive:i=2
+      imp_zombie_shooter:i=10
+      imp_zombie_bomb:i=5
+    }
+
+    "wave:object"{
+      wave_briefing:t="wave_briefing/altar_new_wave_common"
+      zombie_rush_zombie:i=23
+      zombie_rush_metal_bucket:i=10
+      zombie_rush_cart_wheel:i=2
+      zombie_rush_shield:i=2
+      zombie_rush_bmw_wheel:i=2
+      zombie_rush_moto:i=2
+      zombie_rush_spitfire_prop:i=1
+      imp_zombie_shooter:i=12
+      imp_zombie_bomb:i=5
+    }
+
+    "wave:object"{
+      wave_briefing:t="wave_briefing/balls_boss"
+      "zombie_giant_boss_balls_zombie_easy+arena_zombie_boss_base":i=1
+      nextWavePeriod:i=3000
+    }
+  }
+}
+
+zombie_summoner_arena_objective_easy{
+  _use:t="zombie_shooting_arena_objective_easy"
+
+  "objective_spawner__waves:array"{
+
+    "wave:object"{
+      wave_briefing:t="wave_briefing/altar_new_wave_common"
+      zombie_rush_zombie:i=14
+      zombie_rush_metal_bucket:i=4
+      zombie_rush_cart_wheel:i=3
+      zombie_rush_train_door:i=3
+      imp_zombie_shooter:i=8
+      imp_zombie_bomb:i=3
+    }
+
+    "wave:object"{
+      wave_briefing:t="wave_briefing/altar_new_wave_common"
+      zombie_rush_zombie:i=15
+      zombie_rush_metal_bucket:i=10
+      zombie_rush_moto:i=3
+      zombie_rush_zombie_phosphor:i=2
+      zombie_rush_zombie_explosive:i=2
+      imp_zombie_shooter:i=10
+      imp_zombie_bomb:i=5
+    }
+
+    "wave:object"{
+      wave_briefing:t="wave_briefing/altar_new_wave_common"
+      zombie_rush_zombie:i=23
+      zombie_rush_metal_bucket:i=10
+      zombie_rush_cart_wheel:i=2
+      zombie_rush_shield:i=2
+      zombie_rush_bmw_wheel:i=2
+      zombie_rush_moto:i=2
+      zombie_rush_spitfire_prop:i=1
+      imp_zombie_shooter:i=12
+      imp_zombie_bomb:i=5
+    }
+
+    "wave:object"{
+      wave_briefing:t="wave_briefing/summoner_boss"
+      "zombie_giant_boss_agressive_shells_zombie_easy+arena_zombie_boss_base":i=1
+      nextWavePeriod:i=3000
+    }
+  }
+}
+
+zombie_flamethrower_arena_objective_easy{
+  _use:t="zombie_shooting_arena_objective_easy"
+
+  "objective_spawner__waves:array"{
+
+    "wave:object"{
+      wave_briefing:t="wave_briefing/altar_new_wave_common"
+      zombie_rush_zombie:i=14
+      zombie_rush_metal_bucket:i=4
+      zombie_rush_cart_wheel:i=3
+      zombie_rush_train_door:i=3
+      imp_zombie_shooter:i=8
+      imp_zombie_bomb:i=3
+    }
+
+    "wave:object"{
+      wave_briefing:t="wave_briefing/altar_new_wave_common"
+      zombie_rush_zombie:i=15
+      zombie_rush_metal_bucket:i=10
+      zombie_rush_moto:i=3
+      zombie_rush_zombie_phosphor:i=2
+      zombie_rush_zombie_explosive:i=2
+      imp_zombie_shooter:i=10
+      imp_zombie_bomb:i=5
+    }
+
+    "wave:object"{
+      wave_briefing:t="wave_briefing/altar_new_wave_common"
+      zombie_rush_zombie:i=23
+      zombie_rush_metal_bucket:i=10
+      zombie_rush_cart_wheel:i=2
+      zombie_rush_shield:i=2
+      zombie_rush_bmw_wheel:i=2
+      zombie_rush_moto:i=2
+      zombie_rush_spitfire_prop:i=1
+      imp_zombie_shooter:i=12
+      imp_zombie_bomb:i=5
+    }
+
+    "wave:object"{
+      wave_briefing:t="wave_briefing/flamethrower_boss"
+      "zombie_giant_boss_flamethrower_zombie_easy+arena_zombie_boss_base":i=1
+      nextWavePeriod:i=3000
+    }
+  }
+}
+
+zombie_laser_arena_objective_easy{
+  _use:t="zombie_shooting_arena_objective_easy"
+
+  "objective_spawner__waves:array"{
+
+    "wave:object"{
+      wave_briefing:t="wave_briefing/altar_new_wave_common"
+      zombie_rush_zombie:i=14
+      zombie_rush_metal_bucket:i=4
+      zombie_rush_cart_wheel:i=3
+      zombie_rush_train_door:i=3
+      imp_zombie_shooter:i=8
+      imp_zombie_bomb:i=3
+    }
+
+    "wave:object"{
+      wave_briefing:t="wave_briefing/altar_new_wave_common"
+      zombie_rush_zombie:i=15
+      zombie_rush_metal_bucket:i=10
+      zombie_rush_moto:i=3
+      zombie_rush_zombie_phosphor:i=2
+      zombie_rush_zombie_explosive:i=2
+      imp_zombie_shooter:i=10
+      imp_zombie_bomb:i=5
+    }
+
+    "wave:object"{
+      wave_briefing:t="wave_briefing/altar_new_wave_common"
+      zombie_rush_zombie:i=23
+      zombie_rush_metal_bucket:i=10
+      zombie_rush_cart_wheel:i=2
+      zombie_rush_shield:i=2
+      zombie_rush_bmw_wheel:i=2
+      zombie_rush_moto:i=2
+      zombie_rush_spitfire_prop:i=1
+      imp_zombie_shooter:i=12
+      imp_zombie_bomb:i=5
+    }
+
+    "wave:object"{
+      wave_briefing:t="wave_briefing/laser_boss"
+      "zombie_giant_boss_laser_zombie_easy+arena_zombie_boss_base":i=1
+      nextWavePeriod:i=3000
+    }
+  }
+
+  _group{
+    _tags:t="server"
+    objective_spawner__nextSpawnPeriod:r=0.1
+    objective_spawner__radius:r=30.0
+  }
+}
+
+shell_auto_gun_item{
+  shell_auto_gun__spawnActivatedShellBlk:t="content/enlisted_extra/gamedata/weapons/shells/zombie_ball.blk"
+  shell_auto_gun__addShellTemplate:t="block_rethrow_shell"
+  shell_auto_gun__speedRange:p2=5.0, 10.0
+  shell_auto_gun__activateNextTime:r=1.0
+  shell_auto_gun__periodTime:r=5.0
+  shell_auto_gun__xAngleRange:p2=-90.0, 90.0
+  shell_auto_gun__yAngleRange:p2=40.0, 45.0
+  shell_auto_gun__nodeIndex:i=-1
+  shell_auto_gun__spawn_count:i=1
+  shell_auto_gun__spawnShellTimer:r=5.0
+
+  "shell_auto_gun:tag"{
+  }
+
+  "ownerEid:eid"{
+  }
+
+  "shell_auto_gun__ownerEid:eid"{
+  }
+}
+
+small_quick_shell_auto_gun_item{
+  _use:t="shell_auto_gun_item"
+  shell_auto_gun__spawnActivatedShellBlk:t="content/enlisted_extra/gamedata/weapons/shells/zombie_shot_small.blk"
+  shell_auto_gun__spawnShellTimer:r=20.0
+}
+
+quick_shell_auto_gun_item{
+  _use:t="shell_auto_gun_item"
+  shell_auto_gun__spawnActivatedShellBlk:t="content/enlisted_extra/gamedata/weapons/shells/zombie_shot.blk"
+  shell_auto_gun__spawnShellTimer:r=20.0
+}
+
+plasma_small_quick_shell_gravity_phys{
+  _use:t="projectile_phys"
+  _use:t="plasma_shell"
+  _use:t="rocket_shell"
+  _use:t="event_zombie_firebal_small_effect"
+  _use:t="plasma_small_quick_shell_spawn_sound"
+  phys_obj_net_phys__blk:t="content/enlisted_extra/gamedata/weapons/shells/zombie_shot_small.blk"
+  phys_obj_thrust__thrust:r=0.0
+  grid_obj__gridType:t="interactable"
+  grid_obj__fixedTmScale:r=-1.0
+  hitpoints__hp:r=10.0
+  hitpoints__maxHp:r=10.0
+  hitpoints__hpRecoverySpd:r=-0.5
+  hitpoints__hpThreshold:r=12.0
+  hitpoints__stoppingPower:r=0.0
+  hitpoints__shellDmgMult:r=1.0
+  hitpoints__shellSplashDmgMult:r=1.0
+  needsBlood:b=no
+  material:t="steel"
+  shell_projectile_death__damageMult:r=12.0
+  shell_projectile_death__damageRadiusMult:r=12.0
+  shell__damageMult:r=1.0
+  shell__damageRadiusMult:r=1.0
+  explosion_effect__template:t="event_zombie_explosion_fireball_effect"
+  shell_projectile_death__explosionEffectTemplate:t="event_foolmoon_explosion_plasma_hit"
+
+  "shell_detonate_ignore_owner:tag"{
+  }
+
+  collres{
+  }
+
+  grid_obj{
+  }
+
+  "killer:eid"{
+  }
+
+  "dm_parts__parts:object"{
+
+    "volumeBox_1:object"{
+      dmgMult:r=1.0
+      armor:r=0.0
+    }
+  }
+}
+
+plasma_quick_shell_gravity_phys{
+  _use:t="projectile_phys"
+  _use:t="plasma_shell"
+  _use:t="rocket_shell"
+  _use:t="event_zombie_firebal_big_effect"
+  _use:t="plasma_quick_shell_spawn_sound"
+  phys_obj_net_phys__blk:t="content/enlisted_extra/gamedata/weapons/shells/zombie_shot.blk"
+  phys_obj_thrust__thrust:r=0.0
+  grid_obj__gridType:t="interactable"
+  grid_obj__fixedTmScale:r=-1.0
+  hitpoints__hp:r=10.0
+  hitpoints__maxHp:r=10.0
+  hitpoints__hpRecoverySpd:r=-0.5
+  hitpoints__hpThreshold:r=12.0
+  hitpoints__stoppingPower:r=0.0
+  hitpoints__shellDmgMult:r=1.0
+  hitpoints__shellSplashDmgMult:r=1.0
+  needsBlood:b=no
+  material:t="steel"
+  shell_projectile_death__damageMult:r=12.0
+  shell_projectile_death__damageRadiusMult:r=12.0
+  shell__damageMult:r=1.0
+  shell__damageRadiusMult:r=1.0
+  explosion_effect__template:t="event_zombie_explosion_fireball_effect"
+  shell_projectile_death__explosionEffectTemplate:t="event_foolmoon_explosion_plasma_hit"
+
+  "shell_detonate_ignore_owner:tag"{
+  }
+
+  collres{
+  }
+
+  grid_obj{
+  }
+
+  "killer:eid"{
+  }
+
+  "dm_parts__parts:object"{
+
+    "volumeBox_1:object"{
+      dmgMult:r=1.0
+      armor:r=0.0
+    }
+  }
+}
+
+plasma_shell_gravity_phys{
+  _use:t="projectile_phys"
+  _use:t="plasma_shell"
+  _use:t="plasma_shell_spawn_sound"
+  _use:t="block_rethrow_shell"
+  _use:t="event_foolmoon_plasma"
+  havePairCollision:b=no
+  start_omega:p3=0.0, 0.0, 0.0
+  phys_obj_thrust__direction:p3=0.0, 0.0, -1.0
+  phys_obj_thrust__offset:p3=0.0, 0.0, 0.1
+  phys_obj_thrust__duration:r=10.0
+  phys_obj_thrust__endTime:r=0.0
+  shell__expl_node:t="weapon"
+  shell__active:b=yes
+  shell__launchTime:r=-1.0
+  shell__launchAtTime:r=0.0
+  shell__cleanupTime:r=30.0
+  shell__fuseTime:r=0.3
+  shell__explNodeIdx:i=-1
+  shell__explTime:r=-1.0
+  phys_obj_net_phys__blk:t="content/enlisted_extra/gamedata/weapons/shells/plasma_shell_gravity.blk"
+  phys_obj_thrust__thrust:r=0.0
+  grid_obj__gridType:t="interactable"
+  grid_obj__fixedTmScale:r=-1.0
+  hitpoints__hp:r=10.0
+  hitpoints__maxHp:r=10.0
+  hitpoints__hpRecoverySpd:r=-0.5
+  hitpoints__hpThreshold:r=12.0
+  hitpoints__stoppingPower:r=0.0
+  hitpoints__shellDmgMult:r=1.0
+  hitpoints__shellSplashDmgMult:r=1.0
+  needsBlood:b=no
+  material:t="steel"
+  shell_projectile_death__damageMult:r=12.0
+  shell_projectile_death__damageRadiusMult:r=12.0
+  shell__damageMult:r=1.0
+  shell__damageRadiusMult:r=1.0
+  explosion_effect__template:t="event_foolmoon_explosion_plasma"
+  shell_projectile_death__explosionEffectTemplate:t="event_foolmoon_explosion_plasma_hit"
+
+  "shell_detonate_ignore_owner:tag"{
+  }
+
+  collres{
+  }
+
+  grid_obj{
+  }
+
+  "killer:eid"{
+  }
+
+  "dm_parts__parts:object"{
+
+    "volumeBox_1:object"{
+      dmgMult:r=1.0
+      armor:r=0.0
+    }
+  }
+}
+
+special_weapon_box_base{
+  _use:t="ecs_no_debug"
+  _use:t="item_with_animchar_updatable"
+  _use:t="animchar"
+  _use:t="item_in_world"
+  _use:t="ui_visible"
+  _use:t="disable_update"
+  _use:t="main_weap_slots"
+  _use:t="zombie_green_dim_emissive"
+  buildingRadius:r=1.0
+  building_menu__image:t="paratrooper_box"
+  _tracked:t="paid_loot__alreadyUsed"
+  _replicated:t="paid_loot__alreadyUsed"
+  paid_loot__alreadyUsed:b=no
+  paid_loot__tokenNominal:i=40
+  paid_loot__getTokensProb:r=1.0
+  paid_loot__regularBoxProb:r=0.5
+  item__iconYaw:r=-90.0
+  item__ui_priority:i=2
+  item__lootType:t="gun"
+  item__lootSoundType:t="weapon"
+  gun__propsId:i=-1
+  gun__maxAmmo:i=0
+  dropTm:m=[[0.0, 1.0, 0.0] [0.0, 0.0, -1.0] [-1.0, 0.0, 0.0] [0.0, 0.03, 0.0]]
+  gun__customSkin:t=""
+  item__name:t="items/random_weapon_box"
+  item__weapType:t="random_weapon_box"
+  item__weight:r=4.7
+  gun__locName:t="Weapon Box NEW"
+  animchar__updatable:b=no
+  paid_loot_anim__nodeName:t="ammunition_box_hatch"
+  paid_loot_anim__startAngle:r=0.0
+  paid_loot_anim__openedAngle:r=130.0
+  paid_loot_anim__timeToOpen:r=1.0
+  paid_loot_anim__openedAt:r=-1.0
+  paid_loot_anim__progressVarId:i=-1
+  paid_loot_anim__progress:r=-1.0
+  item__template:t="random_weapon_box"
+  item__proto:t="gamedata/weapons/empty.blk"
+  gun__blk:t="gamedata/weapons/empty.blk"
+  animchar__res:t="ammunition_supply_b_char"
+  collres__res:t="ammunition_supply_b_dynmodel_collision"
+  special_box_hud__iconImage:t="paratrooper_box"
+  special_box_hud__offsetY:r=0.5
+  special_box_hud__minDistanceToShow:r=0.1
+  special_box_hud__maxDistanceToShow:r=15.0
+  item__visible:b=yes
+
+  "item__specialPickup:tag"{
+  }
+
+  "paid_loot_special_box:tag"{
+  }
+
+  "paid_loot__specialWeapTemplatesBase:list<t>"{
+  }
+
+  "paid_loot__specialWeapRandomizeWeightBase:list<r>"{
+  }
+
+  "paid_loot__specialWeapTemplates:list<t>"{
+  }
+
+  "paid_loot__specialWeapRandomizeWeight:list<r>"{
+  }
+
+  "paid_loot__specialWeapChanceRange:list<r>"{
+  }
+
+  "paid_loot__weapTemplates:list<t>"{
+    item:t="stl_mp_40_halloween_gun_item+item_in_world+ui_visible+disable_update"
+    item:t="ppd_34_halloween_gun_item+item_in_world+ui_visible+disable_update"
+    item:t="m3a1_grease_halloween_gun_item+item_in_world+ui_visible+disable_update"
+    item:t="sten_mk2_halloween_gun_item+item_in_world+ui_visible+disable_update"
+    item:t="type_100_smg_early_halloween_gun_item+item_in_world+ui_visible+disable_update"
+    item:t="winchester_model_1912_halloween_gun_item+item_in_world+ui_visible+disable_update"
+  }
+
+  "paid_loot__weapRandomizeWeight:list<r>"{
+    item:r=10.0
+    item:r=10.0
+    item:r=10.0
+    item:r=10.0
+    item:r=10.0
+    item:r=10.0
+  }
+
+  "paid_loot__weapChanceRange:list<r>"{
+  }
+
+  "item__id:i"{
+    value:i=0
+    _hide:b=yes
+  }
+
+  phys_vars{
+  }
+
+  anim_phys{
+  }
+
+  "disable_visibility_tracing:tag"{
+  }
+
+  "fastPickup:tag"{
+  }
+}
+
+special_weapon_box_easy{
+  _use:t="special_weapon_box_base"
+  _use:t="special_weapon_box_sound"
+  paid_loot__tokenNominal:i=40
+  paid_loot__getTokensProb:r=0.2
+}
+
+special_weapon_box_test{
+  _use:t="special_weapon_box_base"
+  _use:t="special_weapon_box_sound"
+  paid_loot__tokenNominal:i=40
+  paid_loot__getTokensProb:r=1.0
+}
+
+special_weapon_box{
+  _use:t="special_weapon_box_base"
+  _use:t="special_weapon_box_sound"
+}
+
+special_weapon_box_personal{
+  _use:t="special_weapon_box_base"
+  paid_loot__getTokensProb:r=0.0
+  paid_loot__tokenNominal:i=0
+
+  "special_weapon_box__ownedByPlayer:eid"{
+  }
+}
+
+special_weapon_box_personal_to_start{
+  _use:t="special_weapon_box_personal"
+  paid_loot__regularBoxProb:r=1.0
+}
+
+special_weapon_box_personal_good_weapon{
+  _use:t="special_weapon_box_personal"
+  paid_loot__regularBoxProb:r=0.0001
+}
+
+personal_box_info{
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, 0.0, 0.0]]
+  personal_box_info__groupIndex:i=-1
+}
+
+personal_box_creator{
+  personal_box_creator__groupIndex:i=-1
+  personal_box_creator__numPlayers:i=4
+  personal_box_creator__ready:b=no
+  groupName:t=""
+  personal_box_creator__template:t=""
+  personal_box_creator__wasUsed:b=no
+
+  "personal_box_creator__startPositions:list<m>"{
+  }
+
+  "personal_box_creator__boxEids:list<eid>"{
+  }
+}
+
+special_box_creator{
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, 0.0, 0.0]]
+  special_box_creator__probability:r=1.0
+  special_box_creator__template:t=""
+}
+
+zombie_elite_zombie{
+  _use:t="nzombie_base"
+  _use:t="nzombie_ai_without_bullet_reaction"
+  _use:t="zombie_elite_zombie_sound"
+  _use:t="zombie_blue_bright_emissive"
+  _use:t="movement_zombie_elite"
+  entity__recreateToOnDeath:t="zombie_rush_zombie_dead"
+  team:i=3
+  rush_zombie__switchToPriorityTargetChance:r=0.1
+  rush_zombie__attackChance:r=0.025
+  beh_tree__node:t="nzombie_attacker"
+  beh_tree__refs__wander:t="sub.nAttackPriorityTarget"
+  effect__effectOnCreation:t="invisibility_in_smoke"
+  paid_loot__pointsForKill:i=40
+  nPhys__animcharScale:r=1.3
+  paid_loot__pointsPerDamage:r=0.1
+  hitpoints__hp:r=250.0
+  hitpoints__maxHp:r=250.0
+  hitpoints__scaleHp:r=250.0
+  hitpoints__hpThreshold:r=15.0
+  hitpoints__hpRecoverySpd:r=0.0
+  hitpoints__stoppingPowerThreshold:r=20.0
+  _tracked:t="walker_agent__priorityTarget"
+  beh_tree__blackboard__enemyRadius:r=200.0
+  killLogName:t="zombie/uber_elite"
+
+  "nphys__no_obstacle_navigation:tag"{
+  }
+
+  "random_animchar_vars__varNames:list<t>"{
+    name:t="spine1_rot_x"
+    name:t="spine_rot_x"
+    name:t="spine1_rot_z"
+    name:t="spine_rot_z"
+    name:t="run_anim_selecror"
+  }
+
+  "random_animchar_vars__varLimits:list<p2>"{
+    range:p2=-5.0, 5.0
+    range:p2=-5.0, 5.0
+    range:p2=-5.0, 5.0
+    range:p2=-5.0, 5.0
+    range:p2=1.6, 2.4
+  }
+
+  "actions__actions:array"{
+
+    "action:object"{
+      name:t="stand_melee"
+      state:t="attack"
+      actionTime:r=1.0
+      applyAt:r=0.3
+      props:t="gamedata/actions_enlisted/zombie_elite_claw.blk"
+      irq:t="claw_attack"
+      varName:t="attack_progress"
+    }
+  }
+
+  "loc_snapshots__scaledTransform:tag"{
+  }
+
+  "deathDrop:array"{
+  }
+
+  "walker_agent__priorityTarget:eid"{
+  }
+
+  _group{
+    projectile_impulse__cinematicArtistryMult:r=0.1
+    projectile_impulse__cinematicArtistryMultDead:r=0.0
+    projectile_impulse__maxVelocity:r=2.0
+    projectile_impulse__maxOmega:r=3.0
+    _tags:t="gameClient"
+  }
+}
+
+zombie_elite_moto{
+  _use:t="base_zombie_with_item"
+  _use:t="zombie_elite_moto_sound_override"
+  _use:t="zombie_blue_bright_emissive"
+  _use:t="movement_zombie_elite"
+  zombie__attachHandsEntityTemplate:t="zombie_moto_steer_elite"
+  anim__attachHandsLocalTm:m=[[1.31118e-06, -0.499954, -0.865945] [0.156421, 0.85529, -0.493802] [0.987692, -0.135476, 0.0782185] [-0.2, -0.5, 0.3]]
+  hitpoints__hp:r=250.0
+  hitpoints__maxHp:r=250.0
+  hitpoints__scaleHp:r=250.0
+  hitpoints__hpThreshold:r=15.0
+  hitpoints__hpRecoverySpd:r=0.0
+  paid_loot__pointsForKill:i=40
+  nPhys__animcharScale:r=1.3
+  paid_loot__pointsPerDamage:r=0.1
+  killLogName:t="zombie/uber_elite_moto"
+
+  "loc_snapshots__scaledTransform:tag"{
+  }
+
+  "actions__actions:array"{
+
+    "action:object"{
+      name:t="stand_melee"
+      state:t="attack"
+      actionTime:r=1.0
+      applyAt:r=0.3
+      props:t="gamedata/actions_enlisted/zombie_elite_claw.blk"
+      irq:t="claw_attack"
+      varName:t="attack_progress"
+    }
+  }
+
+  "attach_effects__templateNames:list<t>"{
+    name:t="burning_entity_effect_regular_template"
+  }
+
+  "attach_effects__nodes:list<t>"{
+    name:t="n_head_A"
+  }
+
+  "attach_effects__scales:list<r>"{
+    scale:r=0.4
+  }
+}
+
+zombie_elite_shield{
+  _use:t="base_zombie_with_item"
+  _use:t="zombie_elite_shield_sound_override"
+  _use:t="zombie_blue_bright_emissive"
+  _use:t="movement_zombie_elite"
+  zombie__attachHandsEntityTemplate:t="zombie_shield_elite"
+  anim__attachHandsLocalTm:m=[[5.92033e-07, -0.702346, -0.702346] [6.50346e-07, 0.701385, -0.701385] [0.993223, 0.0, 8.2881e-07] [0.0, 0.1, -0.5]]
+  hitpoints__hp:r=250.0
+  hitpoints__maxHp:r=250.0
+  hitpoints__scaleHp:r=250.0
+  hitpoints__hpThreshold:r=15.0
+  hitpoints__hpRecoverySpd:r=0.0
+  paid_loot__pointsForKill:i=40
+  nPhys__animcharScale:r=1.3
+  paid_loot__pointsPerDamage:r=0.1
+  killLogName:t="zombie/uber_elite_shield"
+
+  "loc_snapshots__scaledTransform:tag"{
+  }
+
+  "random_animchar_vars__varNames:list<t>"{
+    name:t="spine1_rot_x"
+    name:t="spine_rot_x"
+    name:t="spine1_rot_z"
+    name:t="spine_rot_z"
+    name:t="run_anim_selecror"
+  }
+
+  "actions__actions:array"{
+
+    "action:object"{
+      name:t="stand_melee"
+      state:t="attack"
+      actionTime:r=1.0
+      applyAt:r=0.3
+      props:t="gamedata/actions_enlisted/zombie_elite_claw.blk"
+      irq:t="claw_attack"
+      varName:t="attack_progress"
+    }
+  }
+
+  "random_animchar_vars__varLimits:list<p2>"{
+    range:p2=-5.0, 5.0
+    range:p2=-5.0, 5.0
+    range:p2=-5.0, 5.0
+    range:p2=-5.0, 5.0
+    range:p2=1.6, 2.4
+  }
+}
+
+zombie_elite_spitfire_prop{
+  _use:t="base_zombie_with_item"
+  _use:t="zombie_elite_spitfire_prop_sound_override"
+  _use:t="zombie_blue_bright_emissive"
+  zombie__attachEntityNode:t="n_body_back_A"
+  zombie__attachHandsEntityTemplate:t="zombie_prop_elite"
+  navmesh_phys__maxWalkSpeed:r=7.0
+  paid_loot__pointsForKill:i=40
+  hitpoints__hp:r=250.0
+  hitpoints__maxHp:r=250.0
+  hitpoints__scaleHp:r=250.0
+  hitpoints__hpThreshold:r=15.0
+  hitpoints__hpRecoverySpd:r=0.0
+  nPhys__animcharScale:r=1.3
+  paid_loot__pointsPerDamage:r=0.1
+  anim__attachNodePostfix:t=""
+  anim__attachHandsLocalTm:m=[[-5.95346e-08, -0.998825, -0.0] [0.998822, -5.95344e-08, 0.0] [0.0, -0.0, 0.997797] [0.0, -0.12, 0.0]]
+  killLogName:t="zombie/uber_elite_spitfire_prop"
+
+  "anim__attachRecursiveList:list<t>"{
+  }
+
+  "loc_snapshots__scaledTransform:tag"{
+  }
+
+  "actions__actions:array"{
+
+    "action:object"{
+      name:t="stand_melee"
+      state:t="attack"
+      actionTime:r=1.0
+      applyAt:r=0.3
+      props:t="gamedata/actions_enlisted/zombie_elite_claw.blk"
+      irq:t="claw_attack"
+      varName:t="attack_progress"
+    }
+  }
+}
+
+zombie_moto_steer_elite{
+  _use:t="zombie_ik_hands"
+  _use:t="base_destroyable_item_with_hp"
+  _use:t="zombie_blue_bright_emissive"
+  collres__res:t="bmw_r75_front_fork_collision"
+  nPhys__animcharScale:r=1.3
+  hitpoints__hp:r=10000.0
+  hitpoints__maxHp:r=10000.0
+  material:t="steel"
+  animchar__res:t="bmw_r75_front_fork_char"
+  zombie__attachLHandNode:t="Bip01 L Hand"
+  zombie__attachRHandNode:t="Bip01 R Hand"
+
+  "loc_snapshots__scaledTransform:tag"{
+  }
+
+  "dm_parts__parts:object"{
+
+    "cls:object"{
+      dmgMult:r=1.0
+      armor:r=0.0
+    }
+  }
+}
+
+zombie_shield_elite{
+  _use:t="zombie_ik_hands"
+  _use:t="base_destroyable_item_with_hp"
+  _use:t="zombie_blue_bright_emissive"
+  animchar__res:t="wooden_shield_char"
+  collres__res:t="wooden_shield_collision"
+  nPhys__animcharScale:r=1.3
+  hitpoints__hp:r=100.0
+  hitpoints__maxHp:r=100.0
+  material:t="wood"
+  zombie__attachLHandNode:t="Bip01 L Hand"
+  zombie__attachRHandNode:t="Bip01 R Hand"
+
+  "loc_snapshots__scaledTransform:tag"{
+  }
+
+  "dm_parts__parts:object"{
+
+    "wood_door_a:object"{
+      dmgMult:r=1.0
+      armor:r=0.0
+    }
+  }
+}
+
+zombie_prop_elite{
+  _use:t="zombie_ik_hands"
+  _use:t="zombie_blue_bright_emissive"
+  animchar__res:t="spitfire_prop_char"
+  zombie__attachLHandNode:t="root"
+  zombie__attachRHandNode:t="root"
+  nPhys__animcharScale:r=1.3
+  paid_loot__pointsPerDamage:r=0.1
+  zombie__attachLHandAdditiveTm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-0.0, 0.8, 0.0]]
+  zombie__attachRHandAdditiveTm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-0.2, -0.8, 0.0]]
+  zombie__propellerCurValue:r=0.0
+  zombie__propellerSpeed:r=360.0
+  zombie__propellerVar:i=-1
+
+  "loc_snapshots__scaledTransform:tag"{
+  }
+
+  phys_vars{
+  }
+
+  anim_phys{
+  }
+}
+
+token_free_item{
+  _use:t="ecs_no_debug"
+  _use:t="item_with_animchar_updatable"
+  _use:t="animchar"
+  _use:t="item_in_world"
+  _use:t="ui_visible"
+  _use:t="disable_update"
+  _use:t="main_weap_slots"
+  _use:t="zombie_purple_emissive"
+  item__lootType:t="gun"
+  item__lootSoundType:t="other"
+  item__name:t="items/token"
+  item__template:t="token_free_item"
+  item__proto:t="gamedata/weapons/empty.blk"
+  gun__blk:t="gamedata/weapons/empty.blk"
+  animchar__res:t="halloween_token_char"
+  collres__res:t="halloween_token_collision"
+  token_free__nominal:i=40
+  token_free__mapIcon:t="lb_score"
+  token_free__rotationSpeedDegPerSecond:r=30.0
+
+  "item__specialPickup:tag"{
+  }
+
+  "item__id:i"{
+    value:i=0
+    _hide:b=yes
+  }
+
+  "fastPickup:tag"{
+  }
+
+  "token_free__tag:tag"{
+  }
+}
+
+demon_portal_placeable{
+  _use:t="entity_prefab"
+  _use:t="replicating"
+  _use:t="placeable_rendinst"
+  ri_extra__name:t="demon_portal_base"
+  zombie_crater__projectorTemplate:t="zombie_crater_projector"
+
+  "entity_prefab__templatesToCreate:shared:object"{
+
+    "demon_portal_flicker_15m_light_a:object"{
+      relativeTransform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, 0.2, 0.0]]
+    }
+
+    "placeable_animchar:object"{
+      relativeTransform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, 0.0, 0.0]]
+      animchar__res:t="demon_portal_flicker_char"
+    }
+  }
+
+  "neverStillObstacle:tag"{
+  }
+
+  "zombie_crater__projectorEid:eid"{
+  }
+
+  _group{
+    _tags:t="render"
+    effect__name:t="event_zombie_portal_cmps_fx"
+  }
+}
+
+demon_portal_dmg_placeable{
+  _use:t="replicating"
+  _use:t="rendinst"
+  _use:t="replicating"
+  ri_extra__name:t="demon_portal_dmg"
+
+  "neverStillObstacle:tag"{
+  }
+}
+
+demon_portal_placeable_decal{
+  _use:t="entity_prefab"
+  _use:t="replicating"
+  _use:t="placeable_rendinst"
+  ri_extra__name:t="demon_portal_base"
+  zombie_crater__projectorTemplate:t="zombie_crater_projector"
+
+  "entity_prefab__templatesToCreate:shared:object"{
+
+    "demon_portal_flicker_15m_light_a:object"{
+      relativeTransform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, 0.2, 0.0]]
+    }
+
+    "placeable_animchar:object"{
+      relativeTransform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, 0.0, 0.0]]
+      animchar__res:t="demon_portal_flicker_char"
+    }
+
+    "placeable_rendinst:object"{
+      relativeTransform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, 0.0, 0.0]]
+      ri_extra__name:t="demon_portal_decal_a"
+    }
+  }
+
+  "neverStillObstacle:tag"{
+  }
+
+  "zombie_crater__projectorEid:eid"{
+  }
+
+  _group{
+    _tags:t="render"
+    effect__name:t="event_zombie_portal_cmps_fx"
+  }
+}
+
+zombie_postfx_ovveride{
+  zombie_damage_indicator__blockDuration:r=0.1
+  zombie_damage_indicator__thresholds:p3=1.0, 1.0, 0.0
+  zombie_damage_indicator__lightPulsationFreq:p4=0.1, 0.0, 0.0, 0.0
+  zombie_damage_indicator__lightIntensities:p4=3.0, 0.0, 0.0, 0.0
+  zombie_damage_indicator__mediumPulsationFreq:p4=0.1, 0.0, 0.0, 0.0
+  zombie_damage_indicator__mediumIntensities:p4=3.0, 0.0, 0.0, 0.0
+  zombie_damage_indicator__severePulsationFreq:p4=0.1, 0.0, 0.0, 0.0
+  zombie_damage_indicator__severeIntensities:p4=3.0, 0.0, 0.0, 0.0
+}

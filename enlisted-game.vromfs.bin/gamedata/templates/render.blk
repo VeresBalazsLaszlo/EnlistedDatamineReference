@@ -1,0 +1,24 @@
+ri_shadows_invalidate{
+  ri_texture_gen:i=0
+  _singleton:b=yes
+}
+
+physmap_patch_data{
+  _tags:t="render"
+  _singleton:b=yes
+  physmap_patch_tex_size:i=256
+  physmap_patch_update_distance_squared:r=100.0
+  physmap_patch_invscale:r=0.0
+  physmap_patch_last_update_pos:p2=0.0, 0.0
+
+  "physmap_patch_tex:UniqueTexWithShaderVar"{
+  }
+}
+
+physmap_patch_data_creation_request{
+  _tags:t="render"
+  _singleton:b=yes
+
+  "create_physmap_patch_data:tag"{
+  }
+}

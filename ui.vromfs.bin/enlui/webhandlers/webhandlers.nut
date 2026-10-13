@@ -1,0 +1,23 @@
+from "app" import exit_game
+from "%ui/notifications/matchingNotifications.nut" import subscribe
+from "%ui/components/msgbox.nut" import showMsgbox, removeMsgboxByUid
+from "eventbus" import eventbus_send, eventbus_subscribe, eventbus_send_foreign
+
+let handlers = {
+  function show_message_box(_ev, params) {
+    let { message = null, logout_on_close = false } = params
+    if (message == null)
+      return
+    showMsgbox({
+      uid = message
+      text = message
+      onClose = logout_on_close ? exit_game
+        : @() eventbus_send_foreign("webHandlers.removeMsg", { message })
+    })
+  }
+  replay_start = @(_ev, params) eventbus_send("replay.download", params)
+  hangar_install = @(_ev, params) eventbus_send("hangar.install", params)
+}
+
+subscribe("web-service", @(ev) handlers?[ev?.func](ev, ev?.params ?? {}))
+eventbus_subscribe("webHandlers.removeMsg", @(msg) removeMsgboxByUid(msg.message))

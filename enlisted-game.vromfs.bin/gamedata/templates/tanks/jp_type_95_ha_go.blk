@@ -1,0 +1,328 @@
+jp_type_95_ha_go_pacific{
+  _use:t="jp_jp_type_95_ha_go_common_with_base"
+
+  "disableDMParts:list<t>"{
+    part:t="ex_smoke_01"
+  }
+}
+
+jp_type_95_ha_go_commander_pacific_premium{
+  _use:t="base_type_95_ha_go_commander"
+  _use:t="jp_type_95_ha_go_common"
+
+  "animchar__objTexReplace:object"{
+    "jp_camo_artillery_brown*":t="jp_camo_early_curve_stripes*"
+  }
+}
+
+jp_jp_type_95_ha_go_common_with_base{
+  _use:t="base_type_95_ha_go"
+  _use:t="jp_type_95_ha_go_common"
+}
+
+jp_type_95_ha_go_common{
+  _use:t="jp_type_95_ha_go_common_vehicle_sound"
+  item__iconOffset:p2=-0.05, 0.05
+  item__iconScale:r=1.2
+  commanderCockpitFpsCamMaxAngle:p2=40.0, 5.0
+  gunner_cam_limit__useCockpitDir:b=yes
+  armorThicknessHull:p3=12.0, 12.0, 10.0
+  armorThicknessTurret:p3=30.0, 12.0, 12.0
+
+  "vehicle_seats__effectors:array"{
+  }
+
+  "vehicle_seats__seatsProvideOrder:tag"{
+  }
+
+  "vehicle_seats__seats:shared:array"{
+
+    "seats:object"{
+      name:t="main_gunner"
+      locName:t="vehicle_seats/gunner"
+      attachNode:t="commander"
+      ignoreAttachNodeRotation:b=yes
+      attachTm:m=[[0.9, 0.0, 0.0] [0.0, 0.9, 0.0] [0.0, 0.0, 0.9] [0.2, -0.4, 0.03]]
+      seatComponent:t="isGunner"
+      nextSeat:t="driver"
+      shouldHideOwner:b=yes
+      receiveDamageFromDMPart:t="commander"
+      cameraNodeName:t="bone_camera_gunner"
+      cockpitTemplate:t="jp_type_95_ha_go_gunner_cockpit"
+      hatchRotationAxis:p3=1.7, 0.0, 0.0
+      seatAnimUpper:t="drive_driver"
+      seatAnimLower:t="drive_driver"
+
+      "turretNames:array"{
+        turretNames:t="turret_01"
+      }
+
+      "hatchNodes:array"{
+        node:t="hatch_01"
+        node:t="hatch_02"
+      }
+
+      "loaderTurretNames:array"{
+        turret:t="turret_01"
+      }
+
+      "effectors:object"{
+
+        "l.hand:object"{
+          rel_tm:m=[[0.9035401, 0.405532, 0.1384116] [0.3157415, -0.4117088, -0.8548724] [-0.2896933, 0.8161122, -0.5000376] [0.7123413, 0.3521032, 0.9614236]]
+          node:t="commander"
+        }
+
+        "r.hand:object"{
+          rel_tm:m=[[0.8670377, -0.3549576, 0.3496429] [0.3955909, 0.06379797, -0.9162108] [0.3029089, 0.9327028, 0.1957329] [0.7283936, -0.3464422, 0.9666166]]
+          node:t="commander"
+        }
+      }
+    }
+
+    "seats:object"{
+      name:t="driver"
+      locName:t="vehicle_seats/driver"
+      seatOwnsEntityControl:b=yes
+      attachNode:t="driver"
+      ignoreAttachNodeRotation:b=yes
+      attachTm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-0.25, -0.25, 0.0]]
+      seatComponent:t="isDriver"
+      nextSeat:t="machinegunner"
+      shouldHideOwner:b=yes
+      receiveDamageFromDMPart:t="driver"
+      cameraNodeName:t="bone_camera_driver"
+      cameraOffset:p3=0.15, -0.0, -0.0
+      cockpitTemplate:t="jp_type_95_ha_go_driver_cockpit"
+    }
+
+    "seats:object"{
+      name:t="machinegunner"
+      canPlaceManually:b=yes
+      locName:t="vehicle_seats/radioman"
+      attachNode:t="machine_gunner"
+      ignoreAttachNodeRotation:b=yes
+      attachTm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-0.25, -0.5, 0.0]]
+      seatComponent:t="isGunner"
+      shouldHideOwner:b=yes
+      receiveDamageFromDMPart:t="machine_gunner"
+      cameraNodeName:t="root"
+      cockpitTemplate:t="jp_type_95_ha_go_machinegunner_cockpit"
+
+      "turretNames:array"{
+        turret:t="turret_02"
+      }
+    }
+  }
+
+  "turrets__initAmmoDistribution:array"{
+
+    "ammo:object"{
+      slot:i=0
+      fill:b=yes
+    }
+
+    "ammo:object"{
+      slot:i=1
+      fill:b=yes
+    }
+  }
+}
+
+jp_type_95_ha_go_driver_cockpit{
+  _use:t="base_driver_cockpit_no_slits"
+  animchar__res:t="bt_7_driver_char"
+  cockpit__offset:p3=-0.0865046, -0.354197, 0.00298843
+
+  "cockpit__visibleVehicleNodeNames:list<t>"{
+    node:t="track_l"
+    node:t="track_r"
+    node:t="ex_decor_l_01"
+    node:t="ex_decor_r_01"
+    node:t="gun_barrel"
+    node:t="ex_decor_r_02"
+  }
+
+  "cockpit__slitForwardOffset:list<r>"{
+    slit:r=0.06
+  }
+
+  "cockpit__slitIsGun:list<b>"{
+    slit:b=no
+  }
+
+  "cockpit__slitNodeNames:list<t>"{
+    slit:t="cam_front"
+  }
+}
+
+jp_type_95_ha_go_gunner_cockpit{
+  _use:t="base_gunner_cockpit"
+  animchar__res:t="ba_11_gunner_char"
+  cockpit__offset:p3=-0.590791, -0.0570703, 0.23677
+
+  "cockpit__visibleVehicleNodeNames:list<t>"{
+    node:t="gun_barrel"
+  }
+
+  "cockpit__slitNodeNames:list<t>"{
+    slit:t="cam_front_right"
+  }
+
+  "cockpit__slitForwardOffset:list<r>"{
+    slit:r=0.21
+  }
+
+  "cockpit__slitIsGun:list<b>"{
+    slit:b=yes
+  }
+
+  "cockpit__attachNodeNames:list<t>"{
+    node:t="bone_camera_gunner"
+  }
+
+  "cockpit__attachNodeIndices:list<i>"{
+  }
+
+  "cockpit__slitZoom:array"{
+
+    "slit:list<r>"{
+      zoom:r=1.9
+      zoom:r=3.5
+    }
+  }
+
+  "cockpit__slitZoomTime:list<r>"{
+    slit:r=0.05
+  }
+
+  "cockpit__slitTemplates:list<t>"{
+    slit:t="jp_37mm_94"
+  }
+
+  "cockpit__slitEids:list<eid>"{
+  }
+}
+
+jp_type_95_ha_go_machinegunner_cockpit{
+  _use:t="base_gunner_cockpit"
+  animchar__res:t="ba_11_gunner_char"
+  cockpit__offset:p3=-0.5, -0.02, 0.25
+
+  "cockpit__visibleVehicleNodeNames:list<t>"{
+    node:t="root"
+    node:t="ex_decor_l_02"
+    node:t="ex_decor_r_02"
+    node:t="hatch_04"
+    node:t="hatch_05"
+    node:t="track_r"
+    node:t="track_l"
+    node:t="wheel_l_drive"
+    node:t="wheel_r_drive"
+  }
+
+  "cockpit__slitNodeNames:list<t>"{
+    slit:t="cam_front_right"
+  }
+
+  "cockpit__slitForwardOffset:list<r>"{
+    slit:r=0.2
+  }
+
+  "cockpit__slitIsGun:list<b>"{
+    slit:b=yes
+  }
+
+  "cockpit__attachNodeNames:list<t>"{
+    node:t="bone_mg_v_01"
+  }
+
+  "cockpit__attachNodeIndices:list<i>"{
+  }
+
+  "cockpit__slitZoom:array"{
+
+    "slit:list<r>"{
+      zoom:r=2.0
+    }
+  }
+
+  "cockpit__slitZoomTime:list<r>"{
+    slit:r=0.05
+  }
+
+  "cockpit__slitTemplates:list<t>"{
+    slit:t="cross"
+  }
+
+  "cockpit__slitEids:list<eid>"{
+  }
+}
+
+jp_type_95_ha_go_14th_inf_div_peleliu_pacific_battlepass_premium{
+  _use:t="jp_jp_type_95_ha_go_common_with_base"
+  item__name:t="items/jp_type_95_ha_go_14th_inf_div_peleliu_pacific_battlepass_premium"
+
+  "animchar__objTexReplace:object"{
+    "jp_camo_artillery_brown*":t="jp_camo_late_brown_olive_yellow_lines*"
+  }
+
+  "animchar__objTexSet:object"{
+
+    "type_95_ha_go_turret_c*:object"{
+      "type_95_ha_go_14th_inf_div_peleliu_turret_c*":t="camo_skin_tex"
+    }
+  }
+
+  "disableDMParts:list<t>"{
+    part:t="ex_smoke_01"
+  }
+}
+
+jp_type_95_ha_go_siam_thailand_pacific_battlepass_premium{
+  _use:t="jp_jp_type_95_ha_go_common_with_base"
+  item__name:t="items/jp_type_95_ha_go_siam_thailand_pacific_battlepass_premium"
+
+  "animchar__objTexReplace:object"{
+    "jp_camo_artillery_brown*":t="jp_camo_olive*"
+  }
+
+  "animchar__objTexSet:object"{
+
+    "type_95_ha_go_body_c*:object"{
+      "type_95_ha_go_siam_thailand_body_c*":t="camo_skin_tex"
+    }
+
+    "type_95_ha_go_turret_c*:object"{
+      "type_95_ha_go_siam_thailand_turret_c*":t="camo_skin_tex"
+    }
+  }
+
+  "disableDMParts:list<t>"{
+    part:t="ex_smoke_01"
+  }
+}
+
+jp_type_95_ha_go_5th_sensha_pacific_battlepass_premium{
+  _use:t="jp_jp_type_95_ha_go_common_with_base"
+  item__name:t="items/jp_type_95_ha_go_5th_sensha_pacific_battlepass_premium"
+
+  "animchar__objTexReplace:object"{
+    "jp_camo_artillery_brown*":t="jp_camo_olive*"
+  }
+
+  "animchar__objTexSet:object"{
+
+    "type_95_ha_go_body_c*:object"{
+      "type_95_ha_go_5th_sensha_body_c*":t="camo_skin_tex"
+    }
+
+    "type_95_ha_go_turret_c*:object"{
+      "type_95_ha_go_5th_sensha_turret_c*":t="camo_skin_tex"
+    }
+  }
+
+  "disableDMParts:list<t>"{
+    part:t="ex_smoke_01"
+  }
+}

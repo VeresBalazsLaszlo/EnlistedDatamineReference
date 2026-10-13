@@ -1,0 +1,163 @@
+enl_soldier_mm_database{
+  _use:t="motion_matching_animation_database"
+  _singleton:b=yes
+  _tags:t="render"
+  weightsPath:t="gamedata/motion_matching/soldier_mm_weights.blk"
+  rootMotionPath:t="gamedata/motion_matching/soldier_mm_root_motion.blk"
+  main_database__nodeMasksPath:t="gamedata/motion_matching/soldier_mm_node_masks.blk"
+  main_database__footLockerCtrlName:t="mm_foot_locker"
+  main_database__validateNextClipPosThreshold:r=0.02
+  main_database__validateNextClipRotThreshold:r=0.03
+  main_database__loaded:b=no
+  _tracked:t="main_database__loaded"
+
+  "data_bases_paths:list<t>"{
+    path:t="gamedata/motion_matching/soldier_sprint_anim_list.blk"
+    path:t="gamedata/motion_matching/soldier_walk_sprint_transition_anim_list.blk"
+    path:t="gamedata/motion_matching/soldier_run_anim_list.blk"
+    path:t="gamedata/motion_matching/soldier_walk_anim_list.blk"
+    path:t="gamedata/motion_matching/soldier_stand_anim_list.blk"
+    path:t="gamedata/motion_matching/soldier_run_transitions_anim_list.blk"
+    path:t="gamedata/motion_matching/soldier_crouch_anim_list.blk"
+  }
+
+  "main_database__pbcWeightOverrides:object"{
+    "#rotate_spine_after_alignment":r=1.0
+    "~~root_rotate":r=0.0
+    feet_ctrl:r=0.0
+    feet_ctrl_always:r=0.0
+    mm_foot_locker:r=1.0
+  }
+
+  "main_database__availableTags:list<t>"{
+    tag:t="sprint"
+    tag:t="walk"
+    tag:t="stand"
+    tag:t="turn_on_spot"
+    tag:t="crouch"
+    tag:t="melee_weapon"
+    tag:t="heavy_weapon"
+    tag:t="default_weapon"
+  }
+
+  "motion_matching__weaponToTag:object"{
+    knife:t="melee_weapon"
+    moroccan_dagger:t="melee_weapon"
+    san_marco_dagger:t="melee_weapon"
+    japan_tanto_knife:t="melee_weapon"
+    ussr_finka_nkvd_knife_ik:t="melee_weapon"
+    italian_mvsn_knife:t="melee_weapon"
+    us_m3_trench_knife:t="melee_weapon"
+    Infanteriemesser_42:t="melee_weapon"
+    uk_2nd_pattern_fighting_knife:t="melee_weapon"
+    uk_1st_pattern_fighting_knife:t="melee_weapon"
+    aspen_stake:t="melee_weapon"
+    axe:t="melee_weapon"
+    italian_pick_axe:t="melee_weapon"
+    ussr_axe:t="melee_weapon"
+    japan_axe:t="melee_weapon"
+    uk_ecape_axe:t="melee_weapon"
+    us_m1910_axe:t="melee_weapon"
+    hammer:t="melee_weapon"
+    machete:t="melee_weapon"
+    italian_m1929_infantry_sword:t="melee_weapon"
+    british_officer_sword_1897:t="melee_weapon"
+    german_officer_sword:t="melee_weapon"
+    russian_cavalry_sword_1927:t="melee_weapon"
+    usa_officer_sword_1902:t="melee_weapon"
+    japan_katana:t="melee_weapon"
+    japan_katana_short:t="melee_weapon"
+    type_95_shin_gunto:t="melee_weapon"
+    type_98_gia_gunto:t="melee_weapon"
+    ger_entrenchment_tool:t="melee_weapon"
+    uk_army_spade:t="melee_weapon"
+    jap_type_98_entrenching_tool:t="melee_weapon"
+    ussr_m41_shovel:t="melee_weapon"
+    usa_m1943_shovel:t="melee_weapon"
+    pitchfork:t="melee_weapon"
+    ni_05_lunge_mine:t="melee_weapon"
+    japan_stick:t="melee_weapon"
+    japan_stick_2:t="melee_weapon"
+    tellermine_35:t="melee_weapon"
+    sprengmine_35:t="melee_weapon"
+    m1_antitank_mine:t="melee_weapon"
+    tm_41:t="melee_weapon"
+    pomz_2_mine:t="melee_weapon"
+    m2a3_mine:t="melee_weapon"
+    uk_at_mine_gs_mark_v:t="melee_weapon"
+    type_3_mine:t="melee_weapon"
+    type_93_mine:t="melee_weapon"
+    ita_pignone_type_II_at_mine:t="melee_weapon"
+    sanitary_box:t="melee_weapon"
+    tnt_charge:t="melee_weapon"
+    tnt_charge_usa:t="melee_weapon"
+    tnt_charge_ussr:t="melee_weapon"
+    tnt_charge_jap:t="melee_weapon"
+    satchel_charge:t="melee_weapon"
+    uk_ap_mine_mk1:t="melee_weapon"
+    ita_vaudagna_b4_mine:t="melee_weapon"
+    pipe:t="melee_weapon"
+    m1_bazooka:t="heavy_weapon"
+    type_4_70_at_rocket_launcher:t="heavy_weapon"
+    m9_bazooka:t="heavy_weapon"
+    m1a1_bazooka:t="heavy_weapon"
+    panzerschreck:t="heavy_weapon"
+    type_5_rocket_launcher:t="heavy_weapon"
+    rpzb_54_1_panzerschreck:t="heavy_weapon"
+    rpzb_43_ofenrohr:t="heavy_weapon"
+    grb_39:t="heavy_weapon"
+    ptrs_41:t="heavy_weapon"
+  }
+
+  "motion_matching__weaponEnumVars:list<i>"{
+  }
+
+  "motion_matching__weaponTags:list<i>"{
+  }
+}
+
+enl_soldier_mm_component{
+  _use:t="motion_matching_animchar_component"
+  _tags:t="render"
+  motion_matching__blendTimeToAnimtree:r=0.3
+  motion_matching__dataBaseTemplateName:t="enl_soldier_mm_database"
+  mm_trajectory__wishLinearVelocity:p3=0.0, 0.0, 0.0
+  mm_trajectory__wishRotation:p4=0.0, 0.0, 0.0, 1.0
+  motion_matching__prevLowerAnimState:i=-1
+  motion_matching__prevStandState:i=-1
+  motion_matching__weaponTagIdx:i=-1
+  motion_matching__turnOnSpotTimer:r=0.0
+
+  "mm_trajectory__customUpdate:tag"{
+  }
+}
+
+enl_female_soldier_mm_database{
+  _use:t="enl_soldier_mm_database"
+  _singleton:b=yes
+  _tags:t="render"
+
+  "data_bases_paths:list<t>"{
+    path:t="gamedata/motion_matching/soldier_sprint_anim_list.blk"
+    path:t="gamedata/motion_matching/soldier_run_anim_list.blk"
+    path:t="gamedata/motion_matching/soldier_walk_anim_list.blk"
+    path:t="gamedata/motion_matching/soldier_stand_anim_list.blk"
+    path:t="gamedata/motion_matching/soldier_run_transitions_anim_list.blk"
+    path:t="gamedata/motion_matching/soldier_crouch_anim_list.blk"
+  }
+}
+
+empty_mm_database{
+  _singleton:b=yes
+}
+
+enl_test_soldier_behaviour_with_mm{
+  _use:t="dev_soldier"
+  _use:t="motion_matching_test_behaviour"
+}
+
+enl_test_soldier_behaviour_without_mm{
+  _use:t="enl_test_soldier_behaviour_with_mm"
+  _tags:t="render"
+  motion_matching__dataBaseTemplateName:t="empty_mm_database"
+}

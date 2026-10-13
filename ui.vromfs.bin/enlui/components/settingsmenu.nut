@@ -1,0 +1,185 @@
+import "%ui/components/scrollbar.nut" as scrollbar
+import "%ui/control/gui_buttons.nut" as JB
+import "%ui/components/optionLabel.nut" as optionLabel
+import "%ui/components/settingsHeaderTabs.nut" as settingsHeaderTabs
+from "%ui/style/fontsStyle.nut" import fontBody
+from "%ui/hud/style.nut" import CONTROL_BG_COLOR
+from "%ui/style/cursors.nut" import setTooltip
+from "%ui/components/textButton.nut" import Regular
+from "%ui/style/designConst.nut" import midPadding
+from "%ui/ui_library.nut" import *
+
+let windowButtons = @(params) function() {
+  return {
+    size = FLEX_H
+    vplace = ALIGN_BOTTOM
+    hplace = ALIGN_RIGHT
+    flow = FLOW_HORIZONTAL
+    halign = ALIGN_RIGHT
+    valign = ALIGN_CENTER
+    rendObj = ROBJ_SOLID
+    color = CONTROL_BG_COLOR
+    padding = midPadding
+
+    children = params?.buttons ?? [
+      Regular(loc("mainmenu/btnApply"), params.applyHandler(params.options))
+      Regular(loc("mainmenu/btnCancel"), params.cancelHandler)
+    ]
+
+    eventHandlers = {
+      [JB.B] = @(_event) params.cancelHandler(),
+    }
+  }
+}
+
+function optionRowContainer(children, opt) {
+  let stateFlags = Watched(0)
+  let { hint = null } = opt
+  return @() {
+    watch = stateFlags
+    size = FLEX_H
+    flow = FLOW_HORIZONTAL
+    valign = ALIGN_CENTER
+    behavior = Behaviors.Button
+    onHover = hint == null ? null : @(on) setTooltip(on ? hint : null)
+    onElemState = @(sf) stateFlags.set(sf)
+    skipDirPadNav = true
+    children
+    rendObj = ROBJ_BOX
+    margin = const [0, fsh(8)]
+    fillColor = stateFlags.get() & S_HOVER ? Color(60, 60, 70, 150) : Color(20, 20, 20, 150)
+    borderWidth = stateFlags.get() & S_HOVER ? [hdpx(2), 0] : 0
+    borderColor = Color(20,90,120,10)
+    gap = fsh(2)
+  }
+}
+
+function makeOptionRow(opt) {
+  let group = ElemGroup()
+  let xmbNode = XmbNode()
+
+  let widget = opt.widgetCtor(opt, group, xmbNode)
+  if (!widget)
+    return null
+
+  const baseHeight = fsh(4.8)
+  const height = baseHeight
+  let label = optionLabel(opt, group)
+
+  let row = {
+    padding = const [0, hdpx(12)]
+    size = const [FLEX, height]
+    flow = FLOW_HORIZONTAL
+    valign = ALIGN_CENTER
+    gap = fsh(2)
+    children = [
+      label
+      widget
+    ]
+  }
+
+  return optionRowContainer(row, opt)
+}
+
+const sepColor = Color(120,120,120)
+let sepLine = freeze({size = const [FLEX, hdpx(2)], rendObj = ROBJ_SOLID, color=sepColor})
+
+function mkSeparator(opt){
+  let hasName = "name" in opt
+  return freeze({
+    size = FLEX_H
+    valign = ALIGN_CENTER
+    flow = FLOW_VERTICAL
+    padding = const [hdpx(20), hdpx(20), 0, hdpx(20)]
+    gap = hdpx(10)
+    children = hasName ? [
+      {
+        rendObj = ROBJ_TEXT text = opt?.name color = sepColor
+        fontFxColor = Color(0, 0, 0, 90)
+        fontFxFactor = min(hdpx(48), 64)
+        fontFx = FFT_GLOW
+        fontFxOffsX = hdpx(1)
+        fontFxOffsY = hdpx(1)
+      }.__update(fontBody)
+      sepLine
+    ] : sepLine
+  })
+}
+let isSeparator = @(v) v?.isSeparator
+
+function optionsPage(params) {
+  let xmbNode = XmbContainer({ wrap = false })
+  let {options, currentTab} = params
+
+  return function() {
+    let optionControls = options.filter(@(v) v.tab == currentTab.get())
+      .filter(@(val, idx, arr) !isSeparator(val) || ((idx+1 < arr.len()) && !isSeparator(arr?[idx+1])))
+      .map(@(v) isSeparator(v) ? mkSeparator(v) : makeOptionRow(v))
+
+    return {
+      size = FLEX
+      watch = params.currentTab
+      behavior = Behaviors.Button
+      onClick = params?.onPageClick
+
+      children = scrollbar.makeVertScroll({
+        flow = FLOW_VERTICAL
+        xmbNode
+        key = params.currentTab.get()
+        size = FLEX_H
+        padding = const [fsh(1), 0]
+        gap = hdpx(4)
+        clipChildren = true
+        animations = [
+          { prop=AnimProp.opacity, from=0, to=1, duration=0.2, play=true, easing=InOutCubic}
+          { prop=AnimProp.opacity, from=1, to=0, duration=0.2, playFadeOut=true, easing=InOutCubic}
+        ]
+
+        children = optionControls
+      },{
+        rootBase = {
+          behavior = [Behaviors.Pannable]
+          wheelStep = 0.82
+        }
+      })
+    }
+  }
+}
+
+
+function settingsMenu(params) {
+
+  return @(){
+    size = const [sw(100), sh(100)]
+    key = params?.key
+    children = {
+      
+      
+      transform = true
+      hplace = ALIGN_CENTER
+      vplace = ALIGN_CENTER
+      size = params?.size ?? [fsh(90), sh(80)]
+      rendObj = ROBJ_WORLD_BLUR
+      color = Color(120,120,120,255)
+      flow = FLOW_VERTICAL
+      
+      stopMouse = true
+      behavior = [DngBhv.ActivateActionSet, DngBhv.UiStateControl]
+      actionSet = "StopInput"
+      overrideFreeCam = true
+
+      children = [
+        settingsHeaderTabs(params)
+        optionsPage(params)
+        windowButtons(params)
+      ]
+    }
+    animations = const [
+      { prop=AnimProp.opacity, from=0, to=1, duration=0.2, play=true, easing=InOutCubic}
+      { prop=AnimProp.opacity, from=1, to=0, duration=0.2, playFadeOut=true, easing=InOutCubic}
+    ]
+  }
+}
+
+
+return settingsMenu

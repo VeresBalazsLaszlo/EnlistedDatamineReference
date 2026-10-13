@@ -1,0 +1,34 @@
+base_28_20mm_s_pz_b_41{
+  item__name:t="guns/28_20mm_s_pz_b_41"
+  gun__blk:t="gamedata/gen/weapons/28_20mm_s_pz_b_41.blk"
+  gun__shotFreq:r=0.3333
+  gun__locName:t="28_20mm_s_pz_b_41"
+
+  "gun__ammoSetsInfo:shared:array"{
+
+    "defaultSet:array"{
+
+      "shell:object"{
+        blk:t="gamedata/gen/weapons/shells/28_20mm_s_pz_b_41_defaultset.blk"
+        name:t="28_20mm_pzgr41"
+        type:t="apcr_tank"
+      }
+    }
+
+    "28_20mm_APCR:array"{
+
+      "shell:object"{
+        blk:t="gamedata/gen/weapons/shells/28_20mm_s_pz_b_41_28_20mm_apcr.blk"
+        name:t="28_20mm_pzgr41"
+        type:t="apcr_tank"
+      }
+    }
+  }
+}
+
+tankgun_28_20mm_s_pz_b_41{
+  _use:t="tankgun"
+  _use:t="base_tankgun_cannon"
+  _use:t="base_28_20mm_s_pz_b_41"
+  turret__triggerGroup:i=0
+}

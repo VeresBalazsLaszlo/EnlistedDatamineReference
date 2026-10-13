@@ -1,0 +1,23 @@
+anim_replay_human_attaches{
+  _use:t="soldier_human_equipment"
+  human_inventory__capacity:r=25.0
+  human_inventory__currentVolume:r=0.0
+
+  "attaches_list:list<eid>"{
+  }
+}
+
+anim_replay_params_config{
+  _override:b=yes
+
+  "anim_replay__ignoredAnimParams:list<t>"{
+    param:t="local_walk_dir"
+  }
+
+  "anim_replay__preciseAnimParams:list<t>"{
+    param:t="weapon_selected"
+    param:t="changeweapon_dir"
+    param:t="reload_style"
+    param:t="single_reload_state"
+  }
+}

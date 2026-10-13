@@ -1,0 +1,1777 @@
+common_human_sound_components{
+  _use:t="watched_sound"
+  _use:t="sound_event_group"
+  _use:t="sound_control"
+  _use:t="sound_player_components"
+
+  _group{
+    _tags:t="sound"
+    sound_control__range:r=100.0
+  }
+
+  "human_animchar_sound:HumanAnimcharSound"{
+    _tags:t="sound"
+  }
+
+  "humanSound:tag"{
+    _tags:t="sound"
+  }
+}
+
+base_human_steps_sound_generator{
+
+  _group{
+    _tags:t="sound"
+    human_steps_sound_generator__lastStepAt_cooldown:p2=-1.0, 0.0
+    human_steps_sound_generator__walkRunSprint_stand_intervals:p3=10.0, 10.0, 10.0
+    human_steps_sound_generator__walkRunSprint_crouch_intervals:p3=10.0, 10.0, 10.0
+    human_steps_sound_generator__enableForVisible:b=no
+    human_steps_sound_generator__enableForInvisible:b=no
+    human_steps_sound_generator__enableAlways:b=no
+  }
+}
+
+human_steps_sound_occlusion{
+
+  _group{
+    _tags:t="sound"
+    human_steps_sound_occlusion__blobRadius:r=0.5
+
+    "human_steps_sound_occlusion__blob:SoundOcclusionBlob"{
+    }
+  }
+}
+
+base_human_steps_sound{
+  _use:t="sound_biome_puddle_queries"
+  _use:t="base_human_steps_sound_generator"
+  _use:t="human_steps_sound_occlusion"
+
+  _group{
+    _tags:t="sound"
+    human_steps_sound__lastTimeOnGround:r=0.0
+    human_steps_sound__smid:i=-1
+    human_steps_sound__waterDepth:r=0.0
+    human_steps_sound__physStates:i=-1
+    human_steps_sound__irqObjIdx:i=-1
+    human_steps_sound__moveState:i=0
+    human_steps_sound__animSpeed:r=0.0
+    human_steps_sound__ministepsIsMoving:b=no
+    human_steps_sound__animSpeedMul:r=1.0
+    human_steps_sound__traceStepOffsetLen:p2=1.0, 2.0
+    human_steps_sound__distanceToVolumeFriendly:p4=0.0, 0.0, 0.1, 0.1
+    human_steps_sound__distanceToVolumeEnemy:p4=0.0, 0.0, 1.0, 1.0
+    human_steps_sound__farawayThresholdSq:r=2500.0
+    human_steps_sound__fallSpeedCollThreshold:r=10.0
+    human_steps_sound__ministepsWalkIrq:t="right_crouchWalk"
+    human_steps_sound__ministepsCrawlIrq:t="right_crawl"
+    human_steps_sound__ministepsCooldown:r=1.0
+    human_steps_sound__tag:t=""
+
+    "human_steps_sound__stepIdx:u32"{
+      value:i=0
+    }
+
+    "human_steps_sound__path:shared:object"{
+    }
+
+    "human_steps_sound__descs:shared:object"{
+    }
+
+    "human_steps_sound__irqs:shared:array"{
+    }
+
+    "human_steps_sound__jumpFx:shared:object"{
+    }
+
+    "human_steps_sound__stepFx:shared:object"{
+    }
+  }
+}
+
+human_gasmask_sound{
+
+  _group{
+    _tags:t="sound"
+    human_gasmask_sound__watchedPath:t="snapshots/filter_gm"
+    human_gasmask_sound__otherFlag:t="gasmask"
+    human_gasmask_sound__putonPath:t="player/walker/ww2_soldier/items/gasmask/wear_on"
+    human_gasmask_sound__takeoffPath:t="player/walker/ww2_soldier/items/gasmask/wear_off"
+
+    "human_gasmask_sound__watchedEvent:SoundEvent"{
+    }
+  }
+}
+
+play_invisible_animations_near_listener{
+
+  _group{
+    _tags:t="sound"
+    animchar__alwaysVisibleInRadiusSq:r=100.0
+  }
+}
+
+base_human_sound{
+  _use:t="common_human_sound_components"
+  _use:t="play_invisible_animations_near_listener"
+  _use:t="human_sound_geomtree_nodes"
+  _use:t="human_voice_effects"
+  _use:t="human_melee_sound"
+  _use:t="human_build_sound"
+  _use:t="base_human_melee_impact_sound"
+  _use:t="base_human_steps_sound"
+  _use:t="human_hit_net_sound"
+  _use:t="base_human_voice_sound"
+  _use:t="human_voice_sound_occlusion"
+  _use:t="human_death_sound"
+  _use:t="human_hit_cry_sound"
+  _use:t="human_melee_charge_speech_enable"
+  _use:t="human_coverme_speech_enable"
+  _use:t="human_sound_net_equipment_tags"
+  _use:t="human_gasmask_sound"
+  _use:t="sound_preset"
+
+  "human_voice_effect__allOrderedEffects:shared:list<t>"{
+    _tags:t="sound"
+    id:t="dead"
+    id:t="underwater"
+    id:t="holdBreath"
+    id:t="downed"
+    id:t="drink"
+    id:t="burn"
+    id:t="fallcry"
+    id:t="cough"
+  }
+
+  _group{
+    _tags:t="sound"
+    human_steps_sound_generator__walkRunSprint_stand_intervals:p3=1.15, 1.2, 1.6
+    human_steps_sound_generator__walkRunSprint_crouch_intervals:p3=0.5, 0.85, 0.85
+    human_steps_sound_generator__enableForVisible:b=yes
+    human_steps_sound_generator__enableForInvisible:b=yes
+  }
+
+  _group{
+    _tags:t="sound"
+    sound_biome_puddle_queries__puddleQueryToDepth:p4=0.4, 0.8, 0.0, 0.05
+  }
+
+  "using_item_sound__path:shared:object"{
+    _tags:t="sound"
+    path:t="/walker/ww2_soldier/items/healing/activate"
+  }
+}
+
+human_death_sound{
+
+  _group{
+    _tags:t="sound"
+
+    "human_death_sound__event:SoundEvent"{
+    }
+  }
+}
+
+human_build_sound{
+
+  _group{
+    _tags:t="sound"
+    human_sound__buildingTag:t=""
+  }
+}
+
+human_melee_sound{
+
+  _group{
+    _tags:t="sound"
+    human_melee_sound__cooldown:r=0.1
+    human_melee_sound__nextTime:r=0.0
+
+    "human_melee_sound__irqs:shared:object"{
+    }
+  }
+}
+
+base_human_melee_impact_sound{
+
+  _group{
+    _tags:t="sound"
+    human_melee_impact_sound__path:t="impact/melee"
+  }
+}
+
+human_hit_net_sound{
+
+  _group{
+    _tags:t="server"
+    human_hit_net_sound__nextSoundAt:r=0.0
+    human_hit_net_sound__cooldown:r=1.0
+    human_hit_net_sound__range:r=40.0
+  }
+
+  _group{
+    _tags:t="sound"
+    human_hit_sound__headshotSoundEnabled:b=yes
+    human_hit_sound__shattersDelayFirstNextLast:p3=0.3, 0.4, 0.45
+
+    "humanHitSound:tag"{
+    }
+
+    "human_hit_sound__paths:shared:object"{
+    }
+  }
+}
+
+offender_hits_human_sound{
+
+  _group{
+    _tags:t="sound"
+
+    "offender_hits_human_sound__path:shared:object"{
+    }
+  }
+}
+
+base_human_voice_sound{
+
+  _group{
+    _tags:t="sound"
+    human_voice_sound__voiceTag:t=""
+
+    "human_voice_sound__path:shared:object"{
+    }
+
+    "human_voice_sound__descs:shared:object"{
+    }
+
+    "human_voice_sound__irqs:shared:object"{
+    }
+  }
+}
+
+human_voice_effect_drinking{
+}
+
+human_voice_effect_burning{
+
+  "humanVoiceEffectBurning:tag"{
+    _tags:t="sound"
+  }
+}
+
+human_voice_effect_hold_breath{
+
+  _group{
+    _tags:t="sound"
+    human_voice_effect_hold_breath__effect:t="holdBreath"
+    human_voice_effect_hold_breath__endEffect:t="holdBreathEnd"
+  }
+}
+
+human_voice_effect_coughing{
+
+  _group{
+    _tags:t="sound"
+    human_voice_effect__endCoughingAt:r=0.0
+    human_voice_effect__coughingDuration:r=3.0
+  }
+}
+
+human_voice_effect_fallcry{
+  _tracked:t="human_voice_effect_fallcry__isFalling"
+  _tracked:t="human_voice_effect_fallcry__enabled"
+
+  _group{
+    _tags:t="sound"
+    human_voice_effect_fallcry__isFalling:b=no
+    human_voice_effect_fallcry__enabled:b=yes
+    human_voice_effect_fallcry__threshold:r=40.0
+  }
+}
+
+human_hit_cry_sound{
+
+  _group{
+    _tags:t="sound"
+    human_hit_cry_sound__nextTime:r=0.0
+    human_hit_cry_sound__cooldown:r=0.5
+  }
+}
+
+human_fall_wind_sound{
+
+  _group{
+    _tags:t="sound"
+    human_fall_wind_sound__path:t="player/effects/fall_wind"
+    human_fall_wind_sound__startSpeed:r=5.0
+
+    "human_fall_wind_sound__event:SoundEvent"{
+    }
+  }
+}
+
+human_gun_sounds_preload{
+
+  _group{
+    _tags:t="sound"
+
+    "human_gun_sounds_preload:SoundEventsPreload"{
+    }
+  }
+}
+
+human_loot_sound{
+
+  _group{
+    _tags:t="sound"
+    loot_sound__time:r=0.0
+  }
+}
+
+human_breath_sound{
+
+  _group{
+    _tags:t="sound"
+    human_breath_sound__isBreath:b=no
+    human_breath_sound__prevBreathShortness:r=0.0
+    human_breath_sound__goodBreathNextTime:r=0.0
+    human_breath_sound__breathShortness:r=0.0
+    human_breath_sound__goodBreathDelay:r=0.5
+    human_breath_sound__jumpDelay:r=1.5
+    human_breath_sound__loHealthRel:r=0.2
+    human_breath_sound__breathShortnessStart:r=0.2
+    human_breath_sound__breathoutThreshold:r=0.7
+    human_breath_sound__inhaleThreshold:r=0.6
+    human_breath_sound__baseBreathShortness:r=0.0
+  }
+}
+
+base_human_collision_hit_sound{
+
+  _group{
+    _tags:t="sound"
+    human_collision_hit_sound__forceMax:r=0.0
+    human_collision_hit_sound__spdSummaryToForce:p4=0.2, 2.0, 0.0, 1.0
+    human_collision_hit_sound__vertSpeedThreshold:r=0.5
+
+    "human_collision_hit_sound__path:shared:object"{
+      path:t="/walker/ww2_soldier/collision/generic"
+    }
+  }
+}
+
+human_collision_hit_sound{
+  _use:t="base_human_collision_hit_sound"
+}
+
+human_collision_scrape_sound{
+  _use:t="base_human_collision_scrape_sound"
+}
+
+possessable_human_sound{
+  _use:t="human_breath_sound"
+  _use:t="human_collision_hit_sound"
+  _use:t="human_collision_scrape_sound"
+  _use:t="human_fall_wind_sound"
+  _use:t="attach_reverb_sound_to_watchable"
+}
+
+human_sound_net_equipment_tags{
+  _replicated:t="human_sound_net_tags__equipmentList"
+  _tracked:t="human_sound_net_tags__equipmentList"
+
+  "human_sound__allEquipmentTags:list<t>"{
+    _tags:t="sound"
+  }
+
+  "human_sound_net_tags__equipmentList:list<t>"{
+  }
+}
+
+human_sound_paths{
+
+  "sound_paths:shared:object"{
+    _tags:t="sound"
+
+    "suicide:object"{
+      path:t="/walker/ww2_soldier/hit/melee"
+    }
+
+    "climb:object"{
+      path:t="/walker/ww2_soldier/foley_mov/common/climb"
+    }
+
+    "repair:object"{
+      path:t="/vehicle/common/repair"
+    }
+
+    "extinguish:object"{
+      path:t="/vehicle/common/extinguish"
+    }
+
+    "collision_fall:object"{
+      path:t="/walker/ww2_soldier/collision/fall"
+    }
+
+    "installWeapMod:object"{
+      watched:t="ui/weapon_mods/install_common"
+    }
+
+    "uninstallWeapMod:object"{
+      watched:t="ui/weapon_mods/deinstall_common"
+    }
+
+    "burningPuttingOut:object"{
+      watched:t="player/walker/ww2_soldier/items/fire_extinguish/activate"
+    }
+
+    "burning:object"{
+      path:t="env_effects/fire/fire_character"
+    }
+  }
+
+  "sound_irqs:shared:object"{
+    _tags:t="sound"
+
+    "grenade_take:object"{
+      type:t="grenadeActivate"
+    }
+
+    "rm_40_fire:object"{
+      path:t="/weapon/antivehicle/mortar_rm_40/reload1/change_ammo"
+    }
+
+    "climb_ladder:object"{
+      path:t="/walker/ww2_soldier/foley_mov/common/climb_stair"
+      direction:i=0
+    }
+
+    "swim_onwater:object"{
+      path:t="/walker/ww2_soldier/foley_mov/swim/hand"
+      cooldown:r=0.6
+    }
+
+    "swim_still:object"{
+      path:t="/walker/ww2_soldier/foley_mov/swim/leg"
+      cooldown:r=0.6
+    }
+  }
+}
+
+human_hit_sound_paths{
+
+  "human_hit_sound__paths:shared:object"{
+    _tags:t="sound"
+
+    "hit_dmgMelee:object"{
+      name:t="melee"
+      path:t="/walker/ww2_soldier/hit"
+    }
+
+    "hit_dmgExplosion:object"{
+      name:t="tinnitus"
+      watched:t="[pow=1]player/effects"
+    }
+
+    "hit_dmgAsphyxiation:object"{
+      name:t="drown"
+
+      "options:array"{
+
+        "drown:object"{
+          watched:t="player/walker/ww2_female_soldier/voice_fx"
+          femaleVoice:b=yes
+        }
+
+        "drown:object"{
+          watched:t="player/walker/ww2_soldier/voice_fx"
+        }
+      }
+    }
+
+    "heroHitEnemyHead:object"{
+      watched:t="ui/helmet_hit"
+    }
+
+    "shatter:object"{
+      watched:t="player/walker/ww2_soldier/hit/bullet_body"
+      other:t="enemy/walker/ww2_soldier/hit/bullet_body"
+    }
+  }
+}
+
+projectile_hit_human_fx_sound{
+  _use:t="projectile_hit_entity_fx_sound"
+
+  "projectile_hit_entity_fx_sound__paths:shared:object"{
+    _tags:t="sound"
+
+    "bullet:object"{
+      watched:t="player/walker/ww2_soldier/hit/bullet_body"
+      other:t="enemy/walker/ww2_soldier/hit/bullet_body"
+    }
+
+    "shell:object"{
+      watched:t="impact/shell"
+      other:t="impact/shell"
+    }
+  }
+}
+
+human_steps_sound_paths{
+
+  "human_steps_sound__path:shared:object"{
+    _tags:t="sound"
+    path:t="/walker/ww2_soldier/foley_mov"
+  }
+
+  "human_steps_sound__descs:shared:object"{
+    _tags:t="sound"
+
+    "jump:object"{
+      name:t="jump_start"
+    }
+
+    "land:object"{
+      name:t="jump_landing"
+    }
+
+    "downKnee:object"{
+      name:t="down_knee"
+    }
+
+    "upKnee:object"{
+      name:t="up_knee"
+    }
+
+    "downGround:object"{
+      name:t="down_ground"
+    }
+
+    "upGround:object"{
+      name:t="up_ground"
+    }
+  }
+
+  "human_steps_sound__irqs:shared:array"{
+    _tags:t="sound"
+
+    "irq:object"{
+      irq:t="left_sprint"
+      name:t="sprint"
+    }
+
+    "irq:object"{
+      irq:t="right_sprint"
+      name:t="sprint"
+    }
+
+    "irq:object"{
+      irq:t="left_run"
+      name:t="run"
+    }
+
+    "irq:object"{
+      irq:t="right_run"
+      name:t="run"
+    }
+
+    "irq:object"{
+      irq:t="left_walk"
+      name:t="run"
+    }
+
+    "irq:object"{
+      irq:t="right_walk"
+      name:t="run"
+    }
+
+    "irq:object"{
+      irq:t="left_turnOnSpot"
+      name:t="step"
+    }
+
+    "irq:object"{
+      irq:t="right_turnOnSpot"
+      name:t="step"
+    }
+
+    "irq:object"{
+      irq:t="left_crawl"
+      name:t="crawl"
+    }
+
+    "irq:object"{
+      irq:t="right_crawl"
+      name:t="crawl"
+    }
+
+    "irq:object"{
+      irq:t="left_crouchWalk"
+      name:t="step"
+    }
+
+    "irq:object"{
+      irq:t="right_crouchWalk"
+      name:t="step"
+    }
+
+    "irq:object"{
+      irq:t="left_crouchTurnOnSpot"
+      name:t="step"
+    }
+
+    "irq:object"{
+      irq:t="right_crouchTurnOnSpot"
+      name:t="step"
+    }
+  }
+}
+
+human_voice_sound_paths{
+
+  "human_voice_sound__path:shared:object"{
+    _tags:t="sound"
+
+    "options:array"{
+
+      "asphyxiation:object"{
+        headIsUnderwater:b=yes
+      }
+
+      "female:object"{
+        femaleVoice:b=yes
+        voice2:b=yes
+        watched:t="player/walker/ww2_female_soldier/voice_fx"
+        other:t="enemy/walker/ww2_female_soldier02/voice_fx"
+      }
+
+      "female:object"{
+        femaleVoice:b=yes
+        voice3:b=yes
+        watched:t="player/walker/ww2_female_soldier/voice_fx"
+        other:t="enemy/walker/ww2_female_soldier03/voice_fx"
+      }
+
+      "female:object"{
+        femaleVoice:b=yes
+        watched:t="player/walker/ww2_female_soldier/voice_fx"
+        other:t="enemy/walker/ww2_female_soldier01/voice_fx"
+      }
+
+      "male_gasmask:object"{
+        voice2:b=yes
+        gasmask:b=yes
+        watched:t="player/walker/ww2_soldier/voice_fx"
+        other:t="events/26/enemy/walker/ww2_soldier02/voice_fx"
+      }
+
+      "male_gasmask:object"{
+        voice3:b=yes
+        gasmask:b=yes
+        watched:t="player/walker/ww2_soldier/voice_fx"
+        other:t="events/26/enemy/walker/ww2_soldier03/voice_fx"
+      }
+
+      "male_gasmask:object"{
+        gasmask:b=yes
+        watched:t="player/walker/ww2_soldier/voice_fx"
+        other:t="events/26/enemy/walker/ww2_soldier01/voice_fx"
+      }
+
+      "male:object"{
+        voice2:b=yes
+        watched:t="player/walker/ww2_soldier/voice_fx"
+        other:t="enemy/walker/ww2_soldier02/voice_fx"
+      }
+
+      "male:object"{
+        voice3:b=yes
+        watched:t="player/walker/ww2_soldier/voice_fx"
+        other:t="enemy/walker/ww2_soldier03/voice_fx"
+      }
+
+      "male:object"{
+        watched:t="player/walker/ww2_soldier/voice_fx"
+        other:t="enemy/walker/ww2_soldier01/voice_fx"
+      }
+    }
+
+    "loc_jp:object"{
+
+      "options:array"{
+
+        "asphyxiation:object"{
+          headIsUnderwater:b=yes
+        }
+
+        "female:object"{
+          femaleVoice:b=yes
+          voice2:b=yes
+          watched:t="player/walker/ww2_female_soldier/voice_fx"
+          other:t="enemy/walker/ww2_female_soldier02/voice_fx"
+        }
+
+        "female:object"{
+          femaleVoice:b=yes
+          voice3:b=yes
+          watched:t="player/walker/ww2_female_soldier/voice_fx"
+          other:t="enemy/walker/ww2_female_soldier03/voice_fx"
+        }
+
+        "female:object"{
+          femaleVoice:b=yes
+          watched:t="player/walker/ww2_female_soldier/voice_fx"
+          other:t="enemy/walker/ww2_female_soldier01/voice_fx"
+        }
+
+        "male:object"{
+          voice2:b=yes
+          watched:t="player/walker/ww2_jp_soldier/voice_fx"
+          other:t="enemy/walker/ww2_jp_soldier02/voice_fx"
+        }
+
+        "male:object"{
+          voice3:b=yes
+          watched:t="player/walker/ww2_jp_soldier/voice_fx"
+          other:t="enemy/walker/ww2_jp_soldier03/voice_fx"
+        }
+
+        "male:object"{
+          watched:t="player/walker/ww2_jp_soldier/voice_fx"
+          other:t="enemy/walker/ww2_jp_soldier01/voice_fx"
+        }
+      }
+    }
+  }
+
+  "human_voice_sound__descs:shared:object"{
+    _tags:t="sound"
+
+    "death:object"{
+      name:t="death"
+    }
+
+    "downed:object"{
+      name:t="downed"
+    }
+
+    "concussed:object"{
+      name:t="contused"
+    }
+
+    "melee:object"{
+      name:t="melee"
+    }
+
+    "sprintBreath:object"{
+      name:t="breath/sprint"
+    }
+
+    "sprintBreathOut:object"{
+      name:t="breath/stamina_out"
+    }
+
+    "inhale:object"{
+      name:t="breath/inhale"
+    }
+
+    "holdBreath:object"{
+      watched:t="breath/aim_on"
+    }
+
+    "holdBreathEnd:object"{
+      watched:t="breath/aim_off"
+
+      "heavyBreath:object"{
+      }
+
+      "holdBreath:object"{
+      }
+    }
+
+    "underwater:object"{
+      watched:t="breath/in"
+    }
+
+    "underwaterEnd:object"{
+      watched:t="breath/out"
+
+      "underwater:object"{
+      }
+    }
+
+    "drink:object"{
+    }
+
+    "burn:object"{
+      name:t="burning"
+    }
+
+    "cough:object"{
+      name:t="cough"
+    }
+
+    "fallcry:object"{
+      name:t="fall"
+    }
+
+    "hitCry:object"{
+      name:t="hit"
+
+      "replaceAnyOneshot:object"{
+      }
+
+      "downed:object"{
+      }
+
+      "concussed:object"{
+      }
+
+      "heavyBreath:object"{
+      }
+    }
+  }
+}
+
+human_melee_sound_paths{
+
+  "human_melee_sound__irqs:shared:object"{
+    _tags:t="sound"
+
+    "melee_sound:object"{
+
+      "weapons:object"{
+
+        "buildingTool:object"{
+          voiceChance:i=0
+
+          "options:array"{
+
+            "buildCannon:object"{
+              build_cannon:b=yes
+              path:t="/walker/ww2_soldier/items/build_cannon/activate"
+            }
+
+            "default:object"{
+              path:t="/walker/ww2_soldier/items/build_fortification/activate"
+            }
+          }
+        }
+
+        "rifle:object"{
+          path:t="/weapon/melee/rifle/whoosh"
+          delay:i=150
+        }
+
+        "mgun:object"{
+          path:t="/weapon/melee/mgun/whoosh"
+          delay:i=150
+        }
+
+        "pistol:object"{
+          path:t="/weapon/melee/pistol/whoosh"
+        }
+
+        "knife:object"{
+          path:t="/weapon/melee/knife/whoosh"
+        }
+
+        "axe:object"{
+          path:t="/weapon/melee/axe/whoosh"
+        }
+
+        "lungeMine:object"{
+          path:t="/weapon/melee/lunge_mine/whoosh"
+        }
+
+        "sword:object"{
+          name:t="sword/whoosh"
+          path:t="/weapon/melee/sword/whoosh"
+        }
+
+        "hands:object"{
+          path:t="/weapon/melee/hands/whoosh"
+        }
+
+        "shovel:object"{
+          voiceChance:i=0
+          path:t="/weapon/melee/shovel/whoosh"
+        }
+
+        "gear_trench_club:object"{
+          path:t="/weapon/melee/bat/whoosh"
+        }
+
+        "trench_club:object"{
+          path:t="/weapon/melee/bat/whoosh"
+        }
+
+        "uk_machete:object"{
+          path:t="/weapon/melee/machete/whoosh"
+        }
+
+        "khukuri_1916_knife:object"{
+          path:t="/weapon/melee/sword/whoosh"
+        }
+      }
+    }
+  }
+}
+
+human_weapon_change_sound{
+
+  _group{
+    _tags:t="sound"
+    human_weapon_change_sound__weapEquipCurState:i=-1
+
+    "human_weapon_change_sound__paths:shared:object"{
+
+      "holstering:object"{
+        watched:t="player/walker/ww2_soldier/foley_mov/common/wpn_change_start"
+      }
+
+      "equiping:object"{
+        watched:t="player/walker/ww2_soldier/foley_mov/common/wpn_change_end"
+      }
+    }
+  }
+}
+
+en_human_speech{
+  _use:t="human_speech"
+
+  "human_speech__voices:array"{
+    _tags:t="sound"
+
+    "voice:object"{
+
+      "options:array"{
+
+        "gasmask:object"{
+          gasmask:b=yes
+          watched:t="vo/player/enlisted/soldier"
+          other:t="events/26/vo/enemy/enlisted/soldier01"
+        }
+
+        "default:object"{
+          watched:t="vo/player/enlisted/soldier"
+          other:t="vo/enemy/enlisted/soldier01"
+        }
+      }
+    }
+
+    "voice:object"{
+
+      "options:array"{
+
+        "gasmask:object"{
+          gasmask:b=yes
+          watched:t="vo/player/enlisted/soldier"
+          other:t="events/26/vo/enemy/enlisted/soldier02"
+        }
+
+        "default:object"{
+          watched:t="vo/player/enlisted/soldier"
+          other:t="vo/enemy/enlisted/soldier02"
+        }
+      }
+    }
+
+    "voice:object"{
+
+      "options:array"{
+
+        "gasmask:object"{
+          gasmask:b=yes
+          watched:t="vo/player/enlisted/soldier"
+          other:t="events/26/vo/enemy/enlisted/soldier03"
+        }
+
+        "default:object"{
+          watched:t="vo/player/enlisted/soldier"
+          other:t="vo/enemy/enlisted/soldier03"
+        }
+      }
+    }
+  }
+
+  "human_speech__speeches:shared:array"{
+
+    "speech:object"{
+      id:t="wounded"
+      name:t="hit"
+      teamRange:r=15.0
+      rcptFilter:t="posRangeTeam"
+      minMaxCooldown:p2=10.0, 15.0
+    }
+
+    "speech:object"{
+      id:t="enemyHit"
+      name:t="enemy_hit"
+      minMaxCooldown:p2=10.0, 30.0
+    }
+
+    "speech:object"{
+      id:t="enemyKill"
+      name:t="enemy_kill"
+      chance:i=50
+      minMaxCooldown:p2=5.0, 10.0
+    }
+
+    "speech:object"{
+      id:t="enemyKillExplode"
+      watched:t="kill_grenade"
+      chance:i=75
+      rcptFilter:t="player"
+      minMaxCooldown:p2=5.0, 10.0
+    }
+
+    "speech:object"{
+      id:t="enemyKillFar"
+      watched:t="kill_far"
+      chance:i=100
+      rcptFilter:t="player"
+      minMaxCooldown:p2=5.0, 10.0
+    }
+
+    "speech:object"{
+      id:t="enemyKillMelee"
+      watched:t="kill_melee"
+      chance:i=100
+      rcptFilter:t="player"
+      minMaxCooldown:p2=5.0, 10.0
+    }
+
+    "speech:object"{
+      id:t="enemyHeadshot"
+      name:t="headshot"
+      chance:i=100
+      rcptFilter:t="player"
+      minMaxCooldown:p2=5.0, 5.0
+    }
+
+    "speech:object"{
+      id:t="friendlyFireHit"
+      other:t="friendly_fire"
+      chance:i=100
+      rcptFilter:t="posRangeTeam"
+      minMaxCooldown:p2=5.0, 5.0
+    }
+
+    "speech:object"{
+      id:t="reload"
+      name:t="reloading"
+      teamRange:r=15.0
+      rcptFilter:t="posRangeTeam"
+      chance:i=80
+      minMaxCooldown:p2=5.0, 10.0
+
+      "skipAfterSpeech:array"{
+
+        "speech:object"{
+          name:t="squadBringAmmoOrder"
+          time:r=15.0
+        }
+      }
+    }
+
+    "speech:object"{
+      id:t="startCapture"
+      name:t="capturing_ally"
+      teamRange:r=15.0
+      rcptFilter:t="posRangeTeam"
+      minMaxCooldown:p2=10.0, 10.0
+    }
+
+    "speech:object"{
+      id:t="enemyStartCapture"
+      name:t="capturing_enemy"
+      teamRange:r=15.0
+      rcptFilter:t="player"
+      minMaxCooldown:p2=10.0, 10.0
+    }
+
+    "speech:object"{
+      id:t="squadMemberKilled"
+      other:t="squad_member_killed"
+      rcptFilter:t="posRangeSquad"
+      minMaxCooldown:p2=5.0, 5.0
+      delay:r=2.0
+    }
+
+    "speech:object"{
+      id:t="squadDefendOrder"
+      watched:t="squad_move"
+      rcptFilter:t="player"
+      replace:b=yes
+    }
+
+    "speech:object"{
+      id:t="squadRegroupOrder"
+      watched:t="squad_regroup"
+      rcptFilter:t="player"
+      replace:b=yes
+    }
+
+    "speech:object"{
+      id:t="squadHealMeOrder"
+      name:t="squad_revive_me"
+      rcptFilter:t="squad"
+      replace:b=yes
+    }
+
+    "speech:object"{
+      id:t="squadBuildOrder"
+      watched:t="squad_build"
+      rcptFilter:t="player"
+      replace:b=yes
+    }
+
+    "speech:object"{
+      id:t="squadReviveMeOrder"
+      name:t="squad_revive_me"
+      rcptFilter:t="squad"
+      replace:b=yes
+    }
+
+    "speech:object"{
+      id:t="squadBringAmmoOrder"
+      watched:t="ask_ammo"
+      rcptFilter:t="player"
+      replace:b=yes
+    }
+
+    "speech:object"{
+      id:t="squadBringAmmoResponse"
+      other:t="ammo_giving"
+      rcptFilter:t="squad"
+      replace:b=yes
+    }
+
+    "speech:object"{
+      id:t="squadUseVehicle"
+      watched:t="squad_into_vehicle"
+      rcptFilter:t="player"
+      replace:b=yes
+    }
+
+    "speech:object"{
+      id:t="squadClosestFormationOrder"
+      watched:t="squad_formation_close"
+      rcptFilter:t="player"
+      replace:b=yes
+    }
+
+    "speech:object"{
+      id:t="squadStandardFormationOrder"
+      watched:t="squad_formation_mid"
+      rcptFilter:t="player"
+      replace:b=yes
+    }
+
+    "speech:object"{
+      id:t="squadWideFormationOrder"
+      watched:t="squad_formation_far"
+      rcptFilter:t="player"
+      replace:b=yes
+    }
+
+    "speech:object"{
+      id:t="squadBehaviourAggressiveOrder"
+      watched:t="squad_behavior_aggressive"
+      rcptFilter:t="player"
+      replace:b=yes
+    }
+
+    "speech:object"{
+      id:t="squadBehaviourPassiveOrder"
+      watched:t="squad_behavior_passive"
+      rcptFilter:t="player"
+      replace:b=yes
+    }
+
+    "speech:object"{
+      id:t="confirmResponse"
+      other:t="order_accept"
+      rcptFilter:t="squad"
+      replace:b=yes
+    }
+
+    "speech:object"{
+      id:t="rejectResponse"
+      other:t="order_reject"
+      rcptFilter:t="squad"
+      replace:b=yes
+    }
+
+    "speech:object"{
+      id:t="grenadeAware"
+      name:t="grenade_warning"
+      teamRange:r=15.0
+      minMaxCooldown:p2=5.0, 5.0
+      rcptFilter:t="posRangeTeam"
+    }
+
+    "speech:object"{
+      id:t="enemyAware"
+      name:t="enemy_warning"
+      teamRange:r=15.0
+      rcptFilter:t="posRangeTeam"
+    }
+
+    "speech:object"{
+      id:t="gunOverheat"
+      watched:t="mg_overheated"
+      rcptFilter:t="player"
+      teamRange:r=15.0
+      minMaxCooldown:p2=20.0, 20.0
+    }
+
+    "speech:object"{
+      id:t="coverme"
+      name:t="need_cover"
+      teamRange:r=15.0
+      rcptFilter:t="posRangeTeam"
+      speakIfDowned:b=yes
+      replace:b=yes
+    }
+
+    "speech:object"{
+      id:t="vehicleFire"
+      watched:t="tank_crew_fire_in_tank"
+      minMaxCooldown:p2=10.0, 15.0
+      rcptFilter:t="player"
+    }
+
+    "speech:object"{
+      id:t="vehicleMateDied/vehicle_seats/commander"
+      name:t="tank_crew_commander_killed"
+    }
+
+    "speech:object"{
+      id:t="vehicleMateDied/vehicle_seats/driver"
+      name:t="tank_crew_driver_killed"
+    }
+
+    "speech:object"{
+      id:t="vehicleMateDied/vehicle_seats/gunner"
+      name:t="tank_crew_gunlayer_killed"
+    }
+
+    "speech:object"{
+      id:t="vehicleMateDied/vehicle_seats/loader"
+      name:t="tank_crew_charger_killed"
+    }
+
+    "speech:object"{
+      id:t="vehicleMateDied/vehicle_seats/radioman"
+      name:t="tank_crew_machine_gunner_killed"
+    }
+
+    "speech:object"{
+      id:t="vehiclePartDestroyed/turret"
+      name:t="tank_crew_weapon_destroyed"
+      rcptFilter:t="player"
+      treatAsWatched:b=yes
+    }
+
+    "speech:object"{
+      id:t="vehiclePartDestroyed/turretHorDrive"
+      name:t="tank_crew_horizontal_aiming_drive_damaged"
+      rcptFilter:t="player"
+      treatAsWatched:b=yes
+    }
+
+    "speech:object"{
+      id:t="vehiclePartDestroyed/turretVerDrive"
+      name:t="tank_crew_vertical_aiming_drive_damaged"
+      rcptFilter:t="player"
+      treatAsWatched:b=yes
+    }
+
+    "speech:object"{
+      id:t="vehiclePartDestroyed/engine"
+      name:t="tank_crew_engine_destroyed"
+      rcptFilter:t="player"
+      treatAsWatched:b=yes
+    }
+
+    "speech:object"{
+      id:t="vehiclePartDestroyed/leftTracks"
+      name:t="tank_crew_left_track_off"
+      rcptFilter:t="player"
+      treatAsWatched:b=yes
+    }
+
+    "speech:object"{
+      id:t="vehiclePartDestroyed/rightTracks"
+      name:t="tank_crew_right_track_down"
+      rcptFilter:t="player"
+      treatAsWatched:b=yes
+    }
+
+    "speech:object"{
+      id:t="vehicleSwitchBulletType/HE"
+      name:t="tank_crew_load_he"
+      rcptFilter:t="player"
+      treatAsWatched:b=yes
+    }
+
+    "speech:object"{
+      id:t="vehicleSwitchBulletType/AP"
+      name:t="tank_crew_load_ap"
+      rcptFilter:t="player"
+      treatAsWatched:b=yes
+    }
+
+    "speech:object"{
+      id:t="vehicleSwitchBulletType/APCR"
+      name:t="tank_crew_load_apcr"
+      rcptFilter:t="player"
+      treatAsWatched:b=yes
+    }
+
+    "speech:object"{
+      id:t="vehicleSwitchBulletType/heat"
+      name:t="tank_crew_load_heat"
+      rcptFilter:t="player"
+      treatAsWatched:b=yes
+    }
+
+    "speech:object"{
+      id:t="vehicleSwitchBulletType/smoke"
+      name:t="tank_crew_load_s"
+      rcptFilter:t="player"
+      treatAsWatched:b=yes
+    }
+
+    "speech:object"{
+      id:t="vehicleSwitchBulletType/frag"
+      name:t="tank_crew_load_frag"
+      rcptFilter:t="player"
+      treatAsWatched:b=yes
+    }
+
+    "speech:object"{
+      id:t="vehicleSwitchBulletType/shrapnel"
+      name:t="tank_crew_load_canister"
+      rcptFilter:t="player"
+      treatAsWatched:b=yes
+    }
+
+    "speech:object"{
+      id:t="vehicleSwitchBulletType/default"
+      name:t="tank_crew_load"
+      rcptFilter:t="player"
+      treatAsWatched:b=yes
+    }
+
+    "speech:object"{
+      id:t="smokeSupplyRequest"
+      watched:t="smoke_supply_request"
+      replace:b=yes
+      rcptFilter:t="player"
+    }
+
+    "speech:object"{
+      id:t="smokeSupplyRespond"
+      watched:t="smoke_supply_accept"
+      abandon:b=yes
+      queueable:b=yes
+      rcptFilter:t="player"
+    }
+
+    "speech:object"{
+      id:t="airSupplyRequest"
+      watched:t="air_supply_request"
+      replace:b=yes
+      rcptFilter:t="player"
+    }
+
+    "speech:object"{
+      id:t="airSupplyRespond"
+      watched:t="air_supply_accept"
+      abandon:b=yes
+      queueable:b=yes
+      rcptFilter:t="player"
+    }
+
+    "speech:object"{
+      id:t="rocketStrikeRequest"
+      watched:t="rocket_strike_request"
+      replace:b=yes
+      rcptFilter:t="player"
+    }
+
+    "speech:object"{
+      id:t="rocketStrikeRespond"
+      watched:t="rocket_strike_accept"
+      abandon:b=yes
+      queueable:b=yes
+      rcptFilter:t="player"
+    }
+
+    "speech:object"{
+      id:t="bomberStrikeRequest"
+      watched:t="bomber_request"
+      replace:b=yes
+      rcptFilter:t="player"
+    }
+
+    "speech:object"{
+      id:t="bomberStrikeRespond"
+      watched:t="bomber_accept"
+      abandon:b=yes
+      queueable:b=yes
+      rcptFilter:t="player"
+    }
+
+    "speech:object"{
+      id:t="artStrikeRequest"
+      watched:t="art_command"
+      replace:b=yes
+      rcptFilter:t="player"
+    }
+
+    "speech:object"{
+      id:t="artStrikeRespond"
+      watched:t="art_shoot"
+      abandon:b=yes
+      queueable:b=yes
+      rcptFilter:t="player"
+    }
+
+    "speech:object"{
+      id:t="hooray"
+      name:t="hooray"
+      rcptFilter:t="posRange"
+      replace:b=yes
+    }
+
+    "speech:object"{
+      id:t="meleeCharge"
+      name:t="melee_charge"
+      rcptFilter:t="posRange"
+      replace:b=yes
+    }
+
+    "speech:object"{
+      id:t="phosphorusThrow"
+      watched:t="phosphorus_throw"
+      rcptFilter:t="player"
+      replace:b=yes
+    }
+
+    "speech:object"{
+      id:t="qm_sorry"
+      name:t="qm_sorry"
+      rcptFilter:t="team"
+      replace:b=yes
+    }
+
+    "speech:object"{
+      id:t="qm_accept"
+      name:t="qm_accept"
+      rcptFilter:t="team"
+      replace:b=yes
+    }
+
+    "speech:object"{
+      id:t="qm_thanks"
+      name:t="qm_thanks"
+      rcptFilter:t="team"
+      replace:b=yes
+    }
+
+    "speech:object"{
+      id:t="qm_heal_me"
+      name:t="qm_heal_me"
+      rcptFilter:t="team"
+      replace:b=yes
+    }
+
+    "speech:object"{
+      id:t="qm_decline"
+      name:t="qm_decline"
+      rcptFilter:t="team"
+      replace:b=yes
+    }
+
+    "speech:object"{
+      id:t="qm_ask_ammo"
+      name:t="qm_ask_ammo"
+      rcptFilter:t="team"
+      replace:b=yes
+    }
+
+    "speech:object"{
+      id:t="qm_cover_me"
+      name:t="qm_cover_me"
+      rcptFilter:t="team"
+      replace:b=yes
+    }
+
+    "speech:object"{
+      id:t="qm_follow_me"
+      name:t="qm_follow_me"
+      rcptFilter:t="team"
+      replace:b=yes
+    }
+
+    "speech:object"{
+      id:t="qm_well_done"
+      name:t="qm_well_done"
+      rcptFilter:t="team"
+      replace:b=yes
+    }
+
+    "speech:object"{
+      id:t="qm_mark_enemy_vehicle"
+      name:t="qm_mark_enemy_vehicle"
+      rcptFilter:t="team"
+      replace:b=yes
+    }
+
+    "speech:object"{
+      id:t="qm_request_rally_point"
+      name:t="qm_ask_rally_point"
+      rcptFilter:t="team"
+      replace:b=yes
+    }
+
+    "speech:object"{
+      id:t="qm_request_ammo_box"
+      name:t="qm_ask_ammo_box"
+      rcptFilter:t="team"
+      replace:b=yes
+    }
+
+    "speech:object"{
+      id:t="paratroopCry"
+      name:t="paratroop_jump"
+      rcptFilter:t="player"
+      replace:b=yes
+    }
+
+    "speech:object"{
+      id:t="paratroopReady"
+      watched:t="paratroop_ready"
+      rcptFilter:t="player"
+      replace:b=yes
+    }
+
+    "speech:object"{
+      id:t="paratroopGo"
+      watched:t="paratroop_go"
+      rcptFilter:t="player"
+      replace:b=yes
+    }
+  }
+}
+
+human_net_sound{
+  _use:t="net_sound_descs"
+
+  "net_sound__descs:shared:object"{
+
+    "uiMap_main:object"{
+      watched:t="ui/set_point_notify_enl"
+      other:t="ui/set_point_notify_enl_enemy"
+    }
+
+    "uiMap_item:object"{
+      watched:t="ui/mark_item"
+      other:t="ui/mark_item_3d"
+    }
+
+    "uiMap_enemy:object"{
+      watched:t="ui/mark_enemy"
+      other:t="ui/mark_enemy_3d"
+    }
+
+    "uiMap_way_point:object"{
+      watched:t="ui/set_point_notify_enl"
+      other:t="ui/set_point_notify_enl_enemy"
+    }
+
+    "pick_healing:object"{
+      watched:t="player/walker/ww2_soldier/items/healing/pick"
+      other:t="enemy/walker/ww2_soldier/items/healing/pick"
+    }
+
+    "pick_flask:object"{
+      watched:t="player/walker/ww2_soldier/items/flask/pick"
+      other:t="enemy/walker/ww2_soldier/items/flask/pick"
+    }
+
+    "pick_ammo:object"{
+      watched:t="player/walker/ww2_soldier/items/ammo/pick"
+      other:t="enemy/walker/ww2_soldier/items/ammo/pick"
+    }
+
+    "pick_armor:object"{
+      watched:t="player/walker/ww2_soldier/items/armor/pick"
+      other:t="enemy/walker/ww2_soldier/items/armor/pick"
+    }
+
+    "pick_grenade:object"{
+      watched:t="player/walker/ww2_soldier/items/grenade/pick"
+      other:t="enemy/walker/ww2_soldier/items/grenade/pick"
+    }
+
+    "pick_weapon:object"{
+      watched:t="player/walker/ww2_soldier/items/gun/pick"
+      other:t="enemy/walker/ww2_soldier/items/gun/pick"
+    }
+
+    "pick_repairkit:object"{
+      watched:t="player/walker/ww2_soldier/items/other/pick"
+      other:t="enemy/walker/ww2_soldier/items/other/pick"
+    }
+
+    "pick_other:object"{
+      watched:t="player/walker/ww2_soldier/items/other/pick"
+      other:t="enemy/walker/ww2_soldier/items/other/pick"
+    }
+
+    "drop_healing:object"{
+      watched:t="player/walker/ww2_soldier/items/other/drop"
+    }
+
+    "drop_flask:object"{
+      watched:t="player/walker/ww2_soldier/items/other/drop"
+    }
+
+    "drop_ammo:object"{
+      watched:t="player/walker/ww2_soldier/items/other/drop"
+    }
+
+    "drop_armor:object"{
+      watched:t="player/walker/ww2_soldier/items/other/drop"
+    }
+
+    "drop_grenade:object"{
+      watched:t="player/walker/ww2_soldier/items/grenade/drop"
+    }
+
+    "drop_weapon:object"{
+      watched:t="player/walker/ww2_soldier/items/other/drop"
+    }
+
+    "drop_repairkit:object"{
+      watched:t="player/walker/ww2_soldier/items/other/drop"
+    }
+
+    "drop_other:object"{
+      watched:t="player/walker/ww2_soldier/items/other/drop"
+    }
+
+    "use_healing:object"{
+      watched:t="player/walker/ww2_soldier/items/healing/use"
+      other:t="enemy/walker/ww2_soldier/items/healing/use"
+    }
+
+    "use_flask:object"{
+    }
+
+    "use_ammo:object"{
+      watched:t="player/walker/ww2_soldier/items/ammo/use"
+      other:t="enemy/walker/ww2_soldier/items/ammo/use"
+    }
+
+    "use_armor:object"{
+      watched:t="player/walker/ww2_soldier/items/armor/use"
+      other:t="enemy/walker/ww2_soldier/items/armor/use"
+    }
+
+    "use_grenade:object"{
+      watched:t="player/walker/ww2_soldier/items/grenade/use"
+      other:t="enemy/walker/ww2_soldier/items/grenade/use"
+    }
+
+    "use_weapon:object"{
+      watched:t="player/walker/ww2_soldier/items/gun/use"
+      other:t="enemy/walker/ww2_soldier/items/gun/use"
+    }
+
+    "use_repairkit:object"{
+      watched:t="player/walker/ww2_soldier/items/repairkit/use"
+      other:t="enemy/walker/ww2_soldier/items/repairkit/use"
+    }
+
+    "use_other:object"{
+      watched:t="player/walker/ww2_soldier/items/other/use"
+      other:t="enemy/walker/ww2_soldier/items/other/use"
+    }
+
+    "createBuilding_fortification:object"{
+      path:t="enemy/walker/ww2_soldier/items/build_fortification/use"
+      range:r=30.0
+    }
+
+    "createBuilding_cannon:object"{
+      path:t="enemy/walker/ww2_soldier/items/build_cannon/use"
+      range:r=30.0
+    }
+
+    "terraform:object"{
+      path:t="impact/terraform"
+    }
+  }
+}
+
+paratrooper_jump_sound{
+
+  _group{
+    _tags:t="sound"
+    paratrooper_jump_sound__path:t="player/effects/parachute_jump"
+  }
+}
+
+human_parachute_sound{
+  _use:t="paratrooper_jump_sound"
+
+  _group{
+    _tags:t="sound"
+    human_parachute_sound__openPath:t="player/effects/parachute_open"
+    human_parachute_sound__path:t="player/effects/parachute_flight"
+
+    "human_parachute_sound__closePath:shared:object"{
+      path:t="/effects/parachute_landing"
+    }
+  }
+}
+
+human_clothes_change_sound{
+
+  _group{
+    _tags:t="sound"
+
+    "human_clothes_change_sound__path:shared:object"{
+      path:t="/walker/ww2_soldier/items/change_suit/activate"
+    }
+  }
+}
+
+human_torn_wound_sound{
+
+  _group{
+    _tags:t="sound"
+
+    "human_torn_wound_sound__path:shared:object"{
+      path:t="/walker/ww2_soldier/hit/torn_wound"
+    }
+  }
+}
+
+dead_soldier_sound{
+  _use:t="watched_sound"
+  _use:t="base_human_voice_sound"
+  _use:t="sound_tags"
+  _use:t="human_death_sound"
+  _use:t="human_torn_wound_sound"
+
+  "deadSoldierSound:tag"{
+  }
+}

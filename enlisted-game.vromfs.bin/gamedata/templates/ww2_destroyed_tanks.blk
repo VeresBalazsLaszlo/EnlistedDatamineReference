@@ -1,0 +1,254 @@
+destroyed_tank{
+  _use:t="animchar"
+  _use:t="phys_sleepable"
+  _use:t="vehicle_still"
+  _use:t="animchar_additional_data"
+  _use:t="replicating"
+  net__physId:i=-1
+  material:t="steel"
+  needsBlood:b=no
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, 0.0, 0.0]]
+  grid_obj__gridType:t="vehicles"
+  grid_obj__fixedTmScale:r=-1.0
+  collision_physMatId:i=-1
+  pair_collision__tag:t="collidableToPhysObj"
+  vehicle__stillBoxExtents:r=5.0
+
+  grid_obj{
+  }
+
+  phys_vars{
+  }
+
+  collres{
+  }
+
+  phys_obj_net_phys{
+  }
+
+  base_net_phys_ptr{
+  }
+
+  pair_collision__gridHolders{
+  }
+
+  "pair_collision__gridNames:list<t>"{
+    h:t="humans"
+    h:t="vehicles"
+  }
+
+  "collidableToPhysObj:tag"{
+  }
+
+  "collidableToHuman:tag"{
+  }
+
+  "invulnerable:tag"{
+  }
+
+  "projectilesCanRicochet:tag"{
+  }
+
+  "useVehicleHitFx:tag"{
+  }
+
+  "vehicle_tracks_visual_pos:p2"{
+    _tags:t="render"
+  }
+
+  "vehicle_tracks_visual_pos_delta:p2"{
+    _tags:t="render"
+  }
+
+  "explosionCover:tag"{
+  }
+
+  "blockTerraform:tag"{
+  }
+}
+
+pzkpfw_vi_ausf_e_tiger_a_destroyed{
+  _use:t="destroyed_tank"
+  animchar__res:t="pzkpfw_vi_ausf_e_tiger_a_destroyed_char"
+  collres__res:t="pzkpfw_vi_ausf_e_tiger_a_destroyed_collision"
+  phys_obj_net_phys__blk:t="gamedata/units/debris/pzkpfw_vi_ausf_e_tiger_a.blk"
+}
+
+pzkpfw_VI_ausf_B_tiger_destroyed{
+  _use:t="destroyed_tank"
+  animchar__res:t="pzkpfw_VI_ausf_B_tiger_destroyed_char"
+  collres__res:t="pzkpfw_VI_ausf_B_tiger_destroyed_collision"
+  phys_obj_net_phys__blk:t="gamedata/units/debris/pzkpfw_VI_ausf_B_tiger.blk"
+}
+
+stug_40_ausf_g_a_destroyed{
+  _use:t="destroyed_tank"
+  animchar__res:t="stug_40_ausf_g_a_destroyed_char"
+  collres__res:t="stug_40_ausf_g_a_destroyed_collision"
+  phys_obj_net_phys__blk:t="gamedata/units/debris/stug_40_ausf_g_a.blk"
+}
+
+is_2_1944_a_destroyed{
+  _use:t="destroyed_tank"
+  animchar__res:t="is_2_1944_a_destroyed_char"
+  collres__res:t="is_2_1944_a_destroyed_collision"
+  phys_obj_net_phys__blk:t="gamedata/units/debris/is_2_1944_a.blk"
+}
+
+t_34_85_zis_53_a_destroyed{
+  _use:t="destroyed_tank"
+  animchar__res:t="t_34_85_zis_53_a_destroyed_char"
+  collres__res:t="t_34_85_zis_53_a_destroyed_collision"
+  phys_obj_net_phys__blk:t="gamedata/units/debris/t_34_85_e_a.blk"
+}
+
+t_34_85_e_a_destroyed{
+  _use:t="destroyed_tank"
+  animchar__res:t="t_34_85_e_a_destroyed_char"
+  collres__res:t="t_34_85_e_a_destroyed_collision"
+  phys_obj_net_phys__blk:t="gamedata/units/debris/t_34_85_e_a.blk"
+}
+
+pzkpfw_v_ausf_g_panther_a_destroyed{
+  _use:t="destroyed_tank"
+  animchar__res:t="pzkpfw_V_ausf_g_panther_a_destroyed_char"
+  collres__res:t="pzkpfw_V_ausf_g_panther_a_destroyed_collision"
+  phys_obj_net_phys__blk:t="gamedata/units/debris/pzkpfw_v_ausf_g_panther_a.blk"
+}
+
+m4a2_sherman_1944_destroyed{
+  _use:t="destroyed_tank"
+  animchar__res:t="m4a2_sherman_1944_destroyed_char"
+  collres__res:t="m4a2_sherman_1944_destroyed_collision"
+  phys_obj_net_phys__blk:t="gamedata/units/debris/m4a2_sherman_1944.blk"
+}
+
+m4a2_sherman_1944_body_destroyed{
+  _use:t="destroyed_tank"
+  animchar__res:t="m4a2_sherman_1944_body_destroyed_char"
+  collres__res:t="m4a2_sherman_1944_body_destroyed_collision"
+  phys_obj_net_phys__blk:t="gamedata/units/debris/m4a2_sherman_1944_body.blk"
+}
+
+m4a2_sherman_1944_turret_destroyed{
+  _use:t="destroyed_tank"
+  animchar__res:t="m4a2_sherman_1944_turret_destroyed_char"
+  collres__res:t="m4a2_sherman_1944_turret_destroyed_collision"
+  phys_obj_net_phys__blk:t="gamedata/units/debris/m4a2_sherman_1944_turret.blk"
+}
+
+mark_v_destroyed{
+  _use:t="destroyed_tank"
+  animchar__res:t="mark_v_destroyed_char"
+  collres__res:t="mark_v_destroyed_collision"
+  phys_obj_net_phys__blk:t="gamedata/units/debris/mark_v.blk"
+}
+
+a7v_destroyed{
+  _use:t="destroyed_tank"
+  animchar__res:t="a7v_destroyed_char"
+  collres__res:t="a7v_destroyed_collision"
+  phys_obj_net_phys__blk:t="gamedata/units/debris/germ_a7v.blk"
+}
+
+tank_losable_turret{
+  _use:t="replicating"
+  _replicated:t="losable_turret__lostBone"
+  losable_turret__lostBone:t=""
+  losable_turret__suppressDetach:b=no
+  losable_turret__detachChance:r=1.0
+  losable_turret__detachBone:t=""
+  losable_turret__detachCollNode:t=""
+  losable_turret__targetLaunchSpeed:r=15.0
+  losable_turret__rotation:r=2.5
+  losable_turret__deviation:r=0.5
+  losable_turret__speedScale:p2=0.7, 1.3
+  losable_turret__mass:r=4500.0
+  losable_turret__ammoDetachThreshold:r=0.25
+  losable_turret__tankMassFloor:r=12000.0
+  losable_turret__spawnUpOffset:r=0.45
+  losable_turret__turretTrailTemplate:t="tank_ammo_fire_turret_trail_template"
+  losable_turret__barrelTrailTemplate:t="tank_ammo_fire_barrel_trail_template"
+
+  "losable_turret__detachCollNodes:list<t>"{
+  }
+}
+
+flying_turret_base{
+  _use:t="destroyed_tank"
+  _use:t="vehicle_damage_decals"
+  _use:t="flying_turret_sound"
+  _tracked:t="dmg_animchar__renderable"
+  isExploded:b=yes
+  animchar__res:t=""
+  collres__res:t=""
+  collres__performCopy:b=yes
+  dmg_animchar__res:t=""
+  dmg_animchar__renderable:b=no
+  phys_obj_net_phys__blk:t="gamedata/units/debris/flying_turret.blk"
+  start_vel:p3=0.0, 0.0, 0.0
+  start_omega:p3=0.0, 0.0, 0.0
+  flying_turret__bone:t=""
+  flying_turret__comOffset:p3=0.0, 0.0, 0.0
+  flying_turret__mass:r=0.0
+  flying_turret__trailLingerTime:r=3.0
+  flying_turret__lastFastTime:r=-1.0
+  flying_turret__trailLingerEndTime:r=-1.0
+  flying_turret__trailFxCleared:b=no
+  flying_turret_fall_fx__effectTemplate:t="hit_tank_turret_effect"
+  flying_turret_fall_fx__minSpeedDrop:r=3.0
+  flying_turret_fall_fx__minSpeed:r=2.0
+  flying_turret_fall_fx__cooldown:r=100000.0
+  flying_turret_fall_fx__cooldownOnAppear:r=1.0
+  flying_turret_fall_fx__prevSpeed:r=0.0
+  flying_turret_fall_fx__nextTime:r=0.0
+
+  "flyingTurret:tag"{
+  }
+
+  _group{
+    _tags:t="render"
+
+    "scorchable:tag"{
+    }
+
+    dmg_animchar{
+    }
+
+    "vehicle_fxs__effectsEids:list<eid>"{
+    }
+
+    "geomNodeIdRemapMain:list<i>"{
+    }
+
+    "geomNodeIdRemapDmg:list<i>"{
+    }
+
+    "geomNodeIdRemapDstr:list<i>"{
+    }
+  }
+
+  "phys_obj__collisionPropsOverride:object"{
+  }
+
+  anim_phys{
+  }
+
+  phys_vars{
+  }
+
+  "flying_turret__sourceTankEid:eid"{
+  }
+
+  "flying_turret__pinnedBoneTms:object"{
+  }
+
+  "collres__nodeFlagRules:array"{
+  }
+
+  "disableDMParts:list<t>"{
+  }
+
+  "flying_turret__aliveBarrelBones:list<t>"{
+  }
+}

@@ -1,0 +1,209 @@
+simple_damage_model{
+  damage_model__blk:t=""
+
+  damage_model_shared{
+  }
+
+  damage_model{
+  }
+
+  "damage_model__castOnHitAfterPartDead:b"{
+    value:b=yes
+    _tags:t="server"
+  }
+}
+
+base_damage_model{
+  _use:t="simple_damage_model"
+  _use:t="dm_parts_repair"
+  isExploded:b=no
+  triggerDamageEffects:b=yes
+  damage_model__blk:t="gamedata/units/cannons/germ_20mm_flak38_flakvierling.blk"
+  _tracked:t="isExploded"
+  _tracked:t="dm_state"
+  _tracked:t="fire_damage_state"
+  _tracked:t="fire_damage__isBurn"
+  _tracked:t="fire_damage__isFatal"
+  _replicated:t="isExploded"
+  _replicated:t="vehicle__hp"
+  _replicated:t="fire_damage_state"
+  _replicated:t="fire_damage__isBurn"
+  _replicated:t="fire_damage__isFatal"
+  _replicated:t="fire_damage__startTime"
+  _replicated:t="dm_state"
+  _replicated:t="damage_part_alive"
+  vehicle__hp:r=450.0
+  vehicle__maxHp:r=450.0
+  vehicle__hpMetaPart:t="armor_body"
+  vehicle__hpMetaPartId:i=-1
+  vehicle__sendMsgDamageThreshold:r=-1.0
+  fire_damage__isBurn:b=no
+  fire_damage__gunPropsId:i=-1
+  fire_damage__shellId:i=-1
+  fire_damage__isFatal:b=no
+  fire_damage__startTime:r=-1.0
+  fire_damage__totalTime:r=0.0
+  fire_damage__timeToExplosion:r=180.0
+  fire_damage__update_burn_interval:r=1.0
+  fire_damage__innerRadiusMult:r=2.0
+  fire_damage__bumpOnExplosion:b=yes
+  fire_damage__explodeBumpVelRange:p2=-0.75, 0.75
+  fire_damage__openHatchesOnExplosion:b=no
+  fire_damage__hatchOpenChance:r=0.5
+  fire_damage__hatchesOpened:b=no
+  damage_model__explosionDamageType:i=-1
+  damage_model__fireDamageType:i=-1
+
+  _group{
+    _tags:t="render"
+    highlight_collision__color:p4=1.0, 0.0, 0.0, 1.0
+
+    "highlight_collision__nodes:list<i>"{
+    }
+  }
+
+  "fire_damage__hatchAngles:object"{
+  }
+
+  "fire_damage__hatchPosOffsets:object"{
+  }
+
+  "dm_state:list<u16>"{
+  }
+
+  meta_parts_state{
+  }
+
+  "damage_part_alive:list<b>"{
+  }
+
+  damage_model_tree{
+  }
+
+  fire_damage{
+  }
+
+  fire_damage_state{
+  }
+
+  fire_protection{
+  }
+}
+
+base_damage_model_fx{
+  fatal_explosion_fire__endTime:r=-1.0
+  fatal_explosion_fire__ttl:r=60.0
+  fatal_fire_fx__timeToExplosion:r=5.0
+  fatal_fire__timeToExplosion:r=8.0
+
+  "isFatalExplosionFxStarted:b"{
+    _tags:t="render"
+    value:b=no
+  }
+
+  "isDestroyedSmokeSmallStarted:b"{
+    _tags:t="render"
+    value:b=no
+  }
+
+  _group{
+    _tags:t="render"
+
+    "fatal_explosion_fx__eids:list<eid>"{
+    }
+
+    "fatal_fire_fx__eids:list<eid>"{
+    }
+
+    "destroyed_fx__eids:list<eid>"{
+    }
+
+    "vehicle_fxs__effectsEids:list<eid>"{
+    }
+  }
+
+  _group{
+    _tags:t="render"
+    fatal_fire_fx__probability:r=0.7
+    fatal_fire_fx__ringProbability:r=0.7
+    fatal_fire_fx__barrelProbability:r=0.7
+    fatal_fire_fx__smokeTemplate:t="explosion_tank_ammo_smoke_template"
+    destroyed_fx__phase2Template:t="tank_smoke_small_late_template"
+    destroyed_fx__phase2ReplaceTemplate:t="tank_smoke_destroyed_template"
+    destroyed_fx__phase2Delay:r=60.0
+
+    "fatal_fire_fx__caliberThresholds:list<r>"{
+      threshold:r=0.06
+    }
+
+    "fatal_fire_fx__ringTemplates:list<t>"{
+      template:t="tank_ammo_fire_turret_small_template"
+      template:t="tank_ammo_fire_turret_big_template"
+    }
+
+    "fatal_fire_fx__barrelTemplates:list<t>"{
+      template:t="tank_ammo_fire_barrel_small_template"
+      template:t="tank_ammo_fire_barrel_big_template"
+    }
+
+    "destroyed_fx__hullOnlyExemptTemplates:list<t>"{
+      template:t="tank_smoke_big_template"
+    }
+  }
+
+  "isDestroyedFxStarted:b"{
+    _tags:t="render"
+    value:b=no
+  }
+}
+
+base_damage_model_ai_points{
+  _tags:t="server"
+  dm_ai__pointsYRange:p2=0.0, 0.0
+
+  "dm_ai__points:list<p3>"{
+  }
+
+  "dm_ai__pointsInfo:list<ip2>"{
+  }
+}
+
+hitcamera{
+  _tracked:t="hitcamera__locked"
+  _tracked:t="hitcamera__target"
+  _tracked:t="hitcamera__renderState"
+  hitcamera__locked:b=no
+  hitcamera__renderState:i=0
+
+  "hitcamera:tag"{
+  }
+
+  _group{
+    _tags:t="gameClient"
+    hitcamera__consequence:i=0
+
+    dm_events_client{
+    }
+  }
+
+  dm_state_before_hit{
+  }
+
+  dm_last_projectile_state{
+  }
+
+  "dm_state:list<u16>"{
+  }
+
+  "hitcamera__target:eid"{
+  }
+
+  "hitcamera__crew_hp_after_hit:list<i>"{
+  }
+
+  "hitcamera__deadMembers:i"{
+  }
+
+  "hitcamera__totalMembersBeforeShot:i"{
+  }
+}

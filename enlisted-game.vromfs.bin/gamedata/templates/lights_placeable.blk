@@ -1,0 +1,220 @@
+base_light_placeable{
+  _use:t="entity_prefab"
+  _use:t="replicating"
+  _use:t="placeable_rendinst"
+
+  "lights_placeable:tag"{
+  }
+}
+
+bunker_lamp_ceiling_a_warm_placeable{
+  _use:t="base_light_placeable"
+  ri_extra__name:t="bunker_lamp_ceiling_a"
+
+  "entity_prefab__templatesToCreate:shared:object"{
+
+    "light_chandelier_big_cold_tall:object"{
+      relativeTransform:m=[[1.0, 0.0, 0.0] [0.0, -0.00657105, 0.999978] [0.0, -12.3418, -0.0811002] [0.0, -0.308967, 0.0]]
+    }
+  }
+}
+
+is_chandelier_m_small_warm_placeable{
+  _use:t="base_light_placeable"
+  ri_extra__name:t="is_chandelier_m_on"
+
+  "entity_prefab__templatesToCreate:shared:object"{
+
+    "light_chandelier_sobig_tall_top:object"{
+      relativeTransform:m=[[-0.500006, -7.54988e-08, -4.37119e-08] [-4.37114e-08, 1.78814e-07, 0.5] [-1.06876e-06, 7.07806, -2.5313e-06] [0.0, -1.87661, 0.0]]
+    }
+
+    "light_chandelier_sobig_tall:object"{
+      relativeTransform:m=[[1.6364, 0.0, 0.0] [0.0, 1.23543e-07, 1.63638] [0.0, -16.3638, 1.23543e-06] [0.0, -4.61139, 0.0]]
+    }
+  }
+}
+
+is_chandelier_h_warm_placeable{
+  _use:t="base_light_placeable"
+  ri_extra__name:t="is_chandelier_h_on"
+
+  "entity_prefab__templatesToCreate:shared:object"{
+
+    "light_chandelier_big_tall_top:object"{
+      relativeTransform:m=[[1.0, 0.0, 0.0] [0.0, -4.47035e-08, -1.0] [0.0, 3.0, -1.34111e-07] [0.0, 0.191789, 0.0]]
+    }
+
+    "light_chandelier_big_tall:object"{
+      relativeTransform:m=[[1.0, 0.0, 0.0] [0.0, -0.0114923, 0.999934] [0.0, -2.9998, -0.0344768] [0.0, -0.734831, 0.0]]
+    }
+
+    "placeable_rendinst:object"{
+      relativeTransform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, 0.0, 0.0]]
+      ri_extra__name:t="is_chandelier_support_a"
+    }
+  }
+}
+
+hangar_projector_a_cold_placeable{
+  _use:t="base_light_placeable"
+  ri_extra__name:t="hangar_projector_a_base_a"
+
+  "entity_prefab__templatesToCreate:shared:object"{
+
+    "spot_light_long_projector:object"{
+      relativeTransform:m=[[-1.41766, 1.75645, -0.321727] [-0.127633, 0.310069, 2.25521] [1.78111, 1.42026, -0.0944705] [0.43235, 1.02774, 0.00823975]]
+      light__color:c=176, 196, 222, 255
+    }
+
+    "placeable_rendinst:object"{
+      relativeTransform:m=[[0.741469, 0.66948, -0.0449396] [-0.66777, 0.742808, 0.0481684] [0.0656293, -0.00570611, 0.997828] [-0.00175476, 0.674934, -0.000793457]]
+      ri_extra__name:t="hangar_projector_a_reflector_a"
+    }
+  }
+}
+
+hangar_projector_a_warm_placeable{
+  _use:t="base_light_placeable"
+  ri_extra__name:t="hangar_projector_a_base_a"
+
+  "entity_prefab__templatesToCreate:shared:object"{
+
+    "spot_light_long_projector:object"{
+      relativeTransform:m=[[-1.41766, 1.75645, -0.321727] [-0.127633, 0.310069, 2.25521] [1.78111, 1.42026, -0.0944705] [0.43235, 1.02774, 0.00823975]]
+      light__color:c=255, 80, 20, 255
+    }
+
+    "placeable_rendinst:object"{
+      relativeTransform:m=[[0.741469, 0.66948, -0.0449396] [-0.66777, 0.742808, 0.0481684] [0.0656293, -0.00570611, 0.997828] [-0.00175476, 0.674934, -0.000793457]]
+      ri_extra__name:t="hangar_projector_a_reflector_a"
+    }
+  }
+}
+
+european_light_lattice_post_lights_cold_placeable{
+  _use:t="base_light_placeable"
+  ri_extra__name:t="european_light_lattice_post_a"
+
+  "entity_prefab__templatesToCreate:shared:object"{
+
+    "spot_light_long_outside:object"{
+      relativeTransform:m=[[-0.0766196, 0.124633, -0.98924] [0.851895, 0.523712, 0.0] [0.518077, -0.842729, -0.146301] [1.73833, 15.6374, 0.0]]
+      light__color:c=176, 196, 222, 255
+    }
+
+    "placeable_rendinst:object"{
+      relativeTransform:m=[[-8.35031e-08, 1.40095, 0.0] [-0.233698, -1.39295e-08, 0.0] [0.0, 0.0, 1.32876] [1.22093, 14.8112, 1.02978]]
+      ri_extra__name:t="wall_lamp_c_glass_on"
+    }
+
+    "placeable_rendinst_additional_a:object"{
+      relativeTransform:m=[[-8.35031e-08, 1.40095, 0.0] [-0.233698, -1.39295e-08, 0.0] [0.0, 0.0, 1.32876] [1.22093, 14.8112, 0.0172773]]
+      ri_extra__name:t="wall_lamp_c_glass_on"
+    }
+
+    "placeable_rendinst_additional_b:object"{
+      relativeTransform:m=[[-8.35031e-08, 1.40095, 0.0] [-0.233698, -1.39295e-08, 0.0] [0.0, 0.0, 1.32876] [1.22093, 14.8112, -0.982638]]
+      ri_extra__name:t="wall_lamp_c_glass_on"
+    }
+  }
+}
+
+african_lamp_a_warm_shadows_nofog_placeable{
+  _use:t="base_light_placeable"
+  ri_extra__name:t="is_african_lamp_a"
+
+  "entity_prefab__templatesToCreate:shared:object"{
+
+    "omni_light_huge:object"{
+      relativeTransform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, 0.715362, 0.0]]
+      light__max_radius:r=5.0
+      light__affect_volumes:b=no
+      omni_light__shadow_shrink:i=2
+      light__brightness:r=3.0
+      omni_light__shadows:b=yes
+    }
+
+    "placeable_rendinst:object"{
+      relativeTransform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, 0.0, 0.0]]
+      ri_extra__name:t="is_african_lamp_a_glass_on"
+    }
+  }
+}
+
+african_lamp_wall_a_warm_shadows_nofog_placeable{
+  _use:t="base_light_placeable"
+  ri_extra__name:t="is_african_lamp_wall_a"
+
+  "entity_prefab__templatesToCreate:shared:object"{
+
+    "omni_light_huge:object"{
+      relativeTransform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.124878, -0.3, -0.00500488]]
+      light__max_radius:r=5.0
+      omni_light__shadows:b=yes
+      omni_light__shadow_shrink:i=2
+      light__affect_volumes:b=no
+      light__brightness:r=2.0
+    }
+
+    "placeable_rendinst:object"{
+      relativeTransform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, 0.0, 0.0]]
+      ri_extra__name:t="is_african_lamp_wall_a_glass_on"
+    }
+  }
+}
+
+african_lamp_b_warm_shadows_placeable{
+  _use:t="base_light_placeable"
+  ri_extra__name:t="is_african_lamp_b"
+
+  "entity_prefab__templatesToCreate:shared:object"{
+
+    "placeable_rendinst:object"{
+      relativeTransform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, 0.0, 0.0]]
+      ri_extra__name:t="is_african_lamp_b_glass_on"
+    }
+
+    "omni_light:object"{
+      relativeTransform:m=[[1.0, 0.0, 0.0] [0.0, 0.0, 1.0] [0.0, -1.0, 0.0] [0.0, 0.32, 0.0]]
+      light__affect_volumes:b=yes
+      light__contact_shadows:b=no
+      light__max_radius:r=5.5
+      light__color:c=255, 160, 80, 255
+      light__radius_scale:r=1.5
+      light__use_box:b=no
+      light__brightness:r=1.0
+      omni_light__shadows:b=yes
+      omni_light__shadow_shrink:i=2
+    }
+  }
+}
+
+wooden_torch_warm_no_holdings_placeable{
+  _use:t="base_light_placeable"
+  ri_extra__name:t="wooden_torch_vertical"
+
+  "entity_prefab__templatesToCreate:shared:object"{
+
+    "fire_torch_effect:object"{
+      relativeTransform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, 0.455691, 0.0]]
+    }
+  }
+}
+
+wooden_torch_warm_vertical_holdings_placeable{
+  _use:t="base_light_placeable"
+  ri_extra__name:t="torch_holder_a"
+
+  "entity_prefab__templatesToCreate:shared:object"{
+
+    "fire_torch_effect:object"{
+      relativeTransform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.548491, 0.467992, 5.96046e-07]]
+    }
+
+    "placeable_rendinst:object"{
+      relativeTransform:m=[[0.979361, -0.20212, 0.0] [0.20212, 0.979361, 0.0] [0.0, 0.0, 1.0] [0.453705, 0.0, 0.0]]
+      ri_extra__name:t="wooden_torch_vertical"
+    }
+  }
+}

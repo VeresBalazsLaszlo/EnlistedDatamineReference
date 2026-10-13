@@ -1,0 +1,68 @@
+import{
+  scene:t="gamedata/scenes/_common_sounds.blk"
+}
+
+entity{
+  _template:t="battle_music"
+}
+
+entity{
+  _template:t="burma_ambient_sound"
+}
+
+entity{
+  _template:t="water_sound_field"
+  water_sound_field__depthThreshold:r=0.1
+}
+
+entity{
+  _template:t="sound_effect_generator"
+  ri_extra_gen__blk:t="gamedata/burma_heartlands_sounds_ri_extra_gen.blk"
+}
+
+entity{
+  _template:t="sound_field"
+
+  "sound_field__biomeTypes:array"{
+
+    "obj:object"{
+      gameObject:t="biome_forest_sound_var"
+      alpha2Value:p2=0.25, 1.0
+      extent:r=0.0
+    }
+
+    "obj:object"{
+      gameObject:t="biome_city_sound_var"
+      alpha2Value:p2=0.5, 1.0
+      extent:r=0.0
+    }
+  }
+
+  "sound_field__vars:list<t>"{
+    var:t="biome_forest"
+    var:t="biome_city"
+  }
+}
+
+entity{
+  _template:t="compound_ambient_sound_type"
+  compound_ambient_sound_type__soundType:t="cave"
+  compound_ambient_sound_type__path:t="ambient/positioned/cave"
+  compound_ambient_sound_type__fadeInOutSpeed:p2=0.25, 0.5
+}
+
+entity{
+  _template:t="compound_ambient_sound_type"
+  compound_ambient_sound_type__soundType:t="sewerage"
+  compound_ambient_sound_type__path:t="ambient/positioned/sewerage"
+  compound_ambient_sound_type__fadeInOutSpeed:p2=0.25, 0.5
+}
+
+entity{
+  _template:t="compound_ambient_sound_controller"
+
+  "compound_ambient_sound_controller__soundTypes:list<t>"{
+    name:t="sewerage"
+    name:t="cave"
+  }
+}

@@ -1,0 +1,48 @@
+mass:r=0.116
+caliber:r=0.02
+speed:r=720.0
+Cx:r=0.5055
+maxDistance:r=3000.0
+normalizationPreset:t="default"
+modelName:t="tank_bullet_he"
+ricochetPreset:t="defaultExt"
+groundRicochetPreset:t="defaultExt"
+hitPowerMult:r=10.0
+secondaryShattersPreset:t="ap"
+onHitChanceMultFire:r=7.0
+stabilityThreshold:r=0.05
+recoilMultiplier:r=0.4
+stabilityReductionAfterRicochet:r=0.5
+stabilityReductionAfterPenetration:r=0.15
+relativeVelHitShift:p2=300.0, 1000.0
+relativeVelArmorShift:p2=200.0, 1000.0
+
+stabilityRicochetModifier{
+  mod1:p2=0.0, 0.05
+  mod2:p2=20.0, 0.1
+  mod3:p2=30.0, 0.2
+  mod3:p2=45.0, 0.3
+}
+
+hitpower{
+  HitPower10m:p2=1.0, 50.0
+  HitPower1000m:p2=0.7, 1000.0
+  HitPower1500m:p2=0.5, 1500.0
+  HitPower2000m:p2=0.1, 2000.0
+}
+
+damage{
+
+  kinetic{
+    damageType:t="generic"
+    demarrePenetrationK:r=0.9
+    demarreSpeedPow:r=1.43
+    demarreMassPow:r=0.71
+    demarreCaliberPow:r=1.07
+  }
+}
+
+tracer{
+  headColor:c=255, 255, 255, 120
+  smokeColor:c=80, 80, 80, 186
+}

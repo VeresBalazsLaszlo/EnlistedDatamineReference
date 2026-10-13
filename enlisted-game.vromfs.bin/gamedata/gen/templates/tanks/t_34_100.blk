@@ -1,0 +1,253 @@
+base_t_34_100{
+  _use:t="base_tank"
+  _use:t="t_34_100_ammo_stowages"
+  _use:t="vehicle_physical_tracks"
+  killLogName:t="ussr_t_34_100"
+  animchar__res:t="t_34_100_char"
+  animchar_fast_phys__res:t="t_34_100_fastphys"
+  collres__res:t="t_34_100_collision"
+  vehicle_net_phys__blk:t="gamedata/gen/units/tanks/t_34_100.blk:VehiclePhys"
+  particle_phys__blk:t="gamedata/gen/units/tanks/t_34_100.blk:PhysSys"
+  dmg_animchar__res:t="t_34_100_dmg_char"
+  xray_resource__modelName:t="t_34_100"
+  cockpit__zoomOutFov:r=5.8197
+  cockpit__zoomInFov:r=6.1402
+  cockpit__sightName:t="sight_model/tsh_16"
+  cockpit__sightFov:r=9.75
+  drowningHeight:r=2.16
+  damage_model__blk:t="gamedata/gen/units/tanks/t_34_100.blk"
+  item__name:t="items/ussr_t_34_100"
+  physical_tracks__blk:t="gamedata/gen/units/tanks/t_34_100.blk"
+  turret_control__grenadeLauncherSalvoSize:i=1
+  skin__template:t="t_34_100_skins"
+  losable_turret__detachBone:t="bone_turret"
+  losable_turret__detachCollNode:t="cls_turret_01"
+  losable_turret__mass:r=6000.0
+  losable_turret__deviation:r=0.3
+  losable_turret__rotation:r=1.5
+  fire_damage__openHatchesOnExplosion:b=yes
+
+  animchar_fast_phys{
+    _tags:t="gameClient"
+  }
+
+  "turret_gun_flash_fx__flashNodes:shared:array"{
+    node:t="emtr_gun_flame"
+    node:t="emtr_mg_flame_01"
+  }
+
+  "turret_gun_flash_fx__flashFx:shared:array"{
+    fx:t="muzzle_ground_100mm_brake"
+    fx:t="muzzle_ground_8mm"
+  }
+
+  "turret_gun_flash_fx__flashFxScale:shared:array"{
+    scale:r=1.0
+    scale:r=1.0
+  }
+
+  "turret_control__emitterNodes:shared:array"{
+    node:t="bone_gun_barrel"
+    node:t="bone_mg_gun_twin"
+  }
+
+  "turret_control__animVars:shared:array"{
+
+    "vars:object"{
+      curYawParamName:t="turret_01_yaw"
+      curPitchParamName:t="gun_01_pitch"
+      aimActiveParamName:t="aim_01_active"
+      paramYawSpeed:t="turret_01_yaw_speed"
+      paramYawSpeedMul:t="turret_01_yaw_mul"
+      paramYawAccel:t="turret_01_yaw_accel"
+      paramMinYawAngle:t="turret_01_min_yaw_angle"
+      paramMaxYawAngle:t="turret_01_max_yaw_angle"
+      paramMinPitchAngle:t="turret_01_min_pitch_angle"
+      paramMaxPitchAngle:t="turret_01_max_pitch_angle"
+      paramPitchSpeed:t="gun_01_pitch_speed"
+      paramPitchSpeedMul:t="gun_01_pitch_mul"
+      paramPitchAccel:t="gun_01_pitch_accel"
+      wishYawParamName:t="gun_01_aim:targetYaw"
+      wishPitchParamName:t="gun_01_aim:targetPitch"
+      gunRecoilParamName:t="gun_01_recoil"
+    }
+
+    "vars:object"{
+      curYawParamName:t="turret_02_yaw"
+      curPitchParamName:t="gun_02_pitch"
+    }
+  }
+
+  "turret_control__turretInfo:shared:array"{
+
+    "turretInfo:object"{
+      turretName:t="turret_01"
+      gun:t="t_34_100_turret_01_100mm_lb1+turret_with_several_types_of_shells+main_turret"
+      barrelDm:t="gun_barrel"
+      breechDm:t="cannon_breech"
+      verDriveDm:t="drive_turret_v"
+      horDriveDm:t="drive_turret_h"
+      salt:i=1
+    }
+
+    "turretInfo:object"{
+      turretName:t="turret_02"
+      gun:t="t_34_100_turret_02_7_62mm_dt"
+      barrelDm:t="gun_barrel_01"
+      salt:i=1
+    }
+  }
+}
+
+t_34_100_turret_01_100mm_lb1{
+  _use:t="tankgun_100mm_lb1"
+  gun__shootNodeName:t="bone_gun_barrel"
+  turret__yawSpeed:r=25.0
+  turret__pitchSpeed:r=4.0
+  turret__aimNodeName:t="bone_turret"
+  turret__limit:p4=-180.0, 180.0, -3.0, 18.0
+  gun__shotFreq:r=0.0866
+
+  "gun__shellsAmmo:array"{
+    ammo:i=9
+    ammo:i=3
+    ammo:i=3
+    ammo:i=3
+    ammo:i=3
+    ammo:i=3
+    ammo:i=3
+    ammo:i=3
+  }
+}
+
+t_34_100_turret_02_7_62mm_dt{
+  _use:t="tankgun_7_62mm_dt"
+  gun__shootNodeName:t="bone_mg_gun_twin"
+
+  "gun__shellsAmmo:array"{
+    ammo:i=945
+    ammo:i=945
+  }
+}
+
+t_34_100_turret_03_t_34_100_smoke_barrel_launcher{
+  _use:t="tankgun_t_34_100_smoke_barrel_launcher"
+  gun__shootNodeName:t="emtr_mortar_flame_01"
+
+  "gun__shellsAmmo:array"{
+    ammo:i=1
+  }
+}
+
+t_34_100_turret_04_t_34_100_smoke_barrel_launcher{
+  _use:t="tankgun_t_34_100_smoke_barrel_launcher"
+  gun__shootNodeName:t="emtr_mortar_flame_02"
+
+  "gun__shellsAmmo:array"{
+    ammo:i=1
+  }
+}
+
+t_34_100_ammo_stowages{
+  _tags:t="server"
+  _use:t="vehicle_ammo_stowages"
+
+  "ammo_stowage__stowageTemplates:shared:list<t>"{
+    stowage:t="t_34_100_ammo_stowage_1"
+  }
+}
+
+t_34_100_ammo_stowage_1{
+  _use:t="ammo_stowage"
+
+  "ammo_stowage__clusterTemplates:shared:list<t>"{
+    cluster:t="t_34_100_ammo_cluster_1_1"
+    cluster:t="t_34_100_ammo_cluster_1_2"
+  }
+
+  "ammo_stowage__turretNames:shared:list<t>"{
+    gun:t="turret_01"
+  }
+}
+
+t_34_100_ammo_cluster_1_1{
+  _use:t="ammo_cluster"
+  ammo_cluster__isShell:b=yes
+
+  "ammo_cluster__slotNames:shared:list<t>"{
+    part:t="ammo_turret_01"
+    part:t="ammo_turret_02"
+    part:t="ammo_turret_03"
+    part:t="ammo_turret_04"
+    part:t="ammo_turret_05"
+    part:t="ammo_turret_06"
+    part:t="ammo_turret_07"
+    part:t="ammo_turret_08"
+    part:t="ammo_turret_09"
+  }
+
+  "ammo_cluster__slotsMaxAmmo:list<i>"{
+    count:i=1
+    count:i=1
+    count:i=1
+    count:i=1
+    count:i=1
+    count:i=1
+    count:i=1
+    count:i=1
+    count:i=1
+  }
+}
+
+t_34_100_ammo_cluster_1_2{
+  _use:t="ammo_cluster"
+  ammo_cluster__isShell:b=yes
+
+  "ammo_cluster__slotNames:shared:list<t>"{
+    part:t="ammo_body_01"
+    part:t="ammo_body_02"
+    part:t="ammo_body_03"
+    part:t="ammo_body_04"
+    part:t="ammo_body_20"
+    part:t="ammo_body_21"
+    part:t="ammo_body_05"
+    part:t="ammo_body_06"
+    part:t="ammo_body_07"
+    part:t="ammo_body_08"
+    part:t="ammo_body_09"
+    part:t="ammo_body_10"
+    part:t="ammo_body_11"
+    part:t="ammo_body_12"
+    part:t="ammo_body_13"
+    part:t="ammo_body_14"
+    part:t="ammo_body_15"
+    part:t="ammo_body_16"
+    part:t="ammo_body_17"
+    part:t="ammo_body_18"
+    part:t="ammo_body_19"
+  }
+
+  "ammo_cluster__slotsMaxAmmo:list<i>"{
+    count:i=1
+    count:i=1
+    count:i=1
+    count:i=1
+    count:i=1
+    count:i=1
+    count:i=1
+    count:i=1
+    count:i=1
+    count:i=1
+    count:i=1
+    count:i=1
+    count:i=1
+    count:i=1
+    count:i=1
+    count:i=1
+    count:i=1
+    count:i=1
+    count:i=1
+    count:i=1
+    count:i=1
+  }
+}

@@ -1,0 +1,55 @@
+import{
+  scene:t="gamedata/scenes/_pacific_gpu_objects.blk"
+}
+
+entity{
+  _template:t="dagdp_object_group_riex"
+  dagdp__name:t="bamboo_forest_debris"
+
+  "dagdp__params:object"{
+    scale:p2=1.0, 0.25
+    orientation:t="normal"
+  }
+
+  "dagdp__assets:object"{
+
+    "ground_plant_trash_guadua_angustifolia_d:object"{
+      weight:r=6.0
+    }
+
+    "ground_plant_trash_guadua_angustifolia_e:object"{
+      weight:r=4.0
+    }
+
+    "ground_plant_trash_guadua_angustifolia_f:object"{
+      weight:r=4.0
+    }
+
+    "ground_plant_trash_guadua_angustifolia_c:object"{
+      weight:r=1.0
+    }
+
+    "ground_plant_trash_guadua_angustifolia_g:object"{
+      weight:r=1.0
+    }
+
+    "ground_plant_trash_guadua_angustifolia_h:object"{
+      weight:r=1.0
+    }
+  }
+}
+
+entity{
+  _template:t="dagdp_placer_heightmap"
+  dagdp__name:t="bamboo_forest_biomes"
+  dagdp__density:r=4.0
+
+  "dagdp__object_groups:list<t>"{
+    item:t="bamboo_forest_debris"
+  }
+
+  "dagdp__biomes:list<i>"{
+    item:i=28
+    item:i=54
+  }
+}

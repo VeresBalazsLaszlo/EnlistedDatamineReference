@@ -1,0 +1,498 @@
+entity{
+  _template:t="dagdp_level_settings"
+  dagdp__max_objects:i=10000
+}
+
+entity{
+  _template:t="dagdp_object_group_riex"
+  dagdp__name:t="auto_converted_group__decal_broken_glass_a"
+
+  "dagdp__params:object"{
+    scale:p2=1.375, 0.375
+    rot_y:p2=180.0, 180.0
+    orientation:t="normal"
+  }
+
+  "dagdp__assets:object"{
+
+    "decal_broken_glass_a:object"{
+      weight:r=1.0
+    }
+  }
+}
+
+entity{
+  _template:t="dagdp_placer_heightmap"
+  dagdp__name:t="auto_converted_placer__decal_broken_glass_a_0"
+  dagdp__density:r=0.0039
+
+  "dagdp__object_groups:list<t>"{
+    item:t="auto_converted_group__decal_broken_glass_a"
+  }
+
+  "dagdp__biomes:list<i>"{
+    item:i=18
+    item:i=19
+    item:i=21
+    item:i=22
+  }
+}
+
+entity{
+  _template:t="dagdp_object_group_riex"
+  dagdp__name:t="auto_converted_group__debris_trash_concrete_column_c"
+
+  "dagdp__params:object"{
+    scale:p2=0.675, 0.125
+    rot_y:p2=180.0, 180.0
+    orientation:t="normal"
+  }
+
+  "dagdp__assets:object"{
+
+    "debris_trash_concrete_column_c:object"{
+      weight:r=2.0
+    }
+
+    "debris_trash_concrete_small_part_a2:object"{
+      weight:r=2.0
+    }
+
+    "debris_trash_concrete_column_b:object"{
+      weight:r=2.0
+    }
+
+    "debris_trash_concrete_small_part_a1:object"{
+      weight:r=2.0
+    }
+
+    "bag_grain_flat_a:object"{
+      weight:r=1.0
+    }
+  }
+}
+
+entity{
+  _template:t="dagdp_placer_heightmap"
+  dagdp__name:t="auto_converted_placer__debris_trash_concrete_column_c_0"
+  dagdp__density:r=0.0039
+
+  "dagdp__object_groups:list<t>"{
+    item:t="auto_converted_group__debris_trash_concrete_column_c"
+  }
+
+  "dagdp__biomes:list<i>"{
+    item:i=11
+    item:i=20
+  }
+}
+
+entity{
+  _template:t="dagdp_placer_heightmap"
+  dagdp__name:t="auto_converted_placer__debris_trash_concrete_column_c_1"
+  dagdp__density:r=0.0031
+
+  "dagdp__object_groups:list<t>"{
+    item:t="auto_converted_group__debris_trash_concrete_column_c"
+  }
+
+  "dagdp__biomes:list<i>"{
+    item:i=22
+  }
+}
+
+entity{
+  _template:t="dagdp_placer_heightmap"
+  dagdp__name:t="auto_converted_placer__debris_trash_concrete_column_c_2"
+  dagdp__density:r=0.002
+
+  "dagdp__object_groups:list<t>"{
+    item:t="auto_converted_group__debris_trash_concrete_column_c"
+  }
+
+  "dagdp__biomes:list<i>"{
+    item:i=28
+  }
+}
+
+entity{
+  _template:t="dagdp_object_group_riex"
+  dagdp__name:t="auto_converted_group__debris_trash_concrete_small_part_c2"
+
+  "dagdp__params:object"{
+    scale:p2=0.2, 0.1
+    rot_y:p2=180.0, 180.0
+    orientation:t="normal"
+    rot_x:p2=0.0, 85.0
+    rot_z:p2=0.0, 85.0
+  }
+
+  "dagdp__assets:object"{
+
+    "debris_trash_concrete_small_part_c3:object"{
+      weight:r=1.0
+    }
+
+    "debris_trash_concrete_small_part_c2:object"{
+      weight:r=1.0
+    }
+
+    "debris_trash_concrete_small_part_b3:object"{
+      weight:r=0.5
+    }
+
+    "debris_trash_concrete_small_part_b1:object"{
+      weight:r=0.5
+    }
+  }
+}
+
+entity{
+  _template:t="dagdp_placer_heightmap"
+  dagdp__name:t="auto_converted_placer__debris_trash_concrete_small_part_c2_0"
+  dagdp__density:r=0.8
+
+  "dagdp__object_groups:list<t>"{
+    item:t="auto_converted_group__debris_trash_concrete_small_part_c2"
+  }
+
+  "dagdp__biomes:list<i>"{
+    item:i=8
+  }
+}
+
+entity{
+  _template:t="dagdp_placer_heightmap"
+  dagdp__name:t="auto_converted_placer__debris_trash_concrete_small_part_c2_1"
+  dagdp__density:r=1.0
+
+  "dagdp__object_groups:list<t>"{
+    item:t="auto_converted_group__debris_trash_concrete_small_part_c2"
+  }
+
+  "dagdp__biomes:list<i>"{
+    item:i=11
+    item:i=20
+  }
+}
+
+entity{
+  _template:t="dagdp_placer_heightmap"
+  dagdp__name:t="auto_converted_placer__debris_trash_concrete_small_part_c2_2"
+  dagdp__density:r=0.7
+
+  "dagdp__object_groups:list<t>"{
+    item:t="auto_converted_group__debris_trash_concrete_small_part_c2"
+  }
+
+  "dagdp__biomes:list<i>"{
+    item:i=18
+  }
+}
+
+entity{
+  _template:t="dagdp_placer_heightmap"
+  dagdp__name:t="auto_converted_placer__debris_trash_concrete_small_part_c2_3"
+  dagdp__density:r=1.5
+
+  "dagdp__object_groups:list<t>"{
+    item:t="auto_converted_group__debris_trash_concrete_small_part_c2"
+  }
+
+  "dagdp__biomes:list<i>"{
+    item:i=27
+  }
+}
+
+entity{
+  _template:t="dagdp_object_group_riex"
+  dagdp__name:t="auto_converted_group__debris_bricks_a"
+
+  "dagdp__params:object"{
+    scale:p2=0.975, 0.025
+    rot_y:p2=180.0, 180.0
+    orientation:t="normal"
+  }
+
+  "dagdp__assets:object"{
+
+    "debris_bricks_a:object"{
+      weight:r=15.0
+    }
+
+    "debris_bricks_b:object"{
+      weight:r=15.0
+    }
+
+    "debris_bricks_g:object"{
+      weight:r=5.0
+    }
+
+    "debris_trash_wood_plank_a:object"{
+      weight:r=2.0
+    }
+
+    "debris_trash_wood_plank_b:object"{
+      weight:r=2.0
+    }
+
+    "shell_kwk40_a:object"{
+      weight:r=3.0
+    }
+
+    "shell_kwk43_b:object"{
+      weight:r=3.0
+    }
+
+    "is_soviet_can_b_dmg_a:object"{
+      weight:r=2.0
+    }
+
+    "is_soviet_can_c:object"{
+      weight:r=2.0
+    }
+
+    "is_soviet_shoe_a:object"{
+      weight:r=1.0
+    }
+
+    "is_soviet_shoe_b:object"{
+      weight:r=1.0
+    }
+
+    "is_soviet_shoe_c:object"{
+      weight:r=1.0
+    }
+
+    "is_soviet_toy_car_truck_a:object"{
+      weight:r=0.5
+    }
+
+    "is_soviet_toy_car_sedan_a:object"{
+      weight:r=0.5
+    }
+
+    "is_soviet_toy_car_truck_b:object"{
+      weight:r=0.5
+    }
+
+    "is_soviet_toy_doll_plastic_a:object"{
+      weight:r=0.5
+    }
+
+    "sandbag_single_a:object"{
+      weight:r=2.0
+    }
+
+    "sandbag_single_f:object"{
+      weight:r=2.0
+    }
+
+    "is_plates_b2_dmg:object"{
+      weight:r=2.0
+    }
+
+    "is_soviet_book_d_open:object"{
+      weight:r=1.0
+    }
+
+    "is_soviet_book_n_open:object"{
+      weight:r=1.0
+    }
+
+    "soviet_sewer_hatch_a:object"{
+      weight:r=0.5
+    }
+
+    "soviet_sewer_hatch_b:object"{
+      weight:r=0.5
+    }
+
+    "soviet_sewer_hatch_c:object"{
+      weight:r=0.5
+    }
+  }
+}
+
+entity{
+  _template:t="dagdp_placer_heightmap"
+  dagdp__name:t="auto_converted_placer__debris_bricks_a_0"
+  dagdp__density:r=0.5625
+
+  "dagdp__object_groups:list<t>"{
+    item:t="auto_converted_group__debris_bricks_a"
+  }
+
+  "dagdp__biomes:list<i>"{
+    item:i=22
+  }
+}
+
+entity{
+  _template:t="dagdp_object_group_riex"
+  dagdp__name:t="auto_converted_group__tree_dry_branches_a"
+
+  "dagdp__params:object"{
+    scale:p2=0.975, 0.125
+    rot_y:p2=547.5, 412.5
+    orientation:t="normal"
+  }
+
+  "dagdp__assets:object"{
+
+    "tree_dry_branches_a:object"{
+      weight:r=1.0
+    }
+
+    "tree_dry_branches_b:object"{
+      weight:r=1.0
+    }
+
+    "tree_dry_branches_c:object"{
+      weight:r=1.0
+    }
+
+    "tree_branches_small_a:object"{
+      weight:r=0.5
+    }
+
+    "tree_branches_small_b:object"{
+      weight:r=0.5
+    }
+
+    "tree_branches_small_c:object"{
+      weight:r=0.5
+    }
+
+    "tree_branches_small_d:object"{
+      weight:r=0.5
+    }
+
+    "shell_kwk40_a:object"{
+      weight:r=1.0
+    }
+
+    "shell_kwk43_b:object"{
+      weight:r=1.0
+    }
+  }
+}
+
+entity{
+  _template:t="dagdp_placer_heightmap"
+  dagdp__name:t="auto_converted_placer__tree_dry_branches_a_0"
+  dagdp__density:r=0.0889
+
+  "dagdp__object_groups:list<t>"{
+    item:t="auto_converted_group__tree_dry_branches_a"
+  }
+
+  "dagdp__biomes:list<i>"{
+    item:i=1
+  }
+}
+
+entity{
+  _template:t="dagdp_placer_heightmap"
+  dagdp__name:t="auto_converted_placer__tree_dry_branches_a_1"
+  dagdp__density:r=0.0333
+
+  "dagdp__object_groups:list<t>"{
+    item:t="auto_converted_group__tree_dry_branches_a"
+  }
+
+  "dagdp__biomes:list<i>"{
+    item:i=6
+  }
+}
+
+entity{
+  _template:t="dagdp_placer_heightmap"
+  dagdp__name:t="auto_converted_placer__tree_dry_branches_a_2"
+  dagdp__density:r=0.0556
+
+  "dagdp__object_groups:list<t>"{
+    item:t="auto_converted_group__tree_dry_branches_a"
+  }
+
+  "dagdp__biomes:list<i>"{
+    item:i=7
+  }
+}
+
+entity{
+  _template:t="dagdp_placer_heightmap"
+  dagdp__name:t="auto_converted_placer__tree_dry_branches_a_3"
+  dagdp__density:r=0.1111
+
+  "dagdp__object_groups:list<t>"{
+    item:t="auto_converted_group__tree_dry_branches_a"
+  }
+
+  "dagdp__biomes:list<i>"{
+    item:i=13
+  }
+}
+
+entity{
+  _template:t="dagdp_object_group_riex"
+  dagdp__name:t="auto_converted_group__autumn_leaf_pile_a"
+
+  "dagdp__params:object"{
+    scale:p2=0.925, 0.225
+    rot_y:p2=180.0, 180.0
+    orientation:t="normal"
+  }
+
+  "dagdp__assets:object"{
+
+    "autumn_leaf_pile_a:object"{
+      weight:r=1.0
+    }
+
+    "autumn_leaf_pile_b:object"{
+      weight:r=1.0
+    }
+
+    "autumn_leaf_pile_c:object"{
+      weight:r=1.0
+    }
+
+    "autumn_leaf_pile_d:object"{
+      weight:r=1.0
+    }
+
+    "autumn_leaf_pile_e:object"{
+      weight:r=1.0
+    }
+  }
+}
+
+entity{
+  _template:t="dagdp_placer_heightmap"
+  dagdp__name:t="auto_converted_placer__autumn_leaf_pile_a_0"
+  dagdp__density:r=1.0
+
+  "dagdp__object_groups:list<t>"{
+    item:t="auto_converted_group__autumn_leaf_pile_a"
+  }
+
+  "dagdp__biomes:list<i>"{
+    item:i=1
+  }
+}
+
+entity{
+  _template:t="dagdp_placer_heightmap"
+  dagdp__name:t="auto_converted_placer__autumn_leaf_pile_a_1"
+  dagdp__density:r=0.3
+
+  "dagdp__object_groups:list<t>"{
+    item:t="auto_converted_group__autumn_leaf_pile_a"
+  }
+
+  "dagdp__biomes:list<i>"{
+    item:i=6
+    item:i=8
+  }
+}

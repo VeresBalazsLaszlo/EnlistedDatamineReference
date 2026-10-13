@@ -1,0 +1,134 @@
+import{
+  scene:t="gamedata/scenes/_normandy_ardennes_gpu.blk"
+}
+
+import{
+  scene:t="gamedata/scenes/_normandy_ardennes_biome_fx.blk"
+}
+
+import{
+  scene:t="gamedata/scenes/_normandy_ardennes_winter_sounds.blk"
+}
+
+import{
+  scene:t="gamedata/scenes/_normandy_ardennes_winter_vfx.blk"
+}
+
+entity{
+  _template:t="normandy_level"
+  level__blk:t="levels/normandy_ardennes.blk"
+  level__timeRange:p2=5.0, 19.2
+  level__useGroundHolesCollision:b=yes
+
+  "level__weatherChoice:object"{
+    weather_clear_a:r=1.0
+  }
+
+  "level__timeVec:array"{
+    level__timeVec:r=16.5
+  }
+}
+
+entity{
+  _template:t="volfog_nbs"
+  volfog_nbs__rootGraph:t="fog_normandy_morning.json"
+}
+
+entity{
+  _template:t="door_mult_ent_generator"
+  ri_extra_gen__blk:t="gamedata/normandy_doors.blk"
+}
+
+entity{
+  _template:t="enemy_attack_marker"
+}
+
+entity{
+  _template:t="normandy_ardens_minimap"
+}
+
+entity{
+  _template:t="shaderVars"
+
+  "shader_vars__vars:object"{
+    hmap_displacement_up:r=0.5
+    ocean1:c=67, 65, 42, 0
+    ocean0:c=51, 45, 18, 0
+    ocean_density:r=1.0
+    puddle_hardness:r=15.0
+    puddle_increase:r=0.01
+    puddle_flat_noise_normal_effect:r=0.015
+    puddle_flat_normal_hardness:r=25.0
+    land_selfillum_worldscale:r=0.9
+    river0:c=30, 55, 55, 0
+    river1:c=40, 50, 100, 0
+    hmap_displacement_down:r=-0.05
+    puddle_flat_hmap_reduce:r=-0.2
+    autodetect_land_selfillum_color:p4=0.53, 0.0, 0.0, 0.16
+    paint_details_tex:t="normandy_ardennes_color_tex_palette*"
+    land_selfillum_strength:r=32.0
+    water_color_noise_size:r=71.0
+    puddle_flat_noise_height_reduce:r=0.09
+    river_density:r=1.0
+    needs_sparkles:r=1.0
+    sparkles_enable__size__density:p4=1.0, 1.1, 1.0, 0.0
+  }
+}
+
+entity{
+  _template:t="envi_cover_template"
+  envi_cover_rt:b=yes
+  envi_cover_reflectance:r=2.5
+  envi_cover_intensity_map_left_top_right_bottom:p4=-1024.0, 1024.0, 1024.0, -1024.0
+  envi_cover_normal_mask_threshold:r=0.6
+  envi_cover_intensity_map:t="normandy_ardennes_det_snow_cover_tex_m*"
+  envi_cover_translucency:r=1.0
+  envi_cover_noise_high_frequency:r=10.0
+  envi_cover_normal_infl:r=-0.24
+  envi_cover_normal:p4=0.0, 1.0, 0.1, 0.0
+  envi_cover_smoothness:r=0.1
+  envi_cover_albedo:p4=0.65, 0.729, 0.718, 0.0
+}
+
+entity{
+  _template:t="envi_cover_nbs"
+  envi_cover_nbs__rootGraph:t="envi_cover_manchuria.json"
+}
+
+entity{
+  _template:t="bloom"
+}
+
+entity{
+  _template:t="postfx_roundctrl"
+
+  "post_fx:object"{
+  }
+}
+
+entity{
+  _template:t="wind"
+  wind__strength:r=5.0
+}
+
+entity{
+  _template:t="water"
+  water__strength:r=0.27
+}
+
+entity{
+  _template:t="battle_music"
+}
+
+entity{
+  _template:t="sound_effect_generator"
+  ri_extra_gen__blk:t="gamedata/normandy_sounds_ri_extra_gen.blk"
+}
+
+entity{
+  _template:t="europe_autumn_ambient_sound"
+}
+
+entity{
+  _template:t="postfx_color_grading_tonemap_death_alive_enlisted"
+}

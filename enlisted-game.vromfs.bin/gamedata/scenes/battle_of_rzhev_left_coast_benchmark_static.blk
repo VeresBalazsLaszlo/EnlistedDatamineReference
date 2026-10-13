@@ -1,0 +1,381 @@
+import{
+  scene:t="gamedata/scenes/_battle_of_rzhev_benchmark_common.blk"
+}
+
+entity{
+  _template:t="screen_fade_anim"
+  screen_fade:r=0.9
+  anim_track_on:b=yes
+}
+
+entity{
+  _template:t="ui_disabled"
+}
+
+entity{
+  _template:t="benchmark"
+  benchmark_name:t="battle_of_rzhev_left_coast_benchmark"
+
+  "camera_tracks:array"{
+
+    "camera_tracks:object"{
+      from_fov:r=90.0
+      from_pos:p3=-55.5423, 21.3128, 52.7123
+      to_dir:p3=0.992957, -0.0359176, 0.112904
+      duration:r=100000.0
+      to_pos:p3=-55.5423, 21.3128, 52.7123
+      to_fov:r=90.0
+      from_dir:p3=0.992957, -0.0359176, 0.112904
+    }
+  }
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[-0.424937, 0.0, -0.905224] [0.0, 1.0, 0.0] [0.905223, 0.0, -0.424937] [-33.4562, 8.27632, -26.6252]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[-0.818555, 0.0, -0.574428] [0.0, 1.0, 0.0] [0.574428, 0.0, -0.818555] [5.73724, 14.2377, -23.9817]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[0.349745, 0.0, 0.936845] [0.0, 1.0, -0.0] [-0.936845, 0.0, 0.349745] [64.2428, 12.7237, -38.5152]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[-0.989949, 0.0, -0.141429] [0.0, 1.0, 0.0] [0.141429, 0.0, -0.989949] [99.2676, 15.0551, -12.6082]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[0.752012, 0.0, -0.659149] [-0.0, 1.0, 0.0] [0.659149, 0.0, 0.752012] [73.0734, 15.0143, -2.72581]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[-0.56687, 0.0, 0.823808] [0.0, 1.0, 0.0] [-0.823808, 0.0, -0.56687] [27.6059, 16.4509, -6.75555]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[-0.965898, 0.0, -0.258921] [0.0, 1.0, 0.0] [0.258921, 0.0, -0.965898] [47.5424, 23.0544, -28.2376]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[-0.903939, 0.0, -0.427663] [0.0, 1.0, 0.0] [0.427663, 0.0, -0.903939] [115.965, 8.14818, -58.6032]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[0.704299, 0.0, -0.709904] [0.0, 1.0, 0.0] [0.709904, -0.0, 0.704299] [-261.196, 13.7921, 14.8097]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[-0.579867, 0.0, -0.814711] [0.0, 1.0, 0.0] [0.814711, 0.0, -0.579867] [-246.143, 13.9515, 39.5097]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[-0.138122, 0.0, -0.990416] [0.0, 1.0, 0.0] [0.990416, 0.0, -0.138122] [-207.113, 14.0632, 44.7728]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[0.873055, 0.0, -0.48762] [0.0, 1.0, 0.0] [0.48762, -0.0, 0.873056] [-230.474, 13.9839, 31.8587]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[-0.901415, 0.0, 0.432956] [0.0, 1.0, 0.0] [-0.432956, 0.0, -0.901415] [-221.88, 11.508, 61.482]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[0.958427, 0.0, -0.28534] [0.0, 1.0, 0.0] [0.28534, -0.0, 0.958427] [-257.887, 11.6267, 63.0454]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[-0.763403, 0.0, -0.645922] [0.0, 1.0, 0.0] [0.645922, 0.0, -0.763403] [-270.176, 13.109, 44.9974]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[0.836812, 0.0, -0.547491] [0.0, 1.0, 0.0] [0.54749, -0.0, 0.836812] [-149.722, 30.635, 63.2774]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[0.209863, 0.0, -0.977731] [0.0, 1.0, 0.0] [0.977731, -0.0, 0.209863] [-132.33, 14.9373, 80.3382]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[-0.650746, 0.0, -0.759296] [0.0, 1.0, 0.0] [0.759296, 0.0, -0.650746] [-133.11, 19.7298, 100.717]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[-0.128211, 0.0, -0.991747] [0.0, 1.0, 0.0] [0.991747, 0.0, -0.128211] [-105.258, 16.4421, 128.828]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[0.999225, 0.0, -0.039351] [0.0, 1.0, 0.0] [0.039351, -0.0, 0.999225] [-95.054, 15.4511, 90.2613]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[0.973812, 0.0, -0.227356] [0.0, 1.0, 0.0] [0.227356, -0.0, 0.973812] [-69.9256, 15.1988, 113.8]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[0.842245, 0.0, -0.539094] [0.0, 1.0, 0.0] [0.539094, -0.0, 0.842245] [-60.5441, 15.1493, 124.515]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[-0.627677, 0.0, -0.778474] [0.0, 1.0, 0.0] [0.778474, 0.0, -0.627677] [-80.6504, 20.1366, 124.211]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[-0.563092, 0.0, 0.826394] [0.0, 1.0, 0.0] [-0.826394, 0.0, -0.563092] [-12.6796, 16.6625, 40.6118]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[0.790655, 0.0, 0.612263] [0.0, 1.0, -0.0] [-0.612263, 0.0, 0.790655] [-25.5734, 15.3451, 32.8146]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[-0.406045, 0.0, 0.913853] [0.0, 1.0, 0.0] [-0.913853, 0.0, -0.406045] [-18.0946, 15.284, 49.2504]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[0.999939, 0.0, -0.0110808] [0.0, 1.0, 0.0] [0.0110808, -0.0, 0.999939] [72.7199, 14.9631, 9.32376]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[-0.989167, 0.0, -0.146794] [0.0, 1.0, 0.0] [0.146794, 0.0, -0.989167] [81.9764, 16.4378, 7.53286]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[0.857152, 0.0, -0.515063] [0.0, 1.0, 0.0] [0.515063, -0.0, 0.857152] [71.7147, 15.0637, 15.015]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[0.556125, 0.0, -0.831098] [0.0, 1.0, 0.0] [0.831099, -0.0, 0.556125] [53.7094, 15.1851, 31.2199]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[0.630252, 0.0, 0.776391] [0.0, 1.0, -0.0] [-0.776391, 0.0, 0.630252] [142.422, 16.273, 120.408]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[0.190702, 0.0, 0.981648] [0.0, 1.0, -0.0] [-0.981648, 0.0, 0.190702] [149.462, 15.6572, 115.364]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[0.952663, 0.0, 0.304029] [0.0, 1.0, -0.0] [-0.304029, 0.0, 0.952663] [25.2118, 15.3387, 49.2118]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[-0.139825, 0.0, -0.990176] [0.0, 1.0, 0.0] [0.990176, 0.0, -0.139825] [40.2207, 14.4383, 42.0472]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[-0.605412, 0.0, -0.795911] [0.0, 1.0, 0.0] [0.795911, 0.0, -0.605412] [6.25122, 15.5314, 30.0521]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[-0.226149, 0.0, 0.974093] [0.0, 1.0, 0.0] [-0.974093, 0.0, -0.226149] [12.0749, 15.223, 21.9977]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[-0.890354, 0.0, 0.455269] [0.0, 1.0, 0.0] [-0.455269, 0.0, -0.890354] [118.015, 15.841, 109.621]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[0.370656, 0.0, -0.92877] [0.0, 1.0, 0.0] [0.92877, -0.0, 0.370656] [7.27393, 15.4823, 44.4827]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[-0.0523294, 0.0, -0.99863] [0.0, 1.0, 0.0] [0.99863, 0.0, -0.0523294] [186.718, 13.4923, 4.8275]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[-0.171501, 0.0, -0.985184] [0.0, 1.0, 0.0] [0.985184, 0.0, -0.171501] [184.939, 15.6001, -27.0036]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[0.99065, 0.0, 0.136423] [0.0, 1.0, -0.0] [-0.136423, 0.0, 0.99065] [179.099, 15.0746, -40.9829]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[0.995314, 0.0, 0.0966986] [0.0, 1.0, -0.0] [-0.0966986, 0.0, 0.995314] [147.21, 11.649, 9.24744]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[0.982595, 0.0, 0.185764] [0.0, 1.0, -0.0] [-0.185764, 0.0, 0.982594] [165.46, 14.2464, -7.46244]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[0.775588, 0.0, -0.631239] [0.0, 1.0, 0.0] [0.631239, -0.0, 0.775588] [153.708, 13.2564, 12.5343]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[0.222079, 0.0, 0.975029] [0.0, 1.0, -0.0] [-0.975029, 0.0, 0.222079] [137.315, 12.674, 14.8317]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[-0.507562, 0.0, -0.861615] [0.0, 1.0, 0.0] [0.861615, 0.0, -0.507562] [152.655, 13.0038, 42.6209]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[-0.921667, 0.0, -0.387984] [0.0, 1.0, 0.0] [0.387984, 0.0, -0.921667] [147.69, 13.146, 39.0648]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[0.843597, 0.0, 0.536977] [0.0, 1.0, -0.0] [-0.536977, 0.0, 0.843597] [126.529, 13.716, 33.2373]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[0.61914, 0.0, -0.785281] [0.0, 1.0, 0.0] [0.785281, -0.0, 0.61914] [132.809, 13.6512, 45.5373]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[0.788057, 0.0, -0.615602] [0.0, 1.0, 0.0] [0.615602, -0.0, 0.788057] [126.133, 15.2759, 57.4434]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[0.201967, 0.0, 0.979392] [0.0, 1.0, -0.0] [-0.979392, 0.0, 0.201967] [408.593, 1.58061, -135.26]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[0.950041, 0.0, 0.312126] [0.0, 1.0, -0.0] [-0.312126, 0.0, 0.950041] [396.453, -0.617695, -129.473]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[0.293826, 0.0, -0.95586] [0.0, 1.0, 0.0] [0.955859, -0.0, 0.293826] [393.548, 0.368309, -107.184]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[0.997368, 0.0, -0.0725061] [0.0, 1.0, 0.0] [0.0725061, -0.0, 0.997368] [351.985, 2.54955, -100.721]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[0.54654, 0.0, -0.837433] [0.0, 1.0, 0.0] [0.837433, -0.0, 0.54654] [316.715, -0.158054, -77.4241]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[0.998619, 0.0, -0.0525452] [0.0, 1.0, 0.0] [0.0525452, -0.0, 0.998619] [141.616, 15.4823, 61.8003]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[0.950041, 0.0, 0.312126] [0.0, 1.0, -0.0] [-0.312126, 0.0, 0.950041] [327.636, -0.158054, -92.2902]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[0.157567, 0.0, -0.987508] [0.0, 1.0, 0.0] [0.987508, -0.0, 0.157567] [264.73, 12.0534, -52.7821]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[0.809539, 0.0, 0.587067] [0.0, 1.0, -0.0] [-0.587066, 0.0, 0.809539] [292.008, 5.9838, -70.0785]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[0.206725, 0.0, -0.978399] [0.0, 1.0, 0.0] [0.978399, -0.0, 0.206725] [242.07, 15.4635, -57.3158]]
+}
+
+entity{
+  _template:t="stug_40_ausf_g_a_destroyed"
+  transform:m=[[-0.750755, 0.0, 0.660581] [0.0, 1.0, 0.0] [-0.660581, 0.0, -0.750755] [361.285, 1.85034, -98.0932]]
+}
+
+entity{
+  _template:t="stug_40_ausf_g_a_destroyed"
+  transform:m=[[-0.8481, 0.0, -0.529836] [0.0, 1.0, 0.0] [0.529836, 0.0, -0.8481] [210.984, 15.5371, -24.665]]
+}
+
+entity{
+  _template:t="stug_40_ausf_g_a_destroyed"
+  transform:m=[[0.963771, 0.0, -0.266732] [0.0, 1.0, 0.0] [0.266732, 0.0, 0.963771] [80.59, 4.32332, -64.5884]]
+}
+
+entity{
+  _template:t="stug_40_ausf_g_a_destroyed"
+  transform:m=[[0.188585, 0.239243, 0.95247] [-0.0918805, 0.969916, -0.225433] [-0.977749, -0.0450001, 0.204893] [140.261, 13.9772, 53.6215]]
+}
+
+entity{
+  _template:t="stug_40_ausf_g_a_destroyed"
+  transform:m=[[0.99883, -0.0476219, -0.00844617] [0.0479961, 0.997509, 0.0516907] [0.00596352, -0.0520356, 0.998627] [162.956, 13.5616, 34.3535]]
+}
+
+entity{
+  _template:t="stug_40_ausf_g_a_destroyed"
+  transform:m=[[0.999504, 0.00130208, -0.0314624] [-0.00162721, 0.999946, -0.0103105] [0.0314472, 0.0103566, 0.999452] [129.395, 15.6707, 130.709]]
+}
+
+entity{
+  _template:t="stug_40_ausf_g_a_destroyed"
+  transform:m=[[-0.765867, 0.0, 0.642999] [0.0, 1.0, 0.0] [-0.642999, 0.0, -0.765867] [47.4591, 15.1469, 54.6811]]
+}
+
+entity{
+  _template:t="stug_40_ausf_g_a_destroyed"
+  transform:m=[[0.96639, 0.000242081, -0.257081] [-0.000242081, 1.0, 3.1649e-05] [0.257081, 3.1649e-05, 0.96639] [-30.7311, 15.1923, 55.9057]]
+}
+
+entity{
+  _template:t="stug_40_ausf_g_a_destroyed"
+  transform:m=[[-0.979749, 0.0, -0.20023] [0.0, 1.0, 0.0] [0.20023, 0.0, -0.979749] [-126.938, 14.8018, 85.5626]]
+}
+
+entity{
+  _template:t="stug_40_ausf_g_a_destroyed"
+  transform:m=[[0.995034, 0.033447, -0.0937453] [-0.0307331, 0.99907, 0.0302453] [0.0946697, -0.027214, 0.995137] [-221.492, 14.513, 26.77]]
+}

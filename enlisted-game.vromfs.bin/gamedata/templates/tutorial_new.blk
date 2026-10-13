@@ -1,0 +1,107 @@
+new_tutorial_mission{
+  _singleton:b=no
+  player_template__override:t="new_tutorial_player"
+  controlTutorial__showTime:r=25.0
+
+  "disableVehicleSpawnDelay:tag"{
+  }
+
+  "enableControlTutorial:tag"{
+  }
+
+  "enableMissionTutorial:tag"{
+  }
+}
+
+new_tutorial_player{
+  _use:t="enlisted_player"
+  respawner__missionStartDelay:r=30000.0
+
+  "noImmediateSpawnAfterDeathInTutor:tag"{
+  }
+
+  "tutorial_player:tag"{
+  }
+}
+
+new_tutorial_stage_begin{
+  tutor_stage__next:t="new_tutorial_stage_init"
+  tutor_stage__timer:r=0.0
+}
+
+new_tutorial_stage_init{
+  tutor_stage__next:t="new_tutorial_stage_cutscene_01"
+
+  "tutor_action__createEntity:list<t>"{
+    key:t="ui_disabled"
+  }
+
+  "tutor_stage__skip:tag"{
+  }
+}
+
+new_tutorial_stage_cutscene_01{
+  tutor_stage__next:t="new_tutorial_stage_create_respawn_cameras"
+  camera_tracks__cycles:i=1
+
+  "camera_tracks:array"{
+
+    "track:object"{
+      duration:r=4.0
+      from_pos:p3=-19.3035, 12.2345, 375.074
+      from_dir:p3=0.177193, -0.0458897, -0.983106
+      from_fov:r=90.0
+      to_pos:p3=-19.3035, 8.98718, 375.074
+      to_dir:p3=0.177193, -0.0458897, -0.983106
+      to_fov:r=90.0
+    }
+
+    "track:object"{
+      duration:r=4.0
+      from_pos:p3=-19.3035, 12.2345, 375.074
+      from_dir:p3=0.177193, -0.0458897, -0.983106
+      from_fov:r=90.0
+      to_pos:p3=-19.3035, 8.98718, 375.074
+      to_dir:p3=0.177193, -0.0458897, -0.983106
+      to_fov:r=90.0
+    }
+  }
+}
+
+respawn_camera_team1{
+  _use:t="respawn_camera"
+  respawnCameraForTeam:i=1
+  moveCameraToHeight:r=150.0
+  respawnSelectorDistanceMult:r=1.5
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-31.6157, 90.4736, 546.785]]
+}
+
+respawn_camera_team2{
+  _use:t="respawn_camera"
+  respawnCameraForTeam:i=2
+  moveCameraToHeight:r=150.0
+  respawnSelectorDistanceMult:r=1.5
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-2.72687, 125.654, 37.2185]]
+}
+
+new_tutorial_stage_create_respawn_cameras{
+  tutor_stage__next:t="new_tutorial_stage_end_cutscene"
+
+  "tutor_stage__skip:tag"{
+  }
+
+  "tutor_action__createEntity:list<t>"{
+    key:t="respawn_camera_team1"
+    key:t="respawn_camera_team2"
+  }
+}
+
+new_tutorial_stage_end_cutscene{
+
+  "tutor_action__spawnPlayerImmediate:tag"{
+  }
+
+  "tutor_action__destroySingletons:list<t>"{
+    key:t="ui_disabled"
+  }
+}

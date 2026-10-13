@@ -1,0 +1,198 @@
+import "math" as math
+from "types" import Integer, Float
+
+const GOLDEN_RATIO = 1.618034
+
+let minByAbs = @[pure](a: number, b: number): number math.fabs(a) < math.fabs(b) ? a : b
+let maxByAbs = @[pure](a: number, b: number): number math.fabs(a) > math.fabs(b) ? a : b
+
+
+
+
+function [pure] roundToDigits(value: number, digits: number): number {
+  if (value==0) return value
+  let log = math.log10(math.fabs(value))
+  let mul = math.pow(10, math.floor(log) - digits + 1)
+  return mul * math.floor(0.5 + value.tofloat() / mul)
+}
+
+
+
+function [pure] round_by_value(value, roundValue: number): float {
+  return math.floor(value.tofloat() / roundValue + 0.5) * roundValue
+}
+
+function [pure] number_of_set_bits(i: int): int {
+  i = i - ((i >> 1) & (0x5555555555555555));
+  i = (i & 0x3333333333333333) + ((i >> 2) & 0x3333333333333333);
+  return (((i + (i >> 4)) & 0xF0F0F0F0F0F0F0F) * 0x101010101010101) >> 56;
+}
+
+function [pure] is_bit_set(bitMask: int, bitIdx: int): bool {
+  return (bitMask & (1 << bitIdx)) != 0
+}
+
+function [pure] change_bit(bitMask: int, bitIdx: int, value): int {
+  return (bitMask & ~(1 << bitIdx)) | (value ? (1 << bitIdx) : 0)
+}
+
+function [pure] change_bit_mask(bitMask: int, bitMaskToSet: int, value): int {
+  return (bitMask & ~bitMaskToSet) | (value ? bitMaskToSet : 0)
+}
+
+
+
+
+
+
+
+
+function [pure] lerp(valueMin, valueMax, resMin, resMax, curValue) {
+  if (valueMin == valueMax)
+    return (resMin + resMax) * 0.5
+
+  return type(curValue)!="instance" || "tofloat" in curValue
+    ? resMin + (resMax - resMin) * ((curValue - valueMin).tofloat() / (valueMax - valueMin).tofloat())
+    : resMin + (resMax - resMin) * ((curValue - valueMin).length() / (valueMax - valueMin).length())
+}
+
+
+
+
+
+
+
+let lerpClamped = @[pure](valueMin: number, valueMax: number, resMin, resMax, tvalue: number)
+  lerp(valueMin, valueMax, resMin, resMax,
+    valueMax > valueMin ? math.clamp(tvalue, valueMin, valueMax) : math.clamp(tvalue, valueMax, valueMin))
+
+function interpolateArray(arr, value) {
+  let maxIdx = arr.len() - 1
+  foreach (idx, curElem in arr) {
+    if (value <= curElem.x || idx == maxIdx)
+      return curElem.y
+
+    let nextElem = arr[idx + 1]
+    if (value > nextElem.x)
+      continue
+
+    let valueMin = curElem.x
+    let resMin = curElem.y
+    let valueMax = nextElem.x
+    let resMax = nextElem.y
+    return lerp(valueMin, valueMax, resMin, resMax, value)
+  }
+  return 0
+}
+
+
+
+
+
+
+function calc_golden_ratio_columns(total, widthToHeight: number = 1.0): int {
+  let rows = (math.sqrt(total.tofloat() / GOLDEN_RATIO * widthToHeight) + 0.5).tointeger()
+  return math.ceil(total.tofloat() / math.max(rows, 1)).tointeger()
+}
+
+let color2uint = @[pure](r: number, g: number, b: number, a: number = 255): number math.clamp(r + g * 256 + b * 65536 + a * 16777216, 0, 4294967295)
+
+let romanNumeralLookup = [
+  "","I","II","III","IV","V","VI","VII","VIII","IX",
+  "","X","XX","XXX","XL","L","LX","LXX","LXXX","XC",
+  "","C","CC","CCC","CD","D","DC","DCC","DCCC","CM"
+]
+const maxRomanDigit = 3
+
+
+function getRomanNumeral(num): string {
+  if (!(num instanceof Integer || num instanceof Float) || num < 0)
+    return ""
+
+  num = num.tointeger()
+  if (num >= 4000)
+    return num.tostring()
+
+  let thousands = []
+  for (local n = 0; n < num / 1000; n++)
+    thousands.append("M")
+
+  let roman = []
+  local i = -1
+  while (num > 0 && i++ < maxRomanDigit) {
+    let digit = num % 10
+    num = num / 10
+    roman.insert(0, romanNumeralLookup?[digit + (i * 10)])
+  }
+  return "".join(thousands.extend(roman).filter(@(v) v!=null))
+}
+
+function splitThousands(val, spacer = " "): string {
+  val = val.tostring()
+  local sign = ""
+  if (val.startswith("-")) {
+    sign = "-"
+    val = val.slice(1)
+  }
+  local res = val.slice(-3)
+  while (val.len() > 3) {
+    val = val.slice(0, -3)
+    res = $"{val.slice(-3)}{spacer}{res}"
+  }
+  return $"{sign}{res}"
+}
+
+
+
+
+
+
+function average(list): float|null {
+  let n = list.len()
+  return n == 0 ? null
+    : list.reduce(@(sum, v) sum + v, 0.0) / n
+}
+
+
+
+
+
+
+function median(sortedList): float|null {
+  let n = sortedList.len()
+  return n == 0 ? null
+    : (n % 2 == 1) ? (sortedList[(n - 1) / 2] * 1.0)
+    : (sortedList[(n / 2) - 1] + sortedList[n / 2]) / 2.0
+}
+
+function truncateToMultiple(number, multiple: number): number {
+  if (multiple == 0)
+    return -1
+  return math.floor(number.tofloat() / multiple) * multiple
+}
+
+
+let export = math.__merge({
+  GOLDEN_RATIO
+  minByAbs
+  maxByAbs
+  round_by_value
+  number_of_set_bits
+  roundToDigits
+  is_bit_set
+  change_bit
+  change_bit_mask
+  lerp
+  lerpClamped
+  interpolateArray
+  calc_golden_ratio_columns
+  color2uint
+  getRomanNumeral
+  splitThousands
+  calcPercent = @[pure](value: number): int (100.0 * value + (value < 0 ? -0.5 : 0.5)).tointeger()
+  average
+  median
+  truncateToMultiple
+})
+
+return freeze(export)

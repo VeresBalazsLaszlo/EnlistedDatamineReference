@@ -1,0 +1,62 @@
+import{
+  scene:t="gamedata/scenes/_stalingrad_tractor_plant_common.blk"
+}
+
+entity{
+  _template:t="level"
+  level__blk:t="levels/tunisia_4x4.blk"
+  level__timeRange:p2=5.0, 19.2
+  level__day:i=9
+  level__month:i=6
+
+  "level__weatherChoice:object"{
+    weather_clear_a:r=1.0
+  }
+
+  "level__timeVec:array"{
+    level__timeVec:r=16.5
+  }
+}
+
+entity{
+  _template:t="volfog_nbs"
+  volfog_nbs__rootGraph:t="fog_tunisia_4x4.json"
+}
+
+entity{
+  _template:t="envi_cover_nbs"
+  envi_cover_nbs__rootGraph:t="envi_cover_manchuria.json"
+}
+
+entity{
+  _template:t="screen_fade_anim"
+  screen_fade:r=0.9
+  anim_track_on:b=yes
+}
+
+entity{
+  _template:t="ui_disabled"
+}
+
+entity{
+  _template:t="benchmark"
+  benchmark_name:t="stalingrad"
+
+  "camera_tracks:array"{
+
+    "camera_tracks:object"{
+      from_fov:r=90.0
+      from_pos:p3=-131.605, 19.9078, -41.0474
+      to_dir:p3=-0.961165, 0.0, 0.275973
+      duration:r=1000000.0
+      to_pos:p3=-131.605, 19.9078, -41.0474
+      to_fov:r=90.0
+      from_dir:p3=-0.961165, 0.0, 0.275973
+    }
+  }
+}
+
+entity{
+  _template:t="static_cam"
+  transform:m=[[0.275973, 0.0, 0.961165] [0.0, 1.0, -0.0] [-0.961165, 0.0, 0.275973] [-131.605, 19.9078, -41.0474]]
+}

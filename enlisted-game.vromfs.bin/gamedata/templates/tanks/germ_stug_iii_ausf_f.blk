@@ -1,0 +1,283 @@
+germ_stug_iii_ausf_f_16_stalingrad_battlepas_premium{
+  _use:t="germ_stug_iii_ausf_f_common"
+  item__name:t="items/germ_stug_iii_ausf_f_16_stalingrad_battlepas_premium"
+
+  "animchar__objTexReplace:object"{
+    "ger_camo_grey*":t="ger_camo_dark_grey*"
+  }
+
+  "animchar__objTexSet:object"{
+
+    "stug_iii_ausf_f_body_c*:object"{
+      "stug_iii_ausf_f_16_body_c*":t="camo_skin_tex"
+    }
+  }
+
+  "disableDMParts:list<t>"{
+    part:t="track_r_01"
+    part:t="track_l_01"
+  }
+}
+
+germ_stug_iii_ausf_f_stalingrad{
+  _use:t="germ_stug_iii_ausf_f"
+}
+
+germ_stug_iii_ausf_f{
+  _use:t="germ_stug_iii_ausf_f_common"
+
+  "disableDMParts:list<t>"{
+    part:t="track_r_01"
+    part:t="track_l_01"
+  }
+}
+
+germ_stug_iii_ausf_f_common{
+  _use:t="base_stug_iii_ausf_f"
+  _use:t="germ_stug_iii_ausf_f_common_vehicle_sound"
+  item__iconOffset:p2=0.05, 0.25
+  item__iconScale:r=1.45
+  commanderCockpitFpsCamMaxAngle:p2=40.0, 5.0
+  gunner_cam_limit__useCockpitDir:b=yes
+  armorThicknessHull:p3=50.0, 30.0, 30.0
+  armorThicknessTurret:p3=50.0, 30.0, 30.0
+
+  "turrets__initAmmoDistribution:array"{
+
+    "ammo:object"{
+      slot:i=0
+      fill:b=yes
+    }
+
+    "ammo:object"{
+      slot:i=1
+      fill:b=yes
+    }
+
+    "ammo:object"{
+      slot:i=5
+      count:i=7
+    }
+  }
+
+  "onlyRootDecorAttach:tag"{
+  }
+
+  "vehicle_seats__seatsProvideOrder:tag"{
+  }
+
+  "vehicle_seats__seats:shared:array"{
+
+    "seats:object"{
+      name:t="commander"
+      nextSeat:t="main_gunner"
+      locName:t="vehicle_seats/commander"
+      attachNode:t="commander"
+      shouldHideOwner:b=yes
+      hatchRotationAxis:p3=1.7, 0.0, 0.0
+      ignoreAttachNodeRotation:b=yes
+      attachTm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-0.1, -0.7, 0.12]]
+      seatComponent:t="isDriver"
+      receiveDamageFromDMPart:t="commander"
+      cockpitTemplate:t="germ_stug_iii_ausf_f_commander_cockpit"
+      cameraNodeName:t="bone_turret"
+
+      "hatchNodes:array"{
+        node:t="hatch_07"
+        node:t="hatch_08"
+      }
+    }
+
+    "seats:object"{
+      name:t="main_gunner"
+      locName:t="vehicle_seats/gunner"
+      attachNode:t="gunner"
+      ignoreAttachNodeRotation:b=yes
+      attachTm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-0.25, -0.5, 0.0]]
+      seatComponent:t="isGunner"
+      nextSeat:t="driver"
+      shouldHideOwner:b=yes
+      receiveDamageFromDMPart:t="gunner"
+      cameraNodeName:t="bone_camera_gunner"
+      cockpitTemplate:t="germ_stug_iii_ausf_f_gunner_cockpit"
+
+      "turretNames:array"{
+        turretNames:t="turret_01"
+      }
+    }
+
+    "seats:object"{
+      name:t="driver"
+      locName:t="vehicle_seats/driver"
+      seatOwnsEntityControl:b=yes
+      attachNode:t="driver"
+      ignoreAttachNodeRotation:b=yes
+      attachTm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-0.25, -0.25, 0.0]]
+      seatComponent:t="isDriver"
+      shouldHideOwner:b=yes
+      receiveDamageFromDMPart:t="driver"
+      cameraNodeName:t="bone_camera_driver"
+      cockpitTemplate:t="germ_stug_iii_ausf_f_driver_cockpit"
+    }
+
+    "seats:object"{
+      name:t="loader"
+      canPlaceManually:b=no
+      attachNode:t="loader"
+      locName:t="vehicle_seats/loader"
+      ignoreAttachNodeRotation:b=yes
+      attachTm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-0.25, -0.5, 0.0]]
+      seatComponent:t="isPassenger"
+      shouldHideOwner:b=yes
+      receiveDamageFromDMPart:t="loader"
+      cameraNodeName:t="bone_camera_driver"
+
+      "loaderTurretNames:array"{
+        turret:t="turret_01"
+      }
+    }
+  }
+}
+
+germ_stug_iii_ausf_f_commander_cockpit{
+  _use:t="base_commander_cockpit_no_slits"
+  animchar__res:t="t_26_1940_commander_char"
+  cockpit__offset:p3=-0.468794, 2.27, 0.501026
+
+  "cockpit__slitForwardOffset:list<r>"{
+    slit:r=0.16
+  }
+
+  "cockpit__slitIsGun:list<b>"{
+    slit:b=yes
+  }
+
+  "cockpit__slitNodeNames:list<t>"{
+    slit:t="cam_front"
+  }
+
+  "cockpit__visibleVehicleNodeNames:list<t>"{
+    node:t="gun_barrel"
+    node:t="bone_gun"
+    node:t="@root"
+    node:t="bone_turret"
+    node:t="hatch_05"
+    node:t="hatch_06"
+  }
+
+  "cockpit__attachNodeNames:list<t>"{
+    node:t="root"
+  }
+
+  "cockpit__attachNodeIndices:list<i>"{
+  }
+
+  "cockpit__periscopeLimits:list<p4>"{
+    slit:p4=-90.0, 90.0, -8.0, 25.0
+  }
+
+  "cockpit__periscopeSpeed:list<p2>"{
+    slit:p2=35.0, 35.0
+  }
+
+  "cockpit__slitZoom:array"{
+
+    "slit:list<r>"{
+      zoom:r=1.44
+    }
+  }
+
+  "cockpit__slitZoomTime:list<r>"{
+    slit:r=0.0
+  }
+
+  "cockpit__slitTemplates:list<t>"{
+    slit:t="default_periscope"
+  }
+
+  "cockpit__slitEids:list<eid>"{
+  }
+}
+
+germ_stug_iii_ausf_f_gunner_cockpit{
+  _use:t="base_gunner_cockpit"
+  animchar__res:t="pzkpfw_iii_e_gunner_char"
+  cockpit__offset:p3=-1.08907, 0.579675, 0.641577
+
+  "cockpit__attachNodeNames:list<t>"{
+    node:t="bone_gun"
+  }
+
+  "cockpit__attachNodeIndices:list<i>"{
+  }
+
+  "cockpit__slitForwardOffset:list<r>"{
+    slit:r=0.17
+  }
+
+  "cockpit__slitIsGun:list<b>"{
+    slit:b=yes
+  }
+
+  "cockpit__slitNodeNames:list<t>"{
+    slit:t="cam_front"
+  }
+
+  "cockpit__visibleVehicleNodeNames:list<t>"{
+    node:t="gun_barrel"
+    node:t="@root"
+    node:t="bone_gun"
+  }
+
+  "cockpit__slitZoom:array"{
+
+    "slit:list<r>"{
+      zoom:r=5.0
+    }
+  }
+
+  "cockpit__slitZoomTime:list<r>"{
+    slit:r=0.05
+  }
+
+  "cockpit__slitTemplates:list<t>"{
+    slit:t="germ_sfl_zf_1a"
+  }
+
+  "cockpit__slitEids:list<eid>"{
+  }
+}
+
+germ_stug_iii_ausf_f_driver_cockpit{
+  _use:t="base_driver_cockpit_no_slits"
+  animchar__res:t="pzkpfw_iii_e_driver_char"
+  cockpit__offset:p3=0.0, 0.0, 0.0
+
+  "cockpit__cockpitOffsetBySlit:list<p3>"{
+    item:p3=1.58779, 1.15331, 0.535636
+    item:p3=1.53228, 1.1688, 0.521604
+  }
+
+  "cockpit__slitForwardOffset:list<r>"{
+    slit:r=-0.08
+    slit:r=-0.12
+  }
+
+  "cockpit__slitIsGun:list<b>"{
+    slit:b=no
+    slit:b=no
+  }
+
+  "cockpit__slitNodeNames:list<t>"{
+    slit:t="cam_front"
+    slit:t="cam_left"
+  }
+
+  "cockpit__attachNodeIndices:list<i>"{
+  }
+
+  "cockpit__attachNodeNames:list<t>"{
+    node:t="root"
+    node:t="root"
+  }
+}

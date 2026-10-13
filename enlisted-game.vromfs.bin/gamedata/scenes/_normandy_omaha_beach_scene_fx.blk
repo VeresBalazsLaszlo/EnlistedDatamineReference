@@ -1,0 +1,261 @@
+entity{
+  _template:t="m4a2_sherman_1944_destroyed"
+  transform:m=[[-0.813174, 0.019368, -0.581699] [-0.0508222, 0.993266, 0.104117] [0.579798, 0.114229, -0.806713] [771.268, 3.78148, 421.051]]
+}
+
+entity{
+  _template:t="m4a2_sherman_1944_destroyed"
+  transform:m=[[-0.640051, 0.0588894, 0.766072] [0.119177, 0.9926, 0.0232691] [-0.759033, 0.106192, -0.642334] [769.941, 5.53853, 499.983]]
+}
+
+entity{
+  _template:t="turret_105_skc_32"
+  transform:m=[[0.0208607, 0.0, 0.999783] [0.0, 1.0, 0.0] [-0.999783, 0.0, 0.0208607] [667.843, 41.0618, 630.133]]
+  animchar_render__enabled:b=no
+  interactable:b=no
+  auto_gun_controller__randomDelay:p2=2.0, 9.0
+  auto_gun_controller__targetDist:r=2000.0
+}
+
+entity{
+  _template:t="turret_105_skc_32"
+  transform:m=[[0.0175902, 0.0, 0.999846] [0.0, 1.0, 0.0] [-0.999846, 0.0, 0.0175902] [696.364, 48.6339, 751.466]]
+  animchar_render__enabled:b=no
+  interactable:b=no
+  auto_gun_controller__randomDelay:p2=3.0, 10.0
+  auto_gun_controller__targetDist:r=2000.0
+}
+
+entity{
+  _template:t="turret_105_skc_32"
+  transform:m=[[0.0449195, 0.0, 0.998991] [0.0, 1.0, 0.0] [-0.998991, 0.0, 0.0449195] [713.494, 49.6376, 885.953]]
+  animchar_render__enabled:b=no
+  interactable:b=no
+  auto_gun_controller__randomDelay:p2=2.0, 8.0
+  auto_gun_controller__targetDist:r=2000.0
+}
+
+entity{
+  _template:t="turret_105_skc_32"
+  transform:m=[[-0.027511, 0.0, -0.999622] [0.0, 1.0, 0.0] [0.999622, 0.0, -0.027511] [650.683, 6.48288, -464.468]]
+  animchar_render__enabled:b=no
+  interactable:b=no
+  auto_gun_controller__randomDelay:p2=3.0, 7.0
+  auto_gun_controller__targetDist:r=2000.0
+}
+
+entity{
+  _template:t="ship_gun_105mm"
+  transform:m=[[0.183522, 0.0, -0.983015] [0.0, 1.0, 0.0] [0.983015, 0.0, 0.183522] [1646.78, 8.34084, 107.36]]
+  animchar_render__enabled:b=no
+  auto_gun_controller__randomDelay:p2=2.0, 8.0
+  auto_gun_controller__targetDist:r=2000.0
+}
+
+entity{
+  _template:t="ship_gun_105mm"
+  transform:m=[[0.183522, 0.0, -0.983015] [0.0, 1.0, 0.0] [0.983015, 0.0, 0.183522] [1653.43, 10.5043, 108.901]]
+  animchar_render__enabled:b=no
+  auto_gun_controller__randomDelay:p2=3.0, 10.0
+  auto_gun_controller__targetDist:r=2000.0
+}
+
+entity{
+  _template:t="ship_gun_105mm"
+  transform:m=[[-0.981478, 0.0, -0.191574] [0.0, 1.0, 0.0] [0.191574, 0.0, -0.981478] [2591.71, 10.5043, 105.319]]
+  animchar_render__enabled:b=no
+  auto_gun_controller__randomDelay:p2=2.0, 8.0
+  auto_gun_controller__targetDist:r=2000.0
+}
+
+entity{
+  _template:t="ship_gun_105mm"
+  transform:m=[[-0.981478, 0.0, -0.191574] [0.0, 1.0, 0.0] [0.191574, 0.0, -0.981478] [2590.5, 8.27059, 112.146]]
+  animchar_render__enabled:b=no
+  auto_gun_controller__randomDelay:p2=3.0, 9.0
+  auto_gun_controller__targetDist:r=2000.0
+}
+
+entity{
+  _template:t="ship_gun_105mm"
+  transform:m=[[0.183522, 0.0, -0.983015] [0.0, 1.0, 0.0] [0.983015, 0.0, 0.183522] [1646.77, 8.34082, 1446.75]]
+  animchar_render__enabled:b=no
+  auto_gun_controller__randomDelay:p2=2.0, 8.0
+  auto_gun_controller__targetDist:r=2000.0
+}
+
+entity{
+  _template:t="ship_gun_105mm"
+  transform:m=[[0.183522, 0.0, -0.983015] [0.0, 1.0, 0.0] [0.983015, 0.0, 0.183522] [1653.38, 10.5042, 1448.24]]
+  animchar_render__enabled:b=no
+  auto_gun_controller__randomDelay:p2=3.0, 10.0
+  auto_gun_controller__targetDist:r=2000.0
+}
+
+entity{
+  _template:t="ship_gun_105mm"
+  transform:m=[[-0.362659, 0.0, -0.931922] [0.0, 1.0, 0.0] [0.931922, 0.0, -0.362658] [2190.68, 8.34082, 1180.52]]
+  animchar_render__enabled:b=no
+  auto_gun_controller__randomDelay:p2=2.0, 8.0
+  auto_gun_controller__targetDist:r=2000.0
+}
+
+entity{
+  _template:t="ship_gun_105mm"
+  transform:m=[[-0.348726, 0.0, -0.937224] [0.0, 1.0, 0.0] [0.937224, 0.0, -0.348726] [2197.07, 10.5042, 1178.2]]
+  animchar_render__enabled:b=no
+  auto_gun_controller__randomDelay:p2=3.0, 9.0
+  auto_gun_controller__targetDist:r=2000.0
+}
+
+entity{
+  _template:t="turret_105_skc_32"
+  transform:m=[[-0.027511, 0.0, -0.999622] [0.0, 1.0, 0.0] [0.999622, 0.0, -0.027511] [644.266, 21.1009, 346.765]]
+  animchar_render__enabled:b=no
+  interactable:b=no
+  auto_gun_controller__randomDelay:p2=2.0, 8.0
+  auto_gun_controller__targetDist:r=20.0
+}
+
+entity{
+  _template:t="turret_105_skc_32"
+  transform:m=[[-0.027511, 0.0, -0.999622] [0.0, 1.0, 0.0] [0.999622, 0.0, -0.027511] [672.775, 19.4224, 446.149]]
+  animchar_render__enabled:b=no
+  interactable:b=no
+  auto_gun_controller__randomDelay:p2=3.0, 8.0
+  auto_gun_controller__targetDist:r=20.0
+}
+
+entity{
+  _template:t="turret_105_skc_32"
+  transform:m=[[-0.027511, 0.0, -0.999622] [0.0, 1.0, 0.0] [0.999622, 0.0, -0.027511] [592.6, 17.1298, 189.459]]
+  animchar_render__enabled:b=no
+  interactable:b=no
+  auto_gun_controller__randomDelay:p2=2.0, 8.0
+  auto_gun_controller__targetDist:r=20.0
+}
+
+entity{
+  _template:t="turret_105_skc_32"
+  transform:m=[[-0.027511, 0.0, -0.999622] [0.0, 1.0, 0.0] [0.999622, 0.0, -0.027511] [656.555, 19.4451, 164.244]]
+  animchar_render__enabled:b=no
+  interactable:b=no
+  auto_gun_controller__randomDelay:p2=3.0, 8.0
+  auto_gun_controller__targetDist:r=20.0
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[-0.0434005, -0.0159027, 0.998931] [0.0645031, 0.997742, 0.0186863] [-0.996973, 0.0652452, -0.0422768] [645.966, 4.28089, -464.589]]
+  ri_extra__name:t="germany_150mm_cannon_sfh18"
+}
+
+entity{
+  _template:t="fire_bonfire_medium_effect+game_object"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [755.522, 6.86243, 454.077]]
+}
+
+entity{
+  _template:t="fire_bonfire_medium_effect+game_object"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [770.52, 7.21784, 499.911]]
+}
+
+entity{
+  _template:t="fire_bonfire_medium_effect+game_object"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [772.926, 5.20576, 422.003]]
+}
+
+entity{
+  _template:t="fire_bonfire_medium_effect+game_object"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [771.648, 4.42352, 344.3]]
+}
+
+entity{
+  _template:t="fire_bonfire_medium_effect+game_object"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [726.478, 6.22261, 290.625]]
+}
+
+entity{
+  _template:t="fire_bonfire_medium_effect+game_object"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [696.605, 7.28635, 456.727]]
+}
+
+entity{
+  _template:t="fire_bonfire_medium_effect+game_object"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [696.605, 7.28635, 456.727]]
+}
+
+entity{
+  _template:t="fire_bonfire_medium_effect+game_object"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [686.861, 9.00392, 281.973]]
+}
+
+entity{
+  _template:t="fire_bonfire_medium_effect+game_object"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [686.861, 9.00392, 281.973]]
+}
+
+entity{
+  _template:t="willys_mb"
+  transform:m=[[-0.909361, 0.00950091, 0.415899] [-0.00950091, 0.999004, -0.0435953] [-0.415899, -0.0435953, -0.908365] [818.341, 0.992993, 404.443]]
+}
+
+entity{
+  _template:t="opel_blitz_kfz_305"
+  transform:m=[[0.646379, 0.229772, 0.727599] [-0.126691, 0.972664, -0.194613] [-0.752426, 0.0336133, 0.65782] [374.42, 25.8095, 375.794]]
+}
+
+entity{
+  _template:t="vw_kubelwagen"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [387.552, 25.308, 507.383]]
+}
+
+entity{
+  _template:t="vw_kubelwagen"
+  transform:m=[[-0.29959, 0.0, -0.954068] [0.0, 1.0, 0.0] [0.954068, 0.0, -0.29959] [639.068, 13.9452, 438.008]]
+}
+
+entity{
+  _template:t="opel_blitz_kfz_305"
+  transform:m=[[0.918813, 0.229774, -0.320915] [-0.228172, 0.972665, 0.043146] [0.322057, 0.0335807, 0.946125] [253.166, 31.6028, 436.589]]
+}
+
+entity{
+  _template:t="opel_blitz_kfz_305"
+  transform:m=[[0.658138, 0.229776, -0.716978] [-0.180697, 0.972665, 0.14585] [0.730892, 0.0335662, 0.681667] [129.678, 31.6028, 496.538]]
+}
+
+entity{
+  _template:t="opel_blitz_kfz_305"
+  transform:m=[[-0.255583, 0.229772, 0.939086] [0.0936087, 0.972665, -0.212511] [-0.962245, 0.0335924, -0.270105] [276.021, 31.6028, 406.814]]
+}
+
+entity{
+  _template:t="willys_mb"
+  transform:m=[[0.0306103, 0.325332, -0.945104] [0.0314067, 0.944768, 0.326233] [0.999038, -0.0396687, 0.018702] [743.48, 4.77927, -42.3351]]
+}
+
+entity{
+  _template:t="willys_mb"
+  transform:m=[[-0.697392, 0.32533, 0.638595] [0.211394, 0.944768, -0.250451] [-0.684804, -0.0396675, -0.727647] [736.745, 4.77927, -112.91]]
+}
+
+entity{
+  _template:t="vw_kubelwagen"
+  transform:m=[[0.219589, -0.0323747, -0.975055] [0.0204251, 0.999383, -0.0285826] [0.975379, -0.0136392, 0.220115] [500.443, 6.25343, -89.6421]]
+}
+
+entity{
+  _template:t="opel_blitz_kfz_305"
+  transform:m=[[-0.316151, -0.00331164, 0.948703] [0.0245258, 0.999631, 0.0116625] [-0.948392, 0.0269549, -0.315953] [498.649, 10.0534, -36.6669]]
+}
+
+entity{
+  _template:t="opel_blitz_kfz_305"
+  transform:m=[[-0.983725, -0.00312523, -0.179652] [-0.00790948, 0.999633, 0.0259205] [0.179505, 0.0269196, -0.983389] [616.769, 7.11918, 19.4955]]
+}
+
+entity{
+  _template:t="vw_kubelwagen"
+  transform:m=[[-0.817479, -0.0323626, -0.575049] [-0.0186168, 0.999383, -0.029778] [0.575658, -0.0136373, -0.817577] [609.972, 6.25343, -130.336]]
+}

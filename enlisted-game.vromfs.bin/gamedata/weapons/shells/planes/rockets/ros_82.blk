@@ -1,0 +1,135 @@
+caliber:r=0.082
+length:r=0.62
+WdK:p3=0.1, 0.1, 0.1
+CxK:r=1.16
+distFromCmToStab:r=0.01
+dragCx:r=0.021
+mass:r=6.8
+massEnd:r=5.73
+timeFire:r=0.7
+force:r=3050.0
+useStartSpeed:b=yes
+startSpeed:r=0.0
+maxSpeed:r=350.0
+endSpeed:r=0.0
+maxDistance:r=6200.0
+minDistance:r=30.0
+explosiveType:t="tnt"
+explosiveMass:r=0.4
+explodeTreshold:r=0.0
+explodeHitPower:r=70.0
+explodeArmorPower:r=23.0
+explodeRadius:p2=0.3, 1.0
+rendinstDamageRadius:r=7.0
+hitPowerMult:r=1.0
+normalizationPreset:t="heat"
+ricochetPreset:t="he"
+groundRicochetPreset:t="he"
+secondaryShattersPreset:t="ap_rocket"
+stabilityThreshold:r=0.5
+stabilityCaliberToArmorThreshold:r=5.0
+stabilityReductionAfterRicochet:r=0.3
+stabilityReductionAfterPenetration:r=0.15
+bulletType:t="rocket_tank"
+slopeEffectPreset:t="ap"
+useEffectiveArmorThicknessForShatter:b=yes
+explodeOnRendinst:b=yes
+maxDeltaAngle:r=3.5
+explosionEffect:t="explosion_midair_tiny"
+groundCollisionEffect:t="explosion_midair_small"
+fireEffect:t="fires_exhaust_jet_early_small"
+smokeEffect:t="smoke_rocket_tail_dark"
+smokeEffect2:t=""
+ricochetEffect:t="hit_59_80mm_metal_ap"
+waterCollisionEffect:t="hit_59_80mm_water"
+waterRicochetEffect:t="hit_81_105mm_water_ap"
+groundRicochetEffect:t="hit_81_105mm_dirt_ap"
+hazeEffect:t="haze_missile"
+endSmokeViscosity:r=0.05
+effectOffset:p3=-0.45, -0.05, 0.0
+entityTemplate:t="ros_82_rocket_projectile"
+entityPhysTemplate:t=""
+
+stabilityRicochetModifier{
+  mod1:p2=0.0, 0.5
+  mod2:p2=15.0, 0.7
+  mod3:p2=30.0, 0.99
+}
+
+pressureDamage{
+  damageType:t="pressure"
+}
+
+DamageParts{
+
+  body{
+    hp:r=50.0
+    armorClass:t="tank_structural_steel"
+    armorThickness:r=1.0
+  }
+}
+
+DamageEffects{
+
+  part{
+    name:t="body"
+
+    onHit{
+      shellState:t="inFlight"
+      expl:r=1.0
+    }
+
+    onHit{
+      shellState:t="onUnit"
+      damageType:t="generic"
+      expl:r=0.05
+      fire:r=0.45
+      break:r=0.5
+      damage:r=3.0
+      fHitCritical:b=yes
+    }
+
+    onHit{
+      shellState:t="onUnit"
+      damageType:t="generic"
+      expl:r=0.5
+      fire:r=0.3
+      break:r=0.2
+      damage:r=30.0
+      fHitCritical:b=yes
+    }
+
+    onHit{
+      shellState:t="onUnit"
+      damageType:t="explosion"
+      expl:r=0.45
+      fire:r=0.45
+      break:r=0.1
+      damage:r=50.0
+      fHitCritical:b=yes
+    }
+
+    onHit{
+      shellState:t="onUnit"
+      damageType:t="cumulative"
+      expl:r=0.4
+      fire:r=0.4
+      break:r=0.1
+      damage:r=100.0
+      fHitCritical:b=yes
+    }
+
+    onKill{
+      shellState:t="inFlight"
+      destruction:r=1.0
+    }
+
+    onKill{
+      shellState:t="onUnit"
+      expl:r=0.05
+      fire:r=0.05
+      break:r=0.9
+      fHitCritical:b=yes
+    }
+  }
+}

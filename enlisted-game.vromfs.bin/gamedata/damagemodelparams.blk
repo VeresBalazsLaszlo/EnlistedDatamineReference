@@ -1,0 +1,1676 @@
+pierceDispersion:r=0.1
+cumulativeThicknessThreshold:r=5.0
+cumulativePierceThreshold:r=60.0
+armorFragmentsThicknessThreshold:r=3.3
+armorFragmentsPierceThreshold:r=90.0
+explosionOffset:r=0.01
+minCaliberForSlopeEffect:r=29.0
+maxArmorEffectiveScale:r=20.0
+waterArmorThicknessEquivalent:r=0.25
+groundArmorThicknessEquivalent:r=2.0
+groundArmorCaliberThreshold:r=0.075
+waterToAirDistanceEquivalent:r=50.0
+armorBreachK:r=7.0
+damageToHpRicochetThreshold:r=1.1
+cumulativeArmorPowerDispersion:r=0.2
+ricochetNormalRandomMult:r=0.01
+ricochetNormalRandomMultGround:r=0.25
+ricochetSpeedMul:r=0.3
+splashPenetrationToArmorThreshold:r=0.33
+minDamageForHitTest:r=0.1
+partDamageEffectThreshold:r=0.01
+hpThresholdForFuse:r=5.0
+fuelExplosionRangeK:p2=0.15, 0.3
+fuelExplosionHitPowerK:r=0.55
+fuelExplosionArmorPowerK:r=0.015
+minRicochetProbThresholdForTest:r=0.1
+maxRicochetProbThresholdForTest:r=0.6
+armorResistance:r=1900.0
+secondaryShatterWithoutPenetration:p4=20.0, 5.0, 0.0, 0.0
+cumulativePierceDispersion:r=0.05
+minSecondaryShatterAngleFromArmor:r=15.0
+usedArmorOverlap:r=0.1
+minArmorOverlap:r=0.3
+maxArmorOverlap:r=0.8
+shattersMinSolidArmorThicknessMult:r=0.5
+
+subcaliberDamageMass{
+  p0:p2=0.0, 0.25
+  p1:p2=0.15, 0.4
+  p2:p2=0.3, 0.5
+  p3:p2=0.4, 0.75
+}
+
+ricochetPenetrationModifier{
+  mod1:p2=0.0, 1.0
+  mod2:p2=20.0, 0.8
+  mod3:p2=30.0, 0.35
+  mod3:p2=40.0, 0.15
+  mod4:p2=60.0, 0.05
+  mod5:p2=90.0, 0.0
+}
+
+penetrationDistances{
+  dist:r=10.0
+  dist:r=100.0
+  dist:r=500.0
+  dist:r=1000.0
+  dist:r=1500.0
+  dist:r=2000.0
+  dist:r=2500.0
+  dist:r=3000.0
+  dist:r=3500.0
+  dist:r=4000.0
+  dist:r=4500.0
+  dist:r=5000.0
+  dist:r=6000.0
+  dist:r=7000.0
+  dist:r=8000.0
+  dist:r=9000.0
+  dist:r=10000.0
+  dist:r=15000.0
+  dist:r=20000.0
+  dist:r=25000.0
+  dist:r=30000.0
+}
+
+penetrationByExplosiveMassModifier{
+  mod:p2=0.0065, 1.0
+  mod:p2=0.016, 0.93
+  mod:p2=0.02, 0.9
+  mod:p2=0.03, 0.85
+  mod:p2=0.04, 0.75
+}
+
+bulletDecals{
+
+  ap{
+    bullets:t="ball_M2, i, i_t, ap_i, ap_t, ap_i_t, aphe, t_shell, t_ball_M1, ball_shell, ap_tank, apc_tank, apbc_tank, aphe_tank, apcbc_solid_medium_caliber_tank, aphebc_tank, apbc_usa_tank, apc_solid_medium_caliber_tank, apds_tank, apcbc_tank, apbc_tank, ac_shell_tank, apds_autocannon, sapi"
+    pierce:t="kinetic_penetration"
+    stop:t="kinetic_non_penetration"
+    ricochet:t="kinetic_ricochet"
+  }
+
+  apdsfs{
+    bullets:t="apds_fs_tank, apds_fs_long_tank, apds_fs_full_body_steel_tank, apds_fs_tungsten_small_core_tank, apds_fs_tungsten_l10_l15_tank"
+    pierce:t="kinetic_discard_sabot_penetration"
+    stop:t="kinetic_discard_sabot_penetration"
+    ricochet:t="kinetic_ricochet"
+    pierceAngled:t="kinetic_discard_sabot_penetration_angled"
+    stopAngled:t="kinetic_discard_sabot_penetration_angled"
+  }
+
+  apcr{
+    bullets:t="apcr_i_ball, apcr_t_ball, apcr_i_t_ball, apcr_tank, apcr, apcr_t, apds_early_tank"
+    pierce:t="kinetic_sabot_penetration"
+    stop:t="kinetic_sabot_non_penetration"
+    ricochet:t="kinetic_ricochet"
+  }
+
+  he{
+    bullets:t="he_ball, he_i_ball, he_t_ball, he_i_t_ball, he_i, he_t, he_i_t, he_i_t_mine, he_i_t_n_mine, he_i_mine, he_frag, he_frag_i, he_frag_t, he_frag_i_t, frag_i, frag_t, frag_i_t, he_tank, cumulative_tank, he_frag_tank, shrapnel_tank, he_frag_dist_fuse, he_frag_radio_fuse, rocket_tank, sap_hei_tank"
+    pierce:t="explosive_penetration"
+    stop:t="explosive_non_penetration"
+    ricochet:t="kinetic_ricochet"
+    pierceAngled:t="explosive_penetration_angled"
+    stopAngled:t="explosive_non_penetration_angled"
+  }
+
+  hesh{
+    bullets:t="hesh_tank"
+    pierce:t="explosive_penetration"
+    stop:t="explosive_non_penetration"
+    ricochet:t="kinetic_ricochet"
+    pierceAngled:t="kinetic_discard_sabot_penetration_angled"
+    stopAngled:t="kinetic_discard_sabot_penetration_angled"
+  }
+
+  smoke{
+    bullets:t="smoke_tank, smoke_grenade_tank"
+    pierce:t="explosive_penetration"
+    stop:t="explosive_non_penetration"
+    ricochet:t="kinetic_ricochet"
+    pierceAngled:t="explosive_penetration_angled"
+    stopAngled:t="explosive_non_penetration_angled"
+  }
+
+  heat{
+    bullets:t="atgm_tank, atgm_tandem_tank, heat_fs_tank, heat_grenade_tank, heat_tank"
+    pierce:t="heat_penetration"
+    stop:t="heat_non_penetration"
+    ricochet:t="kinetic_ricochet"
+    pierceAngled:t="heat_penetration_angled"
+    stopAngled:t="heat_non_penetration_angled"
+  }
+
+  bomb{
+    bullets:t="he_bomb"
+    pierce:t="bomb_hit"
+    stop:t="bomb_hit"
+    ricochet:t="bomb_hit"
+  }
+
+  bullets{
+    bullets:t="ap, ball, i_ball, i_ball_M1, i_t_ball, t_ball, ap_ball, ap_ball_M2, ap_i_ball, ap_t_ball, ap_i_t_ball, ap_i_t_ball_M20"
+    pierce:t="bullet_penetration"
+    stop:t="bullet_non_penetration"
+    ricochet:t="bullet_ricochet"
+  }
+}
+
+bulletTypes{
+
+  default{
+    normalizationPreset:t="default"
+    ricochetPreset:t="defaultExt"
+    secondaryShattersPreset:t="ap"
+    stabilityThreshold:r=0.05
+    stabilityCaliberToArmorThreshold:r=5.0
+    stabilityReductionAfterRicochet:r=0.5
+    stabilityReductionAfterPenetration:r=0.15
+
+    stabilityRicochetModifier{
+      mod1:p2=0.0, 0.05
+      mod2:p2=20.0, 0.1
+      mod3:p2=30.0, 0.2
+      mod3:p2=45.0, 0.3
+    }
+  }
+
+  ball{
+    normalizationPreset:t="default"
+    ricochetPreset:t="default"
+    slopeEffectPreset:t="ap"
+    stabilityThreshold:r=0.05
+    stabilityCaliberToArmorThreshold:r=5.0
+    stabilityReductionAfterRicochet:r=0.5
+    stabilityReductionAfterPenetration:r=0.3
+
+    stabilityRicochetModifier{
+      mod1:p2=0.0, 0.05
+      mod2:p2=20.0, 0.1
+      mod3:p2=30.0, 0.2
+      mod3:p2=45.0, 0.3
+    }
+  }
+
+  t_ball{
+    normalizationPreset:t="default"
+    ricochetPreset:t="default"
+    slopeEffectPreset:t="ap"
+    stabilityThreshold:r=0.05
+    stabilityCaliberToArmorThreshold:r=5.0
+    stabilityReductionAfterRicochet:r=0.5
+    stabilityReductionAfterPenetration:r=0.3
+
+    stabilityRicochetModifier{
+      mod1:p2=0.0, 0.05
+      mod2:p2=20.0, 0.1
+      mod3:p2=30.0, 0.2
+      mod3:p2=45.0, 0.3
+    }
+  }
+
+  i_ball{
+    normalizationPreset:t="default"
+    ricochetPreset:t="default"
+    slopeEffectPreset:t="ap"
+    stabilityThreshold:r=0.05
+    stabilityCaliberToArmorThreshold:r=5.0
+    stabilityReductionAfterRicochet:r=0.5
+    stabilityReductionAfterPenetration:r=0.3
+
+    stabilityRicochetModifier{
+      mod1:p2=0.0, 0.05
+      mod2:p2=20.0, 0.1
+      mod3:p2=30.0, 0.2
+      mod3:p2=45.0, 0.3
+    }
+  }
+
+  ap_ball{
+    normalizationPreset:t="default"
+    ricochetPreset:t="default"
+    slopeEffectPreset:t="ap"
+    stabilityThreshold:r=0.05
+    stabilityCaliberToArmorThreshold:r=5.0
+    stabilityReductionAfterRicochet:r=0.5
+    stabilityReductionAfterPenetration:r=0.3
+
+    stabilityRicochetModifier{
+      mod1:p2=0.0, 0.05
+      mod2:p2=20.0, 0.1
+      mod3:p2=30.0, 0.2
+      mod3:p2=45.0, 0.3
+    }
+  }
+
+  ap_t_ball{
+    normalizationPreset:t="default"
+    ricochetPreset:t="default"
+    slopeEffectPreset:t="ap"
+    stabilityThreshold:r=0.05
+    stabilityCaliberToArmorThreshold:r=5.0
+    stabilityReductionAfterRicochet:r=0.5
+    stabilityReductionAfterPenetration:r=0.3
+
+    stabilityRicochetModifier{
+      mod1:p2=0.0, 0.05
+      mod2:p2=20.0, 0.1
+      mod3:p2=30.0, 0.2
+      mod3:p2=45.0, 0.3
+    }
+  }
+
+  ball_shell{
+    normalizationPreset:t="default"
+    ricochetPreset:t="default"
+    slopeEffectPreset:t="ap"
+    stabilityThreshold:r=0.05
+    stabilityCaliberToArmorThreshold:r=5.0
+    stabilityReductionAfterRicochet:r=0.5
+    stabilityReductionAfterPenetration:r=0.3
+
+    stabilityRicochetModifier{
+      mod1:p2=0.0, 0.05
+      mod2:p2=20.0, 0.1
+      mod3:p2=30.0, 0.2
+      mod3:p2=45.0, 0.3
+    }
+  }
+
+  t_shell{
+    normalizationPreset:t="default"
+    ricochetPreset:t="default"
+    slopeEffectPreset:t="ap"
+    stabilityThreshold:r=0.05
+    stabilityCaliberToArmorThreshold:r=5.0
+    stabilityReductionAfterRicochet:r=0.5
+    stabilityReductionAfterPenetration:r=0.3
+
+    stabilityRicochetModifier{
+      mod1:p2=0.0, 0.05
+      mod2:p2=20.0, 0.1
+      mod3:p2=30.0, 0.2
+      mod3:p2=45.0, 0.3
+    }
+  }
+
+  ap_i_ball{
+    normalizationPreset:t="default"
+    ricochetPreset:t="default"
+    slopeEffectPreset:t="ap"
+    stabilityThreshold:r=0.05
+    stabilityCaliberToArmorThreshold:r=5.0
+    stabilityReductionAfterRicochet:r=0.5
+    stabilityReductionAfterPenetration:r=0.3
+
+    stabilityRicochetModifier{
+      mod1:p2=0.0, 0.05
+      mod2:p2=20.0, 0.1
+      mod3:p2=30.0, 0.2
+      mod3:p2=45.0, 0.3
+    }
+  }
+
+  ap_i_t_ball{
+    normalizationPreset:t="default"
+    ricochetPreset:t="default"
+    slopeEffectPreset:t="ap"
+    stabilityThreshold:r=0.05
+    stabilityCaliberToArmorThreshold:r=5.0
+    stabilityReductionAfterRicochet:r=0.5
+    stabilityReductionAfterPenetration:r=0.3
+
+    stabilityRicochetModifier{
+      mod1:p2=0.0, 0.05
+      mod2:p2=20.0, 0.1
+      mod3:p2=30.0, 0.2
+      mod3:p2=45.0, 0.3
+    }
+  }
+
+  apcr_i_ball{
+    normalizationPreset:t="default"
+    ricochetPreset:t="default"
+    slopeEffectPreset:t="ap"
+    stabilityThreshold:r=0.05
+    stabilityCaliberToArmorThreshold:r=5.0
+    stabilityReductionAfterRicochet:r=0.5
+    stabilityReductionAfterPenetration:r=0.3
+
+    stabilityRicochetModifier{
+      mod1:p2=0.0, 0.05
+      mod2:p2=20.0, 0.1
+      mod3:p2=30.0, 0.2
+      mod3:p2=45.0, 0.3
+    }
+  }
+
+  apcr_i_ball_bs41{
+    normalizationPreset:t="default"
+    ricochetPreset:t="default"
+    slopeEffectPreset:t="ap"
+    stabilityThreshold:r=0.05
+    stabilityCaliberToArmorThreshold:r=5.0
+    stabilityReductionAfterRicochet:r=0.5
+    stabilityReductionAfterPenetration:r=0.3
+
+    stabilityRicochetModifier{
+      mod1:p2=0.0, 0.05
+      mod2:p2=20.0, 0.1
+      mod3:p2=30.0, 0.2
+      mod3:p2=45.0, 0.3
+    }
+  }
+
+  he_ball{
+    normalizationPreset:t="default"
+    ricochetPreset:t="default"
+    slopeEffectPreset:t="ap"
+    stabilityThreshold:r=0.05
+    stabilityCaliberToArmorThreshold:r=5.0
+    stabilityReductionAfterRicochet:r=0.5
+    stabilityReductionAfterPenetration:r=0.3
+
+    stabilityRicochetModifier{
+      mod1:p2=0.0, 0.05
+      mod2:p2=20.0, 0.1
+      mod3:p2=30.0, 0.2
+      mod3:p2=45.0, 0.3
+    }
+  }
+
+  he_i_ball{
+    normalizationPreset:t="default"
+    ricochetPreset:t="default"
+    slopeEffectPreset:t="ap"
+    stabilityThreshold:r=0.05
+    stabilityCaliberToArmorThreshold:r=5.0
+    stabilityReductionAfterRicochet:r=0.5
+    stabilityReductionAfterPenetration:r=0.3
+
+    stabilityRicochetModifier{
+      mod1:p2=0.0, 0.05
+      mod2:p2=20.0, 0.1
+      mod3:p2=30.0, 0.2
+      mod3:p2=45.0, 0.3
+    }
+  }
+
+  i_t_ball{
+    normalizationPreset:t="default"
+    ricochetPreset:t="default"
+    slopeEffectPreset:t="ap"
+    stabilityThreshold:r=0.0
+    stabilityCaliberToArmorThreshold:r=5.0
+    stabilityReductionAfterRicochet:r=0.01
+    stabilityReductionAfterPenetration:r=0.01
+
+    stabilityRicochetModifier{
+      mod1:p2=0.0, 0.05
+      mod2:p2=20.0, 0.1
+      mod3:p2=30.0, 0.2
+      mod3:p2=45.0, 0.3
+    }
+  }
+
+  i_ball_M1{
+    normalizationPreset:t="default"
+    ricochetPreset:t="default"
+    slopeEffectPreset:t="ap"
+    stabilityThreshold:r=0.0
+    stabilityCaliberToArmorThreshold:r=5.0
+    stabilityReductionAfterRicochet:r=0.01
+    stabilityReductionAfterPenetration:r=0.01
+
+    stabilityRicochetModifier{
+      mod1:p2=0.0, 0.05
+      mod2:p2=20.0, 0.1
+      mod3:p2=30.0, 0.2
+      mod3:p2=45.0, 0.3
+    }
+  }
+
+  t_ball_M1{
+    normalizationPreset:t="default"
+    ricochetPreset:t="default"
+    slopeEffectPreset:t="ap"
+    stabilityThreshold:r=0.0
+    stabilityCaliberToArmorThreshold:r=5.0
+    stabilityReductionAfterRicochet:r=0.01
+    stabilityReductionAfterPenetration:r=0.01
+
+    stabilityRicochetModifier{
+      mod1:p2=0.0, 0.05
+      mod2:p2=20.0, 0.1
+      mod3:p2=30.0, 0.2
+      mod3:p2=45.0, 0.3
+    }
+  }
+
+  ap_ball_M2{
+    normalizationPreset:t="default"
+    ricochetPreset:t="default"
+    slopeEffectPreset:t="ap"
+    stabilityThreshold:r=0.0
+    stabilityCaliberToArmorThreshold:r=5.0
+    stabilityReductionAfterRicochet:r=0.01
+    stabilityReductionAfterPenetration:r=0.01
+
+    stabilityRicochetModifier{
+      mod1:p2=0.0, 0.05
+      mod2:p2=20.0, 0.1
+      mod3:p2=30.0, 0.2
+      mod3:p2=45.0, 0.3
+    }
+  }
+
+  ball_M2{
+    normalizationPreset:t="default"
+    ricochetPreset:t="default"
+    slopeEffectPreset:t="ap"
+    stabilityThreshold:r=0.0
+    stabilityCaliberToArmorThreshold:r=5.0
+    stabilityReductionAfterRicochet:r=0.01
+    stabilityReductionAfterPenetration:r=0.01
+
+    stabilityRicochetModifier{
+      mod1:p2=0.0, 0.05
+      mod2:p2=20.0, 0.1
+      mod3:p2=30.0, 0.2
+      mod3:p2=45.0, 0.3
+    }
+  }
+
+  ap_i_t_ball_M20{
+    normalizationPreset:t="default"
+    ricochetPreset:t="default"
+    slopeEffectPreset:t="ap"
+    stabilityThreshold:r=0.0
+    stabilityCaliberToArmorThreshold:r=5.0
+    stabilityReductionAfterRicochet:r=0.01
+    stabilityReductionAfterPenetration:r=0.01
+
+    stabilityRicochetModifier{
+      mod1:p2=0.0, 0.05
+      mod2:p2=20.0, 0.1
+      mod3:p2=30.0, 0.2
+      mod3:p2=45.0, 0.3
+    }
+  }
+
+  i_ball_M23{
+    normalizationPreset:t="default"
+    ricochetPreset:t="default"
+    slopeEffectPreset:t="ap"
+    stabilityThreshold:r=0.0
+    stabilityCaliberToArmorThreshold:r=5.0
+    stabilityReductionAfterRicochet:r=0.01
+    stabilityReductionAfterPenetration:r=0.01
+
+    stabilityRicochetModifier{
+      mod1:p2=0.0, 0.05
+      mod2:p2=20.0, 0.1
+      mod3:p2=30.0, 0.2
+      mod3:p2=45.0, 0.3
+    }
+  }
+
+  ap_i_ball_M8{
+    normalizationPreset:t="default"
+    ricochetPreset:t="default"
+    slopeEffectPreset:t="ap"
+    stabilityThreshold:r=0.0
+    stabilityCaliberToArmorThreshold:r=5.0
+    stabilityReductionAfterRicochet:r=0.01
+    stabilityReductionAfterPenetration:r=0.01
+
+    stabilityRicochetModifier{
+      mod1:p2=0.0, 0.05
+      mod2:p2=20.0, 0.1
+      mod3:p2=30.0, 0.2
+      mod3:p2=45.0, 0.3
+    }
+  }
+
+  sapi{
+    normalizationPreset:t="default"
+    ricochetPreset:t="default"
+    slopeEffectPreset:t="ap"
+    stabilityThreshold:r=0.0
+    stabilityCaliberToArmorThreshold:r=5.0
+    stabilityReductionAfterRicochet:r=0.01
+    stabilityReductionAfterPenetration:r=0.01
+
+    stabilityRicochetModifier{
+      mod1:p2=0.0, 0.05
+      mod2:p2=20.0, 0.1
+      mod3:p2=30.0, 0.2
+      mod3:p2=45.0, 0.3
+    }
+  }
+
+  ap{
+    normalizationPreset:t="ap"
+    slopeEffectPreset:t="ap"
+    ricochetPreset:t="ap"
+    secondaryShattersPreset:t="ap"
+    modelName:t="tank_bullet_ap"
+    fresnel:p3=0.23, 0.1, 2.0
+  }
+
+  cannon_ball{
+    normalizationPreset:t="ap"
+    slopeEffectPreset:t="ap"
+    ricochetPreset:t="ap"
+    secondaryShattersPreset:t="ap"
+    modelName:t="tank_bullet_ball"
+    fresnel:p3=0.23, 0.1, 2.0
+  }
+
+  aphe{
+    normalizationPreset:t="ap"
+    slopeEffectPreset:t="ap"
+    ricochetPreset:t="ap"
+    modelName:t="tank_bullet_aphe"
+    secondaryShattersPreset:t="ap"
+    fresnel:p3=0.23, 0.1, 2.0
+  }
+
+  ap_i_t{
+    normalizationPreset:t="ap"
+    ricochetPreset:t="ap"
+    slopeEffectPreset:t="ap"
+    stabilityThreshold:r=0.05
+    stabilityCaliberToArmorThreshold:r=5.0
+    stabilityReductionAfterRicochet:r=0.5
+    stabilityReductionAfterPenetration:r=0.3
+
+    stabilityRicochetModifier{
+      mod1:p2=0.0, 0.05
+      mod2:p2=20.0, 0.1
+      mod3:p2=30.0, 0.2
+      mod3:p2=45.0, 0.3
+    }
+  }
+
+  apcr_t{
+    normalizationPreset:t="apcr"
+    slopeEffectPreset:t="apcr"
+    ricochetPreset:t="apcr"
+    modelName:t="tank_bullet_apcr"
+    secondaryShattersPreset:t="apcr"
+    fresnel:p3=0.23, 0.1, 2.0
+  }
+
+  apcr{
+    normalizationPreset:t="apcr"
+    slopeEffectPreset:t="apcr"
+    ricochetPreset:t="apcr"
+    modelName:t="tank_bullet_apcr"
+    secondaryShattersPreset:t="apcr"
+    fresnel:p3=0.23, 0.1, 2.0
+  }
+
+  ap_t{
+    normalizationPreset:t="ap"
+    slopeEffectPreset:t="ap"
+    ricochetPreset:t="ap"
+    modelName:t="tank_bullet_ap"
+    secondaryShattersPreset:t="ap"
+    fresnel:p3=0.23, 0.1, 2.0
+  }
+
+  apc_t{
+    normalizationPreset:t="apbc"
+    ricochetPreset:t="apbc"
+    slopeEffectPreset:t="apc"
+    modelName:t="tank_bullet_apc"
+    secondaryShattersPreset:t="ap"
+    fresnel:p3=0.23, 0.1, 2.0
+  }
+
+  he_i{
+    normalizationPreset:t="heat"
+    slopeEffectPreset:t="ap"
+    ricochetPreset:t="he"
+    modelName:t="tank_bullet_he"
+    fresnel:p3=0.23, 0.1, 2.0
+    explodeOnRendinst:b=yes
+  }
+
+  he_frag_i_t{
+    normalizationPreset:t="heat"
+    slopeEffectPreset:t="ap"
+    ricochetPreset:t="he"
+    modelName:t="tank_bullet_he"
+    fresnel:p3=0.23, 0.1, 2.0
+    explodeOnRendinst:b=yes
+  }
+
+  he_i_t{
+    normalizationPreset:t="heat"
+    slopeEffectPreset:t="ap"
+    ricochetPreset:t="he"
+    modelName:t="tank_bullet_he"
+    fresnel:p3=0.23, 0.1, 2.0
+    explodeOnRendinst:b=yes
+  }
+
+  he_i_mine{
+    normalizationPreset:t="heat"
+    slopeEffectPreset:t="ap"
+    ricochetPreset:t="he"
+    modelName:t="tank_bullet_he"
+    fresnel:p3=0.23, 0.1, 2.0
+    explodeOnRendinst:b=yes
+  }
+
+  he_at{
+    normalizationPreset:t="heat"
+    ricochetPreset:t="heat"
+    stabilityThreshold:r=0.1
+    stabilityCaliberToArmorThreshold:r=100.0
+    stabilityReductionAfterRicochet:r=0.3
+    stabilityReductionAfterPenetration:r=0.01
+    cumulativeSecondaryShattersPreset:t="heat_fs"
+    explodeOnRendinst:b=yes
+    modelName:t="tank_bullet_heat"
+    fresnel:p3=0.23, 0.1, 2.0
+
+    stabilityRicochetModifier{
+      mod1:p2=0.0, 0.0
+      mod2:p2=20.0, 1.0
+    }
+  }
+
+  he_at_grenade{
+    normalizationPreset:t="heat"
+    ricochetPreset:t="heat"
+    stabilityThreshold:r=0.1
+    stabilityCaliberToArmorThreshold:r=100.0
+    stabilityReductionAfterRicochet:r=0.3
+    stabilityReductionAfterPenetration:r=0.01
+    cumulativeSecondaryShattersPreset:t="heat_fs"
+    explodeOnRendinst:b=yes
+    modelName:t="tank_bullet_heat"
+    fresnel:p3=0.23, 0.1, 2.0
+
+    stabilityRicochetModifier{
+      mod1:p2=0.0, 0.0
+      mod2:p2=20.0, 1.0
+    }
+  }
+
+  he_i_t_mine{
+    normalizationPreset:t="heat"
+    slopeEffectPreset:t="ap"
+    ricochetPreset:t="he"
+    modelName:t="tank_bullet_he"
+    fresnel:p3=0.23, 0.1, 2.0
+    explodeOnRendinst:b=yes
+  }
+
+  he_i_t_n_mine{
+    normalizationPreset:t="heat"
+    slopeEffectPreset:t="ap"
+    ricochetPreset:t="he"
+    modelName:t="tank_bullet_he"
+    fresnel:p3=0.23, 0.1, 2.0
+    explodeOnRendinst:b=yes
+  }
+
+  he_frag{
+    normalizationPreset:t="heat"
+    slopeEffectPreset:t="ap"
+    ricochetPreset:t="he"
+    modelName:t="tank_bullet_he"
+    fresnel:p3=0.23, 0.1, 2.0
+    explodeOnRendinst:b=yes
+  }
+
+  he_frag_t{
+    normalizationPreset:t="heat"
+    slopeEffectPreset:t="ap"
+    ricochetPreset:t="he"
+    modelName:t="tank_bullet_he"
+    fresnel:p3=0.23, 0.1, 2.0
+    explodeOnRendinst:b=yes
+  }
+
+  he_vt{
+    normalizationPreset:t="heat"
+    slopeEffectPreset:t="ap"
+    ricochetPreset:t="he"
+    modelName:t="tank_bullet_he"
+    fresnel:p3=0.23, 0.1, 2.0
+    explodeOnRendinst:b=yes
+  }
+
+  he_frag_i{
+    normalizationPreset:t="heat"
+    slopeEffectPreset:t="ap"
+    ricochetPreset:t="he"
+    modelName:t="tank_bullet_he"
+    fresnel:p3=0.23, 0.1, 2.0
+    explodeOnRendinst:b=yes
+  }
+
+  ac_shell_tank{
+    normalizationPreset:t="apbc"
+    slopeEffectPreset:t="apbc"
+    ricochetPreset:t="apbc"
+    modelName:t="tank_bullet_ap"
+    secondaryShattersPreset:t="ap"
+    fresnel:p3=0.23, 0.1, 2.0
+  }
+
+  he_bomb{
+  }
+
+  apcr_tank{
+    stabilityThreshold:r=0.0
+    stabilityCaliberToArmorThreshold:r=10.0
+    stabilityReductionAfterRicochet:r=0.25
+    stabilityReductionAfterPenetration:r=0.3
+    normalizationPreset:t="apcr"
+    ricochetPreset:t="apcr"
+    slopeEffectPreset:t="apcr"
+    secondaryShattersPreset:t="apcr"
+    modelName:t="tank_bullet_apcr"
+    fresnel:p3=0.23, 0.1, 2.0
+
+    stabilityRicochetModifier{
+      mod1:p2=0.0, 0.3
+      mod2:p2=20.0, 0.4
+      mod3:p2=30.0, 0.6
+      mod3:p2=45.0, 0.8
+      mod4:p2=50.0, 1.0
+    }
+  }
+
+  apds_autocannon{
+    stabilityThreshold:r=0.0
+    stabilityCaliberToArmorThreshold:r=10.0
+    stabilityReductionAfterRicochet:r=0.15
+    stabilityReductionAfterPenetration:r=0.2
+    normalizationPreset:t="apcr"
+    ricochetPreset:t="apds"
+    slopeEffectPreset:t="apds"
+    modelName:t="tank_bullet_apdc"
+    fresnel:p3=0.23, 0.1, 2.0
+    secondaryShattersPreset:t="apds"
+
+    stabilityRicochetModifier{
+      mod1:p2=0.0, 0.25
+      mod2:p2=20.0, 0.3
+      mod3:p2=30.0, 0.45
+      mod3:p2=45.0, 0.5
+      mod4:p2=50.0, 0.7
+    }
+  }
+
+  apds_tank{
+    stabilityThreshold:r=0.0
+    stabilityCaliberToArmorThreshold:r=10.0
+    stabilityReductionAfterRicochet:r=0.15
+    stabilityReductionAfterPenetration:r=0.2
+    normalizationPreset:t="apcr"
+    ricochetPreset:t="apds"
+    slopeEffectPreset:t="apds"
+    modelName:t="tank_bullet_apdc"
+    fresnel:p3=0.23, 0.1, 2.0
+    secondaryShattersPreset:t="apds"
+
+    stabilityRicochetModifier{
+      mod1:p2=0.0, 0.25
+      mod2:p2=20.0, 0.3
+      mod3:p2=30.0, 0.45
+      mod3:p2=45.0, 0.5
+      mod4:p2=50.0, 0.7
+    }
+  }
+
+  apds_early_tank{
+    stabilityThreshold:r=0.0
+    stabilityCaliberToArmorThreshold:r=10.0
+    stabilityReductionAfterRicochet:r=0.15
+    stabilityReductionAfterPenetration:r=0.2
+    normalizationPreset:t="apcr"
+    ricochetPreset:t="apds"
+    slopeEffectPreset:t="apds_early"
+    modelName:t="tank_bullet_apdc"
+    fresnel:p3=0.23, 0.1, 2.0
+    secondaryShattersPreset:t="apds"
+
+    stabilityRicochetModifier{
+      mod1:p2=0.0, 0.25
+      mod2:p2=20.0, 0.3
+      mod3:p2=30.0, 0.45
+      mod3:p2=45.0, 0.5
+      mod4:p2=50.0, 0.7
+    }
+  }
+
+  apds_l15_tank{
+    stabilityThreshold:r=0.0
+    stabilityCaliberToArmorThreshold:r=10.0
+    stabilityReductionAfterRicochet:r=0.15
+    stabilityReductionAfterPenetration:r=0.2
+    normalizationPreset:t="apcr"
+    ricochetPreset:t="apds"
+    slopeEffectPreset:t="apds_l15"
+    modelName:t="tank_bullet_apdc"
+    fresnel:p3=0.23, 0.1, 2.0
+    secondaryShattersPreset:t="apds"
+
+    stabilityRicochetModifier{
+      mod1:p2=0.0, 0.25
+      mod2:p2=20.0, 0.3
+      mod3:p2=30.0, 0.45
+      mod3:p2=45.0, 0.5
+      mod4:p2=50.0, 0.7
+    }
+  }
+
+  apds_fs_tank{
+    stabilityThreshold:r=0.0
+    stabilityCaliberToArmorThreshold:r=10.0
+    stabilityReductionAfterRicochet:r=0.15
+    stabilityReductionAfterPenetration:r=0.05
+    normalizationPreset:t="apcr"
+    ricochetPreset:t="apds_fs"
+    slopeEffectPreset:t="apds_fs"
+    modelName:t="tank_bullet_apdsfs"
+    fresnel:p3=0.23, 0.1, 2.0
+    secondaryShattersPreset:t="apds_fs"
+
+    stabilityRicochetModifier{
+      mod1:p2=0.0, 0.25
+      mod2:p2=20.0, 0.3
+      mod3:p2=30.0, 0.45
+      mod3:p2=45.0, 0.5
+      mod4:p2=50.0, 0.7
+    }
+  }
+
+  apds_fs_full_body_steel_tank{
+    stabilityThreshold:r=0.0
+    stabilityCaliberToArmorThreshold:r=10.0
+    stabilityReductionAfterRicochet:r=0.15
+    stabilityReductionAfterPenetration:r=0.05
+    normalizationPreset:t="apcr"
+    ricochetPreset:t="apds_fs_full_body_steel"
+    slopeEffectPreset:t="apds_fs_full_body_steel"
+    modelName:t="tank_bullet_apdsfs"
+    fresnel:p3=0.23, 0.1, 2.0
+    secondaryShattersPreset:t="apds_fs"
+
+    stabilityRicochetModifier{
+      mod1:p2=0.0, 0.25
+      mod2:p2=20.0, 0.3
+      mod3:p2=30.0, 0.45
+      mod3:p2=45.0, 0.5
+      mod4:p2=50.0, 0.7
+    }
+  }
+
+  apds_fs_tungsten_small_core_tank{
+    stabilityThreshold:r=0.0
+    stabilityCaliberToArmorThreshold:r=10.0
+    stabilityReductionAfterRicochet:r=0.15
+    stabilityReductionAfterPenetration:r=0.05
+    normalizationPreset:t="apcr"
+    ricochetPreset:t="apds_fs"
+    slopeEffectPreset:t="apds_fs_tungsten_small_core_tank"
+    modelName:t="tank_bullet_apdsfs"
+    fresnel:p3=0.23, 0.1, 2.0
+    secondaryShattersPreset:t="apds_fs"
+
+    stabilityRicochetModifier{
+      mod1:p2=0.0, 0.25
+      mod2:p2=20.0, 0.3
+      mod3:p2=30.0, 0.45
+      mod3:p2=45.0, 0.5
+      mod4:p2=50.0, 0.7
+    }
+  }
+
+  apds_fs_tungsten_l10_l15_tank{
+    stabilityThreshold:r=0.0
+    stabilityCaliberToArmorThreshold:r=10.0
+    stabilityReductionAfterRicochet:r=0.15
+    stabilityReductionAfterPenetration:r=0.05
+    normalizationPreset:t="apcr"
+    ricochetPreset:t="apds_fs"
+    slopeEffectPreset:t="apds_fs_tungsten_l10_l15_tank"
+    modelName:t="tank_bullet_apdsfs_long"
+    fresnel:p3=0.23, 0.1, 2.0
+    secondaryShattersPreset:t="apds_fs"
+
+    stabilityRicochetModifier{
+      mod1:p2=0.0, 0.25
+      mod2:p2=20.0, 0.3
+      mod3:p2=30.0, 0.45
+      mod3:p2=45.0, 0.5
+      mod4:p2=50.0, 0.7
+    }
+  }
+
+  apds_fs_long_tank{
+    stabilityThreshold:r=0.0
+    stabilityCaliberToArmorThreshold:r=10.0
+    stabilityReductionAfterRicochet:r=0.1
+    stabilityReductionAfterPenetration:r=0.05
+    ricochetPreset:t="apds_fs_long"
+    slopeEffectPreset:t="apds_fs_long"
+    modelName:t="tank_bullet_apdsfs_long"
+    fresnel:p3=0.23, 0.1, 2.0
+    secondaryShattersPreset:t="apds_fs_long"
+
+    stabilityRicochetModifier{
+      mod1:p2=0.0, 0.25
+      mod2:p2=20.0, 0.3
+      mod3:p2=30.0, 0.45
+      mod3:p2=45.0, 0.5
+      mod4:p2=50.0, 0.7
+    }
+  }
+
+  apbc_tank{
+    normalizationPreset:t="apbc"
+    ricochetPreset:t="apbc"
+    slopeEffectPreset:t="apbc"
+    modelName:t="tank_bullet_apbc"
+    secondaryShattersPreset:t="ap_large_caliber"
+    fresnel:p3=0.23, 0.1, 2.0
+  }
+
+  apc_tank{
+    normalizationPreset:t="apbc"
+    ricochetPreset:t="apbc"
+    slopeEffectPreset:t="apc"
+    modelName:t="tank_bullet_apc"
+    secondaryShattersPreset:t="ap"
+    fresnel:p3=0.23, 0.1, 2.0
+  }
+
+  aphe_tank{
+    normalizationPreset:t="ap"
+    ricochetPreset:t="ap"
+    slopeEffectPreset:t="ap"
+    modelName:t="tank_bullet_aphe"
+    secondaryShattersPreset:t="ap"
+    fresnel:p3=0.23, 0.1, 2.0
+  }
+
+  aphebc_tank{
+    normalizationPreset:t="apbc"
+    slopeEffectPreset:t="apbc"
+    ricochetPreset:t="apbc"
+    modelName:t="tank_bullet_aphebc"
+    secondaryShattersPreset:t="ap"
+    fresnel:p3=0.23, 0.1, 2.0
+  }
+
+  apcbc_tank{
+    normalizationPreset:t="apbc"
+    slopeEffectPreset:t="apc"
+    ricochetPreset:t="apbc"
+    modelName:t="tank_bullet_apcbc"
+    fresnel:p3=0.23, 0.1, 2.0
+    secondaryShattersPreset:t="ap"
+  }
+
+  ap_tank{
+    normalizationPreset:t="ap"
+    ricochetPreset:t="ap"
+    slopeEffectPreset:t="ap"
+    secondaryShattersPreset:t="ap_large_caliber"
+    modelName:t="tank_bullet_ap"
+    fresnel:p3=0.23, 0.1, 2.0
+  }
+
+  ap_large_caliber_tank{
+    normalizationPreset:t="ap"
+    ricochetPreset:t="apbc"
+    slopeEffectPreset:t="apbc"
+    secondaryShattersPreset:t="ap_large_caliber"
+    modelName:t="tank_bullet_ap"
+    fresnel:p3=0.23, 0.1, 2.0
+  }
+
+  apc_solid_medium_caliber_tank{
+    normalizationPreset:t="apbc"
+    ricochetPreset:t="apbc"
+    slopeEffectPreset:t="apc"
+    modelName:t="tank_bullet_apc"
+    secondaryShattersPreset:t="ap_large_caliber"
+    fresnel:p3=0.23, 0.1, 2.0
+  }
+
+  apcbc_solid_medium_caliber_tank{
+    normalizationPreset:t="apbc"
+    slopeEffectPreset:t="apc"
+    ricochetPreset:t="apbc"
+    modelName:t="tank_bullet_apcbc"
+    fresnel:p3=0.23, 0.1, 2.0
+    secondaryShattersPreset:t="ap_large_caliber"
+  }
+
+  heat_tank{
+    normalizationPreset:t="heat"
+    ricochetPreset:t="heat"
+    stabilityThreshold:r=0.1
+    stabilityCaliberToArmorThreshold:r=100.0
+    stabilityReductionAfterRicochet:r=0.3
+    stabilityReductionAfterPenetration:r=0.01
+    cumulativeSecondaryShattersPreset:t="heat_fs"
+    explodeOnRendinst:b=yes
+    modelName:t="tank_bullet_heat"
+    fresnel:p3=0.23, 0.1, 2.0
+
+    stabilityRicochetModifier{
+      mod1:p2=0.0, 0.0
+      mod2:p2=20.0, 1.0
+    }
+  }
+
+  sap_tank{
+    normalizationPreset:t="ap"
+    ricochetPreset:t="ap"
+    slopeEffectPreset:t="ap"
+    modelName:t="tank_bullet_aphe"
+    secondaryShattersPreset:t="ap"
+    fresnel:p3=0.23, 0.1, 2.0
+  }
+
+  sapbc_tank{
+    normalizationPreset:t="apbc"
+    slopeEffectPreset:t="apbc"
+    ricochetPreset:t="apbc"
+    modelName:t="tank_bullet_aphebc"
+    secondaryShattersPreset:t="ap_large_caliber"
+    fresnel:p3=0.23, 0.1, 2.0
+  }
+
+  heat_grenade_tank{
+    normalizationPreset:t="heat"
+    ricochetPreset:t="heat_fs"
+    stabilityThreshold:r=0.1
+    stabilityCaliberToArmorThreshold:r=100.0
+    stabilityReductionAfterRicochet:r=0.3
+    stabilityReductionAfterPenetration:r=0.01
+    cumulativeSecondaryShattersPreset:t="heat_fs"
+    explodeOnRendinst:b=yes
+    modelName:t="tank_bullet_grenade_heat_fs"
+    fresnel:p3=0.23, 0.1, 2.0
+
+    stabilityRicochetModifier{
+      mod1:p2=0.0, 0.0
+      mod2:p2=20.0, 1.0
+    }
+  }
+
+  heat_fs_tank{
+    normalizationPreset:t="heat"
+    ricochetPreset:t="heat_fs"
+    stabilityThreshold:r=0.1
+    stabilityCaliberToArmorThreshold:r=100.0
+    stabilityReductionAfterRicochet:r=0.3
+    stabilityReductionAfterPenetration:r=0.001
+    cumulativeSecondaryShattersPreset:t="heat_fs"
+    explodeOnRendinst:b=yes
+    modelName:t="tank_bullet_heat_fs"
+    fresnel:p3=0.23, 0.1, 2.0
+
+    stabilityRicochetModifier{
+      mod1:p2=0.0, 0.0
+      mod2:p2=20.0, 1.0
+    }
+  }
+
+  atgm_tank{
+    normalizationPreset:t="heat"
+    ricochetPreset:t="atgm"
+    stabilityThreshold:r=0.1
+    stabilityCaliberToArmorThreshold:r=100.0
+    stabilityReductionAfterRicochet:r=0.3
+    stabilityReductionAfterPenetration:r=0.01
+    cumulativeSecondaryShattersPreset:t="heat_fs"
+    explodeOnRendinst:b=yes
+    modelName:t="tank_bullet_heat_fs"
+    fresnel:p3=0.23, 0.1, 2.0
+
+    stabilityRicochetModifier{
+      mod1:p2=0.0, 0.0
+      mod2:p2=20.0, 0.1
+      mod2:p2=30.0, 0.2
+    }
+  }
+
+  he_frag_tank{
+    normalizationPreset:t="heat"
+    ricochetPreset:t="he"
+    slopeEffectPreset:t="ap"
+    secondaryShattersPreset:t="ap"
+    modelName:t="tank_bullet_he"
+    fresnel:p3=0.23, 0.1, 2.0
+    stabilityThreshold:r=0.4
+    stabilityCaliberToArmorThreshold:r=10.0
+    stabilityReductionAfterRicochet:r=0.45
+    stabilityReductionAfterPenetration:r=1.0
+    explodeOnRendinst:b=yes
+
+    stabilityRicochetModifier{
+      mod1:p2=0.0, 0.5
+      mod2:p2=20.0, 0.6
+      mod3:p2=30.0, 1.0
+    }
+  }
+
+  he_frag_i_tank{
+    normalizationPreset:t="heat"
+    ricochetPreset:t="he"
+    slopeEffectPreset:t="ap"
+    secondaryShattersPreset:t="ap"
+    modelName:t="tank_bullet_he"
+    fresnel:p3=0.23, 0.1, 2.0
+    stabilityThreshold:r=0.4
+    stabilityCaliberToArmorThreshold:r=10.0
+    stabilityReductionAfterRicochet:r=0.45
+    stabilityReductionAfterPenetration:r=1.0
+    explodeOnRendinst:b=yes
+
+    stabilityRicochetModifier{
+      mod1:p2=0.0, 0.5
+      mod2:p2=20.0, 0.6
+      mod3:p2=30.0, 1.0
+    }
+  }
+
+  frag_i{
+    normalizationPreset:t="default"
+    ricochetPreset:t="defaultExt"
+    secondaryShattersPreset:t="ap"
+    stabilityThreshold:r=0.05
+    stabilityCaliberToArmorThreshold:r=5.0
+    stabilityReductionAfterRicochet:r=0.5
+    stabilityReductionAfterPenetration:r=0.15
+    bulletType:t="frag_i"
+
+    stabilityRicochetModifier{
+      mod1:p2=0.0, 0.05
+      mod2:p2=20.0, 0.1
+      mod3:p2=30.0, 0.2
+      mod3:p2=45.0, 0.3
+    }
+  }
+
+  frag_i_t{
+    normalizationPreset:t="default"
+    ricochetPreset:t="defaultExt"
+    secondaryShattersPreset:t="ap"
+    stabilityThreshold:r=0.05
+    stabilityCaliberToArmorThreshold:r=5.0
+    stabilityReductionAfterRicochet:r=0.5
+    stabilityReductionAfterPenetration:r=0.15
+    bulletType:t="frag_i_t"
+
+    stabilityRicochetModifier{
+      mod1:p2=0.0, 0.05
+      mod2:p2=20.0, 0.1
+      mod3:p2=30.0, 0.2
+      mod3:p2=45.0, 0.3
+    }
+  }
+
+  i_t{
+    normalizationPreset:t="default"
+    ricochetPreset:t="defaultExt"
+    secondaryShattersPreset:t="ap"
+    stabilityThreshold:r=0.05
+    stabilityCaliberToArmorThreshold:r=5.0
+    stabilityReductionAfterRicochet:r=0.5
+    stabilityReductionAfterPenetration:r=0.15
+    bulletType:t="i_t"
+
+    stabilityRicochetModifier{
+      mod1:p2=0.0, 0.05
+      mod2:p2=20.0, 0.1
+      mod3:p2=30.0, 0.2
+      mod3:p2=45.0, 0.3
+    }
+  }
+
+  ap_i{
+    normalizationPreset:t="default"
+    ricochetPreset:t="defaultExt"
+    secondaryShattersPreset:t="ap"
+    stabilityThreshold:r=0.05
+    stabilityCaliberToArmorThreshold:r=5.0
+    stabilityReductionAfterRicochet:r=0.5
+    stabilityReductionAfterPenetration:r=0.15
+    bulletType:t="ap_i"
+
+    stabilityRicochetModifier{
+      mod1:p2=0.0, 0.05
+      mod2:p2=20.0, 0.1
+      mod3:p2=30.0, 0.2
+      mod3:p2=45.0, 0.3
+    }
+  }
+
+  apbc_usa_tank{
+    normalizationPreset:t="ap"
+    ricochetPreset:t="ap"
+    secondaryShattersPreset:t="ap_large_caliber"
+    stabilityThreshold:r=0.05
+    stabilityCaliberToArmorThreshold:r=5.0
+    stabilityReductionAfterRicochet:r=0.3
+    stabilityReductionAfterPenetration:r=0.0
+    stucking:r=0.7
+    stuckingAngle:r=45.0
+    bulletType:t="apbc_usa_tank"
+    slopeEffectPreset:t="ap"
+    fresnel:p3=0.23, 0.1, 2.0
+
+    stabilityRicochetModifier{
+      mod1:p2=0.0, 0.2
+      mod2:p2=20.0, 0.4
+      mod3:p2=30.0, 0.6
+      mod3:p2=45.0, 0.9
+    }
+  }
+
+  i{
+    normalizationPreset:t="default"
+    ricochetPreset:t="defaultExt"
+    secondaryShattersPreset:t="ap"
+    stabilityThreshold:r=0.05
+    stabilityCaliberToArmorThreshold:r=5.0
+    stabilityReductionAfterRicochet:r=0.5
+    stabilityReductionAfterPenetration:r=0.15
+    bulletType:t="i"
+
+    stabilityRicochetModifier{
+      mod1:p2=0.0, 0.05
+      mod2:p2=20.0, 0.1
+      mod3:p2=30.0, 0.2
+      mod3:p2=45.0, 0.3
+    }
+  }
+
+  he_i_t_ball{
+    normalizationPreset:t="heat"
+    ricochetPreset:t="he"
+    secondaryShattersPreset:t="ap"
+    bulletType:t="he_i_t"
+    slopeEffectPreset:t="ap"
+    fresnel:p3=0.23, 0.1, 2.0
+    explodeOnRendinst:b=yes
+    stabilityThreshold:r=0.5
+    stabilityCaliberToArmorThreshold:r=5.0
+    stabilityReductionAfterRicochet:r=0.3
+    stabilityReductionAfterPenetration:r=0.15
+
+    stabilityRicochetModifier{
+      mod1:p2=0.0, 0.5
+      mod2:p2=15.0, 0.7
+      mod3:p2=30.0, 0.99
+    }
+
+    pressureDamage{
+      damageType:t="pressure"
+    }
+  }
+
+  he_frag_radio_fuse{
+    normalizationPreset:t="heat"
+    ricochetPreset:t="he"
+    slopeEffectPreset:t="ap"
+    secondaryShattersPreset:t="ap"
+    modelName:t="tank_bullet_he"
+    fresnel:p3=0.23, 0.1, 2.0
+    stabilityThreshold:r=0.4
+    stabilityCaliberToArmorThreshold:r=10.0
+    stabilityReductionAfterRicochet:r=0.45
+    stabilityReductionAfterPenetration:r=1.0
+    explodeOnRendinst:b=yes
+
+    stabilityRicochetModifier{
+      mod1:p2=0.0, 0.5
+      mod2:p2=20.0, 0.6
+      mod3:p2=30.0, 1.0
+    }
+  }
+
+  he_frag_dist_fuse{
+    normalizationPreset:t="heat"
+    ricochetPreset:t="he"
+    slopeEffectPreset:t="ap"
+    secondaryShattersPreset:t="ap"
+    modelName:t="tank_bullet_he"
+    fresnel:p3=0.23, 0.1, 2.0
+    stabilityThreshold:r=0.4
+    stabilityCaliberToArmorThreshold:r=10.0
+    stabilityReductionAfterRicochet:r=0.45
+    stabilityReductionAfterPenetration:r=1.0
+    explodeOnRendinst:b=yes
+
+    stabilityRicochetModifier{
+      mod1:p2=0.0, 0.5
+      mod2:p2=20.0, 0.6
+      mod3:p2=30.0, 1.0
+    }
+  }
+
+  he_frag_base_fuse_tank{
+    normalizationPreset:t="heat"
+    ricochetPreset:t="he"
+    slopeEffectPreset:t="ap"
+    secondaryShattersPreset:t="ap"
+    modelName:t="tank_bullet_he"
+    fresnel:p3=0.23, 0.1, 2.0
+    stabilityThreshold:r=0.4
+    stabilityCaliberToArmorThreshold:r=10.0
+    stabilityReductionAfterRicochet:r=0.45
+    stabilityReductionAfterPenetration:r=1.0
+    explodeOnRendinst:b=yes
+
+    stabilityRicochetModifier{
+      mod1:p2=0.0, 0.5
+      mod2:p2=20.0, 0.6
+      mod3:p2=30.0, 1.0
+    }
+  }
+
+  he_grenade_tank{
+    normalizationPreset:t="heat"
+    ricochetPreset:t="he"
+    slopeEffectPreset:t="ap"
+    secondaryShattersPreset:t="ap"
+    fresnel:p3=0.23, 0.1, 2.0
+    stabilityThreshold:r=0.4
+    stabilityCaliberToArmorThreshold:r=10.0
+    stabilityReductionAfterRicochet:r=0.45
+    stabilityReductionAfterPenetration:r=1.0
+    explodeOnRendinst:b=yes
+
+    stabilityRicochetModifier{
+      mod1:p2=0.0, 0.5
+      mod2:p2=20.0, 0.6
+      mod3:p2=30.0, 1.0
+    }
+  }
+
+  smoke_tank{
+    normalizationPreset:t="heat"
+    ricochetPreset:t="he"
+    slopeEffectPreset:t="ap"
+    secondaryShattersPreset:t="ap"
+    modelName:t="tank_bullet_he"
+    fresnel:p3=0.23, 0.1, 2.0
+    stabilityThreshold:r=0.4
+    stabilityCaliberToArmorThreshold:r=10.0
+    stabilityReductionAfterRicochet:r=0.45
+    stabilityReductionAfterPenetration:r=1.0
+    explodeOnRendinst:b=yes
+
+    stabilityRicochetModifier{
+      mod1:p2=0.0, 0.5
+      mod2:p2=20.0, 0.6
+      mod3:p2=30.0, 1.0
+    }
+  }
+
+  smoke_grenade_tank{
+    normalizationPreset:t="heat"
+    ricochetPreset:t="he"
+    slopeEffectPreset:t="ap"
+    secondaryShattersPreset:t="ap"
+    modelName:t="tank_bullet_he"
+    fresnel:p3=0.23, 0.1, 2.0
+    stabilityThreshold:r=0.4
+    stabilityCaliberToArmorThreshold:r=10.0
+    stabilityReductionAfterRicochet:r=0.45
+    stabilityReductionAfterPenetration:r=1.0
+    explodeOnRendinst:b=yes
+
+    stabilityRicochetModifier{
+      mod1:p2=0.0, 0.5
+      mod2:p2=20.0, 0.6
+      mod3:p2=30.0, 1.0
+    }
+  }
+
+  he_frag_fs_tank{
+    normalizationPreset:t="heat"
+    ricochetPreset:t="he"
+    slopeEffectPreset:t="ap"
+    secondaryShattersPreset:t="ap"
+    modelName:t="tank_bullet_he_fs"
+    fresnel:p3=0.23, 0.1, 2.0
+    stabilityThreshold:r=0.4
+    stabilityCaliberToArmorThreshold:r=10.0
+    stabilityReductionAfterRicochet:r=0.45
+    stabilityReductionAfterPenetration:r=1.0
+    explodeOnRendinst:b=yes
+
+    stabilityRicochetModifier{
+      mod1:p2=0.0, 0.5
+      mod2:p2=20.0, 0.6
+      mod3:p2=30.0, 1.0
+    }
+  }
+
+  rocket_tank{
+    normalizationPreset:t="heat"
+    ricochetPreset:t="he"
+    slopeEffectPreset:t="ap"
+    secondaryShattersPreset:t="ap_rocket"
+    modelName:t="tank_bullet_he"
+    fresnel:p3=0.23, 0.1, 2.0
+    stabilityThreshold:r=0.05
+    stabilityCaliberToArmorThreshold:r=5.0
+    stabilityReductionAfterRicochet:r=0.5
+    stabilityReductionAfterPenetration:r=0.15
+    explodeOnRendinst:b=yes
+
+    stabilityRicochetModifier{
+      mod1:p2=0.0, 0.5
+      mod2:p2=20.0, 0.6
+      mod3:p2=30.0, 1.0
+    }
+  }
+
+  sap_hei_tank{
+    normalizationPreset:t="heat"
+    ricochetPreset:t="he"
+    slopeEffectPreset:t="ap"
+    secondaryShattersPreset:t="ap"
+    modelName:t="tank_bullet_aphebc"
+    fresnel:p3=0.23, 0.1, 2.0
+    stabilityThreshold:r=0.5
+    stabilityCaliberToArmorThreshold:r=5.0
+    stabilityReductionAfterRicochet:r=0.3
+    stabilityReductionAfterPenetration:r=0.15
+    explodeOnRendinst:b=yes
+
+    stabilityRicochetModifier{
+      mod1:p2=0.0, 0.5
+      mod2:p2=15.0, 0.7
+      mod3:p2=30.0, 0.99
+    }
+  }
+
+  rocket_ap_tank{
+    normalizationPreset:t="ap"
+    ricochetPreset:t="apbc"
+    slopeEffectPreset:t="apbc"
+    secondaryShattersPreset:t="ap_large_caliber"
+    modelName:t="tank_bullet_he"
+    fresnel:p3=0.23, 0.1, 2.0
+    stabilityThreshold:r=0.05
+    stabilityCaliberToArmorThreshold:r=5.0
+    stabilityReductionAfterRicochet:r=0.5
+    stabilityReductionAfterPenetration:r=0.15
+
+    stabilityRicochetModifier{
+      mod1:p2=0.0, 0.05
+      mod2:p2=20.0, 0.1
+      mod3:p2=30.0, 0.2
+      mod3:p2=45.0, 0.3
+    }
+  }
+
+  hesh_tank{
+    normalizationPreset:t="heat"
+    ricochetPreset:t="hesh"
+    stabilityThreshold:r=0.1
+    stabilityCaliberToArmorThreshold:r=10.0
+    stabilityReductionAfterRicochet:r=0.3
+    stabilityReductionAfterPenetration:r=0.9
+    cumulativeSecondaryShattersPreset:t="hesh"
+    modelName:t="tank_bullet_hesh"
+    fresnel:p3=0.23, 0.1, 2.0
+
+    stabilityRicochetModifier{
+      mod1:p2=0.0, 0.0
+      mod2:p2=20.0, 0.3
+      mod3:p2=30.0, 0.5
+      mod3:p2=45.0, 0.7
+      mod4:p2=60.0, 1.0
+    }
+  }
+
+  hesh_tank_rr{
+    normalizationPreset:t="heat"
+    ricochetPreset:t="hesh"
+    stabilityThreshold:r=0.1
+    stabilityCaliberToArmorThreshold:r=10.0
+    stabilityReductionAfterRicochet:r=0.3
+    stabilityReductionAfterPenetration:r=0.9
+    cumulativeSecondaryShattersPreset:t="hesh"
+    modelName:t="tank_bullet_hesh"
+    fresnel:p3=0.23, 0.1, 2.0
+
+    stabilityRicochetModifier{
+      mod1:p2=0.0, 0.0
+      mod2:p2=20.0, 0.3
+      mod3:p2=30.0, 0.5
+      mod3:p2=45.0, 0.7
+      mod4:p2=60.0, 1.0
+    }
+  }
+
+  shrapnel_tank{
+    normalizationPreset:t="heat"
+    ricochetPreset:t="heat"
+    slopeEffectPreset:t="ap"
+    secondaryShattersPreset:t="ap"
+    modelName:t="tank_bullet_shrapnel"
+    fresnel:p3=0.23, 0.1, 2.0
+    explodeOnRendinst:b=yes
+  }
+
+  football_kick{
+    normalizationPreset:t="apcr"
+    ricochetPreset:t="apds"
+    secondaryShattersPreset:t="apds"
+    modelName:t="tank_bullet_apdc"
+    fresnel:p3=0.23, 0.1, 2.0
+  }
+}
+
+kineticEnergyToDamage{
+  p0:p2=3000.0, 5.0
+  p1:p2=15000.0, 10.0
+  p2:p2=30000.0, 15.0
+  p3:p2=60000.0, 25.0
+  p4:p2=80000.0, 40.0
+  p5:p2=110000.0, 60.0
+  p6:p2=300000.0, 70.0
+  p7:p2=400000.0, 75.0
+  p8:p2=500000.0, 80.0
+  p9:p2=650000.0, 110.0
+  p10:p2=1100000.0, 150.0
+  p11:p2=1300000.0, 200.0
+  p12:p2=1800000.0, 230.0
+  p13:p2=2200000.0, 240.0
+  p14:p2=3000000.0, 300.0
+  p15:p2=4000000.0, 320.0
+  p16:p2=5000000.0, 350.0
+  p17:p2=8000000.0, 370.0
+  p17:p2=10000000.0, 750.0
+  p18:p2=12000000.0, 900.0
+  p19:p2=15000000.0, 3000.0
+  p20:p2=20000000.0, 4000.0
+  p21:p2=30000000.0, 5000.0
+  p22:p2=50000000.0, 6500.0
+  p23:p2=100000000.0, 8000.0
+  p24:p2=150000000.0, 11000.0
+  p25:p2=200000000.0, 15000.0
+  p26:p2=250000000.0, 18500.0
+  p27:p2=300000000.0, 20000.0
+}
+
+defaultKineticDamageProps{
+  damageType:t="generic"
+}
+
+defaultCumulativeDamageProps{
+  damageType:t="cumulative"
+}
+
+defaultSplashDamageProps{
+  damageType:t="explosion"
+}
+
+defaultShatterDamageProps{
+  damageType:t="shatter"
+}
+
+splash{
+  voxelBoxResolution:i=80
+  minVoxelSize:r=0.02
+  minObstacleSize:r=0.02
+  thicknessMapEnabled:b=yes
+  thicknessMapResolution:i=32
+  thicknessMapMinVoxelSize:r=0.1
+  thicknessMapRelLimits:p2=0.1, 6.0
+  thicknessMapMinObstacleSize:r=0.02
+  thicknessMapFaceNormalMinCosine:r=0.1
+  pushOutCenter:b=yes
+  underwaterPenetrationScale:r=1.25
+  underwaterDamageScale:r=1.5
+  underwaterRadiusScale:p2=1.0, 0.35
+}
+
+shatter{
+  underwaterDamageScale:r=1.0
+  underwaterPenetrationScale:r=1.0
+  underwaterCountScale:r=1.0
+  underwaterRadiusScale:r=0.5
+}
+
+kineticDamage{
+  damageType:t="generic"
+}
+
+cumulativeDamage{
+  damageType:t="cumulative"
+}
+
+splashDamage{
+  damageType:t="explosion"
+}
+
+shatterDamage{
+  damageType:t="shatter"
+}
+
+secondaryShatterDamage{
+  damageType:t="secondaryShatter"
+}

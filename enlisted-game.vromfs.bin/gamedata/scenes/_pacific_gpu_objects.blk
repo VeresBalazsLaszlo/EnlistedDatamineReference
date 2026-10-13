@@ -1,0 +1,309 @@
+entity{
+  _template:t="dagdp_level_settings"
+  dagdp__max_objects:i=10000
+}
+
+entity{
+  _template:t="dagdp_object_group_riex"
+  dagdp__name:t="evergreen_forest_debris"
+
+  "dagdp__params:object"{
+    scale:p2=0.85, 0.25
+    slope_factor:r=12.0
+    orientation:t="normal"
+  }
+
+  "dagdp__assets:object"{
+
+    "ground_plant_tropic_trash_palm_pile_b:object"{
+      weight:r=1.0
+      heightmap_imitators:t="reject"
+    }
+
+    "cocos_nucifera_coconut_a:object"{
+      weight:r=1.0
+    }
+  }
+}
+
+entity{
+  _template:t="dagdp_object_group_riex"
+  dagdp__name:t="evergreen_burnt_forest_debris"
+
+  "dagdp__params:object"{
+    scale:p2=0.85, 0.25
+    slope_factor:r=12.0
+    orientation:t="normal"
+  }
+
+  "dagdp__assets:object"{
+
+    "ground_plant_tropic_trash_palm_pile_a:object"{
+      weight:r=2.0
+      heightmap_imitators:t="reject"
+    }
+
+    "cocos_d:object"{
+      weight:r=1.0
+    }
+  }
+}
+
+entity{
+  _template:t="dagdp_placer_heightmap"
+  dagdp__name:t="evergreen_forest_biomes"
+  dagdp__density:r=0.05
+
+  "dagdp__object_groups:list<t>"{
+    item:t="evergreen_forest_debris"
+  }
+
+  "dagdp__biomes:list<i>"{
+    item:i=23
+    item:i=53
+  }
+}
+
+entity{
+  _template:t="dagdp_placer_heightmap"
+  dagdp__name:t="evergreen_burnt_forest_biomes"
+  dagdp__density:r=0.1
+
+  "dagdp__object_groups:list<t>"{
+    item:t="evergreen_burnt_forest_debris"
+  }
+
+  "dagdp__biomes:list<i>"{
+    item:i=23
+    item:i=53
+    item:i=55
+  }
+}
+
+entity{
+  _template:t="dagdp_object_group_riex"
+  dagdp__name:t="seasonal_branches"
+
+  "dagdp__params:object"{
+    scale:p2=1.625, 0.375
+  }
+
+  "dagdp__assets:object"{
+
+    "wood_branch_a:object"{
+      weight:r=1.0
+    }
+
+    "wood_branch_c:object"{
+      weight:r=1.0
+    }
+  }
+}
+
+entity{
+  _template:t="dagdp_object_group_riex"
+  dagdp__name:t="seasonal_leaves"
+
+  "dagdp__params:object"{
+    scale:p2=1.1, 0.4
+    orientation:t="normal"
+  }
+
+  "dagdp__assets:object"{
+
+    "ground_plant_tropic_trash_pile_a:object"{
+      weight:r=1.0
+    }
+
+    "ground_plant_tropic_trash_pile_d:object"{
+      weight:r=1.0
+    }
+  }
+}
+
+entity{
+  _template:t="dagdp_placer_heightmap"
+  dagdp__name:t="seasonal_forest_branches_biomes"
+  dagdp__density:r=0.1
+
+  "dagdp__object_groups:list<t>"{
+    item:t="seasonal_branches"
+  }
+
+  "dagdp__biomes:list<i>"{
+    item:i=24
+  }
+}
+
+entity{
+  _template:t="dagdp_placer_heightmap"
+  dagdp__name:t="seasonal_forest_leaves_biomes"
+  dagdp__density:r=2.85
+
+  "dagdp__object_groups:list<t>"{
+    item:t="seasonal_leaves"
+  }
+
+  "dagdp__biomes:list<i>"{
+    item:i=21
+    item:i=24
+  }
+}
+
+entity{
+  _template:t="dagdp_object_group_riex"
+  dagdp__name:t="plants_japonica"
+
+  "dagdp__params:object"{
+    scale:p2=1.2, 0.8
+    orientation:t="normal"
+  }
+
+  "dagdp__assets:object"{
+
+    "ground_plant_causonis_japonica_b:object"{
+      weight:r=1.0
+    }
+
+    "ground_plant_causonis_japonica_d:object"{
+      weight:r=1.0
+    }
+  }
+}
+
+entity{
+  _template:t="dagdp_placer_heightmap"
+  dagdp__name:t="plants_japonica_biomes"
+  dagdp__density:r=2.3
+
+  "dagdp__object_groups:list<t>"{
+    item:t="plants_japonica"
+  }
+
+  "dagdp__biomes:list<i>"{
+    item:i=18
+    item:i=58
+  }
+}
+
+entity{
+  _template:t="dagdp_object_group_riex"
+  dagdp__name:t="phyllanthus_urinaria"
+
+  "dagdp__params:object"{
+    scale:p2=1.2, 0.8
+    orientation:t="normal"
+  }
+
+  "dagdp__assets:object"{
+
+    "ground_plant_phyllanthus_urinaria_b:object"{
+      weight:r=1.0
+    }
+
+    "ground_plant_phyllanthus_urinaria_c:object"{
+      weight:r=1.0
+    }
+  }
+}
+
+entity{
+  _template:t="dagdp_placer_heightmap"
+  dagdp__name:t="phyllanthus_urinaria_biomes"
+  dagdp__density:r=2.3
+
+  "dagdp__object_groups:list<t>"{
+    item:t="phyllanthus_urinaria"
+  }
+
+  "dagdp__biomes:list<i>"{
+    item:i=22
+    item:i=27
+  }
+}
+
+entity{
+  _template:t="dagdp_object_group_riex"
+  dagdp__name:t="plants_flowers"
+
+  "dagdp__params:object"{
+    scale:p2=0.55, 0.25
+    orientation:t="normal"
+  }
+
+  "dagdp__assets:object"{
+
+    "ground_plant_crocus_d:object"{
+      weight:r=4.0
+    }
+
+    "ground_plant_crocus_f:object"{
+      weight:r=4.0
+    }
+
+    "ground_plant_hyacinth_b:object"{
+      weight:r=1.0
+    }
+
+    "ground_plant_hyacinth_d:object"{
+      weight:r=1.0
+    }
+  }
+}
+
+entity{
+  _template:t="dagdp_placer_heightmap"
+  dagdp__name:t="plants_flowers_biomes"
+  dagdp__density:r=1.0
+
+  "dagdp__object_groups:list<t>"{
+    item:t="plants_flowers"
+  }
+
+  "dagdp__biomes:list<i>"{
+    item:i=16
+  }
+}
+
+entity{
+  _template:t="dagdp_object_group_riex"
+  dagdp__name:t="rocks"
+
+  "dagdp__params:object"{
+    scale:p2=0.5, 0.2
+    orientation:t="normal"
+  }
+
+  "dagdp__assets:object"{
+
+    "earthen_eroded_stone_small_a:object"{
+      weight:r=1.0
+    }
+
+    "earthen_eroded_stone_small_b:object"{
+      weight:r=1.0
+    }
+
+    "earthen_eroded_stone_small_c:object"{
+      weight:r=1.0
+    }
+  }
+}
+
+entity{
+  _template:t="dagdp_placer_heightmap"
+  dagdp__name:t="rocks_biomes"
+  dagdp__density:r=1.0
+
+  "dagdp__object_groups:list<t>"{
+    item:t="rocks"
+  }
+
+  "dagdp__biomes:list<i>"{
+    item:i=2
+    item:i=3
+    item:i=4
+    item:i=17
+    item:i=58
+  }
+}

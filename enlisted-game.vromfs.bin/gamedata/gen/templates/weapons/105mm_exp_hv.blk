@@ -1,0 +1,34 @@
+base_105mm_exp_hv{
+  item__name:t="guns/105mm_exp_hv"
+  gun__blk:t="gamedata/gen/weapons/105mm_exp_hv.blk"
+  gun__shotFreq:r=0.1167
+  gun__locName:t="105mm_exp_hv"
+
+  "gun__ammoSetsInfo:shared:array"{
+
+    "defaultSet:array"{
+
+      "shell:object"{
+        blk:t="gamedata/gen/weapons/shells/105mm_exp_hv_defaultset.blk"
+        name:t="105mm_type2_aphe"
+        type:t="aphe_tank"
+      }
+    }
+
+    "105mm_japan_HE:array"{
+
+      "shell:object"{
+        blk:t="gamedata/gen/weapons/shells/105mm_exp_hv_105mm_japan_he.blk"
+        name:t="105mm_exp_he"
+        type:t="he_frag_tank"
+      }
+    }
+  }
+}
+
+tankgun_105mm_exp_hv{
+  _use:t="tankgun"
+  _use:t="base_tankgun_cannon"
+  _use:t="base_105mm_exp_hv"
+  turret__triggerGroup:i=0
+}

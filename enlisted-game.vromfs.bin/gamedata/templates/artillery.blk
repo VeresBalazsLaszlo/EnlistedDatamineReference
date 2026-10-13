@@ -1,0 +1,470 @@
+auto_shoot{
+  _tracked:t="auto_shoot__canShoot"
+  auto_shoot__targetPos:p3=0.0, 0.0, 0.0
+  auto_shoot__firstShotTime:r=0.0
+  auto_shoot__canShoot:b=no
+  auto_shoot__shouldShoot:b=no
+  auto_shoot__gunDir:p3=1.0, 0.0, 0.0
+  auto_shoot__gunPos:p3=0.0, 0.0, 0.0
+  auto_shoot__shotCount:i=0
+
+  "autoShoot:tag"{
+  }
+
+  "transform:m"{
+  }
+
+  "auto_shoot__applyGravityOffset:tag"{
+  }
+}
+
+artillery{
+  _use:t="replicating"
+  artillery_zone__radius:r=24.0
+  artillery__dispersion:r=12.0
+  artillery__adjustmentDispersion:r=24.0
+  artillery__shotsDone:i=0
+  artillery__shotsCount:i=16
+  artillery__adjustmentsShotsCount:i=3
+  artillery__timeToFirstShot:r=10.0
+  artillery__nextShotTime:r=-1.0
+  artillery__timeBetweenAdjustmentsShots:r=5.0
+  artillery__timeBetweenShots:r=0.3
+  artillery__gunTempl:t="artillery_gun"
+  artillery__autoShootTempl:t="auto_shoot"
+  artillery__adjustmentGunTempl:t="adjustment_artillery_gun"
+  artillery__sourcePos:p3=0.0, 0.0, 0.0
+  artillery__targetPos:p3=0.0, 0.0, 0.0
+  artillery__calledByTeam:i=0
+
+  "artillery__callerEid:eid"{
+  }
+
+  "artillery__offender:eid"{
+  }
+}
+
+artillery_gun{
+  _use:t="tankgun_76mm_l11"
+  _use:t="hit_effect_group_artillery"
+  gun__projectileTemplate:t="artillery_projectile"
+  gun__projectileDebugTemplate:t="artillery_projectile+bullet_projectile_debug"
+  gun__ammo:i=111
+  gun__maxAmmo:i=111
+  killLogName:t=""
+  item__name:t="Artillery"
+  gun__blk:t="gamedata/weapons/artillery.blk"
+  gun__locName:t="Artillery"
+  gun__shotFreq:r=0.1
+  artillery__calledByTeam:i=0
+
+  "gun__shellsAmmo:array"{
+    ammo:i=111
+  }
+
+  "gun__ammoSetsInfo:shared:array"{
+
+    "HE:array"{
+
+      "shell:object"{
+        blk:t="gamedata/weapons/shells/ussr/76mm_artillery_he.blk"
+        name:t="76mm_of_350m"
+        type:t="he_frag_tank"
+      }
+    }
+  }
+
+  "gun__offender:eid"{
+  }
+
+  "gun_sound__shotPath:shared:object"{
+    _tags:t="sound"
+    other:t="enemy/weapon/cannon/artillery"
+  }
+
+  "artillery__callerEid:eid"{
+  }
+}
+
+adjustment_artillery_gun{
+  _use:t="artillery_gun"
+
+  "gun__ammoSetsInfo:shared:array"{
+
+    "HE:array"{
+
+      "shell:object"{
+        blk:t="gamedata/weapons/shells/ussr/76mm_artillery_adjustment_he.blk"
+        name:t="76mm_of_350m"
+        type:t="he_frag_tank"
+      }
+    }
+  }
+}
+
+artillery_gun_150mm{
+  _use:t="tankgun_150mm_sig_33"
+  _use:t="artillery_gun"
+
+  "allow_friendly_damage:tag"{
+  }
+
+  "gun__ammoSetsInfo:shared:array"{
+
+    "HE:array"{
+
+      "shell:object"{
+        blk:t="gamedata/gen/weapons/shells/150mm_sig_33_defaultset.blk"
+        name:t="150mm_jgr_38"
+        type:t="he_frag_tank"
+      }
+    }
+  }
+}
+
+adjustment_artillery_gun_150mm{
+  _use:t="artillery_gun_150mm"
+
+  "gun__ammoSetsInfo:shared:array"{
+
+    "HE:array"{
+
+      "shell:object"{
+        blk:t="gamedata/gen/weapons/shells/150mm_sig_33_defaultset.blk"
+        name:t="150mm_jgr_38"
+        type:t="he_frag_tank"
+      }
+    }
+  }
+}
+
+base_rocket_artillery_gun{
+  _use:t="tankgun"
+  _use:t="gunsound_base_rocket_launcher"
+  _use:t="hit_effect_group_artillery"
+  gun__isPayload:b=yes
+  gun__recoilAmount:r=0.0
+  gun__icon:t="aircraft/unguided_rocket.svg"
+  turret__triggerGroup:i=1
+  item__name:t="guns/m_8"
+  gun__blk:t=""
+  gun__shotFreq:r=1.0
+  gun__ammoToRessuply:i=3
+  gun__shootNodeName:t="bone_rocket_01"
+  _replicated:t="gun__shootNodeIds"
+  _tracked:t="gun__shootNodeIds"
+  gun__shootNodeItemTemplate:t=""
+  gun__maxAmmo:i=0
+  gun__ammo:i=0
+
+  "turret__ignoreGroupTrigger:tag"{
+  }
+
+  "gun__isLauncher:tag"{
+  }
+
+  "gun__firingModes:array"{
+
+    "mode:object"{
+      modeType:t="automatic"
+    }
+  }
+
+  "gun__firingModeNames:array"{
+    mode:t="automatic"
+  }
+
+  "gun__shellsAmmoEids:list<eid>"{
+  }
+
+  "gun__shootNodeIds:list<i>"{
+  }
+
+  "gun__shellsAmmo:array"{
+    ammo:i=0
+  }
+}
+
+rocket_artillery{
+  _use:t="replicating"
+  _use:t="rocket_strike_speech"
+  artillery_zone__radius:r=24.0
+  artillery__dispersion:r=9.0
+  artillery__adjustmentDispersion:r=8.0
+  artillery__shotsDone:i=0
+  artillery__shotsCount:i=21
+  artillery__adjustmentsShotsCount:i=3
+  artillery__timeToFirstShot:r=10.0
+  artillery__nextShotTime:r=-1.0
+  artillery__timeBetweenAdjustmentsShots:r=2.5
+  artillery__timeBetweenShots:r=0.33
+  artillery__gunTempl:t="rocket_artillery_gun"
+  artillery__autoShootTempl:t="auto_shoot"
+  artillery__adjustmentGunTempl:t="rocket_artillery_gun"
+  artillery__sourcePos:p3=0.0, 0.0, 0.0
+  artillery__targetPos:p3=0.0, 0.0, 0.0
+  artillery__sourceDistOffset:r=850.0
+  artillery__sourceHeightOffset:r=650.0
+  artillery__targetPosCorrectionOffset:r=34.0
+  artillery__calledByTeam:i=0
+
+  "rocketArtillery:tag"{
+  }
+
+  "artillery__callerEid:eid"{
+  }
+
+  "artillery__offender:eid"{
+  }
+}
+
+rocket_artillery_gun{
+  _use:t="base_rocket_artillery_gun"
+  gun__projectileTemplate:t="bm_8_24_artillery_projectile+artillery_rocket_projectile_impact_sound+artillery_rocket_shell_fly_sound"
+  gun__projectileDebugTemplate:t="bm_8_24_artillery_projectile+artillery_rocket_projectile_impact_sound+artillery_rocket_shell_fly_sound+bomb_projectile_debug"
+  gun__ammo:i=240
+  gun__maxAmmo:i=240
+  killLogName:t=""
+  item__name:t="Artillery"
+  gun__blk:t="gamedata/weapons/artillery.blk"
+  gun__locName:t="Rocket artillery"
+  gun__shotFreq:r=0.1
+  artillery__calledByTeam:i=0
+
+  "gun__shellsAmmo:array"{
+    ammo:i=240
+  }
+
+  "gun__ammoSetsInfo:shared:array"{
+
+    "HE:array"{
+
+      "shell:object"{
+        blk:t="gamedata/weapons/shells/m_8_rocket_bm_8_24_artillery.blk"
+        name:t="82mm_M8_rocket_launcher"
+        type:t="he_frag_tank"
+      }
+    }
+  }
+
+  "gun__offender:eid"{
+  }
+
+  "gun_sound__shotPath:shared:object"{
+    _tags:t="sound"
+    other:t="enemy/weapon/cannon/artillery_rocket"
+  }
+
+  "artillery__callerEid:eid"{
+  }
+}
+
+rocket_artillery_panzerwerfer_42{
+  _use:t="replicating"
+  artillery_zone__radius:r=24.0
+  artillery__dispersion:r=9.0
+  artillery__adjustmentDispersion:r=8.0
+  artillery__shotsDone:i=0
+  artillery__shotsCount:i=21
+  artillery__adjustmentsShotsCount:i=3
+  artillery__timeToFirstShot:r=10.0
+  artillery__nextShotTime:r=-1.0
+  artillery__timeBetweenAdjustmentsShots:r=2.5
+  artillery__timeBetweenShots:r=0.33
+  artillery__gunTempl:t="rocket_artillery_panzerwerfer_42_gun"
+  artillery__autoShootTempl:t="auto_shoot"
+  artillery__adjustmentGunTempl:t="rocket_artillery_panzerwerfer_42_gun"
+  artillery__sourcePos:p3=0.0, 0.0, 0.0
+  artillery__targetPos:p3=0.0, 0.0, 0.0
+  artillery__sourceDistOffset:r=850.0
+  artillery__sourceHeightOffset:r=650.0
+  artillery__targetPosCorrectionOffset:r=54.0
+  artillery__calledByTeam:i=0
+
+  "artillery__callerEid:eid"{
+  }
+
+  "artillery__offender:eid"{
+  }
+}
+
+rocket_artillery_panzerwerfer_42_gun{
+  _use:t="base_rocket_artillery_gun"
+  gun__projectileTemplate:t="panzerwerfer_42_artillery_projectile+artillery_rocket_projectile_impact_sound+artillery_rocket_shell_fly_sound"
+  gun__projectileDebugTemplate:t="panzerwerfer_42_artillery_projectile+artillery_rocket_projectile_impact_sound+artillery_rocket_shell_fly_sound+bomb_projectile_debug"
+  gun__ammo:i=240
+  gun__maxAmmo:i=240
+  killLogName:t=""
+  item__name:t="Artillery"
+  gun__blk:t="gamedata/weapons/artillery.blk"
+  gun__locName:t="Rocket artillery"
+  gun__shotFreq:r=0.1
+  artillery__calledByTeam:i=0
+
+  "gun__shellsAmmo:array"{
+    ammo:i=240
+  }
+
+  "gun__ammoSetsInfo:shared:array"{
+
+    "HE:array"{
+
+      "shell:object"{
+        blk:t="gamedata/weapons/shells/wgr_41_rocket_panzerwerfer_artillery.blk"
+        name:t="158mm_NB_Wf_41_rocket"
+        type:t="he_frag_tank"
+      }
+    }
+  }
+
+  "gun__offender:eid"{
+  }
+
+  "gun_sound__shotPath:shared:object"{
+    _tags:t="sound"
+    other:t="enemy/weapon/cannon/artillery_rocket"
+  }
+
+  "artillery__callerEid:eid"{
+  }
+}
+
+rocket_artillery_m4_sherman_calliope{
+  _use:t="replicating"
+  artillery_zone__radius:r=24.0
+  artillery__dispersion:r=9.0
+  artillery__adjustmentDispersion:r=8.0
+  artillery__shotsDone:i=0
+  artillery__shotsCount:i=21
+  artillery__adjustmentsShotsCount:i=3
+  artillery__timeToFirstShot:r=10.0
+  artillery__nextShotTime:r=-1.0
+  artillery__timeBetweenAdjustmentsShots:r=2.5
+  artillery__timeBetweenShots:r=0.33
+  artillery__gunTempl:t="rocket_artillery_m4_sherman_calliope_gun"
+  artillery__autoShootTempl:t="auto_shoot"
+  artillery__adjustmentGunTempl:t="rocket_artillery_m4_sherman_calliope_gun"
+  artillery__sourcePos:p3=0.0, 0.0, 0.0
+  artillery__targetPos:p3=0.0, 0.0, 0.0
+  artillery__sourceDistOffset:r=850.0
+  artillery__sourceHeightOffset:r=650.0
+  artillery__targetPosCorrectionOffset:r=50.0
+  artillery__calledByTeam:i=0
+
+  "artillery__callerEid:eid"{
+  }
+
+  "artillery__offender:eid"{
+  }
+}
+
+rocket_artillery_m4_sherman_calliope_gun{
+  _use:t="base_rocket_artillery_gun"
+  gun__projectileTemplate:t="m8_rocket_artillery_projectile+artillery_rocket_projectile_impact_sound+artillery_rocket_shell_fly_sound"
+  gun__projectileDebugTemplate:t="m8_rocket_artillery_projectile+artillery_rocket_projectile_impact_sound+artillery_rocket_shell_fly_sound+bomb_projectile_debug"
+  gun__ammo:i=240
+  gun__maxAmmo:i=240
+  killLogName:t=""
+  item__name:t="Artillery"
+  gun__blk:t="gamedata/weapons/artillery.blk"
+  gun__locName:t="Rocket artillery"
+  gun__shotFreq:r=0.1
+  artillery__calledByTeam:i=0
+
+  "gun__shellsAmmo:array"{
+    ammo:i=240
+  }
+
+  "gun__ammoSetsInfo:shared:array"{
+
+    "HE:array"{
+
+      "shell:object"{
+        blk:t="gamedata/weapons/shells/m8_rocket_calliope_artillery.blk"
+        name:t="114mm_M8_rocket_launcher"
+        type:t="he_frag_tank"
+      }
+    }
+  }
+
+  "gun__offender:eid"{
+  }
+
+  "gun_sound__shotPath:shared:object"{
+    _tags:t="sound"
+    other:t="enemy/weapon/cannon/artillery_rocket"
+  }
+
+  "artillery__callerEid:eid"{
+  }
+}
+
+rocket_artillery_shisei_15cm_tarenso{
+  _use:t="replicating"
+  artillery_zone__radius:r=24.0
+  artillery__dispersion:r=9.0
+  artillery__adjustmentDispersion:r=8.0
+  artillery__shotsDone:i=0
+  artillery__shotsCount:i=21
+  artillery__adjustmentsShotsCount:i=3
+  artillery__timeToFirstShot:r=10.0
+  artillery__nextShotTime:r=-1.0
+  artillery__timeBetweenAdjustmentsShots:r=2.5
+  artillery__timeBetweenShots:r=0.33
+  artillery__gunTempl:t="rocket_artillery_shisei_15cm_tarenso_gun"
+  artillery__autoShootTempl:t="auto_shoot"
+  artillery__adjustmentGunTempl:t="rocket_artillery_shisei_15cm_tarenso_gun"
+  artillery__sourcePos:p3=0.0, 0.0, 0.0
+  artillery__targetPos:p3=0.0, 0.0, 0.0
+  artillery__sourceDistOffset:r=850.0
+  artillery__sourceHeightOffset:r=650.0
+  artillery__targetPosCorrectionOffset:r=54.0
+  artillery__calledByTeam:i=0
+
+  "artillery__callerEid:eid"{
+  }
+
+  "artillery__offender:eid"{
+  }
+}
+
+rocket_artillery_shisei_15cm_tarenso_gun{
+  _use:t="base_rocket_artillery_gun"
+  gun__projectileTemplate:t="panzerwerfer_42_artillery_projectile+artillery_rocket_projectile_impact_sound+artillery_rocket_shell_fly_sound"
+  gun__projectileDebugTemplate:t="panzerwerfer_42_artillery_projectile+artillery_rocket_projectile_impact_sound+artillery_rocket_shell_fly_sound+bomb_projectile_debug"
+  gun__ammo:i=240
+  gun__maxAmmo:i=240
+  killLogName:t=""
+  item__name:t="Artillery"
+  gun__blk:t="gamedata/weapons/artillery.blk"
+  gun__locName:t="Rocket artillery"
+  gun__shotFreq:r=0.1
+  artillery__calledByTeam:i=0
+
+  "gun__shellsAmmo:array"{
+    ammo:i=240
+  }
+
+  "gun__ammoSetsInfo:shared:array"{
+
+    "HE:array"{
+
+      "shell:object"{
+        blk:t="gamedata/weapons/shells/shisei_15cm_tarenso_rocket_artillery.blk"
+        name:t="150mm_he_rocket"
+        type:t="he_frag_tank"
+      }
+    }
+  }
+
+  "gun__offender:eid"{
+  }
+
+  "gun_sound__shotPath:shared:object"{
+    _tags:t="sound"
+    other:t="enemy/weapon/cannon/artillery_rocket"
+  }
+
+  "artillery__callerEid:eid"{
+  }
+}

@@ -1,0 +1,142 @@
+import "math" as math
+from "%darg/ui_imports.nut" import *
+let { colors } = require("style.nut")
+
+
+let calcFrameColor = @(sf) sf & S_KB_FOCUS ? colors.TextActive
+  : sf & S_HOVER ? colors.TextHover
+  : colors.comboboxBorderColor
+
+const opaque = Color(0,0,0,255)
+let calcKnobColor =  @(sf) sf & S_KB_FOCUS ? (colors.TextActive | opaque)
+  : sf & S_HOVER ? (colors.TextHover | opaque)
+  : (colors.TextDefault | opaque)
+
+let scales = {}
+scales.linear <- {
+  to = @(value, minv, maxv) (value.tofloat() - minv) / (maxv - minv)
+  from = @(factor, minv, maxv) factor.tofloat() * (maxv - minv) + minv
+}
+scales.logarithmic <- {
+  to = @(value, minv, maxv) value == 0 ? 0 : math.log(value.tofloat() / minv) / math.log(maxv / minv)
+  from = @(factor, minv, maxv) minv * math.pow(maxv / minv, factor)
+}
+scales.logarithmicWithZero <- {
+  to = @(value, minv, maxv) scales.logarithmic.to(value.tofloat(), minv, maxv)
+  from = @(factor, minv, maxv) factor == 0 ? 0 : scales.logarithmic.from(factor, minv, maxv)
+}
+const sliderLeftLoc = "Reduce value"
+const sliderRightLoc = "Increase value"
+
+function slider(orient, var, options={}) {
+  let minval = options?.min ?? 0
+  let maxval = options?.max ?? 1
+  let group = options?.group ?? ElemGroup()
+  let rangeval = maxval!=minval ? (maxval-minval).tofloat() : 1.0
+  let scaling = options?.scaling ?? scales.linear
+  let step = options?.step
+  let unit = options?.unit && options?.scaling!=scales.linear
+    ? options?.unit
+    : step ? step.tofloat()/rangeval : 0.01
+  let pageScroll = (options?.pageScroll ?? step ?? (0.05 * rangeval)).tofloat()
+  let pageScrollNorm = pageScroll / rangeval
+  let ignoreWheel = options?.ignoreWheel ?? true
+
+  let knobStateFlags = Watched(0)
+  let sliderStateFlags = Watched(0)
+
+  function knob() {
+    return {
+      rendObj = ROBJ_SOLID
+      size  = const [fsh(1), fsh(2)]
+      group = group
+      color = calcKnobColor(knobStateFlags.get())
+      watch = knobStateFlags
+      onElemState = @(sf) knobStateFlags.set(sf)
+    }
+  }
+
+  let setValue = options?.setValue ?? @(v) var.set(v)
+  function onChange(factor){
+    let value = scaling.from(factor, minval, maxval)
+    setValue(value)
+  }
+
+  let hotkeysElem = {
+    key = "hotkeys"
+    hotkeys = [
+      ["Left | J:D.Left", sliderLeftLoc, function() {
+        let delta = maxval > minval ? -pageScroll : pageScroll
+        onChange(math.clamp(scaling.to(var.get() + delta, minval, maxval), 0, 1))
+      }],
+      ["Right | J:D.Right", sliderRightLoc, function() {
+        let delta = maxval > minval ? pageScroll : -pageScroll
+        onChange(math.clamp(scaling.to(var.get() + delta, minval, maxval), 0, 1))
+      }],
+    ]
+  }
+
+  return function() {
+    let factor = math.clamp(scaling.to(var.get(), minval, maxval), 0, 1)
+    return {
+      size = flex()
+      behavior = Behaviors.Slider
+      watch = [var, sliderStateFlags]
+      orientation = orient
+
+      min = 0
+      max = 1
+      unit
+      pageScroll = pageScrollNorm
+      ignoreWheel
+
+      fValue = factor
+      knob
+
+      onChange = onChange
+      onElemState = @(sf) sliderStateFlags.set(sf)
+
+      valign = ALIGN_CENTER
+      flow = FLOW_HORIZONTAL
+
+      xmbNode = options?.xmbNode
+
+      children = [
+        {
+          group = group
+          rendObj = ROBJ_SOLID
+          color = (sliderStateFlags.get() & S_HOVER) ? colors.TextHighlight : colors.TextDefault
+          size = [flex(factor), fsh(1)]
+
+          children = {
+            rendObj = ROBJ_FRAME
+            color = calcFrameColor(sliderStateFlags.get())
+            borderWidth = const [hdpx(1),0,hdpx(1),hdpx(1)]
+            size = flex()
+          }
+        }
+        knob
+        {
+          group = group
+          rendObj = ROBJ_SOLID
+          color = colors.ControlBgOpaque
+          size = [flex(1.0 - factor), fsh(1)]
+
+          children = {
+            rendObj = ROBJ_FRAME
+            color = calcFrameColor(sliderStateFlags.get())
+            borderWidth = const [1,1,1,0]
+            size = flex()
+          }
+        }
+        sliderStateFlags.get() & S_HOVER ? hotkeysElem  : null
+      ]
+    }
+  }
+}
+
+
+return {
+  slider
+  scales
+}

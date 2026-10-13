@@ -1,0 +1,377 @@
+us_m4a1_sherman_1942_pacific{
+  _use:t="us_m4a1_sherman_1942_common"
+}
+
+us_m4a1_sherman_1942_sloppy_joe_battlepass_premium{
+  _use:t="us_m4a1_sherman_1942_common"
+  item__name:t="items/us_m4a1_sherman_1942_sloppy_joe"
+
+  "animchar__objTexReplace:object"{
+    "us_camo_olive*":t="us_camo_bicolor_green_black_big_blot*"
+  }
+
+  "animchar__objTexSet:object"{
+
+    "m4a1_sherman_1942_body_c*:object"{
+      "m4a1_sherman_1942_sloppy_joe_body_c*":t="camo_skin_tex"
+    }
+
+    "m4a1_sherman_1942_turret_c*:object"{
+      "m4a1_sherman_1942_sloppy_joe_turret_c*":t="camo_skin_tex"
+    }
+  }
+}
+
+us_m4a1_sherman_1942_common{
+  _use:t="base_m4a1_sherman_1942"
+  _use:t="us_m4a1_sherman_1942_common_vehicle_sound"
+  commanderCockpitFpsCamMaxAngle:p2=40.0, 5.0
+  gunner_cam_limit__useCockpitDir:b=yes
+  item__iconOffset:p2=0.0, 0.2
+
+  "turrets__initAmmoDistribution:array"{
+
+    "ammo:object"{
+      slot:i=0
+      fill:b=yes
+    }
+
+    "ammo:object"{
+      slot:i=1
+      fill:b=yes
+    }
+
+    "ammo:object"{
+      slot:i=4
+      count:i=7
+    }
+  }
+
+  "vehicle_seats__seatsProvideOrder:tag"{
+  }
+
+  "vehicle_seats__effectors:array"{
+  }
+
+  "vehicle_seats__seats:shared:array"{
+
+    "seats:object"{
+      name:t="commander"
+      nextSeat:t="main_gunner"
+      locName:t="vehicle_seats/commander"
+      attachNode:t="commander"
+      shouldHideOwner:b=yes
+      ignoreAttachNodeRotation:b=yes
+      hatchRotationAxis:p3=1.6, 0.0, 0.0
+      attachTm:m=[[0.876954, 0.202456, 0.0] [-0.202456, 0.876954, 0.0] [0.0, 0.0, 0.90003] [-0.4, -0.4, 0.03]]
+      seatComponent:t="isDriver"
+      receiveDamageFromDMPart:t="commander"
+      cameraNodeName:t="bone_turret"
+      cockpitTemplate:t="us_m4a1_sherman_1942_commander_cockpit"
+      isHoldGunModeAllowed:b=yes
+
+      "hatchNodes:array"{
+        node:t="hatch_01"
+        node:t="hatch_02"
+      }
+
+      "hatchTurretNames:array"{
+        turret:t="turret_02"
+      }
+
+      "effectors:object"{
+
+        "l.hand:object"{
+          rel_tm:m=[[0.982059, 0.180962, 0.0530188] [-0.0584904, 0.0250305, 0.997977] [0.179268, -0.98317, 0.0351658] [-0.620972, -0.0011518, -0.0852227]]
+          node:t="bone_mg_aa_v_01"
+        }
+
+        "r.hand:object"{
+          rel_tm:m=[[0.914797, 0.283395, -0.287806] [-0.261863, -0.126395, -0.956794] [-0.307528, 0.950637, -0.0414148] [-0.597855, -0.0070802, 0.104735]]
+          node:t="bone_mg_aa_v_01"
+        }
+      }
+    }
+
+    "seats:object"{
+      name:t="main_gunner"
+      locName:t="vehicle_seats/gunner"
+      attachNode:t="gunner"
+      ignoreAttachNodeRotation:b=yes
+      attachTm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-0.25, -0.5, 0.0]]
+      seatComponent:t="isGunner"
+      nextSeat:t="driver"
+      shouldHideOwner:b=yes
+      receiveDamageFromDMPart:t="gunner"
+      cameraNodeName:t="bone_camera_gunner"
+      cockpitTemplate:t="us_m4a1_sherman_1942_gunner_cockpit"
+
+      "turretNames:array"{
+        turretNames:t="turret_01"
+        turretNames:t="turret_03"
+      }
+    }
+
+    "seats:object"{
+      name:t="driver"
+      locName:t="vehicle_seats/driver"
+      seatOwnsEntityControl:b=yes
+      attachNode:t="driver"
+      ignoreAttachNodeRotation:b=yes
+      attachTm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-0.25, -0.25, 0.0]]
+      seatComponent:t="isDriver"
+      nextSeat:t="machinegunner"
+      shouldHideOwner:b=yes
+      receiveDamageFromDMPart:t="driver"
+      cameraNodeName:t="bone_camera_driver"
+      cockpitTemplate:t="us_m4a1_sherman_1942_driver_cockpit"
+    }
+
+    "seats:object"{
+      name:t="loader"
+      canPlaceManually:b=no
+      attachNode:t="loader"
+      locName:t="vehicle_seats/loader"
+      ignoreAttachNodeRotation:b=yes
+      attachTm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-0.25, -0.5, 0.0]]
+      seatComponent:t="isPassenger"
+      shouldHideOwner:b=yes
+      receiveDamageFromDMPart:t="loader"
+      cameraNodeName:t="bone_camera_driver"
+
+      "loaderTurretNames:array"{
+        turret:t="turret_01"
+      }
+    }
+
+    "seats:object"{
+      name:t="machinegunner"
+      canPlaceManually:b=yes
+      locName:t="vehicle_seats/radioman"
+      attachNode:t="machine_gunner"
+      ignoreAttachNodeRotation:b=yes
+      attachTm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-0.25, -0.5, 0.0]]
+      seatComponent:t="isGunner"
+      shouldHideOwner:b=yes
+      receiveDamageFromDMPart:t="machine_gunner"
+      cameraNodeName:t="root"
+      cockpitTemplate:t="us_m4a1_sherman_1942_machinegunner_cockpit"
+
+      "turretNames:array"{
+        turret:t="turret_04"
+      }
+    }
+  }
+
+  "heat_source__turretInfo:shared:array"{
+    _tags:t="render"
+
+    "turretInfo:object"{
+      turretName:t="turret_02"
+      offset:p3=-0.3, 0.04, -0.19
+      scale:p3=0.4, 0.2, 0.1
+      radMult:r=0.3
+    }
+  }
+}
+
+us_m4a1_sherman_1942_machinegunner_cockpit{
+  _use:t="base_gunner_cockpit"
+  animchar__res:t="bt_7_driver_char"
+  cockpit__offset:p3=0.3, -0.55, -0.99
+
+  "cockpit__visibleVehicleNodeNames:list<t>"{
+    node:t="gun_barrel"
+    node:t="ex_lantern_02"
+  }
+
+  "cockpit__slitNodeNames:list<t>"{
+    slit:t="cam_front"
+  }
+
+  "cockpit__slitForwardOffset:list<r>"{
+    slit:r=0.08
+  }
+
+  "cockpit__slitIsGun:list<b>"{
+    slit:b=yes
+  }
+
+  "cockpit__attachNodeNames:list<t>"{
+    node:t="bone_camera_driver"
+  }
+
+  "cockpit__attachNodeIndices:list<i>"{
+  }
+
+  "cockpit__slitZoom:array"{
+
+    "slit:list<r>"{
+      zoom:r=1.2
+    }
+  }
+
+  "cockpit__slitZoomTime:list<r>"{
+    slit:r=0.05
+  }
+
+  "cockpit__slitTemplates:list<t>"{
+    slit:t="m4_gunner_sight"
+  }
+
+  "cockpit__slitEids:list<eid>"{
+  }
+}
+
+us_m4a1_sherman_1942_commander_cockpit{
+  _use:t="base_commander_cockpit_no_slits"
+  animchar__res:t="t_26_1940_commander_char"
+  cockpit__offset:p3=-0.5, 1.1, -0.499153
+
+  "cockpit__slitForwardOffset:list<r>"{
+    slit:r=0.165
+  }
+
+  "cockpit__slitIsGun:list<b>"{
+    slit:b=yes
+  }
+
+  "cockpit__slitNodeNames:list<t>"{
+    slit:t="cam_front"
+  }
+
+  "cockpit__visibleVehicleNodeNames:list<t>"{
+    node:t="gun_barrel"
+    node:t="bone_gun"
+    node:t="bone_turret"
+  }
+
+  "cockpit__periscopeLimits:list<p4>"{
+    slit:p4=-45.0, 45.0, -5.0, 25.0
+  }
+
+  "cockpit__periscopeSpeed:list<p2>"{
+    slit:p2=35.0, 35.0
+  }
+
+  "cockpit__slitZoom:array"{
+
+    "slit:list<r>"{
+      zoom:r=1.44
+    }
+  }
+
+  "cockpit__slitZoomTime:list<r>"{
+    slit:r=0.0
+  }
+
+  "cockpit__slitTemplates:list<t>"{
+    slit:t="default_periscope"
+  }
+
+  "cockpit__slitEids:list<eid>"{
+  }
+}
+
+us_m4a1_sherman_1942_gunner_cockpit{
+  _use:t="base_gunner_cockpit"
+  animchar__res:t="ba_11_gunner_char"
+  cockpit__offset:p3=-1.41499, 0.391009, -0.320465
+
+  "cockpit__visibleVehicleNodeNames:list<t>"{
+    node:t="gun_barrel"
+    node:t="bone_gun"
+  }
+
+  "cockpit__slitNodeNames:list<t>"{
+    slit:t="cam_front_right"
+  }
+
+  "cockpit__slitForwardOffset:list<r>"{
+    slit:r=0.21
+  }
+
+  "cockpit__slitIsGun:list<b>"{
+    slit:b=yes
+  }
+
+  "cockpit__attachNodeNames:list<t>"{
+    node:t="bone_gun_barrel"
+  }
+
+  "cockpit__attachNodeIndices:list<i>"{
+  }
+
+  "cockpit__slitZoom:array"{
+
+    "slit:list<r>"{
+      zoom:r=1.9
+      zoom:r=3.5
+    }
+  }
+
+  "cockpit__slitZoomTime:list<r>"{
+    slit:r=0.05
+  }
+
+  "cockpit__slitTemplates:list<t>"{
+    slit:t="us_m55"
+  }
+
+  "cockpit__slitEids:list<eid>"{
+  }
+}
+
+us_m4a1_sherman_1942_driver_cockpit{
+  _use:t="base_driver_cockpit"
+  animchar__res:t="ba_11_driver_char"
+  cockpit__offset:p3=-0.3, -0.3, 0.2
+
+  "cockpit__visibleVehicleNodeNames:list<t>"{
+    node:t="gun_barrel"
+  }
+
+  "cockpit__slitForwardOffset:list<r>"{
+    slit:r=-0.05
+  }
+
+  "cockpit__periscopeLimits:list<p4>"{
+    slit:p4=-45.0, 45.0, -0.0, 0.0
+  }
+
+  "cockpit__periscopeSpeed:list<p2>"{
+    slit:p2=35.0, 35.0
+  }
+
+  "cockpit__slitZoom:array"{
+
+    "slit:list<r>"{
+      zoom:r=1.44
+    }
+  }
+
+  "cockpit__slitZoomTime:list<r>"{
+    slit:r=0.0
+  }
+}
+
+us_m4a1_sherman_1942_usmc_171th_pacific_battlepass_premium_skin{
+  _use:t="us_m4a1_sherman_1942_common"
+  item__name:t="items/us_m4a1_sherman_1942_usmc_171th_pacific_battlepass_premium_skin"
+
+  "animchar__objTexSet:object"{
+
+    "m4a1_sherman_1942_body_c*:object"{
+      "m4a1_sherman_1942_171th_body_c*":t="camo_skin_tex"
+    }
+
+    "m4a1_sherman_1942_turret_c*:object"{
+      "m4a1_sherman_1942_171th_turret_c*":t="camo_skin_tex"
+    }
+  }
+}
+
+m4a1_sherman_1942_turret_02_12_7mm_m2_hb{
+  _override:b=yes
+  turret__limit:p4=-20.0, 20.0, -10.0, 22.0
+}

@@ -1,0 +1,65 @@
+mass:r=0.1
+cartridgeMass:r=0.1
+momentOfInertia:p3=0.04, 0.008, 0.04
+caliber:r=0.088
+physMat:t="bulletRay"
+useFutureContacts:b=yes
+logCCD:b=no
+entityTemplate:t="plasma_small_quick_shell_gravity_phys"
+entityPhysTemplate:t="plasma_small_quick_shell_gravity_phys"
+bullets:i=1
+normalizationPreset:t="heat"
+ricochetPreset:t="he"
+slopeEffectPreset:t="ap"
+secondaryShattersPreset:t="ap"
+cumulativeSecondaryShattersPreset:t="heat_fs"
+fresnel:p3=0.23, 0.1, 2.0
+stabilityThreshold:r=0.4
+stabilityCaliberToArmorThreshold:r=10.0
+stabilityReductionAfterRicochet:r=0.45
+stabilityReductionAfterPenetration:r=1.0
+explodeOnRendinst:b=yes
+gravityMult:r=0.01
+maxDistance:r=200.0
+
+collisionResource{
+
+  props{
+    volumeBox_1:b=yes
+  }
+}
+
+ccdSpheres{
+  ccd:p4=0.0, 0.0, 0.0, 0.044
+}
+
+visual{
+  template:t="panzerfaust_60_shell_item+item_in_world"
+}
+
+shellSound{
+  explosionPath:t="events/moonbase/impact/plasma_explosion"
+}
+
+shellShatterSound{
+  wizPath:t=""
+  hitPath:t=""
+}
+
+armorpower{
+  ArmorPower0m:p2=2.0, 10.0
+  ArmorPower7000m:p2=1.0, 7000.0
+}
+
+splashDamage{
+  radius:p2=0.5, 0.5
+  penetration:p2=10.0, 10.0
+  damage:r=18.0
+  dmgOffset:p3=0.0, 0.25, 0.0
+}
+
+stabilityRicochetModifier{
+  mod1:p2=0.0, 0.5
+  mod2:p2=20.0, 0.6
+  mod3:p2=30.0, 1.0
+}

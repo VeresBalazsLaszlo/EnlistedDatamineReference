@@ -1,0 +1,835 @@
+entity{
+  _template:t="poly_battle_area"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [344.373, 17.3089, -478.769]]
+  battleAreaId:t="1_area1"
+  battle_area__team:i=1
+  groupName:t="sector_3"
+
+  "poly_area__points:list<p3>"{
+    item:p3=394.511, 7.45109, -258.365
+    item:p3=339.36, 5.16177, -269.738
+    item:p3=318.75, 4.80585, -284.064
+    item:p3=304.422, 4.70032, -304.102
+    item:p3=304.27, 4.00389, -328.875
+    item:p3=293.254, 9.45386, -353.562
+    item:p3=288.591, 9.62487, -363.055
+    item:p3=290.026, 9.49333, -374.238
+    item:p3=283.973, 4.88057, -423.089
+    item:p3=276.248, 9.47629, -463.934
+    item:p3=269.199, 26.1192, -556.273
+    item:p3=267.535, 35.5882, -680.173
+    item:p3=580.099, 7.45109, -707.949
+    item:p3=573.922, 0.0642395, -348.33
+    item:p3=518.761, 7.45109, -301.302
+    item:p3=444.626, 7.45109, -262.583
+  }
+}
+
+entity{
+  _template:t="poly_battle_area"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [254.731, 2.13134, -321.971]]
+  battleAreaId:t="1_area2"
+  battle_area__team:i=2
+  groupName:t="sector_3"
+
+  "poly_area__points:list<p3>"{
+    item:p3=263.544, 0.0279541, -36.7779
+    item:p3=-12.2838, 0.09198, -309.598
+    item:p3=153.703, 1.10351, -492.544
+    item:p3=205.404, 2.67479, -476.3
+    item:p3=254.458, 5.86894, -460.914
+    item:p3=305.463, 1.10351, -455.925
+    item:p3=368.694, 8.93797, -451.517
+    item:p3=379.119, 9.4018, -451.748
+    item:p3=397.578, 9.37436, -456.091
+    item:p3=416.507, 4.04663, -444.969
+    item:p3=422.68, 1.05023, -440.605
+    item:p3=443.795, 1.1, -430.034
+    item:p3=461.199, 1.09999, -421.881
+    item:p3=513.681, 1.10351, -382.052
+    item:p3=520.143, 1.10351, -331.503
+    item:p3=494.142, 0.0975952, -224.734
+  }
+}
+
+entity{
+  _template:t="poly_battle_area"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [208.533, 1.15894, -327.345]]
+  battleAreaId:t="2_area1"
+  battle_area__team:i=1
+  groupName:t="sector_2"
+  active:b=no
+
+  "poly_area__points:list<p3>"{
+    item:p3=129.4, 0.238083, -326.75
+    item:p3=97.6899, 2.80066, -362.929
+    item:p3=24.7997, 0.18103, -474.638
+    item:p3=118.138, 2.66833, -577.787
+    item:p3=290.815, 39.1766, -660.757
+    item:p3=587.066, -0.0541992, -595.845
+    item:p3=582.508, 0.0828552, -346.266
+    item:p3=482.686, -0.0591431, -193.889
+    item:p3=384.013, 0.903723, -188.417
+    item:p3=298.039, 0.0155334, -205.626
+    item:p3=229.019, 0.928665, -229.037
+    item:p3=199.574, 0.903723, -244.523
+    item:p3=163.909, 0.903723, -281.553
+  }
+}
+
+entity{
+  _template:t="poly_battle_area"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [34.5479, 2.70274, -190.828]]
+  battleAreaId:t="2_area2"
+  battle_area__team:i=2
+  groupName:t="sector_2"
+
+  "poly_area__points:list<p3>"{
+    item:p3=73.4488, 0.00794983, -476.621
+    item:p3=142.623, 5.81418, -484.379
+    item:p3=196.002, 5.81418, -480.225
+    item:p3=225.214, 5.81418, -470.119
+    item:p3=257.922, 5.15802, -456.579
+    item:p3=289.761, 5.81418, -430.892
+    item:p3=297.366, 8.80337, -400.867
+    item:p3=294.383, 9.99301, -378.574
+    item:p3=292.214, 9.98508, -357.524
+    item:p3=296.415, 4.8071, -336.496
+    item:p3=308.292, 4.59723, -297.224
+    item:p3=312.583, 3.90352, -247.106
+    item:p3=315.075, 5.81418, -180.927
+    item:p3=126.821, 0.0113525, -41.9328
+    item:p3=-139.536, 0.0205078, -226.148
+    item:p3=30.6254, 0.0610962, -472.999
+  }
+}
+
+entity{
+  _template:t="poly_battle_area"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [166.02, 1.23492, -212.468]]
+  battleAreaId:t="3_area1"
+  battle_area__team:i=1
+  groupName:t="sector_1"
+
+  "poly_area__points:list<p3>"{
+    item:p3=76.201, -0.0214844, -97.7301
+    item:p3=62.5992, 0.04216, -144.39
+    item:p3=57.4227, 4.71042, -185.819
+    item:p3=30.8789, 0.0392456, -223.436
+    item:p3=13.2841, 0.510117, -237.52
+    item:p3=-6.0488, 1.05904, -249.153
+    item:p3=-41.5159, -0.0372314, -297.752
+    item:p3=-56.9132, -0.0645142, -346.277
+    item:p3=26.5217, 0.00476074, -475.259
+    item:p3=147.74, 4.71042, -567.662
+    item:p3=530.721, 4.71042, -410.685
+    item:p3=394.97, -0.00704956, -145.785
+    item:p3=241.855, -0.037262, -5.69957
+    item:p3=198.644, -0.0385132, -9.06658
+    item:p3=135.008, 0.0667877, -38.6941
+  }
+}
+
+entity{
+  _template:t="poly_battle_area"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [165.872, 1.23492, -210.785]]
+  battleAreaId:t="3_area2"
+  battle_area__team:i=2
+  groupName:t="sector_1"
+
+  "poly_area__points:list<p3>"{
+    item:p3=-231.874, 15.0813, -82.9938
+    item:p3=-22.6861, -0.144226, -403.897
+    item:p3=22.7322, -0.0292969, -391.177
+    item:p3=68.0756, -0.0787964, -369.59
+    item:p3=92.0924, 5.66785, -356.912
+    item:p3=101.059, 6.3091, -337.277
+    item:p3=112.604, 3.25433, -314.091
+    item:p3=129.117, 0.753418, -287.929
+    item:p3=146.195, 1.33137, -280.495
+    item:p3=169.986, 9.64157, -262.006
+    item:p3=190.921, 9.64159, -241.48
+    item:p3=238.606, 0.00180054, -178.988
+    item:p3=273.045, 0.0446167, -116.6
+    item:p3=277.56, -0.0917969, -49.8344
+    item:p3=3.54747, 9.64157, 206.063
+  }
+}
+
+entity{
+  _template:t="briefing_destruction"
+  mission_name:t="pacific_gavutu_bomb"
+  mission_campaign:t="pacific"
+
+  "loading_images:list<t>"{
+    item:t="ui/pacific_gavutu_inv_01.avif"
+    item:t="ui/pacific_gavutu_inv_02.avif"
+    item:t="ui/pacific_gavutu_inv_04.avif"
+  }
+}
+
+entity{
+  _template:t="team_pacific_allies+team_narrator_destruction_defence+respawn_creators_team"
+  team__countAdd:r=0.5
+  team__memberCount:r=0.5
+  team__scoreCap:r=3000.0
+  team__capturePenalty:r=1001.0
+  team__score:r=3000.0
+  team__id:i=1
+  team__briefing:t="destruction/defenders_goals"
+  team__winSubtitle:t="debriefing/won_defence_destruction"
+  team__loseSubtitle:t="debriefing/lost_defence_destruction"
+  team__winTitle:t="debriefing/allies_won_destruction_defence_title"
+  team__spawnBotArmy:t="pacific_allies"
+}
+
+entity{
+  _template:t="team_pacific_axis+team_narrator_destruction_attack+respawn_creators_team"
+  team__memberCount:r=0.0
+  team__scoreCap:r=3750.0
+  team__score:r=3750.0
+  team__squadSpawnCost:i=250
+  team__firstSpawnCostMul:r=0.0
+  team__zeroScoreFailTimer:r=60.0
+  team__id:i=2
+  team__briefing:t="destruction/attackers_goals"
+  team__winSubtitle:t="debriefing/won_invasion_destruction"
+  team__loseSubtitle:t="debriefing/lost_invasion_destruction"
+  team__winTitle:t="debriefing/jap_won_destruction_attack_title"
+  team__spawnBotArmy:t="pacific_axis"
+}
+
+entity{
+  _template:t="static_cam"
+  camera__active:b=yes
+  transform:m=[[-0.754476, -0.000917004, 0.65633] [0.042518, 0.997831, 0.0502701] [-0.654948, 0.065833, -0.752795] [140.717, 7.33996, -312.244]]
+}
+
+entity{
+  _template:t="enemy_attack_marker"
+}
+
+entity{
+  _template:t="respawn_camera"
+  respawnCameraForTeam:i=1
+  moveCameraToHeight:r=500.0
+  respawnSelectorDistanceMult:r=2.0
+  respawn_camera__horizontalOffsetMult:p2=-40.0, -90.0
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [340.0, 8.0, -480.0]]
+}
+
+entity{
+  _template:t="respawn_camera"
+  respawnCameraForTeam:i=2
+  moveCameraToHeight:r=500.0
+  respawnSelectorDistanceMult:r=2.0
+  respawn_camera__horizontalOffsetMult:p2=-80.0, -90.0
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [340.0, 8.0, -480.0]]
+}
+
+entity{
+  _template:t="group_activator"
+
+  "activator__activateChoice:object"{
+    sector_1:r=1.0
+  }
+}
+
+entity{
+  _template:t="bomb_site_zone_chained_sphere+defend_zone_respawnbase"
+  transform:m=[[0.943389, 0.0, 0.455398] [0.0, 1.0, -0.0] [-0.439016, 0.0, 0.909452] [140.287, 4.38519, -168.39]]
+  capzone__capRewardPartCap:r=5.0
+  capzone__mustBeCapturedByTeam:i=2
+  groupName:t="sector_1"
+  capzone__timeToPlant:r=20.0
+  capzone__timeToDefuse:r=20.0
+  capzone__timeToExplosion:r=40.0
+  active:b=no
+  ui_order:i=1
+  capzone__capReward:r=500.0
+  capzone__caption:t="capzone/warehouse"
+  capzone__checkAllZonesInGroup:b=yes
+  capzone__deactivateAfterTimeout:r=25.0
+  capzone__spawnAtZoneTimeout:r=25.0
+  capzone__createRespawnBaseForTeam:i=1
+  capzone__createdRespawnBaseGroup:i=7
+  capzone__createRespawnBase:t="respawnBaseGroupActivator"
+  capzone__plantingTeam:i=2
+  capzone__bombTemplate:t="bomb_site+bomb_site_radar_hardware_animchar_01_without_antenna"
+  capzone__bombTransformLocalPos:m=[[0.380068, 0.0, 0.976171] [0.0, 1.0, -0.0] [-0.941058, 0.0, 0.366397] [-0.0300903, 0.261165, 0.130661]]
+  capzone__iconOffsetY:r=1.5
+  sphere_zone__radius:r=20.0
+
+  "capzone__activateChoice:object"{
+    sector_2:r=1.0
+  }
+}
+
+entity{
+  _template:t="bomb_site_zone_chained_sphere+defend_zone_respawnbase"
+  transform:m=[[0.733828, 0.0, -0.451606] [0.0, 1.0, 0.0] [0.451606, -0.0, 0.733828] [63.7568, 3.01375, -315.644]]
+  capzone__capRewardPartCap:r=5.0
+  capzone__mustBeCapturedByTeam:i=2
+  groupName:t="sector_1"
+  capzone__timeToPlant:r=20.0
+  capzone__timeToDefuse:r=20.0
+  capzone__timeToExplosion:r=40.0
+  active:b=no
+  ui_order:i=1
+  capzone__capReward:r=500.0
+  capzone__caption:t="capzone/warehouse"
+  capzone__checkAllZonesInGroup:b=yes
+  capzone__deactivateAfterTimeout:r=25.0
+  capzone__spawnAtZoneTimeout:r=25.0
+  capzone__createRespawnBaseForTeam:i=1
+  capzone__createdRespawnBaseGroup:i=7
+  capzone__createRespawnBase:t="respawnBaseGroupActivator"
+  capzone__plantingTeam:i=2
+  capzone__bombTemplate:t="bomb_site+bomb_site_radar_hardware_animchar_02_without_antenna"
+  capzone__bombTransformLocalPos:m=[[0.239519, 0.0, 0.902387] [0.0, 0.983117, -0.0] [-0.91947, 0.0, 0.244053] [-0.0703125, 0.228545, -0.226105]]
+  capzone__iconOffsetY:r=3.0
+  sphere_zone__radius:r=25.0
+
+  "capzone__activateChoice:object"{
+    sector_2:r=1.0
+  }
+}
+
+entity{
+  _template:t="bomb_site_zone_chained_sphere+defend_zone_respawnbase"
+  transform:m=[[-0.00648558, 0.0, 0.733494] [0.0, 0.690404, 0.0] [-0.779431, 0.0, -0.00689176] [202.835, 3.41452, -367.518]]
+  groupName:t="sector_2"
+  capzone__timeToPlant:r=20.0
+  capzone__timeToDefuse:r=20.0
+  capzone__timeToExplosion:r=40.0
+  capzone__capRewardPartCap:r=5.0
+  capzone__mustBeCapturedByTeam:i=2
+  capzone__caption:t="capzone/barracks"
+  active:b=no
+  ui_order:i=1
+  capzone__owningTeam:i=1
+  capzone__capReward:r=500.0
+  capzone__checkAllZonesInGroup:b=yes
+  capzone__deactivateAfterTimeout:r=25.0
+  capzone__spawnAtZoneTimeout:r=25.0
+  capzone__createRespawnBaseForTeam:i=1
+  sphere_zone__radius:r=25.0
+  capzone__createdRespawnBaseGroup:i=5
+  capzone__createRespawnBase:t="respawnBaseGroupActivator"
+  capzone__plantingTeam:i=2
+  capzone__bombTemplate:t="bomb_site+bomb_site_radar_hardware_animchar_03_without_antenna"
+  capzone__bombTransformLocalPos:m=[[-0.939772, 0.0, -0.270219] [0.0, 0.989793, 0.0] [0.283628, 0.0, -0.986406] [0.106155, 0.175545, 0.0703125]]
+  capzone__iconOffsetY:r=3.0
+
+  "capzone__activateChoice:object"{
+    sector_3:r=1.0
+  }
+}
+
+entity{
+  _template:t="bomb_site_zone_chained_sphere+defend_zone_respawnbase"
+  transform:m=[[0.787614, 0.0, 0.524749] [0.0, 0.650368, -0.0] [-0.466579, 0.0, 0.700306] [256.287, 2.28407, -284.116]]
+  groupName:t="sector_2"
+  capzone__timeToPlant:r=20.0
+  capzone__timeToDefuse:r=20.0
+  capzone__timeToExplosion:r=40.0
+  capzone__capRewardPartCap:r=5.0
+  capzone__mustBeCapturedByTeam:i=2
+  capzone__caption:t="capzone/barracks"
+  active:b=no
+  ui_order:i=1
+  capzone__owningTeam:i=1
+  capzone__capReward:r=500.0
+  capzone__checkAllZonesInGroup:b=yes
+  capzone__deactivateAfterTimeout:r=25.0
+  capzone__spawnAtZoneTimeout:r=25.0
+  capzone__createRespawnBaseForTeam:i=1
+  capzone__createdRespawnBaseGroup:i=5
+  capzone__createRespawnBase:t="respawnBaseGroupActivator"
+  capzone__plantingTeam:i=2
+  capzone__bombTemplate:t="bomb_site+bomb_site_radar_hardware_animchar_04_without_antenna"
+  capzone__bombTransformLocalPos:m=[[-0.797699, 0.0, 0.690527] [0.0, 1.03606, 0.0] [-0.67697, 0.0, -0.782038] [-0.0292969, 0.305583, 0.0889282]]
+  capzone__iconOffsetY:r=3.0
+  sphere_zone__radius:r=35.0
+
+  "capzone__activateChoice:object"{
+    sector_3:r=1.0
+  }
+}
+
+entity{
+  _template:t="bomb_site_zone_chained_sphere+defend_zone_respawnbase"
+  transform:m=[[0.403265, 0.0, 0.169954] [0.0, 0.575724, 0.0] [-0.230528, 0.0, 0.546997] [386.113, 0.867163, -344.929]]
+  groupName:t="sector_3"
+  capzone__timeToPlant:r=20.0
+  capzone__timeToDefuse:r=20.0
+  capzone__timeToExplosion:r=40.0
+  capzone__capRewardPartCap:r=5.0
+  capzone__mustBeCapturedByTeam:i=2
+  capzone__caption:t="capzone/warehouse"
+  active:b=no
+  ui_order:i=1
+  capzone__owningTeam:i=1
+  capzone__capReward:r=500.0
+  capzone__checkAllZonesInGroup:b=yes
+  capzone__deactivateAfterTimeout:r=25.0
+  capzone__spawnAtZoneTimeout:r=25.0
+  capzone__createRespawnBaseForTeam:i=1
+  capzone__createdRespawnBaseGroup:i=3
+  capzone__createRespawnBase:t="respawnBaseGroupActivator"
+  capzone__plantingTeam:i=2
+  capzone__bombTemplate:t="bomb_site+bomb_site_radar_hardware_animchar_01"
+  capzone__bombTransformLocalPos:m=[[0.498302, 0.0, -0.817431] [0.0, 0.960112, 0.0] [0.786411, 0.0, 0.479393] [0.0466614, 0.30075, -0.0410767]]
+  capzone__iconOffsetY:r=3.0
+  sphere_zone__radius:r=35.0
+}
+
+entity{
+  _template:t="respawnChooser+respTeam1"
+  transform:m=[[0.00985571, 0.0, 0.999951] [0.0, 1.0, -0.0] [-0.999951, 0.0, 0.00985571] [403.15, 18.5231, -527.791]]
+  groupName:t="sector_3"
+  active:b=no
+}
+
+entity{
+  _template:t="respawnChooser+respTeam1"
+  transform:m=[[0.0130541, 0.0, 0.999916] [0.0, 1.0, -0.0] [-0.999916, 0.0, 0.0130541] [428.232, 13.9345, -528.143]]
+  groupName:t="sector_3"
+  active:b=no
+}
+
+entity{
+  _template:t="respawnChooser+respTeam2"
+  transform:m=[[0.992018, 0.0, 0.126098] [0.0, 1.0, -0.0] [-0.126098, 0.0, 0.992018] [229.575, 2.87774, -263.081]]
+  groupName:t="sector_3"
+  active:b=no
+}
+
+entity{
+  _template:t="respawnChooser+respTeam1"
+  transform:m=[[-0.586793, -0.0297613, 0.80919] [-0.0219046, 0.999542, 0.0208779] [-0.809441, -0.00547398, -0.587177] [408.937, 1.8756, -335.277]]
+  groupName:t="sector_2"
+  active:b=no
+}
+
+entity{
+  _template:t="respawnChooser+respTeam1"
+  transform:m=[[0.684329, -0.00254517, 0.729169] [0.0237276, 0.999542, -0.0187795] [-0.728787, 0.0301528, 0.684075] [149.106, 1.92561, -525.46]]
+  groupName:t="sector_2"
+  active:b=no
+  respawnBaseGroup:i=2
+}
+
+entity{
+  _template:t="respawnChooser+respTeam1"
+  transform:m=[[-0.812009, 0.0232004, 0.583185] [0.0310429, 0.999512, 0.00346043] [-0.582819, 0.0209136, -0.812332] [349.236, 2.36785, -400.002]]
+  groupName:t="sector_2"
+  active:b=no
+}
+
+entity{
+  _template:t="respawnChooser+respTeam2"
+  transform:m=[[0.313974, 0.0, -0.949432] [0.0, 1.0, 0.0] [0.949431, 0.0, 0.313974] [48.7061, 3.15722, -307.284]]
+  groupName:t="sector_2"
+  active:b=no
+}
+
+entity{
+  _template:t="respawnChooser+respTeam2"
+  transform:m=[[0.763574, 0.0, -0.645721] [0.0, 1.0, 0.0] [0.645721, 0.0, 0.763573] [76.9405, 3.3089, -287.717]]
+  groupName:t="sector_2"
+  active:b=no
+}
+
+entity{
+  _template:t="respawnChooser+respTeam1"
+  transform:m=[[-0.868779, 0.0, 0.4952] [0.0, 1.0, 0.0] [-0.4952, 0.0, -0.868779] [259.562, 3.32788, -284.289]]
+  groupName:t="sector_1"
+  respawnBaseGroup:i=1
+  active:b=no
+}
+
+entity{
+  _template:t="respawnChooser+respTeam1"
+  transform:m=[[-0.953604, 0.0, 0.301059] [0.0, 1.0, 0.0] [-0.301059, 0.0, -0.953604] [204.328, 3.83936, -395.43]]
+  groupName:t="sector_1"
+  respawnBaseGroup:i=2
+  active:b=no
+}
+
+entity{
+  _template:t="respawnChooser+respTeam2"
+  transform:m=[[0.582445, 0.0, -0.81287] [0.0, 1.0, 0.0] [0.81287, -0.0, 0.582445] [-9.67566, 5.21126, -119.734]]
+  groupName:t="sector_1"
+  active:b=no
+}
+
+entity{
+  _template:t="respawnChooser+respTeam2"
+  transform:m=[[0.994228, 0.0, 0.10729] [0.0, 1.0, -0.0] [-0.10729, 0.0, 0.994228] [-12.8246, 5.73836, -77.4737]]
+  groupName:t="sector_1"
+  active:b=no
+}
+
+entity{
+  _template:t="respawnChooser+respVehicle+vehicle_resp_soft_ground_collision"
+  transform:m=[[-0.588212, 0.0, 0.808704] [0.0, 1.0, 0.0] [-0.808704, 0.0, -0.588212] [484.647, 1.36237, -572.561]]
+  groupName:t="sector_3"
+  maxVehicleOnSpawn:i=2
+  respTime:i=150
+  respawnBaseGroup:i=1
+  team:i=1
+  active:b=no
+}
+
+entity{
+  _template:t="respawnChooser+respVehicle+vehicle_resp_soft_ground_collision"
+  transform:m=[[0.659554, 0.0, -0.751655] [0.0, 1.0, 0.0] [0.751655, -0.0, 0.659554] [171.369, 2.78772, -245.84]]
+  groupName:t="sector_3"
+  maxVehicleOnSpawn:i=2
+  respTime:i=150
+  respawnBaseGroup:i=1
+  team:i=2
+  active:b=no
+}
+
+entity{
+  _template:t="respawnChooser+respVehicle+vehicle_resp_soft_ground_collision"
+  transform:m=[[0.42247, 0.0, -0.906377] [0.0, 1.0, 0.0] [0.906377, -0.0, 0.42247] [16.6144, 1.30493, -240.11]]
+  groupName:t="sector_2"
+  maxVehicleOnSpawn:i=2
+  respTime:i=150
+  respawnBaseGroup:i=1
+  team:i=2
+  active:b=no
+}
+
+entity{
+  _template:t="respawnChooser+respVehicle+vehicle_resp_soft_ground_collision"
+  transform:m=[[-0.669882, -0.0124211, 0.74236] [-0.0040816, 0.999907, 0.0130472] [-0.742454, 0.00571011, -0.669871] [446.807, 1.84065, -459.342]]
+  groupName:t="sector_2"
+  maxVehicleOnSpawn:i=2
+  respTime:i=150
+  respawnBaseGroup:i=1
+  team:i=1
+  active:b=no
+}
+
+entity{
+  _template:t="respawnChooser+respVehicle+vehicle_resp_soft_ground_collision"
+  transform:m=[[-0.920512, 0.0, 0.390712] [0.0, 1.0, 0.0] [-0.390712, 0.0, -0.920512] [304.202, 5.37248, -427.026]]
+  groupName:t="sector_1"
+  maxVehicleOnSpawn:i=2
+  respTime:i=150
+  respawnBaseGroup:i=1
+  team:i=1
+  active:b=no
+}
+
+entity{
+  _template:t="respawnChooser+respVehicle+vehicle_resp_soft_ground_collision"
+  transform:m=[[0.709343, -0.0170975, -0.704654] [0.00961113, 0.999847, -0.0145849] [0.704796, 0.00357316, 0.709399] [-51.8128, 4.95878, -57.6199]]
+  groupName:t="sector_1"
+  maxVehicleOnSpawn:i=2
+  respTime:i=150
+  respawnBaseGroup:i=1
+  team:i=2
+  active:b=no
+}
+
+entity{
+  _template:t="respawnChooser+respTeam1"
+  transform:m=[[0.0620162, 0.0, 0.998076] [0.0, 1.0, -0.0] [-0.998076, 0.0, 0.0620162] [414.747, 15.4757, -522.908]]
+  groupName:t="sector_3"
+  active:b=no
+}
+
+entity{
+  _template:t="respawnChooser+respTeam2"
+  transform:m=[[0.939166, 0.0, 0.343464] [0.0, 1.0, -0.0] [-0.343464, 0.0, 0.939165] [224.929, 2.09496, -277.741]]
+  groupName:t="sector_3"
+  active:b=no
+}
+
+entity{
+  _template:t="respawnBaseWithGroupOnCapturePoint"
+  transform:m=[[-0.942314, 0.0, 0.334729] [0.0, 1.0, 0.0] [-0.334729, 0.0, -0.942314] [398.557, 1.92101, -348.306]]
+  groupName:t="sector_3"
+  respawnBaseGroup:i=3
+}
+
+entity{
+  _template:t="respawnBaseWithGroupOnCapturePoint"
+  transform:m=[[-0.578525, 0.0, 0.815665] [0.0, 1.0, 0.0] [-0.815665, 0.0, -0.578525] [400.114, 1.71167, -344.206]]
+  groupName:t="sector_3"
+  respawnBaseGroup:i=3
+}
+
+entity{
+  _template:t="respawnBaseWithGroupOnCapturePoint"
+  transform:m=[[-0.716941, 0.0, 0.697134] [0.0, 1.0, 0.0] [-0.697134, 0.0, -0.716941] [271.459, 2.39746, -270.447]]
+  groupName:t="sector_2"
+  respawnBaseGroup:i=5
+}
+
+entity{
+  _template:t="respawnBaseWithGroupOnCapturePoint"
+  transform:m=[[-0.770803, 0.0, 0.637074] [0.0, 1.0, 0.0] [-0.637074, 0.0, -0.770803] [259.465, 3.42859, -284.184]]
+  groupName:t="sector_2"
+  respawnBaseGroup:i=5
+  active:b=no
+}
+
+entity{
+  _template:t="respawnBaseWithGroupOnCapturePoint"
+  transform:m=[[-0.959, 0.0, -0.283404] [0.0, 1.0, 0.0] [0.283404, 0.0, -0.959] [206.194, 4.20214, -365.826]]
+  groupName:t="sector_2"
+  respawnBaseGroup:i=5
+  active:b=no
+}
+
+entity{
+  _template:t="respawnBaseWithGroupOnCapturePoint"
+  transform:m=[[-0.878477, 0.0, 0.477785] [0.0, 1.0, 0.0] [-0.477785, 0.0, -0.878477] [194.657, 3.76054, -394.336]]
+  groupName:t="sector_2"
+  respawnBaseGroup:i=5
+  active:b=no
+}
+
+entity{
+  _template:t="respawnBaseWithGroupOnCapturePoint"
+  transform:m=[[-0.913763, 0.0, 0.406248] [0.0, 1.0, 0.0] [-0.406248, 0.0, -0.913763] [70.8958, 3.50372, -317.303]]
+  groupName:t="sector_1"
+  respawnBaseGroup:i=7
+  active:b=no
+}
+
+entity{
+  _template:t="respawnBaseWithGroupOnCapturePoint"
+  transform:m=[[-0.938212, 0.0, 0.346064] [0.0, 1.0, 0.0] [-0.346064, 0.0, -0.938212] [87.2372, 3.10364, -296.47]]
+  groupName:t="sector_1"
+  respawnBaseGroup:i=7
+  active:b=no
+}
+
+entity{
+  _template:t="respawnChooser+respTeam2"
+  transform:m=[[-0.0172758, 0.0, -0.999851] [0.0, 1.0, 0.0] [0.999851, 0.0, -0.0172758] [-16.8361, 5.30671, -122.727]]
+  groupName:t="sector_1"
+  active:b=no
+}
+
+entity{
+  _template:t="respawnChooser+respTeam2"
+  transform:m=[[0.346181, 0.0, -0.938167] [0.0, 1.0, 0.0] [0.938167, -0.0, 0.346181] [123.756, 4.91875, -183.329]]
+  groupName:t="sector_2"
+  active:b=no
+  respawnBaseGroup:i=2
+}
+
+entity{
+  _template:t="respawnChooser+respTeam2"
+  transform:m=[[0.995449, 0.0, -0.0953047] [0.0, 1.0, 0.0] [0.0953046, -0.0, 0.995448] [148.821, 4.53265, -157.366]]
+  groupName:t="sector_2"
+  active:b=no
+  respawnBaseGroup:i=2
+}
+
+entity{
+  _template:t="respawnChooser+respTeam2"
+  transform:m=[[0.639209, 0.0, -0.769033] [0.0, 1.0, 0.0] [0.769033, -0.0, 0.639209] [44.2023, 1.46529, -14.0148]]
+  groupName:t="sector_1"
+  active:b=no
+  respawnBaseGroup:i=2
+}
+
+entity{
+  _template:t="respawnChooser+respTeam2"
+  transform:m=[[0.242769, 0.0, -0.970084] [0.0, 1.0, 0.0] [0.970084, -0.0, 0.242769] [34.3922, 1.82522, -31.4455]]
+  groupName:t="sector_1"
+  active:b=no
+  respawnBaseGroup:i=2
+}
+
+entity{
+  _template:t="respawnChooser+respMotorcycle"
+  transform:m=[[0.750755, 0.0, -0.660581] [0.0, 1.0, 0.0] [0.660581, -0.0, 0.750755] [-48.3997, 4.97788, -65.0127]]
+  groupName:t="sector_1"
+  team:i=2
+  active:b=no
+}
+
+entity{
+  _template:t="resupply_for_ground_vehicle_zone"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-65.3873, 6.10847, -109.102]]
+  groupName:t="sector_1"
+  resupply_zone__team:i=2
+  active:b=no
+}
+
+entity{
+  _template:t="respawnChooser+respMotorcycle"
+  transform:m=[[0.373779, 0.0, 0.927518] [0.0, 1.0, -0.0] [-0.927518, 0.0, 0.373779] [270.582, 5.51346, -439.777]]
+  groupName:t="sector_1"
+  team:i=1
+  active:b=no
+}
+
+entity{
+  _template:t="resupply_for_ground_vehicle_zone"
+  transform:m=[[0.346416, 0.0, 0.938081] [0.0, 1.0, -0.0] [-0.938081, 0.0, 0.346416] [262.498, 3.88402, -396.784]]
+  groupName:t="sector_1"
+  resupply_zone__team:i=1
+  active:b=no
+}
+
+entity{
+  _template:t="resupply_for_ground_vehicle_zone"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [168.746, 2.42995, -353.585]]
+  groupName:t="sector_3"
+  resupply_zone__team:i=2
+  active:b=no
+}
+
+entity{
+  _template:t="respawnChooser+respMotorcycle"
+  transform:m=[[0.72554, 0.0, -0.68818] [0.0, 1.0, 0.0] [0.68818, -0.0, 0.72554] [158.921, 2.35193, -232.896]]
+  groupName:t="sector_3"
+  team:i=2
+  active:b=no
+}
+
+entity{
+  _template:t="respawnChooser+respMotorcycle"
+  transform:m=[[-0.646918, 0.0, 0.762559] [0.0, 1.0, 0.0] [-0.762559, 0.0, -0.646918] [491.018, 1.32228, -579.614]]
+  groupName:t="sector_3"
+  team:i=1
+  active:b=no
+}
+
+entity{
+  _template:t="resupply_for_ground_vehicle_zone"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [484.507, 3.14624, -491.228]]
+  groupName:t="sector_3"
+  resupply_zone__team:i=1
+  active:b=no
+}
+
+entity{
+  _template:t="resupply_for_ground_vehicle_zone"
+  transform:m=[[0.356792, 0.0, -0.934184] [0.0, 1.0, 0.0] [0.934184, -0.0, 0.356792] [60.4795, 3.52406, -186.795]]
+  groupName:t="sector_2"
+  resupply_zone__team:i=2
+  active:b=no
+}
+
+entity{
+  _template:t="respawnChooser+respMotorcycle"
+  transform:m=[[0.356792, 0.0, -0.934184] [0.0, 1.0, 0.0] [0.934184, -0.0, 0.356792] [13.5922, 0.646335, -232.783]]
+  groupName:t="sector_2"
+  team:i=2
+  active:b=no
+}
+
+entity{
+  _template:t="respawnChooser+respMotorcycle"
+  transform:m=[[-0.695596, 0.0, 0.718434] [0.0, 1.0, 0.0] [-0.718434, 0.0, -0.695596] [453.28, 1.92107, -468.204]]
+  groupName:t="sector_2"
+  team:i=1
+  active:b=no
+}
+
+entity{
+  _template:t="resupply_for_ground_vehicle_zone"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [332.616, 4.33037, -423.213]]
+  groupName:t="sector_2"
+  resupply_zone__team:i=1
+  active:b=no
+}
+
+entity{
+  _template:t="respawnChooser+respTeam1"
+  transform:m=[[-0.860348, 0.0, 0.509705] [0.0, 1.0, 0.0] [-0.509705, 0.0, -0.860348] [205.153, 4.36446, -371.653]]
+  groupName:t="sector_1"
+  respawnBaseGroup:i=2
+  active:b=no
+}
+
+entity{
+  _template:t="respawnChooser+respTeam1"
+  transform:m=[[-0.420038, 0.0, 0.907506] [0.0, 1.0, 0.0] [-0.907506, 0.0, -0.420038] [271.04, 2.43804, -273.56]]
+  groupName:t="sector_1"
+  respawnBaseGroup:i=1
+  active:b=no
+}
+
+entity{
+  _template:t="respawnBaseWithGroupOnCapturePoint"
+  transform:m=[[-0.972258, 0.0, -0.233912] [0.0, 1.0, 0.0] [0.233912, 0.0, -0.972258] [153.527, 4.79397, -182.196]]
+  groupName:t="sector_1"
+  respawnBaseGroup:i=7
+  active:b=no
+}
+
+entity{
+  _template:t="respawnBaseWithGroupOnCapturePoint"
+  transform:m=[[-0.972258, 0.0, -0.233912] [0.0, 1.0, 0.0] [0.233912, 0.0, -0.972258] [150.846, 4.91403, -165.53]]
+  groupName:t="sector_1"
+  respawnBaseGroup:i=7
+  active:b=no
+}
+
+entity{
+  _template:t="respawnChooser+respTeam1"
+  transform:m=[[-0.443066, -0.0297613, 0.895995] [-0.0181009, 0.999542, 0.0242499] [-0.896307, -0.00547398, -0.443402] [378.444, 1.8756, -379.064]]
+  groupName:t="sector_2"
+  active:b=no
+}
+
+entity{
+  _template:t="respawnChooser+respTeam2"
+  transform:m=[[0.995449, 0.0, -0.0953047] [0.0, 1.0, 0.0] [0.0953046, -0.0, 0.995448] [146.562, 4.53265, -174.624]]
+  groupName:t="sector_2"
+  active:b=no
+  respawnBaseGroup:i=2
+}
+
+entity{
+  _template:t="respawnChooser+respVehicle+vehicle_resp_soft_ground_collision"
+  transform:m=[[0.994474, 0.0, -0.10498] [0.0, 1.0, 0.0] [0.10498, -0.0, 0.994474] [41.0517, 3.50174, -188.603]]
+  groupName:t="sector_2"
+  maxVehicleOnSpawn:i=2
+  respTime:i=150
+  respawnBaseGroup:i=2
+  team:i=2
+  active:b=no
+}
+
+entity{
+  _template:t="respawnChooser+respMotorcycle"
+  transform:m=[[0.984462, 0.0, -0.175596] [0.0, 1.0, 0.0] [0.175596, -0.0, 0.984462] [33.2151, 2.84314, -187.418]]
+  groupName:t="sector_2"
+  team:i=2
+  active:b=no
+  respawnBaseGroup:i=2
+}
+
+entity{
+  _template:t="respawnChooser+respTeam1"
+  transform:m=[[0.684329, -0.00254517, 0.729169] [0.0237276, 0.999542, -0.0187795] [-0.728787, 0.0301528, 0.684075] [154.023, 1.41121, -531.058]]
+  groupName:t="sector_2"
+  active:b=no
+  respawnBaseGroup:i=2
+}
+
+entity{
+  _template:t="respawnChooser+respTeam1"
+  transform:m=[[0.684329, -0.00254517, 0.729169] [0.0237276, 0.999542, -0.0187795] [-0.728787, 0.0301528, 0.684075] [154.023, 1.41121, -531.058]]
+  groupName:t="sector_2"
+  active:b=no
+  respawnBaseGroup:i=2
+}
+
+import{
+  scene:t="gamedata/scenes/_pacific_gavutu_common.blk"
+}

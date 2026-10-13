@@ -1,0 +1,362 @@
+import{
+  scene:t="gamedata/scenes/_berlin_seelow_heights_benchmark_common.blk"
+}
+
+entity{
+  _template:t="screen_fade_anim"
+  screen_fade:r=0.9
+  anim_track_on:b=yes
+}
+
+entity{
+  _template:t="benchmark"
+  benchmark_name:t="berlin_seelow_heights_dynamic"
+
+  "camera_tracks:array"{
+
+    "camera_tracks:object"{
+      from_fov:r=90.0
+      from_pos:p3=604.73, 10.5375, -198.183
+      to_dir:p3=-0.82572, 0.0392292, -0.562715
+      duration:r=25.0
+      to_pos:p3=566.404, 11.8827, -230.443
+      to_fov:r=90.0
+      from_dir:p3=-0.955671, 0.0362125, -0.292202
+    }
+
+    "camera_tracks:object"{
+      from_fov:r=90.0
+      from_pos:p3=472.684, 28.0472, -68.7447
+      to_dir:p3=-0.218093, -0.0945713, -0.971335
+      duration:r=25.0
+      to_pos:p3=457.882, 23.5781, -136.092
+      to_fov:r=90.0
+      from_dir:p3=-0.219217, -0.00674586, -0.975653
+    }
+
+    "camera_tracks:object"{
+      from_fov:r=90.0
+      from_pos:p3=391.13, 13.0124, -262.08
+      to_dir:p3=-0.998568, 0.0276282, -0.0458089
+      duration:r=25.0
+      to_pos:p3=357.557, 13.6259, -258.781
+      to_fov:r=90.0
+      from_dir:p3=-0.928414, 0.0115187, 0.37137
+    }
+
+    "camera_tracks:object"{
+      from_fov:r=90.0
+      from_pos:p3=289.538, 13.5937, -127.008
+      to_dir:p3=-0.991128, 0.0508656, -0.122796
+      duration:r=25.0
+      to_pos:p3=262.109, 14.2554, -128.614
+      to_fov:r=90.0
+      from_dir:p3=-0.962865, 0.157823, -0.219049
+    }
+
+    "camera_tracks:object"{
+      from_fov:r=90.0
+      from_pos:p3=80.2206, 13.3238, -192.11
+      to_dir:p3=-0.214216, 0.0628715, 0.974761
+      duration:r=25.0
+      to_pos:p3=78.3724, 14.1563, -160.33
+      to_fov:r=90.0
+      from_dir:p3=-0.232563, 0.0065962, 0.972559
+    }
+
+    "camera_tracks:object"{
+      from_fov:r=90.0
+      from_pos:p3=-169.906, 13.4653, -75.4255
+      to_dir:p3=0.932319, 0.0173359, -0.361221
+      duration:r=25.0
+      to_pos:p3=-117.117, 12.9853, -98.2565
+      to_fov:r=90.0
+      from_dir:p3=0.959332, 0.0139475, -0.281935
+    }
+  }
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [581.394, 6.87678, -214.329]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [583.601, 6.98666, -211.97]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [583.897, 6.84322, -215.059]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [584.445, 6.62512, -217.206]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [369.13, 10.7977, -257.714]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [372.867, 10.7977, -260.92]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [361.747, 10.7977, -260.416]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [359.223, 10.7968, -256.619]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [353.952, 10.7977, -258.153]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [347.737, 10.7977, -255.209]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [270.106, 10.7977, -133.863]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [267.494, 10.7977, -130.305]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [263.544, 10.7977, -134.45]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [257.312, 10.7977, -132.364]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [250.43, 10.7977, -128.32]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [276.724, 10.7977, -129.144]]
+}
+
+entity{
+  _template:t="artillery_strike_requester"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-141.065, 11.1523, -85.1637]]
+}
+
+entity{
+  _template:t="artillery_strike_requester"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-118.612, 10.7041, -94.1155]]
+}
+
+entity{
+  _template:t="artillery_strike_requester"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-93.5027, 10.0947, -106.231]]
+}
+
+entity{
+  _template:t="pzkpfw_v_ausf_g_panther_a_destroyed"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-119.564, 10.3886, -102.467]]
+}
+
+entity{
+  _template:t="pzkpfw_v_ausf_g_panther_a_destroyed"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [240.709, 10.7977, -123.005]]
+}
+
+entity{
+  _template:t="pzkpfw_v_ausf_g_panther_a_destroyed"
+  transform:m=[[-0.038217, -0.000360115, 0.99927] [0.000814209, 1.0, 0.000391518] [-0.999269, 0.000828577, -0.0382167] [335.224, 10.8845, -251.522]]
+}
+
+entity{
+  _template:t="pzkpfw_v_ausf_g_panther_a_destroyed"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [426.701, 10.3457, -253.894]]
+}
+
+entity{
+  _template:t="pzkpfw_v_ausf_g_panther_a_destroyed"
+  transform:m=[[-0.680782, -0.00916184, 0.732429] [-0.0086612, 0.999953, 0.00445779] [-0.732435, -0.00330893, -0.680829] [472.161, 11.823, -183.342]]
+}
+
+entity{
+  _template:t="pzkpfw_v_ausf_g_panther_a_destroyed"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [436.412, 11.9184, -169.089]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [73.3114, 12.4214, -169.398]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [69.4312, 11.8314, -168.04]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [73.5252, 12.4115, -162.024]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [72.6552, 12.103, -149.778]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [64.6653, 11.897, -146.073]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [51.4715, 11.8924, -142.059]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [69.5273, 11.7611, -174.044]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [65.1215, 12.3413, -136.978]]
+}
+
+entity{
+  _template:t="artillery_strike_requester"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [453.144, 9.98347, -208.843]]
+}
+
+entity{
+  _template:t="artillery_strike_requester"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [411.712, 11.0387, -207.618]]
+}
+
+entity{
+  _template:t="artillery_strike_requester"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [446.099, 9.77295, -229.671]]
+}
+
+entity{
+  _template:t="artillery_strike_requester"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [464.344, 11.7607, -174.794]]
+}
+
+entity{
+  _template:t="game_rendinst+undestroyable_ri_extra"
+  transform:m=[[-0.0100697, 0.0, -0.99995] [0.0, 1.0, 0.0] [0.999949, 0.0, -0.0100697] [469.822, 10.442, -217.347]]
+  ri_extra__name:t="bunker_lamp_ceiling_a"
+}
+
+entity{
+  _template:t="game_rendinst+undestroyable_ri_extra"
+  transform:m=[[-0.0100697, 0.0, -0.99995] [0.0, 1.0, 0.0] [0.999949, 0.0, -0.0100697] [469.822, 10.442, -220.615]]
+  ri_extra__name:t="bunker_lamp_ceiling_a"
+}
+
+entity{
+  _template:t="spot_light_bunker_ceiling_a+game_object"
+  transform:m=[[-0.0100698, 0.0, -0.99995] [0.999949, 0.0, -0.0100698] [0.0, -4.0, -0.0] [469.822, 10.1438, -220.623]]
+}
+
+entity{
+  _template:t="game_rendinst+undestroyable_ri_extra"
+  transform:m=[[-0.0100697, 0.0, -0.99995] [0.0, 1.0, 0.0] [0.999949, 0.0, -0.0100697] [476.092, 9.94226, -222.176]]
+  ri_extra__name:t="bunker_lamp_ceiling_a"
+}
+
+entity{
+  _template:t="spot_light_bunker_ceiling_a+game_object"
+  transform:m=[[-0.0100698, 0.0, -0.99995] [0.999949, 0.0, -0.0100698] [0.0, -4.0, -0.0] [476.092, 9.64403, -222.184]]
+}
+
+entity{
+  _template:t="game_rendinst+undestroyable_ri_extra"
+  transform:m=[[-0.999949, 0.0, 0.0100702] [-0.0100702, -1.19209e-07, -0.99995] [0.0, -1.0, 1.19209e-07] [465.325, 9.77208, -217.288]]
+  ri_extra__name:t="bunker_lamp_wall_a"
+}
+
+entity{
+  _template:t="game_rendinst+undestroyable_ri_extra"
+  transform:m=[[0.999828, 2.22045e-16, -0.0185499] [0.01855, -1.19209e-07, 0.999829] [-2.21132e-09, -1.0, -1.19189e-07] [473.429, 9.7761, -217.397]]
+  ri_extra__name:t="bunker_lamp_wall_a"
+}
+
+entity{
+  _template:t="light_bunker_wall+game_object"
+  transform:m=[[0.0185499, -1.62921e-07, 0.999829] [-0.999828, 8.21564e-15, 0.0185499] [-3.02218e-09, -1.0, -1.62893e-07] [473.564, 9.7761, -217.399]]
+}
+
+entity{
+  _template:t="light_bunker_wall+game_object"
+  transform:m=[[0.0185499, -1.62921e-07, 0.999829] [-0.999828, 8.21564e-15, 0.0185499] [-3.02218e-09, -1.0, -1.62893e-07] [466.463, 9.7761, -217.332]]
+}
+
+entity{
+  _template:t="game_rendinst+undestroyable_ri_extra"
+  transform:m=[[0.999828, 2.22045e-16, -0.0185499] [0.01855, -1.19209e-07, 0.999829] [-2.21132e-09, -1.0, -1.19189e-07] [466.328, 9.7761, -217.33]]
+  ri_extra__name:t="bunker_lamp_wall_a"
+}
+
+entity{
+  _template:t="game_rendinst+undestroyable_ri_extra"
+  transform:m=[[-0.999949, 0.0, 0.0100702] [-0.0100702, -1.19209e-07, -0.99995] [0.0, -1.0, 1.19209e-07] [465.325, 9.77208, -217.288]]
+  ri_extra__name:t="bunker_lamp_wall_a"
+}
+
+entity{
+  _template:t="game_rendinst+undestroyable_ri_extra"
+  transform:m=[[0.999828, 2.22045e-16, -0.0185499] [0.01855, -1.19209e-07, 0.999829] [-2.21132e-09, -1.0, -1.19189e-07] [478.417, 9.7761, -218.439]]
+  ri_extra__name:t="bunker_lamp_wall_a"
+}
+
+entity{
+  _template:t="light_bunker_wall+game_object"
+  transform:m=[[0.0185499, -1.62921e-07, 0.999829] [-0.999828, 8.21564e-15, 0.0185499] [-3.02218e-09, -1.0, -1.62893e-07] [478.553, 9.7761, -218.441]]
+}
+
+entity{
+  _template:t="light_bunker_wall+game_object"
+  transform:m=[[-0.716497, -1.62921e-07, -0.697591] [0.69759, 1.42108e-14, -0.716497] [1.16732e-07, -1.0, 1.13652e-07] [464.26, 10.6113, -225.374]]
+}
+
+entity{
+  _template:t="game_rendinst+undestroyable_ri_extra"
+  transform:m=[[-0.69759, -3.55271e-15, 0.716497] [-0.716498, -1.19209e-07, -0.697591] [8.5413e-08, -1.0, 8.31592e-08] [464.355, 10.6113, -225.471]]
+  ri_extra__name:t="bunker_lamp_wall_a"
+}
+
+entity{
+  _template:t="light_bunker_wall+game_object"
+  transform:m=[[-0.0204057, -1.62921e-07, -0.999793] [0.999792, 1.13243e-14, -0.0204057] [3.32453e-09, -1.0, 1.62887e-07] [465.189, 9.7761, -217.286]]
+}
+
+entity{
+  _template:t="game_rendinst+undestroyable_ri_extra"
+  transform:m=[[0.996625, -2.66454e-15, 0.0820869] [-0.082087, -1.19209e-07, 0.996627] [9.78548e-09, -1.0, -1.18807e-07] [456.363, 11.1431, -220.615]]
+  ri_extra__name:t="bunker_lamp_wall_a"
+}
+
+entity{
+  _template:t="light_bunker_wall+game_object"
+  transform:m=[[-0.0820876, -1.62921e-07, 0.996626] [-0.996625, 1.25233e-13, -0.0820876] [1.33737e-08, -1.0, -1.62371e-07] [456.498, 11.1431, -220.603]]
+}

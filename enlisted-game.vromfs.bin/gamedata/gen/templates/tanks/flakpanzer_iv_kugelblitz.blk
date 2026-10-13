@@ -1,0 +1,213 @@
+base_flakpanzer_iv_kugelblitz{
+  _use:t="base_tank"
+  _use:t="flakpanzer_iv_kugelblitz_ammo_stowages"
+  _use:t="vehicle_physical_tracks"
+  killLogName:t="flakpanzer_iv_kugelblitz"
+  animchar__res:t="flpz_IV_Kugelblitz_char"
+  animchar_fast_phys__res:t="flpz_IV_Kugelblitz_fastphys"
+  collres__res:t="flpz_IV_Kugelblitz_collision"
+  vehicle_net_phys__blk:t="gamedata/gen/units/tanks/flakpanzer_iv_kugelblitz.blk:VehiclePhys"
+  particle_phys__blk:t="gamedata/gen/units/tanks/flakpanzer_iv_kugelblitz.blk:PhysSys"
+  dmg_animchar__res:t="flpz_IV_Kugelblitz_dmg_char"
+  xray_resource__modelName:t="flpz_IV_Kugelblitz"
+  cockpit__zoomOutFov:r=2.7475
+  cockpit__zoomInFov:r=5.3955
+  cockpit__sightName:t="sight_model/default_tank_spg"
+  cockpit__sightFov:r=20.0
+  drowningHeight:r=1.92
+  damage_model__blk:t="gamedata/gen/units/tanks/flakpanzer_iv_kugelblitz.blk"
+  item__name:t="items/flakpanzer_iv_kugelblitz"
+  physical_tracks__blk:t="gamedata/gen/units/tanks/flakpanzer_iv_kugelblitz.blk"
+  skin__template:t="flakpanzer_iv_kugelblitz_skins"
+  losable_turret__detachBone:t="bone_turret"
+  losable_turret__detachCollNode:t="cls_turret_01"
+  losable_turret__mass:r=4300.0
+  losable_turret__deviation:r=0.4
+  losable_turret__rotation:r=2.5
+  fire_damage__openHatchesOnExplosion:b=yes
+
+  animchar_fast_phys{
+    _tags:t="gameClient"
+  }
+
+  "turret_gun_flash_fx__flashNodes:shared:array"{
+    node:t="emtr_gun_flame_01"
+    node:t="emtr_gun_flame_02"
+    node:t="emtr_mg_flame_01"
+  }
+
+  "turret_gun_flash_fx__flashFx:shared:array"{
+    fx:t="muzzle_ground_30mm_brake"
+    fx:t="muzzle_ground_30mm_brake"
+    fx:t="muzzle_ground_8mm"
+  }
+
+  "turret_gun_flash_fx__flashFxScale:shared:array"{
+    scale:r=1.0
+    scale:r=1.0
+    scale:r=1.0
+  }
+
+  "turret_control__emitterNodes:shared:array"{
+    node:t="bone_gun_barrel_01"
+    node:t="bone_gun_barrel_02"
+    node:t="bone_mg_v_01"
+  }
+
+  "turret_control__animVars:shared:array"{
+
+    "vars:object"{
+      curYawParamName:t="turret_01_yaw"
+      curPitchParamName:t="gun_01_pitch"
+      aimActiveParamName:t="aim_01_active"
+      paramYawSpeed:t="turret_01_yaw_speed"
+      wishYawParamName:t="gun_01_aim:targetYaw"
+      paramYawAccel:t="turret_01_yaw_accel"
+      paramPitchSpeed:t="gun_01_pitch_speed"
+      wishPitchParamName:t="gun_01_aim:targetPitch"
+      paramPitchAccel:t="gun_01_pitch_accel"
+      gunRecoilParamName:t="gun_01_recoil"
+      paramMinYawAngle:t="turret_01_min_yaw_angle"
+      paramMaxYawAngle:t="turret_01_max_yaw_angle"
+      paramMinPitchAngle:t="turret_01_min_pitch_angle"
+      paramMaxPitchAngle:t="turret_01_max_pitch_angle"
+      gunRecoilKickTime:r=0.1
+      gunRecoilReturnTime:r=0.25
+    }
+
+    "vars:object"{
+      curYawParamName:t="turret_02_yaw"
+      curPitchParamName:t="gun_02_pitch"
+      gunRecoilParamName:t="gun_02_recoil"
+      gunRecoilKickTime:r=0.1
+      gunRecoilReturnTime:r=0.25
+    }
+
+    "vars:object"{
+      curYawParamName:t="turret_03_yaw"
+      curPitchParamName:t="gun_03_pitch"
+      aimActiveParamName:t="aim_03_active"
+      paramYawSpeed:t="turret_03_yaw_speed"
+      paramYawSpeedMul:t="turret_03_yaw_mul"
+      paramYawAccel:t="turret_03_yaw_accel"
+      paramMinYawAngle:t="turret_03_min_yaw_angle"
+      paramMaxYawAngle:t="turret_03_max_yaw_angle"
+      paramMinPitchAngle:t="turret_03_min_pitch_angle"
+      paramMaxPitchAngle:t="turret_03_max_pitch_angle"
+      paramPitchSpeed:t="gun_03_pitch_speed"
+      paramPitchSpeedMul:t="gun_03_pitch_mul"
+      paramPitchAccel:t="gun_03_pitch_accel"
+      wishYawParamName:t="gun_03_aim:targetYaw"
+      wishPitchParamName:t="gun_03_aim:targetPitch"
+    }
+  }
+
+  "turret_control__turretInfo:shared:array"{
+
+    "turretInfo:object"{
+      turretName:t="turret_01"
+      gun:t="flakpanzer_iv_kugelblitz_turret_01_30mm_mk103_38+main_turret"
+      barrelDm:t="gun_barrel_01"
+      breechDm:t="cannon_breech_01"
+      verDriveDm:t="drive_turret_v"
+      horDriveDm:t="drive_turret_h"
+      salt:i=1
+    }
+
+    "turretInfo:object"{
+      turretName:t="turret_02"
+      gun:t="flakpanzer_iv_kugelblitz_turret_02_30mm_mk103_38"
+      barrelDm:t="gun_barrel_02"
+      breechDm:t="cannon_breech_02"
+      verDriveDm:t="drive_turret_v"
+      horDriveDm:t="drive_turret_h"
+      salt:i=1
+    }
+
+    "turretInfo:object"{
+      turretName:t="turret_03"
+      gun:t="flakpanzer_iv_kugelblitz_turret_03_7_92mm_mg34"
+      barrelDm:t="gun_barrel_03"
+      salt:i=1
+    }
+  }
+}
+
+flakpanzer_iv_kugelblitz_turret_01_30mm_mk103_38{
+  _use:t="tankgun_30mm_mk103_38"
+  gun__shootNodeName:t="emtr_gun_flame_01"
+  turret__yawSpeed:r=60.0
+  turret__pitchSpeed:r=20.0
+  turret__aimNodeName:t="bone_turret"
+  turret__limit:p4=-180.0, 180.0, -7.0, 80.0
+
+  "gun__shellsAmmo:array"{
+    ammo:i=150
+    ammo:i=150
+    ammo:i=150
+    ammo:i=150
+  }
+}
+
+flakpanzer_iv_kugelblitz_turret_02_30mm_mk103_38{
+  _use:t="tankgun_30mm_mk103_38"
+  gun__shootNodeName:t="emtr_gun_flame_02"
+
+  "gun__shellsAmmo:array"{
+    ammo:i=150
+    ammo:i=150
+    ammo:i=150
+    ammo:i=150
+  }
+}
+
+flakpanzer_iv_kugelblitz_turret_03_7_92mm_mg34{
+  _use:t="tankgun_7_92mm_mg34"
+  gun__shootNodeName:t="emtr_mg_flame_01"
+  turret__yawSpeed:r=35.0
+  turret__pitchSpeed:r=35.0
+  turret__aimNodeName:t="bone_mg_h_01"
+  turret__limit:p4=-20.0, 20.0, -10.0, 10.0
+
+  "gun__shellsAmmo:array"{
+    ammo:i=900
+    ammo:i=900
+  }
+}
+
+flakpanzer_iv_kugelblitz_ammo_stowages{
+  _tags:t="server"
+  _use:t="vehicle_ammo_stowages"
+
+  "ammo_stowage__stowageTemplates:shared:list<t>"{
+    stowage:t="flakpanzer_iv_kugelblitz_ammo_stowage_1"
+  }
+}
+
+flakpanzer_iv_kugelblitz_ammo_stowage_1{
+  _use:t="ammo_stowage"
+
+  "ammo_stowage__clusterTemplates:shared:list<t>"{
+    cluster:t="flakpanzer_iv_kugelblitz_ammo_cluster_1_1"
+  }
+
+  "ammo_stowage__turretNames:shared:list<t>"{
+    gun:t="turret_01"
+    gun:t="turret_02"
+  }
+}
+
+flakpanzer_iv_kugelblitz_ammo_cluster_1_1{
+  _use:t="ammo_cluster"
+  ammo_cluster__isShell:b=yes
+
+  "ammo_cluster__slotNames:shared:list<t>"{
+    part:t="ammo_turret_01"
+    part:t="ammo_turret_02"
+  }
+
+  "ammo_cluster__slotsMaxAmmo:list<i>"{
+    count:i=600
+    count:i=600
+  }
+}

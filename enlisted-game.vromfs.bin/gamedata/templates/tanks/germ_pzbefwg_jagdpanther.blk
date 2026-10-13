@@ -1,0 +1,350 @@
+germ_pzbefwg_jagdpanther{
+  _use:t="germ_pzbefwg_jagdpanther_common"
+
+  "turrets__initAmmoDistribution:array"{
+
+    "ammo:object"{
+      slot:i=0
+      fill:b=yes
+    }
+
+    "ammo:object"{
+      slot:i=1
+      fill:b=yes
+    }
+  }
+}
+
+germ_pzbefwg_jagdpanther_common{
+  _use:t="base_pzbefwg_jagdpanther"
+  _use:t="germ_jagdpanther_common_vehicle_sound"
+  commanderCockpitFpsCamMaxAngle:p2=40.0, 5.0
+  gunner_cam_limit__useCockpitDir:b=yes
+  item__iconOffset:p2=0.04, 0.1
+  item__iconScale:r=1.26
+  armorThicknessHull:p3=80.0, 40.0, 40.0
+  armorThicknessTurret:p3=80.0, 50.0, 40.0
+
+  "onlyRootDecorAttach:tag"{
+  }
+
+  "vehicle_seats__effectors:array"{
+  }
+
+  "vehicle_seats__seatsProvideOrder:tag"{
+  }
+
+  "vehicle_seats__seats:shared:array"{
+
+    "seats:object"{
+      name:t="commander"
+      nextSeat:t="main_gunner"
+      locName:t="vehicle_seats/commander"
+      attachNode:t="commander"
+      shouldHideOwner:b=yes
+      maxPosWithOpenHatch:r=0.7
+      hatchRotationAxis:p3=1.9, 0.0, 0.0
+      ignoreAttachNodeRotation:b=yes
+      attachTm:m=[[0.9, 0.0, 0.0] [0.0, 0.9, 0.0] [0.0, 0.0, 0.9] [-0.05, -0.4, 0.09]]
+      seatComponent:t="isDriver"
+      receiveDamageFromDMPart:t="commander"
+      cameraNodeName:t="bone_turret"
+      cockpitTemplate:t="germ_pzbefwg_jagdpanther_commander_cockpit"
+
+      "hatchNodes:array"{
+        node:t="hatch_01"
+        node:t="hatch_02"
+      }
+
+      "effectors:object"{
+
+        "l.hand:object"{
+          rel_tm:m=[[0.991295, 0.05391553, -0.1201109] [0.05302235, -0.998539, -0.01062343] [-0.120508, 0.004162288, -0.9927035] [0.8688354, 2.521264, 0.3519961]]
+          node:t="root"
+        }
+
+        "r.hand:object"{
+          rel_tm:m=[[0.9160202, 0.1005914, 0.3883159] [0.3647969, -0.6115029, -0.7021331] [0.1668272, 0.7848218, -0.5968425] [0.8516541, 2.563513, 0.7425271]]
+          node:t="root"
+        }
+      }
+    }
+
+    "seats:object"{
+      name:t="main_gunner"
+      locName:t="vehicle_seats/gunner"
+      attachNode:t="gunner"
+      ignoreAttachNodeRotation:b=yes
+      attachTm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-0.25, -0.5, 0.0]]
+      seatComponent:t="isGunner"
+      nextSeat:t="driver"
+      shouldHideOwner:b=yes
+      receiveDamageFromDMPart:t="gunner"
+      cameraNodeName:t="bone_camera_gunner"
+      cockpitTemplate:t="germ_pzbefwg_jagdpanther_gunner_cockpit"
+
+      "turretNames:array"{
+        turret:t="turret_01"
+      }
+    }
+
+    "seats:object"{
+      name:t="driver"
+      locName:t="vehicle_seats/driver"
+      seatOwnsEntityControl:b=yes
+      attachNode:t="driver"
+      ignoreAttachNodeRotation:b=yes
+      attachTm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-0.25, -0.25, 0.0]]
+      seatComponent:t="isDriver"
+      nextSeat:t="machinegunner"
+      shouldHideOwner:b=yes
+      receiveDamageFromDMPart:t="driver"
+      cameraNodeName:t="bone_camera_driver"
+      cameraOffset:p3=0.15, -0.0, -0.0
+      cockpitTemplate:t="germ_pzbefwg_jagdpanther_driver_cockpit"
+    }
+
+    "seats:object"{
+      name:t="loader"
+      canPlaceManually:b=no
+      locName:t="vehicle_seats/loader"
+      attachNode:t="loader"
+      ignoreAttachNodeRotation:b=yes
+      attachTm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-0.25, -0.5, 0.0]]
+      seatComponent:t="isPassenger"
+      shouldHideOwner:b=yes
+      receiveDamageFromDMPart:t="loader"
+      cameraNodeName:t="bone_camera_driver"
+
+      "loaderTurretNames:array"{
+        turret:t="turret_01"
+      }
+    }
+
+    "seats:object"{
+      name:t="machinegunner"
+      canPlaceManually:b=yes
+      locName:t="vehicle_seats/radioman"
+      attachNode:t="machine_gunner"
+      ignoreAttachNodeRotation:b=yes
+      attachTm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-0.25, -0.5, 0.0]]
+      seatComponent:t="isGunner"
+      shouldHideOwner:b=yes
+      receiveDamageFromDMPart:t="machine_gunner"
+      cameraNodeName:t="root"
+      cockpitTemplate:t="germ_pzbefwg_jagdpanther_machinegunner_cockpit"
+
+      "turretNames:array"{
+        turret:t="turret_02"
+      }
+    }
+  }
+}
+
+germ_pzbefwg_jagdpanther_commander_cockpit{
+  _use:t="base_commander_cockpit_no_slits"
+  animchar__res:t="t_26_1940_commander_char"
+  cockpit__offset:p3=0.0, 0.0, 0.0
+  cockpit__minForwardOffset:r=-0.0
+
+  "cockpit__cockpitOffsetBySlit:list<p3>"{
+    item:p3=0.45, 2.7, -0.56
+  }
+
+  "cockpit__slitForwardOffset:list<r>"{
+    slit:r=0.165
+  }
+
+  "cockpit__slitIsGun:list<b>"{
+    slit:b=yes
+  }
+
+  "cockpit__slitNodeNames:list<t>"{
+    slit:t="cam_front"
+  }
+
+  "cockpit__visibleVehicleNodeNames:list<t>"{
+    node:t="gun_barrel"
+    node:t="@root"
+    node:t="gun_mask"
+    node:t="hatch_01"
+    node:t="hatch_02"
+    node:t="hatch_03"
+    node:t="hatch_04"
+    node:t="hatch_05"
+    node:t="hatch_06"
+    node:t="hatch_07"
+    node:t="ex_decor_r_08"
+    node:t="ex_armor_body_l_02"
+    node:t="ex_armor_body_l_01"
+    node:t="ex_decor_01"
+    node:t="ex_decor_r_02"
+    node:t="ex_decor_l_02"
+    node:t="ex_lantern_01"
+    node:t="ex_decor_02"
+  }
+
+  "cockpit__attachNodeNames:list<t>"{
+    node:t="root"
+  }
+
+  "cockpit__attachNodeIndices:list<i>"{
+  }
+
+  "cockpit__periscopeLimits:list<p4>"{
+    slit:p4=-90.0, 90.0, -8.0, 25.0
+  }
+
+  "cockpit__periscopeSpeed:list<p2>"{
+    slit:p2=35.0, 35.0
+  }
+
+  "cockpit__slitZoom:array"{
+
+    "slit:list<r>"{
+      zoom:r=1.44
+    }
+  }
+
+  "cockpit__slitZoomTime:list<r>"{
+    slit:r=0.0
+  }
+
+  "cockpit__slitTemplates:list<t>"{
+    slit:t="default_periscope"
+  }
+
+  "cockpit__slitEids:list<eid>"{
+  }
+}
+
+germ_pzbefwg_jagdpanther_gunner_cockpit{
+  _use:t="base_gunner_cockpit"
+  animchar__res:t="pzkpfw_iii_e_gunner_char"
+  cockpit__offset:p3=-1.40652, 0.595096, 0.45617
+
+  "cockpit__attachNodeNames:list<t>"{
+    node:t="bone_gun"
+  }
+
+  "cockpit__attachNodeIndices:list<i>"{
+  }
+
+  "cockpit__slitForwardOffset:list<r>"{
+    slit:r=0.18
+  }
+
+  "cockpit__slitIsGun:list<b>"{
+    slit:b=yes
+  }
+
+  "cockpit__slitNodeNames:list<t>"{
+    slit:t="cam_front"
+  }
+
+  "cockpit__visibleVehicleNodeNames:list<t>"{
+    node:t="gun_barrel"
+    node:t="gun_mask"
+  }
+
+  "cockpit__slitZoom:array"{
+
+    "slit:list<r>"{
+      zoom:r=4.5
+      zoom:r=5.0
+    }
+  }
+
+  "cockpit__slitZoomTime:list<r>"{
+    slit:r=0.05
+  }
+
+  "cockpit__slitTemplates:list<t>"{
+    slit:t="germ_sfl_zf_1a"
+  }
+
+  "cockpit__slitEids:list<eid>"{
+  }
+}
+
+germ_pzbefwg_jagdpanther_driver_cockpit{
+  _use:t="base_driver_cockpit_no_slits"
+  animchar__res:t="pzkpfw_iii_e_driver_char"
+  cockpit__offset:p3=1.65, 1.75052, 0.7
+
+  "cockpit__slitForwardOffset:list<r>"{
+    slit:r=-0.08
+  }
+
+  "cockpit__slitIsGun:list<b>"{
+    slit:b=no
+  }
+
+  "cockpit__slitNodeNames:list<t>"{
+    slit:t="cam_front"
+  }
+
+  "cockpit__attachNodeIndices:list<i>"{
+  }
+
+  "cockpit__attachNodeNames:list<t>"{
+    node:t="root"
+  }
+
+  "cockpit__visibleVehicleNodeNames:list<t>"{
+    node:t="gun_barrel"
+  }
+}
+
+germ_pzbefwg_jagdpanther_machinegunner_cockpit{
+  _use:t="base_gunner_cockpit"
+  animchar__res:t="ba_11_gunner_char"
+  cockpit__offset:p3=-0.3, -0.0, 0.3
+
+  "cockpit__visibleVehicleNodeNames:list<t>"{
+    node:t="@root"
+  }
+
+  "cockpit__slitNodeNames:list<t>"{
+    slit:t="cam_front_right"
+  }
+
+  "cockpit__slitForwardOffset:list<r>"{
+    slit:r=0.2
+  }
+
+  "cockpit__slitIsGun:list<b>"{
+    slit:b=yes
+  }
+
+  "cockpit__attachNodeNames:list<t>"{
+    node:t="bone_mg_gun_twin_v"
+  }
+
+  "cockpit__attachNodeIndices:list<i>"{
+  }
+
+  "cockpit__slitZoom:array"{
+
+    "slit:list<r>"{
+      zoom:r=2.0
+    }
+  }
+
+  "cockpit__slitZoomTime:list<r>"{
+    slit:r=0.05
+  }
+
+  "cockpit__slitTemplates:list<t>"{
+    slit:t="cross"
+  }
+
+  "cockpit__slitEids:list<eid>"{
+  }
+}
+
+pzbefwg_jagdpanther_turret_02_7_92mm_mg34{
+  _override:b=yes
+  turret__yawSpeed:r=35.0
+  turret__pitchSpeed:r=35.0
+}

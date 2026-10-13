@@ -1,0 +1,54 @@
+mass:r=0.131
+caliber:r=0.02
+speed:r=750.0
+Cx:r=0.45
+maxDistance:r=2000.0
+explosiveType:t="detonite"
+explosiveMass:r=0.004
+normalizationPreset:t="ap"
+ricochetPreset:t="ap"
+groundRicochetPreset:t="ap"
+fuseDelayDist:r=1.2
+secondaryShattersPreset:t="ap"
+explodeTreshold:r=1.0
+stabilityReductionAfterRicochet:r=0.5
+relativeVelHitShift:p2=300.0, 1000.0
+stabilityReductionAfterPenetration:r=0.15
+stucking:r=0.7
+stuckingAngle:r=45.0
+bulletType:t="aphe"
+recoilMultiplier:r=0.3
+slopeEffectPreset:t="ap"
+onHitChanceMultFire:r=3.0
+
+stabilityRicochetModifier{
+  mod1:p2=0.0, 0.05
+  mod2:p2=20.0, 0.1
+  mod3:p2=30.0, 0.2
+  mod3:p2=45.0, 0.3
+}
+
+damage{
+
+  kinetic{
+    damageType:t="generic"
+    demarrePenetrationK:r=0.9
+    demarreSpeedPow:r=1.43
+    demarreMassPow:r=0.71
+    demarreCaliberPow:r=1.07
+  }
+}
+
+hitpower{
+  HitPower0m:p2=1.0, 0.0
+  HitPower1000m:p2=0.9, 0.0
+  HitPower10000m:p2=0.8, 10000.0
+}
+
+tracer{
+  headColor:c=0, 0, 0, 0
+  smokeColor:c=0, 0, 0, 0
+  startHeadColor:c=0, 0, 0, 0
+  startTime:r=0.0
+  smokeRadius:r=0.01
+}

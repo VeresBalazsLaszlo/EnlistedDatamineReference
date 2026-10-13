@@ -1,0 +1,34 @@
+base_88mm_flak37{
+  item__name:t="guns/88mm_flak37"
+  gun__blk:t="gamedata/gen/weapons/88mm_flak37.blk"
+  gun__shotFreq:r=0.2
+  gun__locName:t="88mm_flak37"
+
+  "gun__ammoSetsInfo:shared:array"{
+
+    "defaultSet:array"{
+
+      "shell:object"{
+        blk:t="gamedata/gen/weapons/shells/88mm_flak37_defaultset.blk"
+        name:t="88mm_pzgr"
+        type:t="apcbc_tank"
+      }
+    }
+
+    "88mm_ger_kwk36_default_HE:array"{
+
+      "shell:object"{
+        blk:t="gamedata/gen/weapons/shells/88mm_flak37_88mm_ger_kwk36_default_he.blk"
+        name:t="88mm_sprgr"
+        type:t="he_frag_dist_fuse"
+      }
+    }
+  }
+}
+
+tankgun_88mm_flak37{
+  _use:t="tankgun"
+  _use:t="base_tankgun_cannon"
+  _use:t="base_88mm_flak37"
+  turret__triggerGroup:i=0
+}

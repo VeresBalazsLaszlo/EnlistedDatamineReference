@@ -1,0 +1,141 @@
+import{
+  scene:t="gamedata/scenes/_normandy_ardennes_winter_benchmark_common.blk"
+}
+
+entity{
+  _template:t="screen_fade_anim"
+  screen_fade:r=0.9
+  anim_track_on:b=yes
+}
+
+entity{
+  _template:t="ui_disabled"
+}
+
+entity{
+  _template:t="benchmark"
+  benchmark_name:t="normandy_ardennes_winter_benchmark"
+
+  "camera_tracks:array"{
+
+    "camera_tracks:object"{
+      from_fov:r=75.0
+      from_pos:p3=6.86432, 9.86836, -203.422
+      to_dir:p3=-0.99622, 0.0291346, -0.0818287
+      duration:r=10.0
+      to_pos:p3=-46.4176, 10.2411, -203.584
+      to_fov:r=90.0
+      from_dir:p3=-0.999663, -0.0257872, 0.00293999
+    }
+
+    "camera_tracks:object"{
+      from_fov:r=90.0
+      from_pos:p3=-62.1445, 7.09152, -322.747
+      to_dir:p3=-0.43237, -0.283632, -0.855926
+      duration:r=10.0
+      to_pos:p3=-144.582, 32.6234, -119.415
+      to_fov:r=90.0
+      from_dir:p3=-0.813206, -0.0418997, 0.580465
+    }
+
+    "camera_tracks:object"{
+      from_fov:r=90.0
+      from_pos:p3=-321.886, 17.245, -321.41
+      to_dir:p3=-0.688519, -0.0129564, 0.725102
+      duration:r=5.0
+      to_pos:p3=-342.569, 16.844, -319.876
+      to_fov:r=90.0
+      from_dir:p3=-0.439134, 0.0178602, 0.898244
+    }
+
+    "camera_tracks:object"{
+      from_fov:r=90.0
+      from_pos:p3=-471.585, 27.7039, -277.396
+      to_dir:p3=-0.980083, 0.0267972, -0.19677
+      duration:r=5.0
+      to_pos:p3=-502.51, 29.8934, -303.389
+      to_fov:r=90.0
+      from_dir:p3=-0.826722, 0.0570483, -0.559711
+    }
+
+    "camera_tracks:object"{
+      from_fov:r=90.0
+      from_pos:p3=-526.421, 35.4347, -257.061
+      to_dir:p3=-0.36904, -0.331006, -0.868473
+      duration:r=10.0
+      to_pos:p3=-549.617, 43.1882, -218.276
+      to_fov:r=90.0
+      from_dir:p3=-0.953296, -0.0757936, 0.292372
+    }
+  }
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [526.702, 35.5533, 114.679]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-32.3585, 6.71556, -205.666]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-33.2407, 6.71556, -202.685]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-36.984, 6.71556, -205.326]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-39.1555, 6.71556, -202.898]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-43.1063, 6.71556, -205.215]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-46.1145, 6.71556, -203.11]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-49.9268, 6.71556, -205.167]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-54.7689, 6.71556, -203.275]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-494.566, 24.9831, -300.374]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-495.927, 24.9856, -296.237]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-500.322, 25.0771, -301.981]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-501.704, 25.3614, -298.294]]
+}
+
+entity{
+  _template:t="customizable_benchmark_animchar"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-508.895, 25.811, -303.654]]
+}

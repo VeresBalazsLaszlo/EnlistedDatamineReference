@@ -1,0 +1,43 @@
+base_95mm_qf_mk1{
+  item__name:t="guns/95mm_qf_mk1"
+  gun__blk:t="gamedata/gen/weapons/95mm_qf_mk1.blk"
+  gun__shotFreq:r=0.1167
+  gun__locName:t="95mm_qf_mk1"
+
+  "gun__ammoSetsInfo:shared:array"{
+
+    "95mm_qf_mk1_heat:array"{
+
+      "shell:object"{
+        blk:t="gamedata/gen/weapons/shells/95mm_qf_mk1_heat.blk"
+        name:t="95mm_shell_heat"
+        type:t="heat_tank"
+      }
+    }
+
+    "95mm_qf_mk1_he:array"{
+
+      "shell:object"{
+        blk:t="gamedata/gen/weapons/shells/95mm_qf_mk1_he.blk"
+        name:t="95mm_shell_mk1a_he"
+        type:t="he_frag_tank"
+      }
+    }
+
+    "95mm_qf_mk1_smoke:array"{
+
+      "shell:object"{
+        blk:t="gamedata/gen/weapons/shells/95mm_qf_mk1_smoke.blk"
+        name:t="100mm_3d3"
+        type:t="smoke_tank"
+      }
+    }
+  }
+}
+
+tankgun_95mm_qf_mk1{
+  _use:t="tankgun"
+  _use:t="base_tankgun_cannon"
+  _use:t="base_95mm_qf_mk1"
+  turret__triggerGroup:i=0
+}

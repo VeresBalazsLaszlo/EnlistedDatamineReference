@@ -1,0 +1,279 @@
+entity{
+  _template:t="poly_battle_area"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-307.067, 2.51688, -1077.95]]
+  battle_area__team:i=1
+  battleAreaId:t="area1"
+
+  "poly_area__points:list<p3>"{
+    item:p3=-259.09, 6.09569, -1003.48
+    item:p3=-281.698, 6.09569, -991.822
+    item:p3=-304.626, 6.09569, -980.046
+    item:p3=-325.471, 6.09569, -988.599
+    item:p3=-347.339, 6.09569, -982.422
+    item:p3=-368.382, 6.09569, -997.465
+    item:p3=-390.962, 6.09569, -1013.83
+    item:p3=-485.797, 6.09569, -1055.88
+    item:p3=-511.543, 6.09569, -1097.37
+    item:p3=-466.01, 6.0957, -1184.78
+    item:p3=-439.475, -0.0205688, -1247.37
+    item:p3=-353.077, -0.0406647, -1299.27
+    item:p3=-224.463, -0.0355682, -1324.07
+    item:p3=-80.1476, 6.0957, -1336.03
+    item:p3=-42.7476, 6.09558, -1176.74
+    item:p3=-67.4319, 6.09558, -1017.32
+    item:p3=-162.931, 6.09558, -991.589
+    item:p3=-197.34, 6.09558, -998.047
+    item:p3=-221.999, 6.09558, -1011.72
+    item:p3=-244.988, 6.09558, -1009.57
+  }
+}
+
+entity{
+  _template:t="poly_battle_area"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-308.721, 2.51687, -1077.19]]
+  battle_area__team:i=2
+  battleAreaId:t="area2"
+
+  "poly_area__points:list<p3>"{
+    item:p3=-311.003, 7.54552, -814.048
+    item:p3=-384.914, 7.54562, -796.787
+    item:p3=-531.844, 7.54567, -825.331
+    item:p3=-600.006, 7.54561, -879.17
+    item:p3=-615.575, 7.54559, -1053.24
+    item:p3=-548.368, 7.54559, -1152.15
+    item:p3=-491.61, 7.54559, -1198.47
+    item:p3=-397.491, 7.54559, -1199.08
+    item:p3=-349.541, 7.54562, -1204.7
+    item:p3=-317.384, 7.54562, -1164.79
+    item:p3=-303.521, 7.54562, -1139.27
+    item:p3=-294.73, 7.54562, -1115.89
+    item:p3=-267.176, 7.54562, -1087.0
+    item:p3=-248.975, 7.54562, -1071.54
+    item:p3=-246.246, 7.54562, -1057.41
+    item:p3=-241.021, 7.54562, -1038.51
+    item:p3=-231.178, 7.54562, -1006.85
+    item:p3=-207.086, 7.54562, -952.412
+    item:p3=-192.4, 7.54562, -906.441
+    item:p3=-195.052, 7.54562, -848.505
+    item:p3=-212.892, 7.54562, -802.202
+  }
+}
+
+entity{
+  _template:t="briefing_domination"
+  mission_name:t="pacific_new_georgia_dom"
+  mission_campaign:t="pacific"
+
+  "loading_images:list<t>"{
+    item:t="ui/pacific_new_georgia_native_village_02.avif"
+    item:t="ui/pacific_new_georgia_ship_01.avif"
+    item:t="ui/pacific_new_georgia_colonial_village_a_01.avif"
+  }
+}
+
+entity{
+  _template:t="enemy_attack_marker"
+  enemy_attack_marker__offset:r=-30.0
+}
+
+entity{
+  _template:t="team_pacific_allies+team_narrator_domination+respawn_creators_team"
+  team__id:i=1
+  team__scoreCap:r=2800.0
+  team__score:r=2800.0
+  score_bleed__domBleed:r=0.0
+  score_bleed__domBleedOn:b=no
+  score_bleed__totalDomZoneCount:i=5
+  score_bleed__totalDomBleedMul:r=2.0
+  score_bleed__totalDomBleedOn:b=no
+  team__briefing:t="domination/common_goals"
+  team__numZonesCaptured:i=0
+  team__deathPenalty:r=0.0
+  team__spawnBotArmy:t="pacific_allies"
+}
+
+entity{
+  _template:t="team_pacific_axis+team_narrator_domination+respawn_creators_team"
+  team__id:i=2
+  team__score:r=2800.0
+  team__scoreCap:r=2800.0
+  score_bleed__domBleed:r=0.0
+  score_bleed__domBleedOn:b=no
+  score_bleed__totalDomZoneCount:i=5
+  score_bleed__totalDomBleedMul:r=2.0
+  score_bleed__totalDomBleedOn:b=no
+  team__briefing:t="domination/common_goals"
+  team__numZonesCaptured:i=0
+  team__deathPenalty:r=0.0
+  team__spawnBotArmy:t="pacific_axis"
+}
+
+entity{
+  _template:t="spawn_switcher"
+  swapProbability:r=0.5
+  team1:i=2
+  team2:i=1
+}
+
+entity{
+  _template:t="resupply_for_ground_vehicle_zone"
+  transform:m=[[0.943273, 0.0, -0.33202] [0.0, 1.0, 0.0] [0.33202, 0.0, 0.943273] [-291.198, 6.29851, -1083.61]]
+  resupply_zone__team:i=1
+  groupName:t=""
+  active:b=no
+}
+
+entity{
+  _template:t="resupply_for_ground_vehicle_zone"
+  transform:m=[[0.943273, 0.0, -0.33202] [0.0, 1.0, 0.0] [0.33202, 0.0, 0.943273] [-487.137, 14.326, -645.278]]
+  resupply_zone__team:i=2
+  groupName:t=""
+  active:b=no
+}
+
+entity{
+  _template:t="domination_sphere_capzone"
+  transform:m=[[1.33034, 0.0, 1.02098] [0.0, 1.03998, -0.0] [-1.00132, 0.0, 1.30472] [-445.802, 5.12833, -898.987]]
+  sphere_zone__radius:r=15.0
+  capzone__caption:t="capzone/chief_house"
+  decal__thickness:r=0.15
+  decal__height:r=1.0
+  capzone__iconOffsetY:r=4.0
+  capzone__title:t="A"
+}
+
+entity{
+  _template:t="respawnChooser+respTeam1"
+  transform:m=[[-0.681629, 0.0, 0.731698] [0.0, 1.0, 0.0] [-0.731698, 0.0, -0.681629] [-306.492, 5.17531, -997.567]]
+}
+
+entity{
+  _template:t="respawnChooser+respTeam1"
+  transform:m=[[-0.564717, 0.0, 0.825285] [0.0, 1.0, 0.0] [-0.825285, 0.0, -0.564717] [-300.529, 5.1552, -994.48]]
+}
+
+entity{
+  _template:t="respawnChooser+respTeam1"
+  transform:m=[[-0.880645, 0.0, -0.473776] [0.0, 1.0, 0.0] [0.473776, 0.0, -0.880645] [-270.215, 12.462, -868.688]]
+  respawnBaseGroup:i=2
+}
+
+entity{
+  _template:t="respawnChooser+respTeam1"
+  transform:m=[[-0.793855, 0.0, -0.608106] [0.0, 1.0, 0.0] [0.608106, 0.0, -0.793855] [-276.548, 14.2837, -919.847]]
+  respawnBaseGroup:i=2
+}
+
+entity{
+  _template:t="respawnChooser+respVehicle"
+  transform:m=[[-0.412591, 0.0, 0.910917] [0.0, 1.0, 0.0] [-0.910917, 0.0, -0.412591] [-292.445, 4.50385, -1081.34]]
+  team:i=1
+  maxVehicleOnSpawn:i=2
+  respTime:i=120
+}
+
+entity{
+  _template:t="respawnChooser+respTeam2"
+  transform:m=[[0.796672, 0.0, -0.604412] [0.0, 1.0, 0.0] [0.604412, -0.0, 0.796672] [-403.848, 11.7041, -693.309]]
+}
+
+entity{
+  _template:t="respawnChooser+respTeam2"
+  transform:m=[[0.329702, 0.0, -0.944085] [0.0, 1.0, 0.0] [0.944085, -0.0, 0.329702] [-398.737, 11.6646, -690.162]]
+}
+
+entity{
+  _template:t="respawnChooser+respTeam2"
+  transform:m=[[0.170666, 0.0, -0.985329] [0.0, 1.0, 0.0] [0.985329, -0.0, 0.170666] [-519.189, 1.83445, -729.034]]
+  respawnBaseGroup:i=2
+}
+
+entity{
+  _template:t="respawnChooser+respTeam2"
+  transform:m=[[0.174762, 0.0, -0.984611] [0.0, 1.0, 0.0] [0.984611, -0.0, 0.174762] [-528.473, 1.72163, -733.799]]
+  respawnBaseGroup:i=2
+}
+
+entity{
+  _template:t="respawnChooser+respVehicle"
+  transform:m=[[0.464859, 0.0, -0.885384] [0.0, 1.0, 0.0] [0.885384, -0.0, 0.464859] [-485.83, 14.6536, -646.929]]
+  maxVehicleOnSpawn:i=2
+  respTime:i=120
+  team:i=2
+}
+
+entity{
+  _template:t="respawnChooser+respMotorcycle"
+  transform:m=[[-0.481286, 0.0, 0.876564] [0.0, 1.0, 0.0] [-0.876564, 0.0, -0.481286] [-292.257, 4.4013, -1081.16]]
+  team:i=1
+}
+
+entity{
+  _template:t="respawnChooser+respMotorcycle"
+  transform:m=[[0.512852, 0.0, -0.858477] [0.0, 1.0, 0.0] [0.858477, -0.0, 0.512852] [-486.152, 14.6929, -647.031]]
+  team:i=2
+}
+
+entity{
+  _template:t="level"
+  level__blk:t="levels/pacific_guadalcanal.blk"
+  level__timeRange:p2=5.0, 19.2
+
+  "level__weatherChoice:object"{
+    weather_clear_a:r=1.0
+  }
+
+  "level__timeVec:array"{
+    level__timeVec:r=16.5
+  }
+}
+
+entity{
+  _template:t="volfog_nbs"
+  volfog_nbs__rootGraph:t="fog_pacific_guadalcanal.json"
+}
+
+entity{
+  _template:t="screen_fade_anim"
+  screen_fade:r=0.9
+  anim_track_on:b=yes
+}
+
+entity{
+  _template:t="ui_disabled"
+}
+
+entity{
+  _template:t="benchmark"
+  benchmark_name:t="pacific_guadalcanal"
+
+  "camera_tracks:array"{
+
+    "camera_tracks:object"{
+      from_fov:r=90.0
+      from_pos:p3=-452.609, 22.6913, -955.662
+      to_dir:p3=-0.167919, 0.0, 0.9858
+      duration:r=10000.0
+      to_pos:p3=-452.609, 22.6913, -955.662
+      to_fov:r=90.0
+      from_dir:p3=-0.167919, 0.0, 0.9858
+    }
+  }
+}
+
+entity{
+  _template:t="artillery_strike_requester"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-427.994, 7.24241, -877.3]]
+  artillery__baseInterval:r=30.0
+  artillery__baseSpawnDelay:r=45.0
+  artillery__interval:r=60.0
+  artillery__missionStartDelay:r=15.0
+  artillery__spawnDelay:r=15.0
+  artillery__lastShotInTime:r=130.069
+  artilleryStrikeSpawnPeriod:r=60.0
+  artilleryStrikeSpawnTime:r=30.0
+}
+
+import{
+  scene:t="gamedata/scenes/_pacific_new_georgia_common.blk"
+}

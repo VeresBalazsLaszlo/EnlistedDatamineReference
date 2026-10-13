@@ -1,0 +1,43 @@
+base_120mm_10th_year_type{
+  item__name:t="guns/120mm_10th_year_type"
+  gun__blk:t="gamedata/gen/weapons/120mm_10th_year_type.blk"
+  gun__shotFreq:r=0.1
+  gun__locName:t="120mm_10th_year_type"
+
+  "gun__ammoSetsInfo:shared:array"{
+
+    "defaultSet:array"{
+
+      "shell:object"{
+        blk:t="gamedata/gen/weapons/shells/120mm_10th_year_type_defaultset.blk"
+        name:t="120mm_common_he_base_fuze"
+        type:t="sapcbc_tank"
+      }
+    }
+
+    "120mm_jp_SAP:array"{
+
+      "shell:object"{
+        blk:t="gamedata/gen/weapons/shells/120mm_10th_year_type_120mm_jp_sap.blk"
+        name:t="120mm_common_he_base_fuze"
+        type:t="sapcbc_tank"
+      }
+    }
+
+    "120mm_jp_HE:array"{
+
+      "shell:object"{
+        blk:t="gamedata/gen/weapons/shells/120mm_10th_year_type_120mm_jp_he.blk"
+        name:t="120mm_ordinary_mod_1"
+        type:t="he_frag_tank"
+      }
+    }
+  }
+}
+
+tankgun_120mm_10th_year_type{
+  _use:t="tankgun"
+  _use:t="base_tankgun_cannon"
+  _use:t="base_120mm_10th_year_type"
+  turret__triggerGroup:i=0
+}

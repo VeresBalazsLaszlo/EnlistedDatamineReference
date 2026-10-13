@@ -1,0 +1,315 @@
+entity{
+  _template:t="personal_box_creator"
+  personal_box_creator__groupIndex:i=0
+  personal_box_creator__template:t="special_weapon_box_personal_to_start"
+}
+
+entity{
+  _template:t="personal_box_info"
+  transform:m=[[0.933941, -0.0197331, -0.356884] [0.0211241, 0.999777, -9.31322e-10] [0.356804, -0.00753885, 0.934148] [336.613, 1.6745, -170.926]]
+  personal_box_info__groupIndex:i=0
+}
+
+entity{
+  _template:t="personal_box_info"
+  transform:m=[[0.82405, 0.0, -0.566518] [0.0, 1.0, 0.0] [0.566517, -0.0, 0.824049] [337.48, 1.68819, -168.162]]
+  personal_box_info__groupIndex:i=0
+}
+
+entity{
+  _template:t="personal_box_info"
+  transform:m=[[0.822418, 0.0683757, -0.564761] [-0.136143, 0.987559, -0.07869] [0.552354, 0.141604, 0.821494] [340.385, 1.93111, -165.228]]
+  personal_box_info__groupIndex:i=0
+}
+
+entity{
+  _template:t="personal_box_info"
+  transform:m=[[0.428981, -0.133339, -0.893419] [-0.0490553, 0.984147, -0.170434] [0.90198, 0.11694, 0.415639] [343.168, 2.25153, -164.614]]
+  personal_box_info__groupIndex:i=0
+}
+
+entity{
+  _template:t="personal_box_creator"
+  groupName:t="sector_1"
+  personal_box_creator__groupIndex:i=1
+  personal_box_creator__template:t="special_weapon_box_personal"
+}
+
+entity{
+  _template:t="personal_box_info"
+  transform:m=[[-0.419654, -0.00503297, -0.90767] [-0.00467547, 0.999983, -0.00338317] [0.907672, 0.00282402, -0.419671] [214.029, 16.1107, -40.9737]]
+  personal_box_info__groupIndex:i=1
+}
+
+entity{
+  _template:t="personal_box_info"
+  transform:m=[[-0.20196, -0.00503297, -0.979381] [-0.00378233, 0.999983, -0.00435888] [0.979386, 0.00282402, -0.201976] [210.886, 16.1107, -39.7848]]
+  personal_box_info__groupIndex:i=1
+}
+
+entity{
+  _template:t="personal_box_info"
+  transform:m=[[0.251917, -0.00503297, 0.967736] [0.00400088, 0.999983, 0.00415919] [-0.96774, 0.00282402, 0.251933] [211.945, 16.1107, -46.8612]]
+  personal_box_info__groupIndex:i=1
+}
+
+entity{
+  _template:t="personal_box_info"
+  transform:m=[[0.430599, -0.00503297, 0.90253] [0.00471604, 0.999983, 0.00332639] [-0.902531, 0.00282402, 0.430615] [208.909, 16.1107, -45.7731]]
+  personal_box_info__groupIndex:i=1
+}
+
+entity{
+  _template:t="personal_box_creator"
+  groupName:t="sector_4"
+  personal_box_creator__groupIndex:i=3
+  personal_box_creator__template:t="special_weapon_box_personal_good_weapon"
+}
+
+entity{
+  _template:t="personal_box_info"
+  transform:m=[[0.8525, -0.00503297, 0.522703] [0.0057668, 0.999983, 0.00022323] [-0.522695, 0.00282402, 0.852514] [-13.5065, 15.3628, 99.8957]]
+  personal_box_info__groupIndex:i=3
+}
+
+entity{
+  _template:t="personal_box_info"
+  transform:m=[[0.992508, -0.00503297, -0.12208] [0.00465053, 0.999983, -0.00341736] [0.122095, 0.00282402, 0.992514] [-13.3479, 15.3628, 102.462]]
+  personal_box_info__groupIndex:i=3
+}
+
+entity{
+  _template:t="personal_box_info"
+  transform:m=[[0.144373, -0.00503297, 0.989511] [0.00352109, 0.999983, 0.0045725] [-0.989517, 0.00282402, 0.144388] [-8.86212, 15.4271, 96.7446]]
+  personal_box_info__groupIndex:i=3
+}
+
+entity{
+  _template:t="personal_box_info"
+  transform:m=[[-0.690217, -0.00503297, -0.723585] [-0.00551735, 0.999983, -0.00169256] [0.723581, 0.00282403, -0.690234] [-6.93923, 15.394, 100.658]]
+  personal_box_info__groupIndex:i=3
+}
+
+entity{
+  _template:t="special_box_creator"
+  transform:m=[[-0.877799, 0.0509394, 0.476312] [0.0279903, 0.998085, -0.055157] [-0.47821, -0.0350846, -0.877544] [294.459, 1.05361, -117.835]]
+  special_box_creator__probability:r=0.3
+  special_box_creator__template:t="special_weapon_box_easy"
+}
+
+entity{
+  _template:t="special_box_creator"
+  transform:m=[[-0.661395, 0.0, -0.750038] [0.0, 1.0, 0.0] [0.750038, 0.0, -0.661395] [265.561, 14.0049, -79.8256]]
+  special_box_creator__probability:r=0.2
+  special_box_creator__template:t="special_weapon_box_easy"
+}
+
+entity{
+  _template:t="special_box_creator"
+  transform:m=[[-0.0585944, -0.0533063, -0.996857] [-0.0282176, 0.998263, -0.0517229] [0.997883, 0.0250983, -0.0599969] [220.69, 9.61551, -94.2411]]
+  special_box_creator__probability:r=0.3
+  special_box_creator__template:t="special_weapon_box_easy"
+}
+
+entity{
+  _template:t="special_box_creator"
+  transform:m=[[-0.661395, 0.0, -0.750038] [0.0, 1.0, 0.0] [0.750038, 0.0, -0.661395] [238.382, 16.3972, -49.3545]]
+  special_box_creator__probability:r=0.3
+  special_box_creator__template:t="special_weapon_box_easy"
+}
+
+entity{
+  _template:t="special_box_creator"
+  transform:m=[[0.936919, 0.0, -0.349545] [-0.0, 1.0, 0.0] [0.349545, 0.0, 0.936919] [223.753, 21.3629, -47.4423]]
+  special_box_creator__probability:r=0.5
+  special_box_creator__template:t="special_weapon_box_easy"
+}
+
+entity{
+  _template:t="special_box_creator"
+  transform:m=[[-0.741208, 0.0, -0.671275] [0.0, 1.0, 0.0] [0.671275, 0.0, -0.741208] [224.95, 16.1173, -39.1881]]
+  special_box_creator__probability:r=0.4
+  special_box_creator__template:t="special_weapon_box_easy"
+}
+
+entity{
+  _template:t="special_box_creator"
+  transform:m=[[0.998418, 0.0, -0.056229] [0.0, 1.0, 0.0] [0.056229, -0.0, 0.998418] [181.647, 16.1237, -18.7047]]
+  special_box_creator__probability:r=0.7
+  special_box_creator__template:t="special_weapon_box_easy"
+}
+
+entity{
+  _template:t="special_box_creator"
+  transform:m=[[-0.538194, 0.0, -0.842821] [0.0, 1.0, 0.0] [0.842821, 0.0, -0.538194] [210.887, 9.07632, 13.18]]
+  special_box_creator__probability:r=0.2
+  special_box_creator__template:t="special_weapon_box_easy"
+}
+
+entity{
+  _template:t="special_box_creator"
+  transform:m=[[0.916099, 0.0, -0.400951] [-0.0, 1.0, 0.0] [0.400951, 0.0, 0.916099] [180.893, 12.6173, 38.0457]]
+  special_box_creator__probability:r=0.3
+  special_box_creator__template:t="special_weapon_box_easy"
+}
+
+entity{
+  _template:t="special_box_creator"
+  transform:m=[[0.931216, 0.0, 0.364467] [0.0, 1.0, -0.0] [-0.364467, 0.0, 0.931216] [137.532, 14.6311, 31.4139]]
+  special_box_creator__probability:r=0.2
+  special_box_creator__template:t="special_weapon_box_easy"
+}
+
+entity{
+  _template:t="special_box_creator"
+  transform:m=[[-0.0898931, 0.0, -0.995951] [0.0, 1.0, 0.0] [0.995951, 0.0, -0.0898931] [155.61, 16.1162, 92.5935]]
+  special_box_creator__probability:r=0.5
+  special_box_creator__template:t="special_weapon_box_easy"
+}
+
+entity{
+  _template:t="special_box_creator"
+  transform:m=[[-0.99113, 0.0, 0.132894] [0.0, 1.0, 0.0] [-0.132894, 0.0, -0.99113] [149.931, 15.8163, 78.4493]]
+  special_box_creator__probability:r=0.3
+  special_box_creator__template:t="special_weapon_box_easy"
+}
+
+entity{
+  _template:t="special_box_creator"
+  transform:m=[[0.746992, 0.0, 0.664833] [0.0, 1.0, -0.0] [-0.664833, 0.0, 0.746992] [147.676, 22.8127, 77.0718]]
+  special_box_creator__probability:r=0.4
+  special_box_creator__template:t="special_weapon_box_easy"
+}
+
+entity{
+  _template:t="special_box_creator"
+  transform:m=[[-0.61437, 0.0, -0.789018] [0.0, 1.0, 0.0] [0.789018, 0.0, -0.61437] [101.078, 15.8167, 99.9587]]
+  special_box_creator__probability:r=0.3
+  special_box_creator__template:t="special_weapon_box_easy"
+}
+
+entity{
+  _template:t="special_box_creator"
+  transform:m=[[-0.277642, 0.0, 0.960685] [0.0, 1.0, 0.0] [-0.960685, 0.0, -0.277642] [102.649, 15.8848, 77.7615]]
+  special_box_creator__probability:r=0.4
+  special_box_creator__template:t="special_weapon_box_easy"
+}
+
+entity{
+  _template:t="special_box_creator"
+  transform:m=[[0.99852, 0.0, -0.0543853] [0.0, 1.0, 0.0] [0.0543853, -0.0, 0.99852] [58.5717, 16.3469, 92.831]]
+  special_box_creator__probability:r=0.7
+  special_box_creator__template:t="special_weapon_box_easy"
+}
+
+entity{
+  _template:t="special_box_creator"
+  transform:m=[[0.622447, -0.161127, -0.765896] [0.144627, 0.985406, -0.0897683] [0.769183, -0.0548935, 0.636667] [270.493, 6.0538, -114.974]]
+  special_box_creator__probability:r=0.5
+  special_box_creator__template:t="special_weapon_box_easy"
+}
+
+entity{
+  _template:t="special_box_creator"
+  transform:m=[[-0.0202073, 0.0, 0.999796] [0.0, 1.0, 0.0] [-0.999796, 0.0, -0.0202073] [47.1566, 16.3952, 89.4441]]
+  special_box_creator__probability:r=0.3
+  special_box_creator__template:t="special_weapon_box_easy"
+}
+
+entity{
+  _template:t="special_box_creator"
+  transform:m=[[0.929872, 0.0, -0.367883] [0.0, 1.0, 0.0] [0.367883, -0.0, 0.929872] [48.0044, 16.0275, 131.518]]
+  special_box_creator__probability:r=0.2
+  special_box_creator__template:t="special_weapon_box_easy"
+}
+
+entity{
+  _template:t="special_box_creator"
+  transform:m=[[-0.995292, 0.0, 0.096921] [0.0, 1.0, 0.0] [-0.0969211, 0.0, -0.995292] [12.1749, 15.61, 100.549]]
+  special_box_creator__probability:r=0.5
+  special_box_creator__template:t="special_weapon_box_easy"
+}
+
+entity{
+  _template:t="special_box_creator"
+  transform:m=[[-0.995274, 0.0, -0.0971097] [0.0, 1.0, 0.0] [0.0971097, 0.0, -0.995274] [-6.69272, 15.6586, 127.738]]
+  special_box_creator__probability:r=0.3
+  special_box_creator__template:t="special_weapon_box_easy"
+}
+
+entity{
+  _template:t="special_box_creator"
+  transform:m=[[0.957115, 0.0, 0.289709] [0.0, 1.0, -0.0] [-0.289709, 0.0, 0.957115] [-28.8339, 15.6779, 110.817]]
+  special_box_creator__probability:r=0.3
+  special_box_creator__template:t="special_weapon_box_easy"
+}
+
+entity{
+  _template:t="special_box_creator"
+  transform:m=[[0.77799, 0.0, -0.628276] [0.0, 1.0, 0.0] [0.628276, -0.0, 0.77799] [-21.1092, 15.9903, 79.0837]]
+  special_box_creator__probability:r=0.3
+  special_box_creator__template:t="special_weapon_box_easy"
+}
+
+entity{
+  _template:t="special_box_creator"
+  transform:m=[[0.999923, 0.0, 0.012427] [0.0, 1.0, -0.0] [-0.012427, 0.0, 0.999923] [-69.6687, 15.6209, 100.582]]
+  special_box_creator__probability:r=0.3
+  special_box_creator__template:t="special_weapon_box_easy"
+}
+
+entity{
+  _template:t="special_box_creator"
+  transform:m=[[0.999923, 0.0, 0.012427] [0.0, 1.0, -0.0] [-0.012427, 0.0, 0.999923] [-76.1877, 16.5265, 63.1648]]
+  special_box_creator__probability:r=0.3
+  special_box_creator__template:t="special_weapon_box_easy"
+}
+
+entity{
+  _template:t="special_box_creator"
+  transform:m=[[0.633092, 0.0, 0.774076] [0.0, 1.0, -0.0] [-0.774077, 0.0, 0.633092] [-104.198, 16.1224, 80.2303]]
+  special_box_creator__probability:r=0.3
+  special_box_creator__template:t="special_weapon_box_easy"
+}
+
+entity{
+  _template:t="special_box_creator"
+  transform:m=[[0.996716, 0.0, 0.0809728] [0.0, 1.0, -0.0] [-0.0809728, 0.0, 0.996716] [-140.815, 15.6176, 105.583]]
+  special_box_creator__probability:r=0.7
+  special_box_creator__template:t="special_weapon_box_easy"
+}
+
+entity{
+  _template:t="special_box_creator"
+  transform:m=[[-0.803845, 0.0, 0.594839] [0.0, 1.0, 0.0] [-0.594839, 0.0, -0.803845] [-168.319, 18.6328, 67.5075]]
+  special_box_creator__probability:r=0.3
+  special_box_creator__template:t="special_weapon_box_easy"
+}
+
+entity{
+  _template:t="special_box_creator"
+  transform:m=[[0.711973, 0.0, -0.702208] [-0.0, 1.0, 0.0] [0.702208, 0.0, 0.711973] [-207.995, 13.6245, 81.2143]]
+  special_box_creator__probability:r=0.2
+  special_box_creator__template:t="special_weapon_box_easy"
+}
+
+entity{
+  _template:t="special_box_creator"
+  transform:m=[[0.999479, 0.0, 0.0322827] [0.0, 1.0, -0.0] [-0.0322827, 0.0, 0.999479] [-205.93, 15.0313, 46.2229]]
+  special_box_creator__probability:r=0.2
+  special_box_creator__template:t="special_weapon_box_easy"
+}
+
+entity{
+  _template:t="special_box_creator"
+  transform:m=[[0.998407, 0.044407, 0.0348022] [-0.0496356, 0.984603, 0.167613] [-0.0268232, -0.169073, 0.985239] [-273.699, 10.1333, 74.0493]]
+  special_box_creator__probability:r=0.3
+  special_box_creator__template:t="special_weapon_box_easy"
+}
+
+entity{
+  _template:t="special_box_creator"
+  transform:m=[[0.670391, 0.129148, -0.730683] [-0.137579, 0.989296, 0.0486306] [0.729142, 0.0679251, 0.680983] [-258.536, 13.6101, 23.3641]]
+  special_box_creator__probability:r=0.3
+  special_box_creator__template:t="special_weapon_box_easy"
+}

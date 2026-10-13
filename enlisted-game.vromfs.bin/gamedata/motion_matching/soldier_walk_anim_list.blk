@@ -1,0 +1,109 @@
+clips{
+  default_animation_mask:t="soldier_lower_nodemask"
+  default_tags:t="walk"
+
+  walk_0{
+    play_speed_multiplier_range:p2=0.5, 2.0
+    nextClip:t="walk_0"
+
+    in_place_animation{
+      velocity_magnitude:r=2.0
+    }
+
+    use_foot_ik_locker{
+      velocity_threshold:r=0.45
+    }
+  }
+
+  walk_45{
+    play_speed_multiplier_range:p2=0.5, 2.0
+    nextClip:t="walk_45"
+
+    in_place_animation{
+      velocity_direction:r=45.0
+      velocity_magnitude:r=2.0
+    }
+
+    use_foot_ik_locker{
+    }
+  }
+
+  walk_90{
+    root_direction:p3=0.0, 0.0, -1.0
+    play_speed_multiplier_range:p2=0.5, 2.0
+    nextClip:t="walk_90"
+
+    in_place_animation{
+      velocity_direction:r=90.0
+      velocity_magnitude:r=2.0
+    }
+
+    use_foot_ik_locker{
+    }
+  }
+
+  walk_135{
+    play_speed_multiplier_range:p2=0.5, 2.0
+    nextClip:t="walk_135"
+
+    in_place_animation{
+      velocity_direction:r=135.0
+      velocity_magnitude:r=2.0
+    }
+
+    use_foot_ik_locker{
+    }
+  }
+
+  walk_180{
+    play_speed_multiplier_range:p2=0.5, 2.0
+    nextClip:t="walk_180"
+
+    in_place_animation{
+      velocity_direction:r=180.0
+      velocity_magnitude:r=2.0
+    }
+
+    use_foot_ik_locker{
+    }
+  }
+
+  walk_225{
+    play_speed_multiplier_range:p2=0.5, 2.0
+    nextClip:t="walk_225"
+
+    in_place_animation{
+      velocity_direction:r=225.0
+      velocity_magnitude:r=2.0
+    }
+
+    use_foot_ik_locker{
+    }
+  }
+
+  walk_270{
+    play_speed_multiplier_range:p2=0.5, 2.0
+    nextClip:t="walk_270"
+
+    in_place_animation{
+      velocity_direction:r=270.0
+      velocity_magnitude:r=2.0
+    }
+
+    use_foot_ik_locker{
+    }
+  }
+
+  walk_315{
+    play_speed_multiplier_range:p2=0.5, 2.0
+    nextClip:t="walk_315"
+
+    in_place_animation{
+      velocity_direction:r=315.0
+      velocity_magnitude:r=2.0
+    }
+
+    use_foot_ik_locker{
+    }
+  }
+}

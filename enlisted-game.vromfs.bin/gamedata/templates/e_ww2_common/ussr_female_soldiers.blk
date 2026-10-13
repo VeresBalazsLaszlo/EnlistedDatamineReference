@@ -1,0 +1,83 @@
+uk_tropical_1{
+  animchar__res:t="uk_tropical_1_char"
+  collres__res:t="uk_tropical_1_collision"
+  animchar_fast_phys__res:t="uk_tropical_1_fastphys"
+
+  animchar_fast_phys{
+    _tags:t="gameClient"
+  }
+}
+
+ussr_female_human_voice{
+
+  _group{
+    _tags:t="sound"
+    human_speech__locale:t="ru"
+    human_voice_sound__voiceTag:t="femaleVoice"
+  }
+
+  "human_speech__voices:array"{
+    _tags:t="sound"
+
+    "voice:object"{
+      watched:t="vo/player/enlisted/female_soldier"
+      other:t="vo/enemy/enlisted/female_soldier01"
+    }
+
+    "voice:object"{
+      watched:t="vo/player/enlisted/female_soldier"
+      other:t="vo/enemy/enlisted/female_soldier02"
+    }
+
+    "voice:object"{
+      watched:t="vo/player/enlisted/female_soldier"
+      other:t="vo/enemy/enlisted/female_soldier03"
+    }
+  }
+}
+
+ussr_female_base_soldier{
+  _use:t="usa_soldier"
+  _use:t="enlisted_base_soldier"
+  _use:t="ussr_female_human_voice"
+  canBeTargetForClothesChange:b=no
+  animchar__res:t="basic_female_char_char"
+  collres__res:t="basic_female_char_collision"
+
+  "animation__overridedIdleAnims:object"{
+    _tags:t="render"
+
+    "defaultPoses:list<t>"{
+      pose:t="pilot_idle_female"
+    }
+
+    "unarmedPoses:list<t>"{
+      pose:t="pilot_idle_female"
+    }
+  }
+
+  _group{
+    _tags:t="render"
+    motion_matching__dataBaseTemplateName:t="enl_female_soldier_mm_database"
+  }
+}
+
+ussr_female_medic_soldier{
+  _use:t="ussr_female_base_soldier"
+
+  "animation__overridedIdleAnims:object"{
+    _tags:t="render"
+
+    "defaultPoses:list<t>"{
+      pose:t="enlisted_idle_01_weapon_female"
+      pose:t="enlisted_idle_02_weapon_female"
+      pose:t="enlisted_idle_03_weapon_female"
+    }
+
+    "unarmedPoses:list<t>"{
+      pose:t="enlisted_idle_01_weapon_female"
+      pose:t="enlisted_idle_02_weapon_female"
+      pose:t="enlisted_idle_03_weapon_female"
+    }
+  }
+}

@@ -1,0 +1,349 @@
+us_m8_scott_pacific{
+  _use:t="us_m8_scott_common"
+}
+
+us_m8_scott{
+  _use:t="us_m8_scott_common"
+}
+
+us_m8_scott_common{
+  _use:t="base_m8_scott"
+  _use:t="us_m8_scott_common_vehicle_sound"
+  commanderCockpitFpsCamMaxAngle:p2=40.0, 5.0
+  gunner_cam_limit__useCockpitDir:b=yes
+  vehicle_seats__enumVarName:t="tank"
+  item__iconOffset:p2=-0.05, -0.05
+  item__iconScale:r=1.05
+  armorThicknessHull:p3=28.5, 28.5, 25.4
+  armorThicknessTurret:p3=38.1, 25.4, 25.4
+
+  "disableDMParts:list<t>"{
+    part:t="gunner"
+    part:t="loader"
+    part:t="commander"
+    part:t="machine_gunner"
+    part:t="driver"
+  }
+
+  "vehicle_seats__effectors:array"{
+  }
+
+  "vehicle_seats__seatsProvideOrder:tag"{
+  }
+
+  "vehicle_seats__seats:shared:array"{
+
+    "seats:object"{
+      name:t="commander"
+      nextSeat:t="main_gunner"
+      locName:t="vehicle_seats/commander"
+      attachNode:t="bone_mg_aa_h_01"
+      shouldHideOwner:b=no
+      ignoreAttachNodeRotation:b=yes
+      attachTm:m=[[0.9, -1.11415e-34, 6.45628e-17] [7.84221e-27, 0.9, -1.0932e-10] [-6.45628e-17, 1.0932e-10, 0.9] [-0.2, -0.15, 0.03]]
+      seatComponent:t="isDriver"
+      receiveDamageFromDMPart:t="commander"
+      isHoldGunModeAllowed:b=yes
+      maxPosWithOpenHatch:r=0.2
+      hatchRotationAxis:p3=0.0, 0.0, 0.0
+      seatAnimUpper:t="drive_passenger"
+      seatAnimLower:t="drive_passenger"
+      useHatchEffectors:b=yes
+
+      "hatchTurretNames:array"{
+        turret:t="turret_02"
+      }
+
+      "hatchNodes:array"{
+        node:t="bone_camera_gunner"
+      }
+
+      "effectors:object"{
+
+        "l.hand:object"{
+          rel_tm:m=[[0.965163, -0.159812, 0.207166] [-0.114004, -0.969539, -0.21679] [0.235502, 0.18562, -0.953982] [-0.244568, 0.00109673, -0.102886]]
+          node:t="bone_mg_aa_v_01"
+        }
+
+        "r.hand:object"{
+          rel_tm:m=[[0.979576, 0.0269984, -0.199251] [0.0437421, -0.995825, 0.0801149] [-0.196256, -0.0871943, -0.976667] [-0.162704, 0.0620763, 0.127895]]
+          node:t="bone_mg_aa_v_01"
+        }
+
+        "l.foot:object"{
+          rel_tm:m=[[0.0950374, -0.981235, 0.167769] [0.993333, 0.104524, 0.0486317] [-0.0652549, 0.162028, 0.984624] [0.0151215, -0.621678, -0.150418]]
+          node:t="bone_mg_aa_h_01"
+        }
+
+        "r.foot:object"{
+          rel_tm:m=[[-0.0562447, -0.985819, 0.158106] [0.994103, -0.0700006, -0.082824] [0.0927168, 0.152514, 0.983941] [0.0878754, -0.524953, 0.0127552]]
+          node:t="bone_mg_aa_h_01"
+        }
+      }
+    }
+
+    "seats:object"{
+      name:t="main_gunner"
+      locName:t="vehicle_seats/gunner"
+      attachNode:t="gunner"
+      ignoreAttachNodeRotation:b=yes
+      attachTm:m=[[0.815318, -0.308985, -0.489814] [0.282662, 0.950522, -0.129105] [0.50544, -0.0331885, 0.862264] [-0.36, -0.21, 0.1]]
+      seatComponent:t="isGunner"
+      nextSeat:t="driver"
+      shouldHideOwner:b=no
+      receiveDamageFromDMPart:t="gunner"
+      cameraNodeName:t="bone_camera_gunner"
+      cockpitTemplate:t="us_m8_scott_gunner_cockpit"
+      isHoldGunModeAllowed:b=no
+
+      "turretNames:array"{
+        turretNames:t="turret_01"
+      }
+
+      "effectors:object"{
+
+        "l.hand:object"{
+          rel_tm:m=[[0.525578, 0.381267, 0.760529] [-0.167125, 0.922807, -0.347125] [-0.834167, 0.055338, 0.548726] [0.0305176, -0.0225964, -0.0432892]]
+          node:t="lefthand_1"
+        }
+
+        "r.hand:object"{
+          rel_tm:m=[[0.810326, 0.112939, 0.574991] [-0.0176045, 0.9855, -0.168761] [-0.585714, 0.126629, 0.800565] [-0.00267029, 0.0060997, 0.0220194]]
+          node:t="righthand_1"
+        }
+
+        "l.foot:object"{
+          rel_tm:m=[[0.994264, -0.103497, -0.0269693] [0.103596, 0.994617, 0.00228152] [0.0265879, -0.00506234, 0.999633] [0.00933838, 0.222595, -0.162666]]
+          node:t="pedal_rfoot_1"
+        }
+
+        "r.foot:object"{
+          rel_tm:m=[[0.988905, -0.131194, -0.0696718] [0.146507, 0.93884, 0.311632] [0.0245264, -0.318382, 0.947645] [-0.00971985, 0.120316, 0.056633]]
+          node:t="pedal_rfoot_1"
+        }
+      }
+    }
+
+    "seats:object"{
+      name:t="driver"
+      locName:t="vehicle_seats/driver"
+      seatOwnsEntityControl:b=yes
+      attachNode:t="driver"
+      ignoreAttachNodeRotation:b=yes
+      attachTm:m=[[0.981546, 0.190793, 0.0] [-0.190793, 0.981546, 0.0] [0.0, 0.0, 0.999911] [-0.14, -0.37, 0.02]]
+      seatComponent:t="isDriver"
+      shouldHideOwner:b=no
+      receiveDamageFromDMPart:t="driver"
+      cameraNodeName:t="bone_camera_driver"
+      cockpitTemplate:t="us_m8_scott_driver_cockpit"
+      seatAnimUpper:t="drive_passenger"
+      seatAnimLower:t="drive_passenger"
+
+      "effectors:object"{
+        r.hand:t="righthand_4"
+        l.hand:t="lefthand_4"
+        r.foot:t="pedal_rfoot_4"
+        l.foot:t="pedal_lfoot_4"
+      }
+    }
+
+    "seats:object"{
+      name:t="loader"
+      canPlaceManually:b=no
+      attachNode:t="loader"
+      locName:t="vehicle_seats/loader"
+      ignoreAttachNodeRotation:b=yes
+      attachTm:m=[[0.312958, -0.217721, -0.815255] [0.20849, 0.862459, -0.150293] [0.817666, -0.136607, 0.350365] [-0.16, -0.18, 0.19]]
+      seatComponent:t="isPassenger"
+      shouldHideOwner:b=no
+      receiveDamageFromDMPart:t="loader"
+      cameraNodeName:t="bone_camera_driver"
+      isHoldGunModeAllowed:b=no
+
+      "loaderTurretNames:array"{
+        turret:t="turret_01"
+      }
+
+      "effectors:object"{
+
+        "l.hand:object"{
+          rel_tm:m=[[0.407851, 0.756285, 0.511555] [0.281405, -0.637118, 0.71756] [0.868602, -0.148703, -0.472672] [-0.384033, 0.00829482, -0.268191]]
+          node:t="bone_gun"
+        }
+
+        "r.hand:object"{
+          rel_tm:m=[[0.702536, 0.55413, 0.446522] [0.226006, -0.768695, 0.598356] [0.674806, -0.31945, -0.665273] [-0.840652, 0.180584, -0.221096]]
+          node:t="bone_gun"
+        }
+
+        "l.foot:object"{
+          rel_tm:m=[[0.994962, 0.0572892, -0.082275] [-0.0961653, 0.777377, -0.62164] [0.0283454, 0.62642, 0.77897] [0.0695782, -0.0130997, -0.283615]]
+          node:t="pedal_rfoot_2"
+        }
+
+        "r.foot:object"{
+          rel_tm:m=[[0.992088, 0.116847, 0.0459182] [-0.116894, 0.993143, -0.0016683] [-0.0457983, -0.00371236, 0.998944] [0.065402, 0.00547791, 0.00157166]]
+          node:t="pedal_rfoot_2"
+        }
+      }
+    }
+  }
+
+  "turrets__initAmmoDistribution:array"{
+
+    "ammo:object"{
+      slot:i=0
+      fill:b=yes
+    }
+
+    "ammo:object"{
+      slot:i=2
+      fill:b=yes
+    }
+
+    "ammo:object"{
+      slot:i=3
+      count:i=7
+    }
+  }
+}
+
+us_m8_scott_driver_cockpit{
+  _use:t="base_driver_cockpit"
+  animchar__res:t="ba_11_driver_char"
+  cockpit__offset:p3=-0.4, -0.25, 0.18
+
+  "cockpit__slitForwardOffset:list<r>"{
+    slit:r=-0.1
+  }
+
+  "cockpit__visibleVehicleNodeNames:list<t>"{
+    node:t="gun_barrel"
+    node:t="gun_mask"
+  }
+
+  "cockpit__periscopeLimits:list<p4>"{
+    slit:p4=-45.0, 45.0, -0.0, 0.0
+  }
+
+  "cockpit__periscopeSpeed:list<p2>"{
+    slit:p2=35.0, 35.0
+  }
+
+  "cockpit__slitZoom:array"{
+
+    "slit:list<r>"{
+      zoom:r=1.44
+    }
+
+    "slit:list<r>"{
+      zoom:r=1.44
+    }
+  }
+
+  "cockpit__slitZoomTime:list<r>"{
+    slit:r=0.0
+  }
+}
+
+us_m8_scott_gunner_cockpit{
+  _use:t="base_gunner_cockpit"
+  animchar__res:t="ba_11_gunner_char"
+  cockpit__offset:p3=0.0, 0.0, 0.0
+
+  "cockpit__cockpitOffsetBySlit:list<p3>"{
+    slit:p3=-0.35, -0.01, 0.22
+    slit:p3=-0.0, 0.8, -0.4
+  }
+
+  "cockpit__visibleVehicleNodeNames:list<t>"{
+    node:t="gun_barrel"
+    node:t="gun_mask"
+  }
+
+  "cockpit__slitNodeNames:list<t>"{
+    slit:t="cam_front_right"
+    slit:t="cam_front"
+  }
+
+  "cockpit__slitForwardOffset:list<r>"{
+    slit:r=0.21
+    slit:r=0.165
+  }
+
+  "cockpit__slitIsGun:list<b>"{
+    slit:b=yes
+    slit:b=no
+  }
+
+  "cockpit__attachNodeNames:list<t>"{
+    node:t="bone_camera_gunner"
+    node:t="bone_turret"
+  }
+
+  "cockpit__attachNodeIndices:list<i>"{
+  }
+
+  "cockpit__periscopeLimits:list<p4>"{
+    slit:p4=-0.0, 0.0, 0.0, 0.0
+    slit:p4=-45.0, 45.0, -5.0, 25.0
+  }
+
+  "cockpit__periscopeSpeed:list<p2>"{
+    slit:p2=-1.0, -1.0
+    slit:p2=35.0, 35.0
+  }
+
+  "cockpit__slitZoom:array"{
+
+    "slit:list<r>"{
+      zoom:r=1.9
+      zoom:r=3.5
+    }
+
+    "slit:list<r>"{
+      zoom:r=1.44
+    }
+  }
+
+  "cockpit__slitZoomTime:list<r>"{
+    slit:r=0.05
+    slit:r=0.0
+  }
+
+  "cockpit__slitTemplates:list<t>"{
+    slit:t="us_m56"
+    slit:t="default_periscope"
+  }
+
+  "cockpit__slitEids:list<eid>"{
+  }
+}
+
+us_m8_scott_laxative_premium_skin{
+  _use:t="us_m8_scott"
+  item__name:t="items/us_m8_scott_laxative_premium_skin"
+
+  "animchar__objTexSet:object"{
+
+    "m8a1_body_c*:object"{
+      "m8a1_skin_body_c*":t="camo_skin_tex"
+    }
+  }
+}
+
+us_m8_scott_stars_battlepass_premium{
+  _use:t="us_m8_scott"
+  item__name:t="items/us_m8_scott_stars_battlepass_premium"
+
+  "animchar__objTexSet:object"{
+
+    "m8a1_body_c*:object"{
+      "m8a1_stars_body_c*":t="camo_skin_tex"
+    }
+
+    "m8a1_turret_c*:object"{
+      "m8a1_stars_turret_c*":t="camo_skin_tex"
+    }
+  }
+}

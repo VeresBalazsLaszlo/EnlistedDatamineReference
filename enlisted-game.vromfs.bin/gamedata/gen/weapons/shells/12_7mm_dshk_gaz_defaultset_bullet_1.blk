@@ -1,0 +1,64 @@
+mass:r=0.0495
+caliber:r=0.0127
+speed:r=820.0
+Cx:r=0.3413
+maxDistance:r=3400.0
+relativeVelArmorShift:p2=200.0, 1000.0
+normalizationPreset:t="default"
+ricochetPreset:t="default"
+groundRicochetPreset:t="default"
+stabilityThreshold:r=0.05
+stabilityCaliberToArmorThreshold:r=5.0
+stabilityReductionAfterRicochet:r=0.5
+stabilityReductionAfterPenetration:r=0.3
+bulletType:t="ap_i_ball"
+slopeEffectPreset:t="ap"
+onHitChanceMultFire:r=10.0
+waterRicochetEffect:t="hit_12_18mm_water"
+groundRicochetEffect:t="hit_12_18mm_dirt_ap"
+secondaryShattersPreset:t="ap"
+
+stabilityRicochetModifier{
+  mod1:p2=0.0, 0.05
+  mod2:p2=20.0, 0.1
+  mod3:p2=30.0, 0.2
+  mod3:p2=45.0, 0.3
+}
+
+hitpower{
+  HitPower10m:p2=1.0, 10.0
+  HitPower1000m:p2=0.95, 1000.0
+  HitPower1500m:p2=0.85, 1500.0
+  HitPower2000m:p2=0.3, 2000.0
+  HitPower2500m:p2=0.2, 2500.0
+  HitPower3000m:p2=0.1, 3000.0
+}
+
+damage{
+
+  kinetic{
+    damageType:t="generic"
+    demarrePenetrationK:r=0.9
+    demarreSpeedPow:r=1.43
+    demarreMassPow:r=0.71
+    demarreCaliberPow:r=1.07
+  }
+}
+
+visual{
+  range_percent_of_ammo:p2=100.0, 0.0
+  traceFreq:i=1
+  tracer:t="noColor"
+}
+
+kineticDamage{
+  damageType:t="generic"
+}
+
+tracer{
+  headColor:c=0, 0, 0, 0
+  smokeColor:c=0, 0, 0, 0
+  startHeadColor:c=0, 0, 0, 0
+  startTime:r=0.0
+  smokeRadius:r=0.01
+}

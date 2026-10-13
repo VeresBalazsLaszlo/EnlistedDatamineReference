@@ -1,0 +1,60 @@
+clips{
+  default_animation_mask:t="soldier_lower_nodemask"
+  default_tags:t="stand,turn_on_spot,melee_weapon,default_weapon"
+
+  aim_pose_current_mm{
+    nextClip:t="aim_pose_current_mm"
+
+    use_foot_ik_locker{
+      always_locked:b=yes
+    }
+  }
+
+  turn_left_45_mm{
+
+    use_foot_ik_locker{
+    }
+  }
+
+  turn_left_60_mm{
+
+    use_foot_ik_locker{
+    }
+  }
+
+  turn_left_90_mm{
+
+    use_foot_ik_locker{
+    }
+  }
+
+  turn_left_135_mm{
+
+    use_foot_ik_locker{
+    }
+  }
+
+  turn_right_45_mm{
+
+    use_foot_ik_locker{
+    }
+  }
+
+  turn_right_60_mm{
+
+    use_foot_ik_locker{
+    }
+  }
+
+  turn_right_90_mm{
+
+    use_foot_ik_locker{
+    }
+  }
+
+  turn_right_135_mm{
+
+    use_foot_ik_locker{
+    }
+  }
+}

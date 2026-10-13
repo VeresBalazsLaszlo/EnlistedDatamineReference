@@ -1,0 +1,47 @@
+base_8mm_hotchkiss_mle1914{
+  item__name:t="guns/8mm_hotchkiss_mle1914"
+  gun__blk:t="gamedata/gen/weapons/april_event/8mm_hotchkiss_mle1914.blk"
+  gun__shotFreq:r=7.5
+  gun__reloadTime:r=5.0
+  gun__maxAmmo:i=250
+  gun__locName:t="8mm_hotchkiss_mle1914"
+
+  "gun__firingModes:array"{
+
+    "mode:object"{
+      modeType:t="automatic"
+    }
+  }
+
+  "gun__firingModeNames:array"{
+    mode:t="automatic"
+  }
+
+  "gun__ammoSetsInfo:shared:array"{
+
+    "defaultSet:array"{
+
+      "shell:object"{
+        blk:t="gamedata/gen/weapons/shells/april_event/8mm_hotchkiss_mle1914_defaultset_bullet_1.blk"
+        type:t="ap_i_t_ball"
+      }
+
+      "shell:object"{
+        blk:t="gamedata/gen/weapons/shells/april_event/8mm_hotchkiss_mle1914_defaultset_bullet_2.blk"
+        type:t="ap_ball"
+      }
+
+      "shell:object"{
+        blk:t="gamedata/gen/weapons/shells/april_event/8mm_hotchkiss_mle1914_defaultset_bullet_3.blk"
+        type:t="i_ball"
+      }
+    }
+  }
+}
+
+tankgun_8mm_hotchkiss_mle1914{
+  _use:t="tankgun"
+  _use:t="base_tankgun_machinegun"
+  _use:t="base_8mm_hotchkiss_mle1914"
+  turret__triggerGroup:i=2
+}

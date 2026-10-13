@@ -1,0 +1,68 @@
+import:t="apc/us_halftrack_m3_a1_apc.blk"
+import:t="apc/jp_halftrack_type_1_ho_ha_apc.blk"
+import:t="apc/uk_universal_carrier_apc.blk"
+import:t="apc/germ_sdkfz_251_9_apc.blk"
+import:t="apc/germ_sdkfz_251_1_apc.blk"
+import:t="apc/jp_type_94_isuzu_apc.blk"
+import:t="apc/ussr_gaz_aaa_apc.blk"
+import:t="apc/us_studebaker_us6_u1_apc.blk"
+import:t="apc/germ_sdkfz_7_2_apc.blk"
+import:t="apc/us_lvt_4_apc.blk"
+import:t="apc/jp_universal_carrier_apc.blk"
+import:t="apc/ussr_universal_carrier_apc.blk"
+
+apc_settings{
+  _use:t="mobile_respawn"
+  _use:t="vehicle_marker_ui"
+  _use:t="hud_vehicle_marker"
+  spotDestroyStatName:t="apcSpot"
+  mobile_respawn__occupiedSeats:i=0
+  _tracked:t="mobile_respawn__occupiedSeats"
+  mobile_respawn__seatOffset:i=6
+  canUseRespawnbaseType:t="APC"
+  destroyIfNoCrewLeft:b=no
+  fire_damage__timeToExplosion:r=20.0
+  item__iconYaw:r=25.0
+  item__iconPitch:r=-3.0
+  item__iconRoll:r=15.0
+  vehicle_seats__exitTime:r=1.0
+  vehicle_seats__enterTime:r=2.0
+  driverFpsCamMaxAngle:p2=90.0, 50.0
+  commanderFpsCamMaxAngle:p2=90.0, 50.0
+  passengerFpsCamMaxAngle:p2=90.0, 50.0
+  vehicle_kill_assist__stat:t="apcKillAssists"
+  vehicle_kill_assist__crewStat:t="apcKillAssistsAsCrew"
+  vehicle_kill_assist__engineerStat:t="builtGunApcKillAssists"
+  vehicle_kill_assist__time:r=20.0
+  vehicle_kill__award:t="apcKill"
+  vehicle_kill__stat:t="apcKills"
+  vehicle_kill__crewStat:t="crewApcKillAssists"
+  vehicle_kill__engineerStat:t="builtGunApcKills"
+  vehicle__mapIcon:t="truck_icon"
+  user_point__icon:t="truck_icon"
+
+  _group{
+    _tags:t="render"
+    exhaust_fx__fx:t="car_exhaust_template"
+    exhaust_fx__brokenFx:t="car_broken_exhaust_template"
+  }
+
+  _group{
+    _tags:t="server"
+    friendly_fire__penaltyCooldown:r=5.0
+    friendly_fire__damageThreshold:r=10.0
+
+    "friendly_fire__lastPenaltyTime:object"{
+    }
+  }
+
+  "ownedBySquad:eid"{
+  }
+
+  "ownedByPlayer:eid"{
+  }
+
+  "vehicleOffenders:object"{
+    _tags:t="server"
+  }
+}

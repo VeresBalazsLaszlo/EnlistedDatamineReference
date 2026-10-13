@@ -1,0 +1,31 @@
+import{
+  scene:t="gamedata/scenes/_manchuria_benchmark_common.blk"
+}
+
+entity{
+  _template:t="screen_fade_anim"
+  screen_fade:r=0.9
+  anim_track_on:b=yes
+}
+
+entity{
+  _template:t="benchmark"
+  benchmark_name:t="manchuria_static"
+
+  "camera_tracks:array"{
+
+    "camera_tracks:object"{
+      from_fov:r=90.0
+      from_pos:p3=93.5317, 62.2166, 475.963
+      to_dir:p3=-0.229703, -0.141162, -0.962969
+      duration:r=10000.0
+      to_pos:p3=93.5317, 62.2166, 475.963
+      to_fov:r=90.0
+      from_dir:p3=-0.229703, -0.141162, -0.962969
+    }
+  }
+}
+
+entity{
+  _template:t="ui_disabled"
+}

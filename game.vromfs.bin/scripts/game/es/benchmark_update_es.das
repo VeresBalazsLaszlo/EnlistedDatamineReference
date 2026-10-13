@@ -1,0 +1,87 @@
+require ecs
+require DagorTime
+require DagorSystem
+require PerFrameStat
+
+[es(no_order)]
+def benchmark_update_es(
+                        info : UpdateStageInfoAct;//wont correctly work with fixed timestamp, but it is strange to benchmark it
+                        var averageDt : float&;
+                        var prevMsec : int&;
+                        var frames : int&;
+                        var slowFrames : int&;
+
+                        var rangeDt : float&;
+                        var rangeFrames : int&;
+                        var rangeAvgTimes : Array;
+
+                        var verySlowFrames : int&;
+                        var maxMemoryUsedKb : int&;
+                        var allMemoryUsedKb : int64&;
+
+                        var maxDeviceVRamUsedKb : int&;
+                        var allDeviceVRamUsedKb : int64&;
+
+                        var maxSharedVRamUsedKb : int&;
+                        var allSharedVRamUsedKb : int64&;
+
+                        benchmark_active : bool;
+                        benchmark_collectPerFrameStat : bool;
+                        currentRun : int)
+
+  if !benchmark_active
+    return
+
+  if benchmark_collectPerFrameStat
+    // skip frames == 0, because its last_frame is not related to this run
+    // skip frames == 1 && currentRun != 1, because there was a file write, so the frame is irrelevant
+    if frames > 1 || (frames == 1 && currentRun == 1)
+      benchmark_perframe_stat_add_last_frame()
+
+  let msec = get_time_msec()
+  frames = frames + 1
+
+  // ignore first iteration, no prevMsec info yet
+  if (prevMsec != 0)
+    let dt = float(msec - prevMsec) * 0.001
+
+    if averageDt == 0.0
+      averageDt = dt
+    else
+      averageDt = dt * 0.1 + averageDt * 0.9
+
+    if dt > averageDt * 2.5 && frames > 50
+      slowFrames = slowFrames + 1
+    if dt > averageDt * 5.0
+      verySlowFrames = verySlowFrames + 1
+
+    rangeDt += dt
+    rangeFrames += 1
+    if (rangeDt > 1.0)
+      push(rangeAvgTimes, float(rangeDt) / float(rangeFrames))
+      rangeDt = 0.0
+      rangeFrames = 0
+
+  prevMsec = msec
+
+  // allocated system ram
+  let memoryUsedKb = get_memory_allocated_kb(true)
+  if maxMemoryUsedKb < memoryUsedKb
+    maxMemoryUsedKb = memoryUsedKb
+
+  allMemoryUsedKb = allMemoryUsedKb + int64(memoryUsedKb)
+
+  // device local/dedicated vram
+  let deviceVramUsedKb = get_device_vram_used_kb()
+  if maxDeviceVRamUsedKb < deviceVramUsedKb
+    maxDeviceVRamUsedKb = deviceVramUsedKb
+
+  allDeviceVRamUsedKb = allDeviceVRamUsedKb + int64(deviceVramUsedKb)
+
+  // shared vram
+  let sharedVramUsedKb = get_shared_vram_used_kb()
+  if maxSharedVRamUsedKb < sharedVramUsedKb
+    maxSharedVRamUsedKb = sharedVramUsedKb
+
+  allSharedVRamUsedKb = allSharedVRamUsedKb + int64(sharedVramUsedKb)
+

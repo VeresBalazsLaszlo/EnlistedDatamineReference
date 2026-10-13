@@ -1,0 +1,317 @@
+import "%dngscripts/ecs.nut" as ecs
+from "%daeditor/state.nut" import showPointAction, namePointAction, setPointActionMode, resetPointActionMode, addEntityCreatedCallback, addEntityRemovedCallback, addEntityMovedCallback
+  , editorUnpause, selectedEntities, wantOpenRISelect
+from "dasevents" import CmdRIToolAddSelected, CmdRIToolClearSelected, CmdRIToolRemoveRendInst, CmdRIToolUnbakeRendInst, CmdRIToolEnbakeRendInst, CmdRIToolRebakeRendInst, CmdRIToolCreateRendInst
+  , CmdRIToolRestoreRendInst, EventEditorEntityMoved
+from "dagor.math" import Point3, TMatrix
+from "%ui/ui_library.nut" import *
+
+let entity_editor = require_optional("entity_editor")
+let {setEditMode=null, DE4_MODE_SELECT=null} = require_optional("daEditorEmbedded")
+
+const POINTACTION_MODE_RI_TOOL = "RendInsts mode"
+
+function isRIToolMode() {
+  return showPointAction.get() && namePointAction.get() == POINTACTION_MODE_RI_TOOL
+}
+
+let riToolSelected = Watched([])
+
+function saveRIToolData() {
+  let save_eid = entity_editor?.get_instance().makeSingletonEntity("rendinsts_removes")
+  if (save_eid && save_eid != ecs.INVALID_ENTITY_ID) {
+    entity_editor?.save_component(save_eid, "rirmv")
+    entity_editor?.save_component(save_eid, "riunb")
+  }
+}
+
+function isSameVector(a,b) {
+  return a.x == b.x && a.y == b.y && a.z == b.z
+}
+function isSameMatrix(a,b) {
+  return isSameVector(a[0],b[0]) && isSameVector(a[1],b[1]) && isSameVector(a[2],b[2]) && isSameVector(a[3],b[3])
+}
+
+
+function clearRIToolSelected() {
+  riToolSelected.get().clear();
+  riToolSelected.trigger()
+  ecs.g_entity_mgr.broadcastEvent(CmdRIToolClearSelected())
+}
+
+function removeRIToolSelected() {
+  foreach (ri in riToolSelected.get())
+    ecs.g_entity_mgr.broadcastEvent(CmdRIToolRemoveRendInst({tm = ri.mat, name = ri.name, eid = ri.eid}))
+  gui_scene.resetTimeout(0.5, saveRIToolData)
+  gui_scene.resetTimeout(0.1, @() riToolSelected.trigger())
+  clearRIToolSelected()
+}
+
+function unbakeRIToolSelected() {
+  entity_editor?.get_instance()?.selectEntities([])
+  foreach (ri in riToolSelected.get())
+    ecs.g_entity_mgr.broadcastEvent(CmdRIToolUnbakeRendInst({tm = ri.mat, name = ri.name, eid = ri.eid}))
+  gui_scene.resetTimeout(0.5, saveRIToolData)
+  clearRIToolSelected()
+  if (setEditMode)
+    setEditMode(DE4_MODE_SELECT)
+}
+
+function enbakeRIToolSelected() {
+  foreach (ri in riToolSelected.get())
+    ecs.g_entity_mgr.broadcastEvent(CmdRIToolEnbakeRendInst({tm = ri.mat, name = ri.name, eid = ri.eid}))
+  gui_scene.resetTimeout(0.5, saveRIToolData)
+  clearRIToolSelected()
+}
+
+function rebakeRIToolSelected() {
+  foreach (ri in riToolSelected.get())
+    ecs.g_entity_mgr.broadcastEvent(CmdRIToolRebakeRendInst({tm = ri.mat, name = ri.name, eid = ri.eid}))
+  gui_scene.resetTimeout(0.5, saveRIToolData)
+  clearRIToolSelected()
+}
+
+function instanceRIToolSelected() {
+  entity_editor?.get_instance()?.selectEntities([])
+  foreach (ri in riToolSelected.get())
+    ecs.g_entity_mgr.broadcastEvent(CmdRIToolCreateRendInst({tpl = "game_rendinst", tm = ri.mat, name = ri.name, eid = ri.eid, undo = true}))
+  gui_scene.resetTimeout(0.5, saveRIToolData)
+  clearRIToolSelected()
+  if (setEditMode)
+    setEditMode(DE4_MODE_SELECT)
+}
+
+function spawnNewRIEntity(tplName) {
+  local tm = entity_editor?.make_cam_spawn_tm()
+  if (tm == null)
+    return
+  if (tm[0].x == 0.0 && tm[0].y == 0.0 && tm[0].z == 0.0)
+    return
+  if (tplName == "scenery_remover") {
+    tm[0] *= 5.0
+    tm[1] *= 5.0
+    tm[2] *= 5.0
+    local pos = tm[3]
+    pos["y"] += 0.5
+    tm[3] = pos
+  }
+  wantOpenRISelect.set(true)
+  ecs.g_entity_mgr.broadcastEvent(CmdRIToolCreateRendInst({tpl = tplName, tm = tm, name = "sandbags_wall_medium_rounded_a", eid = ecs.INVALID_ENTITY_ID, undo = true}))
+  clearRIToolSelected()
+  if (setEditMode)
+    setEditMode(DE4_MODE_SELECT)
+}
+
+function restoreRemovedByRITool() {
+  ecs.g_entity_mgr.broadcastEvent(CmdRIToolRestoreRendInst())
+  gui_scene.resetTimeout(0.5, saveRIToolData)
+  gui_scene.resetTimeout(0.1, @() riToolSelected.trigger())
+  clearRIToolSelected()
+}
+
+function isRISelectable(eid) {
+  if (eid == ecs.INVALID_ENTITY_ID)
+    return true
+  if (ecs.obsolete_dbg_get_comp_val(eid, "gameRendInstTag") != null)
+    return true
+  if (ecs.obsolete_dbg_get_comp_val(eid, "unbakedRendInstTag") != null)
+    return true
+  if (ecs.obsolete_dbg_get_comp_val(eid, "rebakedRendInstTag") != null)
+    return true
+  if (ecs.obsolete_dbg_get_comp_val(eid, "isDoor") != null)
+    return true
+  return false
+}
+
+function getRIKind(eid) {
+  if (eid == ecs.INVALID_ENTITY_ID)
+    return 0
+  if (ecs.obsolete_dbg_get_comp_val(eid, "rebakedRendInstTag") != null)
+    return 0
+  if (ecs.obsolete_dbg_get_comp_val(eid, "unbakedRendInstTag") != null)
+    return 1
+  if (ecs.obsolete_dbg_get_comp_val(eid, "isDoor") != null)
+    return 3
+  return 2
+}
+
+function addRIToSelected(ri_add) {
+  foreach (riLst in riToolSelected.get())
+    if (ri_add.name == riLst.name && isSameMatrix(ri_add.mtx, riLst.mat))
+      return
+  if (!isRISelectable(ri_add.eid))
+    return
+  let kind = getRIKind(ri_add.eid)
+  riToolSelected.get().append({
+    name = ri_add.name
+    mat  = ri_add.mtx
+    eid  = ri_add.eid
+    sph  = ri_add.sph
+    kind = kind
+  })
+  riToolSelected.trigger()
+  ecs.g_entity_mgr.broadcastEvent(CmdRIToolAddSelected({tm = ri_add.mtx, name = ri_add.name, bsph = ri_add.sph, action = "multiselect", kind = kind}))
+}
+
+function selectRIToolInside() {
+  let riTestList = clone riToolSelected.get()
+  foreach (riTest in riTestList) {
+    let riAddList = entity_editor?.gather_ri_by_sphere(riTest.sph.x, riTest.sph.y, riTest.sph.z, riTest.sph.w)
+    if (riAddList == null)
+      continue
+    foreach (riAdd in riAddList)
+      addRIToSelected(riAdd)
+  }
+}
+
+function selectRIFromEntity(eid) {
+  let riAdd = entity_editor?.get_ri_from_entity(eid)
+  if (riAdd == null)
+    return
+  addRIToSelected(riAdd)
+}
+
+function onRIToolAction(action) {
+  if (action.op == "action" && action.pos != null) {
+    if (isRIToolMode()) {
+      let multiselect = (action.mod == 2)
+      if (action.ext_id == "" && !multiselect) {
+        riToolSelected.get().clear()
+        riToolSelected.trigger()
+        ecs.g_entity_mgr.broadcastEvent(CmdRIToolClearSelected())
+      }
+      else if (action.ext_id != "") {
+        local found_idx = -1
+        if (multiselect) {
+          foreach (idx, ri in riToolSelected.get()) {
+            if (ri.name == action.ext_name && isSameMatrix(ri.mat, action.ext_mtx)) {
+              found_idx = idx
+              break
+            }
+          }
+        }
+        if (found_idx < 0 || multiselect) {
+          let addable = isRISelectable(action.ext_eid)
+          let kind = getRIKind(action.ext_eid)
+          if (addable) {
+            if (found_idx < 0) {
+              let act = !multiselect ? "select" : "multiselect"
+              if (act == "select")
+                riToolSelected.get().clear()
+              riToolSelected.get().append({
+                name = action.ext_name
+                mat  = action.ext_mtx
+                eid  = action.ext_eid
+                sph  = action.ext_sph
+                kind = kind
+              })
+              riToolSelected.trigger()
+              ecs.g_entity_mgr.broadcastEvent(CmdRIToolAddSelected({tm = action.ext_mtx, name = action.ext_name, bsph = action.ext_sph, action = act, kind = kind}))
+            }
+            else {
+              riToolSelected.get().remove(found_idx)
+              riToolSelected.trigger()
+              ecs.g_entity_mgr.broadcastEvent(CmdRIToolAddSelected({tm = action.ext_mtx, name = action.ext_name, bsph = action.ext_sph, action = "deselect", kind = 0}))
+            }
+          }
+        }
+      }
+    }
+  }
+  if (action.op == "context") {
+    resetPointActionMode()
+  }
+  if (action.op == "undo") {
+    restoreRemovedByRITool()
+  }
+  if (action.op == "redo") {
+  }
+  if (action.op == "delete") {
+    removeRIToolSelected()
+  }
+  if (action.op == "finish") {
+    clearRIToolSelected()
+  }
+}
+
+function beginRIToolMode(toggle=false) {
+  if (!showPointAction.get() || (!toggle && namePointAction.get() != POINTACTION_MODE_RI_TOOL)) {
+    saveRIToolData()
+    setPointActionMode("pick_action", POINTACTION_MODE_RI_TOOL, onRIToolAction)
+
+    foreach (eid,_v in selectedEntities.get())
+      selectRIFromEntity(eid.tointeger())
+  }
+  else
+    resetPointActionMode()
+}
+
+let countRIRemoved = ecs.SqQuery("countRIRemoved", {comps_ro = [["rirmv", ecs.TYPE_ARRAY]]})
+
+function getRIToolRemovedCount() {
+  local count = 0
+  countRIRemoved(function(_eid, comp) {
+    count = comp.rirmv?.len() ?? 0
+  })
+  return count
+}
+
+function onRemoveRIEntity(eid) {
+  let ri_extra = ecs.obsolete_dbg_get_comp_val(eid, "ri_extra", null)
+  let isDestr = ecs.obsolete_dbg_get_comp_val(eid, "isRendinstDestr", false)
+  if (ri_extra != null && isDestr) {
+    editorUnpause(2.5)
+  }
+}
+addEntityRemovedCallback(onRemoveRIEntity)
+
+function onCreatedRIRemoverEntity(eid) {
+  let check = ecs.obsolete_dbg_get_comp_val(eid, "scenery_remove__apply", null)
+  let tm = ecs.obsolete_dbg_get_comp_val(eid, "transform", null)
+  if (check != null && tm != null) {
+    let resTm = TMatrix(tm)
+    resTm.setcol(0, Point3(10,0,0))
+    resTm.setcol(1, Point3(0,10,0))
+    resTm.setcol(2, Point3(0,0,10))
+    resTm.setcol(3, resTm.getcol(3) + Point3(0,1,0))
+    ecs.obsolete_dbg_set_comp_val(eid, "transform", resTm)
+
+    gui_scene.resetTimeout(0.1, function() {
+      setEditMode?(DE4_MODE_SELECT)
+      entity_editor?.get_instance()?.selectEntities([eid])
+    })
+  }
+}
+addEntityCreatedCallback(onCreatedRIRemoverEntity)
+
+let movedEntities = {}
+function onRIEntityMovesEnd() {
+  foreach (eid, _val in movedEntities) {
+    let ri_extra = ecs.obsolete_dbg_get_comp_val(eid, "ri_extra", null)
+    if (ri_extra != null) {
+      ecs.g_entity_mgr.sendEvent(eid, EventEditorEntityMoved())
+    }
+  }
+  movedEntities.clear()
+}
+function onRIEntityMoved(eid) {
+  movedEntities[eid] <- true
+  gui_scene.resetTimeout(0.25, onRIEntityMovesEnd)
+}
+addEntityMovedCallback(onRIEntityMoved)
+
+return {
+  isRIToolMode
+  beginRIToolMode
+  clearRIToolSelected
+  riToolSelected
+  getRIToolRemovedCount
+  removeRIToolSelected
+  unbakeRIToolSelected
+  enbakeRIToolSelected
+  rebakeRIToolSelected
+  instanceRIToolSelected
+  restoreRemovedByRITool
+  spawnNewRIEntity
+  selectRIToolInside
+}

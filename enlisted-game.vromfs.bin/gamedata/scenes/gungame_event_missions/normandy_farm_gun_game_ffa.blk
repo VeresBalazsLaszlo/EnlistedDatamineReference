@@ -1,0 +1,1652 @@
+entity{
+  _template:t="poly_battle_area"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, 0.0, 0.0]]
+  battleAreaId:t="area_1_a_1"
+
+  "poly_area__points:list<p3>"{
+    item:p3=-202.48, 22.3971, -268.974
+    item:p3=-213.719, 21.3929, -268.95
+    item:p3=-222.61, 21.6314, -268.045
+    item:p3=-233.15, 23.4438, -264.538
+    item:p3=-237.704, 23.0965, -262.691
+    item:p3=-240.98, 21.6596, -263.107
+    item:p3=-247.209, 23.0324, -265.561
+    item:p3=-254.698, 21.3941, -268.321
+    item:p3=-264.141, 22.9744, -274.605
+    item:p3=-268.138, 23.4893, -274.746
+    item:p3=-267.809, 22.0415, -288.718
+    item:p3=-277.976, 22.1241, -289.968
+    item:p3=-283.717, 21.0978, -290.816
+    item:p3=-285.072, 21.8867, -294.655
+    item:p3=-284.319, 21.4292, -297.508
+    item:p3=-282.24, 23.8269, -297.731
+    item:p3=-277.769, 23.8096, -297.759
+    item:p3=-270.372, 21.1458, -301.622
+    item:p3=-267.55, 21.9423, -313.718
+    item:p3=-267.182, 23.0636, -332.19
+    item:p3=-265.906, 23.077, -333.754
+    item:p3=-241.195, 22.6379, -333.885
+    item:p3=-238.62, 24.4424, -336.564
+    item:p3=-238.751, 24.4809, -344.355
+    item:p3=-228.669, 24.4263, -344.48
+    item:p3=-228.531, 23.7464, -336.853
+    item:p3=-226.074, 22.3072, -334.034
+    item:p3=-210.522, 22.9507, -333.861
+    item:p3=-205.957, 23.636, -338.674
+    item:p3=-198.782, 23.8126, -332.015
+    item:p3=-196.72, 22.8105, -331.069
+    item:p3=-196.333, 22.6441, -301.368
+    item:p3=-193.049, 23.019, -301.27
+    item:p3=-192.949, 23.0365, -299.015
+    item:p3=-190.255, 20.6547, -296.601
+    item:p3=-189.129, 20.7278, -292.092
+    item:p3=-190.074, 20.7729, -288.432
+    item:p3=-195.675, 23.0876, -286.79
+    item:p3=-202.37, 22.5311, -286.797
+  }
+}
+
+entity{
+  _template:t="custom_profile"
+  customProfile:t="%enlSqGlob/data/aprilfools_2025_gun_game_profile.json"
+}
+
+entity{
+  _template:t="chars_gun_game_mode_logic"
+}
+
+entity{
+  _template:t="gun_game_mode_sounds"
+}
+
+entity{
+  _template:t="level"
+  level__blk:t="levels/normandy_coastal_area_1x1.blk"
+  level__minimapDefaultVisibleRadius:i=50
+
+  "level__weatherChoice:object"{
+    weather_cloudy_a:r=1.0
+  }
+
+  "level__timeVec:array"{
+    level__timeVec:r=8.5
+  }
+}
+
+entity{
+  _template:t="volfog_nbs"
+  volfog_nbs__rootGraph:t="fog_normandy_coastal_area.json"
+}
+
+entity{
+  _template:t="minimap_normandy_coastal_area"
+}
+
+entity{
+  _template:t="water"
+  water__strength:r=0.27
+}
+
+entity{
+  _template:t="wind"
+  wind__strength:r=2.0
+}
+
+entity{
+  _template:t="door_mult_ent_generator"
+  ri_extra_gen__blk:t="gamedata/normandy_doors.blk"
+}
+
+entity{
+  _template:t="shaderVars"
+
+  "shader_vars__vars:object"{
+    hmap_displacement_up:r=0.3
+    ocean1:c=68, 70, 70, 0
+    ocean0:c=56, 59, 62, 0
+    ocean_density:r=1.0
+    land_selfillum_worldscale:r=0.9
+    river1:c=68, 70, 70, 0
+    river0:c=56, 59, 62, 0
+    hmap_displacement_down:r=-0.15
+    autodetect_land_selfillum_color:p4=0.53, 0.0, 0.0, 0.16
+    paint_details_tex:t="normandy_wall_color_tex_palette*"
+    puddle_increase:r=0.01
+    land_selfillum_strength:r=32.0
+    water_color_noise_size:r=71.0
+    river_density:r=3.0
+  }
+}
+
+entity{
+  _template:t="postfx_color_grading_tonemap_death_alive_enlisted"
+}
+
+entity{
+  _template:t="bloom"
+}
+
+entity{
+  _template:t="postfx_roundctrl"
+}
+
+entity{
+  _template:t="static_cam"
+  camera__active:b=yes
+  transform:m=[[-0.879986, -0.00213794, -0.474993] [-0.0121064, 0.999766, 0.0179287] [0.474844, 0.0215275, -0.879807] [-254.947, 30.5011, -244.232]]
+}
+
+entity{
+  _template:t="briefing_gun_game"
+  mission_name:t="normandy_farm_gun_game"
+  mission_outfit:t="pacific"
+
+  "loading_images:list<t>"{
+    item:t="ui/normandy_coast_farm_02.avif"
+  }
+}
+
+entity{
+  _template:t="gun_game_respawn_base"
+  transform:m=[[0.0352549, 0.0, -0.999383] [0.0, 1.0, 0.0] [0.999376, -0.0, 0.0352547] [-242.727, 22.1755, -299.255]]
+  gun_game__respawnFriendlyRadius:r=8.0
+}
+
+entity{
+  _template:t="gun_game_respawn_base"
+  transform:m=[[0.0352549, 0.0, -0.999383] [0.0, 1.0, 0.0] [0.999376, -0.0, 0.0352547] [-252.052, 22.1756, -307.594]]
+  gun_game__respawnFriendlyRadius:r=6.0
+}
+
+entity{
+  _template:t="gun_game_respawn_base"
+  transform:m=[[-0.0181393, 0.0, 0.99984] [0.0, 1.0, 0.0] [-0.999834, 0.0, -0.0181391] [-214.854, 22.1756, -313.625]]
+  gun_game__respawnFriendlyRadius:r=8.0
+}
+
+entity{
+  _template:t="gun_game_respawn_base"
+  transform:m=[[-0.0181393, 0.0, 0.99984] [0.0, 1.0, 0.0] [-0.999834, 0.0, -0.0181391] [-222.559, 22.1756, -313.653]]
+  gun_game__respawnFriendlyRadius:r=6.0
+}
+
+entity{
+  _template:t="gun_game_respawn_base"
+  transform:m=[[-0.5705, 0.0, -0.821304] [0.0, 1.0, 0.0] [0.821298, 0.0, -0.570496] [-222.527, 22.1756, -298.985]]
+  gun_game__respawnFriendlyRadius:r=11.0
+}
+
+entity{
+  _template:t="gun_game_respawn_base"
+  transform:m=[[0.639434, 0.0, 0.768852] [0.0, 1.0, -0.0] [-0.768847, 0.0, 0.63943] [-243.402, 22.1756, -313.164]]
+  gun_game__respawnFriendlyRadius:r=15.0
+}
+
+entity{
+  _template:t="gun_game_respawn_base"
+  transform:m=[[1.0, 0.0, -0.00254607] [0.0, 1.0, 0.0] [0.00254606, -0.0, 0.999995] [-215.517, 25.4495, -303.703]]
+  gun_game__respawnFriendlyRadius:r=15.0
+}
+
+entity{
+  _template:t="gun_game_respawn_base"
+  transform:m=[[0.00125141, 0.0, 1.0] [-0.0, 1.0, 0.0] [-0.999997, -0.0, 0.0012514] [-220.75, 25.4495, -304.074]]
+  gun_game__respawnFriendlyRadius:r=10.0
+}
+
+entity{
+  _template:t="gun_game_respawn_base"
+  transform:m=[[0.00125141, 0.0, 1.0] [-0.0, 1.0, 0.0] [-0.999997, -0.0, 0.0012514] [-244.622, 25.4495, -305.4]]
+  gun_game__respawnFriendlyRadius:r=15.0
+}
+
+entity{
+  _template:t="gun_game_respawn_base"
+  transform:m=[[-0.952988, 0.0, -0.303025] [0.0, 0.999999, 0.0] [0.303023, 0.0, -0.952981] [-243.178, 25.4495, -308.635]]
+  gun_game__respawnFriendlyRadius:r=15.0
+}
+
+entity{
+  _template:t="gun_game_respawn_base"
+  transform:m=[[0.385738, 0.0, -0.922614] [0.0, 1.0, 0.0] [0.922607, -0.0, 0.385735] [-223.092, 25.4495, -309.787]]
+  gun_game__respawnFriendlyRadius:r=10.0
+}
+
+entity{
+  _template:t="gun_game_respawn_base"
+  transform:m=[[0.937165, 0.0, -0.348902] [0.0, 1.0, 0.0] [0.348899, -0.0, 0.937158] [-221.466, 29.2433, -308.365]]
+  gun_game__respawnFriendlyRadius:r=10.0
+}
+
+entity{
+  _template:t="gun_game_respawn_base"
+  transform:m=[[-0.0673503, 0.0, -0.997735] [0.0, 0.999999, 0.0] [0.997727, 0.0, -0.0673498] [-214.705, 29.2433, -298.444]]
+  gun_game__respawnFriendlyRadius:r=18.0
+}
+
+entity{
+  _template:t="gun_game_respawn_base"
+  transform:m=[[-0.0673503, 0.0, -0.997735] [0.0, 0.999999, 0.0] [0.997727, 0.0, -0.0673498] [-250.636, 29.2433, -298.713]]
+  gun_game__respawnFriendlyRadius:r=15.0
+}
+
+entity{
+  _template:t="gun_game_respawn_base"
+  transform:m=[[0.902944, 0.0, 0.429769] [0.0, 0.999999, -0.0] [-0.429766, 0.0, 0.902938] [-253.598, 29.2433, -312.88]]
+  gun_game__respawnFriendlyRadius:r=7.0
+}
+
+entity{
+  _template:t="gun_game_respawn_base"
+  transform:m=[[-0.0105502, 0.0, -0.99995] [0.0, 0.999999, 0.0] [0.999942, 0.0, -0.0105502] [-246.198, 29.2433, -307.294]]
+  gun_game__respawnFriendlyRadius:r=10.0
+}
+
+entity{
+  _template:t="gun_game_respawn_base"
+  transform:m=[[-0.999629, 0.0, 0.0274453] [0.0, 0.999999, 0.0] [-0.0274451, 0.0, -0.999621] [-221.439, 30.5544, -304.947]]
+  gun_game__respawnFriendlyRadius:r=7.0
+}
+
+entity{
+  _template:t="gun_game_respawn_base"
+  transform:m=[[0.0140807, 0.0, 0.999906] [0.0, 0.999999, -0.0] [-0.999899, 0.0, 0.0140806] [-238.832, 25.4495, -315.666]]
+  gun_game__respawnFriendlyRadius:r=10.0
+}
+
+entity{
+  _template:t="gun_game_respawn_base"
+  transform:m=[[0.0140807, 0.0, 0.999906] [0.0, 0.999999, -0.0] [-0.999899, 0.0, 0.0140806] [-227.225, 25.4495, -315.767]]
+  gun_game__respawnFriendlyRadius:r=10.0
+}
+
+entity{
+  _template:t="gun_game_respawn_base"
+  transform:m=[[0.492066, 0.0, -0.870559] [0.0, 1.0, 0.0] [0.870556, -0.0, 0.492064] [-214.706, 25.4495, -308.485]]
+  gun_game__respawnFriendlyRadius:r=15.0
+}
+
+entity{
+  _template:t="gun_game_respawn_base"
+  transform:m=[[0.874162, 0.0, 0.485645] [0.0, 1.0, -0.0] [-0.485641, 0.0, 0.874155] [-255.139, 25.4495, -313.741]]
+  gun_game__respawnFriendlyRadius:r=17.0
+}
+
+entity{
+  _template:t="gun_game_respawn_base"
+  transform:m=[[0.874162, 0.0, 0.485645] [0.0, 1.0, -0.0] [-0.485641, 0.0, 0.874155] [-255.139, 25.4495, -313.741]]
+  gun_game__respawnFriendlyRadius:r=17.0
+}
+
+entity{
+  _template:t="gun_game_respawn_base"
+  transform:m=[[0.999958, 0.0, 0.00977416] [0.0, 0.999999, -0.0] [-0.00977408, 0.0, 0.99995] [-244.76, 30.5392, -305.059]]
+  gun_game__respawnFriendlyRadius:r=7.0
+}
+
+entity{
+  _template:t="gun_game_respawn_base"
+  transform:m=[[-0.374288, 0.0, -0.927319] [0.0, 0.999999, 0.0] [0.927312, 0.0, -0.374285] [-214.901, 29.2946, -309.726]]
+  gun_game__respawnFriendlyRadius:r=15.0
+}
+
+entity{
+  _template:t="sandbags_wall_8"
+  transform:m=[[-0.0250565, 0.0, -0.999685] [0.0, 1.0, 0.0] [0.999687, 0.0, -0.0250565] [-232.987, 21.4469, -316.308]]
+}
+
+entity{
+  _template:t="gun_game_respawn_base"
+  transform:m=[[0.992059, 0.0, 0.125806] [0.0, 1.0, -0.0] [-0.125805, 0.0, 0.992053] [-234.625, 22.1756, -317.766]]
+  gun_game__respawnFriendlyRadius:r=5.0
+}
+
+entity{
+  _template:t="gun_game_respawn_base"
+  transform:m=[[-0.0899539, 0.0, -0.995951] [0.0, 1.0, 0.0] [0.995944, 0.0, -0.0899533] [-214.947, 22.1756, -307.639]]
+  gun_game__respawnFriendlyRadius:r=8.0
+}
+
+entity{
+  _template:t="sandbags_wall_8"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-254.127, 21.4469, -300.209]]
+}
+
+entity{
+  _template:t="sandbags_wall_9"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-254.71, 21.4469, -298.762]]
+}
+
+entity{
+  _template:t="gun_game_respawn_base"
+  transform:m=[[0.0352549, 0.0, -0.999383] [0.0, 1.0, 0.0] [0.999376, -0.0, 0.0352547] [-256.127, 22.1756, -299.911]]
+  gun_game__respawnFriendlyRadius:r=5.0
+}
+
+entity{
+  _template:t="sandbags_wall_8"
+  transform:m=[[-0.000325881, 0.0, 1.0] [0.0, 1.0, 0.0] [-1.0, 0.0, -0.000325881] [-226.801, 21.4469, -299.707]]
+}
+
+entity{
+  _template:t="sandbags_wall_9"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-227.589, 21.4469, -298.507]]
+}
+
+entity{
+  _template:t="gun_game_respawn_base"
+  transform:m=[[-0.0200206, 0.0, 0.999804] [0.0, 1.0, 0.0] [-0.999797, 0.0, -0.0200204] [-226.481, 22.1756, -298.945]]
+  gun_game__respawnFriendlyRadius:r=5.0
+}
+
+entity{
+  _template:t="sawmill_wood_boards_a"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-250.498, 20.1499, -313.311]]
+}
+
+entity{
+  _template:t="sawmill_wood_boards_a"
+  transform:m=[[0.0171256, 0.0, 0.999853] [0.0, 1.0, -0.0] [-0.999853, 0.0, 0.0171256] [-259.821, 20.1024, -309.136]]
+}
+
+entity{
+  _template:t="sawmill_wood_boards_a"
+  transform:m=[[0.999917, 0.0, -0.0128587] [0.0, 1.0, 0.0] [0.0128587, -0.0, 0.999917] [-259.65, 20.7043, -306.236]]
+}
+
+entity{
+  _template:t="sandbags_wall_8"
+  transform:m=[[-0.000325881, 0.0, 1.0] [0.0, 1.0, 0.0] [-1.0, 0.0, -0.000325881] [-239.199, 21.4469, -299.707]]
+}
+
+entity{
+  _template:t="sandbags_wall_9"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-238.397, 21.4469, -298.507]]
+}
+
+entity{
+  _template:t="gun_game_respawn_base"
+  transform:m=[[-0.0200206, 0.0, 0.999804] [0.0, 1.0, 0.0] [-0.999797, 0.0, -0.0200204] [-239.552, 22.1756, -298.884]]
+  gun_game__respawnFriendlyRadius:r=5.0
+}
+
+entity{
+  _template:t="rendinsts_removes"
+
+  "rirmv:array"{
+
+    "rirmv:object"{
+      name:t="normandy_vernacular_fence_1500_wrought_iron_a"
+      tm:m=[[-1.00051, -0.00348645, 0.0] [-0.00347108, 0.996111, 0.0] [0.0, 0.0, -1.00052] [-199.662, 21.4824, -333.95]]
+    }
+
+    "rirmv:object"{
+      name:t="normandy_vernacular_fence_1500_wrought_iron_a"
+      tm:m=[[-0.997698, -0.000351191, 0.0] [-0.000350773, 0.996453, 0.0] [0.0, 0.0, -0.997698] [-201.687, 21.4786, -333.95]]
+    }
+
+    "rirmv:object"{
+      name:t="normandy_vernacular_fence_1500_wrought_iron_a"
+      tm:m=[[-0.94604, 0.00798553, -0.309208] [0.00755316, 0.990412, 0.00246871] [0.309218, 0.0, -0.946071] [-197.701, 21.4778, -333.637]]
+    }
+
+    "rirmv:object"{
+      name:t="normandy_vernacular_fence_1500_wrought_iron_a_damaged_a"
+      tm:m=[[-0.997724, 0.00512487, 0.0] [0.00511843, 0.996466, 0.0] [0.0, 0.0, -0.997737] [-205.722, 21.4883, -333.95]]
+    }
+
+    "rirmv:object"{
+      name:t="normandy_vernacular_fence_1500_wrought_iron_a"
+      tm:m=[[-0.996933, 0.00623006, -9.03606e-05] [0.00622982, 0.996895, 5.36442e-07] [9.03606e-05, 0.0, -0.996953] [-207.74, 21.4998, -333.95]]
+    }
+
+    "rirmv:object"{
+      name:t="normandy_vernacular_fence_1500_wrought_iron_a"
+      tm:m=[[-0.997437, 0.00246453, 0.0] [0.00245273, 0.992657, 0.0] [0.0, 0.0, -0.99744] [-203.712, 21.4807, -333.95]]
+    }
+
+    "rirmv:object"{
+      name:t="normandy_vernacular_fence_1500_wrought_iron_a"
+      tm:m=[[-0.995103, 0.00166279, -0.000455022] [0.00167102, 1.00004, 7.15256e-07] [0.000455022, 0.0, -0.995105] [-209.75, 21.5078, -333.951]]
+    }
+
+    "rirmv:object"{
+      name:t="hp_bed_a_matress"
+      tm:m=[[-2.38419e-07, 0.0, -1.0] [0.0, 1.0, 0.0] [1.0, 0.0, -2.38419e-07] [-247.183, 25.1063, -302.001]]
+    }
+
+    "rirmv:object"{
+      name:t="hp_trolley_a"
+      tm:m=[[-0.0871561, 0.0, -0.996195] [0.0, 1.0, 0.0] [0.996195, 0.0, -0.0871561] [-246.202, 24.6363, -301.044]]
+    }
+
+    "rirmv:object"{
+      name:t="hp_bed_a"
+      tm:m=[[-2.38419e-07, 0.0, -1.0] [0.0, 1.0, 0.0] [1.0, 0.0, -2.38419e-07] [-247.183, 24.6363, -302.001]]
+    }
+
+    "rirmv:object"{
+      name:t="ammunition_box_piles_d"
+      tm:m=[[0.737277, 0.0, -0.67559] [0.0, 1.0, 0.0] [0.67559, 0.0, 0.737277] [-225.527, 21.5092, -263.709]]
+    }
+
+    "rirmv:object"{
+      name:t="ammunition_box_piles_b"
+      tm:m=[[0.999048, 0.0, 0.0436192] [0.0, 1.0, 0.0] [-0.0436192, 0.0, 0.999048] [-228.951, 21.4707, -283.126]]
+    }
+
+    "rirmv:object"{
+      name:t="normandy_vernacular_fence_1500_wrought_iron_a"
+      tm:m=[[-0.0137166, -0.0236614, -1.00219] [-0.000323772, 1.00216, -0.0236562] [1.00247, 0.0, -0.0137205] [-196.359, 20.9938, -296.1]]
+    }
+
+    "rirmv:object"{
+      name:t="normandy_vernacular_fence_1500_wrought_iron_a"
+      tm:m=[[-0.0143389, -0.012285, -1.00289] [-0.00017488, 0.998868, -0.0122333] [1.00296, 0.0, -0.0143399] [-196.388, 20.9577, -298.113]]
+    }
+
+    "rirmv:object"{
+      name:t="normandy_vernacular_fence_1500_wrought_iron_a"
+      tm:m=[[-0.00921702, -0.00619137, -0.999893] [-5.71609e-05, 1.00205, -0.00620425] [0.999913, 0.0, -0.0092172] [-196.43, 20.9096, -302.143]]
+    }
+
+    "rirmv:object"{
+      name:t="normandy_vernacular_fence_1500_wrought_iron_a"
+      tm:m=[[-0.00936162, -0.0146465, -1.00235] [-0.000137448, 1.00739, -0.0147188] [1.00246, 0.0, -0.00936264] [-196.412, 20.9306, -300.132]]
+    }
+
+    "rirmv:object"{
+      name:t="normandy_vernacular_fence_1500_wrought_iron_a"
+      tm:m=[[-0.00398594, -0.0388678, -0.99778] [-0.000155926, 1.00205, -0.0390337] [0.998536, 0.0, -0.00398892] [-196.316, 21.2255, -290.07]]
+    }
+
+    "rirmv:object"{
+      name:t="normandy_vernacular_fence_1500_wrought_iron_a"
+      tm:m=[[-0.0058971, -0.0175207, -0.996766] [-0.000103593, 0.996551, -0.0175164] [0.99692, 0.0, -0.005898] [-196.306, 21.2823, -288.058]]
+    }
+
+    "rirmv:object"{
+      name:t="normandy_vernacular_fence_column_1500_a"
+      tm:m=[[-0.0100273, 0.0, -0.991118] [0.0, 0.997543, 0.0] [0.991118, 0.0, -0.0100273] [-196.3, 21.3, -287.05]]
+    }
+
+    "rirmv:object"{
+      name:t="normandy_vernacular_fence_1500_wrought_iron_a"
+      tm:m=[[-0.00758952, -0.0410408, -0.999227] [-0.000312626, 1.00238, -0.0411677] [1.00007, 0.0, -0.0075959] [-196.338, 21.0588, -294.089]]
+    }
+
+    "rirmv:object"{
+      name:t="normandy_vernacular_fence_1500_wrought_iron_a_damaged_a"
+      tm:m=[[-0.00522685, -0.0428386, -0.998093] [-0.00022459, 0.999468, -0.0428965] [0.999012, 0.0, -0.00523168] [-196.325, 21.1433, -292.077]]
+    }
+
+    "rirmv:object"{
+      name:t="normandy_vernacular_fence_1500_wrought_iron_a"
+      tm:m=[[-0.0171126, 0.0141491, 1.00163] [0.000242829, 1.00654, -0.0142143] [-1.00173, 0.0, -0.0171143] [-267.773, 21.3763, -293.003]]
+    }
+
+    "rirmv:object"{
+      name:t="normandy_vernacular_fence_1500_wrought_iron_a"
+      tm:m=[[-0.0172037, 0.00989521, 1.00368] [0.000169098, 1.00108, -0.00986665] [-1.00373, 0.0, -0.0172046] [-267.739, 21.3522, -295.013]]
+    }
+
+    "rirmv:object"{
+      name:t="normandy_vernacular_fence_1500_wrought_iron_a_damaged_a"
+      tm:m=[[-0.0171032, 0.00632912, 0.997124] [0.000108421, 0.996239, -0.00632161] [-0.997144, 0.0, -0.0171035] [-267.705, 21.336, -297.015]]
+    }
+
+    "rirmv:object"{
+      name:t="normandy_vernacular_fence_1500_wrought_iron_a"
+      tm:m=[[-0.0171856, 0.00346541, 1.00427] [5.91278e-05, 1.0024, -0.00345796] [-1.00428, 0.0, -0.0171857] [-267.67, 21.3262, -299.016]]
+    }
+
+    "rirmv:object"{
+      name:t="normandy_vernacular_fence_1500_wrought_iron_a"
+      tm:m=[[-0.0171278, 0.00108868, 1.00409] [1.85966e-05, 1.00585, -0.00109023] [-1.00409, 0.0, -0.0171278] [-267.636, 21.3217, -301.016]]
+    }
+
+    "rirmv:object"{
+      name:t="normandy_vernacular_fence_gate_column_a"
+      tm:m=[[0.999963, -0.00846237, -0.00139773] [0.00846237, 0.999964, -1.18017e-05] [0.00139779, 0.0, 0.999999] [-231.26, 21.9005, -333.9]]
+    }
+
+    "rirmv:object"{
+      name:t="metal_gate_grille_a_lr"
+      tm:m=[[-0.999963, 0.00846237, 0.00139773] [0.00846237, 0.999964, -1.18017e-05] [-0.00139779, 0.0, -0.999999] [-231.59, 21.9033, -333.899]]
+    }
+
+    "rirmv:object"{
+      name:t="metal_gate_grille_a_lr"
+      tm:m=[[0.999963, -0.00846237, -0.00139773] [0.00846237, 0.999964, -1.18017e-05] [0.00139779, 0.0, 0.999999] [-235.33, 21.9349, -333.894]]
+    }
+
+    "rirmv:object"{
+      name:t="normandy_vernacular_fence_1500_wrought_iron_a"
+      tm:m=[[-1.00212, 0.0375401, 0.00219703] [0.037544, 1.00223, -8.22544e-05] [-0.00219858, 0.0, -1.00282] [-229.895, 21.851, -333.902]]
+    }
+
+    "rirmv:object"{
+      name:t="normandy_vernacular_fence_1500_wrought_iron_a"
+      tm:m=[[-0.997762, 0.0357195, 0.00470752] [0.0356026, 0.99452, -0.000167966] [-0.0047105, 0.0, -0.998401] [-227.876, 21.777, -333.909]]
+    }
+
+    "rirmv:object"{
+      name:t="normandy_vernacular_fence_gate_column_a"
+      tm:m=[[-0.999963, 0.00846237, 0.00139773] [0.00846237, 0.999964, -1.18017e-05] [-0.00139779, 0.0, -0.999999] [-235.66, 21.9377, -333.894]]
+    }
+
+    "rirmv:object"{
+      name:t="normandy_vernacular_fence_1500_wrought_iron_a"
+      tm:m=[[-0.996531, -0.0236971, 0.00296956] [-0.0237929, 1.00057, 7.08699e-05] [-0.0029704, 0.0, -0.996813] [-236.728, 21.9143, -333.891]]
+    }
+
+    "rirmv:object"{
+      name:t="garage_wooden_shelf_j"
+      tm:m=[[-1.0, 0.0, 2.38419e-07] [0.0, 1.0, 0.0] [-2.38419e-07, 0.0, -1.0] [-210.985, 21.4446, -301.764]]
+    }
+
+    "rirmv:object"{
+      name:t="saw_wood_a"
+      tm:m=[[-0.048647, -1.3113e-06, -0.998816] [-0.998753, -0.0112796, 0.0486439] [-0.0112663, 0.999936, 0.000547349] [-210.874, 23.2165, -301.128]]
+    }
+
+    "rirmv:object"{
+      name:t="wooden_barrel_a"
+      tm:m=[[-0.626314, 0.766044, -0.144596] [-0.22495, 2.98023e-07, 0.97437] [0.746411, 0.642789, 0.172322] [-234.664, 21.7221, -317.661]]
+    }
+
+    "rirmv:object"{
+      name:t="wooden_barrel_a"
+      tm:m=[[0.374606, 7.15256e-07, 0.927184] [-8.9407e-07, 1.0, -3.57628e-07] [-0.927184, -6.55651e-07, 0.374606] [-234.784, 21.4446, -317.979]]
+    }
+
+    "rirmv:object"{
+      name:t="wooden_barrel_b"
+      tm:m=[[-0.920505, -1.13249e-06, -0.390731] [-8.9407e-07, 1.0, -7.15256e-07] [0.390731, -2.98023e-07, -0.920505] [-235.348, 21.4446, -318.195]]
+    }
+
+    "rirmv:object"{
+      name:t="wooden_barrel_a"
+      tm:m=[[0.626313, 0.766045, 0.144595] [-0.22495, 5.96046e-08, 0.97437] [0.746411, -0.642787, 0.172322] [-235.198, 21.7221, -317.823]]
+    }
+
+    "rirmv:object"{
+      name:t="wooden_barrel_a"
+      tm:m=[[-0.969846, -0.153356, -0.189422] [-0.19169, 3.57628e-07, 0.981456] [-0.150512, 0.988171, -0.0293971] [-235.742, 21.7221, -317.936]]
+    }
+
+    "rirmv:object"{
+      name:t="wooden_barrel_b"
+      tm:m=[[-0.309017, 0.0, 0.951057] [0.951057, 1.72853e-06, 0.309017] [-1.60933e-06, 1.0, -4.76837e-07] [-235.982, 21.7672, -316.971]]
+    }
+
+    "rirmv:object"{
+      name:t="ammunition_box_b"
+      tm:m=[[-0.906308, 0.0, 0.42262] [0.0, 1.0, 0.0] [-0.42262, 0.0, -0.906308] [-234.582, 21.4446, -318.822]]
+    }
+
+    "rirmv:object"{
+      name:t="is_book_shelf_a"
+      tm:m=[[-2.98023e-07, 1.0, 0.0] [0.965926, 2.98023e-07, 0.258819] [0.258819, 5.96046e-08, -0.965926] [-210.302, 21.5937, -307.485]]
+    }
+
+    "rirmv:object"{
+      name:t="is_book_shelf_b"
+      tm:m=[[-2.98023e-07, -1.0, 0.0] [0.984808, -2.98023e-07, -0.173648] [0.173648, -5.96046e-08, 0.984808] [-210.195, 21.5888, -307.502]]
+    }
+
+    "rirmv:object"{
+      name:t="is_chair_d_broken_c"
+      tm:m=[[0.996195, 0.0, 0.0871556] [0.0, 1.0, 0.0] [-0.0871556, 0.0, 0.996195] [-209.795, 21.4473, -306.681]]
+    }
+
+    "rirmv:object"{
+      name:t="is_stool_a"
+      tm:m=[[-0.866025, 0.0, -0.5] [0.0, 1.0, 0.0] [0.5, 0.0, -0.866025] [-209.604, 21.4452, -307.203]]
+    }
+
+    "rirmv:object"{
+      name:t="is_stool_a"
+      tm:m=[[-0.965926, 0.0, 0.258819] [1.19209e-06, -1.0, 4.47035e-06] [0.258819, 4.64916e-06, 0.965926] [-209.604, 22.2163, -307.203]]
+    }
+
+    "rirmv:object"{
+      name:t="is_stool_a"
+      tm:m=[[-0.965926, 0.0, 0.258819] [0.0, 1.0, 0.0] [-0.258819, 0.0, -0.965926] [-209.203, 21.4444, -306.808]]
+    }
+
+    "rirmv:object"{
+      name:t="is_chair_d_broken_c"
+      tm:m=[[-0.34202, 0.0, -0.939693] [0.0, 1.0, 0.0] [0.939693, 0.0, -0.34202] [-208.82, 21.4473, -307.099]]
+    }
+
+    "rirmv:object"{
+      name:t="is_chair_a"
+      tm:m=[[0.965926, 0.0, 0.258819] [0.0, 1.0, 0.0] [-0.258819, 0.0, 0.965926] [-208.796, 21.4524, -307.677]]
+    }
+
+    "rirmv:object"{
+      name:t="wooden_barrel_b"
+      tm:m=[[0.182002, 0.0, 0.983298] [0.0, 1.0, 0.0] [-0.983298, 0.0, 0.182002] [-209.739, 21.4433, -308.45]]
+    }
+
+    "rirmv:object"{
+      name:t="wooden_barrel_a"
+      tm:m=[[0.627653, 0.0, -0.778493] [0.0, 1.0, 0.0] [0.778493, 0.0, 0.627653] [-209.23, 21.4433, -308.746]]
+    }
+
+    "rirmv:object"{
+      name:t="wooden_barrel_a"
+      tm:m=[[-0.903506, 0.0, -0.428576] [0.0, 1.0, 0.0] [0.428576, 0.0, -0.903506] [-208.822, 21.4433, -308.384]]
+    }
+
+    "rirmv:object"{
+      name:t="wooden_barrel_a"
+      tm:m=[[0.0183756, 0.0, 0.999831] [0.0, 1.0, 0.0] [-0.999831, 0.0, 0.0183756] [-210.269, 21.4433, -308.724]]
+    }
+
+    "rirmv:object"{
+      name:t="wooden_barrel_b"
+      tm:m=[[0.269116, -1.19209e-07, 0.963107] [-2.38419e-07, 1.0, 1.78814e-07] [-0.963107, -2.98023e-07, 0.269116] [-210.06, 21.4442, -309.363]]
+    }
+
+    "rirmv:object"{
+      name:t="wooden_barrel_b"
+      tm:m=[[-0.886106, -1.19209e-07, -0.463483] [0.0, 1.0, -3.57628e-07] [0.463483, -2.98023e-07, -0.886106] [-209.205, 21.4442, -309.47]]
+    }
+
+    "rirmv:object"{
+      name:t="wooden_barrel_a"
+      tm:m=[[0.469072, 0.0, -0.883159] [-0.883159, 0.0, -0.469072] [0.0, 1.0, 0.0] [-209.315, 21.7209, -309.945]]
+    }
+
+    "rirmv:object"{
+      name:t="wooden_barrel_b"
+      tm:m=[[-0.784215, -1.19209e-07, -0.620488] [5.96046e-08, 1.0, -2.98023e-07] [0.620488, -2.98023e-07, -0.784215] [-208.852, 21.4442, -310.024]]
+    }
+
+    "rirmv:object"{
+      name:t="wooden_barrel_c"
+      tm:m=[[-0.997183, 0.0, -0.074993] [0.0, 1.0, 0.0] [0.074993, 0.0, -0.997183] [-209.23, 21.4442, -310.814]]
+    }
+
+    "rirmv:object"{
+      name:t="ammunition_box_piles_d"
+      tm:m=[[1.0, 0.0, -4.17233e-07] [0.0, 1.0, 0.0] [4.17233e-07, 0.0, 1.0] [-209.44, 24.7744, -305.981]]
+    }
+
+    "rirmv:object"{
+      name:t="ammunition_box_piles_a"
+      tm:m=[[-1.0, 0.0, 2.38419e-07] [0.0, 1.0, 0.0] [-2.38419e-07, 0.0, -1.0] [-230.828, 24.7757, -295.007]]
+    }
+  }
+
+  "riunb:array"{
+
+    "riunb:object"{
+      name:t="is_cupboard_b"
+      tm:m=[[1.19209e-07, 0.0, 1.0] [0.0, 1.0, 0.0] [-1.0, 0.0, 1.19209e-07] [-246.023, 33.0446, -311.764]]
+    }
+
+    "riunb:object"{
+      name:t="is_cupboard_a"
+      tm:m=[[1.0, 0.0, -4.17233e-07] [0.0, 1.0, 0.0] [4.17233e-07, 0.0, 1.0] [-255.318, 33.0446, -306.814]]
+    }
+
+    "riunb:object"{
+      name:t="opel_blitz_kfz_305_tent"
+      tm:m=[[0.953717, -2.60472e-05, 0.300706] [-0.00130385, 0.99999, 0.00422204] [-0.300703, -0.00441873, 0.953708] [-206.25, 21.3472, -259.151]]
+    }
+
+    "riunb:object"{
+      name:t="opel_blitz_kfz_305_broken"
+      tm:m=[[0.953717, -2.60472e-05, 0.300706] [-0.00130385, 0.99999, 0.00422204] [-0.300703, -0.00441873, 0.953708] [-206.25, 21.4702, -259.15]]
+    }
+
+    "riunb:object"{
+      name:t="wood_debris_b"
+      tm:m=[[0.0817702, -0.0284067, -0.996246] [-0.0243954, 0.999237, -0.0304943] [0.996352, 0.0267974, 0.0810148] [-162.643, 20.3924, -119.039]]
+    }
+
+    "riunb:object"{
+      name:t="wood_debris_a"
+      tm:m=[[0.68696, 0.0428679, -0.725429] [-0.0365856, 0.999033, 0.0243904] [0.725773, 0.009785, 0.687864] [-162.503, 20.4082, -129.707]]
+    }
+
+    "riunb:object"{
+      name:t="debris_logs_pile_c"
+      tm:m=[[0.644713, 0.252688, -0.721453] [-0.200599, 0.966635, 0.1593] [0.737635, 0.04202, 0.673891] [373.358, 6.08271, -328.234]]
+    }
+
+    "riunb:object"{
+      name:t="wooden_wheelbarrow_b"
+      tm:m=[[0.975609, -0.0916217, 0.19948] [0.0971777, 0.9951, -0.0182208] [-0.196833, 0.0371614, 0.979733] [-246.565, 23.3812, 51.2033]]
+    }
+
+    "riunb:object"{
+      name:t="wooden_trailer_b"
+      tm:m=[[-0.421883, 0.0154498, 0.906519] [0.0365965, 0.99933, 0.0] [-0.905911, 0.0331754, -0.422166] [-221.883, 24.0306, 60.7725]]
+    }
+
+    "riunb:object"{
+      name:t="ammunition_box_n"
+      tm:m=[[0.906307, 0.0, -0.422618] [0.0, 1.0, 0.0] [0.422618, 0.0, 0.906307] [-235.998, 21.473, -271.133]]
+    }
+
+    "riunb:object"{
+      name:t="wood_debris_e"
+      tm:m=[[-0.0927731, -0.047746, 0.994542] [-0.121091, 0.991976, 0.0363272] [-0.988297, -0.11706, -0.0978103] [-184.847, 23.8818, 15.3558]]
+    }
+
+    "riunb:object"{
+      name:t="wood_debris_d"
+      tm:m=[[0.110497, 0.186074, 0.976303] [-0.0119933, 0.982496, -0.185897] [-0.993804, 0.00883192, 0.110795] [-153.359, 25.287, 42.0764]]
+    }
+
+    "riunb:object"{
+      name:t="ammunition_box_o"
+      tm:m=[[0.0436195, 0.0, -0.999048] [0.0, 1.0, 0.0] [0.999048, 0.0, 0.0436195] [-145.473, 20.531, -133.449]]
+    }
+  }
+}
+
+entity{
+  _template:t="unbaked_rendinst"
+  transform:m=[[1.19209e-07, 0.0, 1.0] [0.0, 1.0, 0.0] [-1.0, 0.0, 1.19209e-07] [-246.023, 33.0446, -311.764]]
+  ri_extra__name:t="is_cupboard_b"
+  rebake__tm:m=[[1.19209e-07, 0.0, 1.0] [0.0, 1.0, 0.0] [-1.0, 0.0, 1.19209e-07] [-246.023, 33.0446, -311.764]]
+  rebake__name:t="is_cupboard_b"
+}
+
+entity{
+  _template:t="unbaked_rendinst"
+  transform:m=[[1.19209e-07, 0.0, 1.0] [0.0, 1.0, 0.0] [-1.0, 0.0, 1.19209e-07] [-246.023, 33.0446, -311.764]]
+  ri_extra__name:t="is_cupboard_b"
+  rebake__tm:m=[[1.19209e-07, 0.0, 1.0] [0.0, 1.0, 0.0] [-1.0, 0.0, 1.19209e-07] [-246.023, 33.0446, -311.764]]
+  rebake__name:t="is_cupboard_b"
+}
+
+entity{
+  _template:t="unbaked_rendinst"
+  transform:m=[[-0.465713, 0.0, 0.884936] [0.0, 1.0, 0.0] [-0.884936, 0.0, -0.465713] [-249.568, 33.0446, -305.524]]
+  ri_extra__name:t="is_cupboard_b"
+  rebake__tm:m=[[1.19209e-07, 0.0, 1.0] [0.0, 1.0, 0.0] [-1.0, 0.0, 1.19209e-07] [-246.023, 33.0446, -311.764]]
+  rebake__name:t="is_cupboard_b"
+}
+
+entity{
+  _template:t="unbaked_rendinst"
+  transform:m=[[1.0, 0.0, -4.17233e-07] [0.0, 1.0, 0.0] [4.17233e-07, 0.0, 1.0] [-255.318, 33.0446, -306.814]]
+  ri_extra__name:t="is_cupboard_a"
+  rebake__tm:m=[[1.0, 0.0, -4.17233e-07] [0.0, 1.0, 0.0] [4.17233e-07, 0.0, 1.0] [-255.318, 33.0446, -306.814]]
+  rebake__name:t="is_cupboard_a"
+}
+
+entity{
+  _template:t="unbaked_rendinst"
+  transform:m=[[-0.972553, 0.0, -0.232682] [0.0, 1.0, 0.0] [0.232682, 0.0, -0.972553] [-249.529, 33.0446, -304.352]]
+  ri_extra__name:t="is_cupboard_a"
+  rebake__tm:m=[[1.0, 0.0, -4.17233e-07] [0.0, 1.0, 0.0] [4.17233e-07, 0.0, 1.0] [-255.318, 33.0446, -306.814]]
+  rebake__name:t="is_cupboard_a"
+}
+
+entity{
+  _template:t="unbaked_rendinst"
+  transform:m=[[-0.465713, 0.0, 0.884936] [0.0, 1.0, 0.0] [-0.884936, 0.0, -0.465713] [-216.34, 33.0446, -305.16]]
+  ri_extra__name:t="is_cupboard_b"
+  rebake__tm:m=[[1.19209e-07, 0.0, 1.0] [0.0, 1.0, 0.0] [-1.0, 0.0, 1.19209e-07] [-246.023, 33.0446, -311.764]]
+  rebake__name:t="is_cupboard_b"
+}
+
+entity{
+  _template:t="unbaked_rendinst"
+  transform:m=[[-0.972553, 0.0, -0.232682] [0.0, 1.0, 0.0] [0.232682, 0.0, -0.972553] [-216.3, 33.0446, -303.987]]
+  ri_extra__name:t="is_cupboard_a"
+  rebake__tm:m=[[1.0, 0.0, -4.17233e-07] [0.0, 1.0, 0.0] [4.17233e-07, 0.0, 1.0] [-255.318, 33.0446, -306.814]]
+  rebake__name:t="is_cupboard_a"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[0.687999, 0.0, -0.725711] [0.0, 1.0, 0.0] [0.725711, -0.0, 0.687999] [-202.617, 21.2489, -335.353]]
+  ri_extra__name:t="sandbags_wall_high_l4000_a"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[0.680711, 0.0, -0.732552] [0.0, 1.0, 0.0] [0.732552, -0.0, 0.680711] [-208.749, 21.4453, -328.184]]
+  ri_extra__name:t="sandbags_wall_high_l4000_a"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[-0.738703, 0.0, -0.674032] [0.0, 1.0, 0.0] [0.674032, 0.0, -0.738703] [-209.563, 21.6382, -334.541]]
+  ri_extra__name:t="sandbags_wall_high_l4000_a"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[-0.738703, 0.0, -0.674032] [0.0, 1.0, 0.0] [0.674032, 0.0, -0.738703] [-207.169, 21.4681, -337.117]]
+  ri_extra__name:t="sandbags_wall_high_l4000_a"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[-0.738703, 0.0, -0.674032] [0.0, 1.0, 0.0] [0.674032, 0.0, -0.738703] [-200.074, 21.305, -330.648]]
+  ri_extra__name:t="sandbags_wall_high_l4000_a"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[-0.738703, 0.0, -0.674032] [0.0, 1.0, 0.0] [0.674032, 0.0, -0.738703] [-202.515, 21.2425, -327.912]]
+  ri_extra__name:t="sandbags_wall_high_l4000_a"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[0.680711, 0.0, -0.732552] [0.0, 1.0, 0.0] [0.732552, -0.0, 0.680711] [-200.274, 21.4415, -333.13]]
+  ri_extra__name:t="sandbags_wall_high_l4000_window_a"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[-0.653973, 0.0, 0.756518] [0.0, 1.0, 0.0] [-0.756518, 0.0, -0.653973] [-204.671, 21.1962, -337.284]]
+  ri_extra__name:t="sandbags_wall_high_l4000_window_a"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[-0.653973, 0.0, 0.756518] [0.0, 1.0, 0.0] [-0.756518, 0.0, -0.653973] [-209.58, 21.3903, -331.918]]
+  ri_extra__name:t="sandbags_wall_high_l4000_window_a"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[0.680711, 0.0, -0.732552] [0.0, 1.0, 0.0] [0.732552, -0.0, 0.680711] [-205.145, 21.283, -327.779]]
+  ri_extra__name:t="sandbags_wall_high_l4000_window_a"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[-0.73133, 0.0, -0.682023] [0.0, 1.0, 0.0] [0.682024, 0.0, -0.731331] [-204.714, 21.1684, -332.637]]
+  ri_extra__name:t="sandbags_wall_high_10x8_canopy_a"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[0.798988, 0.0, 0.601347] [0.0, 1.0, -0.0] [-0.601347, 0.0, 0.798988] [-255.298, 21.084, -323.015]]
+  ri_extra__name:t="sandbags_wall_high_l4000_a"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[0.785983, 0.0, 0.618247] [0.0, 1.0, -0.0] [-0.618247, 0.0, 0.785983] [-263.185, 21.2804, -328.817]]
+  ri_extra__name:t="sandbags_wall_high_l4000_a"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[0.594068, 0.0, -0.804416] [0.0, 1.0, 0.0] [0.804416, -0.0, 0.594068] [-258.774, 21.4733, -331.556]]
+  ri_extra__name:t="sandbags_wall_high_l4000_a"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[0.594068, 0.0, -0.804416] [0.0, 1.0, 0.0] [0.804416, -0.0, 0.594068] [-255.964, 21.446, -329.441]]
+  ri_extra__name:t="sandbags_wall_high_l4000_a"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[0.594068, 0.0, -0.804416] [0.0, 1.0, 0.0] [0.804416, -0.0, 0.594068] [-261.666, 21.3151, -321.715]]
+  ri_extra__name:t="sandbags_wall_high_l4000_a"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[0.594068, 0.0, -0.804416] [0.0, 1.0, 0.0] [0.804416, -0.0, 0.594068] [-264.639, 21.4731, -323.861]]
+  ri_extra__name:t="sandbags_wall_high_l4000_a"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[0.798988, 0.0, 0.601347] [0.0, 1.0, -0.0] [-0.601347, 0.0, 0.798988] [-259.218, 21.2766, -322.171]]
+  ri_extra__name:t="sandbags_wall_high_l4000_window_a"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[-0.820062, 0.0, -0.572275] [0.0, 1.0, 0.0] [0.572275, 0.0, -0.820062] [-255.54, 21.3789, -326.974]]
+  ri_extra__name:t="sandbags_wall_high_l4000_window_a"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[-0.820062, 0.0, -0.572275] [0.0, 1.0, 0.0] [0.572275, 0.0, -0.820062] [-261.384, 21.3368, -331.301]]
+  ri_extra__name:t="sandbags_wall_high_l4000_window_a"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[0.798988, 0.0, 0.601347] [0.0, 1.0, -0.0] [-0.601347, 0.0, 0.798988] [-265.043, 21.4284, -326.463]]
+  ri_extra__name:t="sandbags_wall_high_l4000_window_a"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[0.602778, 0.0, -0.797908] [0.0, 1.0, 0.0] [0.797909, -0.0, 0.602779] [-260.166, 21.0035, -326.536]]
+  ri_extra__name:t="sandbags_wall_high_10x8_canopy_a"
+}
+
+entity{
+  _template:t="gun_game_respawn_base"
+  transform:m=[[-0.898867, 0.0, 0.438231] [0.0, 1.0, 0.0] [-0.438229, 0.0, -0.898862] [-204.158, 22.0341, -331.904]]
+  gun_game__respawnFriendlyRadius:r=10.0
+}
+
+entity{
+  _template:t="gun_game_respawn_base"
+  transform:m=[[0.91299, 0.0, 0.407993] [0.0, 1.0, -0.0] [-0.407991, 0.0, 0.912985] [-260.703, 22.2967, -325.584]]
+  gun_game__respawnFriendlyRadius:r=10.0
+}
+
+entity{
+  _template:t="gun_game_respawn_base"
+  transform:m=[[-0.137363, 0.0, -0.990525] [0.0, 1.0, 0.0] [0.990519, 0.0, -0.137363] [-194.513, 21.4976, -290.94]]
+  gun_game__respawnFriendlyRadius:r=10.0
+}
+
+entity{
+  _template:t="gun_game_respawn_base"
+  transform:m=[[0.908782, 0.0, 0.417282] [0.0, 1.0, -0.0] [-0.417279, 0.0, 0.908777] [-282.602, 22.2251, -295.976]]
+  gun_game__respawnFriendlyRadius:r=10.0
+}
+
+entity{
+  _template:t="unbaked_rendinst"
+  transform:m=[[0.953717, -2.60472e-05, 0.300706] [-0.00130385, 0.99999, 0.00422204] [-0.300703, -0.00441873, 0.953708] [-206.25, 21.3472, -259.151]]
+  ri_extra__name:t="opel_blitz_kfz_305_tent"
+  rebake__tm:m=[[0.953717, -2.60472e-05, 0.300706] [-0.00130385, 0.99999, 0.00422204] [-0.300703, -0.00441873, 0.953708] [-206.25, 21.3472, -259.151]]
+  rebake__name:t="opel_blitz_kfz_305_tent"
+}
+
+entity{
+  _template:t="unbaked_rendinst"
+  transform:m=[[0.953717, -2.60472e-05, 0.300706] [-0.00130385, 0.99999, 0.00422204] [-0.300703, -0.00441873, 0.953708] [-206.25, 21.4702, -259.15]]
+  ri_extra__name:t="opel_blitz_kfz_305_broken"
+  rebake__tm:m=[[0.953717, -2.60472e-05, 0.300706] [-0.00130385, 0.99999, 0.00422204] [-0.300703, -0.00441873, 0.953708] [-206.25, 21.4702, -259.15]]
+  rebake__name:t="opel_blitz_kfz_305_broken"
+}
+
+entity{
+  _template:t="unbaked_rendinst"
+  transform:m=[[0.00083968, 0.00301072, 0.999995] [-0.0072614, 0.999969, -0.00300454] [-0.999973, -0.00725884, 0.000861516] [-217.611, 21.1765, -289.556]]
+  ri_extra__name:t="opel_blitz_kfz_305_tent"
+  rebake__tm:m=[[0.953717, -2.60472e-05, 0.300706] [-0.00130385, 0.99999, 0.00422204] [-0.300703, -0.00441873, 0.953708] [-206.25, 21.3472, -259.151]]
+  rebake__name:t="opel_blitz_kfz_305_tent"
+}
+
+entity{
+  _template:t="unbaked_rendinst"
+  transform:m=[[0.00083968, 0.00301072, 0.999995] [-0.0072614, 0.999969, -0.00300454] [-0.999973, -0.00725884, 0.000861516] [-217.612, 21.2995, -289.556]]
+  ri_extra__name:t="opel_blitz_kfz_305_broken"
+  rebake__tm:m=[[0.953717, -2.60472e-05, 0.300706] [-0.00130385, 0.99999, 0.00422204] [-0.300703, -0.00441873, 0.953708] [-206.25, 21.4702, -259.15]]
+  rebake__name:t="opel_blitz_kfz_305_broken"
+}
+
+entity{
+  _template:t="unbaked_rendinst"
+  transform:m=[[-0.191013, -0.085796, -0.977831] [0.00334885, 0.996111, -0.0880541] [0.981582, -0.0200941, -0.189983] [-251.066, 21.4704, -290.565]]
+  ri_extra__name:t="opel_blitz_kfz_305_broken"
+  rebake__tm:m=[[0.953717, -2.60472e-05, 0.300706] [-0.00130385, 0.99999, 0.00422204] [-0.300703, -0.00441873, 0.953708] [-206.25, 21.4702, -259.15]]
+  rebake__name:t="opel_blitz_kfz_305_broken"
+}
+
+entity{
+  _template:t="unbaked_rendinst"
+  transform:m=[[-0.191013, -0.085796, -0.977831] [0.00334885, 0.996111, -0.0880541] [0.981582, -0.0200941, -0.189983] [-251.066, 21.3474, -290.565]]
+  ri_extra__name:t="opel_blitz_kfz_305_tent"
+  rebake__tm:m=[[0.953717, -2.60472e-05, 0.300706] [-0.00130385, 0.99999, 0.00422204] [-0.300703, -0.00441873, 0.953708] [-206.25, 21.3472, -259.151]]
+  rebake__name:t="opel_blitz_kfz_305_tent"
+}
+
+entity{
+  _template:t="unbaked_rendinst"
+  transform:m=[[0.0817702, -0.0284067, -0.996246] [-0.0243954, 0.999237, -0.0304943] [0.996352, 0.0267974, 0.0810148] [-162.643, 20.3924, -119.039]]
+  ri_extra__name:t="wood_debris_b"
+  rebake__tm:m=[[0.0817702, -0.0284067, -0.996246] [-0.0243954, 0.999237, -0.0304943] [0.996352, 0.0267974, 0.0810148] [-162.643, 20.3924, -119.039]]
+  rebake__name:t="wood_debris_b"
+}
+
+entity{
+  _template:t="unbaked_rendinst"
+  transform:m=[[-0.999681, 0.0144415, 0.020705] [0.0137565, 0.999365, -0.0328548] [-0.0211664, -0.0325595, -0.999246] [-260.84, 21.5773, -311.179]]
+  ri_extra__name:t="wood_debris_a"
+  rebake__tm:m=[[0.68696, 0.0428679, -0.725429] [-0.0365856, 0.999033, 0.0243904] [0.725773, 0.009785, 0.687864] [-162.503, 20.4082, -129.707]]
+  rebake__name:t="wood_debris_a"
+}
+
+entity{
+  _template:t="sawmill_wood_boards_a"
+  transform:m=[[-0.0257416, 0.0, -0.999668] [0.0, 1.0, 0.0] [0.999668, 0.0, -0.0257416] [-259.771, 21.2941, -303.226]]
+}
+
+entity{
+  _template:t="debris_wooden_planks_stack_a"
+  transform:m=[[-0.974649, 0.00064346, 0.223737] [-0.0029904, 0.999869, -0.0159025] [-0.223718, -0.0161684, -0.974519] [-197.213, 20.8417, -292.164]]
+}
+
+entity{
+  _template:t="unbaked_rendinst"
+  transform:m=[[0.644713, 0.252688, -0.721453] [-0.200599, 0.966635, 0.1593] [0.737635, 0.04202, 0.673891] [373.358, 6.08271, -328.234]]
+  ri_extra__name:t="debris_logs_pile_c"
+  rebake__tm:m=[[0.644713, 0.252688, -0.721453] [-0.200599, 0.966635, 0.1593] [0.737635, 0.04202, 0.673891] [373.358, 6.08271, -328.234]]
+  rebake__name:t="debris_logs_pile_c"
+}
+
+entity{
+  _template:t="unbaked_rendinst"
+  transform:m=[[0.975609, -0.0916217, 0.19948] [0.0971777, 0.9951, -0.0182208] [-0.196833, 0.0371614, 0.979733] [-246.565, 23.3812, 51.2033]]
+  ri_extra__name:t="wooden_wheelbarrow_b"
+  rebake__tm:m=[[0.975609, -0.0916217, 0.19948] [0.0971777, 0.9951, -0.0182208] [-0.196833, 0.0371614, 0.979733] [-246.565, 23.3812, 51.2033]]
+  rebake__name:t="wooden_wheelbarrow_b"
+}
+
+entity{
+  _template:t="unbaked_rendinst"
+  transform:m=[[-0.134722, -0.0916217, -0.986638] [0.0329664, 0.99475, -0.0968764] [0.990335, -0.0455773, -0.130994] [-205.573, 20.8596, -312.897]]
+  ri_extra__name:t="wooden_wheelbarrow_b"
+  rebake__tm:m=[[0.975609, -0.0916217, 0.19948] [0.0971777, 0.9951, -0.0182208] [-0.196833, 0.0371614, 0.979733] [-246.565, 23.3812, 51.2033]]
+  rebake__name:t="wooden_wheelbarrow_b"
+}
+
+entity{
+  _template:t="unbaked_rendinst"
+  transform:m=[[-0.421883, 0.0154498, 0.906519] [0.0365965, 0.99933, 0.0] [-0.905911, 0.0331754, -0.422166] [-221.883, 24.0306, 60.7725]]
+  ri_extra__name:t="wooden_trailer_b"
+  rebake__tm:m=[[-0.421883, 0.0154498, 0.906519] [0.0365965, 0.99933, 0.0] [-0.905911, 0.0331754, -0.422166] [-221.883, 24.0306, 60.7725]]
+  rebake__name:t="wooden_trailer_b"
+}
+
+entity{
+  _template:t="unbaked_rendinst"
+  transform:m=[[-0.985828, 0.162977, -0.0397873] [0.161396, 0.986072, 0.0401662] [0.0457793, 0.0331754, -0.9984] [-205.358, 20.9288, -310.451]]
+  ri_extra__name:t="wooden_trailer_b"
+  rebake__tm:m=[[-0.421883, 0.0154498, 0.906519] [0.0365965, 0.99933, 0.0] [-0.905911, 0.0331754, -0.422166] [-221.883, 24.0306, 60.7725]]
+  rebake__name:t="wooden_trailer_b"
+}
+
+entity{
+  _template:t="unbaked_rendinst"
+  transform:m=[[0.238295, -0.0635317, 0.969112] [0.188306, 0.981944, 0.0180703] [-0.952762, 0.178184, 0.245956] [-205.922, 22.2892, -310.634]]
+  ri_extra__name:t="ammunition_box_n"
+  rebake__tm:m=[[0.906307, 0.0, -0.422618] [0.0, 1.0, 0.0] [0.422618, 0.0, 0.906307] [-235.998, 21.473, -271.133]]
+  rebake__name:t="ammunition_box_n"
+}
+
+entity{
+  _template:t="unbaked_rendinst"
+  transform:m=[[0.963178, -0.181049, -0.198767] [0.188306, 0.981944, 0.0180703] [0.191907, -0.054834, 0.979879] [-207.09, 22.4554, -310.976]]
+  ri_extra__name:t="ammunition_box_n"
+  rebake__tm:m=[[0.906307, 0.0, -0.422618] [0.0, 1.0, 0.0] [0.422618, 0.0, 0.906307] [-235.998, 21.473, -271.133]]
+  rebake__name:t="ammunition_box_n"
+}
+
+entity{
+  _template:t="unbaked_rendinst"
+  transform:m=[[-0.0927731, -0.047746, 0.994542] [-0.121091, 0.991976, 0.0363272] [-0.988297, -0.11706, -0.0978103] [-184.847, 23.8818, 15.3558]]
+  ri_extra__name:t="wood_debris_e"
+  rebake__tm:m=[[-0.0927731, -0.047746, 0.994542] [-0.121091, 0.991976, 0.0363272] [-0.988297, -0.11706, -0.0978103] [-184.847, 23.8818, 15.3558]]
+  rebake__name:t="wood_debris_e"
+}
+
+entity{
+  _template:t="unbaked_rendinst"
+  transform:m=[[-0.824185, -0.047746, 0.564305] [-0.105333, 0.991976, -0.0699111] [-0.556439, -0.11706, -0.822601] [-259.671, 22.8156, -306.566]]
+  ri_extra__name:t="wood_debris_e"
+  rebake__tm:m=[[-0.0927731, -0.047746, 0.994542] [-0.121091, 0.991976, 0.0363272] [-0.988297, -0.11706, -0.0978103] [-184.847, 23.8818, 15.3558]]
+  rebake__name:t="wood_debris_e"
+}
+
+entity{
+  _template:t="unbaked_rendinst"
+  transform:m=[[0.999544, -0.0298324, 0.00459546] [0.0301277, 0.995357, -0.0914169] [-0.00184694, 0.0915137, 0.995802] [-261.565, 21.1951, -311.425]]
+  ri_extra__name:t="wood_debris_a"
+  rebake__tm:m=[[0.68696, 0.0428679, -0.725429] [-0.0365856, 0.999033, 0.0243904] [0.725773, 0.009785, 0.687864] [-162.503, 20.4082, -129.707]]
+  rebake__name:t="wood_debris_a"
+}
+
+entity{
+  _template:t="unbaked_rendinst"
+  transform:m=[[0.999193, 0.0396203, -0.00665474] [0.037704, -0.867578, 0.49587] [0.013873, -0.495721, -0.868371] [-261.132, 21.6859, -311.588]]
+  ri_extra__name:t="wood_debris_a"
+  rebake__tm:m=[[0.68696, 0.0428679, -0.725429] [-0.0365856, 0.999033, 0.0243904] [0.725773, 0.009785, 0.687864] [-162.503, 20.4082, -129.707]]
+  rebake__name:t="wood_debris_a"
+}
+
+entity{
+  _template:t="unbaked_rendinst"
+  transform:m=[[0.110497, 0.186074, 0.976303] [-0.0119933, 0.982496, -0.185897] [-0.993804, 0.00883192, 0.110795] [-153.359, 25.287, 42.0764]]
+  ri_extra__name:t="wood_debris_d"
+  rebake__tm:m=[[0.110497, 0.186074, 0.976303] [-0.0119933, 0.982496, -0.185897] [-0.993804, 0.00883192, 0.110795] [-153.359, 25.287, 42.0764]]
+  rebake__name:t="wood_debris_d"
+}
+
+entity{
+  _template:t="unbaked_rendinst"
+  transform:m=[[-0.647017, -0.0266327, -0.0516311] [-0.041569, 0.99912, 0.00555032] [0.0791814, 0.00883194, -0.996821] [-259.452, 23.2162, -304.997]]
+  ri_extra__name:t="wood_debris_d"
+  rebake__tm:m=[[0.110497, 0.186074, 0.976303] [-0.0119933, 0.982496, -0.185897] [-0.993804, 0.00883192, 0.110795] [-153.359, 25.287, 42.0764]]
+  rebake__name:t="wood_debris_d"
+}
+
+entity{
+  _template:t="unbaked_rendinst"
+  transform:m=[[0.0436195, 0.0, -0.999048] [0.0, 1.0, 0.0] [0.999048, 0.0, 0.0436195] [-145.473, 20.531, -133.449]]
+  ri_extra__name:t="ammunition_box_o"
+  rebake__tm:m=[[0.0436195, 0.0, -0.999048] [0.0, 1.0, 0.0] [0.999048, 0.0, 0.0436195] [-145.473, 20.531, -133.449]]
+  rebake__name:t="ammunition_box_o"
+}
+
+entity{
+  _template:t="unbaked_rendinst"
+  transform:m=[[-0.979177, 0.172103, -0.107671] [0.169444, 0.984972, 0.0334393] [0.111808, 0.0144987, -0.993624] [-206.976, 22.4262, -309.837]]
+  ri_extra__name:t="ammunition_box_o"
+  rebake__tm:m=[[0.0436195, 0.0, -0.999048] [0.0, 1.0, 0.0] [0.999048, 0.0, 0.0436195] [-145.473, 20.531, -133.449]]
+  rebake__name:t="ammunition_box_o"
+}
+
+entity{
+  _template:t="unbaked_rendinst"
+  transform:m=[[0.999096, 0.00301072, -0.0424258] [-0.00298959, 0.999995, 0.000561323] [0.0424273, -0.000433979, 0.9991] [-239.512, 21.7372, -329.3]]
+  ri_extra__name:t="opel_blitz_kfz_305_broken"
+  rebake__tm:m=[[0.953717, -2.60472e-05, 0.300706] [-0.00130385, 0.99999, 0.00422204] [-0.300703, -0.00441873, 0.953708] [-206.25, 21.4702, -259.15]]
+  rebake__name:t="opel_blitz_kfz_305_broken"
+}
+
+entity{
+  _template:t="unbaked_rendinst"
+  transform:m=[[0.999096, 0.00301072, -0.0424258] [-0.00298959, 0.999995, 0.000561323] [0.0424273, -0.000433979, 0.9991] [-239.512, 21.6142, -329.301]]
+  ri_extra__name:t="opel_blitz_kfz_305_tent"
+  rebake__tm:m=[[0.953717, -2.60472e-05, 0.300706] [-0.00130385, 0.99999, 0.00422204] [-0.300703, -0.00441873, 0.953708] [-206.25, 21.3472, -259.151]]
+  rebake__name:t="opel_blitz_kfz_305_tent"
+}
+
+entity{
+  _template:t="unbaked_rendinst"
+  transform:m=[[0.046832, -0.192137, 0.980251] [0.0219739, 0.981288, 0.191291] [-0.998661, 0.0125813, 0.0501777] [-222.845, 21.0203, -328.191]]
+  ri_extra__name:t="opel_blitz_kfz_305_tent"
+  rebake__tm:m=[[0.953717, -2.60472e-05, 0.300706] [-0.00130385, 0.99999, 0.00422204] [-0.300703, -0.00441873, 0.953708] [-206.25, 21.3472, -259.151]]
+  rebake__name:t="opel_blitz_kfz_305_tent"
+}
+
+entity{
+  _template:t="unbaked_rendinst"
+  transform:m=[[0.046832, -0.192137, 0.980251] [0.0219739, 0.981288, 0.191291] [-0.998661, 0.0125813, 0.0501777] [-222.845, 21.1433, -328.191]]
+  ri_extra__name:t="opel_blitz_kfz_305_broken"
+  rebake__tm:m=[[0.953717, -2.60472e-05, 0.300706] [-0.00130385, 0.99999, 0.00422204] [-0.300703, -0.00441873, 0.953708] [-206.25, 21.4702, -259.15]]
+  rebake__name:t="opel_blitz_kfz_305_broken"
+}
+
+entity{
+  _template:t="unbaked_rendinst"
+  transform:m=[[0.997381, -2.60468e-05, -0.0723358] [-0.00223893, 0.999509, -0.0312307] [0.0723011, 0.0313109, 0.996892] [-231.442, 21.4135, -267.964]]
+  ri_extra__name:t="opel_blitz_kfz_305_tent"
+  rebake__tm:m=[[0.953717, -2.60472e-05, 0.300706] [-0.00130385, 0.99999, 0.00422204] [-0.300703, -0.00441873, 0.953708] [-206.25, 21.3472, -259.151]]
+  rebake__name:t="opel_blitz_kfz_305_tent"
+}
+
+entity{
+  _template:t="unbaked_rendinst"
+  transform:m=[[0.997381, -2.60468e-05, -0.0723358] [-0.00223893, 0.999509, -0.0312307] [0.0723011, 0.0313109, 0.996892] [-231.442, 21.5365, -267.963]]
+  ri_extra__name:t="opel_blitz_kfz_305_broken"
+  rebake__tm:m=[[0.953717, -2.60472e-05, 0.300706] [-0.00130385, 0.99999, 0.00422204] [-0.300703, -0.00441873, 0.953708] [-206.25, 21.4702, -259.15]]
+  rebake__name:t="opel_blitz_kfz_305_broken"
+}
+
+entity{
+  _template:t="unbaked_rendinst"
+  transform:m=[[0.347148, -2.60472e-05, 0.937811] [-0.00413486, 0.99999, 0.00155837] [-0.937801, -0.0044187, 0.347145] [-237.023, 21.4702, -269.517]]
+  ri_extra__name:t="opel_blitz_kfz_305_broken"
+  rebake__tm:m=[[0.953717, -2.60472e-05, 0.300706] [-0.00130385, 0.99999, 0.00422204] [-0.300703, -0.00441873, 0.953708] [-206.25, 21.4702, -259.15]]
+  rebake__name:t="opel_blitz_kfz_305_broken"
+}
+
+entity{
+  _template:t="unbaked_rendinst"
+  transform:m=[[0.347148, -2.60472e-05, 0.937811] [-0.00413486, 0.99999, 0.00155837] [-0.937801, -0.0044187, 0.347145] [-237.022, 21.3472, -269.518]]
+  ri_extra__name:t="opel_blitz_kfz_305_tent"
+  rebake__tm:m=[[0.953717, -2.60472e-05, 0.300706] [-0.00130385, 0.99999, 0.00422204] [-0.300703, -0.00441873, 0.953708] [-206.25, 21.3472, -259.151]]
+  rebake__name:t="opel_blitz_kfz_305_tent"
+}
+
+entity{
+  _template:t="gun_game_respawn_base"
+  transform:m=[[0.879838, 0.0, -0.475284] [-0.0, 1.0, 0.0] [0.475281, 0.0, 0.879833] [-238.628, 22.3182, -266.518]]
+  gun_game__respawnFriendlyRadius:r=10.0
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[-0.999965, 0.0, 0.00840131] [0.0, 1.0, 0.0] [-0.00840131, 0.0, -0.999965] [-206.744, 28.9206, -303.72]]
+  ri_extra__name:t="metal_platform_2m_a"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[0.00840131, 0.0, 0.999965] [-1.51941e-06, 1.0, 1.27655e-08] [-0.999965, -1.51947e-06, 0.00840131] [-206.714, 25.3532, -302.702]]
+  ri_extra__name:t="metal_scaffolding_5m_a"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[-0.00840265, 0.0, -0.999964] [1.51941e-06, 1.0, -1.27675e-08] [0.999964, -1.51947e-06, -0.00840265] [-207.822, 26.8334, -306.999]]
+  ri_extra__name:t="metal_railings_stair_2m_a"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[-0.00840265, 0.0, -0.999964] [1.51941e-06, 1.0, -1.27675e-08] [0.999964, -1.51947e-06, -0.00840265] [-205.726, 26.8334, -307.016]]
+  ri_extra__name:t="metal_railings_stair_2m_a"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[-0.00840265, -1.77636e-15, -0.999964] [2.85216e-06, 1.0, -2.39665e-08] [0.999964, -2.85226e-06, -0.00840265] [-206.758, 26.7451, -307.118]]
+  ri_extra__name:t="metal_stair_2m_a"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[0.999965, 0.0, -0.00840131] [0.0, 1.0, 0.0] [0.00840131, -0.0, 0.999965] [-207.832, 26.9129, -308.021]]
+  ri_extra__name:t="metal_railings_2m_a"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[0.00840131, 0.0, 0.999965] [-1.51941e-06, 1.0, 1.27655e-08] [-0.999965, -1.51947e-06, 0.00840131] [-206.767, 22.9175, -309.061]]
+  ri_extra__name:t="metal_scaffolding_5m_a"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[-0.00840131, 0.0, -0.999965] [1.51941e-06, 1.0, -1.27655e-08] [0.999965, -1.51947e-06, -0.00840131] [-204.642, 22.9175, -309.083]]
+  ri_extra__name:t="metal_scaffolding_5m_a"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[0.999965, 0.0, -0.00840131] [0.0, 1.0, 0.0] [0.00840131, -0.0, 0.999965] [-206.778, 26.8906, -308.021]]
+  ri_extra__name:t="metal_platform_2m_a"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[0.999965, 0.0, -0.00840131] [0.0, 1.0, 0.0] [0.00840131, -0.0, 0.999965] [-204.574, 26.8906, -308.04]]
+  ri_extra__name:t="metal_platform_2m_a"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[0.00840265, -1.77636e-15, 0.999964] [-2.85216e-06, 1.0, 2.39665e-08] [-0.999964, -2.85226e-06, 0.00840265] [-204.557, 24.5774, -304.678]]
+  ri_extra__name:t="metal_stair_2m_a"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[0.00840265, 0.0, 0.999964] [-1.51941e-06, 1.0, 1.27675e-08] [-0.999964, -1.51947e-06, 0.00840265] [-205.588, 24.6412, -304.785]]
+  ri_extra__name:t="metal_railings_stair_2m_a"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[0.00840265, 0.0, 0.999964] [-1.51941e-06, 1.0, 1.27675e-08] [-0.999964, -1.51947e-06, 0.00840265] [-203.454, 24.6412, -304.803]]
+  ri_extra__name:t="metal_railings_stair_2m_a"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[0.999965, 0.0, -0.00840131] [0.0, 1.0, 0.0] [0.00840131, -0.0, 0.999965] [-204.538, 24.7063, -303.738]]
+  ri_extra__name:t="metal_platform_2m_a"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[0.999965, 0.0, -0.00840131] [0.0, 1.0, 0.0] [0.00840131, -0.0, 0.999965] [-206.742, 24.7063, -303.719]]
+  ri_extra__name:t="metal_platform_2m_a"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[-0.00840131, 0.0, -0.999965] [1.51941e-06, 1.0, -1.27655e-08] [0.999965, -1.51947e-06, -0.00840131] [-204.588, 20.9189, -302.721]]
+  ri_extra__name:t="metal_scaffolding_5m_a"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[0.00840131, 0.0, 0.999965] [-1.51941e-06, 1.0, 1.27655e-08] [-0.999965, -1.51947e-06, 0.00840131] [-206.714, 19.942, -302.702]]
+  ri_extra__name:t="metal_scaffolding_5m_a"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[-0.00840265, 0.0, -0.999964] [1.51941e-06, 1.0, -1.27675e-08] [0.999964, -1.51947e-06, -0.00840265] [-207.85, 22.5373, -307.108]]
+  ri_extra__name:t="metal_railings_stair_2m_a"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[-0.00840265, -1.77636e-15, -0.999964] [2.85216e-06, 1.0, -2.39665e-08] [0.999964, -2.85226e-06, -0.00840265] [-206.758, 22.5373, -307.118]]
+  ri_extra__name:t="metal_stair_2m_a"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[0.999965, 0.0, -0.00840131] [0.0, 1.0, 0.0] [0.00840131, -0.0, 0.999965] [-203.49, 24.7807, -303.754]]
+  ri_extra__name:t="metal_railings_2m_a"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[0.999965, 0.0, -0.00840131] [0.0, 1.0, 0.0] [0.00840131, -0.0, 0.999965] [-204.574, 22.7046, -308.04]]
+  ri_extra__name:t="metal_platform_2m_a"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[0.999965, 0.0, -0.00840131] [0.0, 1.0, 0.0] [0.00840131, -0.0, 0.999965] [-206.778, 22.7046, -308.021]]
+  ri_extra__name:t="metal_platform_2m_a"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[-0.00840131, 0.0, -0.999965] [1.51941e-06, 1.0, -1.27655e-08] [0.999965, -1.51947e-06, -0.00840131] [-204.642, 17.9227, -309.08]]
+  ri_extra__name:t="metal_scaffolding_5m_a"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[0.00840131, 0.0, 0.999965] [-1.51941e-06, 1.0, 1.27655e-08] [-0.999965, -1.51947e-06, 0.00840131] [-206.767, 17.9227, -309.062]]
+  ri_extra__name:t="metal_scaffolding_5m_a"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[0.999965, 0.0, -0.00840131] [0.0, 1.0, 0.0] [0.00840131, -0.0, 0.999965] [-207.832, 22.7269, -308.06]]
+  ri_extra__name:t="metal_railings_2m_a"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[0.00840265, 0.0, 0.999964] [-1.51941e-06, 1.0, 1.27675e-08] [-0.999964, -1.51947e-06, 0.00840265] [-205.588, 20.6156, -304.785]]
+  ri_extra__name:t="metal_railings_stair_2m_a"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[0.00840265, -1.77636e-15, 0.999964] [-2.85216e-06, 1.0, 2.39665e-08] [-0.999964, -2.85226e-06, 0.00840265] [-204.557, 20.5078, -304.678]]
+  ri_extra__name:t="metal_stair_2m_a"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[0.999965, 0.0, -0.00840131] [0.0, 1.0, 0.0] [0.00840131, -0.0, 0.999965] [-205.678, 28.9683, -303.771]]
+  ri_extra__name:t="metal_railings_2m_a"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[0.99961, 0.0, -0.0279205] [0.0, 1.0, 0.0] [0.0279205, -0.0, 0.99961] [-203.512, 26.9117, -308.02]]
+  ri_extra__name:t="metal_railings_2m_a"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[-0.00840265, 0.0, -0.999964] [1.51941e-06, 1.0, -1.27675e-08] [0.999964, -1.51947e-06, -0.00840265] [-205.726, 22.7707, -307.016]]
+  ri_extra__name:t="metal_railings_stair_2m_a"
+}
+
+entity{
+  _template:t="unbaked_rendinst"
+  transform:m=[[-0.0489807, -0.0266327, 0.647223] [0.00572053, 0.99912, 0.0415459] [-0.997137, 0.00883194, -0.0750981] [-261.57, 23.0646, -303.619]]
+  ri_extra__name:t="wood_debris_d"
+  rebake__tm:m=[[0.110497, 0.186074, 0.976303] [-0.0119933, 0.982496, -0.185897] [-0.993804, 0.00883192, 0.110795] [-153.359, 25.287, 42.0764]]
+  rebake__name:t="wood_debris_d"
+}
+
+entity{
+  _template:t="unbaked_rendinst"
+  transform:m=[[0.994609, -0.047746, 0.0920527] [0.0364149, 0.991976, 0.121064] [-0.0970945, -0.11706, 0.988367] [-261.676, 22.8636, -302.815]]
+  ri_extra__name:t="wood_debris_e"
+  rebake__tm:m=[[-0.0927731, -0.047746, 0.994542] [-0.121091, 0.991976, 0.0363272] [-0.988297, -0.11706, -0.0978103] [-184.847, 23.8818, 15.3558]]
+  rebake__name:t="wood_debris_e"
+}
+
+entity{
+  _template:t="sawmill_wood_boards_a"
+  transform:m=[[-0.016954, 0.0, -0.999856] [0.0, 1.0, 0.0] [0.999856, 0.0, -0.016954] [-262.807, 20.7043, -303.41]]
+}
+
+entity{
+  _template:t="unbaked_rendinst"
+  transform:m=[[0.100171, 0.0144415, 0.994865] [-0.0338451, 0.999365, -0.011099] [-0.994395, -0.0325595, 0.100597] [-264.759, 21.5773, -299.423]]
+  ri_extra__name:t="wood_debris_a"
+  rebake__tm:m=[[0.68696, 0.0428679, -0.725429] [-0.0365856, 0.999033, 0.0243904] [0.725773, 0.009785, 0.687864] [-162.503, 20.4082, -129.707]]
+  rebake__name:t="wood_debris_a"
+}
+
+entity{
+  _template:t="unbaked_rendinst"
+  transform:m=[[-0.0749402, -0.0298324, -0.996741] [-0.093524, 0.995357, -0.0227593] [0.992793, 0.0915137, -0.0773823] [-264.946, 21.1951, -298.68]]
+  ri_extra__name:t="wood_debris_a"
+  rebake__tm:m=[[0.68696, 0.0428679, -0.725429] [-0.0365856, 0.999033, 0.0243904] [0.725773, 0.009785, 0.687864] [-162.503, 20.4082, -129.707]]
+  rebake__name:t="wood_debris_a"
+}
+
+entity{
+  _template:t="unbaked_rendinst"
+  transform:m=[[-0.0861335, -0.0374385, -0.99558] [0.496622, -0.867905, -0.0103284] [-0.863682, -0.495317, 0.0933484] [-265.143, 21.5618, -299.099]]
+  ri_extra__name:t="wood_debris_a"
+  rebake__tm:m=[[0.68696, 0.0428679, -0.725429] [-0.0365856, 0.999033, 0.0243904] [0.725773, 0.009785, 0.687864] [-162.503, 20.4082, -129.707]]
+  rebake__name:t="wood_debris_a"
+}
+
+entity{
+  _template:t="sawmill_wood_boards_a"
+  transform:m=[[0.995321, 0.0, -0.096617] [-0.0, 1.0, 0.0] [0.096617, 0.0, 0.995321] [-262.803, 20.1024, -300.601]]
+}
+
+entity{
+  _template:t="unbaked_rendinst"
+  transform:m=[[0.107069, 0.00301072, -0.994247] [-0.0256909, 0.99967, 0.00026053] [0.993919, 0.0255152, 0.107111] [-221.77, 21.3531, -283.161]]
+  ri_extra__name:t="opel_blitz_kfz_305_broken"
+  rebake__tm:m=[[0.953717, -2.60472e-05, 0.300706] [-0.00130385, 0.99999, 0.00422204] [-0.300703, -0.00441873, 0.953708] [-206.25, 21.4702, -259.15]]
+  rebake__name:t="opel_blitz_kfz_305_broken"
+}
+
+entity{
+  _template:t="gun_game_respawn_base"
+  transform:m=[[-0.875958, 0.0, 0.482396] [0.0, 1.0, 0.0] [-0.482394, 0.0, -0.875953] [-230.527, 22.6296, -338.567]]
+  gun_game__respawnFriendlyRadius:r=10.0
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[-0.00158783, 0.0, -0.999998] [0.0, 1.0, 0.0] [0.999998, 0.0, -0.00158783] [-233.898, 21.8444, -344.149]]
+  ri_extra__name:t="sandbags_wall_high_l4000_a"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[-0.995852, 0.0, 0.090987] [0.0, 1.0, 0.0] [-0.090987, 0.0, -0.995852] [-235.498, 22.0408, -334.506]]
+  ri_extra__name:t="sandbags_wall_high_l4000_a"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[-0.999787, 0.0, 0.0206621] [0.0, 1.0, 0.0] [-0.0206621, 0.0, -0.999787] [-238.371, 22.2337, -338.774]]
+  ri_extra__name:t="sandbags_wall_high_l4000_a"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[-0.999787, 0.0, 0.0206621] [0.0, 1.0, 0.0] [-0.0206621, 0.0, -0.999787] [-238.412, 22.0636, -342.291]]
+  ri_extra__name:t="sandbags_wall_high_l4000_a"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[-0.999787, 0.0, 0.0206621] [0.0, 1.0, 0.0] [-0.0206621, 0.0, -0.999787] [-228.813, 21.9005, -342.493]]
+  ri_extra__name:t="sandbags_wall_high_l4000_a"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[-0.999787, 0.0, 0.0206621] [0.0, 1.0, 0.0] [-0.0206621, 0.0, -0.999787] [-228.696, 21.838, -338.828]]
+  ri_extra__name:t="sandbags_wall_high_l4000_a"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[-0.0115834, 0.0, -0.999933] [0.0, 1.0, 0.0] [0.999933, 0.0, -0.0115834] [-230.668, 22.037, -344.153]]
+  ri_extra__name:t="sandbags_wall_high_l4000_window_a"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[0.0474744, 0.0, 0.998873] [0.0, 1.0, -0.0] [-0.998873, 0.0, 0.0474744] [-236.717, 21.7917, -344.133]]
+  ri_extra__name:t="sandbags_wall_high_l4000_window_a"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[0.0474744, 0.0, 0.998873] [0.0, 1.0, -0.0] [-0.998873, 0.0, 0.0474744] [-236.576, 21.9858, -336.862]]
+  ri_extra__name:t="sandbags_wall_high_l4000_window_a"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[-0.999952, 0.0, 0.00979054] [0.0, 1.0, 0.0] [-0.00979055, 0.0, -0.999953] [-233.546, 21.7639, -340.736]]
+  ri_extra__name:t="sandbags_wall_high_10x8_canopy_a"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[-0.000762567, 0.0, 1.0] [0.0, 1.0, 0.0] [-1.0, 0.0, -0.000762567] [-230.551, 21.8821, -336.913]]
+  ri_extra__name:t="sandbags_wall_high_l4000_a"
+}
+
+entity{
+  _template:t="debris_wooden_planks_stack_a"
+  transform:m=[[-0.220145, -0.00179021, 0.975465] [0.0982359, 0.994874, 0.0239959] [-0.970508, 0.101108, -0.218841] [-195.898, 20.8404, -300.057]]
+}
+
+entity{
+  _template:t="sandbags_wall_8"
+  transform:m=[[-0.000325881, 0.0, 1.0] [0.0, 1.0, 0.0] [-1.0, 0.0, -0.000325881] [-204.663, 20.5834, -308.72]]
+}
+
+entity{
+  _template:t="sandbags_wall_8"
+  transform:m=[[-0.0892201, 0.0, -0.996012] [0.0, 1.0, 0.0] [0.996012, 0.0, -0.0892201] [-206.768, 20.5834, -308.721]]
+}
+
+entity{
+  _template:t="unbaked_rendinst"
+  transform:m=[[0.999295, 0.0, 0.0375567] [-0.0, 1.0, 0.0] [-0.0375567, -0.0, 0.999295] [-231.509, 24.637, -294.675]]
+  ri_extra__name:t="is_cupboard_a"
+  rebake__tm:m=[[1.0, 0.0, -4.17233e-07] [0.0, 1.0, 0.0] [4.17233e-07, 0.0, 1.0] [-255.318, 33.0446, -306.814]]
+  rebake__name:t="is_cupboard_a"
+}
+
+entity{
+  _template:t="debris_wooden_planks_stack_a"
+  transform:m=[[-0.452682, 0.000643461, -0.891672] [-0.00317771, 0.999992, 0.00233488] [0.891666, 0.00389044, -0.452676] [-274.783, 21.3108, -290.435]]
+}
+
+entity{
+  _template:t="debris_wooden_planks_stack_a"
+  transform:m=[[0.501575, 0.000643461, -0.865114] [-0.00368842, 0.999992, -0.00139468] [0.865106, 0.00389044, 0.501573] [-279.344, 21.1978, -297.179]]
+}
+
+entity{
+  _template:t="sawmill_wood_boards_a"
+  transform:m=[[-0.809751, -0.022777, 0.0542712] [-0.0319996, 0.997763, -0.0586994] [-0.0650493, -0.0606839, -0.996034] [-259.211, 21.7573, -303.24]]
+}
+
+entity{
+  _template:t="gun_game_respawn_base"
+  transform:m=[[-0.077904, 0.0, 0.996965] [0.0, 1.0, 0.0] [-0.996959, 0.0, -0.0779034] [-209.813, 22.1524, -303.901]]
+  gun_game__respawnFriendlyRadius:r=5.0
+}
+
+entity{
+  _template:t="sandbags_wall_9"
+  transform:m=[[0.998699, 0.0, 0.0509917] [0.0, 1.0, -0.0] [-0.0509917, 0.0, 0.998699] [-211.08, 21.4237, -302.745]]
+}
+
+entity{
+  _template:t="sandbags_wall_8"
+  transform:m=[[-0.999853, 0.0, 0.0171631] [0.0, 1.0, 0.0] [-0.0171631, 0.0, -0.999853] [-211.083, 21.4237, -304.638]]
+}
+
+entity{
+  _template:t="sandbags_wall_8"
+  transform:m=[[0.00720143, 0.0, -0.999974] [0.0, 1.0, 0.0] [0.999975, -0.0, 0.00720144] [-235.043, 21.4469, -316.3]]
+}
+
+entity{
+  _template:t="gun_game_respawn_base"
+  transform:m=[[-0.117626, 0.0, -0.993063] [0.0, 1.0, 0.0] [0.993056, 0.0, -0.117625] [-209.654, 22.2448, -307.646]]
+  gun_game__respawnFriendlyRadius:r=5.0
+}
+
+entity{
+  _template:t="sandbags_wall_9"
+  transform:m=[[-0.999124, 0.0, -0.0418507] [0.0, 1.0, 0.0] [0.0418507, 0.0, -0.999124] [-211.112, 21.4237, -309.188]]
+}
+
+entity{
+  _template:t="sandbags_wall_8"
+  transform:m=[[0.999654, 0.0, -0.0263118] [-0.0, 1.0, 0.0] [0.0263118, 0.0, 0.999654] [-211.091, 21.4237, -307.294]]
+}
+
+entity{
+  _template:t="base_fortification_build+tutorial_ammunition_box_a+undestroyable_ri_extra"
+  transform:m=[[-0.0192023, 0.0, -0.999816] [0.0, 1.0, 0.0] [0.999816, 0.0, -0.0192023] [-209.299, 24.6545, -306.053]]
+  useful_box__maxUseCount:i=99999
+  hud_icon__maxDistance:r=20.0
+}
+
+entity{
+  _template:t="base_fortification_build+tutorial_ammunition_box_a+undestroyable_ri_extra"
+  transform:m=[[0.675719, 0.0, -0.73716] [0.0, 1.0, 0.0] [0.73716, -0.0, 0.675719] [-210.85, 28.8197, -310.5]]
+  useful_box__maxUseCount:i=99999
+  hud_icon__maxDistance:r=20.0
+}
+
+entity{
+  _template:t="base_fortification_build+tutorial_ammunition_box_a+undestroyable_ri_extra"
+  transform:m=[[0.999345, 0.0, -0.0361865] [0.0, 1.0, 0.0] [0.0361865, -0.0, 0.999345] [-255.413, 28.8368, -306.318]]
+  useful_box__maxUseCount:i=99999
+  hud_icon__maxDistance:r=20.0
+}
+
+entity{
+  _template:t="base_fortification_build+tutorial_ammunition_box_a+undestroyable_ri_extra"
+  transform:m=[[0.548674, 0.0, -0.836036] [0.0, 1.0, 0.0] [0.836036, -0.0, 0.548674] [-230.538, 24.6545, -304.585]]
+  useful_box__maxUseCount:i=99999
+  hud_icon__maxDistance:r=20.0
+}
+
+import{
+  scene:t="gamedata/scenes/_normandy_sounds.blk"
+}
+
+import{
+  scene:t="gamedata/scenes/_normandy_shore_sound.blk"
+}
+
+import{
+  scene:t="gamedata/scenes/_normandy_coastal_area_fx.blk"
+}

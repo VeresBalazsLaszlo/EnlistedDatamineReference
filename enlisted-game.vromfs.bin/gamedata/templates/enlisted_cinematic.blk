@@ -1,0 +1,133 @@
+cinematic_ai_point{
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, 0.0, 0.0]]
+  ai_point__name:t=""
+}
+
+cinematic_ai_target{
+  team:i=-1
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, 0.0, 0.0]]
+  ai_target__name:t=""
+
+  ai_target{
+    _tags:t="server"
+  }
+}
+
+cinematic_ai_attack_target{
+  beh_tree__node:t="cinematic_ai_attack_target_beh"
+  beh_tree__enabled:b=yes
+  beh_tree__blackboard__step1_waitTime:p2=0.0, 0.0
+  beh_tree__blackboard__step2_moveToPointName:t=""
+  beh_tree__blackboard__step3_waitTime:p2=1.0, 1.0
+  beh_tree__blackboard__step4_attackTargetName:t=""
+  beh_tree__blackboard__step4_attackTime:p2=5.0, 5.0
+  beh_tree__blackboard__step4_attackMinStance:i=2
+  beh_tree__blackboard__step4_attackMaxStance:i=2
+  beh_tree__blackboard__step5_waitTime:p2=2.0, 2.0
+  beh_tree__blackboard__step6_addTemplate:t=""
+  beh_tree__blackboard__step6_delTemplate:t="cinematic_ai_attack_target"
+}
+
+cinematic_ai_attack_target_infinite{
+  _use:t="cinematic_ai_attack_target"
+  beh_tree__blackboard__step6_delTemplate:t=""
+}
+
+cinematic_ai_attack_target_with_mortar{
+  beh_tree__node:t="cinematic_ai_attack_target_mortar_beh"
+  beh_tree__enabled:b=yes
+  beh_tree__blackboard__step1_waitTime:p2=0.0, 0.0
+  beh_tree__blackboard__step2_moveToPointName:t=""
+  beh_tree__blackboard__step3_waitTime:p2=1.0, 1.0
+  beh_tree__blackboard__step4_attackTargetName:t=""
+  beh_tree__blackboard__step4_attackNumShots:ip2=1, 1
+  beh_tree__blackboard__step5_waitTime:p2=2.0, 2.0
+  beh_tree__blackboard__step6_addTemplate:t=""
+  beh_tree__blackboard__step6_delTemplate:t="cinematic_ai_attack_target_with_mortar"
+}
+
+cinematic_soldier_01{
+  _use:t="usa_base_soldier"
+  _use:t="squad_member_ai"
+  _use:t="usa_light_assault_preset"
+
+  "human_equipment__initialEquip:object"{
+    helmet_03_us_summer_item:t="skined_helmet"
+    attachable_wear_head_01_us_summer_item:t="face"
+    attachable_wear_tunic_01_us_summer_item:t="tunic"
+    attachable_wear_gloves_01_us_summer_item:t="gloves"
+    attachable_wear_pants_01_us_summer_item:t="pants"
+    attachable_wear_belt_m36_01_us_summer_item:t="belt_1"
+    attachable_wear_tornister_backpack_m39_nodes_item:t="backpack"
+    attachable_wear_pot_with_nodes_item:t="pot"
+  }
+}
+
+cinematic_soldier_02{
+  _use:t="usa_base_soldier"
+  _use:t="squad_member_ai"
+  _use:t="usa_light_assault_preset"
+
+  "human_equipment__initialEquip:object"{
+    helmet_01_ger_summer_2_item:t="skined_helmet"
+    attachable_wear_head_01_ger_summer_item:t="face"
+    attachable_wear_tunic_m44_ger_gr_summer_item:t="tunic"
+    attachable_wear_hands_01_ussr_summer_item:t="gloves"
+    attachable_wear_pants_01_ger_summer_item:t="pants"
+    attachable_wear_belt_1_m44_ger_summer_item:t="belt_1"
+    attachable_wear_pot_with_nodes_item:t="pot"
+  }
+}
+
+cinematic_soldier_01_test_mortar{
+  _use:t="cinematic_soldier_01"
+
+  "human_weap__weapTemplates:object"{
+    secondary:t="m1_garand_gun"
+    tertiary:t="m1911_colt_gun"
+    melee:t="knife_weapon"
+    grenade:t="grenade_thrower"
+    primary:t="granatwerfer_34_gun"
+  }
+
+  "human_weap__weapInfo:array"{
+
+    "human_weap__weapInfo:object"{
+      reserveAmmoTemplate:t="8cm_wgr_39_item"
+      numReserveAmmo:i=30
+    }
+
+    "human_weap__weapInfo:object"{
+      reserveAmmoTemplate:t="m1_garand_magazine"
+      numReserveAmmo:i=4
+    }
+
+    "human_weap__weapInfo:object"{
+      reserveAmmoTemplate:t="m1911_colt_magazine"
+      numReserveAmmo:i=3
+    }
+
+    "human_weap__weapInfo:object"{
+      reserveAmmoTemplate:t=""
+      numReserveAmmo:i=0
+    }
+
+    "human_weap__weapInfo:object"{
+      reserveAmmoTemplate:t="mk2_grenade_item"
+      numReserveAmmo:i=1
+    }
+  }
+
+  _group{
+    _tags:t="server"
+
+    "human_weap__template_deps_list:list<t>"{
+      item:t="8cm_wgr_39_item"
+      item:t="m1_garand_magazine"
+      item:t="m1911_colt_magazine"
+      item:t="mk2_grenade_item"
+      item:t="grenade_thrower"
+      item:t="knife_weapon"
+    }
+  }
+}

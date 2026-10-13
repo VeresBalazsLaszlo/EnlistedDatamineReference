@@ -1,0 +1,44 @@
+import{
+  scene:t="gamedata/scenes/_common_sounds.blk"
+}
+
+entity{
+  _template:t="europe_autumn_ambient_sound"
+}
+
+entity{
+  _template:t="sound_effect_generator"
+  ri_extra_gen__blk:t="gamedata/normandy_sounds_ri_extra_gen.blk"
+}
+
+entity{
+  _template:t="lake_mid_river_sound+game_object_spline_sound_generator"
+
+  "game_object_spline_sound_generator__gameObjects:list<t>"{
+    gameObject:t="river_sound_spline_a"
+    gameObject:t="river_sound_spline_b"
+  }
+}
+
+entity{
+  _template:t="sound_field"
+
+  "sound_field__biomeTypes:array"{
+
+    "obj:object"{
+      gameObject:t="biome_hill_sound_var"
+      alpha2Value:p2=0.25, 1.0
+    }
+
+    "obj:object"{
+      gameObject:t="biome_city_sound_var"
+      alpha2Value:p2=0.5, 1.0
+      extent:r=15.0
+    }
+  }
+
+  "sound_field__vars:list<t>"{
+    var:t="biome_high_hills"
+    var:t="biome_city"
+  }
+}

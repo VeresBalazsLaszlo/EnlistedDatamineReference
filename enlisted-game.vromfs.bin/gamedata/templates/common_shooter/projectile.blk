@@ -1,0 +1,1420 @@
+hud_bomb_marker{
+
+  "hud_bomb_marker:tag"{
+  }
+
+  _group{
+    _tags:t="ui"
+    hud_marker__max_distance:r=100.0
+  }
+}
+
+bullet_projectile_debug{
+  _tags:t="dev"
+  cProjectilePos:i=0
+  projectileNextTime:r=0.0
+
+  "projectilePos:list<p3>"{
+    projectilePos:p3=0.0, 0.0, 0.0
+    projectilePos:p3=0.0, 0.0, 0.0
+    projectilePos:p3=0.0, 0.0, 0.0
+    projectilePos:p3=0.0, 0.0, 0.0
+    projectilePos:p3=0.0, 0.0, 0.0
+    projectilePos:p3=0.0, 0.0, 0.0
+    projectilePos:p3=0.0, 0.0, 0.0
+    projectilePos:p3=0.0, 0.0, 0.0
+  }
+}
+
+thickness_materials{
+  _use:t="replicating"
+
+  "material_with_thickness__names:list<t>"{
+    material:t="wood_solid"
+    material:t="wood_snow_solid"
+    material:t="wood_fall_solid"
+    material:t="wood_dead_solid"
+    material:t="wood_palm_solid"
+    material:t="wood_needles_solid"
+    material:t="wood_needles_snow_solid"
+  }
+
+  "material_with_thickness__thickness:list<r>"{
+    material:r=60.0
+    material:r=60.0
+    material:r=60.0
+    material:r=60.0
+    material:r=60.0
+    material:r=60.0
+    material:r=60.0
+  }
+
+  "material_with_thickness__density:list<r>"{
+    density:r=12000.0
+    density:r=12000.0
+    density:r=12000.0
+    density:r=12000.0
+    density:r=12000.0
+    density:r=12000.0
+    density:r=12000.0
+  }
+
+  "material_with_thickness__ids:list<i>"{
+  }
+}
+
+base_projectile{
+  _use:t="ecs_no_debug"
+  detonation__timer:r=-1.0
+  projectile__hasKv:b=yes
+  projectile__lifeTime:r=0.0
+  projectile__visualPos:p3=0.0, 0.0, 0.0
+  projectile__tracerIgnitionTime:r=0.0
+  projectile__minLifeTime:r=0.0
+  projectile__maxLifeTime:r=0.0
+  projectile__stopped:b=no
+  projectile__exploded:b=no
+  projectile__explosionDelayed:i=0
+  projectile__prevPos:p3=0.0, 0.0, 0.0
+  projectile__intersectionCount:i=0
+  projectile__maxAllowedSceneIntersectionsForFx:i=14
+  projectile__canopyIntersectionCount:i=0
+  projectile__maxAllowedCanopyIntersectionsForFx:i=2
+  projectile__traceRayMatId:i=-1
+  projectile__isUnderwater:b=no
+  projectile__ballisticsUpdated:b=yes
+  projectile__hitEffectDescriptor:i=0
+  projectile__explEffectDescriptor:i=0
+  projectile__fleshEffectCaliberGroup:r=-1.0
+  projectile_trace_info__sceneIntersected:b=no
+  projectile_trace_info__pmid:i=-1
+  projectile_trace_info__dir:p3=0.0, 0.0, 0.0
+  projectile_trace_info__len:r=0.0
+  projectile_trace_info__inMaterial:b=no
+  projectile_trace_info__curMaterial:i=-1
+  projectile_trace_info__thicknessId:i=-1
+  projectile_trace_info__lastIntersectedPos:p3=0.0, 0.0, 0.0
+  projectile_trace_info__lastriDescIdx:i=-1
+  projectile_trace_info__norm:p3=0.0, 0.0, 0.0
+  projectile_trace_info__collType:i=0
+  projectile_trace_info__prevProjectileDistance:r=0.0
+  projectile_trace_info__waterLen:r=0.0
+  projectile_trace_info__riDescCellIdx:i=-1
+  projectile_trace_info__riDescIdx:i=-1
+  projectile_trace_info__riDescPool:i=-1
+  projectile_trace_info__riDescLayer:i=-1
+  scene_hit_place__pos:p3=0.0, 0.0, 0.0
+  scene_hit_place__norm:p3=0.0, 1.0, 0.0
+  scene_hit_place__matId:i=-1
+  scene_hit_place__collType:i=-1
+
+  "projectile_trace_info__node:list<i>"{
+  }
+
+  "projectile_trace_info__ri:list<i>"{
+  }
+
+  "projectile_trace_info__pos:list<p3>"{
+  }
+
+  "projectile_trace_info__riDescOffs:u32"{
+    value:i=-1
+  }
+
+  "dm_projectile_state:dm::ProjectileState"{
+  }
+
+  "projectile_ballistics:ballistics::ProjectileBallistics"{
+  }
+
+  "projectile_ballistics_props:ballistics::ProjectileProps"{
+  }
+
+  "launch_desc:daweap::LaunchDesc"{
+  }
+
+  "ownerEid:eid"{
+  }
+
+  "gunEid:eid"{
+  }
+
+  "projectile__penetratedEids:list<eid>"{
+  }
+
+  "projectile__lastDamagedRiexHandle:u64"{
+    value:i64=-1
+  }
+}
+
+projectile_inactive{
+  _tags:t="server"
+  projectile__timeToDestroy:r=1.0
+
+  "projectile__inactive:tag"{
+  }
+}
+
+client_side_delayed_destroy{
+  client_side_delayed_destroy__delay:r=1.5
+  client_side_delayed_destroy__destroyAfter:r=-1.0
+
+  "client_side_delayed_destroy__unhideEid:eid"{
+  }
+}
+
+disable_ricochet{
+  projectile__sceneHitRicochetStability:r=1.0
+}
+
+projectile_time_fuse{
+  projectile__timeFuseDistanceError:r=50.0
+  projectile__maxDistanceFromStartSq:r=0.0
+}
+
+effect_projectile{
+  _use:t="base_projectile"
+  _use:t="disable_ricochet"
+  projectile__destroyVel:r=0.0
+  projectile__addBulletHole:b=no
+
+  "projectile__destroyOnHit:tag"{
+  }
+
+  "projectile__destroyOnHitWater:tag"{
+  }
+
+  _group{
+    _tags:t="render"
+    effect__name:t=""
+
+    effect{
+    }
+  }
+}
+
+flame_firebomb_projectile{
+  _use:t="base_projectile"
+  _use:t="disable_ricochet"
+  projectile__destroyVel:r=0.0
+  projectile__maxLifeTime:r=4.0
+  projectile__addBulletHole:b=no
+  flame_projectile__onHitCreate:t="fire_spot_firebomb_effect"
+
+  "projectile__destroyOnHit:tag"{
+  }
+
+  "projectile__destroyOnHitWater:tag"{
+  }
+
+  "flame_projectile:tag"{
+  }
+}
+
+simple_projectile{
+  simple_projectile__deltaTime:r=0.035
+  simple_projectile__maxLifeTime:r=2.0
+  simple_projectile__destroyAtTime:r=0.0
+  simple_projectile__traceRayMatId:i=-1
+  simple_projectile__acceleration:p3=0.0, 0.0, 0.0
+  simple_projectile__position:p3=0.0, 0.0, 0.0
+  simple_projectile__velocity:p3=0.0, 0.0, 0.0
+  simple_projectile__spawnTime:r=0.0
+  simple_projectile__lastTick:i=0
+
+  "simple_projectile:tag"{
+  }
+}
+
+flame_plane_crash_projectile{
+  _use:t="simple_projectile"
+  flame_projectile__onHitCreate:t="fire_spot_5m_big_plane_crash_effect"
+  simple_projectile__acceleration:p3=0.0, -9.81, 0.0
+
+  "ownerEid:eid"{
+  }
+
+  "flame_projectile:tag"{
+  }
+}
+
+explosion_firebomb_projectile{
+  _use:t="effect_projectile"
+  _use:t="disable_ricochet"
+  projectile__maxLifeTime:r=2.0
+
+  _group{
+    _tags:t="render"
+    effect__name:t="explosion_firebomb_cmps_fx"
+  }
+}
+
+trail_firebomb_projectile{
+  _use:t="effect_projectile"
+  _use:t="disable_ricochet"
+  projectile__maxLifeTime:r=2.0
+  _tracked:t="effect__velocity"
+
+  _group{
+    _tags:t="render"
+    effect__velocity:p3=0.0, 0.0, 0.0
+    effect__name:t="trail_main_small_dark_cmps_fx"
+  }
+}
+
+bullet_types_stoppable_by_water{
+  _use:t="replicating"
+
+  "projectile__bulletTypesStoppableByWater:list<t>"{
+    type:t="he_ball"
+    type:t="he_i_ball"
+    type:t="he_t_ball"
+    type:t="he_i_t_ball"
+    type:t="he_i"
+    type:t="he_t"
+    type:t="he_i_t"
+    type:t="he_i_t_n_mine"
+    type:t="he_i_mine"
+    type:t="he_frag"
+    type:t="he_frag_i"
+    type:t="he_frag_t"
+    type:t="he_frag_i_t"
+    type:t="frag_i"
+    type:t="frag_t"
+    type:t="frag_i_t"
+    type:t="he_tank"
+    type:t="cumulative_tank"
+    type:t="he_frag_tank"
+    type:t="heat_tank"
+    type:t="shrapnel_tank"
+    type:t="heat_fs_tank"
+    type:t="he_frag_dist_fuse"
+    type:t="he_frag_radio_fuse"
+  }
+}
+
+bullet_types_stoppable_by_thickness_mats{
+  _use:t="replicating"
+
+  "projectile__bulletTypesStoppableByThicknessMats:list<t>"{
+    type:t="he_ball"
+    type:t="he_i_ball"
+    type:t="he_t_ball"
+    type:t="he_i_t_ball"
+    type:t="he_i"
+    type:t="he_t"
+    type:t="he_i_t"
+    type:t="he_i_t_n_mine"
+    type:t="he_i_mine"
+    type:t="he_frag"
+    type:t="he_frag_i"
+    type:t="he_frag_t"
+    type:t="he_frag_i_t"
+    type:t="frag_i"
+    type:t="frag_t"
+    type:t="frag_i_t"
+    type:t="he_tank"
+    type:t="cumulative_tank"
+    type:t="he_frag_tank"
+    type:t="heat_tank"
+    type:t="shrapnel_tank"
+    type:t="heat_fs_tank"
+    type:t="he_frag_dist_fuse"
+    type:t="he_frag_radio_fuse"
+    type:t="rocket_tank"
+  }
+}
+
+projectile_ground_trail_fx{
+  _tags:t="render"
+  projectile_ground_trail_fx__effect:t=""
+
+  "projectile_ground_trail_fx__caliberThresholds:shared:list<r>"{
+    item:r=0.019
+    item:r=0.026
+    item:r=0.06
+    item:r=1000000000.0
+  }
+
+  "projectile_ground_trail_fx__effectTemplates:shared:list<t>"{
+    item:t=""
+    item:t="trail_shell_ground_dust_small_effect"
+    item:t="trail_shell_ground_dust_medium_effect"
+    item:t="trail_shell_ground_dust_big_effect"
+  }
+
+  "projectile_ground_trail_fx__fxEid:eid"{
+  }
+}
+
+bullet_projectile{
+  _use:t="base_projectile"
+  _use:t="bullet_projectile_impact_sound"
+  _use:t="projectile_ground_trail_fx"
+  projectile__destroyVel:r=70.0
+  projectile__ricochetAngleThreshold:r=0.0872
+
+  "shell__concussionMaxRadius:r"{
+    value:r=7.0
+    _tags:t="server"
+  }
+
+  _group{
+    _tags:t="render"
+    projectile_visual_tracer__id:i=-1
+    projectile_visual_tracer__ignitionTime:r=0.002
+    projectile_visual_tracer__burnTime:r=1.8
+    projectile_visual_tracer__smokeTime:r=0.01
+    projectile_visual_tracer__smokeRad:r=0.01
+    projectile_visual_tracer__luminosity:r=10.0
+    projectile_visual_tracer__smokeColor:p4=1.0, 0.902, 0.702, 0.8
+    projectile_visual_tracer__headColor:p3=1.0, 0.431, 0.314
+    projectile_visual_tracer__startHeadColor:p3=1.0, 0.431, 0.314
+    projectile_visual_tracer__startTime:r=1.0
+  }
+
+  "shouldCreateBulletCrater:tag"{
+  }
+}
+
+beam_projectile{
+  _use:t="base_projectile"
+  _use:t="bullet_projectile_impact_sound"
+  projectile__destroyVel:r=70.0
+  projectile__ricochetAngleThreshold:r=0.0872
+
+  "shell__concussionMaxRadius:r"{
+    value:r=7.0
+    _tags:t="server"
+  }
+
+  _group{
+    _tags:t="render"
+    projectile_beam_tracer__id:i=-1
+    projectile_beam_tracer__time:r=1.0
+    projectile_beam_tracer__radius:r=1.0
+    projectile_beam_tracer__headColor:p3=255.0, 170.0, 85.0
+    projectile_beam_tracer__smokeColor:p4=255.0, 230.0, 179.0, 204.0
+    projectile_beam_tracer__luminosity:r=1.0
+    projectile_beam_tracer__burnTime:r=1.1
+    projectile_beam_tracer__fadeDist:r=1.0
+    projectile_beam_tracer__beginFadeTime:r=1.0
+    projectile_beam_tracer__endFadeTime:r=1.0
+    projectile_beam_tracer__scrollSpeed:r=1.0
+    projectile_beam_tracer__ignitionTime:r=0.005
+  }
+
+  "shouldCreateBulletCrater:tag"{
+  }
+}
+
+projectile_with_max_distance{
+  _use:t="bullet_projectile"
+  projectile__startPos:p3=0.0, 0.0, 0.0
+
+  "projectile__maxDistDestrFx:shared:list<t>"{
+    fx:t="explosion_midair_tiny_effect"
+    fx:t="explosion_midair_small_effect"
+  }
+}
+
+tankgun_projectile{
+  _use:t="bullet_projectile"
+  projectile__ricochetAngleThreshold:r=0.0349
+
+  "disableRicochetForGreatAngles:tag"{
+  }
+}
+
+artillery_projectile{
+  _use:t="tankgun_projectile"
+  fire_hit_fx__templateName:t="hit_artillery_flame"
+  fire_hit_fx__probability:r=0.5
+  fire_hit_fx__minCosNormToVertical:r=0.707
+
+  _group{
+    _tags:t="server"
+    bullet_crater__explosiveMassOverride:r=2.0
+  }
+
+  "shouldCreateBulletCrater:tag"{
+  }
+}
+
+bullet_silenced_projectile{
+  _use:t="bullet_projectile"
+
+  "isSilencedProjectile:tag"{
+  }
+}
+
+bullet_hole_from_animchar{
+  _tags:t="render"
+  projectile__bulletHoleFromAnimcharTraceOffset:r=1.0
+  projectile__bulletHoleFromAnimcharTraceLen:r=2.0
+
+  "bulletHoleFromAnimchar:tag"{
+  }
+}
+
+bomb_projectile_debug{
+  _use:t="bullet_projectile_debug"
+}
+
+base_bomb_projectile_no_crater{
+  _use:t="base_projectile"
+  _use:t="animchar"
+  _use:t="disable_ricochet"
+  _use:t="hud_bomb_marker"
+  _use:t="bullet_hole_from_animchar"
+  projectile__destroyVel:r=0.0
+  projectile__stopped:b=no
+  projectile__exploded:b=no
+  projectile__minLifeTime:r=4.0
+  projectile__maxLifeTime:r=180.0
+  projectile__isBomb:b=yes
+  shell__isKillerCamAllowed:b=no
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, 0.0, 0.0]]
+  animchar_render__enabled:b=yes
+  shell__maxDamageRIRadius:r=30.0
+  shell__explosionCone:r=0.0349
+  _tracked:t="projectile__stopped"
+  _tracked:t="projectile__exploded"
+  bomb__launcherVertical:p3=0.0, 0.0, 0.0
+  bomb__extForce:p3=0.0, 0.0, 0.0
+  bomb__extMoment:p3=0.0, 0.0, 0.0
+  bomb__lostMass:r=0.0
+  shell_explosion_fx__infoTemplate:t="hit_effect_group_bomb_explosion"
+
+  "serverSideDamage:tag"{
+  }
+
+  "bomb_ballistics_curr:ballistics::ShellState"{
+  }
+
+  "bomb_ballistics_prev:ballistics::ShellState"{
+  }
+
+  "bomb_ballistics_props:ballistics::ShellProps"{
+  }
+}
+
+base_bomb_projectile{
+  _use:t="base_bomb_projectile_no_crater"
+
+  "shouldCreateCrater:tag"{
+  }
+}
+
+bomb_projectile_no_crater{
+  _use:t="base_bomb_projectile_no_crater"
+  _use:t="bomb_projectile_impact_sound"
+  _use:t="bomb_projectile_lifetime_sound"
+  _use:t="bomb_shell_fly_sound"
+  shell__infantryKillStat:t="infantry_bomb_kills"
+  shell__crewKillStat:t="crew_bomb_kills"
+  shell__crewKillAward:t="infantry_bomb_kills"
+  shell__vehicleKillStat:t="vehicle_bomb_kills"
+}
+
+bomb_projectile{
+  _use:t="bomb_projectile_no_crater"
+
+  "shouldCreateCrater:tag"{
+  }
+}
+
+rocket_motor_trail{
+  _tags:t="render"
+  rocket_motor_trail__fireEffect:t=""
+  rocket_motor_trail__hazeEffect:t=""
+  rocket_motor_trail__endSmokeViscosity:r=2.0
+  rocket_motor_trail__burnTime:r=0.9
+  rocket_motor_trail__fxScale:r=1.0
+  rocket_motor_trail__isEffectsStarted:b=no
+  rocket_motor_trail__endedSmoke:b=no
+
+  "rocket_motor_trail__fireFxEid:eid"{
+  }
+
+  "rocket_motor_trail__hazeFxEid:eid"{
+  }
+}
+
+rocket_projectile_no_crater{
+  _use:t="base_bomb_projectile_no_crater"
+  _use:t="rocket_projectile_impact_sound"
+  _use:t="rocket_shell_fly_sound"
+  _use:t="rocket_motor_trail"
+  projectile__minLifeTime:r=0.1
+  projectile__maxLifeTime:r=10.0
+  rocket__launchTime:r=0.0
+  shell__infantryKillStat:t="infantry_rocket_kills"
+  shell__crewKillStat:t="infantry_rocket_kills"
+  shell__vehicleKillStat:t="vehicle_rocket_kills"
+
+  "rocket_motor_props:ballistics::RocketMotorProps"{
+  }
+}
+
+rocket_projectile{
+  _use:t="rocket_projectile_no_crater"
+
+  "shouldCreateCrater:tag"{
+  }
+}
+
+100lb_anm_30_bomb_projectile{
+  _use:t="bomb_projectile"
+  animchar__res:t="us_100lb_an_m30_char"
+
+  "shell__concussionMaxRadius:r"{
+    value:r=9.0
+    _tags:t="server"
+  }
+}
+
+250lbs_bomb_projectile{
+  _use:t="bomb_projectile"
+  animchar__res:t="us_250lb_anm57_char"
+
+  "shell__concussionMaxRadius:r"{
+    value:r=15.0
+    _tags:t="server"
+  }
+}
+
+250lb_anm_57_bomb_projectile{
+  _use:t="bomb_projectile"
+  animchar__res:t="us_250lb_anm57_char"
+
+  "shell__concussionMaxRadius:r"{
+    value:r=15.0
+    _tags:t="server"
+  }
+}
+
+500lbs_bomb_projectile{
+  _use:t="bomb_projectile"
+  animchar__res:t="us_500lb_anm64a1_char"
+
+  "shell__concussionMaxRadius:r"{
+    value:r=23.0
+    _tags:t="server"
+  }
+}
+
+500lb_anm_64a_1_bomb_projectile{
+  _use:t="bomb_projectile"
+  animchar__res:t="us_500lb_anm64a1_char"
+
+  "shell__concussionMaxRadius:r"{
+    value:r=23.0
+    _tags:t="server"
+  }
+}
+
+1000lb_anm_65a_1_bomb_projectile{
+  _use:t="bomb_projectile"
+  animchar__res:t="us_1000lb_anm65a1_char"
+
+  "shell__concussionMaxRadius:r"{
+    value:r=35.0
+    _tags:t="server"
+  }
+}
+
+1000lbs_gp_bomb_projectile{
+  _use:t="bomb_projectile"
+  animchar__res:t="uk_1000lbs_gp_char"
+
+  "shell__concussionMaxRadius:r"{
+    value:r=23.0
+    _tags:t="server"
+  }
+}
+
+hvar_rocket_projectile{
+  _use:t="rocket_projectile"
+  animchar__res:t="us_5in_hvar_b_char"
+
+  "shell__concussionMaxRadius:r"{
+    value:r=5.0
+    _tags:t="server"
+  }
+
+  _group{
+    _tags:t="render"
+    rocket_motor_trail__fireEffect:t="trail_rocket_medium_effect"
+    rocket_motor_trail__hazeEffect:t=""
+    rocket_motor_trail__endSmokeViscosity:r=0.05
+    rocket_motor_trail__fireFxOffset:p3=-0.8, 0.0, 0.0
+  }
+}
+
+5_in_hvar_2_rocket_projectile{
+  _use:t="rocket_projectile"
+  animchar__res:t="us_5in_hvar_b_char"
+
+  "shell__concussionMaxRadius:r"{
+    value:r=5.0
+    _tags:t="server"
+  }
+
+  _group{
+    _tags:t="render"
+    rocket_motor_trail__fireEffect:t="trail_rocket_medium_effect"
+    rocket_motor_trail__hazeEffect:t=""
+    rocket_motor_trail__endSmokeViscosity:r=0.05
+    rocket_motor_trail__fireFxOffset:p3=-0.8, 0.0, 0.0
+  }
+}
+
+rp_3_rocket_projectile{
+  _use:t="rocket_projectile"
+  animchar__res:t="uk_60lb_sap_mk1_rocket_char"
+
+  "shell__concussionMaxRadius:r"{
+    value:r=5.0
+    _tags:t="server"
+  }
+
+  _group{
+    _tags:t="render"
+    rocket_motor_trail__fireEffect:t="trail_rocket_dark_effect"
+    rocket_motor_trail__hazeEffect:t=""
+    rocket_motor_trail__endSmokeViscosity:r=0.15
+    rocket_motor_trail__fireFxOffset:p3=-1.0, -0.1, 0.0
+  }
+}
+
+m_8_bazooka_willys_rocket_projectile{
+  _use:t="rocket_projectile"
+  animchar__res:t="us_m8_bazooka_rocket_char"
+
+  "shell__concussionMaxRadius:r"{
+    value:r=5.0
+    _tags:t="server"
+  }
+
+  _group{
+    _tags:t="render"
+    rocket_motor_trail__fireEffect:t="trail_projectile_launch_smoke_effect"
+    rocket_motor_trail__hazeEffect:t=""
+    rocket_motor_trail__endSmokeViscosity:r=0.05
+    rocket_motor_trail__fireFxOffset:p3=-0.7, 0.0, 0.0
+  }
+}
+
+m_8bazooka_rocket_projectile{
+  _use:t="rocket_projectile"
+  animchar__res:t="us_m8_bazooka_char"
+
+  "shell__concussionMaxRadius:r"{
+    value:r=5.0
+    _tags:t="server"
+  }
+
+  _group{
+    _tags:t="render"
+    rocket_motor_trail__fireEffect:t="trail_rocket_medium_effect"
+    rocket_motor_trail__hazeEffect:t=""
+    rocket_motor_trail__endSmokeViscosity:r=0.05
+    rocket_motor_trail__fireFxOffset:p3=-0.7, 0.0, 0.0
+  }
+}
+
+m8_rocket_projectile{
+  _use:t="base_m8_rocket_projectile"
+
+  _group{
+    _tags:t="render"
+    rocket_motor_trail__fireEffect:t="trail_rocket_mrls_effect"
+    rocket_motor_trail__hazeEffect:t=""
+    rocket_motor_trail__endSmokeViscosity:r=0.05
+    rocket_motor_trail__fireFxOffset:p3=-0.8, 0.0, 0.0
+  }
+}
+
+m8_rocket_artillery_projectile{
+  _use:t="base_m8_rocket_projectile"
+
+  _group{
+    _tags:t="render"
+    rocket_motor_trail__fireEffect:t="trail_projectile_launch_smoke_white_effect"
+    rocket_motor_trail__hazeEffect:t=""
+    rocket_motor_trail__endSmokeViscosity:r=0.05
+    rocket_motor_trail__fireFxOffset:p3=-0.8, 0.0, 0.0
+  }
+}
+
+fab_50_bomb_projectile{
+  _use:t="bomb_projectile"
+  animchar__res:t="su_fab50_char"
+
+  "shell__concussionMaxRadius:r"{
+    value:r=9.0
+    _tags:t="server"
+  }
+}
+
+fab_100_bomb_projectile{
+  _use:t="bomb_projectile"
+  animchar__res:t="su_fab100_char"
+
+  "shell__concussionMaxRadius:r"{
+    value:r=15.0
+    _tags:t="server"
+  }
+}
+
+fab_100x_bomb_projectile{
+  _use:t="bomb_projectile"
+  animchar__res:t="su_fab100_char"
+
+  "shell__concussionMaxRadius:r"{
+    value:r=15.0
+    _tags:t="server"
+  }
+}
+
+fab_250_bomb_projectile{
+  _use:t="bomb_projectile"
+  animchar__res:t="su_fab_250sv_char"
+
+  "shell__concussionMaxRadius:r"{
+    value:r=23.0
+    _tags:t="server"
+  }
+}
+
+fab_250x_bomb_projectile{
+  _use:t="bomb_projectile"
+  animchar__res:t="su_fab250_char"
+
+  "shell__concussionMaxRadius:r"{
+    value:r=23.0
+    _tags:t="server"
+  }
+}
+
+fab_250m_43_bomb_projectile{
+  _use:t="bomb_projectile"
+  animchar__res:t="su_fab_250m43_char"
+
+  "shell__concussionMaxRadius:r"{
+    value:r=23.0
+    _tags:t="server"
+  }
+}
+
+fab_500m_46_bomb_projectile{
+  _use:t="bomb_projectile"
+  animchar__res:t="su_fab_500m_46_char"
+
+  "shell__concussionMaxRadius:r"{
+    value:r=23.0
+    _tags:t="server"
+  }
+}
+
+fab_500m_44_bomb_projectile{
+  _use:t="bomb_projectile"
+  animchar__res:t="su_fab_500m_44_char"
+
+  "shell__concussionMaxRadius:r"{
+    value:r=23.0
+    _tags:t="server"
+  }
+}
+
+rs_82_rocket_projectile{
+  _use:t="rocket_projectile"
+  animchar__res:t="su_rs82_char"
+
+  "shell__concussionMaxRadius:r"{
+    value:r=5.0
+    _tags:t="server"
+  }
+
+  _group{
+    _tags:t="render"
+    rocket_motor_trail__fireEffect:t="trail_rocket_dark_effect"
+    rocket_motor_trail__hazeEffect:t=""
+    rocket_motor_trail__endSmokeViscosity:r=0.2
+    rocket_motor_trail__fireFxOffset:p3=-0.45, -0.05, 0.0
+  }
+}
+
+ros_82_rocket_projectile{
+  _use:t="rocket_projectile"
+  animchar__res:t="su_rs82_char"
+
+  "shell__concussionMaxRadius:r"{
+    value:r=5.0
+    _tags:t="server"
+  }
+
+  _group{
+    _tags:t="render"
+    rocket_motor_trail__fireEffect:t="trail_rocket_dark_effect"
+    rocket_motor_trail__hazeEffect:t=""
+    rocket_motor_trail__endSmokeViscosity:r=0.2
+    rocket_motor_trail__fireFxOffset:p3=-0.45, -0.05, 0.0
+  }
+}
+
+rbs_82_rocket_projectile{
+  _use:t="rocket_projectile"
+  animchar__res:t="su_rbs_82_rocket_char"
+
+  "shell__concussionMaxRadius:r"{
+    value:r=5.0
+    _tags:t="server"
+  }
+
+  _group{
+    _tags:t="render"
+    rocket_motor_trail__fireEffect:t="trail_rocket_dark_effect"
+    rocket_motor_trail__hazeEffect:t=""
+    rocket_motor_trail__endSmokeViscosity:r=0.2
+    rocket_motor_trail__fireFxOffset:p3=-0.45, -0.05, 0.0
+  }
+}
+
+bm_8_24_projectile{
+  _use:t="base_bm_8_24_projectile"
+
+  _group{
+    _tags:t="render"
+    rocket_motor_trail__fireEffect:t="trail_rocket_mrls_effect"
+    rocket_motor_trail__fireFxOffset:p3=-0.3, 0.0, 0.0
+  }
+}
+
+bm_8_24_artillery_projectile{
+  _use:t="base_bm_8_24_projectile"
+
+  _group{
+    _tags:t="render"
+    rocket_motor_trail__fireEffect:t="trail_projectile_launch_smoke_white_effect"
+    rocket_motor_trail__fireFxOffset:p3=-0.3, 0.0, 0.0
+  }
+}
+
+rbs_132_rocket_projectile{
+  _use:t="rocket_projectile"
+  animchar__res:t="su_rs132_char"
+
+  "shell__concussionMaxRadius:r"{
+    value:r=5.0
+    _tags:t="server"
+  }
+
+  _group{
+    _tags:t="render"
+    rocket_motor_trail__fireEffect:t="trail_rocket_dark_effect"
+    rocket_motor_trail__hazeEffect:t=""
+    rocket_motor_trail__endSmokeViscosity:r=0.2
+    rocket_motor_trail__fireFxOffset:p3=-0.68, -0.07, 0.0
+  }
+}
+
+sc_50_bomb_projectile{
+  _use:t="bomb_projectile"
+  animchar__res:t="de_sc50_char"
+
+  "shell__concussionMaxRadius:r"{
+    value:r=9.0
+    _tags:t="server"
+  }
+}
+
+sc_100_bomb_projectile{
+  _use:t="bomb_projectile"
+  animchar__res:t="su_fab100_char"
+
+  "shell__concussionMaxRadius:r"{
+    value:r=15.0
+    _tags:t="server"
+  }
+}
+
+100kg_t_bomb_projectile{
+  _use:t="bomb_projectile"
+  animchar__res:t="it_100kg_t_char"
+
+  "shell__concussionMaxRadius:r"{
+    value:r=15.0
+    _tags:t="server"
+  }
+}
+
+200kg_bomb_projectile{
+  _use:t="bomb_projectile"
+  animchar__res:t="it_100kg_t_char"
+
+  "shell__concussionMaxRadius:r"{
+    value:r=15.0
+    _tags:t="server"
+  }
+}
+
+250kg_gp_bomb_projectile{
+  _use:t="bomb_projectile"
+  animchar__res:t="it_250kg_gp_char"
+
+  "shell__concussionMaxRadius:r"{
+    value:r=23.0
+    _tags:t="server"
+  }
+}
+
+sc_250_bomb_projectile{
+  _use:t="bomb_projectile"
+  animchar__res:t="de_sc250_char"
+
+  "shell__concussionMaxRadius:r"{
+    value:r=23.0
+    _tags:t="server"
+  }
+}
+
+sc_250_87_bomb_projectile{
+  _use:t="bomb_projectile"
+  animchar__res:t="de_sc250_87_char"
+
+  "shell__concussionMaxRadius:r"{
+    value:r=23.0
+    _tags:t="server"
+  }
+}
+
+sc_500_bomb_projectile{
+  _use:t="bomb_projectile"
+  animchar__res:t="de_sc500_char"
+
+  "shell__concussionMaxRadius:r"{
+    value:r=23.0
+    _tags:t="server"
+  }
+}
+
+br_20_rocket_projectile{
+  _use:t="rocket_projectile"
+  animchar__res:t="de_210mm_char"
+
+  "shell__concussionMaxRadius:r"{
+    value:r=5.0
+    _tags:t="server"
+  }
+
+  _group{
+    _tags:t="render"
+    rocket_motor_trail__fireEffect:t="trail_rocket_dark_effect"
+    rocket_motor_trail__hazeEffect:t=""
+    rocket_motor_trail__endSmokeViscosity:r=0.05
+    rocket_motor_trail__fireFxOffset:p3=-0.4, 0.0, 0.0
+  }
+}
+
+panzerwerfer_42_projectile{
+  _use:t="base_panzerwerfer_42_projectile"
+
+  _group{
+    _tags:t="render"
+    rocket_motor_trail__fireEffect:t="trail_rocket_mrls_effect"
+    rocket_motor_trail__hazeEffect:t=""
+    rocket_motor_trail__endSmokeViscosity:r=0.05
+    rocket_motor_trail__fireFxOffset:p3=-0.8, 0.0, 0.0
+  }
+}
+
+panzerwerfer_42_artillery_projectile{
+  _use:t="base_panzerwerfer_42_projectile"
+
+  _group{
+    _tags:t="render"
+    rocket_motor_trail__fireEffect:t="trail_projectile_launch_smoke_white_effect"
+    rocket_motor_trail__hazeEffect:t=""
+    rocket_motor_trail__endSmokeViscosity:r=0.05
+    rocket_motor_trail__fireFxOffset:p3=-0.8, 0.0, 0.0
+  }
+}
+
+navy_type_97mod_6_60kg_bomb_projectile{
+  _use:t="bomb_projectile"
+  animchar__res:t="jp_navy_type97mod6_60kg_char"
+
+  "shell__concussionMaxRadius:r"{
+    value:r=9.0
+    _tags:t="server"
+  }
+}
+
+type_94mod_10_bomb_projectile{
+  _use:t="bomb_projectile"
+  animchar__res:t="jp_type94mod10_char"
+
+  "shell__concussionMaxRadius:r"{
+    value:r=23.0
+    _tags:t="server"
+  }
+}
+
+navy_mod_25mark_2_250kg_bomb_projectile{
+  _use:t="bomb_projectile"
+  animchar__res:t="jp_navy_mod25mark2_250kg_char"
+
+  "shell__concussionMaxRadius:r"{
+    value:r=23.0
+    _tags:t="server"
+  }
+}
+
+type_92mod_25_bomb_projectile{
+  _use:t="bomb_projectile"
+  animchar__res:t="jp_navy_mod25mark2_250kg_char"
+
+  "shell__concussionMaxRadius:r"{
+    value:r=23.0
+    _tags:t="server"
+  }
+}
+
+navy_mod_50mark_1_500kg_bomb_projectile{
+  _use:t="bomb_projectile"
+  animchar__res:t="jp_navy_mod50mark1_500kg_char"
+
+  "shell__concussionMaxRadius:r"{
+    value:r=23.0
+    _tags:t="server"
+  }
+}
+
+navy_mod_50mark_2_500kg_bomb_projectile{
+  _use:t="bomb_projectile"
+  animchar__res:t="jp_navy_mod50mark2_500kg_char"
+
+  "shell__concussionMaxRadius:r"{
+    value:r=23.0
+    _tags:t="server"
+  }
+}
+
+navy_mod80mark1_800kg_bomb_projectile{
+  _use:t="bomb_projectile"
+  animchar__res:t="jp_navy_mod80mark1_800kg_char"
+
+  "shell__concussionMaxRadius:r"{
+    value:r=23.0
+    _tags:t="server"
+  }
+}
+
+navy_rocket_type_5_number_6_84kg_rocket_projectile{
+  _use:t="rocket_projectile"
+  animchar__res:t="jp_navy_rocket_type5_number6_84kg_char"
+
+  "shell__concussionMaxRadius:r"{
+    value:r=9.0
+    _tags:t="server"
+  }
+
+  _group{
+    _tags:t="render"
+    rocket_motor_trail__fireEffect:t="trail_rocket_medium_effect"
+    rocket_motor_trail__hazeEffect:t=""
+    rocket_motor_trail__endSmokeViscosity:r=0.05
+    rocket_motor_trail__fireFxOffset:p3=-0.95, -0.12, 0.0
+  }
+}
+
+ai_bomb_projectile{
+  _use:t="base_projectile"
+  _use:t="animchar"
+  _use:t="disable_ricochet"
+  _use:t="hud_bomb_marker"
+  _use:t="bomb_projectile_impact_sound"
+  _use:t="bomb_projectile_lifetime_sound"
+  _use:t="ai_bomb_shell_fly_sound"
+  projectile__destroyVel:r=0.0
+  projectile__hasKv:b=no
+  projectile__stopped:b=no
+  projectile__exploded:b=no
+  projectile__minLifeTime:r=4.0
+  projectile__maxLifeTime:r=180.0
+  projectile__isBomb:b=no
+  shell__isKillerCamAllowed:b=no
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, 0.0, 0.0]]
+  animchar_render__enabled:b=yes
+  shell__maxDamageRIRadius:r=30.0
+  shell__explosionCone:r=0.0349
+  shell__infantryKillStat:t="infantry_bomb_kills"
+  shell__crewKillStat:t="crew_bomb_kills"
+  shell__crewKillAward:t="infantry_bomb_kills"
+  shell__vehicleKillStat:t="vehicle_bomb_kills"
+  _tracked:t="projectile__stopped"
+  _tracked:t="projectile__exploded"
+
+  "ai_bomb_projectile:tag"{
+  }
+
+  "shouldCreateCrater:tag"{
+  }
+}
+
+ai_100lb_anm_30_bomb_projectile{
+  _use:t="ai_bomb_projectile"
+  animchar__res:t="us_100lb_an_m30_char"
+
+  "shell__concussionMaxRadius:r"{
+    value:r=9.0
+    _tags:t="server"
+  }
+}
+
+ai_250lbs_bomb_projectile{
+  _use:t="ai_bomb_projectile"
+  animchar__res:t="us_250lb_anm57_char"
+
+  "shell__concussionMaxRadius:r"{
+    value:r=15.0
+    _tags:t="server"
+  }
+}
+
+ai_500lbs_bomb_projectile{
+  _use:t="ai_bomb_projectile"
+  animchar__res:t="us_500lb_anm64a1_char"
+
+  "shell__concussionMaxRadius:r"{
+    value:r=23.0
+    _tags:t="server"
+  }
+}
+
+ai_500lb_anm_64a_1_bomb_projectile{
+  _use:t="ai_bomb_projectile"
+  animchar__res:t="us_500lb_anm64a1_char"
+
+  "shell__concussionMaxRadius:r"{
+    value:r=23.0
+    _tags:t="server"
+  }
+}
+
+ai_fab_50_bomb_projectile{
+  _use:t="ai_bomb_projectile"
+  animchar__res:t="su_fab100_char"
+
+  "shell__concussionMaxRadius:r"{
+    value:r=15.0
+    _tags:t="server"
+  }
+}
+
+ai_fab_100_bomb_projectile{
+  _use:t="ai_bomb_projectile"
+  animchar__res:t="su_fab100_char"
+
+  "shell__concussionMaxRadius:r"{
+    value:r=15.0
+    _tags:t="server"
+  }
+}
+
+ai_fab_250x_bomb_projectile{
+  _use:t="ai_bomb_projectile"
+  animchar__res:t="su_fab250_char"
+
+  "shell__concussionMaxRadius:r"{
+    value:r=23.0
+    _tags:t="server"
+  }
+}
+
+ai_fab_250_bomb_projectile{
+  _use:t="ai_bomb_projectile"
+  animchar__res:t="su_fab_250sv_char"
+
+  "shell__concussionMaxRadius:r"{
+    value:r=23.0
+    _tags:t="server"
+  }
+}
+
+ai_sc_50_bomb_projectile{
+  _use:t="ai_bomb_projectile"
+  animchar__res:t="de_sc50_char"
+
+  "shell__concussionMaxRadius:r"{
+    value:r=9.0
+    _tags:t="server"
+  }
+}
+
+ai_50kg_t_vert_bomb_projectile{
+  _use:t="ai_bomb_projectile"
+  animchar__res:t="it_50kg_t_vert_char"
+
+  "shell__concussionMaxRadius:r"{
+    value:r=9.0
+    _tags:t="server"
+  }
+}
+
+ai_sc_100_bomb_projectile{
+  _use:t="ai_bomb_projectile"
+  animchar__res:t="su_fab100_char"
+
+  "shell__concussionMaxRadius:r"{
+    value:r=15.0
+    _tags:t="server"
+  }
+}
+
+ai_sc_250_bomb_projectile{
+  _use:t="ai_bomb_projectile"
+  animchar__res:t="de_sc250_char"
+
+  "shell__concussionMaxRadius:r"{
+    value:r=23.0
+    _tags:t="server"
+  }
+}
+
+ai_navy_type_97mod_6_60kg_bomb_projectile{
+  _use:t="ai_bomb_projectile"
+  animchar__res:t="jp_navy_type97mod6_60kg_char"
+
+  "shell__concussionMaxRadius:r"{
+    value:r=9.0
+    _tags:t="server"
+  }
+}
+
+ai_navy_mod_25mark_2_250kg_bomb_projectile{
+  _use:t="ai_bomb_projectile"
+  animchar__res:t="jp_navy_mod25mark2_250kg_char"
+
+  "shell__concussionMaxRadius:r"{
+    value:r=23.0
+    _tags:t="server"
+  }
+}
+
+ai_navy_mod_50mark_1_500kg_bomb_projectile{
+  _use:t="ai_bomb_projectile"
+  animchar__res:t="jp_navy_mod50mark1_500kg_char"
+
+  "shell__concussionMaxRadius:r"{
+    value:r=23.0
+    _tags:t="server"
+  }
+}
+
+base_flame_bomb_projectile{
+  _use:t="bomb_projectile_no_crater"
+  _use:t="fire_splash_shell"
+  projectile__addBulletHole:b=no
+  projectile__minLifeTime:r=0.0
+  flame_bomb__auxProjectileBlk:t="gamedata/weapons/bullets/effect_dummy.blk"
+  flame_bomb__flameProjectile:t="flame_firebomb_projectile"
+  flame_bomb__explosionProjectile:t="explosion_firebomb_projectile"
+  flame_bomb__trailProjectile:t="trail_firebomb_projectile"
+  flame_bomb__fireCount:i=30
+  flame_bomb__coilCount:r=12.0
+  flame_bomb__fireIdxOffset:i=0
+  flame_bomb__spreadSpeed:r=5.0
+  flame_bomb__carryVelCoeff:r=0.2
+  flame_bomb__normSpawnShift:r=0.1
+  flame_bomb__fireProjectileMaxSpawnHeight:r=3.0
+  flame_bomb__explosionSpawnHeight:r=3.0
+  flame_bomb__trailCount:i=6
+  flame_bomb__trailAngle:r=25.0
+
+  "flame_bomb:tag"{
+  }
+
+  "projectile__destroyOnHit:tag"{
+  }
+
+  "projectile__destroyOnHitWater:tag"{
+  }
+}
+
+150gal_drop_tank_bomb_projectile{
+  _use:t="base_flame_bomb_projectile"
+  animchar__res:t="us_150gal_drop_tank_char"
+  flame_bomb__carryVelCoeff:r=0.23
+  flame_bomb__fireCount:i=40
+  flame_bomb__trailAngle:r=30.0
+  flame_bomb__spreadSpeed:r=6.0
+  flame_bomb__coilCount:r=25.0
+}
+
+330_liters_a_6m_bomb_projectile{
+  _use:t="base_flame_bomb_projectile"
+  animchar__res:t="jp_330_liters_drop_tank_char"
+}
+
+s_8ko_rocket_rocket_projectile{
+  _use:t="rocket_projectile"
+  animchar__res:t="su_s_8ko_rocket_char"
+
+  "shell__concussionMaxRadius:r"{
+    value:r=5.0
+    _tags:t="server"
+  }
+
+  _group{
+    _tags:t="render"
+    rocket_motor_trail__fireEffect:t="trail_rocket_dark_effect"
+    rocket_motor_trail__hazeEffect:t=""
+    rocket_motor_trail__endSmokeViscosity:r=0.2
+  }
+}
+
+s_5k_rocket_rocket_projectile{
+  _use:t="rocket_projectile"
+  animchar__res:t="su_s_5k_rocket_char"
+
+  "shell__concussionMaxRadius:r"{
+    value:r=5.0
+    _tags:t="server"
+  }
+
+  _group{
+    _tags:t="render"
+    rocket_motor_trail__fireEffect:t="trail_rocket_medium_effect"
+    rocket_motor_trail__hazeEffect:t=""
+    rocket_motor_trail__endSmokeViscosity:r=0.05
+    rocket_motor_trail__fireFxOffset:p3=-0.8, -0.07, 0.0
+  }
+}
+
+520lb_herl_mk_1_n_bomb_projectile{
+  _use:t="bomb_projectile"
+  animchar__res:t="uk_500lb_as_mk4_char"
+}
+
+230lbs_bomb_projectile{
+  _use:t="bomb_projectile"
+  animchar__res:t="uk_250lb_herl_char"
+}
+
+sc_ag_300_bomb_projectile{
+  _use:t="bomb_projectile"
+  animchar__res:t="de_300kg_sc_ag_char"
+}
+
+ai_230lbs_bomb_projectile{
+  _use:t="ai_bomb_projectile"
+  animchar__res:t="uk_250lb_herl_char"
+}
+
+ai_sc_ag_300_bomb_projectile{
+  _use:t="ai_bomb_projectile"
+  animchar__res:t="de_300kg_sc_ag_char"
+}

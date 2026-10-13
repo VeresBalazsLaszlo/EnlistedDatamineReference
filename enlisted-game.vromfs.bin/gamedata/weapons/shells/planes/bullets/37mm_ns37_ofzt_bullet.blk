@@ -1,0 +1,48 @@
+mass:r=0.735
+explosiveType:t="a_ix_2"
+explosiveMass:r=0.034
+caliber:r=0.037
+speed:r=880.0
+maxDistance:r=3000.0
+normalizationPreset:t="heat"
+ricochetPreset:t="he"
+recoilMultiplier:r=0.35
+groundRicochetPreset:t="he"
+secondaryShattersPreset:t="ap"
+hitPowerMult:r=2.0
+stabilityThreshold:r=0.5
+onHitChanceMultFire:r=3.0
+stabilityCaliberToArmorThreshold:r=5.0
+nearHitPower:p2=1.0, 50.0
+stabilityReductionAfterRicochet:r=0.3
+midHitPower:p2=0.9, 300.0
+stabilityReductionAfterPenetration:r=0.15
+farHitPower:p2=0.1, 700.0
+bulletType:t="he_i_t"
+endHitPower:p2=0.008, 1500.0
+nearArmorPower:p2=3.0, 150.0
+slopeEffectPreset:t="ap"
+relativeVelHitShift:p2=300.0, 1000.0
+midArmorPower:p2=3.0, 600.0
+farArmorPower:p2=3.0, 1000.0
+explodeOnRendinst:b=yes
+relativeVelArmorShift:p2=200.0, 1000.0
+fuseOnWater:b=yes
+fuseOnWaterProbability:r=1.0
+fuseDelayDist:r=0.05
+explodeTreshold:r=0.01
+
+stabilityRicochetModifier{
+  mod1:p2=0.0, 0.5
+  mod2:p2=15.0, 0.7
+  mod3:p2=30.0, 0.99
+}
+
+pressureDamage{
+  damageType:t="pressure"
+}
+
+tracer{
+  headColor:c=255, 247, 212, 200
+  smokeColor:c=80, 80, 80, 186
+}

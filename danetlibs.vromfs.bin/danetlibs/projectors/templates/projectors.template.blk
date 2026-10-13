@@ -1,0 +1,31 @@
+projectors_manager{
+  _singleton:b=yes
+  _use:t="replicating"
+  projectors_manager__atmosphereDensity:r=1.0
+  projectors_manager__atmosphereMoveDir:p3=1.0, 0.0, 0.0
+  projectors_manager__atmosphereMoveSpeed:r=0.0
+  projectors_manager__noiseScale:r=1.0
+  projectors_manager__noiseStrength:r=0.0
+
+  projectors_manager{
+    _tags:t="render"
+  }
+
+  "projectors_node:dafg::NodeHandle"{
+    _tags:t="render"
+  }
+}
+
+projector{
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, 0.0, 0.0]]
+  _use:t="replicating"
+  projector__id:i=-1
+  projector__color:p3=1.0, 1.0, 1.0
+  projector__angle:r=3.0
+  projector__length:r=1000.0
+  projector__sourceWidth:r=1.0
+  projector__phase:r=0.0
+  projector__period:r=1.0
+  projector__xAngleAmplitude:r=0.0
+  projector__zAngleAmplitude:r=0.0
+}

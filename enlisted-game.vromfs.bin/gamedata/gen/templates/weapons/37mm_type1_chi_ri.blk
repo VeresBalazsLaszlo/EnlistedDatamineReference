@@ -1,0 +1,34 @@
+base_37mm_type1_chi_ri{
+  item__name:t="guns/37mm_type1_chi_ri"
+  gun__blk:t="gamedata/gen/weapons/37mm_type1_chi_ri.blk"
+  gun__shotFreq:r=0.25
+  gun__locName:t="37mm_type1_chi_ri"
+
+  "gun__ammoSetsInfo:shared:array"{
+
+    "defaultSet:array"{
+
+      "shell:object"{
+        blk:t="gamedata/gen/weapons/shells/37mm_type1_chi_ri_defaultset.blk"
+        name:t="37mm_aphe"
+        type:t="aphe_tank"
+      }
+    }
+
+    "37mm_type_94_APHE:array"{
+
+      "shell:object"{
+        blk:t="gamedata/gen/weapons/shells/37mm_type1_chi_ri_37mm_type_94_aphe.blk"
+        name:t="37mm_aphe"
+        type:t="aphe_tank"
+      }
+    }
+  }
+}
+
+tankgun_37mm_type1_chi_ri{
+  _use:t="tankgun"
+  _use:t="base_tankgun_cannon"
+  _use:t="base_37mm_type1_chi_ri"
+  turret__triggerGroup:i=1
+}

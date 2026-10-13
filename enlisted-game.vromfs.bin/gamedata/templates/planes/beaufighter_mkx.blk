@@ -1,0 +1,838 @@
+beaufighter_mkx{
+  _use:t="beaufighter_mkx_base"
+  _use:t="plane_with_gunners"
+  _use:t="beaufighter_mkx_plane_sound"
+  item__name:t="items/beaufighter_mkx"
+
+  "plane_glassCanopyNodes:list<t>"{
+    name:t="cover2_dm"
+  }
+
+  "vehicle_seats__seats:shared:array"{
+
+    "seats:object"{
+      name:t="driver"
+      locName:t="vehicle_seats/pilot"
+      seatOwnsEntityControl:b=yes
+      attachNode:t="pilot1"
+      ignoreAttachNodeRotation:b=yes
+      attachTm:m=[[0.994516, 0.104528, 0.0] [-0.104527, 0.994505, 0.0] [0.0, 0.0, 0.999986] [0.04, 0.05, -0.14]]
+      seatComponent:t="isDriver"
+      receiveDamageFromDMPart:t="pilot_dm"
+      cameraNodeName:t=""
+      cameraOffset:p3=1.09, 0.646, 0.0
+      cockpitTemplate:t="beaufighter_mkx_driver_cockpit"
+      roomSpace:i=0
+
+      "turretNames:array"{
+        turret:t="turret_01"
+        turret:t="turret_02"
+        turret:t="turret_03"
+        turret:t="turret_04"
+        turret:t="turret_05"
+        turret:t="turret_06"
+        turret:t="turret_07"
+        turret:t="turret_08"
+        turret:t="turret_09"
+        turret:t="turret_10"
+        turret:t="turret_11"
+        turret:t="turret_12"
+        turret:t="turret_13"
+        turret:t="turret_14"
+        turret:t="turret_15"
+        turret:t="turret_16"
+        turret:t="turret_17"
+        turret:t="turret_18"
+      }
+
+      "cockpitEffectors:object"{
+        r.hand:t="stick_rhand_1"
+        l.hand:t="throttle_lhand_1"
+        r.foot:t="pedal_rfoot_1"
+        l.foot:t="pedal_lfoot_1"
+      }
+    }
+
+    "seats:object"{
+      name:t="main_gunner"
+      locName:t="vehicle_seats/gunner"
+      attachNode:t="gunner1"
+      ignoreAttachNodeRotation:b=yes
+      attachTm:m=[[-1.0, 0.0, -1.50996e-07] [0.0, 1.0, 0.0] [1.50996e-07, 0.0, -1.0] [0.0, 0.0, 0.0]]
+      cameraNodeName:t="gun1"
+      cameraOffset:p3=-0.28, 0.165, 0.0
+      cameraType:t="gunner"
+      seatComponent:t="isGunner"
+      canPlaceManually:b=yes
+      receiveDamageFromDMPart:t="gunner1_dm"
+      directTurretControl:b=yes
+      roomSpace:i=1
+
+      "turretNames:array"{
+        turret:t="turret_19"
+      }
+    }
+  }
+
+  "turret_control__emitterNodes:shared:array"{
+    node:t="rocket4"
+    node:t="rocket5"
+    node:t="rocket3"
+    node:t="rocket6"
+    node:t="rocket2"
+    node:t="rocket7"
+    node:t="rocket1"
+    node:t="rocket8"
+    node:t="flare1"
+    node:t="flare2"
+    node:t="flare3"
+    node:t="flare4"
+    node:t="flare5"
+    node:t="flare6"
+    node:t="flare7"
+    node:t="flare8"
+    node:t="flare9"
+    node:t="flare10"
+    node:t="flare11"
+  }
+
+  "turret_control__animVars:shared:array"{
+
+    "vars:object"{
+      curYawParamName:t="weapon_01_yaw"
+      curPitchParamName:t="weapon_01_pitch"
+    }
+
+    "vars:object"{
+      curYawParamName:t="weapon_02_yaw"
+      curPitchParamName:t="weapon_02_pitch"
+    }
+
+    "vars:object"{
+      curYawParamName:t="weapon_03_yaw"
+      curPitchParamName:t="weapon_03_pitch"
+    }
+
+    "vars:object"{
+      curYawParamName:t="weapon_04_yaw"
+      curPitchParamName:t="weapon_04_pitch"
+    }
+
+    "vars:object"{
+      curYawParamName:t="weapon_05_yaw"
+      curPitchParamName:t="weapon_05_pitch"
+    }
+
+    "vars:object"{
+      curYawParamName:t="weapon_06_yaw"
+      curPitchParamName:t="weapon_06_pitch"
+    }
+
+    "vars:object"{
+      curYawParamName:t="weapon_07_yaw"
+      curPitchParamName:t="weapon_07_pitch"
+    }
+
+    "vars:object"{
+      curYawParamName:t="weapon_08_yaw"
+      curPitchParamName:t="weapon_08_pitch"
+    }
+
+    "vars:object"{
+      curYawParamName:t="weapon_09_yaw"
+      curPitchParamName:t="weapon_09_pitch"
+    }
+
+    "vars:object"{
+      curYawParamName:t="weapon_10_yaw"
+      curPitchParamName:t="weapon_10_pitch"
+    }
+
+    "vars:object"{
+      curYawParamName:t="weapon_11_yaw"
+      curPitchParamName:t="weapon_11_pitch"
+    }
+
+    "vars:object"{
+      curYawParamName:t="weapon_12_yaw"
+      curPitchParamName:t="weapon_12_pitch"
+    }
+
+    "vars:object"{
+      curYawParamName:t="weapon_13_yaw"
+      curPitchParamName:t="weapon_13_pitch"
+    }
+
+    "vars:object"{
+      curYawParamName:t="weapon_14_yaw"
+      curPitchParamName:t="weapon_14_pitch"
+    }
+
+    "vars:object"{
+      curYawParamName:t="weapon_15_yaw"
+      curPitchParamName:t="weapon_15_pitch"
+    }
+
+    "vars:object"{
+      curYawParamName:t="weapon_16_yaw"
+      curPitchParamName:t="weapon_16_pitch"
+    }
+
+    "vars:object"{
+      curYawParamName:t="weapon_17_yaw"
+      curPitchParamName:t="weapon_17_pitch"
+    }
+
+    "vars:object"{
+      curYawParamName:t="weapon_18_yaw"
+      curPitchParamName:t="weapon_18_pitch"
+    }
+
+    "vars:object"{
+      paramMinPitchAngle:t="turret1_min_pitch_angle"
+      wishPitchParamName:t="gun1_aim:targetPitch"
+      paramYawSpeedMul:t="turret1_yaw_mul"
+      paramYawSpeed:t="turret1_yaw_speed"
+      paramMaxYawAngle:t="turret1_max_yaw_angle"
+      aimActiveParamName:t="gun1_aim_active"
+      curWorldPitchParamName:t="gun1_world_pitch"
+      curWorldYawParamName:t="turret1_world_yaw"
+      paramPitchSpeedMul:t="gun1_pitch_mul"
+      paramYawAccel:t="turret1_yaw_accel"
+      paramPitchAccel:t="gun1_pitch_accel"
+      paramPitchSpeed:t="gun1_pitch_speed"
+      wishYawParamName:t="gun1_aim:targetYaw"
+      paramMaxPitchAngle:t="turret1_max_pitch_angle"
+      curPitchParamName:t="gun1_pitch"
+      curYawParamName:t="turret1_yaw"
+      paramMinYawAngle:t="turret1_min_yaw_angle"
+    }
+  }
+
+  "turret_control__turretInfo:shared:array"{
+
+    "turretInfo:object"{
+      turretName:t="turret_01"
+      turretGroup:t="rocket_turrets"
+      trigger:t="rockets"
+      gun:t="planegun_beaufighter_mkx_rp_3_launcher_01"
+    }
+
+    "turretInfo:object"{
+      turretName:t="turret_02"
+      turretGroup:t="rocket_turrets"
+      trigger:t="rockets"
+      gun:t="planegun_beaufighter_mkx_rp_3_launcher_02"
+    }
+
+    "turretInfo:object"{
+      turretName:t="turret_03"
+      turretGroup:t="rocket_turrets"
+      trigger:t="rockets"
+      gun:t="planegun_beaufighter_mkx_rp_3_launcher_03"
+    }
+
+    "turretInfo:object"{
+      turretName:t="turret_04"
+      turretGroup:t="rocket_turrets"
+      trigger:t="rockets"
+      gun:t="planegun_beaufighter_mkx_rp_3_launcher_04"
+    }
+
+    "turretInfo:object"{
+      turretName:t="turret_05"
+      turretGroup:t="rocket_turrets"
+      trigger:t="rockets"
+      gun:t="planegun_beaufighter_mkx_rp_3_launcher_05"
+    }
+
+    "turretInfo:object"{
+      turretName:t="turret_06"
+      turretGroup:t="rocket_turrets"
+      trigger:t="rockets"
+      gun:t="planegun_beaufighter_mkx_rp_3_launcher_06"
+    }
+
+    "turretInfo:object"{
+      turretName:t="turret_07"
+      turretGroup:t="rocket_turrets"
+      trigger:t="rockets"
+      gun:t="planegun_beaufighter_mkx_rp_3_launcher_07"
+    }
+
+    "turretInfo:object"{
+      turretName:t="turret_08"
+      turretGroup:t="rocket_turrets"
+      trigger:t="rockets"
+      gun:t="planegun_beaufighter_mkx_rp_3_launcher_08"
+    }
+
+    "turretInfo:object"{
+      turretName:t="turret_09"
+      turretGroup:t="cannon_turrets"
+      trigger:t="cannons"
+      gun:t="planegun_beaufighter_mkx_20mm_hispanomkii_01"
+    }
+
+    "turretInfo:object"{
+      turretName:t="turret_10"
+      turretGroup:t="cannon_turrets"
+      trigger:t="cannons"
+      gun:t="planegun_beaufighter_mkx_20mm_hispanomkii_02"
+    }
+
+    "turretInfo:object"{
+      turretName:t="turret_11"
+      turretGroup:t="cannon_turrets"
+      trigger:t="cannons"
+      gun:t="planegun_beaufighter_mkx_20mm_hispanomkii_03"
+    }
+
+    "turretInfo:object"{
+      turretName:t="turret_12"
+      turretGroup:t="cannon_turrets"
+      trigger:t="cannons"
+      gun:t="planegun_beaufighter_mkx_20mm_hispanomkii_04"
+    }
+
+    "turretInfo:object"{
+      turretName:t="turret_13"
+      turretGroup:t="main_turrets"
+      trigger:t="machine_guns"
+      gun:t="planegun_beaufighter_mkx_7_7mm_browning303_raf_01"
+    }
+
+    "turretInfo:object"{
+      turretName:t="turret_14"
+      turretGroup:t="main_turrets"
+      trigger:t="machine_guns"
+      gun:t="planegun_beaufighter_mkx_7_7mm_browning303_raf_02"
+    }
+
+    "turretInfo:object"{
+      turretName:t="turret_15"
+      turretGroup:t="main_turrets"
+      trigger:t="machine_guns"
+      gun:t="planegun_beaufighter_mkx_7_7mm_browning303_raf_03"
+    }
+
+    "turretInfo:object"{
+      turretName:t="turret_16"
+      turretGroup:t="main_turrets"
+      trigger:t="machine_guns"
+      gun:t="planegun_beaufighter_mkx_7_7mm_browning303_raf_04"
+    }
+
+    "turretInfo:object"{
+      turretName:t="turret_17"
+      turretGroup:t="main_turrets"
+      trigger:t="machine_guns"
+      gun:t="planegun_beaufighter_mkx_7_7mm_browning303_raf_05"
+    }
+
+    "turretInfo:object"{
+      turretName:t="turret_18"
+      turretGroup:t="main_turrets"
+      trigger:t="machine_guns"
+      gun:t="planegun_beaufighter_mkx_7_7mm_browning303_raf_06"
+    }
+
+    "turretInfo:object"{
+      turretName:t="turret_19"
+      turretGroup:t="turrets_gunner0"
+      trigger:t="machine_guns"
+      gun:t="planegun_beaufighter_mkx_7_7mm_vikkersk_turret_01"
+    }
+  }
+
+  "turret_gun_flash_fx__flashNodes:shared:array"{
+    node:t="rocket4"
+    node:t="rocket5"
+    node:t="rocket3"
+    node:t="rocket6"
+    node:t="rocket2"
+    node:t="rocket7"
+    node:t="rocket1"
+    node:t="rocket8"
+    node:t="flare1"
+    node:t="flare2"
+    node:t="flare3"
+    node:t="flare4"
+    node:t="flare5"
+    node:t="flare6"
+    node:t="flare7"
+    node:t="flare8"
+    node:t="flare9"
+    node:t="flare10"
+    node:t="flare11"
+  }
+
+  "turret_gun_flash_fx__flashFx:shared:array"{
+    fx:t=""
+    fx:t=""
+    fx:t=""
+    fx:t=""
+    fx:t=""
+    fx:t=""
+    fx:t=""
+    fx:t=""
+    fx:t="muzzle_air_20mm"
+    fx:t="muzzle_air_20mm"
+    fx:t="muzzle_air_20mm"
+    fx:t="muzzle_air_20mm"
+    fx:t="muzzle_air_8mm"
+    fx:t="muzzle_air_8mm"
+    fx:t="muzzle_air_8mm"
+    fx:t="muzzle_air_8mm"
+    fx:t="muzzle_air_8mm"
+    fx:t="muzzle_air_8mm"
+    fx:t="muzzle_air_8mm"
+  }
+
+  "turret_gun_flash_fx__flashFxScale:shared:array"{
+    scale:r=1.0
+    scale:r=1.0
+    scale:r=1.0
+    scale:r=1.0
+    scale:r=1.0
+    scale:r=1.0
+    scale:r=1.0
+    scale:r=1.0
+    scale:r=1.0
+    scale:r=1.0
+    scale:r=1.0
+    scale:r=1.0
+    scale:r=1.0
+    scale:r=1.0
+    scale:r=1.0
+    scale:r=1.0
+    scale:r=1.0
+    scale:r=1.0
+    scale:r=1.0
+  }
+
+  "disableDMParts:list<t>"{
+    part:t="drop_tank"
+    part:t="pylon_torpedo"
+    part:t="bomb_pylon_fuse"
+    part:t="bomb_pylon_r"
+    part:t="bomb_pylon_l"
+  }
+}
+
+base_beaufighter_mkx_rp_3_launcher{
+  item__name:t="guns/uk_rp3"
+  gun__blk:t="gamedata/weapons/planes/beaufighter_mkx/rp_3_launcher.blk"
+  gun__shotFreq:r=1000.25
+  gun__locName:t="uk_rp3"
+  gun__shootNodeName:t="bone_mg_gun_twin"
+  gun__maxAmmo:i=1
+
+  "gun__firingModes:array"{
+
+    "mode:object"{
+      modeType:t="manual"
+    }
+  }
+
+  "gun__firingModeNames:array"{
+    mode:t="bolt_action"
+  }
+
+  "gun__shellsAmmo:array"{
+    ammo:i=1
+  }
+
+  "gun__ammoSetsInfo:shared:array"{
+
+    "default:array"{
+
+      "shell:object"{
+        blk:t="gamedata/weapons/shells/planes/rockets/rp_3.blk"
+        name:t="rp_3"
+        type:t="he_frag_tank"
+      }
+    }
+  }
+}
+
+base_beaufighter_mkx_7_7mm_vikkersk_turret{
+  item__name:t="guns/gunvikkersk_turret"
+  gun__blk:t="gamedata/weapons/planes/beaufighter_mkx/7_7mm_vikkersk_turret.blk"
+  gun__shotFreq:r=15.8333
+  gun__locName:t="gunvikkersk_turret"
+  gun__shootNodeName:t="bone_mg_gun_twin"
+  gun__maxAmmo:i=1000
+
+  "gun__firingModes:array"{
+
+    "mode:object"{
+      modeType:t="automatic"
+    }
+  }
+
+  "gun__firingModeNames:array"{
+    mode:t="automatic"
+  }
+
+  "gun__shellsAmmo:array"{
+    ammo:i=1000
+  }
+
+  "gun__ammoSetsInfo:shared:array"{
+
+    "default:array"{
+
+      "shell:object"{
+        blk:t="gamedata/weapons/shells/planes/bullets/7_7x56mm_g_mk6z_tracer_bullet.blk"
+        name:t="tracer"
+        type:t="t_ball"
+      }
+
+      "shell:object"{
+        blk:t="gamedata/weapons/shells/planes/bullets/7_7x56mm_w_mk1z_ap_bullet.blk"
+        name:t="ap"
+        type:t="ap_ball"
+      }
+
+      "shell:object"{
+        blk:t="gamedata/weapons/shells/planes/bullets/7_7x56mm_mk7_ball_bullet.blk"
+        name:t="ball"
+        type:t="ball"
+      }
+
+      "shell:object"{
+        blk:t="gamedata/weapons/shells/planes/bullets/7_7x56mm_mk7_ball_bullet.blk"
+        name:t="ball"
+        type:t="ball"
+      }
+
+      "shell:object"{
+        blk:t="gamedata/weapons/shells/planes/bullets/7_7x56mm_mk1_incendiary_bullet.blk"
+        name:t="incendiary"
+        type:t="i_ball"
+      }
+    }
+  }
+}
+
+base_beaufighter_mkx_7_7mm_browning303_raf{
+  item__name:t="guns/gunbrowning303_raf"
+  gun__blk:t="gamedata/weapons/planes/beaufighter_mkx/7_7mm_browning303_raf.blk"
+  gun__shotFreq:r=16.6667
+  gun__locName:t="gunbrowning303_raf"
+  gun__shootNodeName:t="bone_mg_gun_twin"
+  gun__maxAmmo:i=1000
+
+  "gun__firingModes:array"{
+
+    "mode:object"{
+      modeType:t="automatic"
+    }
+  }
+
+  "gun__firingModeNames:array"{
+    mode:t="automatic"
+  }
+
+  "gun__shellsAmmo:array"{
+    ammo:i=1000
+  }
+
+  "gun__ammoSetsInfo:shared:array"{
+
+    "default:array"{
+
+      "shell:object"{
+        blk:t="gamedata/weapons/shells/planes/bullets/7_7x56mm_g_mk6z_tracer_bullet.blk"
+        name:t="tracer"
+        type:t="t_ball"
+      }
+
+      "shell:object"{
+        blk:t="gamedata/weapons/shells/planes/bullets/7_7x56mm_w_mk1z_ap_bullet.blk"
+        name:t="ap"
+        type:t="ap_ball"
+      }
+
+      "shell:object"{
+        blk:t="gamedata/weapons/shells/planes/bullets/7_7x56mm_api_bullet.blk"
+        name:t="api"
+        type:t="ap_i_ball"
+      }
+
+      "shell:object"{
+        blk:t="gamedata/weapons/shells/planes/bullets/7_7x56mm_mk7_ball_bullet.blk"
+        name:t="ball"
+        type:t="ball"
+      }
+
+      "shell:object"{
+        blk:t="gamedata/weapons/shells/planes/bullets/7_7x56mm_mk1_incendiary_bullet.blk"
+        name:t="incendiary"
+        type:t="i_ball"
+      }
+    }
+  }
+}
+
+base_beaufighter_mkx_20mm_hispanomkii{
+  item__name:t="guns/cannonhispanomkii"
+  gun__blk:t="gamedata/weapons/planes/beaufighter_mkx/20mm_hispanomkii.blk"
+  gun__shotFreq:r=10.0
+  gun__locName:t="cannonhispanomkii"
+  gun__shootNodeName:t="bone_mg_gun_twin"
+  gun__maxAmmo:i=283
+
+  "gun__firingModes:array"{
+
+    "mode:object"{
+      modeType:t="automatic"
+    }
+  }
+
+  "gun__firingModeNames:array"{
+    mode:t="automatic"
+  }
+
+  "gun__shellsAmmo:array"{
+    ammo:i=283
+  }
+
+  "gun__ammoSetsInfo:shared:array"{
+
+    "default:array"{
+
+      "shell:object"{
+        blk:t="gamedata/weapons/shells/planes/bullets/20x110mm_he_i_mk_2_bullet.blk"
+        name:t="2"
+        type:t="he_i"
+      }
+
+      "shell:object"{
+        blk:t="gamedata/weapons/shells/planes/bullets/20x110mm_sapi_mk_1_bullet.blk"
+        name:t="1"
+        type:t="sapi"
+      }
+
+      "shell:object"{
+        blk:t="gamedata/weapons/shells/planes/bullets/20x110mm_tracer_mk_1_bullet.blk"
+        name:t="1"
+        type:t="t_shell"
+      }
+    }
+  }
+}
+
+planegun_beaufighter_mkx_rp_3_launcher_01{
+  _use:t="rp_3_launcher"
+  _use:t="base_beaufighter_mkx_rp_3_launcher"
+  _use:t="gunsound_rp_3_launcher_aircraft"
+  gun__shootNodeName:t="rocket4"
+  slot_attach__slotName:t="rocket4"
+  gun__maxAmmo:i=1
+}
+
+planegun_beaufighter_mkx_rp_3_launcher_02{
+  _use:t="rp_3_launcher"
+  _use:t="base_beaufighter_mkx_rp_3_launcher"
+  _use:t="gunsound_rp_3_launcher_aircraft"
+  gun__shootNodeName:t="rocket5"
+  slot_attach__slotName:t="rocket5"
+  gun__maxAmmo:i=1
+}
+
+planegun_beaufighter_mkx_rp_3_launcher_03{
+  _use:t="rp_3_launcher"
+  _use:t="base_beaufighter_mkx_rp_3_launcher"
+  _use:t="gunsound_rp_3_launcher_aircraft"
+  gun__shootNodeName:t="rocket3"
+  slot_attach__slotName:t="rocket3"
+  gun__maxAmmo:i=1
+}
+
+planegun_beaufighter_mkx_rp_3_launcher_04{
+  _use:t="rp_3_launcher"
+  _use:t="base_beaufighter_mkx_rp_3_launcher"
+  _use:t="gunsound_rp_3_launcher_aircraft"
+  gun__shootNodeName:t="rocket6"
+  slot_attach__slotName:t="rocket6"
+  gun__maxAmmo:i=1
+}
+
+planegun_beaufighter_mkx_rp_3_launcher_05{
+  _use:t="rp_3_launcher"
+  _use:t="base_beaufighter_mkx_rp_3_launcher"
+  _use:t="gunsound_rp_3_launcher_aircraft"
+  gun__shootNodeName:t="rocket2"
+  slot_attach__slotName:t="rocket2"
+  gun__maxAmmo:i=1
+}
+
+planegun_beaufighter_mkx_rp_3_launcher_06{
+  _use:t="rp_3_launcher"
+  _use:t="base_beaufighter_mkx_rp_3_launcher"
+  _use:t="gunsound_rp_3_launcher_aircraft"
+  gun__shootNodeName:t="rocket7"
+  slot_attach__slotName:t="rocket7"
+  gun__maxAmmo:i=1
+}
+
+planegun_beaufighter_mkx_rp_3_launcher_07{
+  _use:t="rp_3_launcher"
+  _use:t="base_beaufighter_mkx_rp_3_launcher"
+  _use:t="gunsound_rp_3_launcher_aircraft"
+  gun__shootNodeName:t="rocket1"
+  slot_attach__slotName:t="rocket1"
+  gun__maxAmmo:i=1
+}
+
+planegun_beaufighter_mkx_rp_3_launcher_08{
+  _use:t="rp_3_launcher"
+  _use:t="base_beaufighter_mkx_rp_3_launcher"
+  _use:t="gunsound_rp_3_launcher_aircraft"
+  gun__shootNodeName:t="rocket8"
+  slot_attach__slotName:t="rocket8"
+  gun__maxAmmo:i=1
+}
+
+planegun_beaufighter_mkx_20mm_hispanomkii_01{
+  _use:t="tankgun"
+  _use:t="base_plane_machinegun"
+  _use:t="base_beaufighter_mkx_20mm_hispanomkii"
+  _use:t="gunsound_20mm_hispanomkii_aircraft"
+  gun__shootNodeName:t="flare1"
+  gun__maxAmmo:i=283
+}
+
+planegun_beaufighter_mkx_20mm_hispanomkii_02{
+  _use:t="tankgun"
+  _use:t="base_plane_machinegun"
+  _use:t="base_beaufighter_mkx_20mm_hispanomkii"
+  _use:t="gunsound_20mm_hispanomkii_aircraft"
+  gun__shootNodeName:t="flare2"
+  gun__maxAmmo:i=283
+}
+
+planegun_beaufighter_mkx_20mm_hispanomkii_03{
+  _use:t="tankgun"
+  _use:t="base_plane_machinegun"
+  _use:t="base_beaufighter_mkx_20mm_hispanomkii"
+  _use:t="gunsound_20mm_hispanomkii_aircraft"
+  gun__shootNodeName:t="flare3"
+  gun__maxAmmo:i=283
+}
+
+planegun_beaufighter_mkx_20mm_hispanomkii_04{
+  _use:t="tankgun"
+  _use:t="base_plane_machinegun"
+  _use:t="base_beaufighter_mkx_20mm_hispanomkii"
+  _use:t="gunsound_20mm_hispanomkii_aircraft"
+  gun__shootNodeName:t="flare4"
+  gun__maxAmmo:i=283
+}
+
+planegun_beaufighter_mkx_7_7mm_browning303_raf_01{
+  _use:t="tankgun"
+  _use:t="base_plane_machinegun"
+  _use:t="base_beaufighter_mkx_7_7mm_browning303_raf"
+  _use:t="gunsound_7_7mm_browning303_raf_aircraft"
+  gun__shootNodeName:t="flare5"
+  gun__maxAmmo:i=1000
+}
+
+planegun_beaufighter_mkx_7_7mm_browning303_raf_02{
+  _use:t="tankgun"
+  _use:t="base_plane_machinegun"
+  _use:t="base_beaufighter_mkx_7_7mm_browning303_raf"
+  _use:t="gunsound_7_7mm_browning303_raf_aircraft"
+  gun__shootNodeName:t="flare6"
+  gun__maxAmmo:i=1000
+}
+
+planegun_beaufighter_mkx_7_7mm_browning303_raf_03{
+  _use:t="tankgun"
+  _use:t="base_plane_machinegun"
+  _use:t="base_beaufighter_mkx_7_7mm_browning303_raf"
+  _use:t="gunsound_7_7mm_browning303_raf_aircraft"
+  gun__shootNodeName:t="flare7"
+  gun__maxAmmo:i=1000
+}
+
+planegun_beaufighter_mkx_7_7mm_browning303_raf_04{
+  _use:t="tankgun"
+  _use:t="base_plane_machinegun"
+  _use:t="base_beaufighter_mkx_7_7mm_browning303_raf"
+  _use:t="gunsound_7_7mm_browning303_raf_aircraft"
+  gun__shootNodeName:t="flare8"
+  gun__maxAmmo:i=1000
+}
+
+planegun_beaufighter_mkx_7_7mm_browning303_raf_05{
+  _use:t="tankgun"
+  _use:t="base_plane_machinegun"
+  _use:t="base_beaufighter_mkx_7_7mm_browning303_raf"
+  _use:t="gunsound_7_7mm_browning303_raf_aircraft"
+  gun__shootNodeName:t="flare9"
+  gun__maxAmmo:i=1000
+}
+
+planegun_beaufighter_mkx_7_7mm_browning303_raf_06{
+  _use:t="tankgun"
+  _use:t="base_plane_machinegun"
+  _use:t="base_beaufighter_mkx_7_7mm_browning303_raf"
+  _use:t="gunsound_7_7mm_browning303_raf_aircraft"
+  gun__shootNodeName:t="flare10"
+  gun__maxAmmo:i=1000
+}
+
+planegun_beaufighter_mkx_7_7mm_vikkersk_turret_01{
+  _use:t="tankgun"
+  _use:t="base_plane_machinegun"
+  _use:t="base_beaufighter_mkx_7_7mm_vikkersk_turret"
+  _use:t="gunsound_7_7mm_vikkersk_turret_aircraft"
+  gun__shootNodeName:t="flare11"
+  gun__maxAmmo:i=1000
+  turret__aimNodeName:t="turret1"
+  turret__limit:p4=-30.0, 30.0, 0.0, 35.0
+  turret__yawSpeed:r=500.0
+  turret__pitchSpeed:r=500.0
+  turret__lastRelativeDir:p3=-1.0, 0.0, 0.0
+
+  "turret__limitsDeadzone:list<p4>"{
+    lim0:p4=-1.0, 1.0, -7.0, 15.0
+    lim1:p4=-45.0, -10.0, -5.0, 0.0
+    lim2:p4=-10.0, 45.0, -5.0, 0.0
+    lim3:p4=-35.0, 35.0, -7.0, -5.0
+  }
+}
+
+beaufighter_mkx_driver_cockpit{
+  _use:t="base_plane_cockpit"
+  cockpit__offset:p3=0.0, 0.0, 0.0
+  cockpit__angles:p3=0.0, 0.0, 0.0
+  cockpit__scale:p3=1.0, 1.0, 1.0
+  animchar__res:t="beaufighter_mkx_cockpit_char"
+  plane_anim__blk:t="gamedata/units/beaufighter_mkx.blk"
+  plane_sight__blk:t="gamedata/units/beaufighter_mkx.blk"
+
+  "move_cockpit_node__nodeName:list<t>"{
+    node:t="stick_rhand_1"
+    node:t="throttle_lhand_1"
+  }
+
+  "move_cockpit_node__nodeId:list<i>"{
+    nodeId:i=-1
+    nodeId:i=-1
+  }
+
+  "move_cockpit_node__offset:list<p3>"{
+    item:p3=-0.004, 0.0135, -0.05
+    item:p3=0.0125, -0.006, 0.003
+  }
+
+  "move_cockpit_node__rotation:list<p2>"{
+    item:p2=7.4, 12.8
+    item:p2=-21.1, -2.9
+  }
+}

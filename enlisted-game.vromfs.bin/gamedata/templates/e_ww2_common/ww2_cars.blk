@@ -1,0 +1,2248 @@
+civil_vehicle_templ{
+  _use:t="vehicle"
+  _use:t="hit_track_fx_group"
+  _use:t="base_damage_model"
+  _use:t="base_damage_model_fx"
+  _use:t="base_damage_model_ai_points"
+  _use:t="vehicle_engine_external_fire"
+  _use:t="vehicle_fatal_explosion_external_fire"
+  zones_visitor__triggerTag:t="vehicleTriggerable"
+  _replicated:t="killer"
+  _replicated:t="dm_state"
+  _replicated:t="fire_damage_state"
+  _replicated:t="fire_damage__isBurn"
+  _replicated:t="isExploded"
+  lastStatPos:p3=0.0, 0.0, 0.0
+  collision_damage__threshold:r=5.0
+  collision_damage__velDeltaMult:r=10.0
+  collision_damage__velDeltaPower:r=2.0
+  isExploded:b=no
+  triggerDamageEffects:b=yes
+  vehicle_seat_damage__minVelocity:r=5.0
+  vehicle_seat_damage__velocityMult:r=0.5
+  vehicle_seat_damage__maxDmgPercent:r=0.3
+  explosion_fx__effectName:t="tank_explosion_template"
+  explosion_fx__nodeName:t="emtr_explosion_center"
+  explosion_fx__nodeId:i=-1
+  _tracked:t="isExploded"
+  fire_damage__isBurn:b=yes
+  fire_damage__totalTime:r=0.0
+  timeToExplosion:r=35.0
+  fire_damage__update_burn_interval:r=1.0
+  fire_damage__innerRadiusMult:r=2.0
+
+  _group{
+    _tags:t="render"
+    exhaust_fx__fx:t="car_exhaust_template"
+    exhaust_fx__brokenFx:t="car_broken_exhaust_template"
+  }
+
+  _group{
+    _tags:t="input"
+
+    "vehicle__steerTips:list<t>"{
+      tip:t="Vehicle.Brake"
+      tip:t="Vehicle.HandBrake"
+      tip:t="Vehicle.Accel"
+      tip:t="Vehicle.Steer"
+      tip:t="Vehicle.Throttle"
+      tip:t="Vehicle.Horn"
+    }
+  }
+
+  _group{
+    _tags:t="render"
+    animchar_camera_target__node_name:t="bone_camera_driver"
+
+    "engine_fire_fx__eids:list<eid>"{
+    }
+
+    "vehicle_fxs__effectsEids:list<eid>"{
+    }
+  }
+
+  "dm_parts_repair_names:list<t>"{
+    part:t="part:t="
+    part:t="drive_turret_h"
+    part:t="drive_turret_v"
+    part:t="cannon_breech"
+    part:t="engine"
+    part:t="transmission"
+    part:t="gun_barrel"
+    part:t="gun_barrel_01"
+    part:t="gun_barrel_02"
+    part:t="gun_barrel_03"
+    part:t="gun_barrel_04"
+    part:t="gun_barrel_05"
+    part:t="track_r"
+    part:t="track_l"
+    part:t="track_r_01"
+    part:t="track_l_01"
+    part:t="wheel_l_back"
+    part:t="wheel_l_front"
+    part:t="wheel_l_drive"
+    part:t="wheel_r_back"
+    part:t="wheel_r_front"
+    part:t="wheel_r_drive"
+    part:t="wheel_r_01"
+    part:t="wheel_r_02"
+    part:t="wheel_r_03"
+    part:t="wheel_r_04"
+    part:t="wheel_r_05"
+    part:t="wheel_r_06"
+    part:t="wheel_r_07"
+    part:t="wheel_r_08"
+    part:t="wheel_l_01"
+    part:t="wheel_l_02"
+    part:t="wheel_l_03"
+    part:t="wheel_l_04"
+    part:t="wheel_l_05"
+    part:t="wheel_l_06"
+    part:t="wheel_l_07"
+    part:t="wheel_l_08"
+  }
+
+  "dm_parts__repairGroups:object"{
+  }
+
+  "collidableToHuman:tag"{
+  }
+
+  "collidableToVehicle:tag"{
+  }
+
+  "collidableToShip:tag"{
+  }
+
+  "collidableToPlane:tag"{
+  }
+
+  "collidableToPhysObj:tag"{
+  }
+
+  "ownedBySquad:eid"{
+  }
+
+  "ownedByPlayer:eid"{
+  }
+
+  "vehicleDisplayMarkerOverHead:tag"{
+    tags:t="ui"
+  }
+
+  "killer:eid"{
+  }
+
+  "dm_state:list<u16>"{
+  }
+
+  fire_damage{
+  }
+
+  fire_damage_state{
+  }
+
+  fire_protection{
+  }
+
+  "fire_attach_excludes__nodeIds:list<i>"{
+  }
+
+  "fire_attach_excludes__nodeNames:list<t>"{
+    name:t="wheel_r_01"
+    name:t="wheel_r_02"
+    name:t="wheel_l_01"
+    name:t="wheel_l_02"
+    name:t="wheel_l_drive"
+    name:t="wheel_r_drive"
+  }
+
+  "dm_phys_parts__enginePartIds:list<i>"{
+  }
+
+  "dm_phys_parts__transmissionPartIds:list<i>"{
+  }
+
+  "dm_phys_parts__tracksPartIds:list<i>"{
+  }
+
+  "dm_parts__engine:list<t>"{
+    engine:t="engine"
+  }
+
+  "dm_parts__transmission:list<t>"{
+    transmission:t="transmission"
+  }
+
+  "engine_fire_fx__fx:array"{
+
+    "fx:object"{
+
+      "dmParts:array"{
+        dmParts:t="engine"
+      }
+
+      "fx:array"{
+
+        "fx:object"{
+          name:t="pv_broken_exhaust_base_template"
+          emitter:t="emtr_fire_engine"
+        }
+
+        "fx:object"{
+          name:t="pv_broken_exhaust_base_template"
+          emitter:t="emtr_fire_engine_01"
+        }
+
+        "fx:object"{
+          name:t="pv_broken_exhaust_base_template"
+          emitter:t="emtr_fire_engine_02"
+        }
+      }
+    }
+  }
+
+  "fatal_explosion_fx__fx:array"{
+
+    "fx:object"{
+
+      "dmParts:array"{
+      }
+
+      "fx:array"{
+
+        "fx:object"{
+          name:t="tank_fire_medium_template"
+          emitter:t="emtr_fire_engine"
+        }
+
+        "fx:object"{
+          name:t="tank_fire_small_template"
+          emitter:t="emtr_fire_small_dmg_01"
+        }
+
+        "fx:object"{
+          name:t="tank_fire_small_template"
+          emitter:t="emtr_fire_small_dmg_02"
+        }
+
+        "fx:object"{
+          name:t="tank_fire_small_template"
+          emitter:t="emtr_fire_small_dmg_03"
+        }
+
+        "fx:object"{
+          name:t="tank_fire_small_template"
+          emitter:t="emtr_fire_small_dmg_04"
+        }
+
+        "fx:object"{
+          name:t="tank_fire_small_template"
+          emitter:t="emtr_fire_small_dmg_05"
+        }
+
+        "fx:object"{
+          name:t="tank_fire_small_template"
+          emitter:t="emtr_fire_small_dmg_06"
+        }
+
+        "fx:object"{
+          name:t="tank_fire_small_template"
+          emitter:t="emtr_fire_small_dmg_07"
+        }
+
+        "fx:object"{
+          name:t="tank_fire_small_template"
+          emitter:t="emtr_fire_small_dmg_08"
+        }
+
+        "fx:object"{
+          name:t="tank_fire_small_template"
+          emitter:t="emtr_fire_small_dmg_09"
+        }
+
+        "fx:object"{
+          name:t="tank_fire_small_template"
+          emitter:t="emtr_fire_small_dmg_10"
+        }
+
+        "fx:object"{
+          name:t="tank_fire_small_template"
+          emitter:t="emtr_fire_small_dmg_11"
+        }
+
+        "fx:object"{
+          name:t="tank_fire_small_template"
+          emitter:t="emtr_fire_small_dmg_12"
+        }
+
+        "fx:object"{
+          name:t="tank_fire_small_template"
+          emitter:t="emtr_fire_small_dmg_13"
+        }
+
+        "fx:object"{
+          name:t="tank_fire_small_template"
+          emitter:t="emtr_fire_small_dmg_14"
+        }
+
+        "fx:object"{
+          name:t="tank_fire_small_template"
+          emitter:t="emtr_fire_small_dmg_15"
+        }
+
+        "fx:object"{
+          name:t="tank_fire_small_template"
+          emitter:t="emtr_fire_small_dmg_16"
+        }
+      }
+    }
+
+    "fx:object"{
+
+      "dmParts:array"{
+      }
+
+      "fx:array"{
+
+        "fx:object"{
+          name:t="tank_smoke_small_template"
+          emitter:t="emtr_fire_ammo"
+        }
+
+        "fx:object"{
+          name:t="tank_smoke_small_template"
+          emitter:t="emtr_fire_ammo_01"
+        }
+
+        "fx:object"{
+          name:t="tank_smoke_small_template"
+          emitter:t="emtr_fire_ammo_02"
+        }
+      }
+    }
+  }
+
+  "fatal_fire_fx__fx:array"{
+
+    "fx:object"{
+
+      "dmParts:array"{
+      }
+
+      "fx:array"{
+
+        "fx:object"{
+          name:t="tank_ammo_fire_template"
+          emitter:t="emtr_fire_ammo"
+        }
+
+        "fx:object"{
+          name:t="tank_ammo_fire_template"
+          emitter:t="emtr_fire_ammo_01"
+        }
+
+        "fx:object"{
+          name:t="tank_ammo_fire_template"
+          emitter:t="emtr_fire_ammo_02"
+        }
+
+        "fx:object"{
+          name:t="tank_ammo_fire_template"
+          emitter:t="emtr_fire_ammo_03"
+        }
+
+        "fx:object"{
+          name:t="tank_ammo_fire_template"
+          emitter:t="emtr_fire_ammo_04"
+        }
+
+        "fx:object"{
+          name:t="tank_ammo_fire_template"
+          emitter:t="emtr_fire_ammo_05"
+        }
+
+        "fx:object"{
+          name:t="tank_ammo_fire_template"
+          emitter:t="emtr_fire_ammo_06"
+        }
+
+        "fx:object"{
+          name:t="tank_ammo_fire_template"
+          emitter:t="emtr_fire_ammo_07"
+        }
+
+        "fx:object"{
+          name:t="tank_ammo_fire_template"
+          emitter:t="emtr_fire_ammo_08"
+        }
+
+        "fx:object"{
+          name:t="tank_ammo_fire_template"
+          emitter:t="emtr_fire_ammo_09"
+        }
+
+        "fx:object"{
+          name:t="tank_ammo_fire_template"
+          emitter:t="emtr_fire_ammo_10"
+        }
+      }
+    }
+  }
+
+  "destroyed_fx__fx:array"{
+
+    "fx:object"{
+
+      "dmParts:array"{
+      }
+
+      "fx:array"{
+
+        "fx:object"{
+          name:t="tank_smoke_destroyed_template"
+          emitter:t="emtr_smoke_small_dmg_01"
+        }
+
+        "fx:object"{
+          name:t="tank_smoke_destroyed_template"
+          emitter:t="emtr_smoke_small_dmg_02"
+        }
+
+        "fx:object"{
+          name:t="tank_smoke_destroyed_template"
+          emitter:t="emtr_smoke_small_dmg_03"
+        }
+
+        "fx:object"{
+          name:t="tank_smoke_destroyed_template"
+          emitter:t="emtr_smoke_small_dmg_04"
+        }
+
+        "fx:object"{
+          name:t="tank_smoke_destroyed_template"
+          emitter:t="emtr_smoke_small_dmg_05"
+        }
+
+        "fx:object"{
+          name:t="tank_smoke_destroyed_template"
+          emitter:t="emtr_smoke_small_dmg_06"
+        }
+
+        "fx:object"{
+          name:t="tank_smoke_destroyed_template"
+          emitter:t="emtr_smoke_small_dmg_07"
+        }
+
+        "fx:object"{
+          name:t="tank_smoke_destroyed_template"
+          emitter:t="emtr_smoke_small_dmg_08"
+        }
+
+        "fx:object"{
+          name:t="tank_smoke_destroyed_template"
+          emitter:t="emtr_smoke_small_dmg_09"
+        }
+
+        "fx:object"{
+          name:t="tank_smoke_destroyed_template"
+          emitter:t="emtr_smoke_small_dmg_10"
+        }
+
+        "fx:object"{
+          name:t="tank_smoke_destroyed_template"
+          emitter:t="emtr_smoke_small_dmg_11"
+        }
+
+        "fx:object"{
+          name:t="tank_smoke_destroyed_template"
+          emitter:t="emtr_smoke_small_dmg_12"
+        }
+
+        "fx:object"{
+          name:t="tank_smoke_destroyed_template"
+          emitter:t="emtr_smoke_small_dmg_13"
+        }
+
+        "fx:object"{
+          name:t="tank_smoke_destroyed_template"
+          emitter:t="emtr_smoke_small_dmg_14"
+        }
+
+        "fx:object"{
+          name:t="tank_smoke_destroyed_template"
+          emitter:t="emtr_smoke_small_dmg_15"
+        }
+
+        "fx:object"{
+          name:t="tank_smoke_destroyed_template"
+          emitter:t="emtr_smoke_small_dmg_16"
+        }
+
+        "fx:object"{
+          name:t="tank_smoke_destroyed_template"
+          emitter:t="emtr_fire_ammo"
+        }
+
+        "fx:object"{
+          name:t="tank_smoke_destroyed_template"
+          emitter:t="emtr_fire_ammo_01"
+        }
+
+        "fx:object"{
+          name:t="tank_smoke_destroyed_template"
+          emitter:t="emtr_fire_ammo_02"
+        }
+      }
+    }
+  }
+}
+
+jeep_brakes{
+  vehicle_net_phys__stopAutobrakesParams:p4=0.1, 10.0, 4.0, 0.5
+  vehicle_net_phys__allowMoveControl:b=yes
+  _replicated:t="vehicle_net_phys__allowMoveControl"
+}
+
+vehicle_anim_steering_deflection{
+
+  _group{
+    vehicle_anim__steeringDeflection:t="steering_deflection"
+    vehicle_anim__steeringDeflectionId:i=0
+    vehicle_anim__steeringDeflectionValue:r=0.0
+    vehicle_anim__steeringDeflectionViscosity:r=0.1
+    vehicle_anim__steeringDeflectionLimit:p2=-30.0, 30.0
+    _tags:t="render"
+  }
+
+  anim_phys{
+  }
+}
+
+vehicle_anim_speedometer_kmh{
+
+  _group{
+    _tags:t="render"
+    vehicle_anim__speedometerVarName:t="speed"
+    vehicle_anim__speedometerVarId:i=-1
+    vehicle_anim__speedometerMinMax:p2=0.0, 10.0
+    vehicle_anim__speedometerUnitsMult:r=3.6
+  }
+}
+
+vehicle_anim_speedometer_mph{
+  _use:t="vehicle_anim_speedometer_kmh"
+
+  _group{
+    _tags:t="render"
+    vehicle_anim__speedometerUnitsMult:r=2.23
+  }
+}
+
+vehicle_seat_fire_ready{
+  _use:t="vehicle_seat_default"
+  seat_anim__fireReadyUpper:t="fireready_passenger"
+  seat_anim__fireReadyLower:t="fireready_passenger"
+}
+
+civil_cars_steering_control_and_wheel_damage{
+  _use:t="vehicle_steering_assist"
+  _use:t="vehicle_maintenance"
+
+  meta_parts_state{
+  }
+
+  "dm_phys_parts__wheelsPartIds:list<i>"{
+  }
+}
+
+base_civil_fire_ready_vehicle_no_wheel{
+  _use:t="civil_vehicle_templ"
+
+  "vehicle_seats__seatTemplates:shared:object"{
+    default:t="vehicle_seat_fire_ready"
+    driver:t="vehicle_seat_driver"
+  }
+
+  _group{
+    _tags:t="server"
+
+    "dependent_templates:ecs::TemplatesListToInstantiate"{
+    }
+
+    "dependent_templates_list_shared:shared:list<t>"{
+      template_name:t="vehicle_seat_fire_ready"
+      template_name:t="vehicle_seat_driver"
+    }
+  }
+}
+
+base_civil_fire_ready_vehicle{
+  _use:t="vehicle_anim_steering_deflection"
+  _use:t="base_civil_fire_ready_vehicle_no_wheel"
+  _use:t="civil_cars_steering_control_and_wheel_damage"
+  driverFpsCamMaxAngle:p2=90.0, 50.0
+  vehicle_commander_cam__attachToVehicle:b=no
+}
+
+base_civil_fire_ready_vehicle_tracked{
+  _use:t="base_civil_fire_ready_vehicle_no_wheel"
+  _use:t="animchar_additional_data"
+
+  "vehicle_tracks_visual_pos:p2"{
+    _tags:t="render"
+  }
+
+  "vehicle_tracks_visual_pos_delta:p2"{
+    _tags:t="render"
+  }
+
+  "forced_lod_for_hmap_deform:i"{
+    _tags:t="render"
+    value:i=2
+  }
+}
+
+opel_olympia{
+  _use:t="base_civil_fire_ready_vehicle"
+  _use:t="four_seats_vehicle"
+  _use:t="simple_damage_model"
+  _use:t="opel_olympia_vehicle_sound"
+  vehicleType:t="civil_car"
+  vehicleName:t="opel_olympia_38"
+  animchar__res:t="pv_opel_olympia_char"
+  collres__res:t="pv_opel_olympia_collision"
+  vehicle_net_phys__blk:t="gamedata/units/vehicles/opel_olympia_ol38.blk:VehiclePhys"
+  vehicle_seats__enumVarName:t="opel_olympia_ol38"
+  damage_model__blk:t="gamedata/units/vehicles/opel_olympia_ol38.blk"
+  car_painting__chance:r=0.9
+
+  "car_painting__possibleColors:array"{
+
+    "item:object"{
+      color:t="vehicle_color_ocean_shimmer"
+    }
+
+    "item:object"{
+      color:t="vehicle_color_perfect_blue"
+    }
+
+    "item:object"{
+      color:t="vehicle_color_apple_green"
+    }
+
+    "item:object"{
+      color:t="vehicle_color_thundercloud"
+    }
+
+    "item:object"{
+      color:t="vehicle_color_dark_gray"
+    }
+
+    "item:object"{
+      color:t="vehicle_color_pearl_white"
+    }
+  }
+
+  "disableDMParts:list<t>"{
+    part:t="commander"
+    part:t="driver"
+    part:t="cls_body_01"
+    part:t="cls_body_02"
+  }
+}
+
+gaz_67{
+  _use:t="base_civil_fire_ready_vehicle"
+  _use:t="simple_damage_model"
+  _use:t="kick_passengers_on_flip"
+  _use:t="gaz_67_vehicle_sound"
+  vehicleType:t="offroad_car"
+  vehicleName:t="gaz_67"
+  animchar__res:t="pv_gaz_67_char"
+  collres__res:t="pv_gaz_67_collision"
+  vehicle_net_phys__blk:t="gamedata/units/vehicles/gaz_67.blk:VehiclePhys"
+  damage_model__blk:t="gamedata/units/vehicles/gaz_67.blk"
+  vehicle_seats__enumVarName:t="gaz_67"
+  car_painting__chance:r=0.9
+
+  "vehicle_seats__seats:shared:array"{
+
+    "seats:object"{
+      name:t="driver"
+      cameraType:t="passenger"
+      locName:t="vehicle_seats/car_driver"
+      seatOwnsEntityControl:b=yes
+      attachNode:t="char_driver_pivot"
+      entranceNode:t="char_driver_landing"
+      attachTm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, 0.0, 0.0]]
+      seatComponent:t="isDriver"
+      nextSeat:t="passenger1"
+      canPlaceManually:b=yes
+      seatEnum:t="left_seat"
+    }
+
+    "seats:object"{
+      name:t="passenger1"
+      cameraType:t="passenger"
+      locName:t="vehicle_seats/shooter"
+      seatOwnsEntityControl:b=no
+      attachNode:t="char_passenger_01_pivot"
+      entranceNode:t="char_passenger_01_landing"
+      attachTm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, 0.0, 0.0]]
+      seatComponent:t="isPassenger"
+      nextSeat:t="passenger2"
+      canPlaceManually:b=yes
+      seatEnum:t="right_seat"
+
+      "effectors:object"{
+
+        "l.hand:object"{
+          rel_tm:m=[[0.788196, 0.566935, 0.23944] [0.612626, -0.759856, -0.217507] [0.0586273, 0.318126, -0.946234] [0.442886, 0.419131, -0.108654]]
+          node:t="char_passenger_01_pivot"
+        }
+
+        "r.hand:object"{
+          rel_tm:m=[[0.86435, 0.490858, -0.109344] [0.495734, -0.795115, 0.349343] [0.0845368, -0.356161, -0.930593] [0.436775, 0.430933, 0.144154]]
+          node:t="char_passenger_01_pivot"
+        }
+      }
+    }
+
+    "seats:object"{
+      name:t="passenger2"
+      cameraType:t="passenger"
+      locName:t="vehicle_seats/shooter"
+      seatOwnsEntityControl:b=no
+      attachNode:t="char_passenger_02_pivot"
+      entranceNode:t="char_passenger_02_landing"
+      attachTm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, 0.0, 0.0]]
+      seatComponent:t="isPassenger"
+      nextSeat:t="passenger3"
+      canPlaceManually:b=yes
+      seatEnum:t="left_seat"
+    }
+
+    "seats:object"{
+      name:t="passenger3"
+      cameraType:t="passenger"
+      locName:t="vehicle_seats/shooter"
+      seatOwnsEntityControl:b=no
+      attachNode:t="char_passenger_03_pivot"
+      entranceNode:t="char_passenger_03_landing"
+      attachTm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, 0.0, 0.0]]
+      seatComponent:t="isPassenger"
+      nextSeat:t="driver"
+      canPlaceManually:b=yes
+      seatEnum:t="right_seat"
+    }
+  }
+
+  "car_painting__possibleColors:array"{
+
+    "item:object"{
+      color:t="vehicle_color_battleship_gray"
+    }
+
+    "item:object"{
+      color:t="vehicle_color_dark_gray"
+    }
+
+    "item:object"{
+      color:t="vehicle_color_thundercloud"
+    }
+
+    "item:object"{
+      color:t="vehicle_color_military_green"
+    }
+  }
+
+  "disableDMParts:list<t>"{
+    part:t="commander"
+    part:t="driver"
+  }
+}
+
+vw_kubelwagen{
+  _use:t="base_civil_fire_ready_vehicle"
+  _use:t="four_seats_vehicle"
+  _use:t="simple_damage_model"
+  _use:t="kick_passengers_on_flip"
+  _use:t="vw_kubelwagen_vehicle_sound"
+  vehicleType:t="offroad_car"
+  vehicleName:t="vw_kubelwagen"
+  animchar__res:t="pv_kubelwagen_char"
+  collres__res:t="pv_kubelwagen_collision"
+  vehicle_net_phys__blk:t="gamedata/units/vehicles/vw_kubelwagen.blk:VehiclePhys"
+  damage_model__blk:t="gamedata/units/vehicles/vw_kubelwagen.blk"
+  vehicle_seats__enumVarName:t="vw_kubelwagen"
+  car_painting__chance:r=0.9
+
+  "car_painting__possibleColors:array"{
+
+    "item:object"{
+      color:t="vehicle_color_battleship_gray"
+    }
+
+    "item:object"{
+      color:t="vehicle_color_dark_gray"
+    }
+
+    "item:object"{
+      color:t="vehicle_color_thundercloud"
+    }
+
+    "item:object"{
+      color:t="vehicle_color_military_green"
+    }
+
+    "item:object"{
+      color:t="vehicle_color_caramel_luster"
+    }
+
+    "item:object"{
+      color:t="vehicle_color_canyon_copper"
+    }
+  }
+
+  "disableDMParts:list<t>"{
+    part:t="cls_body_01"
+  }
+}
+
+opel_blitz_kfz_305{
+  _use:t="base_civil_fire_ready_vehicle"
+  _use:t="simple_damage_model"
+  _use:t="kick_passengers_on_flip"
+  _use:t="opel_blitz_kfz_305_vehicle_sound"
+  vehicleType:t="truck"
+  vehicleName:t="opel_blitz_kfz_305"
+  animchar__res:t="pv_opel_blitz_kfz_305_char"
+  collres__res:t="pv_opel_blitz_kfz_305_collision"
+  vehicle_net_phys__blk:t="gamedata/units/vehicles/opel_blitz_kfz_305.blk:VehiclePhys"
+  damage_model__blk:t="gamedata/units/vehicles/opel_blitz_kfz_305.blk"
+  hitpoints__maxHp:r=550.0
+  hitpoints__hp:r=550.0
+  vehicle_seats__enumVarName:t="opel_blitz_kfz_305"
+  camera__offset:p3=0.0, -1.0, -6.0
+  car_painting__chance:r=0.9
+
+  "vehicle_seats__seats:shared:array"{
+
+    "seats:object"{
+      name:t="driver"
+      cameraType:t="passenger"
+      locName:t="vehicle_seats/car_driver"
+      seatOwnsEntityControl:b=yes
+      attachNode:t="char_driver_pivot"
+      entranceNode:t="char_driver_landing"
+      attachTm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, 0.0, 0.0]]
+      seatComponent:t="isDriver"
+      nextSeat:t="passenger1"
+      canPlaceManually:b=yes
+      seatEnum:t="left_seat"
+
+      "effectors:object"{
+
+        "l.hand:object"{
+          rel_tm:m=[[-0.938239, -0.11052, 0.327861] [-0.31443, 0.667764, -0.674704] [-0.144365, -0.736122, -0.661273] [1.17173, -0.173988, 0.0630951]]
+          node:t="bone_roll_driver"
+        }
+
+        "r.hand:object"{
+          rel_tm:m=[[-0.921703, 0.00175548, 0.387894] [-0.207464, -0.847174, -0.489137] [0.327755, -0.531312, 0.781207] [1.15418, 0.180593, 0.0388603]]
+          node:t="bone_roll_driver"
+        }
+      }
+    }
+
+    "seats:object"{
+      name:t="passenger1"
+      cameraType:t="passenger"
+      locName:t="vehicle_seats/shooter"
+      seatOwnsEntityControl:b=no
+      attachNode:t="char_passenger_01_pivot"
+      entranceNode:t="char_passenger_01_landing"
+      attachTm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, 0.0, 0.0]]
+      seatComponent:t="isPassenger"
+      nextSeat:t="passenger2"
+      canPlaceManually:b=yes
+      seatEnum:t="right_seat"
+    }
+
+    "seats:object"{
+      name:t="passenger2"
+      cameraType:t="passenger"
+      locName:t="vehicle_seats/shooter"
+      seatOwnsEntityControl:b=no
+      attachNode:t="char_passenger_02_pivot"
+      entranceNode:t="char_passenger_02_landing"
+      attachTm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, 0.0, 0.0]]
+      seatComponent:t="isPassenger"
+      nextSeat:t="passenger3"
+      canPlaceManually:b=yes
+      seatEnum:t="left_track_seat"
+    }
+
+    "seats:object"{
+      name:t="passenger3"
+      cameraType:t="passenger"
+      locName:t="vehicle_seats/shooter"
+      seatOwnsEntityControl:b=no
+      attachNode:t="char_passenger_03_pivot"
+      entranceNode:t="char_passenger_03_landing"
+      attachTm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, 0.0, 0.0]]
+      seatComponent:t="isPassenger"
+      nextSeat:t="passenger4"
+      canPlaceManually:b=yes
+      seatEnum:t="left_track_seat"
+    }
+
+    "seats:object"{
+      name:t="passenger4"
+      cameraType:t="passenger"
+      locName:t="vehicle_seats/shooter"
+      seatOwnsEntityControl:b=no
+      attachNode:t="char_passenger_04_pivot"
+      entranceNode:t="char_passenger_04_landing"
+      attachTm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, 0.0, 0.0]]
+      seatComponent:t="isPassenger"
+      nextSeat:t="passenger5"
+      canPlaceManually:b=yes
+      seatEnum:t="left_track_seat"
+    }
+
+    "seats:object"{
+      name:t="passenger5"
+      cameraType:t="passenger"
+      locName:t="vehicle_seats/shooter"
+      seatOwnsEntityControl:b=no
+      attachNode:t="char_passenger_05_pivot"
+      entranceNode:t="char_passenger_05_landing"
+      attachTm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, 0.0, 0.0]]
+      seatComponent:t="isPassenger"
+      nextSeat:t="passenger6"
+      canPlaceManually:b=yes
+      seatEnum:t="left_track_seat"
+    }
+
+    "seats:object"{
+      name:t="passenger6"
+      cameraType:t="passenger"
+      locName:t="vehicle_seats/shooter"
+      seatOwnsEntityControl:b=no
+      attachNode:t="char_passenger_06_pivot"
+      entranceNode:t="char_passenger_06_landing"
+      attachTm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, 0.0, 0.0]]
+      seatComponent:t="isPassenger"
+      nextSeat:t="passenger7"
+      canPlaceManually:b=yes
+      seatEnum:t="left_track_seat"
+    }
+
+    "seats:object"{
+      name:t="passenger7"
+      cameraType:t="passenger"
+      locName:t="vehicle_seats/shooter"
+      seatOwnsEntityControl:b=no
+      attachNode:t="char_passenger_07_pivot"
+      entranceNode:t="char_passenger_07_landing"
+      attachTm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, 0.0, 0.0]]
+      seatComponent:t="isPassenger"
+      nextSeat:t="passenger8"
+      canPlaceManually:b=yes
+      seatEnum:t="left_track_seat"
+    }
+
+    "seats:object"{
+      name:t="passenger8"
+      cameraType:t="passenger"
+      locName:t="vehicle_seats/shooter"
+      seatOwnsEntityControl:b=no
+      attachNode:t="char_passenger_08_pivot"
+      entranceNode:t="char_passenger_08_landing"
+      attachTm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, 0.0, 0.0]]
+      seatComponent:t="isPassenger"
+      nextSeat:t="passenger9"
+      canPlaceManually:b=yes
+      seatEnum:t="left_track_seat"
+    }
+
+    "seats:object"{
+      name:t="passenger9"
+      cameraType:t="passenger"
+      locName:t="vehicle_seats/shooter"
+      seatOwnsEntityControl:b=no
+      attachNode:t="char_passenger_09_pivot"
+      entranceNode:t="char_passenger_09_landing"
+      attachTm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, 0.0, 0.0]]
+      seatComponent:t="isPassenger"
+      nextSeat:t="passenger10"
+      canPlaceManually:b=yes
+      seatEnum:t="left_track_seat"
+    }
+
+    "seats:object"{
+      name:t="passenger10"
+      cameraType:t="passenger"
+      locName:t="vehicle_seats/shooter"
+      seatOwnsEntityControl:b=no
+      attachNode:t="char_passenger_10_pivot"
+      entranceNode:t="char_passenger_10_landing"
+      attachTm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, 0.0, 0.0]]
+      seatComponent:t="isPassenger"
+      nextSeat:t="driver"
+      canPlaceManually:b=yes
+      seatEnum:t="left_track_seat"
+    }
+  }
+
+  "car_painting__possibleColors:array"{
+
+    "item:object"{
+      color:t="vehicle_color_battleship_gray"
+    }
+
+    "item:object"{
+      color:t="vehicle_color_dark_gray"
+    }
+
+    "item:object"{
+      color:t="vehicle_color_thundercloud"
+    }
+
+    "item:object"{
+      color:t="vehicle_color_military_green"
+    }
+  }
+
+  "disableDMParts:list<t>"{
+    part:t="commander"
+    part:t="driver"
+    part:t="cls_body_01"
+    part:t="cls_body_02"
+    part:t="cls_body_03"
+    part:t="cls_body_04"
+    part:t="cls_body_06"
+    part:t="cls_body_07"
+    part:t="cls_body_08"
+  }
+}
+
+opel_blitz_omnibus{
+  _use:t="base_civil_fire_ready_vehicle"
+  _use:t="ten_seats_vehicle"
+  _use:t="simple_damage_model"
+  _use:t="opel_blitz_omnibus_vehicle_sound"
+  vehicleType:t="bus"
+  vehicleName:t="opel_blitz_omnibus"
+  animchar__res:t="pv_opel_blitz_omnibus_char"
+  collres__res:t="pv_opel_blitz_omnibus_collision"
+  vehicle_net_phys__blk:t="gamedata/units/vehicles/opel_blitz_omnibus.blk:VehiclePhys"
+  damage_model__blk:t="gamedata/units/vehicles/opel_blitz_omnibus.blk"
+  hitpoints__maxHp:r=550.0
+  hitpoints__hp:r=550.0
+  vehicle_seats__enumVarName:t="opel_blitz_omnibus"
+  camera__offset:p3=0.0, -1.0, -6.0
+  car_painting__chance:r=0.9
+
+  "car_painting__possibleColors:array"{
+
+    "item:object"{
+      color:t="vehicle_color_battleship_gray"
+    }
+
+    "item:object"{
+      color:t="vehicle_color_dark_gray"
+    }
+
+    "item:object"{
+      color:t="vehicle_color_thundercloud"
+    }
+
+    "item:object"{
+      color:t="vehicle_color_military_green"
+    }
+  }
+
+  "disableDMParts:list<t>"{
+    part:t="commander"
+    part:t="driver"
+    part:t="cls_body_0"
+    part:t="cls_body_01"
+  }
+}
+
+willys_mb{
+  _use:t="base_civil_fire_ready_vehicle"
+  _use:t="four_seats_vehicle"
+  _use:t="simple_damage_model"
+  _use:t="kick_passengers_on_flip"
+  _use:t="willys_mb_vehicle_sound"
+  vehicleType:t="offroad_car"
+  vehicleName:t="willys_mb"
+  animchar__res:t="pv_willys_mb_char"
+  collres__res:t="pv_willys_mb_collision"
+  vehicle_net_phys__blk:t="gamedata/units/vehicles/willys_mb.blk:VehiclePhys"
+  damage_model__blk:t="gamedata/units/vehicles/willys_mb.blk"
+  vehicle_seats__enumVarName:t="willys_mb"
+  car_painting__chance:r=0.9
+
+  "car_painting__possibleColors:array"{
+
+    "item:object"{
+      color:t="vehicle_color_battleship_gray"
+    }
+
+    "item:object"{
+      color:t="vehicle_color_dark_gray"
+    }
+
+    "item:object"{
+      color:t="vehicle_color_thundercloud"
+    }
+
+    "item:object"{
+      color:t="vehicle_color_military_green"
+    }
+  }
+
+  "disableDMParts:list<t>"{
+    part:t="commander"
+    part:t="driver"
+    part:t="cls_body_01"
+    part:t="cls_body_02"
+  }
+}
+
+ford_gpa{
+  _use:t="base_civil_fire_ready_vehicle"
+  _use:t="four_seats_vehicle"
+  _use:t="kick_passengers_on_flip"
+  _use:t="ford_gpa_vehicle_sound"
+  vehicleType:t="offroad_car"
+  vehicleName:t="ford_gpa"
+  animchar__res:t="pv_ford_gpa_char"
+  collres__res:t="pv_ford_gpa_collision"
+  vehicle_net_phys__blk:t="gamedata/units/vehicles/ford_gpa.blk:VehiclePhys"
+  damage_model__blk:t="gamedata/units/vehicles/ford_gpa.blk"
+  vehicle_seats__enumVarName:t="ford_gpa"
+  camera__offset:p3=0.0, -1.0, -3.0
+  car_painting__chance:r=0.9
+
+  "car_painting__possibleColors:array"{
+
+    "item:object"{
+      color:t="vehicle_color_battleship_gray"
+    }
+
+    "item:object"{
+      color:t="vehicle_color_dark_gray"
+    }
+
+    "item:object"{
+      color:t="vehicle_color_thundercloud"
+    }
+
+    "item:object"{
+      color:t="vehicle_color_military_green"
+    }
+  }
+
+  "disableDMParts:list<t>"{
+    part:t="cls_body_01"
+    part:t="cls_body_02"
+  }
+}
+
+gaz_m1{
+  _use:t="base_civil_fire_ready_vehicle"
+  _use:t="simple_damage_model"
+  _use:t="gaz_m1_vehicle_sound"
+  vehicleType:t="civil_car"
+  vehicleName:t="gaz_m1"
+  animchar__res:t="pv_gaz_m1_char"
+  collres__res:t="pv_gaz_m1_collision"
+  vehicle_net_phys__blk:t="gamedata/units/vehicles/gaz_m1.blk:VehiclePhys"
+  damage_model__blk:t="gamedata/units/vehicles/gaz_m1.blk"
+  vehicle_seats__enumVarName:t="gaz_m1"
+  camera__offset:p3=0.0, -1.0, -3.0
+  car_painting__chance:r=0.9
+
+  "vehicle_seats__seats:shared:array"{
+
+    "seats:object"{
+      name:t="driver"
+      cameraType:t="passenger"
+      locName:t="vehicle_seats/car_driver"
+      seatOwnsEntityControl:b=yes
+      attachNode:t="char_driver_pivot"
+      entranceNode:t="char_driver_landing"
+      attachTm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, 0.0, 0.0]]
+      seatComponent:t="isDriver"
+      nextSeat:t="passenger1"
+      canPlaceManually:b=yes
+      seatEnum:t="left_seat"
+
+      "effectors:object"{
+
+        "l.hand:object"{
+          rel_tm:m=[[-0.691168, 0.200924, 0.653685] [-0.592745, 0.189586, -0.756663] [-0.261421, -0.961086, -0.0126018] [1.09528, -0.134612, 0.182243]]
+          node:t="bone_roll_driver"
+        }
+
+        "r.hand:object"{
+          rel_tm:m=[[0.997956, -0.00428599, -0.0637629] [-0.000392344, -0.99814, 0.0609521] [-0.0639056, -0.0608024, -0.996102] [0.362976, 0.297852, 0.396918]]
+          node:t="char_driver_pivot"
+        }
+      }
+    }
+
+    "seats:object"{
+      name:t="passenger1"
+      cameraType:t="passenger"
+      locName:t="vehicle_seats/shooter"
+      seatOwnsEntityControl:b=no
+      attachNode:t="char_passenger_01_pivot"
+      entranceNode:t="char_passenger_01_landing"
+      attachTm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, 0.0, 0.0]]
+      seatComponent:t="isPassenger"
+      nextSeat:t="passenger2"
+      canPlaceManually:b=yes
+      seatEnum:t="right_seat"
+    }
+
+    "seats:object"{
+      name:t="passenger2"
+      cameraType:t="passenger"
+      locName:t="vehicle_seats/shooter"
+      seatOwnsEntityControl:b=no
+      attachNode:t="char_passenger_02_pivot"
+      entranceNode:t="char_passenger_02_landing"
+      attachTm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, 0.0, 0.0]]
+      seatComponent:t="isPassenger"
+      nextSeat:t="passenger3"
+      canPlaceManually:b=yes
+      seatEnum:t="left_seat"
+    }
+
+    "seats:object"{
+      name:t="passenger3"
+      cameraType:t="passenger"
+      locName:t="vehicle_seats/shooter"
+      seatOwnsEntityControl:b=no
+      attachNode:t="char_passenger_03_pivot"
+      entranceNode:t="char_passenger_03_landing"
+      attachTm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, 0.0, 0.0]]
+      seatComponent:t="isPassenger"
+      nextSeat:t="driver"
+      canPlaceManually:b=yes
+      seatEnum:t="right_seat"
+    }
+  }
+
+  "car_painting__possibleColors:array"{
+
+    "item:object"{
+      color:t="vehicle_color_ocean_shimmer"
+    }
+
+    "item:object"{
+      color:t="vehicle_color_perfect_blue"
+    }
+
+    "item:object"{
+      color:t="vehicle_color_apple_green"
+    }
+
+    "item:object"{
+      color:t="vehicle_color_thundercloud"
+    }
+
+    "item:object"{
+      color:t="vehicle_color_dark_gray"
+    }
+
+    "item:object"{
+      color:t="vehicle_color_pearl_white"
+    }
+
+    "item:object"{
+      color:t="vehicle_color_black"
+    }
+  }
+
+  "disableDMParts:list<t>"{
+    part:t="commander"
+    part:t="driver"
+    part:t="cls_body_01"
+    part:t="cls_body_02"
+  }
+}
+
+vw_beetle{
+  _use:t="base_civil_fire_ready_vehicle"
+  _use:t="four_seats_vehicle"
+  _use:t="simple_damage_model"
+  _use:t="vw_beetle_vehicle_sound"
+  vehicleType:t="civil_car"
+  vehicleName:t="vw_beetle"
+  animchar__res:t="pv_vw_beetle_char"
+  collres__res:t="pv_vw_beetle_collision"
+  vehicle_net_phys__blk:t="gamedata/units/vehicles/vw_beetle.blk:VehiclePhys"
+  damage_model__blk:t="gamedata/units/vehicles/vw_beetle.blk"
+  vehicle_seats__enumVarName:t="vw_beetle"
+  car_painting__chance:r=0.9
+
+  "car_painting__possibleColors:array"{
+
+    "item:object"{
+      color:t="vehicle_color_ocean_shimmer"
+    }
+
+    "item:object"{
+      color:t="vehicle_color_perfect_blue"
+    }
+
+    "item:object"{
+      color:t="vehicle_color_apple_green"
+    }
+
+    "item:object"{
+      color:t="vehicle_color_thundercloud"
+    }
+
+    "item:object"{
+      color:t="vehicle_color_dark_gray"
+    }
+
+    "item:object"{
+      color:t="vehicle_color_pearl_white"
+    }
+
+    "item:object"{
+      color:t="vehicle_color_caramel_luster"
+    }
+
+    "item:object"{
+      color:t="vehicle_color_white_aluminum"
+    }
+  }
+
+  "disableDMParts:list<t>"{
+    part:t="commander"
+    part:t="driver"
+    part:t="cls_body_01"
+    part:t="cls_body_02"
+  }
+}
+
+nissan_80{
+  _use:t="base_civil_fire_ready_vehicle"
+  _use:t="simple_damage_model"
+  _use:t="kick_passengers_on_flip"
+  _use:t="nissan_80_vehicle_sound"
+  vehicleType:t="truck"
+  vehicleName:t="nissan_80"
+  animchar__res:t="pv_nissan_80_char"
+  collres__res:t="pv_nissan_80_collision"
+  vehicle_net_phys__blk:t="gamedata/units/vehicles/nissan_80.blk:VehiclePhys"
+  damage_model__blk:t="gamedata/units/vehicles/nissan_80.blk"
+  hitpoints__maxHp:r=550.0
+  hitpoints__hp:r=550.0
+  vehicle_seats__enumVarName:t="nissan_80"
+  camera__offset:p3=0.0, -1.0, -6.0
+  car_painting__chance:r=0.9
+
+  "vehicle_seats__seats:shared:array"{
+
+    "seats:object"{
+      name:t="driver"
+      cameraType:t="passenger"
+      locName:t="vehicle_seats/car_driver"
+      seatOwnsEntityControl:b=yes
+      attachNode:t="char_driver_pivot"
+      entranceNode:t="char_driver_landing"
+      attachTm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, 0.0, 0.0]]
+      seatComponent:t="isDriver"
+      nextSeat:t="passenger1"
+      canPlaceManually:b=yes
+      seatEnum:t="left_seat"
+
+      "effectors:object"{
+
+        "l.hand:object"{
+          rel_tm:m=[[-0.63468, 0.0115196, 0.772689] [-0.505048, 0.750614, -0.426033] [-0.584899, -0.66064, -0.470582] [0.581192, -0.193366, 0.000118256]]
+          node:t="bone_roll_driver"
+        }
+
+        "r.hand:object"{
+          rel_tm:m=[[-0.618442, 0.126292, 0.775615] [-0.643699, -0.647563, -0.407816] [0.450756, -0.751473, 0.481774] [0.568195, 0.20238, -0.00453186]]
+          node:t="bone_roll_driver"
+        }
+      }
+    }
+
+    "seats:object"{
+      name:t="passenger1"
+      cameraType:t="passenger"
+      locName:t="vehicle_seats/shooter"
+      seatOwnsEntityControl:b=no
+      attachNode:t="char_passenger_01_pivot"
+      entranceNode:t="char_passenger_01_landing"
+      attachTm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, 0.0, 0.0]]
+      seatComponent:t="isPassenger"
+      nextSeat:t="passenger2"
+      canPlaceManually:b=yes
+      seatEnum:t="right_seat"
+    }
+
+    "seats:object"{
+      name:t="passenger2"
+      cameraType:t="passenger"
+      locName:t="vehicle_seats/shooter"
+      seatOwnsEntityControl:b=no
+      attachNode:t="char_passenger_02_pivot"
+      entranceNode:t="char_passenger_02_landing"
+      attachTm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, 0.0, 0.0]]
+      seatComponent:t="isPassenger"
+      nextSeat:t="passenger3"
+      canPlaceManually:b=yes
+      seatEnum:t="left_track_seat"
+    }
+
+    "seats:object"{
+      name:t="passenger3"
+      cameraType:t="passenger"
+      locName:t="vehicle_seats/shooter"
+      seatOwnsEntityControl:b=no
+      attachNode:t="char_passenger_03_pivot"
+      entranceNode:t="char_passenger_03_landing"
+      attachTm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, 0.0, 0.0]]
+      seatComponent:t="isPassenger"
+      nextSeat:t="passenger4"
+      canPlaceManually:b=yes
+      seatEnum:t="left_track_seat"
+    }
+
+    "seats:object"{
+      name:t="passenger4"
+      cameraType:t="passenger"
+      locName:t="vehicle_seats/shooter"
+      seatOwnsEntityControl:b=no
+      attachNode:t="char_passenger_04_pivot"
+      entranceNode:t="char_passenger_04_landing"
+      attachTm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, 0.0, 0.0]]
+      seatComponent:t="isPassenger"
+      nextSeat:t="passenger5"
+      canPlaceManually:b=yes
+      seatEnum:t="left_track_seat"
+    }
+
+    "seats:object"{
+      name:t="passenger5"
+      cameraType:t="passenger"
+      locName:t="vehicle_seats/shooter"
+      seatOwnsEntityControl:b=no
+      attachNode:t="char_passenger_05_pivot"
+      entranceNode:t="char_passenger_05_landing"
+      attachTm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, 0.0, 0.0]]
+      seatComponent:t="isPassenger"
+      nextSeat:t="passenger6"
+      canPlaceManually:b=yes
+      seatEnum:t="left_track_seat"
+    }
+
+    "seats:object"{
+      name:t="passenger6"
+      cameraType:t="passenger"
+      locName:t="vehicle_seats/shooter"
+      seatOwnsEntityControl:b=no
+      attachNode:t="char_passenger_06_pivot"
+      entranceNode:t="char_passenger_06_landing"
+      attachTm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, 0.0, 0.0]]
+      seatComponent:t="isPassenger"
+      nextSeat:t="passenger7"
+      canPlaceManually:b=yes
+      seatEnum:t="left_track_seat"
+    }
+
+    "seats:object"{
+      name:t="passenger7"
+      cameraType:t="passenger"
+      locName:t="vehicle_seats/shooter"
+      seatOwnsEntityControl:b=no
+      attachNode:t="char_passenger_07_pivot"
+      entranceNode:t="char_passenger_07_landing"
+      attachTm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, 0.0, 0.0]]
+      seatComponent:t="isPassenger"
+      nextSeat:t="passenger8"
+      canPlaceManually:b=yes
+      seatEnum:t="left_track_seat"
+    }
+
+    "seats:object"{
+      name:t="passenger8"
+      cameraType:t="passenger"
+      locName:t="vehicle_seats/shooter"
+      seatOwnsEntityControl:b=no
+      attachNode:t="char_passenger_08_pivot"
+      entranceNode:t="char_passenger_08_landing"
+      attachTm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, 0.0, 0.0]]
+      seatComponent:t="isPassenger"
+      nextSeat:t="passenger9"
+      canPlaceManually:b=yes
+      seatEnum:t="left_track_seat"
+    }
+
+    "seats:object"{
+      name:t="passenger9"
+      cameraType:t="passenger"
+      locName:t="vehicle_seats/shooter"
+      seatOwnsEntityControl:b=no
+      attachNode:t="char_passenger_09_pivot"
+      entranceNode:t="char_passenger_09_landing"
+      attachTm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, 0.0, 0.0]]
+      seatComponent:t="isPassenger"
+      nextSeat:t="passenger10"
+      canPlaceManually:b=yes
+      seatEnum:t="left_track_seat"
+    }
+
+    "seats:object"{
+      name:t="passenger10"
+      cameraType:t="passenger"
+      locName:t="vehicle_seats/shooter"
+      seatOwnsEntityControl:b=no
+      attachNode:t="char_passenger_10_pivot"
+      entranceNode:t="char_passenger_10_landing"
+      attachTm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, 0.0, 0.0]]
+      seatComponent:t="isPassenger"
+      nextSeat:t="driver"
+      canPlaceManually:b=yes
+      seatEnum:t="left_track_seat"
+    }
+  }
+
+  "disableDMParts:list<t>"{
+    part:t="commander"
+    part:t="driver"
+    part:t="cls_body_01"
+    part:t="cls_body_02"
+    part:t="cls_body_03"
+    part:t="cls_body_04"
+    part:t="cls_body_05"
+    part:t="cls_body_06"
+    part:t="cls_body_07"
+  }
+}
+
+gmc_353_a{
+  _use:t="base_civil_fire_ready_vehicle"
+  _use:t="simple_damage_model"
+  _use:t="kick_passengers_on_flip"
+  _use:t="gmc_353_a_vehicle_sound"
+  vehicleType:t="truck"
+  vehicleName:t="gmc_353_a"
+  animchar__res:t="pv_gmc_353_a_char"
+  collres__res:t="pv_gmc_353_a_collision"
+  vehicle_net_phys__blk:t="gamedata/units/vehicles/gmc_353.blk:VehiclePhys"
+  damage_model__blk:t="gamedata/units/vehicles/gmc_353.blk"
+  hitpoints__maxHp:r=550.0
+  hitpoints__hp:r=550.0
+  vehicle_seats__enumVarName:t="gmc_353_a"
+  camera__offset:p3=0.0, -1.0, -6.0
+  car_painting__chance:r=0.9
+
+  _group{
+    vehicle_anim__steeringDeflectionLimit:p2=-20.0, 20.0
+    _tags:t="render"
+  }
+
+  "vehicle_seats__seats:shared:array"{
+
+    "seats:object"{
+      name:t="driver"
+      cameraType:t="passenger"
+      locName:t="vehicle_seats/car_driver"
+      seatOwnsEntityControl:b=yes
+      attachNode:t="char_driver_pivot"
+      entranceNode:t="char_driver_landing"
+      attachTm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-0.0607, -0.0713, -0.0502689]]
+      seatComponent:t="isDriver"
+      nextSeat:t="passenger1"
+      canPlaceManually:b=yes
+      seatEnum:t="left_seat"
+
+      "effectors:object"{
+
+        "l.hand:object"{
+          rel_tm:m=[[-0.398987, 0.558276, 0.727418] [-0.904502, -0.369922, -0.21221] [0.150616, -0.74262, 0.652556] [0.65509, -0.128757, -0.212646]]
+          node:t="bone_roll_driver"
+        }
+
+        "r.hand:object"{
+          rel_tm:m=[[-0.331081, -0.187701, 0.924746] [-0.942402, 0.115202, -0.314019] [-0.0475909, -0.975446, -0.21503] [0.655823, 0.0863838, 0.127563]]
+          node:t="bone_roll_driver"
+        }
+
+        "l.foot:object"{
+          rel_tm:m=[[0.730463, -0.679059, 0.0728322] [0.675968, 0.703653, -0.218956] [0.097435, 0.209171, 0.973012] [0.366821, -0.14043, -0.11219]]
+          node:t="char_driver_pivot"
+        }
+
+        "r.foot:object"{
+          rel_tm:m=[[0.674295, -0.738435, 0.00651584] [0.738227, 0.67383, -0.0312254] [0.0186673, 0.0258652, 0.99949] [0.389282, -0.172913, 0.208721]]
+          node:t="char_driver_pivot"
+        }
+      }
+    }
+
+    "seats:object"{
+      name:t="passenger1"
+      cameraType:t="passenger"
+      locName:t="vehicle_seats/shooter"
+      seatOwnsEntityControl:b=no
+      attachNode:t="char_passenger_01_pivot"
+      entranceNode:t="char_passenger_01_landing"
+      attachTm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, 0.0, 0.0]]
+      seatComponent:t="isPassenger"
+      nextSeat:t="passenger2"
+      canPlaceManually:b=yes
+      seatEnum:t="right_seat"
+    }
+
+    "seats:object"{
+      name:t="passenger2"
+      cameraType:t="passenger"
+      locName:t="vehicle_seats/shooter"
+      seatOwnsEntityControl:b=no
+      attachNode:t="char_passenger_02_pivot"
+      entranceNode:t="char_passenger_02_landing"
+      attachTm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, 0.0, 0.0]]
+      seatComponent:t="isPassenger"
+      nextSeat:t="passenger3"
+      canPlaceManually:b=yes
+      seatEnum:t="left_seat"
+    }
+
+    "seats:object"{
+      name:t="passenger3"
+      cameraType:t="passenger"
+      locName:t="vehicle_seats/shooter"
+      seatOwnsEntityControl:b=no
+      attachNode:t="char_passenger_03_pivot"
+      entranceNode:t="char_passenger_03_landing"
+      attachTm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, 0.0, 0.0]]
+      seatComponent:t="isPassenger"
+      nextSeat:t="passenger4"
+      canPlaceManually:b=yes
+      seatEnum:t="right_seat"
+    }
+
+    "seats:object"{
+      name:t="passenger4"
+      cameraType:t="passenger"
+      locName:t="vehicle_seats/shooter"
+      seatOwnsEntityControl:b=no
+      attachNode:t="char_passenger_04_pivot"
+      entranceNode:t="char_passenger_04_landing"
+      attachTm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, 0.0, 0.0]]
+      seatComponent:t="isPassenger"
+      nextSeat:t="passenger5"
+      canPlaceManually:b=yes
+      seatEnum:t="left_seat"
+    }
+
+    "seats:object"{
+      name:t="passenger5"
+      cameraType:t="passenger"
+      locName:t="vehicle_seats/shooter"
+      seatOwnsEntityControl:b=no
+      attachNode:t="char_passenger_05_pivot"
+      entranceNode:t="char_passenger_05_landing"
+      attachTm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, 0.0, 0.0]]
+      seatComponent:t="isPassenger"
+      nextSeat:t="passenger6"
+      canPlaceManually:b=yes
+      seatEnum:t="right_seat"
+    }
+
+    "seats:object"{
+      name:t="passenger6"
+      cameraType:t="passenger"
+      locName:t="vehicle_seats/shooter"
+      seatOwnsEntityControl:b=no
+      attachNode:t="char_passenger_06_pivot"
+      entranceNode:t="char_passenger_06_landing"
+      attachTm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, 0.0, 0.0]]
+      seatComponent:t="isPassenger"
+      nextSeat:t="passenger7"
+      canPlaceManually:b=yes
+      seatEnum:t="left_seat"
+    }
+
+    "seats:object"{
+      name:t="passenger7"
+      cameraType:t="passenger"
+      locName:t="vehicle_seats/shooter"
+      seatOwnsEntityControl:b=no
+      attachNode:t="char_passenger_07_pivot"
+      entranceNode:t="char_passenger_07_landing"
+      attachTm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, 0.0, 0.0]]
+      seatComponent:t="isPassenger"
+      nextSeat:t="passenger8"
+      canPlaceManually:b=yes
+      seatEnum:t="right_seat"
+    }
+
+    "seats:object"{
+      name:t="passenger8"
+      cameraType:t="passenger"
+      locName:t="vehicle_seats/shooter"
+      seatOwnsEntityControl:b=no
+      attachNode:t="char_passenger_08_pivot"
+      entranceNode:t="char_passenger_08_landing"
+      attachTm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, 0.0, 0.0]]
+      seatComponent:t="isPassenger"
+      nextSeat:t="passenger9"
+      canPlaceManually:b=yes
+      seatEnum:t="left_seat"
+    }
+
+    "seats:object"{
+      name:t="passenger9"
+      cameraType:t="passenger"
+      locName:t="vehicle_seats/shooter"
+      seatOwnsEntityControl:b=no
+      attachNode:t="char_passenger_09_pivot"
+      entranceNode:t="char_passenger_09_landing"
+      attachTm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, 0.0, 0.0]]
+      seatComponent:t="isPassenger"
+      nextSeat:t="passenger10"
+      canPlaceManually:b=yes
+      seatEnum:t="right_seat"
+    }
+
+    "seats:object"{
+      name:t="passenger10"
+      cameraType:t="passenger"
+      locName:t="vehicle_seats/shooter"
+      seatOwnsEntityControl:b=no
+      attachNode:t="char_passenger_10_pivot"
+      entranceNode:t="char_passenger_10_landing"
+      attachTm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, 0.0, 0.0]]
+      seatComponent:t="isPassenger"
+      nextSeat:t="driver"
+      canPlaceManually:b=yes
+      seatEnum:t="left_seat"
+    }
+  }
+
+  "disableDMParts:list<t>"{
+    part:t="commander"
+    part:t="driver"
+    part:t="cls_body_01"
+    part:t="cls_body_02"
+    part:t="cls_body_03"
+    part:t="cls_body_04"
+    part:t="cls_body_05"
+    part:t="cls_body_06"
+    part:t="cls_body_07"
+    part:t="cls_body_08"
+  }
+
+  "dm_phys_parts__wheelsPartIds:list<i>"{
+  }
+}
+
+gmc_353_b{
+  _use:t="base_civil_fire_ready_vehicle"
+  _use:t="simple_damage_model"
+  _use:t="kick_passengers_on_flip"
+  _use:t="gmc_353_b_vehicle_sound"
+  vehicleType:t="truck"
+  vehicleName:t="gmc_353_b"
+  animchar__res:t="pv_gmc_353_b_char"
+  collres__res:t="pv_gmc_353_b_collision"
+  vehicle_net_phys__blk:t="gamedata/units/vehicles/gmc_353.blk:VehiclePhys"
+  damage_model__blk:t="gamedata/units/vehicles/gmc_353.blk"
+  hitpoints__maxHp:r=550.0
+  hitpoints__hp:r=550.0
+  vehicle_seats__enumVarName:t="gmc_353_b"
+  camera__offset:p3=0.0, -1.0, -6.0
+  car_painting__chance:r=0.9
+
+  _group{
+    vehicle_anim__steeringDeflectionLimit:p2=-20.0, 20.0
+    _tags:t="render"
+  }
+
+  "vehicle_seats__seats:shared:array"{
+
+    "seats:object"{
+      name:t="driver"
+      cameraType:t="passenger"
+      locName:t="vehicle_seats/car_driver"
+      seatOwnsEntityControl:b=yes
+      attachNode:t="char_driver_pivot"
+      entranceNode:t="char_driver_landing"
+      attachTm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-0.0607, -0.0713, -0.0502689]]
+      seatComponent:t="isDriver"
+      nextSeat:t="passenger1"
+      canPlaceManually:b=yes
+      seatEnum:t="left_seat"
+
+      "effectors:object"{
+
+        "l.hand:object"{
+          rel_tm:m=[[-0.398987, 0.558276, 0.727418] [-0.904502, -0.369922, -0.21221] [0.150616, -0.74262, 0.652556] [0.65509, -0.128757, -0.212646]]
+          node:t="bone_roll_driver"
+        }
+
+        "r.hand:object"{
+          rel_tm:m=[[-0.331081, -0.187701, 0.924746] [-0.942402, 0.115202, -0.314019] [-0.0475909, -0.975446, -0.21503] [0.655823, 0.0863838, 0.127563]]
+          node:t="bone_roll_driver"
+        }
+
+        "l.foot:object"{
+          rel_tm:m=[[0.730463, -0.679059, 0.0728322] [0.675968, 0.703653, -0.218956] [0.097435, 0.209171, 0.973012] [0.366821, -0.14043, -0.11219]]
+          node:t="char_driver_pivot"
+        }
+
+        "r.foot:object"{
+          rel_tm:m=[[0.674295, -0.738435, 0.00651584] [0.738227, 0.67383, -0.0312254] [0.0186673, 0.0258652, 0.99949] [0.389282, -0.172913, 0.208721]]
+          node:t="char_driver_pivot"
+        }
+      }
+    }
+
+    "seats:object"{
+      name:t="passenger1"
+      cameraType:t="passenger"
+      locName:t="vehicle_seats/shooter"
+      seatOwnsEntityControl:b=no
+      attachNode:t="char_passenger_01_pivot"
+      entranceNode:t="char_passenger_01_landing"
+      attachTm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, 0.0, 0.0]]
+      seatComponent:t="isPassenger"
+      nextSeat:t="passenger2"
+      canPlaceManually:b=yes
+      seatEnum:t="right_seat"
+    }
+
+    "seats:object"{
+      name:t="passenger2"
+      cameraType:t="passenger"
+      locName:t="vehicle_seats/shooter"
+      seatOwnsEntityControl:b=no
+      attachNode:t="char_passenger_02_pivot"
+      entranceNode:t="char_passenger_02_landing"
+      attachTm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, 0.0, 0.0]]
+      seatComponent:t="isPassenger"
+      nextSeat:t="passenger3"
+      canPlaceManually:b=yes
+      seatEnum:t="left_seat"
+    }
+
+    "seats:object"{
+      name:t="passenger3"
+      cameraType:t="passenger"
+      locName:t="vehicle_seats/shooter"
+      seatOwnsEntityControl:b=no
+      attachNode:t="char_passenger_03_pivot"
+      entranceNode:t="char_passenger_03_landing"
+      attachTm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, 0.0, 0.0]]
+      seatComponent:t="isPassenger"
+      nextSeat:t="passenger4"
+      canPlaceManually:b=yes
+      seatEnum:t="right_seat"
+    }
+
+    "seats:object"{
+      name:t="passenger4"
+      cameraType:t="passenger"
+      locName:t="vehicle_seats/shooter"
+      seatOwnsEntityControl:b=no
+      attachNode:t="char_passenger_04_pivot"
+      entranceNode:t="char_passenger_04_landing"
+      attachTm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, 0.0, 0.0]]
+      seatComponent:t="isPassenger"
+      nextSeat:t="passenger5"
+      canPlaceManually:b=yes
+      seatEnum:t="left_seat"
+    }
+
+    "seats:object"{
+      name:t="passenger5"
+      cameraType:t="passenger"
+      locName:t="vehicle_seats/shooter"
+      seatOwnsEntityControl:b=no
+      attachNode:t="char_passenger_05_pivot"
+      entranceNode:t="char_passenger_05_landing"
+      attachTm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, 0.0, 0.0]]
+      seatComponent:t="isPassenger"
+      nextSeat:t="passenger6"
+      canPlaceManually:b=yes
+      seatEnum:t="right_seat"
+    }
+
+    "seats:object"{
+      name:t="passenger6"
+      cameraType:t="passenger"
+      locName:t="vehicle_seats/shooter"
+      seatOwnsEntityControl:b=no
+      attachNode:t="char_passenger_06_pivot"
+      entranceNode:t="char_passenger_06_landing"
+      attachTm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, 0.0, 0.0]]
+      seatComponent:t="isPassenger"
+      nextSeat:t="passenger7"
+      canPlaceManually:b=yes
+      seatEnum:t="left_seat"
+    }
+
+    "seats:object"{
+      name:t="passenger7"
+      cameraType:t="passenger"
+      locName:t="vehicle_seats/shooter"
+      seatOwnsEntityControl:b=no
+      attachNode:t="char_passenger_07_pivot"
+      entranceNode:t="char_passenger_07_landing"
+      attachTm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, 0.0, 0.0]]
+      seatComponent:t="isPassenger"
+      nextSeat:t="passenger8"
+      canPlaceManually:b=yes
+      seatEnum:t="right_seat"
+    }
+
+    "seats:object"{
+      name:t="passenger8"
+      cameraType:t="passenger"
+      locName:t="vehicle_seats/shooter"
+      seatOwnsEntityControl:b=no
+      attachNode:t="char_passenger_08_pivot"
+      entranceNode:t="char_passenger_08_landing"
+      attachTm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, 0.0, 0.0]]
+      seatComponent:t="isPassenger"
+      nextSeat:t="passenger9"
+      canPlaceManually:b=yes
+      seatEnum:t="left_seat"
+    }
+
+    "seats:object"{
+      name:t="passenger9"
+      cameraType:t="passenger"
+      locName:t="vehicle_seats/shooter"
+      seatOwnsEntityControl:b=no
+      attachNode:t="char_passenger_09_pivot"
+      entranceNode:t="char_passenger_09_landing"
+      attachTm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, 0.0, 0.0]]
+      seatComponent:t="isPassenger"
+      nextSeat:t="passenger10"
+      canPlaceManually:b=yes
+      seatEnum:t="right_seat"
+    }
+
+    "seats:object"{
+      name:t="passenger10"
+      cameraType:t="passenger"
+      locName:t="vehicle_seats/shooter"
+      seatOwnsEntityControl:b=no
+      attachNode:t="char_passenger_10_pivot"
+      entranceNode:t="char_passenger_10_landing"
+      attachTm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, 0.0, 0.0]]
+      seatComponent:t="isPassenger"
+      nextSeat:t="driver"
+      canPlaceManually:b=yes
+      seatEnum:t="left_seat"
+    }
+  }
+
+  "disableDMParts:list<t>"{
+    part:t="commander"
+    part:t="driver"
+    part:t="cls_body_01"
+    part:t="cls_body_02"
+    part:t="cls_body_03"
+    part:t="cls_body_04"
+    part:t="cls_body_05"
+    part:t="cls_body_06"
+    part:t="cls_body_07"
+    part:t="cls_body_08"
+  }
+
+  "dm_phys_parts__wheelsPartIds:list<i>"{
+  }
+}
+
+tractor_stz_5_common{
+  _use:t="base_civil_fire_ready_vehicle_tracked"
+  _use:t="simple_damage_model"
+  _use:t="kick_passengers_on_flip"
+  _use:t="vehicle_maintenance"
+  _use:t="tractor_stz_5_common_vehicle_sound"
+  vehicleType:t="truck"
+  vehicleName:t="tractor_stz_5"
+  animchar__res:t="pv_tractor_stz_5_char"
+  collres__res:t="pv_tractor_stz_5_collision"
+  vehicle_net_phys__blk:t="gamedata/units/vehicles/tractor_stz_5.blk:VehiclePhys"
+  damage_model__blk:t="gamedata/units/vehicles/tractor_stz_5.blk"
+  hitpoints__maxHp:r=550.0
+  hitpoints__hp:r=550.0
+  vehicle_seats__enumVarName:t="tractor_stz_5"
+  camera__offset:p3=0.0, -1.0, -6.0
+  car_painting__chance:r=0.9
+}
+
+tractor_stz_5{
+  _use:t="tractor_stz_5_common"
+
+  "disableDMParts:list<t>"{
+    part:t="driver"
+  }
+
+  "vehicle_seats__seats:shared:array"{
+
+    "seats:object"{
+      name:t="driver"
+      cameraType:t="passenger"
+      locName:t="vehicle_seats/car_driver"
+      seatOwnsEntityControl:b=yes
+      attachNode:t="char_driver_pivot"
+      entranceNode:t="char_driver_landing"
+      attachTm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, -0.0, -0.0]]
+      seatComponent:t="isDriver"
+      nextSeat:t="passenger1"
+      canPlaceManually:b=yes
+      seatEnum:t="right_seat"
+    }
+
+    "seats:object"{
+      name:t="passenger1"
+      cameraType:t="passenger"
+      locName:t="vehicle_seats/shooter"
+      seatOwnsEntityControl:b=no
+      attachNode:t="char_passenger_pivot"
+      entranceNode:t="char_passenger_landing"
+      attachTm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, -0.15, 0.0]]
+      seatComponent:t="isPassenger"
+      nextSeat:t="passenger2"
+      canPlaceManually:b=yes
+      seatEnum:t="left_seat"
+    }
+
+    "seats:object"{
+      name:t="passenger2"
+      cameraType:t="passenger"
+      locName:t="vehicle_seats/shooter"
+      seatOwnsEntityControl:b=no
+      attachNode:t="char_passenger_02_pivot"
+      entranceNode:t="char_passenger_02_landing"
+      attachTm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, -0.15, 0.0]]
+      seatComponent:t="isPassenger"
+      nextSeat:t="passenger3"
+      canPlaceManually:b=yes
+      seatEnum:t="left_seat"
+      isHoldGunModeAllowed:b=no
+    }
+
+    "seats:object"{
+      name:t="passenger3"
+      cameraType:t="passenger"
+      locName:t="vehicle_seats/shooter"
+      seatOwnsEntityControl:b=no
+      attachNode:t="char_passenger_03_pivot"
+      entranceNode:t="char_passenger_03_landing"
+      attachTm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, -0.15, 0.0]]
+      seatComponent:t="isPassenger"
+      nextSeat:t="passenger4"
+      canPlaceManually:b=yes
+      seatEnum:t="right_seat"
+      isHoldGunModeAllowed:b=no
+    }
+
+    "seats:object"{
+      name:t="passenger4"
+      cameraType:t="passenger"
+      locName:t="vehicle_seats/shooter"
+      seatOwnsEntityControl:b=no
+      attachNode:t="char_passenger_04_pivot"
+      entranceNode:t="char_passenger_04_landing"
+      attachTm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, -0.15, 0.0]]
+      seatComponent:t="isPassenger"
+      nextSeat:t="passenger5"
+      canPlaceManually:b=yes
+      seatEnum:t="left_seat"
+      isHoldGunModeAllowed:b=no
+    }
+
+    "seats:object"{
+      name:t="passenger5"
+      cameraType:t="passenger"
+      locName:t="vehicle_seats/shooter"
+      seatOwnsEntityControl:b=no
+      attachNode:t="char_passenger_05_pivot"
+      entranceNode:t="char_passenger_05_landing"
+      attachTm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, -0.15, 0.0]]
+      seatComponent:t="isPassenger"
+      nextSeat:t="passenger6"
+      canPlaceManually:b=yes
+      seatEnum:t="right_seat"
+      isHoldGunModeAllowed:b=no
+    }
+
+    "seats:object"{
+      name:t="passenger6"
+      cameraType:t="passenger"
+      locName:t="vehicle_seats/shooter"
+      seatOwnsEntityControl:b=no
+      attachNode:t="char_passenger_06_pivot"
+      entranceNode:t="char_passenger_06_landing"
+      attachTm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, -0.15, 0.0]]
+      seatComponent:t="isPassenger"
+      nextSeat:t="passenger7"
+      canPlaceManually:b=yes
+      seatEnum:t="left_seat"
+      isHoldGunModeAllowed:b=no
+    }
+
+    "seats:object"{
+      name:t="passenger7"
+      cameraType:t="passenger"
+      locName:t="vehicle_seats/shooter"
+      seatOwnsEntityControl:b=no
+      attachNode:t="char_passenger_07_pivot"
+      entranceNode:t="char_passenger_07_landing"
+      attachTm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, -0.15, 0.0]]
+      seatComponent:t="isPassenger"
+      nextSeat:t="passenger8"
+      canPlaceManually:b=yes
+      seatEnum:t="right_seat"
+      isHoldGunModeAllowed:b=no
+    }
+  }
+}
+
+tractor_stz_5_opened{
+  _use:t="tractor_stz_5_common"
+
+  "disableDMParts:list<t>"{
+    part:t="driver"
+    part:t="ex_decor_01"
+  }
+
+  "vehicle_seats__seats:shared:array"{
+
+    "seats:object"{
+      name:t="driver"
+      cameraType:t="passenger"
+      locName:t="vehicle_seats/car_driver"
+      seatOwnsEntityControl:b=yes
+      attachNode:t="char_driver_pivot"
+      entranceNode:t="char_driver_landing"
+      attachTm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, -0.0, -0.0]]
+      seatComponent:t="isDriver"
+      nextSeat:t="passenger1"
+      canPlaceManually:b=yes
+      seatEnum:t="right_seat"
+    }
+
+    "seats:object"{
+      name:t="passenger1"
+      cameraType:t="passenger"
+      locName:t="vehicle_seats/shooter"
+      seatOwnsEntityControl:b=no
+      attachNode:t="char_passenger_pivot"
+      entranceNode:t="char_passenger_landing"
+      attachTm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, -0.15, 0.0]]
+      seatComponent:t="isPassenger"
+      nextSeat:t="passenger2"
+      canPlaceManually:b=yes
+      seatEnum:t="left_seat"
+    }
+
+    "seats:object"{
+      name:t="passenger2"
+      cameraType:t="passenger"
+      locName:t="vehicle_seats/shooter"
+      seatOwnsEntityControl:b=no
+      attachNode:t="char_passenger_02_pivot"
+      entranceNode:t="char_passenger_02_landing"
+      attachTm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-0.1, -0.39, 0.0]]
+      seatComponent:t="isPassenger"
+      nextSeat:t="passenger3"
+      canPlaceManually:b=yes
+      seatEnum:t="left_track_seat"
+    }
+
+    "seats:object"{
+      name:t="passenger3"
+      cameraType:t="passenger"
+      locName:t="vehicle_seats/shooter"
+      seatOwnsEntityControl:b=no
+      attachNode:t="char_passenger_03_pivot"
+      entranceNode:t="char_passenger_03_landing"
+      attachTm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-0.1, -0.39, 0.0]]
+      seatComponent:t="isPassenger"
+      nextSeat:t="passenger4"
+      canPlaceManually:b=yes
+      seatEnum:t="left_track_seat"
+    }
+
+    "seats:object"{
+      name:t="passenger4"
+      cameraType:t="passenger"
+      locName:t="vehicle_seats/shooter"
+      seatOwnsEntityControl:b=no
+      attachNode:t="char_passenger_04_pivot"
+      entranceNode:t="char_passenger_04_landing"
+      attachTm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-0.1, -0.39, 0.0]]
+      seatComponent:t="isPassenger"
+      nextSeat:t="passenger5"
+      canPlaceManually:b=yes
+      seatEnum:t="left_track_seat"
+    }
+
+    "seats:object"{
+      name:t="passenger5"
+      cameraType:t="passenger"
+      locName:t="vehicle_seats/shooter"
+      seatOwnsEntityControl:b=no
+      attachNode:t="char_passenger_05_pivot"
+      entranceNode:t="char_passenger_05_landing"
+      attachTm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-0.1, -0.39, 0.0]]
+      seatComponent:t="isPassenger"
+      nextSeat:t="passenger6"
+      canPlaceManually:b=yes
+      seatEnum:t="left_track_seat"
+    }
+
+    "seats:object"{
+      name:t="passenger6"
+      cameraType:t="passenger"
+      locName:t="vehicle_seats/shooter"
+      seatOwnsEntityControl:b=no
+      attachNode:t="char_passenger_06_pivot"
+      entranceNode:t="char_passenger_06_landing"
+      attachTm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-0.1, -0.39, 0.0]]
+      seatComponent:t="isPassenger"
+      nextSeat:t="passenger7"
+      canPlaceManually:b=yes
+      seatEnum:t="left_track_seat"
+    }
+
+    "seats:object"{
+      name:t="passenger7"
+      cameraType:t="passenger"
+      locName:t="vehicle_seats/shooter"
+      seatOwnsEntityControl:b=no
+      attachNode:t="char_passenger_07_pivot"
+      entranceNode:t="char_passenger_07_landing"
+      attachTm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-0.1, -0.39, 0.0]]
+      seatComponent:t="isPassenger"
+      nextSeat:t="passenger8"
+      canPlaceManually:b=yes
+      seatEnum:t="left_track_seat"
+    }
+  }
+}

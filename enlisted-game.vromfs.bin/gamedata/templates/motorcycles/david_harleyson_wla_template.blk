@@ -1,0 +1,246 @@
+david_harleyson_wla{
+  _use:t="simple_damage_model"
+  _use:t="vehicle_seats_effectors"
+  _use:t="base_bike_right_sidecar"
+  _use:t="vehicle_anim_speedometer_kmh"
+  _use:t="david_harleyson_wla_vehicle_sound"
+  _use:t="vehicle_seats_effectors"
+  _use:t="vehicle_with_attached_ammo_box"
+  skin__template:t="david_harleyson_wla_skins"
+  commanderFpsCamMaxAngle:p2=30.0, 35.0
+  item__name:t="items/david_harleyson_wla"
+  vehicleName:t="david_harleyson_wla"
+  animchar__res:t="harley_davidson_wla_char"
+  collres__res:t="harley_davidson_wla_collision"
+  vehicle_net_phys__blk:t="gamedata/templates/motorcycles/david_harleyson_wla.blk:VehiclePhys"
+  canUseRespawnbaseType:t="motorcycle"
+  damage_model__blk:t="gamedata/templates/motorcycles/david_harleyson_wla.blk"
+  particle_phys__blk:t="gamedata/suspension/empty.blk"
+  vehicle_seats__enumVarName:t="harley_davidson_wla"
+  item__iconOffset:p2=0.0, 0.05
+  item__iconScale:r=1.3
+  vehicle_commander_cam__attachToVehicle:b=no
+
+  _group{
+    _tags:t="gameClient"
+
+    "dm_parts__specialViewPartNames:shared:list<t>"{
+      name:t="ammo_box_01"
+      name:t="ammo_box_02"
+    }
+  }
+
+  _group{
+    _tags:t="render"
+    vehicle_anim__speedometerMinMax:p2=10.0, 120.0
+  }
+
+  _group{
+    _tags:t="render"
+    animchar_camera_target__node_name:t="bone_mg_aa_v"
+    animchar_camera_target__node_offset:p3=0.0, 0.0, 0.0
+    animchar_camera_target__nodeIndex:i=-1
+  }
+
+  anim_phys{
+  }
+
+  "vehicleDisplayMarkerOverHead:tag"{
+    tags:t="ui"
+  }
+
+  "vehicle_seats__effectors:array"{
+  }
+
+  "vehicle_seats__seatsProvideOrder:tag"{
+  }
+
+  "vehicle_seats__seats:shared:array"{
+
+    "seats:object"{
+      name:t="commander"
+      nextSeat:t="driver"
+      locName:t="vehicle_seats/gunner"
+      ignoreAttachNodeRotation:b=yes
+      seatOwnsEntityControl:b=no
+      attachNode:t="char_passenger_01_pivot"
+      entranceNode:t="char_passenger_01_landing"
+      attachTm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, -0.0, -0.0]]
+      seatComponent:t="isPassenger"
+      canPlaceManually:b=yes
+      seatEnum:t="right_seat"
+      seatAnimUpper:t="harley_davidson_wla_gunner"
+      seatAnimLower:t="harley_davidson_wla_gunner"
+      smokeScreen:b=no
+      cameraNodeName:t="bone_mg_aa_v"
+      cameraOffset:p3=-0.35, 0.25, -0.0
+      bindCamera:b=yes
+      copySkeletonNodesPostfix:t="_gunner"
+
+      "turretNames:array"{
+        turretNames:t="turret_01"
+      }
+
+      "effectors:object"{
+        l.hand:t="ik_hand_left_gunner"
+        r.hand:t="ik_hand_right_gunner"
+        l.forearm:t="ik_forearm_left_gunner"
+        r.forearm:t="ik_forearm_right_gunner"
+      }
+
+      "copySkeletonNodesRecursive:array"{
+        node:t="Bip01 L Hand"
+        node:t="Bip01 R Hand"
+      }
+    }
+
+    "seats:object"{
+      name:t="driver"
+      locName:t="vehicle_seats/driver"
+      seatOwnsEntityControl:b=yes
+      attachNode:t="char_driver_pivot"
+      ignoreAttachNodeRotation:b=yes
+      entranceNode:t="char_driver_landing"
+      attachTm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-0.1, 0.0, -0.0]]
+      seatComponent:t="isGunner"
+      shouldHideOwner:b=no
+      cameraNodeName:t="bone_camera_driver"
+      seatEnum:t="left_seat"
+      seatAnimUpper:t="moto_drive_driver"
+      seatAnimLower:t="moto_drive_driver"
+      smokeScreen:b=no
+
+      "effectors:object"{
+
+        "l.hand:object"{
+          rel_tm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, -0.0, -0.0]]
+          node:t="ik_hand_left"
+        }
+
+        "r.hand:object"{
+          rel_tm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, -0.0, -0.0]]
+          node:t="ik_hand_right"
+        }
+
+        "l.forearm:object"{
+          rel_tm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, -0.0, -0.0]]
+          node:t="ik_forearm_left"
+        }
+
+        "r.forearm:object"{
+          rel_tm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, -0.0, -0.0]]
+          node:t="ik_forearm_right"
+        }
+
+        "l.foot:object"{
+          rel_tm:m=[[0.4549466, -0.8903759, -0.01596127] [0.8693842, 0.4479597, -0.208575] [0.1928599, 0.08101392, 0.9778755] [0.2449951, -0.4919968, -0.2318356]]
+          node:t="char_driver_pivot"
+        }
+
+        "r.foot:object"{
+          rel_tm:m=[[0.143561, -0.988202, 0.05335282] [0.9864724, 0.1472039, 0.07212754] [-0.07913036, 0.0422764, 0.9959673] [0.2374115, -0.5165565, 0.2265697]]
+          node:t="char_driver_pivot"
+        }
+      }
+    }
+
+    "seats:object"{
+      name:t="passenger1"
+      locName:t="vehicle_seats/passenger1"
+      seatOwnsEntityControl:b=no
+      attachNode:t="char_passenger_02_pivot"
+      entranceNode:t="char_passenger_02_landing"
+      attachTm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-0.0, 0.0, 0.0]]
+      seatComponent:t="isPassenger"
+      canPlaceManually:b=yes
+      seatEnum:t="harley_davidson_wla_seat"
+      seatAnimUpper:t="harley_davidson_wla_passenger"
+      seatAnimLower:t="harley_davidson_wla_passenger"
+      cameraType:t="commander"
+      smokeScreen:b=no
+      aimLimits:p4=-180.0, 180.0, -45.0, 15.0
+
+      "effectors:object"{
+
+        "l.hand:object"{
+          rel_tm:m=[[0.7255191, -0.6527595, 0.2180097] [-0.5751482, -0.7490667, -0.3287898] [0.3779238, 0.1131551, -0.9188939] [0.20047, -0.02307177, -0.102062]]
+          node:t="char_passenger_02_pivot"
+        }
+
+        "r.hand:object"{
+          rel_tm:m=[[0.6633654, -0.7222767, -0.1956054] [-0.6135597, -0.6746485, 0.4103598] [-0.4283583, -0.152203, -0.8906986] [0.2102051, 0.00473237, 0.01289511]]
+          node:t="char_passenger_02_pivot"
+        }
+
+        "l.foot:object"{
+          rel_tm:m=[[-0.09826633, -0.9513139, 0.2921402] [0.9164577, -0.2009271, -0.346025] [0.387877, 0.2337314, 0.8915828] [0.3782654, -0.483638, -0.192337]]
+          node:t="char_passenger_02_pivot"
+        }
+
+        "r.foot:object"{
+          rel_tm:m=[[0.5242057, -0.8504452, 0.04417282] [0.6831689, 0.4509336, 0.5744033] [-0.5084174, -0.2709281, 0.8173798] [0.5406647, -0.5328319, 0.1881409]]
+          node:t="char_passenger_02_pivot"
+        }
+      }
+    }
+  }
+
+  "turret_gun_flash_fx__flashNodes:shared:array"{
+    node:t="emtr_mg_aa_flame"
+  }
+
+  "turret_gun_flash_fx__flashFx:shared:array"{
+    fx:t="muzzle_ground_8mm"
+  }
+
+  "turret_gun_flash_fx__flashFxScale:shared:array"{
+    scale:r=0.6
+  }
+
+  "turret_control__emitterNodes:shared:array"{
+    node:t="bone_mg_aa_v"
+  }
+
+  "turret_control__animVars:shared:array"{
+
+    "vars:object"{
+      curYawParamName:t="turret_01_yaw"
+      curPitchParamName:t="gun_01_pitch"
+      aimActiveParamName:t="aim_01_active"
+      paramYawSpeed:t="turret_01_yaw_speed"
+      paramYawSpeedMul:t="turret_01_yaw_mul"
+      paramYawAccel:t="turret_01_yaw_accel"
+      paramMinYawAngle:t="turret_01_min_yaw_angle"
+      paramMaxYawAngle:t="turret_01_max_yaw_angle"
+      paramMinPitchAngle:t="turret_01_min_pitch_angle"
+      paramMaxPitchAngle:t="turret_01_max_pitch_angle"
+      paramPitchSpeed:t="gun_01_pitch_speed"
+      paramPitchSpeedMul:t="gun_01_pitch_mul"
+      paramPitchAccel:t="gun_01_pitch_accel"
+      wishYawParamName:t="gun_01_aim:targetYaw"
+      wishPitchParamName:t="gun_01_aim:targetPitch"
+    }
+  }
+
+  "turret_control__turretInfo:shared:array"{
+
+    "turretInfo:object"{
+      turretName:t="turret_01"
+      gun:t="david_harleyson_wla_turret_7_62mm_m1919a4"
+      salt:i=1
+    }
+  }
+}
+
+david_harleyson_wla_turret_7_62mm_m1919a4{
+  _use:t="bike_7_62mm_m1919a4"
+  gun__shootNodeName:t="bone_mg_aa_v"
+  turret__yawSpeed:r=300.0
+  turret__pitchSpeed:r=100.0
+  turret__aimNodeName:t="bone_mg_aa_h"
+  turret__limit:p4=-60.0, 60.0, -10.0, 70.0
+
+  "gun__shellsAmmo:array"{
+    ammo:i=500
+  }
+}

@@ -1,0 +1,125 @@
+from "dagor.debug" import logerr
+from "string.nut" import startsWith, toIntegerSafe
+from "types" import String
+
+let maskAny = const { x = true, X = true, ["*"] = true }
+
+let arrToInt = @(list): int list.reduce(@(res, val)
+  (res << 16) + toIntegerSafe(val), 0)
+
+let typeMap = [
+  [">=",      @(a, b) b >= a],
+  [">",       @(a, b) b > a],
+  ["<=",      @(a, b) b <= a],
+  ["<",       @(a, b) b < a],
+  ["=",       @(a, b) b == a],
+  ["!",       @(a, b) b != a],
+  ["",        @(a, b) b == a],
+]
+
+function checkVersion(verWildcard, verCurrent, compFn: function) {
+  if (arrToInt(verCurrent) == 0)
+    return true
+
+  if (verWildcard.len() != verCurrent.len())
+    return false
+
+  let clrCheck = []
+  let clrCurrent = []
+  for (local i = 0; i < verWildcard.len(); ++i) {
+    let subCheck = verWildcard[i]
+    if (subCheck in maskAny)
+      continue
+    clrCheck.append(subCheck)
+    clrCurrent.append(verCurrent[i])
+  }
+  let intCheck = arrToInt(clrCheck)
+  let intCurrent = arrToInt(clrCurrent)
+  return compFn(intCheck, intCurrent)
+}
+
+function stripVerCondition(str) {
+  const allowed = "0123456789Xx*"
+  for (local i = 0; i < str.len(); ++i) {
+    let char = str.slice(i, i + 1)
+    if (allowed.contains(char))
+      return str.slice(i)
+  }
+  return ""
+}
+
+function check_version_impl(vermask, game_version) {
+  if (!(vermask instanceof String) || !(game_version instanceof String)) {
+    logerr($"Try to call check_version with not string parameters. (vermask = {vermask}, game_version = {game_version})")
+    return false
+  }
+
+  let maskVer = stripVerCondition(vermask).split(".")
+  let checkVer = stripVerCondition(game_version).split(".")
+
+  local cmpFn = null
+  foreach ([prefix, fn] in typeMap) {
+    if (startsWith(vermask, prefix)) {
+      cmpFn = fn;
+      break;
+    }
+  }
+
+  return checkVersion(maskVer, checkVer, cmpFn)
+}
+
+function check_version(version1, version2) {
+  if (version1 != ""
+      && ("><=!".contains(version1.slice(0, 1))
+        || version1.contains("X")
+        || version1.contains("x")
+        || version1.contains("*")))
+    return check_version_impl(version1, version2)
+  return check_version_impl(version2, version1)
+}
+
+function test() {
+  let testCfg = [
+    ["1.2.3.4", "1.2.3.4"],
+    ["1.2.x.4", "1.2.3.4"],
+    ["1.2.3.X", "1.2.3.5"],
+    ["1.2.3.4", "1.2.2.4", false],
+    ["1.2.3.X", "1.3.3.4", false],
+
+    ["1.2.3.4", ">=1.2.3.4"],
+    ["1.2.4.4", ">=1.2.3.4"],
+    ["1.2.3.3", ">=1.2.3.X"],
+    ["1.2.3.3", ">=1.2.3.4", false],
+    ["1.2.2.4", ">=1.2.3.X", false],
+
+    ["1.2.3.5", ">1.2.3.4"],
+    ["1.2.4.4", ">1.2.3.4"],
+    ["1.3.3.4", ">1.2.3.4"],
+    ["2.2.3.4", ">1.2.3.4"],
+    ["1.2.3.2", ">1.2.3.4", false],
+    ["1.2.3.4", ">1.2.*.4", false],
+
+    ["1.2.3.4", "=1.2.3.4"],
+    ["1.2.3.4", "=1.x.3.4"],
+    ["1.2.3.4", "=1.3.3.4", false],
+    ["1.2.3.5", "=1.3.*.4", false],
+
+    ["2.2.3.4", "!1.2.3.4"],
+    ["1.2.3.5", "!x.2.3.4"],
+    ["1.2.3.4", "!1.2.3.4", false],
+    ["1.2.3.4", "!X.2.3.4", false],
+  ]
+
+  foreach(cfg in testCfg) {
+    let res = cfg?[2] ?? true
+    assert(check_version(cfg[0], cfg[1]) == res)
+    assert(check_version(cfg[1], cfg[0]) == res)
+  }
+  println("test passed")
+}
+if (__name__ == "__main__")
+  test()
+
+return freeze({
+  check_version
+})

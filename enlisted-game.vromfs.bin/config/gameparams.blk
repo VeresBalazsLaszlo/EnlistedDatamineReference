@@ -1,0 +1,228 @@
+rendinstExtraMaxCnt:i=131072
+maxRiExPerCell:i=81920
+rendinstPreloadDistance:r=2500.0
+rendinstMaxLod0Dist:r=1200.0
+rendinstDamageDelay:r=5.0
+rendinstExtraSortTransparentInstances:b=yes
+rendinstImmortalByDefault:b=no
+nodeBasedShadersFolder:t="enlisted"
+glassShadowK:r=0.7
+disableShadowImpostorForAllLod:b=yes
+physmatBlk:t="config/physmat.blk"
+attachmentSlotsInitBlk:t="gamedata/attachment_slots.blk"
+debugRiTexture:t="blockout_grid_a_tex_d"
+
+character_micro_details{
+  micro_detail:t="microdetail_00_generic_noise_a_tex_n*"
+  micro_detail:t="microdetail_02_fabric_tex_n*"
+  micro_detail:t="microdetail_03_fabric_2_tex_n*"
+  micro_detail:t="microdetail_04_wool_tex_n*"
+  micro_detail:t="microdetail_05_wool_2_tex_n*"
+  micro_detail:t="microdetail_06_leather_tex_n*"
+  micro_detail:t="microdetail_07_metal_tex_n*"
+  micro_detail:t="microdetail_08_wood_tex_n*"
+  micro_detail:t="microdetail_09_cordura_tex_n*"
+  micro_detail:t="microdetail_10_nylon_tex_n*"
+  micro_detail:t="microdetail_11_ripstop_tex_n*"
+  micro_detail:t="microdetail_skin_b_tex_n*"
+  micro_detail:t="microdetail_leather_a_tex_n*"
+  micro_detail:t="microdetail_leather_b_tex_n*"
+  micro_detail:t="microdetail_leather_c_tex_n*"
+  micro_detail:t="microdetail_cloth_molly_a_tex_n*"
+  micro_detail:t="microdetail_plastic_cord_a_tex_n*"
+  micro_detail:t="microdetail_plastic_fiber_a_tex_n*"
+  micro_detail:t="microdetail_wood_bark_a_tex_n*"
+  micro_detail:t="microdetail_wood_bark_generic_b_tex_n*"
+  micro_detail:t="microdetail_wood_beams_a_tex_n*"
+  micro_detail:t="microdetail_wood_sawdust_a_tex_n*"
+  micro_detail:t="microdetail_metal_hammered_a_tex_n*"
+  micro_detail:t="microdetail_metal_scratched_a_tex_n*"
+  micro_detail:t="microdetail_paint_car_dots_a_tex_n*"
+  micro_detail:t="microdetail_paint_knobby_a_tex_n*"
+  micro_detail:t="microdetail_stucco_a_tex_n*"
+  micro_detail:t="microdetail_stucco_clay_a_tex_n*"
+  micro_detail:t="microdetail_clay_b_tex_n*"
+  micro_detail:t="microdetail_concrete_b_tex_n*"
+  micro_detail:t="microdetail_concrete_c_tex_n*"
+  micro_detail:t="microdetail_stone_porous_b_tex_n*"
+  micro_detail:t="microdetail_rock_adobe_a_tex_n*"
+  micro_detail:t="microdetail_rock_adobe_b_tex_n*"
+  micro_detail:t="microdetail_asphalt_paint_line_a_tex_n*"
+  micro_detail:t="microdetail_paper_base_a_tex_n*"
+  micro_detail:t="microdetail_snow_d_tex_n*"
+  micro_detail:t="microdetail_fungus_a_tex_n*"
+  micro_detail:t="microdetail_carbon_a_tex_n*"
+}
+
+commonScenes{
+  scene:t="gamedata/scenes/loose_grid_scene.blk"
+  scene:t="gamedata/scenes/common_rumble.blk"
+  scene:t="gamedata/scenes/common_vehicle_seats_order.blk"
+  scene:t="gamedata/scenes/common_mean_pos_scene.blk"
+  scene:t="gamedata/scenes/common_perf_stat_scene.blk"
+  scene:t="gamedata/scenes/level_ri_obstacles.blk"
+  scene:t="gamedata/scenes/psn_matches.blk"
+  scene:t="gamedata/scenes/crosshair.blk"
+  scene:t="gamedata/scenes/level_is_loading.blk"
+  scene:t="gamedata/scenes/minimap.blk"
+  scene:t="gamedata/scenes/multiplayer_ui.blk"
+  scene:t="gamedata/scenes/still_obstacles.blk"
+  scene:t="gamedata/scenes/matching_info.blk"
+  scene:t="gamedata/scenes/common_settings_scene.blk"
+  scene:t="gamedata/scenes/terraform.blk"
+  scene:t="gamedata/scenes/server_no_players_timer.blk"
+  scene:t="gamedata/scenes/server_explosions.blk"
+  scene:t="gamedata/scenes/army_language.blk"
+  scene:t="gamedata/scenes/mission_time.blk"
+  scene:t="gamedata/scenes/debug_scene.blk"
+  scene:t="gamedata/scenes/global_fx.blk"
+  scene:t="gamedata/scenes/bullet_types.blk"
+  scene:t="gamedata/scenes/shell_explosions.blk"
+  scene:t="gamedata/scenes/projectile_params.blk"
+  scene:t="gamedata/scenes/common_paratroopers_supply_schemes.blk"
+  scene:t="gamedata/scenes/common_players_groups_info.blk"
+  scene:t="gamedata/scenes/battle_area_navmesh_manager.blk"
+  scene:t="gamedata/scenes/navmesh_phys_manager.blk"
+  scene:t="gamedata/scenes/tree_burning_chain_manager.blk"
+}
+
+commonClientScenes{
+  scene:t="gamedata/scenes/_common_blood_puddles.blk"
+  scene:t="gamedata/scenes/_common_render_scene.blk"
+  scene:t="gamedata/scenes/common_xray_scene.blk"
+  scene:t="gamedata/scenes/animchars_shadows_culling.blk"
+  scene:t="gamedata/scenes/_cutting_planes_mgr_scene.blk"
+  scene:t="gamedata/scenes/_common_wounds.blk"
+  scene:t="gamedata/scenes/hero_cockpit.blk"
+  scene:t="gamedata/scenes/battle_perfstat.blk"
+  scene:t="gamedata/scenes/global_fx_client.blk"
+  scene:t="gamedata/scenes/common_burnt_ground.blk"
+  scene:t="gamedata/scenes/common_lens_flare.blk"
+}
+
+bulletHoles{
+  diff0:t="decal_bullethole_metal_a_tex_d*"
+  norm0:t="decal_bullethole_metal_a_tex_n*"
+  diff1:t="decal_bullethole_soil_a_tex_d*"
+  norm1:t="decal_bullethole_soil_a_tex_n*"
+  diff2:t="decal_bullethole_stone_a_tex_d*"
+  norm2:t="decal_bullethole_stone_a_tex_n*"
+  diff3:t="decal_bullethole_wood_a_tex_d*"
+  norm3:t="decal_bullethole_wood_a_tex_n*"
+}
+
+riDestr{
+  hitPointsToDestrImpulseMult:r=100.0
+  destrImpulseHitPointsMult:r=0.01
+  maxNumberOfDestructableBodies:i=200
+
+  treeDestr{
+    heightThreshold:r=3.0
+    impulseThresholdMult:r=67.0
+    radiusThreshold:r=0.5
+    canopyRestitution:r=0.5
+    canopyStiffnessMult:r=1.0
+    canopyAngularLimit:r=0.3
+    canopyMaxRaduis:r=5.0
+    canopyRollingFriction:r=5.0
+    canopyInertia:p3=1.0, 10.0, 1.0
+    constraintLimitY:p2=0.0, 1.0
+
+    radiusToImpulse{
+      row:p2=0.0, 1.0
+      row:p2=0.5, 5.0
+      row:p2=1.0, 10.0
+    }
+  }
+}
+
+riExtraGrid{
+  cellSize:i=64
+  maxMainExtension:r=40.0
+  maxSubExtension:r=3.0
+  maxSubRadius:r=4.0
+  objectsToCreateSubGrid:i=200
+  maxLeafObjects:i=40
+  reserveObjectsOnGrow:i=4
+}
+
+riExtraTiledScenes{
+  scnCount:i=3
+  scn1.tileSize:r=64.0
+  scn1.maxDist:r=251.0
+  scn2.tileSize:r=128.0
+  scn2.maxDist:r=1001.0
+  scn3.tileSize:r=1024.0
+  scn3.maxDist:r=1000000.0
+}
+
+riExtraAdditionalData{
+  maxSlotCount:i=2048
+  logerrOnBufferOverflow:b=yes
+}
+
+rendinstOpt{
+  minLodForMode0:i=1
+  maxLodForMode0:i=10
+}
+
+unitedVdata.dynModel.def{
+  IB:i=65536
+  VB1:i=65536
+  VB2:i=65536
+  VB3:i=65536
+  VB4:i=0
+}
+
+unitedVdata.dynModel{
+  IB:i=65536
+  VB1:i=65536
+  VB2:i=65536
+  VB3:i=65536
+  VB4:i=0
+}
+
+unitedVdata.rendInst.def{
+  IB:i=44160
+  VB1:i=65536
+  VB2:i=65536
+  VB3:i=65535
+  VB4:i=0
+}
+
+haze{
+  offsetScale:r=0.0135
+  distortionScale:r=0.1
+  noiseScale:r=0.135
+  offsetTexWidth:i=512
+  offsetTexHeight:i=512
+}
+
+navQueryFilterWeights{
+  jumpWeight:r=10.0
+  jumpOverWeight:r=5.0
+  jumpDownWeight:r=5.0
+  jumpDownThreshold:r=0.4
+}
+
+terraform{
+  enabled:b=yes
+  cellsPerMeter:i=8
+  minLevel:r=-1.5
+  maxLevel:r=1.1
+  maxPrimHeight:r=0.7
+}
+
+treeCrownTransmittance{
+  brightness:r=0.7
+  falloffStart:r=0.01
+  falloffStop:r=1.6
+  enabled:b=yes
+}
+
+glassScratches{
+  texcoord_mul:r=10.0
+  alpha_mul:r=0.0
+  radius_pow:r=45.0
+  mul:r=4.0
+}

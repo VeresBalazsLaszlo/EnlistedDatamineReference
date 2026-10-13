@@ -1,0 +1,62 @@
+bulletCount:i=40
+mass:r=6.2
+explosiveType:t="tnt"
+explosiveMass:r=0.621
+caliber:r=0.0762
+speed:r=680.0
+Cx:r=0.4336
+maxDistance:r=10000.0
+normalizationPreset:t="heat"
+ricochetPreset:t="he"
+groundRicochetPreset:t="he_ground"
+secondaryShattersPreset:t="ap"
+stabilityThreshold:r=0.5
+stabilityCaliberToArmorThreshold:r=5.0
+stabilityReductionAfterRicochet:r=0.3
+stabilityReductionAfterPenetration:r=0.15
+bulletType:t="he_frag_tank"
+slopeEffectPreset:t="ap"
+fresnel:p3=0.23, 0.1, 2.0
+explodeOnRendinst:b=yes
+useEffectiveArmorThicknessForShatter:b=yes
+bulletName:t="76mm_of_350m"
+nearHitPower:p2=1.0, 50.0
+midHitPower:p2=0.9, 300.0
+farHitPower:p2=0.1, 700.0
+endHitPower:p2=0.008, 1500.0
+relativeVelHitShift:p2=300.0, 1000.0
+relativeVelArmorShift:p2=200.0, 1000.0
+fuseOnWater:b=yes
+fuseOnWaterProbability:r=1.0
+ricochetTimeToLive:r=0.085
+fuseDelayDist:r=0.05
+explodeTreshold:r=0.1
+waterRicochetEffect:t="hit_59_80mm_water"
+groundRicochetEffect:t="hit_59_80mm_dirt_ap"
+modelName:t="tank_bullet_he"
+
+stabilityRicochetModifier{
+  mod1:p2=0.0, 0.5
+  mod2:p2=15.0, 0.7
+  mod3:p2=30.0, 0.99
+}
+
+pressureDamage{
+  damageType:t="pressure"
+}
+
+visual{
+  tracer:t="noColor"
+}
+
+kineticDamage{
+  damageType:t="generic"
+}
+
+tracer{
+  headColor:c=0, 0, 0, 0
+  smokeColor:c=0, 0, 0, 0
+  startHeadColor:c=0, 0, 0, 0
+  startTime:r=0.0
+  smokeRadius:r=0.01
+}

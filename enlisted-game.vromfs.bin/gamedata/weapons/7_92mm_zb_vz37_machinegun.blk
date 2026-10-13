@@ -1,0 +1,27 @@
+maxDeltaAngle:r=0.075
+shotFreq:r=12.8
+recoilAmount:r=0.1
+selWeaponVar:t="76mm_gun_m1"
+automaticReload:b=no
+sightsDistance:r=0.05
+
+shells{
+  shell:t="gamedata/weapons/bullets/30_06_springfield.blk"
+}
+
+ammoHolders{
+  ammoholder:t="gamedata/weapons/ammoholders/7_92mm_ZB_VZ37_ammo_holder.blk"
+}
+
+firingModes{
+
+  automatic{
+    modeType:t="automatic"
+  }
+}
+
+shotDeviation{
+  onShotDeviationChange:r=0.7
+  extraDeviationTau:r=0.08
+  maxDeviation:r=2.0
+}

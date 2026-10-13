@@ -1,0 +1,253 @@
+entity{
+  _template:t="dagdp_level_settings"
+  dagdp__max_objects:i=10000
+}
+
+entity{
+  _template:t="dagdp_object_group_riex"
+  dagdp__name:t="trenches"
+
+  "dagdp__params:object"{
+    scale:p2=0.975, 0.025
+    orientation:t="normal"
+  }
+
+  "dagdp__assets:object"{
+
+    "debris_metal_can_a:object"{
+      weight:r=1.0
+    }
+
+    "debris_metal_can_b:object"{
+      weight:r=1.0
+    }
+
+    "sandbag_single_a:object"{
+      weight:r=5.0
+    }
+
+    "sandbag_single_f:object"{
+      weight:r=5.0
+    }
+
+    "debris_trash_wood_plank_a:object"{
+      weight:r=2.0
+    }
+
+    "debris_trash_wood_plank_b:object"{
+      weight:r=2.0
+    }
+  }
+}
+
+entity{
+  _template:t="dagdp_placer_heightmap"
+  dagdp__name:t="trenches_biomes"
+  dagdp__density:r=0.05
+
+  "dagdp__object_groups:list<t>"{
+    item:t="trenches"
+  }
+
+  "dagdp__biomes:list<i>"{
+    item:i=37
+  }
+}
+
+entity{
+  _template:t="dagdp_object_group_riex"
+  dagdp__name:t="debris_nature"
+
+  "dagdp__params:object"{
+    scale:p2=0.975, 0.275
+    slope_factor:r=32.0
+    orientation:t="normal"
+  }
+
+  "dagdp__assets:object"{
+
+    "tree_dry_branches_a:object"{
+      weight:r=1.0
+    }
+
+    "tree_dry_branches_b:object"{
+      weight:r=1.0
+    }
+
+    "tree_dry_branches_c:object"{
+      weight:r=1.0
+    }
+
+    "tree_branches_small_a:object"{
+      weight:r=1.0
+    }
+
+    "tree_branches_small_b:object"{
+      weight:r=1.0
+    }
+
+    "tree_branches_small_c:object"{
+      weight:r=1.0
+    }
+
+    "tree_branches_small_d:object"{
+      weight:r=1.0
+    }
+  }
+}
+
+entity{
+  _template:t="dagdp_placer_heightmap"
+  dagdp__name:t="debris_nature_biomes"
+  dagdp__density:r=0.05
+
+  "dagdp__object_groups:list<t>"{
+    item:t="debris_nature"
+  }
+
+  "dagdp__biomes:list<i>"{
+    item:i=2
+    item:i=3
+    item:i=1
+    item:i=46
+  }
+}
+
+entity{
+  _template:t="dagdp_object_group_riex"
+  dagdp__name:t="rocks"
+
+  "dagdp__params:object"{
+    scale:p2=0.4, 0.1
+    slope_factor:r=32.0
+    orientation:t="normal"
+  }
+
+  "dagdp__assets:object"{
+
+    "stones_coast_a:object"{
+      weight:r=1.0
+    }
+
+    "stones_coast_a:object"{
+      weight:r=1.0
+    }
+
+    "stones_coast_c:object"{
+      weight:r=1.0
+    }
+
+    "stones_coast_d:object"{
+      weight:r=1.0
+    }
+
+    "stones_coast_e:object"{
+      weight:r=1.0
+    }
+  }
+}
+
+entity{
+  _template:t="dagdp_placer_heightmap"
+  dagdp__name:t="rocks_biomes"
+  dagdp__density:r=0.3
+
+  "dagdp__object_groups:list<t>"{
+    item:t="rocks"
+  }
+
+  "dagdp__biomes:list<i>"{
+    item:i=2
+    item:i=3
+    item:i=1
+    item:i=46
+  }
+}
+
+entity{
+  _template:t="dagdp_object_group_riex"
+  dagdp__name:t="burnt_branches"
+
+  "dagdp__params:object"{
+    scale:p2=0.7, 0.1
+    orientation:t="normal"
+  }
+
+  "dagdp__assets:object"{
+
+    "tree_burnt_branches_small_a:object"{
+      weight:r=1.0
+    }
+
+    "tree_burnt_branches_small_b:object"{
+      weight:r=1.0
+    }
+
+    "tree_burnt_branches_small_c:object"{
+      weight:r=0.75
+    }
+
+    "tree_burnt_branches_small_d:object"{
+      weight:r=0.5
+    }
+  }
+}
+
+entity{
+  _template:t="dagdp_placer_heightmap"
+  dagdp__name:t="burnt_branches_biomes"
+  dagdp__density:r=0.05
+
+  "dagdp__object_groups:list<t>"{
+    item:t="burnt_branches"
+  }
+
+  "dagdp__biomes:list<i>"{
+    item:i=47
+    item:i=53
+  }
+}
+
+entity{
+  _template:t="dagdp_object_group_riex"
+  dagdp__name:t="burnt_bush"
+
+  "dagdp__params:object"{
+    scale:p2=0.6, 0.1
+    orientation:t="normal"
+  }
+
+  "dagdp__assets:object"{
+
+    "tree_fraxinus_bush_medium_burnt_a:object"{
+      weight:r=1.0
+    }
+
+    "tree_fraxinus_bush_medium_burnt_b:object"{
+      weight:r=1.0
+    }
+
+    "tree_fraxinus_bush_small_burnt_a:object"{
+      weight:r=2.0
+    }
+
+    "tree_fraxinus_bush_small_burnt_b:object"{
+      weight:r=2.0
+    }
+  }
+}
+
+entity{
+  _template:t="dagdp_placer_heightmap"
+  dagdp__name:t="burnt_bush_biomes"
+  dagdp__density:r=0.08
+
+  "dagdp__object_groups:list<t>"{
+    item:t="burnt_bush"
+  }
+
+  "dagdp__biomes:list<i>"{
+    item:i=47
+    item:i=53
+  }
+}

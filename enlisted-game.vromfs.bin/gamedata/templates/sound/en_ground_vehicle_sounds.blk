@@ -1,0 +1,1673 @@
+en_projectile_hit_vehicle_fx_sound{
+  _use:t="projectile_hit_entity_fx_sound"
+
+  "projectile_hit_entity_fx_sound__paths:shared:object"{
+    _tags:t="sound"
+
+    "stopped:object"{
+
+      "bullet:object"{
+        watched:t="player/vehicle/tank/impacts/hit_small_fail"
+        other:t="enemy/vehicle/tank/impacts/hit_small_fail"
+      }
+
+      "shell:object"{
+        watched:t="player/vehicle/tank/impacts/hit_mid_fail"
+        other:t="enemy/vehicle/tank/impacts/hit_mid_fail"
+      }
+    }
+
+    "unstopped:object"{
+
+      "bullet:object"{
+        watched:t="player/vehicle/tank/impacts/hit_small_fail"
+        other:t="enemy/vehicle/tank/impacts/hit_small_fail"
+      }
+
+      "shell:object"{
+        watched:t="player/vehicle/tank/impacts/hit_mid"
+        other:t="enemy/vehicle/tank/impacts/hit_mid"
+      }
+    }
+
+    "rico:object"{
+
+      "bullet:object"{
+        watched:t="player/vehicle/tank/impacts/rico_bullet"
+        other:t="enemy/vehicle/tank/impacts/rico_bullet"
+      }
+
+      "shell:object"{
+        watched:t="player/vehicle/tank/impacts/rico_shell"
+        other:t="enemy/vehicle/tank/impacts/rico_shell"
+      }
+    }
+  }
+}
+
+flying_turret_sound{
+  _use:t="en_projectile_hit_vehicle_fx_sound"
+  _use:t="sound_tags"
+}
+
+tank_t34_vehicle_tracks_sound_setup{
+
+  "vehicle_tracks_sound__path:shared:object"{
+    _tags:t="sound"
+    watched:t="player/vehicle/tank/common/tracks_t34"
+    other:t="enemy/vehicle/tank/common/tracks_t34"
+  }
+}
+
+tank_su76_vehicle_tracks_sound_setup{
+
+  "vehicle_tracks_sound__path:shared:object"{
+    _tags:t="sound"
+    watched:t="player/vehicle/tank/common/tracks_su76"
+    other:t="enemy/vehicle/tank/common/tracks_su76"
+  }
+}
+
+tank_su100_vehicle_tracks_sound_setup{
+
+  "vehicle_tracks_sound__path:shared:object"{
+    _tags:t="sound"
+    watched:t="player/vehicle/tank/common/tracks_su100"
+    other:t="enemy/vehicle/tank/common/tracks_su100"
+  }
+}
+
+tank_tiger_vehicle_tracks_sound_setup{
+
+  "vehicle_tracks_sound__path:shared:object"{
+    _tags:t="sound"
+    watched:t="player/vehicle/tank/common/tracks_tiger"
+    other:t="enemy/vehicle/tank/common/tracks_tiger"
+  }
+}
+
+tank_maus_vehicle_tracks_sound_setup{
+
+  "vehicle_tracks_sound__path:shared:object"{
+    _tags:t="sound"
+    watched:t="player/vehicle/tank/common/tracks_maus"
+    other:t="enemy/vehicle/tank/common/tracks_maus"
+  }
+}
+
+tank_mbt_vehicle_tracks_sound_setup{
+
+  "vehicle_tracks_sound__path:shared:object"{
+    _tags:t="sound"
+    watched:t="player/vehicle/tank/common/tracks_mbt"
+    other:t="enemy/vehicle/tank/common/tracks_mbt"
+  }
+}
+
+tank_abrams_vehicle_tracks_sound_setup{
+
+  "vehicle_tracks_sound__path:shared:object"{
+    _tags:t="sound"
+    watched:t="player/vehicle/tank/common/tracks_abrams"
+    other:t="enemy/vehicle/tank/common/tracks_abrams"
+  }
+}
+
+tank_germ_a7v_vehicle_tracks_sound_setup{
+
+  "vehicle_tracks_sound__path:shared:object"{
+    _tags:t="sound"
+    watched:t="events/26/player/vehicle/de1/tracks"
+    other:t="events/26/enemy/vehicle/de1/tracks"
+  }
+}
+
+tank_uk_mark_v_vehicle_tracks_sound_setup{
+
+  "vehicle_tracks_sound__path:shared:object"{
+    _tags:t="sound"
+    watched:t="events/26/player/vehicle/uk1/tracks"
+    other:t="events/26/enemy/vehicle/uk1/tracks"
+  }
+}
+
+tank_m10_engine_sound_setup{
+
+  _group{
+    _tags:t="sound"
+
+    "vehicle_engine_sound__path:shared:object"{
+      watched:t="player/vehicle/tank/m10/engine"
+      other:t="enemy/vehicle/tank/m10/engine"
+    }
+
+    "vehicle_engine_sound__startPath:shared:object"{
+      watched:t="player/vehicle/tank/m10/engine_start"
+      other:t="enemy/vehicle/tank/m10/engine_start"
+    }
+
+    "vehicle_engine_sound__stopPath:shared:object"{
+      watched:t="player/vehicle/tank/m10/engine_stop"
+      other:t="enemy/vehicle/tank/m10/engine_stop"
+    }
+  }
+}
+
+tank_panzer3_engine_sound_setup{
+
+  _group{
+    _tags:t="sound"
+
+    "vehicle_engine_sound__path:shared:object"{
+      watched:t="player/vehicle/tank/panzer3/engine"
+      other:t="enemy/vehicle/tank/panzer3/engine"
+    }
+
+    "vehicle_engine_sound__startPath:shared:object"{
+      watched:t="player/vehicle/tank/panzer3/engine_start"
+      other:t="enemy/vehicle/tank/panzer3/engine_start"
+    }
+
+    "vehicle_engine_sound__stopPath:shared:object"{
+      watched:t="player/vehicle/tank/panzer3/engine_stop"
+      other:t="enemy/vehicle/tank/panzer3/engine_stop"
+    }
+  }
+}
+
+tank_t34_engine_sound_setup{
+
+  _group{
+    _tags:t="sound"
+
+    "vehicle_engine_sound__path:shared:object"{
+      watched:t="player/vehicle/tank/t34/engine"
+      other:t="enemy/vehicle/tank/t34/engine"
+    }
+
+    "vehicle_engine_sound__startPath:shared:object"{
+      watched:t="player/vehicle/tank/t34/engine_start"
+      other:t="enemy/vehicle/tank/t34/engine_start"
+    }
+
+    "vehicle_engine_sound__stopPath:shared:object"{
+      watched:t="player/vehicle/tank/t34/engine_stop"
+      other:t="enemy/vehicle/tank/t34/engine_stop"
+    }
+  }
+}
+
+tank_germ_a7v_engine_sound_setup{
+
+  _group{
+    _tags:t="sound"
+
+    "vehicle_engine_sound__path:shared:object"{
+      watched:t="events/26/player/vehicle/de1/engine"
+      other:t="events/26/enemy/vehicle/de1/engine"
+    }
+
+    "vehicle_engine_sound__startPath:shared:object"{
+      watched:t="events/26/player/vehicle/de1/engine_start"
+      other:t="events/26/enemy/vehicle/de1/engine_start"
+    }
+
+    "vehicle_engine_sound__stopPath:shared:object"{
+      watched:t="events/26/player/vehicle/de1/engine_stop"
+      other:t="events/26/enemy/vehicle/de1/engine_stop"
+    }
+  }
+}
+
+tank_uk_mark_v_engine_sound_setup{
+
+  _group{
+    _tags:t="sound"
+
+    "vehicle_engine_sound__path:shared:object"{
+      watched:t="events/26/player/vehicle/uk1/engine"
+      other:t="events/26/enemy/vehicle/uk1/engine"
+    }
+
+    "vehicle_engine_sound__startPath:shared:object"{
+      watched:t="events/26/player/vehicle/uk1/engine_start"
+      other:t="events/26/enemy/vehicle/uk1/engine_start"
+    }
+
+    "vehicle_engine_sound__stopPath:shared:object"{
+      watched:t="events/26/player/vehicle/uk1/engine_stop"
+      other:t="events/26/enemy/vehicle/uk1/engine_stop"
+    }
+  }
+}
+
+tank_germ_a7v_turret_sound_with_group{
+  _use:t="turret_sound_with_group"
+
+  _group{
+    _tags:t="sound"
+    turret_sound__path:t="events/26/player/vehicle/de1/turret"
+  }
+}
+
+tank_uk_mark_v_turret_sound_with_group{
+  _use:t="turret_sound_with_group"
+
+  _group{
+    _tags:t="sound"
+    turret_sound__path:t="events/26/player/vehicle/uk1/turret"
+  }
+}
+
+en_tank_vehicle_sound{
+  _use:t="tank_vehicle_sound"
+  _use:t="tank_vehicle_speech"
+  _use:t="en_projectile_hit_vehicle_fx_sound"
+  _use:t="turret_sound_with_group"
+}
+
+en_car_vehicle_sound{
+  _use:t="car_vehicle_sound"
+  _use:t="en_projectile_hit_vehicle_fx_sound"
+}
+
+en_jeep_vehicle_sound{
+  _use:t="jeep_vehicle_sound"
+  _use:t="en_projectile_hit_vehicle_fx_sound"
+}
+
+en_apc_with_wheels_vehicle_sound{
+  _use:t="apc_with_wheels_vehicle_sound"
+  _use:t="en_projectile_hit_vehicle_fx_sound"
+}
+
+en_truck_vehicle_sound{
+  _use:t="truck_vehicle_sound"
+  _use:t="en_projectile_hit_vehicle_fx_sound"
+}
+
+en_tractor_vehicle_sound{
+  _use:t="tractor_vehicle_sound"
+  _use:t="en_projectile_hit_vehicle_fx_sound"
+}
+
+en_apc_vehicle_sound{
+  _use:t="apc_vehicle_sound"
+  _use:t="en_projectile_hit_vehicle_fx_sound"
+}
+
+en_motorcycle_vehicle_sound{
+  _use:t="motorcycle_vehicle_sound"
+  _use:t="en_projectile_hit_vehicle_fx_sound"
+}
+
+en_mobile_cannon_vehicle_sound{
+  _use:t="mobile_cannon_vehicle_sound"
+  _use:t="en_projectile_hit_vehicle_fx_sound"
+}
+
+opel_olympia_vehicle_sound{
+  _use:t="en_car_vehicle_sound"
+  _use:t="car_vehicle_inside_sound"
+  _use:t="vehicle_horn_note_D5"
+}
+
+gaz_67_vehicle_sound{
+  _use:t="en_jeep_vehicle_sound"
+  _use:t="nodoor_vehicle_seat_sound_setup"
+  _use:t="vehicle_horn_note_A5"
+
+  _group{
+    _tags:t="sound"
+
+    "vehicle_engine_sound__path:shared:object"{
+      watched:t="player/vehicle/car/gaz_67/engine"
+      other:t="enemy/vehicle/car/gaz_67/engine"
+    }
+
+    "vehicle_engine_sound__startPath:shared:object"{
+      watched:t="player/vehicle/car/gaz_67/engine_start"
+      other:t="enemy/vehicle/car/gaz_67/engine_start"
+    }
+
+    "vehicle_engine_sound__stopPath:shared:object"{
+      watched:t="player/vehicle/car/gaz_67/engine_stop"
+      other:t="enemy/vehicle/car/gaz_67/engine_stop"
+    }
+  }
+
+  "vehicle_tracks_sound__path:shared:object"{
+    _tags:t="sound"
+    watched:t="player/vehicle/car/gaz_67/tracks"
+    other:t="enemy/vehicle/car/gaz_67/tracks"
+  }
+}
+
+vw_kubelwagen_vehicle_sound{
+  _use:t="en_car_vehicle_sound"
+  _use:t="vehicle_horn_note_C5"
+
+  _group{
+    _tags:t="sound"
+
+    "vehicle_engine_sound__path:shared:object"{
+      watched:t="player/vehicle/car/vw_kubelwagen/engine"
+      other:t="enemy/vehicle/car/vw_kubelwagen/engine"
+    }
+
+    "vehicle_engine_sound__startPath:shared:object"{
+      watched:t="player/vehicle/car/vw_kubelwagen/engine_start"
+      other:t="enemy/vehicle/car/vw_kubelwagen/engine_start"
+    }
+
+    "vehicle_engine_sound__stopPath:shared:object"{
+      watched:t="player/vehicle/car/vw_kubelwagen/engine_stop"
+      other:t="enemy/vehicle/car/vw_kubelwagen/engine_stop"
+    }
+  }
+
+  "vehicle_tracks_sound__path:shared:object"{
+    _tags:t="sound"
+    watched:t="player/vehicle/car/vw_kubelwagen/tracks"
+    other:t="enemy/vehicle/car/vw_kubelwagen/tracks"
+  }
+}
+
+opel_blitz_kfz_305_vehicle_sound{
+  _use:t="en_truck_vehicle_sound"
+  _use:t="truck_vehicle_inside_sound_for_driver_passenger1"
+  _use:t="vehicle_horn_note_E4"
+
+  _group{
+    _tags:t="sound"
+
+    "vehicle_engine_sound__path:shared:object"{
+      watched:t="player/vehicle/car/opel_blitz_kfz_305/engine"
+      other:t="enemy/vehicle/car/opel_blitz_kfz_305/engine"
+    }
+
+    "vehicle_engine_sound__startPath:shared:object"{
+      watched:t="player/vehicle/car/opel_blitz_kfz_305/engine_start"
+      other:t="enemy/vehicle/car/opel_blitz_kfz_305/engine_start"
+    }
+
+    "vehicle_engine_sound__stopPath:shared:object"{
+      watched:t="player/vehicle/car/opel_blitz_kfz_305/engine_stop"
+      other:t="enemy/vehicle/car/opel_blitz_kfz_305/engine_stop"
+    }
+  }
+
+  "vehicle_tracks_sound__path:shared:object"{
+    _tags:t="sound"
+    watched:t="player/vehicle/car/opel_blitz_kfz_305/tracks"
+    other:t="enemy/vehicle/car/opel_blitz_kfz_305/tracks"
+  }
+}
+
+opel_blitz_omnibus_vehicle_sound{
+  _use:t="en_truck_vehicle_sound"
+  _use:t="truck_vehicle_inside_sound"
+  _use:t="vehicle_horn_note_F4"
+
+  _group{
+    _tags:t="sound"
+
+    "vehicle_engine_sound__path:shared:object"{
+      watched:t="player/vehicle/car/opel_blitz_omnibus/engine"
+      other:t="enemy/vehicle/car/opel_blitz_omnibus/engine"
+    }
+
+    "vehicle_engine_sound__startPath:shared:object"{
+      watched:t="player/vehicle/car/opel_blitz_omnibus/engine_start"
+      other:t="enemy/vehicle/car/opel_blitz_omnibus/engine_start"
+    }
+
+    "vehicle_engine_sound__stopPath:shared:object"{
+      watched:t="player/vehicle/car/opel_blitz_omnibus/engine_stop"
+      other:t="enemy/vehicle/car/opel_blitz_omnibus/engine_stop"
+    }
+  }
+
+  "vehicle_tracks_sound__path:shared:object"{
+    _tags:t="sound"
+    watched:t="player/vehicle/car/opel_blitz_omnibus/tracks"
+    other:t="enemy/vehicle/car/opel_blitz_omnibus/tracks"
+  }
+}
+
+willys_mb_vehicle_sound{
+  _use:t="en_jeep_vehicle_sound"
+  _use:t="nodoor_vehicle_seat_sound_setup"
+  _use:t="vehicle_horn_note_B5"
+
+  _group{
+    _tags:t="sound"
+
+    "vehicle_engine_sound__path:shared:object"{
+      watched:t="player/vehicle/car/vw_kubelwagen/engine"
+      other:t="enemy/vehicle/car/vw_kubelwagen/engine"
+    }
+
+    "vehicle_engine_sound__startPath:shared:object"{
+      watched:t="player/vehicle/car/vw_kubelwagen/engine_start"
+      other:t="enemy/vehicle/car/vw_kubelwagen/engine_start"
+    }
+
+    "vehicle_engine_sound__stopPath:shared:object"{
+      watched:t="player/vehicle/car/vw_kubelwagen/engine_stop"
+      other:t="enemy/vehicle/car/vw_kubelwagen/engine_stop"
+    }
+  }
+
+  "vehicle_tracks_sound__path:shared:object"{
+    _tags:t="sound"
+    watched:t="player/vehicle/car/vw_kubelwagen/tracks"
+    other:t="enemy/vehicle/car/vw_kubelwagen/tracks"
+  }
+}
+
+ford_gpa_vehicle_sound{
+  _use:t="en_jeep_vehicle_sound"
+  _use:t="nodoor_vehicle_seat_sound_setup"
+  _use:t="vehicle_horn_note_B5"
+
+  _group{
+    _tags:t="sound"
+
+    "vehicle_engine_sound__path:shared:object"{
+      watched:t="player/vehicle/car/vw_kubelwagen/engine"
+      other:t="enemy/vehicle/car/vw_kubelwagen/engine"
+    }
+
+    "vehicle_engine_sound__startPath:shared:object"{
+      watched:t="player/vehicle/car/vw_kubelwagen/engine_start"
+      other:t="enemy/vehicle/car/vw_kubelwagen/engine_start"
+    }
+
+    "vehicle_engine_sound__stopPath:shared:object"{
+      watched:t="player/vehicle/car/vw_kubelwagen/engine_stop"
+      other:t="enemy/vehicle/car/vw_kubelwagen/engine_stop"
+    }
+  }
+
+  "vehicle_tracks_sound__path:shared:object"{
+    _tags:t="sound"
+    watched:t="player/vehicle/car/vw_kubelwagen/tracks"
+    other:t="enemy/vehicle/car/vw_kubelwagen/tracks"
+  }
+}
+
+gaz_m1_vehicle_sound{
+  _use:t="en_jeep_vehicle_sound"
+  _use:t="jeep_vehicle_inside_sound"
+  _use:t="vehicle_horn_note_G4"
+
+  _group{
+    _tags:t="sound"
+
+    "vehicle_engine_sound__path:shared:object"{
+      watched:t="player/vehicle/car/gaz_67/engine"
+      other:t="enemy/vehicle/car/gaz_67/engine"
+    }
+
+    "vehicle_engine_sound__startPath:shared:object"{
+      watched:t="player/vehicle/car/gaz_67/engine_start"
+      other:t="enemy/vehicle/car/gaz_67/engine_start"
+    }
+
+    "vehicle_engine_sound__stopPath:shared:object"{
+      watched:t="player/vehicle/car/gaz_67/engine_stop"
+      other:t="enemy/vehicle/car/gaz_67/engine_stop"
+    }
+  }
+
+  "vehicle_tracks_sound__path:shared:object"{
+    _tags:t="sound"
+    watched:t="player/vehicle/car/gaz_67/tracks"
+    other:t="enemy/vehicle/car/gaz_67/tracks"
+  }
+}
+
+vw_beetle_vehicle_sound{
+  _use:t="en_car_vehicle_sound"
+  _use:t="car_vehicle_inside_sound"
+  _use:t="vehicle_horn_note_E5"
+}
+
+nissan_80_vehicle_sound{
+  _use:t="en_truck_vehicle_sound"
+  _use:t="truck_vehicle_inside_sound_for_driver_passenger1"
+  _use:t="vehicle_horn_note_E4"
+
+  _group{
+    _tags:t="sound"
+
+    "vehicle_engine_sound__path:shared:object"{
+      watched:t="player/vehicle/car/opel_blitz_kfz_305/engine"
+      other:t="enemy/vehicle/car/opel_blitz_kfz_305/engine"
+    }
+
+    "vehicle_engine_sound__startPath:shared:object"{
+      watched:t="player/vehicle/car/opel_blitz_kfz_305/engine_start"
+      other:t="enemy/vehicle/car/opel_blitz_kfz_305/engine_start"
+    }
+
+    "vehicle_engine_sound__stopPath:shared:object"{
+      watched:t="player/vehicle/car/opel_blitz_kfz_305/engine_stop"
+      other:t="enemy/vehicle/car/opel_blitz_kfz_305/engine_stop"
+    }
+  }
+
+  "vehicle_tracks_sound__path:shared:object"{
+    _tags:t="sound"
+    watched:t="player/vehicle/car/opel_blitz_kfz_305/tracks"
+    other:t="enemy/vehicle/car/opel_blitz_kfz_305/tracks"
+  }
+}
+
+gmc_353_a_vehicle_sound{
+  _use:t="en_truck_vehicle_sound"
+
+  _group{
+    _tags:t="sound"
+
+    "vehicle_engine_sound__path:shared:object"{
+      watched:t="player/vehicle/car/opel_blitz_kfz_305/engine"
+      other:t="enemy/vehicle/car/opel_blitz_kfz_305/engine"
+    }
+
+    "vehicle_engine_sound__startPath:shared:object"{
+      watched:t="player/vehicle/car/opel_blitz_kfz_305/engine_start"
+      other:t="enemy/vehicle/car/opel_blitz_kfz_305/engine_start"
+    }
+
+    "vehicle_engine_sound__stopPath:shared:object"{
+      watched:t="player/vehicle/car/opel_blitz_kfz_305/engine_stop"
+      other:t="enemy/vehicle/car/opel_blitz_kfz_305/engine_stop"
+    }
+  }
+
+  "vehicle_tracks_sound__path:shared:object"{
+    _tags:t="sound"
+    watched:t="player/vehicle/car/opel_blitz_kfz_305/tracks"
+    other:t="enemy/vehicle/car/opel_blitz_kfz_305/tracks"
+  }
+}
+
+gmc_353_b_vehicle_sound{
+  _use:t="en_truck_vehicle_sound"
+  _use:t="truck_vehicle_inside_sound_for_driver_passenger1"
+
+  _group{
+    _tags:t="sound"
+
+    "vehicle_engine_sound__path:shared:object"{
+      watched:t="player/vehicle/car/opel_blitz_kfz_305/engine"
+      other:t="enemy/vehicle/car/opel_blitz_kfz_305/engine"
+    }
+
+    "vehicle_engine_sound__startPath:shared:object"{
+      watched:t="player/vehicle/car/opel_blitz_kfz_305/engine_start"
+      other:t="enemy/vehicle/car/opel_blitz_kfz_305/engine_start"
+    }
+
+    "vehicle_engine_sound__stopPath:shared:object"{
+      watched:t="player/vehicle/car/opel_blitz_kfz_305/engine_stop"
+      other:t="enemy/vehicle/car/opel_blitz_kfz_305/engine_stop"
+    }
+  }
+
+  "vehicle_tracks_sound__path:shared:object"{
+    _tags:t="sound"
+    watched:t="player/vehicle/car/opel_blitz_kfz_305/tracks"
+    other:t="enemy/vehicle/car/opel_blitz_kfz_305/tracks"
+  }
+}
+
+tractor_stz_5_common_vehicle_sound{
+  _use:t="en_tractor_vehicle_sound"
+}
+
+sw_tgdgb_m40_lv_vehicle_sound{
+  _use:t="en_truck_vehicle_sound"
+  _use:t="truck_vehicle_inside_sound_for_driver"
+}
+
+ussr_gaz_4m_vehicle_sound{
+  _use:t="en_truck_vehicle_sound"
+  _use:t="truck_vehicle_inside_sound"
+}
+
+ussr_gaz_dshk_vehicle_sound{
+  _use:t="en_truck_vehicle_sound"
+  _use:t="truck_vehicle_inside_sound"
+}
+
+germ_e100_vehicle_sound{
+  _use:t="en_tank_vehicle_sound"
+  _use:t="tank_panzer3_engine_sound_setup"
+  _use:t="tank_maus_vehicle_tracks_sound_setup"
+  _use:t="tank_vehicle_inside_sound"
+}
+
+ussr_object_279_common_vehicle_sound{
+  _use:t="en_tank_vehicle_sound"
+  _use:t="tank_t34_engine_sound_setup"
+  _use:t="tank_heavy_vehicle_tracks_sound_setup"
+  _use:t="tank_vehicle_inside_sound"
+}
+
+us_m1a1_hc_abrams_vehicle_sound{
+  _use:t="en_tank_vehicle_sound"
+  _use:t="tank_abrams_vehicle_tracks_sound_setup"
+  _use:t="tank_vehicle_inside_sound"
+}
+
+us_t54e1_vehicle_sound{
+  _use:t="en_tank_vehicle_sound"
+  _use:t="tank_vehicle_inside_sound"
+}
+
+us_t95_vehicle_sound{
+  _use:t="en_tank_vehicle_sound"
+  _use:t="tank_heavy_vehicle_tracks_sound_setup"
+  _use:t="tank_vehicle_inside_sound"
+}
+
+ussr_t_80u_vehicle_sound{
+  _use:t="en_tank_vehicle_sound"
+  _use:t="tank_t34_engine_sound_setup"
+  _use:t="tank_mbt_vehicle_tracks_sound_setup"
+  _use:t="tank_vehicle_inside_sound"
+}
+
+germ_pzkpfw_v_ersatz_m10_common_vehicle_sound{
+  _use:t="en_tank_vehicle_sound"
+  _use:t="tank_panzer3_engine_sound_setup"
+  _use:t="tank_heavy_vehicle_tracks_sound_setup"
+  _use:t="tank_vehicle_inside_sound"
+}
+
+germ_pzkpfw_vi_ausf_h1_tiger_common_vehicle_sound{
+  _use:t="en_tank_vehicle_sound"
+  _use:t="tank_panzer3_engine_sound_setup"
+  _use:t="tank_tiger_vehicle_tracks_sound_setup"
+  _use:t="tank_vehicle_inside_sound"
+}
+
+jp_type_4_chi_to_common_vehicle_sound{
+  _use:t="en_tank_vehicle_sound"
+  _use:t="tank_m10_engine_sound_setup"
+  _use:t="tank_vehicle_inside_sound"
+}
+
+uk_m10_achilles_common_vehicle_sound{
+  _use:t="en_tank_vehicle_sound"
+  _use:t="tank_m10_engine_sound_setup"
+  _use:t="tank_heavy_vehicle_tracks_sound_setup"
+  _use:t="tank_vehicle_inside_sound"
+}
+
+us_m26_pershing_common_vehicle_sound{
+  _use:t="en_tank_vehicle_sound"
+  _use:t="tank_heavy_vehicle_tracks_sound_setup"
+  _use:t="tank_vehicle_inside_sound"
+}
+
+us_m4a3e2_76w_sherman_jumbo_common_vehicle_sound{
+  _use:t="en_tank_vehicle_sound"
+  _use:t="tank_heavy_vehicle_tracks_sound_setup"
+  _use:t="tank_vehicle_inside_sound"
+}
+
+ussr_kv_1_zis_5_common_vehicle_sound{
+  _use:t="en_tank_vehicle_sound"
+  _use:t="tank_t34_engine_sound_setup"
+  _use:t="tank_heavy_vehicle_tracks_sound_setup"
+  _use:t="tank_vehicle_inside_sound"
+}
+
+ussr_kv_2_1939_vehicle_sound{
+  _use:t="en_tank_vehicle_sound"
+  _use:t="tank_t34_engine_sound_setup"
+  _use:t="tank_heavy_vehicle_tracks_sound_setup"
+  _use:t="tank_vehicle_inside_sound"
+}
+
+it_as_42_metropolitana_vehicle_sound{
+  _use:t="en_tank_vehicle_sound"
+  _use:t="tank_with_wheels_vehicle_tracks_sound_setup"
+}
+
+germ_dickermax_common_vehicle_sound{
+  _use:t="en_tank_vehicle_sound"
+  _use:t="tank_panzer3_engine_sound_setup"
+  _use:t="tank_vehicle_inside_sound"
+}
+
+germ_flak_36_sdkfz_6_2_vehicle_sound{
+  _use:t="en_tank_vehicle_sound"
+  _use:t="tank_panzer3_engine_sound_setup"
+  _use:t="tank_light_vehicle_tracks_sound_setup"
+  _use:t="turret_manual_sound_with_group"
+  _use:t="tank_vehicle_inside_sound"
+}
+
+germ_flakpanzer_i_ausf_a_common_vehicle_sound{
+  _use:t="en_tank_vehicle_sound"
+  _use:t="tank_panzer3_engine_sound_setup"
+  _use:t="tank_light_vehicle_tracks_sound_setup"
+  _use:t="tank_vehicle_inside_sound_for_driver"
+  _use:t="turret_manual_sound_with_group"
+}
+
+germ_flakpanzer_IV_Wirbelwind_vehicle_sound{
+  _use:t="en_tank_vehicle_sound"
+  _use:t="tank_panzer3_engine_sound_setup"
+  _use:t="turret_manual_sound_with_group"
+  _use:t="tank_vehicle_inside_sound"
+}
+
+germ_jagdpanther_common_vehicle_sound{
+  _use:t="en_tank_vehicle_sound"
+  _use:t="tank_panzer3_engine_sound_setup"
+  _use:t="tank_vehicle_inside_sound"
+}
+
+germ_jgdpz_38t_common_vehicle_sound{
+  _use:t="en_tank_vehicle_sound"
+  _use:t="tank_panzer3_engine_sound_setup"
+  _use:t="tank_light_vehicle_tracks_sound_setup"
+  _use:t="tank_vehicle_inside_sound"
+}
+
+germ_panzerbefelhswagen_IV_ausf_J_common_vehicle_sound{
+  _use:t="en_tank_vehicle_sound"
+  _use:t="tank_panzer3_engine_sound_setup"
+  _use:t="tank_vehicle_inside_sound"
+}
+
+germ_panzerjager_IV_L_48_common_vehicle_sound{
+  _use:t="en_tank_vehicle_sound"
+  _use:t="tank_panzer3_engine_sound_setup"
+  _use:t="tank_vehicle_inside_sound"
+}
+
+germ_panzerjager_IV_L_70_common_vehicle_sound{
+  _use:t="en_tank_vehicle_sound"
+  _use:t="tank_panzer3_engine_sound_setup"
+  _use:t="tank_vehicle_inside_sound"
+}
+
+germ_panzerjager_IV_L_70_A_common_vehicle_sound{
+  _use:t="en_tank_vehicle_sound"
+  _use:t="tank_panzer3_engine_sound_setup"
+  _use:t="tank_vehicle_inside_sound"
+}
+
+germ_panzerjager_tiger_vehicle_sound{
+  _use:t="en_tank_vehicle_sound"
+  _use:t="tank_panzer3_engine_sound_setup"
+  _use:t="tank_tiger_vehicle_tracks_sound_setup"
+  _use:t="tank_vehicle_inside_sound"
+}
+
+germ_panzerwerfer_42_common_vehicle_sound{
+  _use:t="en_tank_vehicle_sound"
+  _use:t="tank_panzer3_engine_sound_setup"
+  _use:t="tank_vehicle_inside_sound"
+}
+
+germ_pzkpfw_38t_ausf_F_vehicle_sound{
+  _use:t="en_tank_vehicle_sound"
+  _use:t="tank_panzer3_engine_sound_setup"
+  _use:t="tank_light_vehicle_tracks_sound_setup"
+  _use:t="tank_vehicle_inside_sound"
+}
+
+germ_pzkpfw_38t_Marder_III_vehicle_sound{
+  _use:t="en_tank_vehicle_sound"
+  _use:t="tank_panzer3_engine_sound_setup"
+  _use:t="tank_light_vehicle_tracks_sound_setup"
+  _use:t="tank_vehicle_inside_sound"
+}
+
+germ_pzkpfw_II_ausf_C_common_vehicle_sound{
+  _use:t="en_tank_vehicle_sound"
+  _use:t="tank_panzer3_engine_sound_setup"
+  _use:t="tank_light_vehicle_tracks_sound_setup"
+  _use:t="tank_vehicle_inside_sound"
+}
+
+germ_pzkpfw_ii_ausf_h_vehicle_sound{
+  _use:t="en_tank_vehicle_sound"
+  _use:t="tank_panzer3_engine_sound_setup"
+  _use:t="tank_light_vehicle_tracks_sound_setup"
+  _use:t="tank_vehicle_inside_sound"
+}
+
+germ_pzkpfw_ii_flamm_common_vehicle_sound{
+  _use:t="en_tank_vehicle_sound"
+  _use:t="tank_panzer3_engine_sound_setup"
+  _use:t="tank_vehicle_inside_sound"
+
+  _group{
+    _tags:t="sound"
+
+    "vehicle_engine_sound__path:shared:object"{
+      watched:t="player/vehicle/tank/panzer3/engine"
+      other:t="enemy/vehicle/tank/panzer3/engine"
+    }
+
+    "vehicle_engine_sound__startPath:shared:object"{
+      watched:t="player/vehicle/tank/panzer3/engine_start"
+      other:t="enemy/vehicle/tank/panzer3/engine_start"
+    }
+
+    "vehicle_engine_sound__stopPath:shared:object"{
+      watched:t="player/vehicle/tank/panzer3/engine_stop"
+      other:t="enemy/vehicle/tank/panzer3/engine_stop"
+    }
+  }
+}
+
+germ_pzkpfw_III_ausf_B_common_vehicle_sound{
+  _use:t="en_tank_vehicle_sound"
+  _use:t="tank_panzer3_engine_sound_setup"
+  _use:t="tank_vehicle_inside_sound"
+}
+
+germ_pzkpfw_III_ausf_E_common_vehicle_sound{
+  _use:t="en_tank_vehicle_sound"
+  _use:t="tank_panzer3_engine_sound_setup"
+  _use:t="tank_vehicle_inside_sound"
+}
+
+germ_pzkpfw_III_ausf_F_vehicle_sound{
+  _use:t="en_tank_vehicle_sound"
+  _use:t="tank_panzer3_engine_sound_setup"
+  _use:t="tank_vehicle_inside_sound"
+}
+
+germ_pzkpfw_III_ausf_J_common_vehicle_sound{
+  _use:t="en_tank_vehicle_sound"
+  _use:t="tank_panzer3_engine_sound_setup"
+  _use:t="tank_vehicle_inside_sound"
+}
+
+germ_pzkpfw_iii_ausf_j1_common_vehicle_sound{
+  _use:t="en_tank_vehicle_sound"
+  _use:t="tank_panzer3_engine_sound_setup"
+  _use:t="tank_vehicle_inside_sound"
+}
+
+germ_pzkpfw_III_ausf_L_vehicle_sound{
+  _use:t="en_tank_vehicle_sound"
+  _use:t="tank_panzer3_engine_sound_setup"
+  _use:t="tank_vehicle_inside_sound"
+}
+
+germ_pzkpfw_III_ausf_M_vehicle_sound{
+  _use:t="en_tank_vehicle_sound"
+  _use:t="tank_panzer3_engine_sound_setup"
+  _use:t="tank_vehicle_inside_sound"
+}
+
+germ_pzkpfw_III_ausf_N_common_vehicle_sound{
+  _use:t="en_tank_vehicle_sound"
+  _use:t="tank_panzer3_engine_sound_setup"
+  _use:t="tank_vehicle_inside_sound"
+}
+
+germ_pzkpfw_IV_ausf_C_vehicle_sound{
+  _use:t="en_tank_vehicle_sound"
+  _use:t="tank_panzer3_engine_sound_setup"
+  _use:t="tank_vehicle_inside_sound"
+}
+
+germ_pzkpfw_IV_ausf_E_common_vehicle_sound{
+  _use:t="en_tank_vehicle_sound"
+  _use:t="tank_panzer3_engine_sound_setup"
+  _use:t="tank_vehicle_inside_sound"
+}
+
+germ_pzkpfw_IV_ausf_F_common_vehicle_sound{
+  _use:t="en_tank_vehicle_sound"
+  _use:t="tank_panzer3_engine_sound_setup"
+  _use:t="tank_vehicle_inside_sound"
+}
+
+germ_pzkpfw_iv_ausf_f2_common_vehicle_sound{
+  _use:t="en_tank_vehicle_sound"
+  _use:t="tank_panzer3_engine_sound_setup"
+  _use:t="tank_vehicle_inside_sound"
+}
+
+germ_pzkpfw_iv_ausf_g_common_vehicle_sound{
+  _use:t="en_tank_vehicle_sound"
+  _use:t="tank_panzer3_engine_sound_setup"
+  _use:t="tank_vehicle_inside_sound"
+}
+
+germ_pzkpfw_IV_ausf_H_common_vehicle_sound{
+  _use:t="en_tank_vehicle_sound"
+  _use:t="tank_panzer3_engine_sound_setup"
+  _use:t="tank_vehicle_inside_sound"
+}
+
+germ_pzkpfw_IV_ausf_J_common_vehicle_sound{
+  _use:t="en_tank_vehicle_sound"
+  _use:t="tank_panzer3_engine_sound_setup"
+  _use:t="tank_vehicle_inside_sound"
+}
+
+germ_pzkpfw_V_ausf_a_panther_no_camo_vehicle_sound{
+  _use:t="en_tank_vehicle_sound"
+  _use:t="tank_panzer3_engine_sound_setup"
+  _use:t="tank_heavy_vehicle_tracks_sound_setup"
+  _use:t="tank_vehicle_inside_sound"
+}
+
+germ_pzkpfw_V_ausf_f_panther_premium_vehicle_sound{
+  _use:t="en_tank_vehicle_sound"
+  _use:t="tank_vehicle_inside_sound"
+}
+
+germ_pzkpfw_V_ausf_g_panther_common_vehicle_sound{
+  _use:t="en_tank_vehicle_sound"
+  _use:t="tank_panzer3_engine_sound_setup"
+  _use:t="tank_heavy_vehicle_tracks_sound_setup"
+  _use:t="tank_vehicle_inside_sound"
+}
+
+germ_pzkpfw_vi_ausf_b_tiger_iih_common_vehicle_sound{
+  _use:t="en_tank_vehicle_sound"
+  _use:t="tank_panzer3_engine_sound_setup"
+  _use:t="tank_tiger_vehicle_tracks_sound_setup"
+  _use:t="tank_vehicle_inside_sound"
+}
+
+germ_pzkpfw_VI_ausf_B_tiger_IIP_common_vehicle_sound{
+  _use:t="en_tank_vehicle_sound"
+  _use:t="tank_panzer3_engine_sound_setup"
+  _use:t="tank_tiger_vehicle_tracks_sound_setup"
+  _use:t="tank_vehicle_inside_sound"
+}
+
+germ_pzkpfw_VI_ausf_E_tiger_common_vehicle_sound{
+  _use:t="en_tank_vehicle_sound"
+  _use:t="tank_panzer3_engine_sound_setup"
+  _use:t="tank_tiger_vehicle_tracks_sound_setup"
+  _use:t="tank_vehicle_inside_sound"
+}
+
+germ_sdkfz_234_2_common_vehicle_sound{
+  _use:t="en_tank_vehicle_sound"
+  _use:t="tank_panzer3_engine_sound_setup"
+  _use:t="tank_with_wheels_vehicle_tracks_sound_setup"
+  _use:t="tank_vehicle_inside_sound"
+}
+
+germ_stug_III_ausf_A_vehicle_sound{
+  _use:t="en_tank_vehicle_sound"
+  _use:t="tank_panzer3_engine_sound_setup"
+  _use:t="tank_vehicle_inside_sound"
+}
+
+germ_stug_iii_ausf_f_common_vehicle_sound{
+  _use:t="en_tank_vehicle_sound"
+  _use:t="tank_panzer3_engine_sound_setup"
+  _use:t="tank_vehicle_inside_sound"
+}
+
+germ_stug_III_ausf_G_common_vehicle_sound{
+  _use:t="en_tank_vehicle_sound"
+  _use:t="tank_panzer3_engine_sound_setup"
+  _use:t="tank_vehicle_inside_sound"
+}
+
+germ_stuh_iii_ausf_g_common_vehicle_sound{
+  _use:t="en_tank_vehicle_sound"
+  _use:t="tank_panzer3_engine_sound_setup"
+  _use:t="tank_vehicle_inside_sound"
+}
+
+germ_sturmpanzer_ii_vehicle_sound{
+  _use:t="en_tank_vehicle_sound"
+  _use:t="tank_panzer3_engine_sound_setup"
+  _use:t="tank_light_vehicle_tracks_sound_setup"
+}
+
+it_ab_41_common_vehicle_sound{
+  _use:t="en_tank_vehicle_sound"
+  _use:t="tank_panzer3_engine_sound_setup"
+  _use:t="tank_with_wheels_vehicle_tracks_sound_setup"
+  _use:t="tank_vehicle_inside_sound"
+}
+
+it_m13_40_serie_3_common_vehicle_sound{
+  _use:t="en_tank_vehicle_sound"
+  _use:t="tank_vehicle_inside_sound"
+}
+
+it_m14_41_common_vehicle_sound{
+  _use:t="en_tank_vehicle_sound"
+  _use:t="tank_vehicle_inside_sound"
+}
+
+it_m41_75_18_vehicle_sound{
+  _use:t="en_tank_vehicle_sound"
+  _use:t="tank_vehicle_inside_sound"
+}
+
+it_m41_75_32_common_vehicle_sound{
+  _use:t="en_tank_vehicle_sound"
+  _use:t="tank_vehicle_inside_sound"
+}
+
+jp_type_1_chi_he_common_vehicle_sound{
+  _use:t="en_tank_vehicle_sound"
+  _use:t="tank_m10_engine_sound_setup"
+  _use:t="tank_vehicle_inside_sound"
+}
+
+jp_type_2_ho_i_common_vehicle_sound{
+  _use:t="en_tank_vehicle_sound"
+  _use:t="tank_m10_engine_sound_setup"
+  _use:t="tank_vehicle_inside_sound"
+}
+
+jp_type_2_ka_mi_common_vehicle_sound{
+  _use:t="en_tank_vehicle_sound"
+  _use:t="tank_m10_engine_sound_setup"
+  _use:t="tank_light_vehicle_tracks_sound_setup"
+  _use:t="tank_vehicle_inside_sound"
+}
+
+jp_type_3_chi_nu_common_vehicle_sound{
+  _use:t="en_tank_vehicle_sound"
+  _use:t="tank_m10_engine_sound_setup"
+  _use:t="tank_vehicle_inside_sound"
+}
+
+jp_type_3_ho_ni_3_common_vehicle_sound{
+  _use:t="en_tank_vehicle_sound"
+  _use:t="tank_m10_engine_sound_setup"
+  _use:t="tank_light_vehicle_tracks_sound_setup"
+  _use:t="tank_vehicle_inside_sound"
+}
+
+jp_type_3_ho_ni_i_common_vehicle_sound{
+  _use:t="en_tank_vehicle_sound"
+  _use:t="tank_m10_engine_sound_setup"
+  _use:t="tank_light_vehicle_tracks_sound_setup"
+  _use:t="tank_vehicle_inside_sound"
+}
+
+jp_type_3_ka_chi_common_vehicle_sound{
+  _use:t="en_tank_vehicle_sound"
+  _use:t="tank_m10_engine_sound_setup"
+  _use:t="tank_vehicle_inside_sound"
+}
+
+jp_type_5_na_to_common_vehicle_sound{
+  _use:t="en_tank_vehicle_sound"
+  _use:t="tank_m10_engine_sound_setup"
+  _use:t="tank_light_vehicle_tracks_sound_setup"
+  _use:t="tank_vehicle_inside_sound"
+}
+
+jp_type_95_ha_go_common_vehicle_sound{
+  _use:t="en_tank_vehicle_sound"
+  _use:t="tank_m10_engine_sound_setup"
+  _use:t="tank_light_vehicle_tracks_sound_setup"
+  _use:t="tank_vehicle_inside_sound"
+}
+
+jp_type_97_chi_ha_common_vehicle_sound{
+  _use:t="en_tank_vehicle_sound"
+  _use:t="tank_m10_engine_sound_setup"
+  _use:t="tank_light_vehicle_tracks_sound_setup"
+  _use:t="tank_vehicle_inside_sound"
+}
+
+jp_type_97_chi_ha_12cm_common_vehicle_sound{
+  _use:t="en_tank_vehicle_sound"
+  _use:t="tank_m10_engine_sound_setup"
+  _use:t="tank_light_vehicle_tracks_sound_setup"
+  _use:t="tank_vehicle_inside_sound"
+}
+
+jp_type_97_kai_common_vehicle_sound{
+  _use:t="en_tank_vehicle_sound"
+  _use:t="tank_m10_engine_sound_setup"
+  _use:t="tank_light_vehicle_tracks_sound_setup"
+  _use:t="tank_vehicle_inside_sound"
+}
+
+jp_type_98_ke_ni_common_vehicle_sound{
+  _use:t="en_tank_vehicle_sound"
+  _use:t="tank_m10_engine_sound_setup"
+  _use:t="tank_light_vehicle_tracks_sound_setup"
+  _use:t="tank_vehicle_inside_sound"
+}
+
+jp_type_98_ta_se_common_vehicle_sound{
+  _use:t="en_tank_vehicle_sound"
+  _use:t="tank_m10_engine_sound_setup"
+  _use:t="tank_light_vehicle_tracks_sound_setup"
+  _use:t="tank_vehicle_inside_sound"
+}
+
+uk_a13_mk_2_1938_common_vehicle_sound{
+  _use:t="en_tank_vehicle_sound"
+  _use:t="tank_vehicle_inside_sound"
+}
+
+uk_a13_mk_2_1939_common_vehicle_sound{
+  _use:t="en_tank_vehicle_sound"
+  _use:t="tank_vehicle_inside_sound"
+}
+
+uk_ac1_sentinel_common_vehicle_sound{
+  _use:t="en_tank_vehicle_sound"
+  _use:t="tank_vehicle_inside_sound"
+}
+
+uk_aec_mk_2_57mm_6pdr_common_vehicle_sound{
+  _use:t="en_tank_vehicle_sound"
+  _use:t="tank_with_wheels_vehicle_tracks_sound_setup"
+  _use:t="tank_vehicle_inside_sound"
+}
+
+uk_churchill_3_common_vehicle_sound{
+  _use:t="en_tank_vehicle_sound"
+  _use:t="tank_vehicle_inside_sound"
+}
+
+uk_cromwell_5_vehicle_sound{
+  _use:t="en_tank_vehicle_sound"
+  _use:t="tank_vehicle_inside_sound"
+}
+
+uk_crusader_mk_3_common_vehicle_sound{
+  _use:t="en_tank_vehicle_sound"
+  _use:t="tank_vehicle_inside_sound"
+}
+
+uk_daimler_mk_2_common_vehicle_sound{
+  _use:t="en_tank_vehicle_sound"
+  _use:t="tank_with_wheels_vehicle_tracks_sound_setup"
+  _use:t="tank_vehicle_inside_sound"
+}
+
+uk_mk_1_grant_common_vehicle_sound{
+  _use:t="en_tank_vehicle_sound"
+  _use:t="tank_vehicle_inside_sound"
+}
+
+uk_sherman_ic_firefly_common_vehicle_sound{
+  _use:t="en_tank_vehicle_sound"
+  _use:t="tank_vehicle_inside_sound"
+}
+
+uk_sherman_ii_common_vehicle_sound{
+  _use:t="en_tank_vehicle_sound"
+  _use:t="tank_vehicle_inside_sound"
+}
+
+us_halftrack_m13_common_vehicle_sound{
+  _use:t="en_tank_vehicle_sound"
+  _use:t="tank_light_vehicle_tracks_sound_setup"
+  _use:t="tank_vehicle_inside_sound_for_driver"
+  _use:t="turret_manual_sound_with_group"
+}
+
+us_halftrack_m3_75mm_gmc_common_vehicle_sound{
+  _use:t="en_tank_vehicle_sound"
+  _use:t="tank_light_vehicle_tracks_sound_setup"
+}
+
+us_lvt_a_1_common_vehicle_sound{
+  _use:t="en_tank_vehicle_sound"
+  _use:t="tank_light_vehicle_tracks_sound_setup"
+  _use:t="tank_vehicle_inside_sound"
+}
+
+us_lvt_a_4_common_vehicle_sound{
+  _use:t="en_tank_vehicle_sound"
+  _use:t="tank_light_vehicle_tracks_sound_setup"
+  _use:t="tank_vehicle_inside_sound"
+}
+
+us_m10_wolverine_common_vehicle_sound{
+  _use:t="en_tank_vehicle_sound"
+  _use:t="tank_m10_engine_sound_setup"
+  _use:t="tank_heavy_vehicle_tracks_sound_setup"
+  _use:t="tank_vehicle_inside_sound"
+}
+
+us_m18_hellcat_common_vehicle_sound{
+  _use:t="en_tank_vehicle_sound"
+  _use:t="tank_m10_engine_sound_setup"
+  _use:t="tank_heavy_vehicle_tracks_sound_setup"
+  _use:t="tank_vehicle_inside_sound"
+}
+
+us_m24_chaffee_vehicle_sound{
+  _use:t="en_tank_vehicle_sound"
+  _use:t="tank_light_vehicle_tracks_sound_setup"
+  _use:t="tank_vehicle_inside_sound"
+}
+
+us_m2a4_common_vehicle_sound{
+  _use:t="en_tank_vehicle_sound"
+  _use:t="tank_light_vehicle_tracks_sound_setup"
+  _use:t="tank_vehicle_inside_sound"
+}
+
+us_m3_lee_common_vehicle_sound{
+  _use:t="en_tank_vehicle_sound"
+  _use:t="tank_vehicle_inside_sound"
+}
+
+us_m3a1_stuart_common_vehicle_sound{
+  _use:t="en_tank_vehicle_sound"
+  _use:t="tank_light_vehicle_tracks_sound_setup"
+}
+
+us_m3a1_stuart_flame_common_vehicle_sound{
+  _use:t="en_tank_vehicle_sound"
+  _use:t="tank_vehicle_inside_sound"
+}
+
+us_m4_sherman_calliope_common_vehicle_sound{
+  _use:t="en_tank_vehicle_sound"
+  _use:t="tank_vehicle_inside_sound"
+}
+
+us_m4a1_76w_sherman_common_vehicle_sound{
+  _use:t="en_tank_vehicle_sound"
+  _use:t="tank_vehicle_inside_sound"
+}
+
+us_m4a1_sherman_1942_common_vehicle_sound{
+  _use:t="en_tank_vehicle_sound"
+  _use:t="tank_vehicle_inside_sound"
+}
+
+us_m4a2_76w_sherman_common_vehicle_sound{
+  _use:t="en_tank_vehicle_sound"
+  _use:t="tank_vehicle_inside_sound"
+}
+
+us_m4a2_sherman_1944_common_vehicle_sound{
+  _use:t="en_tank_vehicle_sound"
+  _use:t="tank_vehicle_inside_sound"
+}
+
+us_m4a3_105_sherman_common_vehicle_sound{
+  _use:t="en_tank_vehicle_sound"
+  _use:t="tank_vehicle_inside_sound"
+}
+
+us_m4a3e2_sherman_jumbo_common_vehicle_sound{
+  _use:t="en_tank_vehicle_sound"
+  _use:t="tank_heavy_vehicle_tracks_sound_setup"
+  _use:t="tank_vehicle_inside_sound"
+}
+
+us_m5a1_stuart_late_common_vehicle_sound{
+  _use:t="en_tank_vehicle_sound"
+  _use:t="tank_light_vehicle_tracks_sound_setup"
+  _use:t="tank_vehicle_inside_sound"
+}
+
+us_m8_greyhound_common_vehicle_sound{
+  _use:t="en_tank_vehicle_sound"
+  _use:t="tank_with_wheels_vehicle_tracks_sound_setup"
+  _use:t="tank_vehicle_inside_sound"
+}
+
+us_m8_scott_common_vehicle_sound{
+  _use:t="en_tank_vehicle_sound"
+  _use:t="tank_light_vehicle_tracks_sound_setup"
+  _use:t="tank_vehicle_inside_sound"
+}
+
+ussr_ba_11_common_vehicle_sound{
+  _use:t="en_tank_vehicle_sound"
+  _use:t="tank_with_wheels_vehicle_tracks_sound_setup"
+  _use:t="tank_vehicle_inside_sound"
+}
+
+ussr_bm_8_24_common_vehicle_sound{
+  _use:t="en_tank_vehicle_sound"
+  _use:t="tank_vehicle_inside_sound"
+}
+
+ussr_bt_7_1937_common_vehicle_sound{
+  _use:t="en_tank_vehicle_sound"
+  _use:t="tank_t34_engine_sound_setup"
+  _use:t="tank_light_vehicle_tracks_sound_setup"
+  _use:t="tank_vehicle_inside_sound"
+}
+
+ussr_bt_7a_f32_common_vehicle_sound{
+  _use:t="en_tank_vehicle_sound"
+  _use:t="tank_t34_engine_sound_setup"
+  _use:t="tank_light_vehicle_tracks_sound_setup"
+  _use:t="tank_vehicle_inside_sound"
+}
+
+ussr_ht_130_vehicle_sound{
+  _use:t="en_tank_vehicle_sound"
+  _use:t="tank_vehicle_inside_sound"
+}
+
+ussr_is_1_common_vehicle_sound{
+  _use:t="en_tank_vehicle_sound"
+  _use:t="tank_t34_engine_sound_setup"
+  _use:t="tank_heavy_vehicle_tracks_sound_setup"
+  _use:t="tank_vehicle_inside_sound"
+}
+
+ussr_is_2_1943_common_vehicle_sound{
+  _use:t="en_tank_vehicle_sound"
+  _use:t="tank_t34_engine_sound_setup"
+  _use:t="tank_heavy_vehicle_tracks_sound_setup"
+  _use:t="tank_vehicle_inside_sound"
+}
+
+ussr_is_2_1944_common_vehicle_sound{
+  _use:t="en_tank_vehicle_sound"
+  _use:t="tank_t34_engine_sound_setup"
+  _use:t="tank_heavy_vehicle_tracks_sound_setup"
+  _use:t="tank_vehicle_inside_sound"
+}
+
+ussr_isu_152_vehicle_sound{
+  _use:t="en_tank_vehicle_sound"
+  _use:t="tank_t34_engine_sound_setup"
+  _use:t="tank_heavy_vehicle_tracks_sound_setup"
+  _use:t="tank_vehicle_inside_sound"
+}
+
+ussr_kv_1_L_11_common_vehicle_sound{
+  _use:t="en_tank_vehicle_sound"
+  _use:t="tank_t34_engine_sound_setup"
+  _use:t="tank_heavy_vehicle_tracks_sound_setup"
+  _use:t="tank_vehicle_inside_sound"
+}
+
+ussr_matilda_III_vehicle_sound{
+  _use:t="en_tank_vehicle_sound"
+  _use:t="tank_vehicle_inside_sound"
+}
+
+ussr_su_100_common_vehicle_sound{
+  _use:t="en_tank_vehicle_sound"
+  _use:t="tank_t34_engine_sound_setup"
+  _use:t="tank_su100_vehicle_tracks_sound_setup"
+  _use:t="tank_vehicle_inside_sound"
+}
+
+ussr_su_76m_common_vehicle_sound{
+  _use:t="en_tank_vehicle_sound"
+  _use:t="tank_t34_engine_sound_setup"
+  _use:t="tank_su76_vehicle_tracks_sound_setup"
+  _use:t="tank_vehicle_inside_sound"
+}
+
+ussr_su_85m_common_vehicle_sound{
+  _use:t="en_tank_vehicle_sound"
+  _use:t="tank_t34_engine_sound_setup"
+  _use:t="tank_su100_vehicle_tracks_sound_setup"
+  _use:t="tank_vehicle_inside_sound"
+}
+
+ussr_t_26_1940_common_vehicle_sound{
+  _use:t="en_tank_vehicle_sound"
+  _use:t="tank_t34_engine_sound_setup"
+  _use:t="tank_light_vehicle_tracks_sound_setup"
+  _use:t="tank_vehicle_inside_sound"
+}
+
+ussr_t_28_common_vehicle_sound{
+  _use:t="en_tank_vehicle_sound"
+  _use:t="tank_t34_engine_sound_setup"
+  _use:t="tank_vehicle_inside_sound"
+}
+
+ussr_t_28e_common_vehicle_sound{
+  _use:t="en_tank_vehicle_sound"
+  _use:t="tank_t34_engine_sound_setup"
+  _use:t="tank_vehicle_inside_sound"
+}
+
+ussr_t_34_1940_L_11_vehicle_sound{
+  _use:t="en_tank_vehicle_sound"
+  _use:t="tank_t34_engine_sound_setup"
+  _use:t="tank_t34_vehicle_tracks_sound_setup"
+  _use:t="tank_vehicle_inside_sound"
+}
+
+ussr_t_34_1941_common_vehicle_sound{
+  _use:t="en_tank_vehicle_sound"
+  _use:t="tank_t34_engine_sound_setup"
+  _use:t="tank_t34_vehicle_tracks_sound_setup"
+  _use:t="tank_vehicle_inside_sound"
+}
+
+ussr_t_34_57_1943_vehicle_sound{
+  _use:t="en_tank_vehicle_sound"
+  _use:t="tank_t34_engine_sound_setup"
+  _use:t="tank_t34_vehicle_tracks_sound_setup"
+  _use:t="tank_vehicle_inside_sound"
+}
+
+ussr_t_34_85_d_5t_vehicle_sound{
+  _use:t="en_tank_vehicle_sound"
+  _use:t="tank_t34_engine_sound_setup"
+  _use:t="tank_t34_vehicle_tracks_sound_setup"
+  _use:t="tank_vehicle_inside_sound"
+}
+
+ussr_t_34_85_e_vehicle_sound{
+  _use:t="en_tank_vehicle_sound"
+  _use:t="tank_t34_engine_sound_setup"
+  _use:t="tank_t34_vehicle_tracks_sound_setup"
+  _use:t="tank_vehicle_inside_sound"
+}
+
+ussr_t_34_85_zis_53_vehicle_sound{
+  _use:t="en_tank_vehicle_sound"
+  _use:t="tank_t34_engine_sound_setup"
+  _use:t="tank_t34_vehicle_tracks_sound_setup"
+  _use:t="tank_vehicle_inside_sound"
+}
+
+ussr_t_34e_stz_common_vehicle_sound{
+  _use:t="en_tank_vehicle_sound"
+  _use:t="tank_t34_engine_sound_setup"
+  _use:t="tank_t34_vehicle_tracks_sound_setup"
+  _use:t="tank_vehicle_inside_sound"
+}
+
+ussr_t_50_common_vehicle_sound{
+  _use:t="en_tank_vehicle_sound"
+  _use:t="tank_t34_engine_sound_setup"
+  _use:t="tank_light_vehicle_tracks_sound_setup"
+  _use:t="tank_vehicle_inside_sound"
+}
+
+ussr_t_60_1941_common_vehicle_sound{
+  _use:t="en_tank_vehicle_sound"
+  _use:t="tank_t34_engine_sound_setup"
+  _use:t="tank_su76_vehicle_tracks_sound_setup"
+  _use:t="tank_vehicle_inside_sound"
+}
+
+ussr_t_70_common_vehicle_sound{
+  _use:t="en_tank_vehicle_sound"
+  _use:t="tank_t34_engine_sound_setup"
+  _use:t="tank_su76_vehicle_tracks_sound_setup"
+  _use:t="tank_vehicle_inside_sound"
+}
+
+ussr_valentine_I_vehicle_sound{
+  _use:t="en_tank_vehicle_sound"
+  _use:t="tank_vehicle_inside_sound"
+}
+
+ussr_zis_30_vehicle_sound{
+  _use:t="en_tank_vehicle_sound"
+  _use:t="tank_t34_engine_sound_setup"
+  _use:t="tank_light_vehicle_tracks_sound_setup"
+  _use:t="turret_manual_sound_with_group"
+  _use:t="tank_vehicle_inside_sound"
+}
+
+germ_a7v_common_vehicle_sound{
+  _use:t="en_tank_vehicle_sound"
+  _use:t="tank_germ_a7v_engine_sound_setup"
+  _use:t="tank_germ_a7v_vehicle_tracks_sound_setup"
+  _use:t="tank_germ_a7v_turret_sound_with_group"
+  _use:t="tank_vehicle_inside_sound"
+}
+
+fr_saint_chamond_common_vehicle_sound{
+  _use:t="en_tank_vehicle_sound"
+  _use:t="tank_uk_mark_v_engine_sound_setup"
+  _use:t="tank_germ_a7v_vehicle_tracks_sound_setup"
+  _use:t="tank_uk_mark_v_turret_sound_with_group"
+  _use:t="tank_vehicle_inside_sound"
+}
+
+uk_mark_v_common_vehicle_sound{
+  _use:t="en_tank_vehicle_sound"
+  _use:t="tank_uk_mark_v_engine_sound_setup"
+  _use:t="tank_uk_mark_v_vehicle_tracks_sound_setup"
+  _use:t="tank_uk_mark_v_turret_sound_with_group"
+  _use:t="tank_vehicle_inside_sound"
+}
+
+germ_beutepanzer_mk_iv_common_vehicle_sound{
+  _use:t="en_tank_vehicle_sound"
+  _use:t="tank_germ_a7v_engine_sound_setup"
+  _use:t="tank_uk_mark_v_vehicle_tracks_sound_setup"
+  _use:t="tank_germ_a7v_turret_sound_with_group"
+  _use:t="tank_vehicle_inside_sound"
+}
+
+jp_type_5_chi_ri_common_vehicle_sound{
+  _use:t="en_tank_vehicle_sound"
+  _use:t="tank_m10_engine_sound_setup"
+  _use:t="tank_vehicle_inside_sound"
+}
+
+jp_type_5_ho_ri_production_common_vehicle_sound{
+  _use:t="en_tank_vehicle_sound"
+  _use:t="tank_m10_engine_sound_setup"
+  _use:t="tank_vehicle_inside_sound"
+}
+
+jp_type_5_ho_ri_prototype_common_vehicle_sound{
+  _use:t="en_tank_vehicle_sound"
+  _use:t="tank_m10_engine_sound_setup"
+  _use:t="tank_vehicle_inside_sound"
+}
+
+jp_type_94_isuzu_apc_common_vehicle_sound{
+  _use:t="en_apc_with_wheels_vehicle_sound"
+  _use:t="truck_vehicle_inside_sound_for_driver_passenger1"
+}
+
+us_studebaker_us6_u1_board_apc_common_vehicle_sound{
+  _use:t="en_apc_with_wheels_vehicle_sound"
+  _use:t="truck_vehicle_inside_sound_for_driver_passenger1"
+}
+
+ussr_gaz_aaa_apc_common_vehicle_sound{
+  _use:t="en_apc_with_wheels_vehicle_sound"
+  _use:t="truck_vehicle_inside_sound_for_driver_passenger1"
+}
+
+germ_sdkfz_251_10_vehicle_sound{
+  _use:t="en_apc_with_wheels_vehicle_sound"
+  _use:t="tank_light_vehicle_tracks_sound_setup"
+}
+
+base_gaz_mm_72k_common_vehicle_sound{
+  _use:t="en_apc_with_wheels_vehicle_sound"
+  _use:t="truck_vehicle_inside_sound_for_driver_passenger1"
+  _use:t="turret_manual_sound_with_group"
+}
+
+us_lvt_4_common_vehicle_sound{
+  _use:t="en_apc_vehicle_sound"
+}
+
+germ_sdkfz_251_1_common_vehicle_sound{
+  _use:t="en_apc_vehicle_sound"
+}
+
+germ_sdkfz_251_9_common_vehicle_sound{
+  _use:t="en_apc_vehicle_sound"
+}
+
+germ_sdkfz_7_2_apc_vehicle_sound{
+  _use:t="en_apc_vehicle_sound"
+}
+
+jp_halftrack_type_1_ho_ha_common_vehicle_sound{
+  _use:t="en_apc_vehicle_sound"
+}
+
+uk_universal_carrier_apc_common_vehicle_sound{
+  _use:t="en_apc_vehicle_sound"
+}
+
+us_halftrack_m3_a1_common_vehicle_sound{
+  _use:t="en_apc_vehicle_sound"
+}
+
+appzund_ks750_common_vehicle_sound{
+  _use:t="en_motorcycle_vehicle_sound"
+}
+
+david_harleyson_wla_vehicle_sound{
+  _use:t="en_motorcycle_vehicle_sound"
+}
+
+edward_big4_vehicle_sound{
+  _use:t="en_motorcycle_vehicle_sound"
+}
+
+wbm_r75_vehicle_sound{
+  _use:t="en_motorcycle_vehicle_sound"
+}
+
+germ_towed_at_pak36_movable_common_vehicle_sound{
+  _use:t="en_mobile_cannon_vehicle_sound"
+}
+
+germ_towed_at_pak38_movable_common_vehicle_sound{
+  _use:t="en_mobile_cannon_vehicle_sound"
+}
+
+germ_towed_at_pak40_movable_common_vehicle_sound{
+  _use:t="en_mobile_cannon_vehicle_sound"
+}
+
+jp_towed_at_type_1_movable_common_vehicle_sound{
+  _use:t="en_mobile_cannon_vehicle_sound"
+}
+
+us_towed_at_m1_movable_common_vehicle_sound{
+  _use:t="en_mobile_cannon_vehicle_sound"
+}
+
+ussr_towed_at_53k_movable_common_vehicle_sound{
+  _use:t="en_mobile_cannon_vehicle_sound"
+}

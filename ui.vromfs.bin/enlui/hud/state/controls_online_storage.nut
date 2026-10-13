@@ -1,0 +1,149 @@
+import "dainput2" as dainput
+from "dagor.system" import DBGLEVEL
+from "%dngscripts/platform.nut" import platformId, is_sony, is_ps5, is_xbox, is_xbox_scarlett, is_pc, is_steam_deck
+from "%ui/options/mkOnlineSaveData.nut" import mkOnlineSaveData
+from "dagor.debug" import logerr
+from "settings" import save_settings, get_setting_by_blk_path, set_setting_by_blk_path
+from "%ui/control/active_controls.nut" import ControlsTypes, setForcedControlsType, lastInputUsed
+from "%sqstd/frp.nut" import subscribeAndInit
+from "%ui/ui_library.nut" import *
+
+
+
+
+
+
+
+
+
+const clickRumbleSettingId = "input/clickRumbleEnabled"
+let uiClickRumbleSave = mkOnlineSaveData(clickRumbleSettingId,
+  @() get_setting_by_blk_path(clickRumbleSettingId) ?? gui_scene.config.clickRumbleEnabled)
+
+let isUiClickRumbleEnabled = uiClickRumbleSave.watch
+gui_scene.setConfigProps({clickRumbleEnabled = isUiClickRumbleEnabled.get()})
+let setUiClickRumble = uiClickRumbleSave.setValue
+isUiClickRumbleEnabled.subscribe(function(val) {
+  gui_scene.setConfigProps({clickRumbleEnabled = val})
+  set_setting_by_blk_path(clickRumbleSettingId, val)
+  save_settings()
+})
+
+const inBattleRumbleSettingId = "input/inBattleRumbleEnabled"
+let inBattleRumbleSave = mkOnlineSaveData(inBattleRumbleSettingId, @() get_setting_by_blk_path(inBattleRumbleSettingId) ?? true)
+
+let isInBattleRumbleEnabled = inBattleRumbleSave.watch
+let setInBattleRumble = inBattleRumbleSave.setValue
+isInBattleRumbleEnabled.subscribe(function(val) {
+  set_setting_by_blk_path(inBattleRumbleSettingId, val)
+  save_settings()
+})
+
+const gyroOnlyInAimOrZoomSettingId = "input/gyroOnlyInAimOrZoom"
+let gyroOnlyInAimOrZoomSave = mkOnlineSaveData(gyroOnlyInAimOrZoomSettingId, @() get_setting_by_blk_path(gyroOnlyInAimOrZoomSettingId) ?? false)
+
+let isGyroOnlyInAimOrZoomEnabled = gyroOnlyInAimOrZoomSave.watch
+let setGyroOnlyInAimOrZoom = gyroOnlyInAimOrZoomSave.setValue
+isGyroOnlyInAimOrZoomEnabled.subscribe(function(val) {
+  set_setting_by_blk_path(gyroOnlyInAimOrZoomSettingId, val)
+  save_settings()
+})
+
+let isAimAssistExists = !is_pc || is_steam_deck
+let aimAssistSave = mkOnlineSaveData("game/aimAssist", @() isAimAssistExists, @(v) v && isAimAssistExists)
+let isAimAssistOptValue = aimAssistSave.watch
+let setAimAssist = isAimAssistExists ? aimAssistSave.setValue
+  : @(_) logerr("Try to change aim assist while it not enabled")
+
+let isAimAssistEnabled = Computed(@() isAimAssistExists && lastInputUsed.get() == ControlsTypes.GAMEPAD
+  ? isAimAssistOptValue.get()
+  : false )
+
+let defaultDz = is_ps5 || is_xbox_scarlett
+  ? 0.1
+  : 0.15
+let validateDz = @(v) clamp(v, 0.0, 0.4)
+const gamepadCursorDeadZoneMin = 0.15
+
+function setGamepadCursorDz(stick_dz){
+  local target_dz = gamepadCursorDeadZoneMin
+  if (stick_dz > 0)
+    target_dz =  stick_dz<1 ? clamp((gamepadCursorDeadZoneMin - stick_dz) / (1 - stick_dz), 0.01, 0.3) : 0.3
+  gui_scene.setConfigProps({gamepadCursorDeadZone = target_dz})
+  log("set gamepadCursorDeadZone to: ", target_dz,".Current dz in driver for stick:", stick_dz)
+}
+
+let stick0Save = mkOnlineSaveData($"controls/{platformId}/stick0_dz_ver2", @() defaultDz, validateDz)
+let stick0_dz = stick0Save.watch
+
+function stick0_dz_apply(stick_dz) {
+  dainput.set_main_gamepad_stick_dead_zone(0, stick_dz)
+  if (gui_scene.config.gamepadCursorAxisH == 0 || gui_scene.config.gamepadCursorAxisV == 1)
+    setGamepadCursorDz(stick_dz)
+}
+
+subscribeAndInit(stick0_dz_apply, stick0_dz)
+
+let stick1Save = mkOnlineSaveData($"controls/{platformId}/stick1_dz_ver2", @() defaultDz, validateDz)
+let stick1_dz = stick1Save.watch
+
+function stick1_dz_apply(stick_dz) {
+  dainput.set_main_gamepad_stick_dead_zone(1, stick_dz)
+  if (gui_scene.config.gamepadCursorAxisH == 2 || gui_scene.config.gamepadCursorAxisV == 3)
+    setGamepadCursorDz(stick_dz)
+}
+
+subscribeAndInit(stick1_dz_apply, stick1_dz)
+
+let defaultAimSmooth = is_sony || is_xbox
+  ? 0.00
+  : 0.25
+let validateAimSmooth = @(v) clamp(v, 0.0, 0.5)
+let aimSmoothSave = mkOnlineSaveData("game/aimSmooth", @() defaultAimSmooth, validateAimSmooth)
+
+let useGamepad = mkOnlineSaveData("game/useGamepad",
+  function() {
+    if (is_steam_deck)
+      return ControlsTypes.GAMEPAD
+    if (is_pc)
+      return DBGLEVEL ? ControlsTypes.AUTO : ControlsTypes.KB_MOUSE
+    return ControlsTypes.GAMEPAD
+  },
+  @(v) [ControlsTypes.AUTO, ControlsTypes.KB_MOUSE, ControlsTypes.GAMEPAD].contains(v)
+    ? v
+    : is_steam_deck ? ControlsTypes.GAMEPAD
+    : is_pc ? ControlsTypes.KB_MOUSE
+    : ControlsTypes.GAMEPAD
+)
+let use_gamepad_state = useGamepad.watch
+function set_use_gamepad(v) {
+  setForcedControlsType(v)
+  useGamepad.setValue(v)
+}
+setForcedControlsType(use_gamepad_state.get())
+
+let onlineControls = {
+  setUiClickRumble
+  isUiClickRumbleEnabled
+
+  setInBattleRumble
+  isInBattleRumbleEnabled
+
+  setGyroOnlyInAimOrZoom
+  isGyroOnlyInAimOrZoomEnabled
+
+  isAimAssistExists
+  isAimAssistEnabled
+  isAimAssistOptValue
+  setAimAssist
+  stick0_dz
+  set_stick0_dz = stick0Save.setValue
+  stick1_dz
+  set_stick1_dz = stick1Save.setValue
+  aim_smooth = aimSmoothSave.watch
+  aim_smooth_set = aimSmoothSave.setValue
+  set_use_gamepad
+  use_gamepad_state
+}
+
+return onlineControls

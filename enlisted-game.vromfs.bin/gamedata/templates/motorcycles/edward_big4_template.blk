@@ -1,0 +1,242 @@
+edward_big4{
+  _use:t="simple_damage_model"
+  _use:t="vehicle_seats_effectors"
+  _use:t="base_bike_left_sidecar"
+  _use:t="vehicle_anim_speedometer_mph"
+  _use:t="edward_big4_vehicle_sound"
+  _use:t="vehicle_seats_effectors"
+  _use:t="vehicle_with_attached_ammo_box"
+  skin__template:t="edward_big4_skins"
+  commanderFpsCamMaxAngle:p2=30.0, 35.0
+  item__name:t="items/edward_big4"
+  vehicleName:t="edward_big4"
+  animchar__res:t="norton_big_4_char"
+  collres__res:t="norton_big_4_collision"
+  vehicle_net_phys__blk:t="gamedata/templates/motorcycles/edward_big4.blk:VehiclePhys"
+  canUseRespawnbaseType:t="motorcycle"
+  damage_model__blk:t="gamedata/templates/motorcycles/edward_big4.blk"
+  particle_phys__blk:t="gamedata/suspension/empty.blk"
+  vehicle_seats__enumVarName:t="norton_big_4"
+  item__iconOffset:p2=0.0, 0.05
+  item__iconScale:r=1.3
+  vehicle_commander_cam__attachToVehicle:b=no
+
+  _group{
+    _tags:t="gameClient"
+
+    "dm_parts__specialViewPartNames:shared:list<t>"{
+      name:t="ammo_body"
+    }
+  }
+
+  _group{
+    _tags:t="render"
+    vehicle_anim__speedometerMinMax:p2=5.0, 85.0
+  }
+
+  _group{
+    _tags:t="render"
+    animchar_camera_target__node_name:t="bone_mg_aa_v"
+    animchar_camera_target__node_offset:p3=0.0, 0.0, 0.0
+    animchar_camera_target__nodeIndex:i=-1
+  }
+
+  anim_phys{
+  }
+
+  "vehicleDisplayMarkerOverHead:tag"{
+    tags:t="ui"
+  }
+
+  "vehicle_seats__effectors:array"{
+  }
+
+  "vehicle_seats__seatsProvideOrder:tag"{
+  }
+
+  "vehicle_seats__seats:shared:array"{
+
+    "seats:object"{
+      name:t="commander"
+      nextSeat:t="driver"
+      locName:t="vehicle_seats/gunner"
+      ignoreAttachNodeRotation:b=yes
+      seatOwnsEntityControl:b=no
+      attachNode:t="char_passenger_01_pivot"
+      entranceNode:t="char_passenger_01_landing"
+      attachTm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-0.0, 0.0, -0.0]]
+      seatComponent:t="isPassenger"
+      canPlaceManually:b=yes
+      seatEnum:t="right_seat"
+      seatAnimUpper:t="norton_big_4_gunner"
+      seatAnimLower:t="norton_big_4_gunner"
+      smokeScreen:b=no
+      cameraNodeName:t="bone_mg_aa_v"
+      cameraOffset:p3=-0.48, 0.2, -0.07
+      bindCamera:b=yes
+      copySkeletonNodesPostfix:t="_gunner"
+
+      "turretNames:array"{
+        turretNames:t="turret_01"
+      }
+
+      "effectors:object"{
+        l.hand:t="ik_hand_left_gunner"
+        r.hand:t="ik_hand_right_gunner"
+      }
+
+      "copySkeletonNodesRecursive:array"{
+        node:t="Bip01 L Hand"
+        node:t="Bip01 R Hand"
+      }
+    }
+
+    "seats:object"{
+      name:t="driver"
+      locName:t="vehicle_seats/driver"
+      seatOwnsEntityControl:b=yes
+      attachNode:t="char_driver_pivot"
+      ignoreAttachNodeRotation:b=yes
+      entranceNode:t="char_driver_landing"
+      attachTm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, 0.0, 0.0]]
+      seatComponent:t="isGunner"
+      shouldHideOwner:b=no
+      seatEnum:t="left_seat"
+      seatAnimUpper:t="moto_drive_driver"
+      seatAnimLower:t="moto_drive_driver"
+      smokeScreen:b=no
+
+      "effectors:object"{
+
+        "l.hand:object"{
+          rel_tm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, -0.0, -0.0]]
+          node:t="ik_hand_left"
+        }
+
+        "r.hand:object"{
+          rel_tm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, -0.0, -0.0]]
+          node:t="ik_hand_right"
+        }
+
+        "l.forearm:object"{
+          rel_tm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, -0.0, -0.0]]
+          node:t="ik_forearm_left"
+        }
+
+        "r.forearm:object"{
+          rel_tm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, -0.0, -0.0]]
+          node:t="ik_forearm_right"
+        }
+
+        "l.foot:object"{
+          rel_tm:m=[[0.3818591, -0.9236456, 0.03261052] [0.9210482, 0.3773902, -0.09616239] [0.07651297, 0.06675626, 0.9948307] [0.1175232, -0.5068519, -0.2305233]]
+          node:t="char_driver_pivot"
+        }
+
+        "r.foot:object"{
+          rel_tm:m=[[-0.02850696, -0.9980734, 0.05510278] [0.9970927, -0.02449566, 0.07214903] [-0.0706603, 0.05699936, 0.9958706] [0.1938324, -0.5334084, 0.1967921]]
+          node:t="char_driver_pivot"
+        }
+      }
+    }
+
+    "seats:object"{
+      name:t="passenger1"
+      locName:t="vehicle_seats/passenger1"
+      seatOwnsEntityControl:b=no
+      attachNode:t="char_passenger_02_pivot"
+      entranceNode:t="char_passenger_02_landing"
+      attachTm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.05, 0.03, 0.0]]
+      seatComponent:t="isPassenger"
+      canPlaceManually:b=yes
+      seatEnum:t="norton_big_4_seat"
+      seatAnimUpper:t="norton_big_4_passenger"
+      seatAnimLower:t="norton_big_4_passenger"
+      cameraType:t="commander"
+      smokeScreen:b=no
+      aimLimits:p4=-180.0, 180.0, -45.0, 15.0
+
+      "effectors:object"{
+
+        "l.hand:object"{
+          rel_tm:m=[[0.7289362, -0.4835695, 0.4845762] [-0.5715963, -0.8194546, 0.04208629] [0.3767357, -0.3076595, -0.8737348] [0.2315063, 0.1219375, -0.1022401]]
+          node:t="char_passenger_02_pivot"
+        }
+
+        "r.hand:object"{
+          rel_tm:m=[[0.6602887, -0.4603482, -0.5933778] [-0.6190709, -0.7809351, -0.08302215] [-0.4251706, 0.4221617, -0.8006311] [0.2349854, 0.128119, 0.1134815]]
+          node:t="char_passenger_02_pivot"
+        }
+
+        "l.foot:object"{
+          rel_tm:m=[[-0.5702158, -0.8212778, -0.01888782] [0.8107142, -0.5662966, 0.1484935] [-0.1326504, 0.06936068, 0.9887325] [0.07307434, -0.4255199, -0.2016354]]
+          node:t="char_passenger_02_pivot"
+        }
+
+        "r.foot:object"{
+          rel_tm:m=[[-0.2393646, -0.9623785, -0.1285776] [0.8322176, -0.271573, 0.4833861] [-0.5001186, 0.008700974, 0.8659133] [0.2178192, -0.5316148, 0.2518408]]
+          node:t="char_passenger_02_pivot"
+        }
+      }
+    }
+  }
+
+  "turret_gun_flash_fx__flashNodes:shared:array"{
+    node:t="emtr_mg_aa_flame"
+  }
+
+  "turret_gun_flash_fx__flashFx:shared:array"{
+    fx:t="muzzle_ground_8mm"
+  }
+
+  "turret_gun_flash_fx__flashFxScale:shared:array"{
+    scale:r=0.6
+  }
+
+  "turret_control__emitterNodes:shared:array"{
+    node:t="bone_mg_aa_v"
+  }
+
+  "turret_control__animVars:shared:array"{
+
+    "vars:object"{
+      curYawParamName:t="turret_01_yaw"
+      curPitchParamName:t="gun_01_pitch"
+      aimActiveParamName:t="aim_01_active"
+      paramYawSpeed:t="turret_01_yaw_speed"
+      paramYawSpeedMul:t="turret_01_yaw_mul"
+      paramYawAccel:t="turret_01_yaw_accel"
+      paramMinYawAngle:t="turret_01_min_yaw_angle"
+      paramMaxYawAngle:t="turret_01_max_yaw_angle"
+      paramMinPitchAngle:t="turret_01_min_pitch_angle"
+      paramMaxPitchAngle:t="turret_01_max_pitch_angle"
+      paramPitchSpeed:t="gun_01_pitch_speed"
+      paramPitchSpeedMul:t="gun_01_pitch_mul"
+      paramPitchAccel:t="gun_01_pitch_accel"
+      wishYawParamName:t="gun_01_aim:targetYaw"
+      wishPitchParamName:t="gun_01_aim:targetPitch"
+    }
+  }
+
+  "turret_control__turretInfo:shared:array"{
+
+    "turretInfo:object"{
+      turretName:t="turret_01"
+      gun:t="edward_big4_7_92mm_bren"
+      salt:i=1
+    }
+  }
+}
+
+edward_big4_7_92mm_bren{
+  _use:t="bike_7_92mm_bren"
+  gun__shootNodeName:t="bone_mg_aa_v"
+  turret__yawSpeed:r=300.0
+  turret__pitchSpeed:r=100.0
+  turret__aimNodeName:t="bone_mg_aa_h"
+  turret__limit:p4=-60.0, 60.0, -10.0, 70.0
+
+  "gun__shellsAmmo:array"{
+    ammo:i=510
+  }
+}

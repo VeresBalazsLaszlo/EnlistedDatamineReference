@@ -1,0 +1,32 @@
+normalizationPreset:t="heat"
+ricochetPreset:t="he"
+groundRicochetPreset:t="he"
+secondaryShattersPreset:t="ap"
+stabilityThreshold:r=0.5
+stabilityCaliberToArmorThreshold:r=5.0
+stabilityReductionAfterRicochet:r=0.3
+stabilityReductionAfterPenetration:r=0.15
+bulletType:t="he_bomb"
+slopeEffectPreset:t="ap"
+mass:r=49.9
+useEffectiveArmorThicknessForShatter:b=yes
+explosiveType:t="amatol"
+explodeOnRendinst:b=yes
+explosiveMass:r=24.5
+bombType:t="he_bomb"
+bombName:t="an_m30a1"
+caliber:r=0.207
+length:r=0.976
+distFromCmToStab:r=0.3
+dragCx:r=0.007
+sound:t="weapon.bomb_mid"
+
+stabilityRicochetModifier{
+  mod1:p2=0.0, 0.5
+  mod2:p2=15.0, 0.7
+  mod3:p2=30.0, 0.99
+}
+
+pressureDamage{
+  damageType:t="pressure"
+}

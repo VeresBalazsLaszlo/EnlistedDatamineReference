@@ -1,0 +1,252 @@
+import{
+  scene:t="gamedata/scenes/_tunisia_sounds.blk"
+}
+
+import{
+  scene:t="gamedata/scenes/_tunisia_level.blk"
+}
+
+entity{
+  _template:t="box_battle_area"
+  transform:m=[[72525.6, 0.0, 30613.9] [0.0, 495.93, -0.0] [-40933.8, 0.0, 96974.0] [70.1517, 27.14, 91.7148]]
+  battle_area__team:i=-1
+  battle_area__timeToDamage:r=10.0
+  battle_area__damage:r=3.0
+}
+
+entity{
+  _template:t="add_spawn_on_squadmates"
+}
+
+entity{
+  _template:t="static_cam"
+  camera__active:b=yes
+  transform:m=[[0.828609, 0.0, 0.559829] [0.0, 1.0, 0.0] [-0.559829, 0.0, 0.828609] [-880.9, 30.0, -1274.39]]
+}
+
+entity{
+  _template:t="minimap_tunisia_tataouine"
+}
+
+entity{
+  _template:t="postfx_color_grading_tonemap_death_alive_enlisted"
+}
+
+entity{
+  _template:t="bloom"
+}
+
+entity{
+  _template:t="postfx_roundctrl"
+}
+
+entity{
+  _template:t="briefing_domination"
+}
+
+entity{
+  _template:t="spawn_switcher"
+  swapProbability:r=0.5
+  team1:i=2
+  team2:i=1
+}
+
+entity{
+  _template:t="team_tunisia_allies+team_narrator_domination+respawn_creators_team"
+  team__id:i=1
+  team__score:r=2250.0
+  team__scoreCap:r=2250.0
+  score_bleed__domBleed:r=4.0
+  score_bleed__domBleedOn:b=no
+  score_bleed__totalDomZoneCount:i=3
+  score_bleed__totalDomBleedMul:r=2.0
+  score_bleed__totalDomBleedOn:b=no
+  team__briefing:t="domination/common_goals"
+  team__numZonesCaptured:i=0
+  team__deathPenalty:r=2.0
+  team__spawnBotArmy:t="tunisia_allies"
+}
+
+entity{
+  _template:t="team_tunisia_axis+team_narrator_domination+respawn_creators_team"
+  team__id:i=2
+  team__score:r=2250.0
+  team__scoreCap:r=2250.0
+  score_bleed__domBleed:r=4.0
+  score_bleed__domBleedOn:b=no
+  score_bleed__totalDomZoneCount:i=3
+  score_bleed__totalDomBleedMul:r=2.0
+  score_bleed__totalDomBleedOn:b=no
+  team__briefing:t="domination/common_goals"
+  team__numZonesCaptured:i=0
+  team__deathPenalty:r=2.0
+  team__spawnBotArmy:t="tunisia_axis"
+}
+
+entity{
+  _template:t="door_mult_ent_generator"
+  ri_extra_gen__blk:t="gamedata/tunisia_doors.blk"
+}
+
+entity{
+  _template:t="level"
+  level__blk:t="levels/tunisia_4x4.blk"
+  level__timeRange:p2=5.0, 19.2
+  level__day:i=21
+  level__month:i=6
+
+  "level__weatherChoice:object"{
+    weather_clear_a:r=1.0
+  }
+
+  "level__timeVec:array"{
+    level__timeVec:r=6.5
+    level__timeVec:r=7.5
+    level__timeVec:r=17.0
+    level__timeVec:r=18.0
+  }
+}
+
+entity{
+  _template:t="respawn_camera"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-1123.44, 307.398, -485.187]]
+  respawnCameraForTeam:i=1
+}
+
+entity{
+  _template:t="respawn_camera"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-1691.62, 306.416, -1906.51]]
+  respawnCameraForTeam:i=2
+}
+
+entity{
+  _template:t="resupply_in_air_zone"
+  transform:m=[[-0.998928, 0.0, -0.0462803] [0.0, 1.0, 0.0] [0.0462803, 0.0, -0.998928] [155.442, 1000.0, 2309.95]]
+  resupply_zone__team:i=1
+}
+
+entity{
+  _template:t="respAircraftInAir"
+  respawnbaseType:t="aircraft_fighter"
+  transform:m=[[0.0312836, 0.0, 0.999511] [0.0, 1.0, 0.0] [-0.999511, 0.0, 0.0312836] [-341.619, 1023.92, -3728.97]]
+  team:i=2
+  maxVehicleOnSpawn:i=1
+  respTime:i=120
+}
+
+entity{
+  _template:t="respAircraftInAir"
+  respawnbaseType:t="aircraft_assault"
+  transform:m=[[-0.066378, 0.0, 0.997795] [0.0, 1.0, 0.0] [-0.997795, 0.0, -0.066378] [-518.84, 823.92, -3728.86]]
+  team:i=2
+  maxVehicleOnSpawn:i=1
+  respTime:i=120
+}
+
+entity{
+  _template:t="respAircraftInAir"
+  respawnbaseType:t="aircraft_fighter"
+  transform:m=[[-0.0120528, 0.0, 0.999928] [0.0, 1.0, 0.0] [-0.999928, 0.0, -0.0120528] [-498.063, 1023.92, -3721.34]]
+  team:i=2
+  maxVehicleOnSpawn:i=1
+  respTime:i=120
+}
+
+entity{
+  _template:t="respAircraftInAir"
+  respawnbaseType:t="aircraft_assault"
+  transform:m=[[-0.00207494, 0.0, 0.999998] [0.0, 1.0, 0.0] [-0.999998, 0.0, -0.00207494] [-341.619, 823.92, -3728.97]]
+  team:i=2
+  maxVehicleOnSpawn:i=1
+  respTime:i=120
+}
+
+entity{
+  _template:t="resupply_in_air_zone"
+  transform:m=[[0.327869, 0.0, -0.944724] [0.0, 1.0, 0.0] [0.944724, 0.0, 0.327869] [-2122.69, 1023.92, -4646.27]]
+  resupply_zone__team:i=2
+}
+
+entity{
+  _template:t="respAircraftInAir"
+  respawnbaseType:t="aircraft_fighter"
+  transform:m=[[0.111571, 0.0, -0.993756] [0.0, 1.0, 0.0] [0.993756, 0.0, 0.111571] [-1572.52, 1000.0, 1513.45]]
+  team:i=1
+  maxVehicleOnSpawn:i=1
+  respTime:i=120
+}
+
+entity{
+  _template:t="respAircraftInAir"
+  respawnbaseType:t="aircraft_assault"
+  transform:m=[[0.00584803, 0.0, -0.999983] [0.0, 1.0, 0.0] [0.999983, 0.0, 0.00584803] [-1572.52, 800.0, 2049.12]]
+  team:i=1
+  maxVehicleOnSpawn:i=1
+  respTime:i=120
+}
+
+entity{
+  _template:t="respAircraftInAir"
+  respawnbaseType:t="aircraft_fighter"
+  transform:m=[[0.0943291, 0.0, -0.995541] [0.0, 1.0, 0.0] [0.995541, 0.0, 0.0943291] [-1424.9, 1000.0, 1543.16]]
+  team:i=1
+  maxVehicleOnSpawn:i=1
+  respTime:i=120
+}
+
+entity{
+  _template:t="respAircraftInAir"
+  respawnbaseType:t="aircraft_assault"
+  transform:m=[[0.0876048, 0.0, -0.996155] [0.0, 1.0, 0.0] [0.996155, 0.0, 0.0876048] [-1393.7, 800.0, 1511.29]]
+  team:i=1
+  maxVehicleOnSpawn:i=1
+  respTime:i=120
+}
+
+entity{
+  _template:t="domination_sphere_capzone"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-856.832, 10.0049, -1150.65]]
+  capzone__title:t="C"
+  capzone__caption:t="capzone/artillery_emplacement"
+  sphere_zone__radius:r=20.0
+  decal__height:r=5.0
+  ui_order:i=1
+}
+
+entity{
+  _template:t="respawnChooser+respTeam1"
+  transform:m=[[0.00487018, 0.0, -0.999987] [0.0, 1.0, 0.0] [0.999987, 0.0, 0.00487018] [-911.578, 13.4273, -1118.93]]
+}
+
+entity{
+  _template:t="respawnChooser+respTeam2"
+  transform:m=[[0.117168, 0.0, 0.993112] [0.0, 1.0, 0.0] [-0.993112, 0.0, 0.117168] [-920.523, 14.0505, -1174.89]]
+}
+
+entity{
+  _template:t="respawnChooser+respVehicle"
+  transform:m=[[0.0971543, 0.0, 0.995269] [0.0, 1.0, 0.0] [-0.995269, 0.0, 0.0971543] [-940.068, 15.3731, -1172.61]]
+  team:i=1
+}
+
+entity{
+  _template:t="respawnChooser+respVehicle"
+  transform:m=[[0.045004, 0.0, -0.998987] [0.0, 1.0, 0.0] [0.998987, 0.0, 0.045004] [-937.479, 12.136, -1119.19]]
+  team:i=2
+}
+
+entity{
+  _template:t="respawnChooser+respMotorcycle"
+  transform:m=[[0.045004, 0.0, -0.998987] [0.0, 1.0, 0.0] [0.998987, 0.0, 0.045004] [-922.931, 12.9934, -1119.26]]
+  team:i=1
+}
+
+entity{
+  _template:t="respawnChooser+respMotorcycle"
+  transform:m=[[0.0971543, 0.0, 0.995269] [0.0, 1.0, 0.0] [-0.995269, 0.0, 0.0971543] [-930.446, 15.2405, -1174.04]]
+  team:i=2
+}
+
+entity{
+  _template:t="distant_haze"
+}

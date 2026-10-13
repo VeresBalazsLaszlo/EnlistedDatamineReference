@@ -1,0 +1,341 @@
+import:t="%gameBase/gamedata/templates/e_ww2_common/ww2_items.blk"
+
+attachable_wear_gangster_suit_item{
+  _use:t="attachable_tunic"
+  item__uniqueName:t="attachable_wear_gangster_suit_item"
+  animchar__res:t="gangster_suit_char"
+  collres__res:t="gangster_suit_collision"
+
+  "torn_wounds__name_list:list<t>"{
+  }
+}
+
+attachable_wear_gangster_pants_item{
+  _use:t="attachable_pants"
+  item__uniqueName:t="attachable_wear_gangster_pants_item"
+  animchar__res:t="gangster_pants_char"
+  collres__res:t="gangster_pants_collision"
+
+  "torn_wounds__name_list:list<t>"{
+  }
+}
+
+attachable_wear_gangster_head_item{
+  _use:t="attachable_head"
+  _use:t="green_eyes_b"
+  item__uniqueName:t="attachable_wear_gangster_head_item"
+  animchar__res:t="gangster_head_char"
+  collres__res:t="gangster_head_collision"
+
+  "attaches_list:list<eid>"{
+  }
+}
+
+attachable_wear_gangster_hat_item{
+  _use:t="attachable_skined_helmet"
+  item__uniqueName:t="attachable_wear_gangster_hat_item"
+  animchar__res:t="gangster_hat_char"
+  collres__res:t="gangster_hat_collision"
+  animchar_hider__camThreshold:r=0.4
+}
+
+attachable_wear_indian_chest_item{
+  _use:t="attachable_tunic"
+  item__uniqueName:t="attachable_wear_indian_chest_item"
+  animchar__res:t="indian_chest_char"
+  collres__res:t="indian_chest_collision"
+
+  "torn_wounds__name_list:list<t>"{
+  }
+}
+
+attachable_wear_indian_pants_item{
+  _use:t="attachable_pants"
+  item__uniqueName:t="attachable_wear_indian_pants_item"
+  animchar__res:t="indian_pants_char"
+  collres__res:t="indian_pants_collision"
+
+  "torn_wounds__name_list:list<t>"{
+  }
+}
+
+attachable_wear_indian_hat_item{
+  _use:t="attachable_skined_helmet"
+  animchar__res:t="indian_hat_char"
+  collres__res:t="indian_hat_collision"
+  item__uniqueName:t="attachable_wear_indian_hat_item"
+  animchar_fast_phys__res:t="indian_hat_fastphys"
+  animchar_hider__camThreshold:r=0.4
+
+  animchar_fast_phys{
+    _tags:t="gameClient"
+  }
+
+  "disabledFaceGenParams:shared:array"{
+    param:t="forehead_pos_y"
+    param:t="forehead_hor_scale"
+    param:t="forehead_scale"
+  }
+}
+
+attachable_wear_indian_head_item{
+  _use:t="attachable_head"
+  item__uniqueName:t="attachable_wear_indian_head_item"
+  animchar__res:t="indian_head_char"
+  collres__res:t="indian_head_collision"
+}
+
+attachable_wear_head_iten_09_item{
+  _use:t="attachable_head"
+  _use:t="brown_eyes"
+  item__uniqueName:t="attachable_wear_head_iten_09_item"
+  animchar__res:t="head_iten_09_char"
+  collres__res:t="head_iten_09_collision"
+
+  "attaches_list:list<eid>"{
+  }
+}
+
+attachable_wear_gendarmerie_tunic_item{
+  _use:t="attachable_tunic"
+  item__uniqueName:t="attachable_wear_gendarmerie_tunic_item"
+  animchar__res:t="gendarmerie_tunic_char"
+  collres__res:t="gendarmerie_tunic_collision"
+  animchar_fast_phys__res:t="gendarmerie_tunic_fastphys"
+
+  animchar_fast_phys{
+    _tags:t="gameClient"
+  }
+
+  "torn_wounds__name_list:list<t>"{
+  }
+}
+
+attachable_wear_gendarmerie_pants_item{
+  _use:t="attachable_pants"
+  item__uniqueName:t="attachable_wear_gendarmerie_pants_item"
+  animchar__res:t="gendarmerie_pants_char"
+  collres__res:t="gendarmerie_pants_collision"
+
+  "torn_wounds__name_list:list<t>"{
+  }
+}
+
+attachable_wear_gendarmerie_cap_item{
+  _use:t="attachable_skined_helmet"
+  animchar__res:t="gendarmerie_cap_char"
+  collres__res:t="gendarmerie_cap_collision"
+  item__uniqueName:t="attachable_wear_gendarmerie_cap_item"
+}
+
+attachable_wear_panman_helmet_item{
+  _use:t="attachable_skined_helmet"
+  item__uniqueName:t="attachable_wear_panman_helmet_item"
+  animchar__res:t="panman_helmet_char"
+  collres__res:t="panman_helmet_collision"
+  animchar_fast_phys__res:t="panman_helmet_fastphys"
+
+  animchar_fast_phys{
+    _tags:t="gameClient"
+  }
+}
+
+attachable_wear_panman_chest_item{
+  _use:t="attachable_tunic"
+  item__uniqueName:t="attachable_wear_panman_chest_item"
+  animchar__res:t="panman_chest_char"
+  collres__res:t="panman_chest_collision"
+  animchar_fast_phys__res:t="panman_chest_fastphys"
+
+  animchar_fast_phys{
+    _tags:t="gameClient"
+  }
+}
+
+attachable_wear_panman_armor_item{
+  _use:t="attachable_chest"
+  item__uniqueName:t="attachable_wear_panman_armor_item"
+  animchar__res:t="panman_armor_char"
+  collres__res:t="panman_armor_collision"
+  animchar_hider__camThreshold:r=0.4
+}
+
+attachable_wear_nakedman_pot_item{
+  _use:t="attachable_skined_helmet"
+  item__uniqueName:t="attachable_wear_nakedman_pot_item"
+  animchar__res:t="nakedman_pot_char"
+  collres__res:t="nakedman_pot_collision"
+  animchar_hider__camThreshold:r=0.4
+}
+
+attachable_wear_nakedman_item{
+  _use:t="attachable_tunic"
+  item__uniqueName:t="attachable_wear_nakedman_item"
+  animchar__res:t="nakedman_char"
+  collres__res:t="nakedman_collision"
+
+  "torn_wounds__name_list:list<t>"{
+  }
+}
+
+attachable_wear_nakedman_head_item{
+  _use:t="attachable_head"
+  item__uniqueName:t="attachable_wear_nakedman_head_item"
+  animchar__res:t="nakedman_head_char"
+  collres__res:t="nakedman_head_collision"
+}
+
+attachable_wear_madman_helmet_item{
+  _use:t="attachable_skined_helmet"
+  item__uniqueName:t="attachable_wear_madman_helmet_item"
+  animchar__res:t="madman_helmet_char"
+  collres__res:t="madman_helmet_collision"
+}
+
+attachable_wear_madman_chest_item{
+  _use:t="attachable_tunic"
+  item__uniqueName:t="attachable_wear_panman_chest_item"
+  animchar__res:t="madman_chest_char"
+  collres__res:t="madman_chest_collision"
+
+  "torn_wounds__name_list:list<t>"{
+  }
+}
+
+attachable_wear_madman_pants_item{
+  _use:t="attachable_pants"
+  item__uniqueName:t="attachable_wear_madman_pants_item"
+  animchar__res:t="madman_pants_char"
+  collres__res:t="madman_pants_collision"
+  animchar_fast_phys__res:t="madman_pants_fastphys"
+
+  animchar_fast_phys{
+    _tags:t="gameClient"
+  }
+
+  "torn_wounds__name_list:list<t>"{
+  }
+}
+
+attachable_wear_madman_gloves_item{
+  _use:t="attachable_gloves"
+  item__uniqueName:t="attachable_wear_madman_gloves_item"
+  animchar__res:t="madman_gloves_char"
+  collres__res:t="madman_gloves_collision"
+}
+
+attachable_wear_hockey_mask_item{
+  _use:t="attachable_skined_helmet"
+  item__uniqueName:t="attachable_wear_hockey_mask_item"
+  animchar__res:t="hockey_mask_char"
+  collres__res:t="hockey_mask_collision"
+}
+
+attachable_wear_macheteman_jacket_item{
+  _use:t="attachable_tunic"
+  item__uniqueName:t="attachable_wear_macheteman_jacket_item"
+  animchar__res:t="macheteman_jacket_char"
+  collres__res:t="macheteman_jacket_collision"
+
+  "torn_wounds__name_list:list<t>"{
+  }
+}
+
+attachable_wear_macheteman_gloves_item{
+  _use:t="attachable_gloves"
+  item__uniqueName:t="attachable_wear_macheteman_gloves_item"
+  animchar__res:t="macheteman_gloves_char"
+  collres__res:t="macheteman_gloves_collision"
+}
+
+attachable_wear_macheteman_pants_item{
+  _use:t="attachable_pants"
+  item__uniqueName:t="attachable_wear_macheteman_pants_item"
+  animchar__res:t="macheteman_pants_char"
+  collres__res:t="macheteman_pants_collision"
+
+  "torn_wounds__name_list:list<t>"{
+  }
+}
+
+attachable_wear_zombie_aev_helmet_item{
+  _use:t="attachable_skined_helmet"
+  item__uniqueName:t="attachable_wear_zombie_aev_helmet_item"
+  animchar__res:t="zombie_aev_helmet_char"
+  collres__res:t="zombie_aev_helmet_collision"
+  animchar_hider__camThreshold:r=0.4
+}
+
+attachable_wear_zombie_aev_tunic_item{
+  _use:t="attachable_tunic"
+  item__uniqueName:t="attachable_wear_zombie_aev_tunic_item"
+  animchar__res:t="zombie_aev_tunic_char"
+  collres__res:t="zombie_aev_tunic_collision"
+
+  "torn_wounds__name_list:list<t>"{
+  }
+}
+
+attachable_wear_zombie_aev_gloves_item{
+  _use:t="attachable_gloves"
+  item__uniqueName:t="attachable_wear_zombie_aev_gloves_item"
+  animchar__res:t="zombie_aev_gloves_char"
+  collres__res:t="zombie_aev_gloves_collision"
+}
+
+attachable_wear_zombie_aev_pants_item{
+  _use:t="attachable_pants"
+  item__uniqueName:t="attachable_wear_zombie_aev_pants_item"
+  animchar__res:t="zombie_aev_pants_char"
+  collres__res:t="zombie_aev_pants_collision"
+
+  "torn_wounds__name_list:list<t>"{
+  }
+}
+
+attachable_wear_zombie_aev_head_item{
+  _use:t="attachable_head"
+  item__uniqueName:t="attachable_wear_zombie_aev_head_item"
+  animchar__res:t="zombie_aev_head_char"
+  collres__res:t="zombie_aev_head_collision"
+}
+
+attachable_wear_pirate_tricorn_item{
+  _use:t="attachable_skined_helmet"
+  item__uniqueName:t="attachable_wear_pirate_tricorn_item"
+  animchar__res:t="pirate_tricorn_char"
+  collres__res:t="pirate_tricorn_collision"
+  animchar_hider__camThreshold:r=0.4
+}
+
+attachable_wear_pirate_jacket_item{
+  _use:t="attachable_tunic"
+  item__uniqueName:t="attachable_wear_pirate_jacket_item"
+  animchar__res:t="pirate_jacket_char"
+  collres__res:t="pirate_jacket_collision"
+  animchar_fast_phys__res:t="pirate_jacket_fastphys"
+
+  animchar_fast_phys{
+    _tags:t="gameClient"
+  }
+
+  "torn_wounds__name_list:list<t>"{
+  }
+}
+
+attachable_wear_pirate_pants_item{
+  _use:t="attachable_pants"
+  item__uniqueName:t="attachable_wear_pirate_pants_item"
+  animchar__res:t="pirate_pants_char"
+  collres__res:t="pirate_pants_collision"
+
+  "torn_wounds__name_list:list<t>"{
+  }
+}
+
+attachable_wear_pirate_head_item{
+  _use:t="attachable_head"
+  item__uniqueName:t="attachable_wear_pirate_head_item"
+  animchar__res:t="pirate_head_char"
+  collres__res:t="pirate_head_collision"
+}

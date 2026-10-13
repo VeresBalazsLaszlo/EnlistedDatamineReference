@@ -1,0 +1,443 @@
+us_m8_greyhound_pacific_premium{
+  _use:t="us_m8_greyhound_common"
+
+  "animchar__objTexReplace:object"{
+    "us_camo_olive*":t="us_camo_dark_green_light_olive*"
+  }
+
+  "attach_decorators__entities:list<eid>"{
+  }
+
+  "attach_decorators__templates:array"{
+
+    "templates:object"{
+      preinited:b=yes
+      relativeTm:m=[[-0.988562, 0.151197, 0.00274554] [-0.147675, -0.969309, 0.199736] [0.0328294, 0.196903, 0.979904] [0.281204, 0.985893, 1.26019]]
+      template:t="vgt_palm_c"
+      nodeName:t="root"
+    }
+
+    "templates:object"{
+      preinited:b=yes
+      relativeTm:m=[[0.998627, 0.0603508, -0.0134136] [0.0563934, -0.978354, -0.203244] [-0.0253702, 0.201965, -0.979509] [0.157501, 1.0178, -1.10763]]
+      template:t="vgt_palm_c"
+      nodeName:t="root"
+    }
+
+    "templates:object"{
+      preinited:b=yes
+      relativeTm:m=[[-0.811366, 0.1239, -0.00730152] [-0.122864, -0.794505, 0.19809] [0.0187775, 0.161379, 0.98021] [-1.30023, 0.974678, 1.25214]]
+      template:t="vgt_palm_c"
+      nodeName:t="root"
+    }
+
+    "templates:object"{
+      preinited:b=yes
+      relativeTm:m=[[0.784439, 0.0552273, -0.0133983] [0.0547343, -0.747628, -0.144205] [-0.0263514, 0.151545, -0.979433] [-1.41017, 1.00683, -1.10706]]
+      template:t="vgt_palm_c"
+      nodeName:t="root"
+    }
+
+    "templates:object"{
+      preinited:b=yes
+      relativeTm:m=[[-0.600057, 0.0161445, -0.0471587] [-0.0558219, -0.0824317, 0.521113] [0.00973052, 0.556313, 0.0784577] [0.568222, 1.46886, 0.978714]]
+      template:t="vgt_palm_c"
+      nodeName:t="root"
+    }
+
+    "templates:object"{
+      preinited:b=yes
+      relativeTm:m=[[0.590495, 0.00145817, 0.1057] [0.0768191, -0.0686556, -0.428185] [0.0140043, 0.551067, -0.0858371] [0.45195, 1.50826, -0.927356]]
+      template:t="vgt_palm_c"
+      nodeName:t="root"
+    }
+
+    "templates:object"{
+      preinited:b=yes
+      relativeTm:m=[[-0.756409, -0.0773755, -0.100591] [-0.100637, -0.00509937, 0.760894] [-0.0773734, 0.763127, -0.00512042] [-1.45821, 1.53055, 0.0573502]]
+      template:t="vgt_palm_e"
+      nodeName:t="root"
+    }
+
+    "templates:object"{
+      preinited:b=yes
+      relativeTm:m=[[-0.602647, 0.352934, -0.0104864] [-0.00640525, 0.00980408, 0.698068] [0.353322, 0.603159, -0.00522899] [2.00194, 1.28209, 0.118166]]
+      template:t="vgt_palm_e"
+      nodeName:t="root"
+    }
+  }
+}
+
+us_m8_greyhound_common{
+  _use:t="base_m8_greyhound"
+  _use:t="vehicle_steering_assist"
+  _use:t="us_m8_greyhound_common_vehicle_sound"
+  commanderCockpitFpsCamMaxAngle:p2=40.0, 5.0
+  gunner_cam_limit__useCockpitDir:b=yes
+  item__iconOffset:p2=0.0, 0.15
+  item__iconScale:r=1.3
+  destroyIfNoCrewLeft:b=no
+
+  _group{
+    _tags:t="render"
+    exhaust_fx__fx:t="car_exhaust_template"
+    exhaust_fx__brokenFx:t="car_broken_exhaust_template"
+  }
+
+  "disableDMParts:list<t>"{
+    part:t="gunner"
+    part:t="commander"
+    part:t="machine_gunner"
+    part:t="driver"
+  }
+
+  "dm_parts_repair_names:list<t>"{
+    part:t="part:t="
+    part:t="drive_turret_h"
+    part:t="drive_turret_v"
+    part:t="cannon_breech"
+    part:t="engine"
+    part:t="transmission"
+    part:t="gun_barrel"
+    part:t="gun_barrel_01"
+    part:t="gun_barrel_02"
+    part:t="gun_barrel_03"
+    part:t="gun_barrel_04"
+    part:t="gun_barrel_05"
+    part:t="track_r"
+    part:t="track_l"
+    part:t="track_r_01"
+    part:t="track_l_01"
+    part:t="wheel_l_back"
+    part:t="wheel_l_front"
+    part:t="wheel_l_drive"
+    part:t="wheel_r_back"
+    part:t="wheel_r_front"
+    part:t="wheel_r_drive"
+    part:t="wheel_r_01"
+    part:t="wheel_r_02"
+    part:t="wheel_r_03"
+    part:t="wheel_r_04"
+    part:t="wheel_r_05"
+    part:t="wheel_r_06"
+    part:t="wheel_r_07"
+    part:t="wheel_r_08"
+    part:t="wheel_l_01"
+    part:t="wheel_l_02"
+    part:t="wheel_l_03"
+    part:t="wheel_l_04"
+    part:t="wheel_l_05"
+    part:t="wheel_l_06"
+    part:t="wheel_l_07"
+    part:t="wheel_l_08"
+  }
+
+  "dm_parts__repairGroups:object"{
+  }
+
+  "vehicle_seats__effectors:array"{
+  }
+
+  "vehicle_seats__seatsProvideOrder:tag"{
+  }
+
+  "vehicle_seats__seats:shared:array"{
+
+    "seats:object"{
+      name:t="commander"
+      nextSeat:t="main_gunner"
+      attachNode:t="commander"
+      shouldHideOwner:b=no
+      hatchRotationAxis:p3=0.0, 0.0, 0.0
+      locName:t="vehicle_seats/commander"
+      ignoreAttachNodeRotation:b=yes
+      attachTm:m=[[0.6590575, -0.3490215, 0.5038127] [0.3645423, 0.8179547, 0.08977423] [-0.4926989, 0.1383274, 0.7403467] [-0.25, 0.2, -0.15]]
+      seatComponent:t="isDriver"
+      receiveDamageFromDMPart:t="commander"
+      cameraNodeName:t="bone_turret"
+      maxPosWithOpenHatch:r=0.3
+      cockpitTemplate:t="us_m8_greyhound_commander_cockpit"
+      isHoldGunModeAllowed:b=yes
+      seatAnimUpper:t="drive_passenger"
+      seatAnimLower:t="drive_passenger"
+      useHatchEffectors:b=yes
+
+      "loaderTurretNames:array"{
+        turret:t="turret_01"
+      }
+
+      "hatchNodes:array"{
+        node:t="emtr_fire_ammo_03"
+      }
+
+      "hatchTurretNames:array"{
+        turret:t="turret_03"
+      }
+
+      "effectors:object"{
+
+        "l.hand:object"{
+          rel_tm:m=[[0.8775852, 0.4534447, -0.155672] [0.4790054, -0.8428488, 0.2452764] [-0.01998865, -0.2898183, -0.9568728] [-0.7377625, -0.1365957, 0.1382225]]
+          node:t="bone_gun"
+        }
+
+        "r.hand:object"{
+          rel_tm:m=[[0.815284, -0.551699, 0.175898] [0.431819, 0.37686, -0.819456] [0.385804, 0.744046, 0.545482] [0.321884, -0.229332, 0.314795]]
+          node:t="righthand_3"
+        }
+
+        "l.foot:object"{
+          rel_tm:m=[[0.9942642, -0.1035008, -0.0269517] [0.1035952, 0.9946175, 0.002109308] [0.02658823, -0.004889231, 0.9996337] [0.08365893, -0.03279114, -0.1422234]]
+          node:t="pedal_rfoot_3"
+        }
+
+        "r.foot:object"{
+          rel_tm:m=[[0.988905, -0.1312042, -0.06965141] [0.1465064, 0.9388892, 0.3114842] [0.02452689, -0.3182328, 0.9476953] [0.09035397, -0.09709167, 0.03568649]]
+          node:t="pedal_rfoot_3"
+        }
+      }
+    }
+
+    "seats:object"{
+      name:t="main_gunner"
+      locName:t="vehicle_seats/gunner"
+      attachNode:t="gunner"
+      ignoreAttachNodeRotation:b=yes
+      attachTm:m=[[0.7191414, -0.3659982, -0.3985901] [0.3425042, 0.8210881, -0.1359987] [0.4189484, -0.04301842, 0.7953728] [-0.25, 0.2, 0.15]]
+      seatComponent:t="isGunner"
+      nextSeat:t="driver"
+      shouldHideOwner:b=no
+      receiveDamageFromDMPart:t="gunner"
+      cameraNodeName:t="bone_camera_gunner"
+      cockpitTemplate:t="us_m8_greyhound_gunner_cockpit"
+      maxPosWithOpenHatch:r=0.3
+      hatchRotationAxis:p3=0.0, 0.0, 0.0
+      isHoldGunModeAllowed:b=no
+      useHatchEffectors:b=yes
+
+      "turretNames:array"{
+        turret:t="turret_01"
+        turret:t="turret_02"
+      }
+
+      "hatchNodes:array"{
+        node:t="emtr_fire_ammo_03"
+      }
+
+      "effectors:object"{
+        r.foot:t="pedal_rfoot_4"
+        l.foot:t="pedal_lfoot_4"
+
+        "l.hand:object"{
+          rel_tm:m=[[0.9079071, -0.4097004, -0.08860346] [0.401807, 0.9108416, -0.09445113] [0.1194001, 0.05015138, 0.9915786] [-0.134613, -0.1422958, -0.1080303]]
+          node:t="lefthand_4"
+        }
+
+        "r.hand:object"{
+          rel_tm:m=[[0.6778939, -0.6915087, 0.2495521] [0.4363692, 0.1052995, -0.8935844] [0.5916436, 0.7146528, 0.3731346] [0.09922028, -0.4090271, 0.1166077]]
+          node:t="righthand_4"
+        }
+      }
+    }
+
+    "seats:object"{
+      name:t="driver"
+      locName:t="vehicle_seats/driver"
+      seatOwnsEntityControl:b=yes
+      attachNode:t="driver"
+      ignoreAttachNodeRotation:b=yes
+      attachTm:m=[[0.984815, 0.173648, 0.0] [-0.17365, 0.984828, 0.0] [0.0, 0.0, 1.00002] [-0.29, -0.41, 0.0]]
+      seatComponent:t="isDriver"
+      shouldHideOwner:b=no
+      receiveDamageFromDMPart:t="driver"
+      cameraNodeName:t="bone_camera_driver"
+      cockpitTemplate:t="us_m8_greyhound_driver_cockpit"
+      isHoldGunModeAllowed:b=no
+      seatAnimUpper:t="drive_passenger"
+      seatAnimLower:t="drive_passenger"
+
+      "effectors:object"{
+        r.hand:t="righthand_1"
+        l.hand:t="lefthand_1"
+        r.foot:t="pedal_rfoot_1"
+        l.foot:t="pedal_lfoot_1"
+      }
+    }
+
+    "seats:object"{
+      attachNode:t="machine_gunner"
+      locName:t="vehicle_seats/radioman"
+      ignoreAttachNodeRotation:b=yes
+      attachTm:m=[[0.984815, 0.173648, 0.0] [-0.17365, 0.984828, 0.0] [0.0, 0.0, 1.00002] [-0.29, -0.41, 0.0]]
+      seatComponent:t="isPassenger"
+      shouldHideOwner:b=no
+      receiveDamageFromDMPart:t="machine_gunner"
+      cameraNodeName:t="bone_camera_driver"
+      isHoldGunModeAllowed:b=no
+      seatAnimUpper:t="drive_passenger"
+      seatAnimLower:t="drive_passenger"
+
+      "effectors:object"{
+        r.hand:t="righthand_2"
+        l.hand:t="lefthand_2"
+        r.foot:t="pedal_rfoot_2"
+        l.foot:t="pedal_lfoot_2"
+      }
+    }
+  }
+
+  "dm_phys_parts__wheelsPartIds:list<i>"{
+  }
+
+  "turrets__initAmmoDistribution:array"{
+
+    "ammo:object"{
+      slot:i=1
+      fill:b=yes
+    }
+
+    "ammo:object"{
+      slot:i=2
+      fill:b=yes
+    }
+  }
+
+  "heat_source__turretInfo:shared:array"{
+    _tags:t="render"
+
+    "turretInfo:object"{
+      turretName:t="turret_02"
+      offset:p3=0.15, -0.23, 0.105
+      scale:p3=0.3, 0.07, 0.07
+      radMult:r=0.15
+    }
+  }
+}
+
+us_m8_greyhound_driver_cockpit{
+  _use:t="base_driver_cockpit"
+  animchar__res:t="kv_1_driver_char"
+  cockpit__offset:p3=-0.167129, -0.00112972, 0.115395
+
+  "cockpit__visibleVehicleNodeNames:list<t>"{
+    node:t="gun_barrel"
+  }
+
+  "cockpit__slitForwardOffset:list<r>"{
+    slit:r=0.07
+  }
+}
+
+us_m8_greyhound_gunner_cockpit{
+  _use:t="base_gunner_cockpit"
+  animchar__res:t="t_26_1940_gunner_char"
+  cockpit__offset:p3=-0.4, -0.05, 0.2
+
+  "cockpit__attachNodeNames:list<t>"{
+    node:t="bone_camera_gunner"
+  }
+
+  "cockpit__attachNodeIndices:list<i>"{
+  }
+
+  "cockpit__visibleVehicleNodeNames:list<t>"{
+    node:t="gun_barrel"
+    node:t="hatch_05"
+    node:t="hatch_06"
+    node:t="@root"
+    node:t="ex_armor_r_05"
+    node:t="ex_armor_l_05"
+  }
+
+  "cockpit__slitNodeNames:list<t>"{
+    slit:t="cam_front_right"
+  }
+
+  "cockpit__slitForwardOffset:list<r>"{
+    slit:r=0.22
+  }
+
+  "cockpit__slitIsGun:list<b>"{
+    slit:b=yes
+  }
+
+  "cockpit__slitZoom:array"{
+
+    "slit:list<r>"{
+      zoom:r=1.9
+      zoom:r=3.5
+    }
+  }
+
+  "cockpit__slitZoomTime:list<r>"{
+    slit:r=0.05
+  }
+
+  "cockpit__slitTemplates:list<t>"{
+    slit:t="us_m70d"
+  }
+
+  "cockpit__slitEids:list<eid>"{
+  }
+}
+
+us_m8_greyhound_commander_cockpit{
+  _use:t="base_commander_cockpit_no_slits"
+  animchar__res:t="t_26_1940_commander_char"
+  cockpit__offset:p3=-0.0, 0.0, 0.0
+  cockpit__minForwardOffset:r=-0.05
+  cockpit__slitTransitionDuration:r=0.0
+
+  "cockpit__cockpitOffsetBySlit:list<p3>"{
+    item:p3=-0.211148, 0.338931, -0.273436
+  }
+
+  "cockpit__slitForwardOffset:list<r>"{
+    slit:r=0.17
+  }
+
+  "cockpit__slitIsGun:list<b>"{
+    slit:b=yes
+  }
+
+  "cockpit__slitNodeNames:list<t>"{
+    slit:t="cam_front"
+  }
+
+  "cockpit__visibleVehicleNodeNames:list<t>"{
+    node:t="gun_barrel"
+    node:t="bone_gun"
+    node:t="bone_turret"
+    node:t="@root"
+    node:t="hatch_05"
+    node:t="hatch_06"
+    node:t="ex_armor_r_05"
+    node:t="ex_armor_l_05"
+  }
+
+  "cockpit__periscopeLimits:list<p4>"{
+    slit:p4=-45.0, 45.0, -0.0, 0.0
+  }
+
+  "cockpit__periscopeSpeed:list<p2>"{
+    slit:p2=35.0, 35.0
+  }
+
+  "cockpit__slitZoom:array"{
+
+    "slit:list<r>"{
+      zoom:r=1.44
+    }
+  }
+
+  "cockpit__slitZoomTime:list<r>"{
+    slit:r=0.0
+  }
+
+  "cockpit__slitTemplates:list<t>"{
+    slit:t="default_periscope"
+  }
+
+  "cockpit__slitEids:list<eid>"{
+  }
+}

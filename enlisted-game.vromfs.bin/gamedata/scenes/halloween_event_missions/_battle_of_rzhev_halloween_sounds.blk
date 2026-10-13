@@ -1,0 +1,73 @@
+import{
+  scene:t="gamedata/scenes/_common_sounds.blk"
+}
+
+entity{
+  _template:t="battle_music_with_spawn_waves"
+  battle_music__intro:t="events/z/music/z_moscow_battle_start"
+  battle_music__waveStartPath:t="events/z/music/z_wave_new"
+  battle_music__waveEndPath:t="events/z/music/z_wave_end"
+}
+
+entity{
+  _template:t="zombie_scene_net_sounds"
+}
+
+entity{
+  _template:t="zombie_battle_music_param"
+}
+
+entity{
+  _template:t="zombie_near_battle_music_trigger"
+}
+
+entity{
+  _template:t="europe_autumn_ambient_sound"
+}
+
+entity{
+  _template:t="lake_mid_river_sound+game_object_spline_sound_generator"
+
+  "game_object_spline_sound_generator__gameObjects:list<t>"{
+    gameObject:t="river_sound_spline_a"
+    gameObject:t="river_sound_spline_b"
+    gameObject:t="river_sound_spline_c"
+    gameObject:t="river_sound_spline_d"
+    gameObject:t="river_sound_spline_e"
+  }
+}
+
+entity{
+  _template:t="sound_field"
+
+  "sound_field__biomeTypes:array"{
+
+    "obj:object"{
+      gameObject:t="biome_hill_sound_var"
+      alpha2Value:p2=0.25, 1.0
+    }
+
+    "obj:object"{
+      gameObject:t="biome_city_sound_var"
+      alpha2Value:p2=0.5, 1.0
+      extent:r=15.0
+    }
+  }
+
+  "sound_field__vars:list<t>"{
+    var:t="biome_high_hills"
+    var:t="biome_city"
+  }
+}
+
+entity{
+  _template:t="replicated_volume_ambient_sound+capsule_sound_shape"
+  transform:m=[[-100.12, 253.809, -306.587] [958.814, 0.000114766, -313.114] [-52.0223, -212.949, -159.302] [66.0172, 4.0, -426.885]]
+  game_object_sound__name:t="battle"
+}
+
+entity{
+  _template:t="replicated_volume_ambient_sound+capsule_sound_shape"
+  transform:m=[[-157.17, 278.168, -316.61] [990.161, 0.000183663, -491.53] [-81.6652, -233.387, -164.51] [-72.3284, 4.0, 272.813]]
+  game_object_sound__name:t="battle"
+}

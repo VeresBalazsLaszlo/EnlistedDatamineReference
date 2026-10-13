@@ -1,0 +1,774 @@
+levelBin:t="content/base/levels/normandy_omaha_beach.bin"
+numBorderCellsXPos:i=0
+numBorderCellsXNeg:i=8
+numBorderCellsZPos:i=8
+numBorderCellsZNeg:i=8
+
+skies{
+  year:i=1944
+  month:i=6
+  day:i=6
+  latitude:r=49.0
+  longtitude:r=0.0
+  weatherSeed:i=-1
+  skyIsUnreachable:b=no
+}
+
+clipmap{
+  texelSize:r=0.0078
+}
+
+micro_details{
+  micro_detail:t="microdetail_stone_d_tex_n*"
+  micro_detail:t="microdetail_stone_c_tex_n*"
+  micro_detail:t="microdetail_gravel_b_tex_n*"
+  micro_detail:t="microdetail_sand_a_tex_n*"
+  micro_detail:t="microdetail_sand_c_tex_n*"
+  micro_detail:t="microdetail_soil_plants_a_tex_n*"
+  micro_detail:t="microdetail_soil_a_tex_n*"
+  micro_detail:t="microdetail_mud_a_tex_n*"
+  micro_detail:t="microdetail_mulch_a_tex_n*"
+  micro_detail:t="microdetail_wood_b_tex_n*"
+  micro_detail:t="microdetail_moss_a_tex_n*"
+  micro_detail:t="microdetail_grass_b_tex_n*"
+  micro_detail:t="microdetail_clover_a_tex_n*"
+  micro_detail:t="microdetail_asphalt_b_tex_n*"
+  micro_detail:t="microdetail_asphalt_b_tex_n*"
+  micro_detail:t="microdetail_liquid_a_tex_n*"
+  land_micro_details_uv_scale:r=1.11
+
+  "microdetail_stone_d_tex_n*"{
+    coloring:r=0.8
+    porosity:r=0.4
+  }
+
+  "microdetail_stone_c_tex_n*"{
+    coloring:r=0.4
+    porosity:r=0.4
+  }
+
+  "microdetail_gravel_b_tex_n*"{
+    coloring:r=0.3
+    porosity:r=0.4
+  }
+
+  "microdetail_sand_a_tex_n*"{
+    coloring:r=0.8
+    porosity:r=0.3
+  }
+
+  "microdetail_sand_c_tex_n*"{
+    coloring:r=0.9
+    porosity:r=0.3
+  }
+
+  "microdetail_soil_plants_a_tex_n*"{
+    coloring:r=0.9
+    porosity:r=0.8
+  }
+
+  "microdetail_soil_a_tex_n*"{
+    coloring:r=0.9
+    porosity:r=0.9
+  }
+
+  "microdetail_mud_a_tex_n*"{
+    coloring:r=0.3
+    porosity:r=0.8
+  }
+
+  "microdetail_wood_b_tex_n*"{
+    coloring:r=0.4
+    porosity:r=0.4
+  }
+
+  "microdetail_moss_a_tex_n*"{
+    coloring:r=1.0
+    porosity:r=0.6
+  }
+
+  "microdetail_grass_b_tex_n*"{
+    coloring:r=1.0
+    porosity:r=0.5
+  }
+
+  "microdetail_clover_a_tex_n*"{
+    coloring:r=1.0
+    porosity:r=0.5
+  }
+
+  "microdetail_mulch_a_tex_n*"{
+    coloring:r=0.4
+    porosity:r=0.4
+  }
+
+  "microdetail_asphalt_b_tex_n*"{
+    coloring:r=0.9
+    porosity:r=0.9
+  }
+}
+
+grass{
+  normandy_omaha_beach_det_tex_d:t=""
+  grass_grid_size:r=0.125
+  grass_distance:r=150.0
+  grassMaskResolution:i=1024
+  hor_size_mul:r=1.0
+
+  grass_types{
+
+    generic_grass_tall_a{
+      diffuse:t="grass_generic_grass_tall_a_tex_d"
+      normal:t="grass_generic_grass_tall_a_tex_n"
+      variations:i=1
+      height:r=0.15
+      ht_rnd_add:r=0.5
+      hor_size:r=0.6
+      hor_size_rnd_add:r=0.45
+      color_mask_r_from:c=76, 100, 43, 90
+      color_mask_r_to:c=130, 112, 86, 90
+      color_mask_g_from:c=31, 31, 31, 90
+      color_mask_g_to:c=121, 136, 85, 90
+      color_mask_b_from:c=77, 93, 50, 90
+      color_mask_b_to:c=111, 110, 44, 90
+      height_from_weight_mul:r=0.5
+      height_from_weight_add:r=0.9
+      density_from_weight_mul:r=6.0
+      density_from_weight_add:r=0.45
+      vertical_angle_add:r=0.1
+      vertical_angle_mul:r=0.7
+      size_lod_mul:r=1.14
+    }
+
+    generic_grass_tall_b{
+      diffuse:t="grass_generic_grass_tall_b_tex_d"
+      normal:t="grass_generic_grass_tall_b_tex_n"
+      variations:i=1
+      height:r=0.65
+      ht_rnd_add:r=0.2
+      hor_size:r=0.5
+      hor_size_rnd_add:r=0.0
+      color_mask_r_from:c=107, 125, 44, 90
+      color_mask_r_to:c=102, 122, 71, 90
+      color_mask_g_from:c=67, 67, 67, 90
+      color_mask_g_to:c=115, 128, 107, 90
+      color_mask_b_from:c=100, 109, 36, 90
+      color_mask_b_to:c=108, 111, 46, 90
+      height_from_weight_mul:r=0.35
+      height_from_weight_add:r=0.7
+      density_from_weight_mul:r=0.6
+      density_from_weight_add:r=0.55
+      vertical_angle_add:r=0.1
+      vertical_angle_mul:r=0.7
+    }
+
+    rye_a{
+      diffuse:t="grass_rye_tex_d"
+      normal:t="grass_rye_tex_n"
+      variations:i=1
+      height:r=0.5
+      ht_rnd_add:r=0.4
+      hor_size:r=0.5
+      hor_size_rnd_add:r=0.4
+      color_mask_r_from:c=125, 120, 89, 90
+      color_mask_r_to:c=87, 53, 20, 90
+      color_mask_g_from:c=79, 79, 79, 90
+      color_mask_g_to:c=236, 236, 230, 90
+      color_mask_b_from:c=90, 69, 23, 90
+      color_mask_b_to:c=135, 77, 46, 84
+      height_from_weight_mul:r=0.4
+      height_from_weight_add:r=0.6
+      density_from_weight_mul:r=0.45
+      density_from_weight_add:r=0.0
+    }
+
+    wheat_a{
+      diffuse:t="grass_wheat_tex_d"
+      normal:t="grass_wheat_tex_n"
+      variations:i=1
+      height:r=0.8
+      ht_rnd_add:r=0.1
+      hor_size:r=0.35
+      hor_size_rnd_add:r=0.55
+      color_mask_r_from:c=100, 100, 29, 90
+      color_mask_r_to:c=94, 92, 0, 90
+      color_mask_g_from:c=52, 71, 0, 90
+      color_mask_g_to:c=106, 137, 161, 90
+      color_mask_b_from:c=139, 128, 54, 90
+      color_mask_b_to:c=72, 43, 0, 90
+      height_from_weight_mul:r=0.4
+      height_from_weight_add:r=0.6
+      density_from_weight_mul:r=0.7
+      density_from_weight_add:r=0.7
+      size_lod_mul:r=1.43
+    }
+
+    wheat_b{
+      diffuse:t="grass_wheat_tex_d"
+      normal:t="grass_wheat_tex_n"
+      variations:i=1
+      height:r=0.8
+      ht_rnd_add:r=0.1
+      hor_size:r=0.35
+      hor_size_rnd_add:r=0.55
+      color_mask_r_from:c=87, 89, 1, 90
+      color_mask_r_to:c=75, 91, 0, 90
+      color_mask_g_from:c=55, 69, 0, 90
+      color_mask_g_to:c=69, 96, 0, 90
+      color_mask_b_from:c=92, 98, 0, 90
+      color_mask_b_to:c=72, 43, 0, 90
+      height_from_weight_mul:r=0.45
+      height_from_weight_add:r=0.4
+      density_from_weight_mul:r=0.3
+      density_from_weight_add:r=0.3
+      size_lod_mul:r=1.43
+      vertical_angle_add:r=-1.4416
+      vertical_angle_mul:r=0.25
+      horizontal_grass:b=yes
+    }
+
+    oat_a{
+      diffuse:t="grass_oat_tex_d"
+      normal:t="grass_oat_tex_n"
+      variations:i=1
+      height:r=0.7
+      ht_rnd_add:r=0.3
+      hor_size:r=0.7
+      hor_size_rnd_add:r=0.3
+      color_mask_r_from:c=88, 81, 10, 90
+      color_mask_r_to:c=87, 64, 42, 90
+      color_mask_g_from:c=109, 109, 109, 109
+      color_mask_g_to:c=223, 220, 220, 90
+      color_mask_b_from:c=70, 86, 31, 90
+      color_mask_b_to:c=99, 61, 29, 90
+      height_from_weight_mul:r=0.4
+      height_from_weight_add:r=0.6
+      density_from_weight_mul:r=0.45
+      density_from_weight_add:r=0.0
+    }
+
+    field_grass_a{
+      diffuse:t="grass_generic_grass_tall_a_tex_d"
+      normal:t="grass_generic_grass_tall_a_tex_n"
+      variations:i=1
+      height:r=0.4
+      ht_rnd_add:r=0.45
+      hor_size:r=0.6
+      hor_size_rnd_add:r=0.0
+      color_mask_r_from:c=76, 100, 43, 90
+      color_mask_r_to:c=130, 112, 86, 90
+      color_mask_g_from:c=31, 31, 31, 90
+      color_mask_g_to:c=121, 136, 85, 90
+      color_mask_b_from:c=77, 93, 50, 90
+      color_mask_b_to:c=111, 110, 44, 90
+      height_from_weight_mul:r=0.65
+      height_from_weight_add:r=0.35
+      density_from_weight_mul:r=0.3
+      density_from_weight_add:r=0.25
+      vertical_angle_add:r=1.4584
+      vertical_angle_mul:r=0.7
+    }
+
+    generic_grass_tall_b_dead{
+      diffuse:t="grass_generic_grass_tall_b_tex_d"
+      normal:t="grass_generic_grass_tall_b_tex_n"
+      variations:i=1
+      height:r=0.6
+      ht_rnd_add:r=0.3
+      hor_size:r=0.6
+      hor_size_rnd_add:r=0.0
+      color_mask_r_from:c=64, 118, 5, 90
+      color_mask_r_to:c=128, 86, 26, 90
+      color_mask_g_from:c=5, 5, 5, 90
+      color_mask_g_to:c=182, 173, 117, 90
+      color_mask_b_from:c=114, 156, 10, 90
+      color_mask_b_to:c=128, 127, 43, 90
+      height_from_weight_mul:r=0.3
+      height_from_weight_add:r=0.7
+      density_from_weight_mul:r=0.0
+      density_from_weight_add:r=0.2
+    }
+
+    generic_grass_small_a{
+      diffuse:t="grass_generic_grass_small_a_tex_d"
+      normal:t="grass_generic_grass_small_a_tex_n"
+      variations:i=1
+      height:r=0.25
+      ht_rnd_add:r=0.2
+      hor_size:r=0.4
+      hor_size_rnd_add:r=0.55
+      stiffness:r=0.8
+      color_mask_r_from:c=17, 32, 1, 90
+      color_mask_r_to:c=49, 54, 26, 90
+      color_mask_g_from:c=5, 5, 5, 90
+      color_mask_g_to:c=181, 188, 148, 90
+      color_mask_b_from:c=28, 50, 24, 90
+      color_mask_b_to:c=45, 60, 28, 90
+      height_from_weight_mul:r=0.6
+      height_from_weight_add:r=0.45
+      density_from_weight_mul:r=0.6
+      density_from_weight_add:r=0.9
+      vertical_angle_add:r=0.1084
+      vertical_angle_mul:r=0.7
+    }
+
+    generic_grass_small_b{
+      diffuse:t="grass_generic_grass_small_a_tex_d"
+      normal:t="grass_generic_grass_small_a_tex_n"
+      variations:i=1
+      height:r=0.15
+      ht_rnd_add:r=0.05
+      hor_size:r=0.2
+      hor_size_rnd_add:r=0.1
+      stiffness:r=0.8
+      color_mask_r_from:c=17, 32, 1, 90
+      color_mask_r_to:c=81, 80, 0, 90
+      color_mask_g_from:c=5, 5, 5, 90
+      color_mask_g_to:c=255, 255, 255, 90
+      color_mask_b_from:c=10, 61, 0, 90
+      color_mask_b_to:c=32, 60, 0, 90
+      height_from_weight_mul:r=0.5
+      height_from_weight_add:r=0.5
+      density_from_weight_mul:r=0.1
+      density_from_weight_add:r=0.9
+      vertical_angle_add:r=0.6
+      vertical_angle_mul:r=0.7
+    }
+
+    generic_grass_dry_a{
+      diffuse:t="grass_generic_grass_small_a_tex_d"
+      normal:t="grass_generic_grass_small_a_tex_n"
+      variations:i=1
+      height:r=0.3
+      ht_rnd_add:r=0.4
+      hor_size:r=0.3
+      hor_size_rnd_add:r=0.4
+      color_mask_r_from:c=73, 68, 56, 90
+      color_mask_r_to:c=78, 66, 47, 90
+      color_mask_g_from:c=5, 5, 5, 90
+      color_mask_g_to:c=255, 255, 255, 90
+      color_mask_b_from:c=65, 56, 56, 90
+      color_mask_b_to:c=65, 57, 53, 90
+      height_from_weight_mul:r=0.5
+      height_from_weight_add:r=0.5
+      density_from_weight_mul:r=0.1
+      density_from_weight_add:r=0.9
+      vertical_angle_add:r=0.4
+      vertical_angle_mul:r=0.4
+    }
+
+    generic_grass_flat_a{
+      diffuse:t="grass_generic_grass_small_a_tex_d"
+      normal:t="grass_generic_grass_small_a_tex_n"
+      variations:i=1
+      horizontal_grass:b=yes
+      height:r=0.4
+      ht_rnd_add:r=0.2
+      hor_size:r=0.4
+      hor_size_rnd_add:r=0.2
+      color_mask_r_from:c=17, 32, 1, 90
+      color_mask_r_to:c=74, 67, 31, 90
+      color_mask_g_from:c=5, 5, 5, 90
+      color_mask_g_to:c=209, 209, 209, 90
+      color_mask_b_from:c=30, 61, 24, 90
+      color_mask_b_to:c=52, 52, 19, 90
+      height_from_weight_mul:r=0.5
+      height_from_weight_add:r=0.5
+      density_from_weight_mul:r=0.4
+      density_from_weight_add:r=0.7
+    }
+
+    generic_grass_burnt_a{
+      diffuse:t="grass_generic_grass_small_a_tex_d"
+      normal:t="grass_generic_grass_small_a_tex_n"
+      variations:i=1
+      height:r=0.4
+      ht_rnd_add:r=0.2
+      hor_size:r=0.4
+      hor_size_rnd_add:r=0.2
+      color_mask_r_from:c=10, 9, 8, 90
+      color_mask_r_to:c=9, 8, 7, 90
+      color_mask_g_from:c=5, 5, 5, 90
+      color_mask_g_to:c=255, 255, 255, 90
+      color_mask_b_from:c=165, 110, 83, 90
+      color_mask_b_to:c=70, 57, 46, 90
+      height_from_weight_mul:r=0.7
+      height_from_weight_add:r=0.3
+      density_from_weight_mul:r=0.2
+      density_from_weight_add:r=0.0
+      vertical_angle_add:r=0.1
+      vertical_angle_mul:r=0.5
+    }
+
+    bush_dead_a{
+      diffuse:t="grass_generic_bush_dead_a_tex_d"
+      normal:t="grass_generic_bush_dead_a_tex_n"
+      variations:i=1
+      height:r=0.6
+      ht_rnd_add:r=0.4
+      hor_size:r=0.6
+      hor_size_rnd_add:r=0.4
+      stiffness:r=0.7
+      color_mask_r_from:c=48, 10, 5, 90
+      color_mask_r_to:c=44, 24, 12, 90
+      color_mask_g_from:c=5, 5, 5, 90
+      color_mask_g_to:c=250, 250, 250, 90
+      color_mask_b_from:c=47, 11, 8, 90
+      color_mask_b_to:c=45, 38, 34, 90
+      height_from_weight_mul:r=0.3
+      height_from_weight_add:r=0.7
+      density_from_weight_mul:r=0.2
+      density_from_weight_add:r=0.0
+      vertical_angle_add:r=-0.2
+      vertical_angle_mul:r=0.5
+    }
+
+    bush_burnt_a{
+      diffuse:t="grass_generic_bush_dead_a_tex_d"
+      normal:t="grass_generic_bush_dead_a_tex_n"
+      variations:i=1
+      height:r=0.4
+      ht_rnd_add:r=0.3
+      hor_size:r=0.4
+      hor_size_rnd_add:r=0.3
+      stiffness:r=0.7
+      color_mask_r_from:c=15, 13, 11, 90
+      color_mask_r_to:c=40, 25, 15, 90
+      color_mask_g_from:c=5, 5, 5, 90
+      color_mask_g_to:c=250, 250, 250, 90
+      color_mask_b_from:c=40, 37, 37, 90
+      color_mask_b_to:c=73, 59, 37, 90
+      height_from_weight_mul:r=0.3
+      height_from_weight_add:r=0.7
+      density_from_weight_mul:r=0.3
+      density_from_weight_add:r=0.0
+      vertical_angle_add:r=-0.2
+      vertical_angle_mul:r=0.5
+    }
+
+    bush_a{
+      diffuse:t="grass_generic_bush_a_tex_d"
+      normal:t="grass_generic_bush_a_tex_n"
+      variations:i=1
+      height:r=0.5
+      ht_rnd_add:r=0.15
+      hor_size:r=0.25
+      hor_size_rnd_add:r=0.65
+      stiffness:r=0.9
+      color_mask_r_from:c=120, 110, 0, 90
+      color_mask_r_to:c=111, 74, 0, 90
+      color_mask_g_from:c=0, 13, 0, 90
+      color_mask_g_to:c=83, 137, 0, 90
+      color_mask_b_from:c=133, 46, 0, 90
+      color_mask_b_to:c=117, 63, 0, 90
+      height_from_weight_mul:r=0.45
+      height_from_weight_add:r=0.7
+      density_from_weight_mul:r=0.85
+      density_from_weight_add:r=0.65
+      vertical_angle_add:r=-0.4416
+      vertical_angle_mul:r=0.5
+      size_lod_mul:r=1.59
+    }
+
+    blueberry{
+      diffuse:t="grass_blueberry_tex_d"
+      normal:t="grass_blueberry_tex_n"
+      variations:i=1
+      height:r=0.7
+      ht_rnd_add:r=0.55
+      hor_size:r=0.6
+      hor_size_rnd_add:r=0.6
+      stiffness:r=0.7
+      color_mask_r_from:c=17, 48, 85, 90
+      color_mask_r_to:c=15, 22, 28, 90
+      color_mask_g_from:c=5, 5, 5, 90
+      color_mask_g_to:c=224, 225, 217, 90
+      color_mask_b_from:c=48, 64, 16, 90
+      color_mask_b_to:c=60, 54, 3, 90
+      height_from_weight_mul:r=0.3
+      height_from_weight_add:r=0.3
+      density_from_weight_mul:r=0.15
+      density_from_weight_add:r=0.3
+      vertical_angle_add:r=0.1
+      vertical_angle_mul:r=0.7
+      size_lod_mul:r=1.31
+    }
+
+    clover_flat{
+      diffuse:t="grass_clover_flat_tex_d"
+      normal:t="grass_clover_flat_tex_n"
+      variations:i=1
+      horizontal_grass:b=yes
+      height:r=0.4
+      ht_rnd_add:r=0.25
+      hor_size:r=0.5
+      hor_size_rnd_add:r=0.4
+      color_mask_r_from:c=41, 68, 5, 90
+      color_mask_r_to:c=98, 101, 11, 90
+      color_mask_g_from:c=51, 52, 50, 90
+      color_mask_g_to:c=202, 187, 240, 90
+      color_mask_b_from:c=40, 66, 2, 90
+      color_mask_b_to:c=39, 69, 3, 90
+      height_from_weight_mul:r=0.45
+      height_from_weight_add:r=0.25
+      density_from_weight_mul:r=0.3
+      density_from_weight_add:r=0.2
+      vertical_angle_mul:r=0.01
+      vertical_angle_add:r=-0.1916
+      size_lod_mul:r=1.31
+      stiffness:r=1.0
+    }
+
+    chamerion_angustifolium{
+      diffuse:t="grass_chamerion_angustifolium_tex_d"
+      normal:t="grass_chamerion_angustifolium_tex_n"
+      variations:i=1
+      height:r=1.3
+      ht_rnd_add:r=0.4
+      hor_size:r=1.3
+      hor_size_rnd_add:r=0.2
+      color_mask_r_from:c=119, 50, 50, 81
+      color_mask_r_to:c=119, 96, 43, 81
+      color_mask_g_from:c=5, 5, 5, 90
+      color_mask_g_to:c=255, 255, 255, 90
+      color_mask_b_from:c=84, 86, 42, 90
+      color_mask_b_to:c=56, 60, 33, 90
+      height_from_weight_mul:r=0.5
+      height_from_weight_add:r=0.5
+      density_from_weight_mul:r=0.3
+      density_from_weight_add:r=0.0
+    }
+
+    ammophila_arenaria{
+      diffuse:t="grass_ammophila_arenaria_tex_d"
+      normal:t="grass_ammophila_arenaria_tex_n"
+      variations:i=1
+      height:r=0.55
+      ht_rnd_add:r=0.2
+      hor_size:r=0.55
+      hor_size_rnd_add:r=0.2
+      color_mask_r_from:c=129, 114, 89, 90
+      color_mask_r_to:c=123, 87, 58, 90
+      color_mask_g_from:c=5, 5, 5, 90
+      color_mask_g_to:c=233, 233, 233, 90
+      color_mask_b_from:c=34, 84, 0, 90
+      color_mask_b_to:c=105, 72, 39, 90
+      height_from_weight_mul:r=0.5
+      height_from_weight_add:r=0.5
+      density_from_weight_mul:r=0.5
+      density_from_weight_add:r=0.0
+    }
+
+    cortadelia_selloana{
+      diffuse:t="grass_cortadelia_selloana_tex_d"
+      normal:t="grass_cortadelia_selloana_tex_n"
+      variations:i=1
+      height:r=1.0
+      ht_rnd_add:r=0.3
+      hor_size:r=1.0
+      hor_size_rnd_add:r=0.2
+      color_mask_r_from:c=157, 144, 124, 90
+      color_mask_r_to:c=118, 94, 83, 90
+      color_mask_g_from:c=5, 5, 5, 90
+      color_mask_g_to:c=255, 255, 255, 90
+      color_mask_b_from:c=39, 90, 0, 90
+      color_mask_b_to:c=115, 88, 5, 90
+      height_from_weight_mul:r=0.5
+      height_from_weight_add:r=0.5
+      density_from_weight_mul:r=0.5
+      density_from_weight_add:r=0.0
+    }
+
+    tanacetum_vulgare{
+      diffuse:t="grass_tanacetum_vulgare_tex_d"
+      normal:t="grass_tanacetum_vulgare_tex_n"
+      variations:i=1
+      height:r=1.0
+      ht_rnd_add:r=0.4
+      hor_size:r=1.0
+      hor_size_rnd_add:r=0.3
+      color_mask_r_from:c=181, 152, 21, 90
+      color_mask_r_to:c=171, 100, 0, 90
+      color_mask_g_from:c=5, 5, 5, 90
+      color_mask_g_to:c=255, 255, 255, 90
+      color_mask_b_from:c=54, 59, 19, 90
+      color_mask_b_to:c=52, 85, 7, 90
+      height_from_weight_mul:r=0.5
+      height_from_weight_add:r=0.5
+      density_from_weight_mul:r=0.5
+      density_from_weight_add:r=0.0
+    }
+
+    typha_a{
+      diffuse:t="grass_typha_tex_d"
+      normal:t="grass_typha_tex_n"
+      variations:i=1
+      height:r=1.0
+      ht_rnd_add:r=0.4
+      hor_size:r=1.0
+      hor_size_rnd_add:r=0.2
+      color_mask_r_from:c=52, 19, 19, 90
+      color_mask_r_to:c=73, 35, 19, 90
+      color_mask_g_from:c=5, 5, 5, 90
+      color_mask_g_to:c=255, 255, 255, 90
+      color_mask_b_from:c=85, 61, 24, 90
+      color_mask_b_to:c=55, 69, 18, 90
+      height_from_weight_mul:r=0.7
+      height_from_weight_add:r=0.3
+      density_from_weight_mul:r=0.2
+      density_from_weight_add:r=0.0
+      vertical_angle_add:r=-0.03
+      vertical_angle_mul:r=0.04
+    }
+
+    matricaria_chamomilla_flat{
+      diffuse:t="grass_matricaria_chamomilla_flat_tex_d"
+      normal:t="grass_matricaria_chamomilla_flat_tex_n"
+      variations:i=1
+      horizontal_grass:b=yes
+      height:r=0.1
+      ht_rnd_add:r=0.1
+      hor_size:r=0.1
+      hor_size_rnd_add:r=0.1
+      color_mask_r_from:c=255, 201, 37, 90
+      color_mask_r_to:c=255, 149, 0, 90
+      color_mask_g_from:c=5, 5, 5, 90
+      color_mask_g_to:c=250, 250, 250, 90
+      color_mask_b_from:c=217, 216, 203, 90
+      color_mask_b_to:c=159, 150, 142, 90
+      height_from_weight_mul:r=0.5
+      height_from_weight_add:r=0.5
+      density_from_weight_mul:r=0.6
+      density_from_weight_add:r=0.0
+    }
+
+    matricaria_chamomilla{
+      diffuse:t="grass_matricaria_chamomilla_tex_d"
+      normal:t="grass_matricaria_chamomilla_tex_n"
+      variations:i=1
+      height:r=0.2
+      ht_rnd_add:r=0.1
+      hor_size:r=0.2
+      hor_size_rnd_add:r=0.1
+      stiffness:r=0.9
+      color_mask_r_from:c=255, 201, 37, 90
+      color_mask_r_to:c=255, 149, 0, 90
+      color_mask_g_from:c=5, 5, 5, 90
+      color_mask_g_to:c=250, 250, 250, 90
+      color_mask_b_from:c=217, 216, 203, 90
+      color_mask_b_to:c=159, 150, 142, 90
+      height_from_weight_mul:r=0.5
+      height_from_weight_add:r=0.5
+      density_from_weight_mul:r=0.7
+      density_from_weight_add:r=0.0
+      vertical_angle_add:r=0.2
+      vertical_angle_mul:r=0.6
+    }
+
+    field_grass_b{
+      diffuse:t="grass_generic_grass_tall_b_tex_d"
+      normal:t="grass_generic_grass_tall_b_tex_n"
+      height:r=0.3
+      size_lod_mul:r=1.22
+      size_lod_wide_mul:r=1.0
+      ht_rnd_add:r=0.1
+      hor_size:r=0.2
+      hor_size_rnd_add:r=0.2
+      height_from_weight_mul:r=0.6
+      height_from_weight_add:r=0.7
+      density_from_weight_mul:r=0.4
+      density_from_weight_add:r=0.4
+      vertical_angle_add:r=-0.7416
+      vertical_angle_mul:r=0.35
+      fit_range:r=0.0
+      color_mask_r_from:c=173, 193, 98, 90
+      color_mask_r_to:c=155, 134, 14, 90
+      color_mask_g_from:c=45, 41, 16, 80
+      color_mask_g_to:c=157, 150, 103, 80
+      color_mask_b_from:c=153, 144, 61, 90
+      color_mask_b_to:c=53, 74, 44, 90
+      tile_tc_x:r=0.5
+      stiffness:r=0.15
+      horizontal_grass:b=yes
+    }
+
+    nograss{
+      density_from_weight_mul:r=0.0
+      density_from_weight_add:r=0.0
+    }
+  }
+
+  decals{
+
+    grass_roads{
+      id:i=6
+      field_grass_a:r=1.0
+      generic_grass_flat_a:r=6.0
+    }
+
+    farm_roads{
+      id:i=5
+      wheat_b:r=1.0
+    }
+
+    farm_fields{
+      id:i=59
+      wheat_a:r=1.0
+    }
+
+    meadow_b{
+      id:i=1
+      matricaria_chamomilla:r=2.0
+      generic_grass_small_a:r=2.0
+      generic_grass_tall_a:r=6.0
+      ammophila_arenaria:r=1.0
+      chamerion_angustifolium:r=2.0
+      clover_flat:r=1.0
+    }
+
+    meadow_a{
+      id:i=2
+      matricaria_chamomilla:r=1.0
+      generic_grass_tall_a:r=5.0
+      ammophila_arenaria:r=1.0
+    }
+
+    forest_a{
+      id:i=3
+      nograss:r=3.0
+      clover_flat:r=2.0
+      blueberry:r=1.0
+      generic_grass_tall_a:r=10.0
+      generic_grass_small_a:r=9.0
+    }
+
+    forest_b{
+      id:i=4
+      clover_flat:r=2.0
+      generic_grass_tall_a:r=4.0
+      generic_grass_small_a:r=9.0
+      bush_a:r=1.0
+    }
+
+    grass_clipmap{
+      id:i=62
+      clover_flat:r=1.0
+      generic_grass_tall_a:r=5.0
+      generic_grass_small_a:r=3.0
+    }
+
+    base_grass{
+      id:i=0
+      nograss:r=1.0
+    }
+  }
+}
+
+unitedVdata.rendInst{
+  IB:i=98304
+  VB1:i=65536
+  VB2:i=65536
+  VB3:i=65536
+  VB4:i=65536
+  VB5:i=0
+}

@@ -1,0 +1,108 @@
+mass:r=1.52
+caliber:r=0.05
+speed:r=920.0
+explosiveType:t="hta"
+explosiveMass:r=0.35
+maxDistance:r=3000.0
+hitPowerMult:r=2.0
+onHitChanceMultFire:r=2.5
+normalizationPreset:t="heat"
+ricochetPreset:t="he"
+secondaryShattersPreset:t="ap"
+stabilityCaliberToArmorThreshold:r=5.0
+stabilityReductionAfterRicochet:r=0.5
+stabilityReductionAfterPenetration:r=0.15
+bulletType:t="he_frag_i"
+slopeEffectPreset:t="ap"
+explodeOnRendinst:b=yes
+fuseOnWater:b=yes
+relativeVelArmorShift:p2=200.0, 1000.0
+nearHitPower:p2=1.0, 50.0
+midHitPower:p2=0.9, 300.0
+explodeTreshold:r=0.01
+farHitPower:p2=0.1, 700.0
+fuseDelayDist:r=0.2
+
+stabilityRicochetModifier{
+  mod1:p2=0.0, 0.05
+  mod2:p2=20.0, 0.1
+  mod3:p2=30.0, 0.2
+  mod3:p2=45.0, 0.3
+}
+
+pressureDamage{
+  damageType:t="pressure"
+}
+
+armorpower{
+  ArmorPower0m:p2=11.0, 10.0
+  ArmorPower100m:p2=11.0, 100.0
+  ArmorPower500m:p2=9.0, 500.0
+  ArmorPower1000m:p2=8.0, 1000.0
+  ArmorPower1500m:p2=6.0, 1500.0
+}
+
+damage{
+
+  kinetic{
+    damageType:t="generic"
+    demarrePenetrationK:r=0.15
+    demarreSpeedPow:r=1.43
+    demarreMassPow:r=0.71
+    demarreCaliberPow:r=1.07
+  }
+
+  shatter{
+    useRealShatters:b=yes
+    countPortion:r=0.4
+
+    segment{
+      radiusScale:r=1.0
+      penetrationScale:r=1.5
+      damageScale:r=1.0
+      angles:p2=0.0, 74.0
+      countPortion:r=0.3
+    }
+
+    segment{
+      radiusScale:r=1.0
+      penetrationScale:r=1.3
+      damageScale:r=1.5
+      angles:p2=75.0, 100.0
+      countPortion:r=0.05
+    }
+
+    segment{
+      radiusScale:r=1.0
+      penetrationScale:r=1.0
+      damageScale:r=1.0
+      angles:p2=101.0, 260.0
+      countPortion:r=0.3
+    }
+
+    segment{
+      radiusScale:r=1.0
+      penetrationScale:r=1.3
+      damageScale:r=1.5
+      angles:p2=261.0, 285.0
+      countPortion:r=0.05
+    }
+
+    segment{
+      radiusScale:r=1.0
+      penetrationScale:r=1.5
+      damageScale:r=1.0
+      angles:p2=286.0, 359.0
+      countPortion:r=0.3
+    }
+  }
+}
+
+shatterDamage{
+  breachConeAngle:r=45.0
+}
+
+tracer{
+  headColor:c=255, 247, 212, 200
+  smokeColor:c=80, 80, 80, 186
+}

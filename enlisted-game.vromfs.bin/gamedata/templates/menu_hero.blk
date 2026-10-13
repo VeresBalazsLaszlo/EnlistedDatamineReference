@@ -1,0 +1,57 @@
+common_menu_animchar{
+  _use:t="base_menu_animchar"
+  _use:t="usa_summer_1"
+  _use:t="replicating"
+  human_anim__selectedWeaponVarId:i=-1
+
+  "animchar__objTexReplace:object"{
+  }
+
+  phys_vars{
+  }
+
+  anim_phys{
+  }
+}
+
+customizable_menu_animchar{
+  _use:t="base_menu_animchar"
+  _use:t="base_soldier"
+  _use:t="human_anim_state_restrictions"
+  _use:t="replicating"
+  _use:t="animchar_with_attaches"
+  guid:t=""
+  guid_hash:i=0
+  human_inventory__capacity:r=25.0
+  human_inventory__currentVolume:r=0.0
+  human_anim__selectedWeaponVarId:i=-1
+
+  "animchar__objTexReplace:object"{
+  }
+
+  phys_vars{
+  }
+
+  anim_phys{
+  }
+
+  "itemContainer:list<eid>"{
+  }
+
+  "human_inventory__initialItems:object"{
+  }
+
+  "human_equipment__itemRemap:object"{
+  }
+}
+
+customizable_benchmark_animchar{
+  _use:t="customizable_menu_animchar"
+  animchar__res:t="ger_summer_1_char"
+  transform:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [0.0, 0.0, 0.0]]
+
+  "animchar__animStateNames:object"{
+    lower:t="enlisted_action_idle_09_weapon"
+    upper:t="enlisted_action_idle_09_weapon"
+  }
+}

@@ -1,0 +1,243 @@
+type_97_rikuo{
+  _use:t="simple_damage_model"
+  _use:t="vehicle_seats_effectors"
+  _use:t="base_bike_left_sidecar"
+  _use:t="vehicle_anim_speedometer_kmh"
+  _use:t="appzund_ks750_common_vehicle_sound"
+  _use:t="vehicle_seats_effectors"
+  _use:t="vehicle_with_attached_ammo_box"
+  skin__template:t="type_97_rikuo_skins"
+  commanderFpsCamMaxAngle:p2=30.0, 35.0
+  item__name:t="items/type_97_rikuo"
+  vehicleName:t="type_97_rikuo"
+  animchar__res:t="rikuo_type_97_char"
+  collres__res:t="rikuo_type_97_collision"
+  vehicle_net_phys__blk:t="gamedata/templates/motorcycles/type_97_rikuo.blk:VehiclePhys"
+  canUseRespawnbaseType:t="motorcycle"
+  damage_model__blk:t="gamedata/templates/motorcycles/type_97_rikuo.blk"
+  particle_phys__blk:t="gamedata/suspension/empty.blk"
+  vehicle_seats__enumVarName:t="rikuo_type_97"
+  item__iconOffset:p2=0.0, 0.05
+  item__iconScale:r=1.3
+  vehicle_commander_cam__attachToVehicle:b=no
+
+  _group{
+    _tags:t="gameClient"
+
+    "dm_parts__specialViewPartNames:shared:list<t>"{
+      name:t="ammo_box"
+    }
+  }
+
+  _group{
+    _tags:t="render"
+    vehicle_anim__speedometerMinMax:p2=10.0, 120.0
+  }
+
+  _group{
+    _tags:t="render"
+    animchar_camera_target__node_name:t="bone_mg_aa_v"
+    animchar_camera_target__node_offset:p3=0.0, 0.0, 0.0
+    animchar_camera_target__nodeIndex:i=-1
+  }
+
+  "disableDMParts:list<t>"{
+    part:t="ex_lantern_01"
+  }
+
+  anim_phys{
+  }
+
+  "vehicleDisplayMarkerOverHead:tag"{
+    tags:t="ui"
+  }
+
+  "vehicle_seats__effectors:array"{
+  }
+
+  "vehicle_seats__seatsProvideOrder:tag"{
+  }
+
+  "vehicle_seats__seats:shared:array"{
+
+    "seats:object"{
+      name:t="commander"
+      nextSeat:t="driver"
+      locName:t="vehicle_seats/gunner"
+      ignoreAttachNodeRotation:b=yes
+      seatOwnsEntityControl:b=no
+      attachNode:t="char_passenger_01_pivot"
+      entranceNode:t="char_passenger_01_landing"
+      attachTm:m=[[0.9744556, 0.2249688, -3.02007e-14] [-0.224968, 0.974452, -7.275506e-08] [-1.636636e-08, 7.089125e-08, 1.000096] [0.05, 0.0, -0.0]]
+      seatComponent:t="isPassenger"
+      canPlaceManually:b=yes
+      seatEnum:t="right_seat"
+      seatAnimUpper:t="rikuo_type_97_gunner"
+      seatAnimLower:t="rikuo_type_97_gunner"
+      smokeScreen:b=no
+      cameraNodeName:t="bone_mg_aa_v"
+      cameraOffset:p3=-0.55, 0.2, -0.0
+      bindCamera:b=yes
+      copySkeletonNodesPostfix:t="_gunner"
+
+      "turretNames:array"{
+        turretNames:t="turret_01"
+      }
+
+      "effectors:object"{
+        l.hand:t="ik_hand_left_gunner"
+        r.hand:t="ik_hand_right_gunner"
+        l.forearm:t="ik_forearm_left_gunner"
+        r.forearm:t="ik_forearm_right_gunner"
+
+        "l.foot:object"{
+          rel_tm:m=[[0.5185413, -0.8547585, 0.02244623] [0.8436047, 0.5071407, -0.1764659] [0.1394522, 0.1104405, 0.9840507] [0.07219518, 0.6554844, -0.3694]]
+          node:t="root"
+        }
+
+        "r.foot:object"{
+          rel_tm:m=[[0.5729254, -0.817917, 0.05260688] [0.8146422, 0.5753347, 0.07312737] [-0.09007871, 0.0009592578, 0.995934] [0.05402649, 0.6483307, -0.1914825]]
+          node:t="root"
+        }
+      }
+
+      "copySkeletonNodesRecursive:array"{
+        node:t="Bip01 L Hand"
+        node:t="Bip01 R Hand"
+      }
+    }
+
+    "seats:object"{
+      name:t="driver"
+      locName:t="vehicle_seats/driver"
+      seatOwnsEntityControl:b=yes
+      attachNode:t="char_driver_pivot"
+      ignoreAttachNodeRotation:b=yes
+      entranceNode:t="char_driver_landing"
+      attachTm:m=[[0.9612753, -0.275629, -0.0] [0.275629, 0.9612753, 0.0] [0.0, -0.0, 1.000024] [-0.03, 0.06, -0.0]]
+      seatComponent:t="isGunner"
+      shouldHideOwner:b=no
+      cameraNodeName:t="bone_camera_driver"
+      seatEnum:t="left_seat"
+      seatAnimUpper:t="moto_drive_driver"
+      seatAnimLower:t="moto_drive_driver"
+      smokeScreen:b=no
+
+      "effectors:object"{
+        l.hand:t="ik_hand_left"
+        r.hand:t="ik_hand_right"
+        l.forearm:t="ik_forearm_left"
+        r.forearm:t="ik_forearm_right"
+
+        "l.foot:object"{
+          rel_tm:m=[[0.340339, -0.9334646, 0.1132017] [0.935977, 0.3478441, 0.05433496] [-0.09009618, 0.08746174, 0.9920849] [0.3215098, -0.5042725, -0.2896576]]
+          node:t="char_driver_pivot"
+        }
+
+        "r.foot:object"{
+          rel_tm:m=[[0.226121, -0.9719992, -0.06392217] [0.9740667, 0.2250943, 0.02292387] [-0.007893476, -0.06744803, 0.9976913] [0.2928552, -0.511909, 0.2764435]]
+          node:t="char_driver_pivot"
+        }
+      }
+    }
+
+    "seats:object"{
+      name:t="passenger1"
+      locName:t="vehicle_seats/passenger1"
+      seatOwnsEntityControl:b=no
+      attachNode:t="char_passenger_02_pivot"
+      entranceNode:t="char_passenger_02_landing"
+      attachTm:m=[[1.0, 0.0, 0.0] [0.0, 1.0, 0.0] [0.0, 0.0, 1.0] [-0.0, 0.05, 0.02]]
+      seatComponent:t="isPassenger"
+      canPlaceManually:b=yes
+      seatEnum:t="zundapp_ks750_seat"
+      seatAnimUpper:t="zundapp_ks750_passenger"
+      seatAnimLower:t="zundapp_ks750_passenger"
+      cameraType:t="commander"
+      smokeScreen:b=no
+      aimLimits:p4=-180.0, 180.0, -45.0, 15.0
+
+      "effectors:object"{
+
+        "l.hand:object"{
+          rel_tm:m=[[0.7217816, -0.6445162, 0.252254] [-0.5679088, -0.7598364, -0.3164303] [0.3956153, 0.08513609, -0.9144604] [0.2888868, 0.05380011, -0.09465027]]
+          node:t="char_passenger_02_pivot"
+        }
+
+        "r.hand:object"{
+          rel_tm:m=[[0.7157792, -0.668804, -0.2008993] [-0.6427388, -0.7434319, 0.1849253] [-0.2730337, -0.003239947, -0.9619993] [0.2874177, 0.06193995, 0.06407166]]
+          node:t="char_passenger_02_pivot"
+        }
+
+        "l.foot:object"{
+          rel_tm:m=[[-0.1779767, -0.984032, -0.002536899] [0.9836417, -0.1779778, 0.02780283] [-0.02781035, 0.002452853, 0.9996101] [0.2064248, -0.3903632, -0.3634949]]
+          node:t="char_passenger_02_pivot"
+        }
+
+        "r.foot:object"{
+          rel_tm:m=[[-0.04470409, -0.9989818, 0.006024272] [0.995308, -0.04505606, -0.08562837] [0.08581267, 0.002168068, 0.9963095] [0.2532957, -0.4066272, 0.2596893]]
+          node:t="char_passenger_02_pivot"
+        }
+      }
+    }
+  }
+
+  "turret_gun_flash_fx__flashNodes:shared:array"{
+    node:t="emtr_mg_aa_flame"
+  }
+
+  "turret_gun_flash_fx__flashFx:shared:array"{
+    fx:t="muzzle_ground_8mm"
+  }
+
+  "turret_gun_flash_fx__flashFxScale:shared:array"{
+    scale:r=0.6
+  }
+
+  "turret_control__emitterNodes:shared:array"{
+    node:t="bone_mg_aa_v"
+  }
+
+  "turret_control__animVars:shared:array"{
+
+    "vars:object"{
+      curYawParamName:t="turret_01_yaw"
+      curPitchParamName:t="gun_01_pitch"
+      aimActiveParamName:t="aim_01_active"
+      paramYawSpeed:t="turret_01_yaw_speed"
+      paramYawSpeedMul:t="turret_01_yaw_mul"
+      paramYawAccel:t="turret_01_yaw_accel"
+      paramMinYawAngle:t="turret_01_min_yaw_angle"
+      paramMaxYawAngle:t="turret_01_max_yaw_angle"
+      paramMinPitchAngle:t="turret_01_min_pitch_angle"
+      paramMaxPitchAngle:t="turret_01_max_pitch_angle"
+      paramPitchSpeed:t="gun_01_pitch_speed"
+      paramPitchSpeedMul:t="gun_01_pitch_mul"
+      paramPitchAccel:t="gun_01_pitch_accel"
+      wishYawParamName:t="gun_01_aim:targetYaw"
+      wishPitchParamName:t="gun_01_aim:targetPitch"
+    }
+  }
+
+  "turret_control__turretInfo:shared:array"{
+
+    "turretInfo:object"{
+      turretName:t="turret_01"
+      gun:t="type_97_rikuo_turret_6_5mm_type_11"
+      salt:i=1
+    }
+  }
+}
+
+type_97_rikuo_turret_6_5mm_type_11{
+  _use:t="bike_6_5mm_type_11"
+  gun__shootNodeName:t="emtr_mg_aa_flame"
+  turret__yawSpeed:r=300.0
+  turret__pitchSpeed:r=100.0
+  turret__aimNodeName:t="bone_mg_aa_h"
+  turret__limit:p4=-45.0, 45.0, -20.0, 50.0
+
+  "gun__shellsAmmo:array"{
+    ammo:i=600
+  }
+}

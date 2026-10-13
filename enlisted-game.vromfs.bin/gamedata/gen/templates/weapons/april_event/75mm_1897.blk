@@ -1,0 +1,34 @@
+base_75mm_1897{
+  item__name:t="guns/75mm_1897"
+  gun__blk:t="gamedata/gen/weapons/april_event/75mm_1897.blk"
+  gun__shotFreq:r=0.25
+  gun__locName:t="75mm_1897"
+
+  "gun__ammoSetsInfo:shared:array"{
+
+    "defaultSet:array"{
+
+      "shell:object"{
+        blk:t="gamedata/gen/weapons/shells/april_event/75mm_1897_defaultset.blk"
+        name:t="75mm_mle1910m"
+        type:t="aphe_tank"
+      }
+    }
+
+    "75mm_Mle1915_HE:array"{
+
+      "shell:object"{
+        blk:t="gamedata/gen/weapons/shells/april_event/75mm_1897_75mm_mle1915_he.blk"
+        name:t="75mm_mle_1900_he"
+        type:t="he_frag_tank"
+      }
+    }
+  }
+}
+
+tankgun_75mm_1897{
+  _use:t="tankgun"
+  _use:t="base_tankgun_cannon"
+  _use:t="base_75mm_1897"
+  turret__triggerGroup:i=0
+}

@@ -1,0 +1,31 @@
+import{
+  scene:t="gamedata/scenes/_normandy_omaha_benchmark_common.blk"
+}
+
+entity{
+  _template:t="screen_fade_anim"
+  screen_fade:r=0.9
+  anim_track_on:b=yes
+}
+
+entity{
+  _template:t="benchmark"
+  benchmark_name:t="normandy_sword_static"
+
+  "camera_tracks:array"{
+
+    "camera_tracks:object"{
+      from_fov:r=90.0
+      from_pos:p3=796.126, 41.4024, -101.394
+      to_dir:p3=-0.973089, -0.0696092, 0.219665
+      duration:r=10000.0
+      to_pos:p3=796.126, 41.4024, -101.394
+      to_fov:r=90.0
+      from_dir:p3=-0.973089, -0.0696092, 0.219665
+    }
+  }
+}
+
+entity{
+  _template:t="ui_disabled"
+}

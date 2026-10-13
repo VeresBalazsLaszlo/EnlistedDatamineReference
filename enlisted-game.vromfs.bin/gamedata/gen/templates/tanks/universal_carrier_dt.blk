@@ -1,0 +1,145 @@
+base_universal_carrier_dt{
+  _use:t="base_tank"
+  killLogName:t="us_universal_carrier_dt"
+  cockpit__zoomOutFov:r=2.7475
+  cockpit__zoomInFov:r=5.3955
+  cockpit__sightName:t="sight_model/default_tank_spg"
+  cockpit__sightFov:r=20.0
+  drowningHeight:r=1.752
+  item__name:t="items/ussr_universal_carrier_dt_apc"
+  skin__template:t="universal_carrier_dt_apc_skins"
+  collres__res:t="universal_carrier_dt_collision"
+  animchar__res:t="universal_carrier_dt_char"
+  animchar_fast_phys__res:t="universal_carrier_dt_fastphys"
+  dmg_animchar__res:t="universal_carrier_dt_dmg_char"
+  xray_resource__modelName:t="universal_carrier_dt"
+  damage_model__blk:t="gamedata/gen/units/tanks/universal_carrier_dt.blk"
+  particle_phys__blk:t="gamedata/gen/units/tanks/universal_carrier_dt.blk:PhysSys"
+  vehicle_net_phys__blk:t="gamedata/gen/units/tanks/universal_carrier_dt.blk:VehiclePhys"
+
+  _group{
+    _tags:t="gameClient"
+    chain_ik__blk:t="gamedata/gen/units/tanks/universal_carrier_dt.blk:chainIK"
+  }
+
+  animchar_fast_phys{
+    _tags:t="gameClient"
+  }
+
+  "turret_gun_flash_fx__flashNodes:shared:array"{
+    node:t="emtr_mg_aa_flame"
+    node:t="emtr_mg_aa_flame_01"
+  }
+
+  "turret_gun_flash_fx__flashFx:shared:array"{
+    fx:t="muzzle_ground_15mm"
+    fx:t="muzzle_ground_8mm"
+  }
+
+  "turret_gun_flash_fx__flashFxScale:shared:array"{
+    scale:r=1.0
+    scale:r=1.0
+  }
+
+  "turret_control__emitterNodes:shared:array"{
+    node:t="bone_mg_v"
+    node:t="bone_mg_h_01"
+  }
+
+  "turret_control__animVars:shared:array"{
+
+    "vars:object"{
+      curYawParamName:t="turret_01_yaw"
+      curPitchParamName:t="gun_01_pitch"
+      aimActiveParamName:t="aim_01_active"
+      paramYawSpeed:t="turret_01_yaw_speed"
+      paramYawSpeedMul:t="turret_01_yaw_mul"
+      paramYawAccel:t="turret_01_yaw_accel"
+      paramMinYawAngle:t="turret_01_min_yaw_angle"
+      paramMaxYawAngle:t="turret_01_max_yaw_angle"
+      paramMinPitchAngle:t="turret_01_min_pitch_angle"
+      paramMaxPitchAngle:t="turret_01_max_pitch_angle"
+      paramPitchSpeed:t="gun_01_pitch_speed"
+      paramPitchSpeedMul:t="gun_01_pitch_mul"
+      paramPitchAccel:t="gun_01_pitch_accel"
+      wishYawParamName:t="gun_01_aim:targetYaw"
+      wishPitchParamName:t="gun_01_aim:targetPitch"
+      gunRecoilParamName:t="gun_01_recoil"
+    }
+
+    "vars:object"{
+      curYawParamName:t="turret_02_yaw"
+      curPitchParamName:t="gun_02_pitch"
+      aimActiveParamName:t="aim_02_active"
+      paramYawSpeed:t="turret_02_yaw_speed"
+      paramYawSpeedMul:t="turret_02_yaw_mul"
+      paramYawAccel:t="turret_02_yaw_accel"
+      paramMinYawAngle:t="turret_02_min_yaw_angle"
+      paramMaxYawAngle:t="turret_02_max_yaw_angle"
+      paramMinPitchAngle:t="turret_02_min_pitch_angle"
+      paramMaxPitchAngle:t="turret_02_max_pitch_angle"
+      paramPitchSpeed:t="gun_02_pitch_speed"
+      paramPitchSpeedMul:t="gun_02_pitch_mul"
+      paramPitchAccel:t="gun_02_pitch_accel"
+      wishYawParamName:t="gun_02_aim:targetYaw"
+      wishPitchParamName:t="gun_02_aim:targetPitch"
+    }
+  }
+
+  "turret_control__turretInfo:shared:array"{
+
+    "turretInfo:object"{
+      turretName:t="turret_01"
+      turretGroup:t="main_turrets"
+      gun:t="universal_carrier_turret_7_62mm_dp_gun_01+main_turret"
+      barrelDm:t="gun_barrel"
+      breechDm:t="gun_barrel"
+      verDriveDm:t="gun_barrel"
+      horDriveDm:t="gun_barrel"
+      salt:i=1
+    }
+
+    "turretInfo:object"{
+      turretName:t="turret_02"
+      gun:t="universal_carrier_turret_7_62mm_dp_gun_02"
+      barrelDm:t="gun_barrel_01"
+      verDriveDm:t="gun_barrel_01"
+      horDriveDm:t="gun_barrel_01"
+      salt:i=1
+    }
+  }
+}
+
+universal_carrier_turret_7_62mm_dp_gun_01{
+  _use:t="bike_7_62mm_dp"
+  turret__triggerGroup:i=0
+  gun__shootNodeName:t="emtr_mg_aa_flame"
+  turret__yawSpeed:r=60.0
+  turret__pitchSpeed:r=60.0
+  turret__aimNodeName:t="bone_mg_v"
+  turret__limit:p4=-13.0, 13.0, -5.0, 10.0
+
+  "controlledByTankAiGunnerWithBot:tag"{
+  }
+
+  "gun__shellsAmmo:array"{
+    ammo:i=940
+  }
+}
+
+universal_carrier_turret_7_62mm_dp_gun_02{
+  _use:t="bike_7_62mm_dp"
+  turret__triggerGroup:i=0
+  gun__shootNodeName:t="emtr_mg_aa_flame_01"
+  turret__yawSpeed:r=60.0
+  turret__pitchSpeed:r=60.0
+  turret__aimNodeName:t="bone_mg_v_01"
+  turret__limit:p4=-20.0, 20.0, -10.0, 20.0
+
+  "controlledByTankAiGunnerWithBot:tag"{
+  }
+
+  "gun__shellsAmmo:array"{
+    ammo:i=940
+  }
+}

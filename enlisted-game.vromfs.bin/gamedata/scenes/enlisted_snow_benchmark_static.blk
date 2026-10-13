@@ -1,0 +1,89 @@
+import{
+  scene:t="gamedata/scenes/_volokolamsk_sounds.blk"
+}
+
+import{
+  scene:t="gamedata/scenes/_volokolamsk_winter_common.blk"
+}
+
+import{
+  scene:t="gamedata/scenes/_volokolamsk_winter_biome_fx.blk"
+}
+
+entity{
+  _template:t="level"
+  level__blk:t="levels/battle_of_moscow_volokolamsk_countryside_winter.blk"
+  level__timeRange:p2=5.0, 19.2
+
+  "level__weatherChoice:object"{
+    weather_overcast_b:r=1.0
+    weather_cloudy_a:r=1.0
+  }
+
+  "level__timeVec:array"{
+    level__timeVec:r=5.6
+    level__timeVec:r=6.5
+    level__timeVec:r=17.0
+    level__timeVec:r=19.2
+  }
+}
+
+entity{
+  _template:t="volfog_nbs"
+  volfog_nbs__rootGraph:t="fog_battle_of_moscow_volokolamsk_countryside_winter.json"
+}
+
+entity{
+  _template:t="water"
+  water__strength:r=0.1
+  waterTrail__fadeInTime:r=1.0
+}
+
+entity{
+  _template:t="wind"
+}
+
+entity{
+  _template:t="postfx_color_grading_tonemap_death_alive_enlisted"
+}
+
+entity{
+  _template:t="bloom"
+}
+
+entity{
+  _template:t="postfx_roundctrl"
+}
+
+entity{
+  _template:t="door_mult_ent_generator"
+  ri_extra_gen__blk:t="gamedata/volokolamsk_doors.blk"
+}
+
+entity{
+  _template:t="screen_fade_anim"
+  screen_fade:r=0.9
+  anim_track_on:b=yes
+}
+
+entity{
+  _template:t="ui_disabled"
+}
+
+entity{
+  _template:t="benchmark"
+  benchmark_name:t="volokolamsk"
+
+  "camera_tracks:array"{
+
+    "camera_tracks:object"{
+      from_fov:r=90.0
+      from_pos:p3=-62.2583, 15.0402, 1185.02
+      to_dir:p3=-0.72618, 0.0, -0.687505
+      duration:r=1000000.0
+      to_pos:p3=-62.2583, 15.0402, 1185.02
+      to_fov:r=90.0
+      from_dir:p3=-0.72618, 0.0, -0.687505
+    }
+  }
+}

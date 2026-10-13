@@ -1,0 +1,389 @@
+entity{
+  _template:t="moving_car_panzerjagerwagen+secondary_cart+still_obstacle"
+  transform:m=[[-0.999999, 0.00140248, -0.000244141] [0.00140248, 0.999999, 1.71201e-07] [0.000244141, -1.71201e-07, -1.0] [1163.18, 8.73269, 319.388]]
+}
+
+entity{
+  _template:t="moving_car_panzerzug_bp_44_lokomotiv+requires_trans_render+secondary_cart+still_obstacle"
+  transform:m=[[-0.999999, 0.00140248, -0.000244141] [0.00140248, 0.999999, 1.71201e-07] [0.000244141, -1.71201e-07, -1.0] [1194.88, 8.80417, 319.388]]
+}
+
+entity{
+  _template:t="moving_car_panzerzug_bp_44_lokomotiv_b+requires_trans_render+secondary_cart+still_obstacle"
+  transform:m=[[-0.999999, 0.00100662, 0.00100662] [0.00100662, 1.0, -5.06639e-07] [-0.00100662, 5.06639e-07, -1.0] [1209.58, 8.81408, 319.388]]
+}
+
+entity{
+  _template:t="moving_car_artillerie_flak_wagen+requires_trans_render+secondary_cart+still_obstacle"
+  transform:m=[[-0.999999, 0.00100662, 0.00100662] [0.00100662, 1.0, -5.06639e-07] [-0.00100662, 5.06639e-07, -1.0] [1223.78, 8.75729, 319.388]]
+}
+
+entity{
+  _template:t="moving_car_geschutz_wagen+requires_trans_render+secondary_cart+still_obstacle"
+  transform:m=[[-0.999999, 0.00100662, 0.00100662] [0.00100662, 1.0, -5.06639e-07] [-0.00100662, 5.06639e-07, -1.0] [1238.84, 8.73269, 319.388]]
+}
+
+entity{
+  _template:t="moving_car_geschutz_wagen+requires_trans_render+secondary_cart+still_obstacle"
+  transform:m=[[0.999995, 0.000976561, -0.00300996] [-0.000976561, 1.0, 1.46971e-06] [0.00300996, 1.46971e-06, 0.999995] [1176.81, 8.73269, 319.403]]
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[0.71557, 0.128587, 0.686604] [-1.49012e-08, 0.982911, -0.184079] [-0.698541, 0.131721, 0.703342] [169.971, 8.66346, 314.761]]
+  ri_extra__name:t="t_34_85_e_hull_rendinst"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[0.71557, 0.128587, 0.686604] [-1.49012e-08, 0.982911, -0.184079] [-0.698541, 0.131721, 0.703342] [170.367, 10.2384, 314.887]]
+  ri_extra__name:t="t_34_85_e_turret_rendinst"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[0.71557, 0.128587, 0.686604] [-1.49012e-08, 0.982911, -0.184079] [-0.698541, 0.131721, 0.703342] [171.043, 10.8082, 315.454]]
+  ri_extra__name:t="t_34_85_e_gun_a_rendinst"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[0.71557, 0.128587, 0.686604] [-1.49012e-08, 0.982911, -0.184079] [-0.698541, 0.131721, 0.703342] [169.987, 8.63857, 314.754]]
+  ri_extra__name:t="t_34_85_e_track_a_rendinst"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[0.71557, 0.128587, 0.686604] [-1.49012e-08, 0.982911, -0.184079] [-0.698541, 0.131721, 0.703342] [169.971, 8.66346, 314.761]]
+  ri_extra__name:t="t_34_85_e_armor_hull_rendinst"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[0.71557, 0.128587, 0.686604] [-1.49012e-08, 0.982911, -0.184079] [-0.698541, 0.131721, 0.703342] [170.362, 10.244, 314.889]]
+  ri_extra__name:t="t_34_85_e_armor_rendinst"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[1.0, 0.0, 0.0] [-0.0, 0.997723, 0.0674383] [0.0, -0.0674383, 0.997723] [791.123, 8.1276, 320.109]]
+  ri_extra__name:t="t_34_85_e_armor_rendinst"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[1.0, 0.0, 0.0] [-0.0, 0.997723, 0.0674383] [0.0, -0.0674383, 0.997723] [790.552, 6.60282, 319.981]]
+  ri_extra__name:t="t_34_85_e_hull_rendinst"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[1.0, 0.0, 0.0] [-0.0, 0.997723, 0.0674383] [0.0, -0.0674383, 0.997723] [791.125, 8.12271, 320.104]]
+  ri_extra__name:t="t_34_85_e_turret_rendinst"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[1.0, 0.0, 0.0] [-0.0, 0.997723, 0.0674383] [0.0, -0.0674383, 0.997723] [792.071, 8.57739, 320.136]]
+  ri_extra__name:t="t_34_85_e_gun_a_rendinst"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[1.0, 0.0, 0.0] [-0.0, 0.997723, 0.0674383] [0.0, -0.0674383, 0.997723] [790.556, 6.58087, 319.961]]
+  ri_extra__name:t="t_34_85_e_track_a_rendinst"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[1.0, 0.0, 0.0] [-0.0, 0.997723, 0.0674383] [0.0, -0.0674383, 0.997723] [790.552, 6.60282, 319.981]]
+  ri_extra__name:t="t_34_85_e_armor_hull_rendinst"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[-0.99999, -0.000189494, -0.00443037] [-1.45519e-11, 0.999087, -0.0427326] [0.00443442, -0.0427322, -0.999077] [447.163, 10.4008, 318.472]]
+  ri_extra__name:t="pzkpfw_v_ausf_g_panther_turret_rendinst"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[-0.99999, -0.000189494, -0.00443037] [-1.45519e-11, 0.999087, -0.0427326] [0.00443442, -0.0427322, -0.999077] [446.966, 8.56239, 318.551]]
+  ri_extra__name:t="pzkpfw_v_ausf_g_panther_hull_rendinst"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[-0.99999, -0.000189494, -0.00443037] [-1.45519e-11, 0.999087, -0.0427326] [0.00443442, -0.0427322, -0.999077] [446.173, 10.8216, 318.462]]
+  ri_extra__name:t="pzkpfw_v_ausf_g_panther_gun_b_rendinst"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[-0.99999, -0.000189494, -0.00443037] [-1.45519e-11, 0.999087, -0.0427326] [0.00443442, -0.0427322, -0.999077] [446.967, 8.56216, 318.552]]
+  ri_extra__name:t="pzkpfw_v_ausf_g_panther_track_a_rendinst"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[-0.99999, 0.000254367, -0.00442712] [-2.91038e-11, 0.998354, 0.057362] [0.00443442, 0.0573614, -0.998344] [1031.98, 10.6413, 319.985]]
+  ri_extra__name:t="pzkpfw_v_ausf_g_panther_turret_rendinst"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[-0.99999, 0.000254367, -0.00442712] [-2.91038e-11, 0.998354, 0.057362] [0.00443442, 0.0573614, -0.998344] [1031.78, 8.80416, 319.88]]
+  ri_extra__name:t="pzkpfw_v_ausf_g_panther_hull_rendinst"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[-0.99999, 0.000254367, -0.00442712] [-2.91038e-11, 0.998354, 0.057362] [0.00443442, 0.0573614, -0.998344] [1030.99, 11.0609, 320.017]]
+  ri_extra__name:t="pzkpfw_v_ausf_g_panther_gun_b_rendinst"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[-0.99999, 0.000254367, -0.00442712] [-2.91038e-11, 0.998354, 0.057362] [0.00443442, 0.0573614, -0.998344] [1031.78, 8.80387, 319.881]]
+  ri_extra__name:t="pzkpfw_v_ausf_g_panther_track_a_rendinst"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[-0.866775, 0.00417924, -0.498682] [0.00369709, 0.999991, 0.00195447] [0.498686, -0.000149585, -0.866783] [1368.92, 10.3789, 315.477]]
+  ri_extra__name:t="pzkpfw_v_ausf_g_panther_turret_rendinst"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[-0.866775, 0.00417924, -0.498682] [0.00369709, 0.999991, 0.00195447] [0.498686, -0.000149585, -0.866783] [1368.74, 8.53962, 315.376]]
+  ri_extra__name:t="pzkpfw_v_ausf_g_panther_hull_rendinst"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[-0.866775, 0.00417924, -0.498682] [0.00369709, 0.999991, 0.00195447] [0.498686, -0.000149585, -0.866783] [1368.05, 10.8038, 314.994]]
+  ri_extra__name:t="pzkpfw_v_ausf_g_panther_gun_b_rendinst"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[-0.866775, 0.00417924, -0.498682] [0.00369709, 0.999991, 0.00195447] [0.498686, -0.000149585, -0.866783] [1368.74, 8.53936, 315.377]]
+  ri_extra__name:t="pzkpfw_v_ausf_g_panther_track_a_rendinst"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[0.999333, 0.0365306, -1.45519e-11] [-0.0365305, 0.999328, -0.00299943] [-0.000109571, 0.00299743, 0.999996] [898.802, 6.66627, 323.647]]
+  ri_extra__name:t="t_34_85_e_hull_rendinst"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[0.999333, 0.0365306, -1.45519e-11] [-0.0365305, 0.999328, -0.00299943] [-0.000109571, 0.00299743, 0.999996] [899.316, 8.2161, 323.668]]
+  ri_extra__name:t="t_34_85_e_armor_rendinst"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[0.999333, 0.0365306, -1.45519e-11] [-0.0365305, 0.999328, -0.00299943] [-0.000109571, 0.00299743, 0.999996] [899.318, 8.21092, 323.663]]
+  ri_extra__name:t="t_34_85_e_turret_rendinst"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[0.999333, 0.0365306, -1.45519e-11] [-0.0365305, 0.999328, -0.00299943] [-0.000109571, 0.00299743, 0.999996] [900.247, 8.70097, 323.662]]
+  ri_extra__name:t="t_34_85_e_gun_a_rendinst"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[0.999333, 0.0365306, -1.45519e-11] [-0.0365305, 0.999328, -0.00299943] [-0.000109571, 0.00299743, 0.999996] [898.806, 6.64308, 323.628]]
+  ri_extra__name:t="t_34_85_e_track_a_rendinst"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[0.999333, 0.0365306, -1.45519e-11] [-0.0365305, 0.999328, -0.00299943] [-0.000109571, 0.00299743, 0.999996] [898.802, 6.66627, 323.647]]
+  ri_extra__name:t="t_34_85_e_armor_hull_rendinst"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[0.999512, -4.65661e-10, 0.0312314] [0.00397147, 0.991882, -0.127101] [-0.0309779, 0.127163, 0.991398] [1492.54, 8.29837, 316.053]]
+  ri_extra__name:t="is_2_1944_track_a_rendinst"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[0.999512, -4.65661e-10, 0.0312314] [0.00397147, 0.991882, -0.127101] [-0.0309779, 0.127163, 0.991398] [1492.54, 8.29813, 316.053]]
+  ri_extra__name:t="is_2_1944_hull_rendinst"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[0.999512, -4.65661e-10, 0.0312314] [0.00397147, 0.991882, -0.127101] [-0.0309779, 0.127163, 0.991398] [1493.34, 9.89196, 315.875]]
+  ri_extra__name:t="is_2_1944_turret_rendinst"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[0.999512, -4.65661e-10, 0.0312314] [0.00397147, 0.991882, -0.127101] [-0.0309779, 0.127163, 0.991398] [1494.46, 10.2711, 315.865]]
+  ri_extra__name:t="is_2_1944_gun_a_rendinst"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[0.999871, -0.0152058, 0.00509334] [0.0146361, 0.995115, 0.0976334] [-0.00655306, -0.0975463, 0.99521] [108.748, 9.27347, 320.884]]
+  ri_extra__name:t="is_2_1944_hull_rendinst"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[0.999871, -0.0152058, 0.00509334] [0.0146361, 0.995115, 0.0976334] [-0.00655306, -0.0975463, 0.99521] [109.564, 10.8602, 321.046]]
+  ri_extra__name:t="is_2_1944_turret_rendinst"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[0.999871, -0.0152058, 0.00509334] [0.0146361, 0.995115, 0.0976334] [-0.00655306, -0.0975463, 0.99521] [110.688, 11.2226, 321.093]]
+  ri_extra__name:t="is_2_1944_gun_a_rendinst"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[0.999871, -0.0152058, 0.00509334] [0.0146361, 0.995115, 0.0976334] [-0.00655306, -0.0975463, 0.99521] [108.749, 9.27375, 320.883]]
+  ri_extra__name:t="is_2_1944_track_a_rendinst"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[1.0, 0.0, 0.0] [-0.0, 0.999895, 0.0144729] [0.0, -0.0144729, 0.999895] [265.296, 8.6781, 322.419]]
+  ri_extra__name:t="is_2_1944_hull_rendinst"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[1.0, 0.0, 0.0] [-0.0, 0.999895, 0.0144729] [0.0, -0.0144729, 0.999895] [266.088, 10.2847, 322.443]]
+  ri_extra__name:t="is_2_1944_turret_rendinst"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[1.0, 0.0, 0.0] [-0.0, 0.999895, 0.0144729] [0.0, -0.0144729, 0.999895] [267.207, 10.6662, 322.453]]
+  ri_extra__name:t="is_2_1944_gun_a_rendinst"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[1.0, 0.0, 0.0] [-0.0, 0.999895, 0.0144729] [0.0, -0.0144729, 0.999895] [265.297, 8.67837, 322.419]]
+  ri_extra__name:t="is_2_1944_track_a_rendinst"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[-0.999858, 0.0167902, -0.00142612] [0.0168422, 0.998457, -0.0529217] [0.000535355, -0.0529383, -0.998598] [645.349, 8.61208, 318.676]]
+  ri_extra__name:t="pzkpfw_v_ausf_g_panther_hull_rendinst"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[-0.974027, 0.0167902, 0.225807] [0.00437635, 0.998457, -0.0553644] [-0.226388, -0.0529383, -0.972598] [645.578, 10.446, 318.577]]
+  ri_extra__name:t="pzkpfw_v_ausf_g_panther_turret_rendinst"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[-0.974027, 0.0167902, 0.225807] [0.00437635, 0.998457, -0.0553644] [-0.226388, -0.0529383, -0.972598] [644.617, 10.8834, 318.789]]
+  ri_extra__name:t="pzkpfw_v_ausf_g_panther_gun_b_rendinst"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[-0.999858, 0.0167902, -0.00142612] [0.0168422, 0.998457, -0.0529217] [0.000535355, -0.0529383, -0.998598] [645.35, 8.61185, 318.676]]
+  ri_extra__name:t="pzkpfw_v_ausf_g_panther_track_a_rendinst"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[-0.852316, 0.0111089, -0.522909] [0.0306637, 0.999116, -0.0287548] [0.522127, -0.0405425, -0.851904] [876.81, 6.35126, 315.539]]
+  ri_extra__name:t="pzkpfw_vi_ausf_e_tiger_track_a_rendinst"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[-0.852316, 0.0111089, -0.522909] [0.0306637, 0.999116, -0.0287548] [0.522127, -0.0405425, -0.851904] [876.809, 6.35075, 315.538]]
+  ri_extra__name:t="pzkpfw_vi_ausf_e_tiger_hull_rendinst"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[-0.852316, 0.0111089, -0.522909] [0.0306637, 0.999116, -0.0287548] [0.522127, -0.0405425, -0.851904] [876.879, 8.12024, 315.479]]
+  ri_extra__name:t="pzkpfw_vi_ausf_e_tiger_turret_rendinst"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[-0.852316, 0.0111089, -0.522909] [0.0306637, 0.999116, -0.0287548] [0.522127, -0.0405425, -0.851904] [875.902, 8.49224, 314.936]]
+  ri_extra__name:t="pzkpfw_vi_ausf_e_tiger_gun_a_rendinst"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[-0.999694, -0.0226973, -0.0098266] [-0.0231973, 0.998262, 0.0541738] [0.00857992, 0.0543852, -0.998483] [1387.95, 8.58191, 320.695]]
+  ri_extra__name:t="pzkpfw_vi_ausf_e_tiger_hull_rendinst"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[-0.999694, -0.0226973, -0.0098266] [-0.0231973, 0.998262, 0.0541738] [0.00857992, 0.0543852, -0.998483] [1386.79, 10.6795, 320.847]]
+  ri_extra__name:t="pzkpfw_vi_ausf_e_tiger_gun_a_rendinst"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[-0.999694, -0.0226973, -0.0098266] [-0.0231973, 0.998262, 0.0541738] [0.00857992, 0.0543852, -0.998483] [1387.92, 10.3517, 320.775]]
+  ri_extra__name:t="pzkpfw_vi_ausf_e_tiger_turret_rendinst"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[-0.999694, -0.0226973, -0.0098266] [-0.0231973, 0.998262, 0.0541738] [0.00857992, 0.0543852, -0.998483] [1387.95, 8.5825, 320.695]]
+  ri_extra__name:t="pzkpfw_vi_ausf_e_tiger_track_a_rendinst"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[-0.00715058, -1.31434, -0.0625277] [-0.0930797, -0.0618667, 1.31109] [-1.31253, 0.0115478, -0.0926369] [325.729, 10.976, 318.604]]
+  ri_extra__name:t="freight_car_g_munchen"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[-0.0107443, 1.2658, -0.160542] [0.107991, -0.15907, -1.26142] [-1.27137, -0.0242088, -0.105789] [289.57, 11.0986, 320.26]]
+  ri_extra__name:t="freight_car_g_munchen_dmg"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[0.69737, 0.0304693, 1.21201] [0.0301923, 1.39734, -0.0525006] [-1.21201, 0.0523403, 0.696058] [531.709, 8.50593, 317.21]]
+  ri_extra__name:t="freight_car_g_munchen_dmg"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[0.338711, -0.039077, 1.35358] [-0.00462711, 1.39524, 0.0414375] [-1.35413, -0.0145419, 0.33843] [1275.25, 8.58172, 319.562]]
+  ri_extra__name:t="freight_car_g_munchen_dmg"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[-0.569505, 0.0, 0.821987] [0.0, 1.0, 0.0] [-0.821987, 0.0, -0.569505] [1202.43, 9.20892, 325.753]]
+  ri_extra__name:t="career_stuff_n"
+}
+
+entity{
+  _template:t="net_rendinst"
+  transform:m=[[-0.999994, 0.0, 0.00338738] [0.0, 1.0, 0.0] [-0.00338738, 0.0, -0.999994] [1190.21, 9.20892, 315.509]]
+  ri_extra__name:t="career_stuff_n"
+}

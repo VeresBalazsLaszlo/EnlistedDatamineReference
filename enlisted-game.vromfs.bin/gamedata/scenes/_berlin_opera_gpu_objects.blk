@@ -1,0 +1,297 @@
+entity{
+  _template:t="dagdp_level_settings"
+  dagdp__max_objects:i=10000
+}
+
+entity{
+  _template:t="dagdp_object_group_riex"
+  dagdp__name:t="decal_broken_glass_a"
+
+  "dagdp__params:object"{
+    scale:p2=1.125, 0.125
+    rot_y:p2=0.0, 180.0
+    orientation:t="world"
+  }
+
+  "dagdp__assets:object"{
+
+    "decal_broken_glass_a:object"{
+      weight:r=0.3
+    }
+
+    "decal_paper_trash_b:object"{
+      weight:r=1.0
+    }
+  }
+}
+
+entity{
+  _template:t="dagdp_placer_heightmap"
+  dagdp__name:t="decal_broken_glass_a_0"
+  dagdp__density:r=0.0219
+
+  "dagdp__object_groups:list<t>"{
+    item:t="decal_broken_glass_a"
+  }
+
+  "dagdp__biomes:list<i>"{
+    item:i=51
+    item:i=33
+  }
+}
+
+entity{
+  _template:t="dagdp_object_group_riex"
+  dagdp__name:t="debris_bricks"
+
+  "dagdp__params:object"{
+    scale:p2=0.975, 0.075
+    rot_y:p2=0.0, 180.0
+    orientation:t="normal"
+    rot_x:p2=0.0, 90.0
+    rot_z:p2=0.0, 90.0
+  }
+
+  "dagdp__assets:object"{
+
+    "debris_bricks_a:object"{
+      weight:r=1.0
+    }
+
+    "debris_bricks_b:object"{
+      weight:r=1.0
+    }
+
+    "debris_bricks_c:object"{
+      weight:r=0.5
+    }
+
+    "debris_bricks_d:object"{
+      weight:r=1.0
+    }
+
+    "debris_trash_concrete_small_part_c3:object"{
+      weight:r=1.0
+    }
+
+    "debris_trash_concrete_small_part_c2:object"{
+      weight:r=1.0
+    }
+
+    "debris_trash_concrete_small_part_b3:object"{
+      weight:r=0.5
+    }
+
+    "debris_trash_concrete_small_part_b1:object"{
+      weight:r=0.5
+    }
+  }
+}
+
+entity{
+  _template:t="dagdp_placer_heightmap"
+  dagdp__name:t="debris_bricks_0"
+  dagdp__density:r=0.0977
+
+  "dagdp__object_groups:list<t>"{
+    item:t="debris_bricks"
+  }
+
+  "dagdp__biomes:list<i>"{
+    item:i=33
+    item:i=51
+    item:i=50
+  }
+}
+
+entity{
+  _template:t="dagdp_object_group_riex"
+  dagdp__name:t="debris_trash"
+
+  "dagdp__params:object"{
+    scale:p2=0.975, 0.075
+    rot_y:p2=0.0, 180.0
+    orientation:t="normal"
+  }
+
+  "dagdp__assets:object"{
+
+    "debris_wooden_plank_a:object"{
+      weight:r=1.0
+    }
+
+    "debris_wooden_plank_c:object"{
+      weight:r=0.5
+    }
+
+    "wooden_beam_g:object"{
+      weight:r=1.0
+    }
+
+    "wooden_beam_k:object"{
+      weight:r=0.5
+    }
+
+    "wooden_beam_l:object"{
+      weight:r=0.5
+    }
+
+    "debris_trash_pile_small_a:object"{
+      weight:r=0.2
+    }
+
+    "debris_trash_pile_small_g:object"{
+      weight:r=0.3
+    }
+
+    "debris_trash_pile_small_j:object"{
+      weight:r=0.3
+    }
+
+    "debris_trash_pile_small_f:object"{
+      weight:r=0.3
+    }
+  }
+}
+
+entity{
+  _template:t="dagdp_placer_heightmap"
+  dagdp__name:t="debris_trash_0"
+  dagdp__density:r=0.0937
+
+  "dagdp__object_groups:list<t>"{
+    item:t="debris_trash"
+  }
+
+  "dagdp__biomes:list<i>"{
+    item:i=33
+    item:i=50
+  }
+}
+
+entity{
+  _template:t="dagdp_object_group_riex"
+  dagdp__name:t="tree_burnt_branches_small_a"
+
+  "dagdp__params:object"{
+    scale:p2=0.7, 0.1
+    rot_y:p2=0.0, 180.0
+    orientation:t="normal"
+  }
+
+  "dagdp__assets:object"{
+
+    "tree_burnt_branches_small_a:object"{
+      weight:r=1.0
+    }
+
+    "tree_burnt_branches_small_b:object"{
+      weight:r=1.0
+    }
+
+    "tree_burnt_branches_small_c:object"{
+      weight:r=0.75
+    }
+
+    "tree_burnt_branches_small_d:object"{
+      weight:r=0.5
+    }
+  }
+}
+
+entity{
+  _template:t="dagdp_placer_heightmap"
+  dagdp__name:t="tree_burnt_branches_small_a_0"
+  dagdp__density:r=0.0039
+
+  "dagdp__object_groups:list<t>"{
+    item:t="tree_burnt_branches_small_a"
+  }
+
+  "dagdp__biomes:list<i>"{
+    item:i=56
+    item:i=12
+  }
+}
+
+entity{
+  _template:t="dagdp_object_group_riex"
+  dagdp__name:t="tree_fraxinus_bush_medium_burnt_a"
+
+  "dagdp__params:object"{
+    scale:p2=0.65, 0.05
+    rot_y:p2=0.0, 180.0
+    orientation:t="world"
+  }
+
+  "dagdp__assets:object"{
+
+    "tree_fraxinus_bush_medium_burnt_a:object"{
+      weight:r=1.0
+    }
+
+    "tree_fraxinus_bush_medium_burnt_b:object"{
+      weight:r=1.0
+    }
+
+    "tree_fraxinus_bush_small_burnt_a:object"{
+      weight:r=0.6
+    }
+
+    "tree_fraxinus_bush_small_burnt_b:object"{
+      weight:r=0.6
+    }
+  }
+}
+
+entity{
+  _template:t="dagdp_placer_heightmap"
+  dagdp__name:t="tree_fraxinus_bush_medium_burnt_a_0"
+  dagdp__density:r=0.0017
+
+  "dagdp__object_groups:list<t>"{
+    item:t="tree_fraxinus_bush_medium_burnt_a"
+  }
+
+  "dagdp__biomes:list<i>"{
+    item:i=18
+    item:i=17
+    item:i=55
+  }
+}
+
+entity{
+  _template:t="dagdp_object_group_riex"
+  dagdp__name:t="tree_fraxinus_bush_small_a"
+
+  "dagdp__params:object"{
+    scale:p2=0.8, 0.2
+    rot_y:p2=0.0, 180.0
+    orientation:t="world"
+  }
+
+  "dagdp__assets:object"{
+
+    "tree_fraxinus_bush_small_a:object"{
+      weight:r=1.0
+    }
+
+    "tree_fraxinus_bush_small_b:object"{
+      weight:r=1.0
+    }
+  }
+}
+
+entity{
+  _template:t="dagdp_placer_heightmap"
+  dagdp__name:t="tree_fraxinus_bush_small_a_0"
+  dagdp__density:r=0.0008
+
+  "dagdp__object_groups:list<t>"{
+    item:t="tree_fraxinus_bush_small_a"
+  }
+
+  "dagdp__biomes:list<i>"{
+    item:i=19
+  }
+}

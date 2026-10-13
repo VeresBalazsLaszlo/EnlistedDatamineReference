@@ -1,0 +1,99 @@
+rangefinderProgressBarColor1:c=0, 255, 0, 64
+rangefinderProgressBarColor2:c=255, 255, 255, 64
+rangefinderTextScale:r=0.7
+rangefinderVerticalOffset:r=0.0
+rangefinderHorizontalOffset:r=0.0
+fontSizeMult:r=1.0
+lineSizeMult:r=2.0
+drawCentralLineVert:b=no
+drawCentralLineHorz:b=no
+applyCorrectionToGun:b=no
+crosshairDistHorSizeMain:p2=0.03, 0.02
+crosshairDistHorSizeAdditional:p2=0.005, 0.003
+distanceCorrectionPos:p2=-0.2, -0.05
+drawDistanceCorrection:b=no
+move:b=yes
+
+crosshair_distances{
+}
+
+crosshair_hor_ranges{
+}
+
+drawLines{
+  color:p4=255.0, 0.0, 0.0, 100.0
+
+  line{
+    line:p4=0.000580282, 0.00134685, 0.000448938, 0.00147821
+  }
+
+  line{
+    line:p4=0.000448938, 0.00147821, 0.00031756, 0.00134685
+  }
+
+  line{
+    line:p4=0.00031756, 0.00134685, 0.000448938, 0.00121549
+  }
+
+  line{
+    line:p4=0.000448938, 0.00121549, 0.000580282, 0.00134685
+  }
+
+  line{
+    line:p4=0.000448938, -0.00260178, 0.000448938, -0.00718532
+  }
+
+  line{
+    line:p4=-0.00351734, 0.00134685, -0.0202642, 0.00134685
+  }
+
+  line{
+    line:p4=0.000448938, 0.00987902, 0.000448938, 0.00529549
+  }
+
+  line{
+    line:p4=0.0212503, 0.00134685, 0.00436231, 0.00134685
+  }
+
+  line{
+    line:p4=0.0204444, 0.00987902, 0.0417998, 0.00987902
+  }
+
+  line{
+    line:p4=-0.0607568, 0.00134685, -0.0821578, 0.00134685
+  }
+
+  line{
+    line:p4=-0.0197008, -0.00718532, -0.040996, -0.00718532
+  }
+
+  line{
+    line:p4=0.0203946, -0.00718532, 0.0419246, -0.00718532
+  }
+
+  line{
+    line:p4=0.0832385, 0.00134685, 0.061509, 0.00134685
+  }
+
+  line{
+    line:p4=0.000448938, 0.0173177, 0.000448938, 0.026379
+  }
+
+  line{
+    line:p4=0.000448938, -0.0147298, 0.000448938, -0.0237911
+  }
+
+  line{
+    line:p4=-0.0197008, 0.00987902, -0.040996, 0.00987902
+  }
+}
+
+drawCircles{
+
+  circle{
+    pos:p2=0.000448938, 0.00134685
+    diameter:r=0.0079
+    size:r=1.0
+    segment:p2=0.0, 360.0
+  }
+}

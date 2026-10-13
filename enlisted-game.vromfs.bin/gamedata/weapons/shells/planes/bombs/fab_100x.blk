@@ -1,0 +1,35 @@
+mass:r=103.5
+explosiveType:t="tnt"
+explosiveMass:r=36.02
+bombType:t="he_bomb"
+bombName:t="fab100_43"
+caliber:r=0.273
+length:r=1.033
+distFromCmToStab:r=0.4
+dragCx:r=0.04
+sound:t="weapon.bomb_mid"
+bulletType:t="he_bomb"
+hitPowerMult:r=1.0
+explodeArmorPower:r=75.0
+nearHitPower:p2=1.0, 50.0
+explodeRadius:p2=2.0, 6.0
+midHitPower:p2=0.9, 400.0
+farHitPower:p2=0.1, 1000.0
+rendinstDamageRadius:r=12.0
+endHitPower:p2=0.01, 1500.0
+relativeVelHitShift:p2=300.0, 1000.0
+shutterDamage:b=yes
+nearArmorPower:p2=10.0, 50.0
+shutterDamageRadius:r=45.0
+midArmorPower:p2=7.0, 400.0
+shutterAmount:i=3000
+farArmorPower:p2=0.2, 700.0
+shutterArmorPower:r=12.0
+relativeVelArmorShift:p2=200.0, 1000.0
+shutterHit:r=12.0
+entityTemplate:t="fab_100x_bomb_projectile"
+entityPhysTemplate:t=""
+
+pressureDamage{
+  damageType:t="pressure"
+}

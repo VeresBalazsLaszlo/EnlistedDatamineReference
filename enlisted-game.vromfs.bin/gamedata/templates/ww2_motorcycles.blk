@@ -1,0 +1,428 @@
+import:t="motorcycles/guns/bike_7_92mm_bren.blk"
+import:t="motorcycles/guns/bike_7_92mm_mg34.blk"
+import:t="motorcycles/guns/bike_7_62mm_m1919a4.blk"
+import:t="motorcycles/guns/bike_7_62mm_dp.blk"
+import:t="motorcycles/guns/bike_7_62mm_ds39.blk"
+import:t="motorcycles/guns/bike_7_7mm_type_89_te_4.blk"
+import:t="motorcycles/guns/bike_14_5mm_ptrs41.blk"
+import:t="motorcycles/guns/bike_6_5mm_type_11.blk"
+import:t="motorcycles/david_harleyson_wla_template.blk"
+import:t="motorcycles/edward_big4_template.blk"
+import:t="motorcycles/appzund_ks750_template.blk"
+import:t="motorcycles/wbm_r75_template.blk"
+import:t="motorcycles/tiz_am_600_template.blk"
+import:t="motorcycles/type_95_kurogane_template.blk"
+import:t="motorcycles/m72_ptrs_template.blk"
+import:t="motorcycles/m72_ds39_template.blk"
+import:t="motorcycles/type_97_rikuo_template.blk"
+
+base_bike_left_sidecar{
+  _use:t="base_bike_common"
+}
+
+base_bike_right_sidecar{
+  _use:t="base_bike_common"
+}
+
+base_bike_common{
+  _use:t="base_bike_common_no_gun"
+  _use:t="base_vehicle_attach_rules"
+  _use:t="vehicle_decals"
+  vehicle__turretControlComponents:t="bike_turret_control_components"
+
+  "attach_decorators__templates:array"{
+  }
+
+  "attach_decorators__entities:list<eid>"{
+  }
+}
+
+base_bike_common_no_gun{
+  _use:t="base_tank_without_xray_common"
+  _use:t="bike_camera_setup"
+  _use:t="base_phys_modifications"
+  _use:t="vehicle_anim_steering_deflection"
+  _use:t="resupply_vehicle"
+  _use:t="vehicle_steering_assist"
+  _use:t="vehicle_autodetect_team"
+  team:i=-1
+  _replicated:t="team"
+  phys__maxMassRatioForPushOnCollision:r=2.0
+  last_driver_leave_time:r=0.0
+  camera__isStabilized:b=no
+  vehicle_seats_switch_time__totalSwitchTime:r=0.5
+  vehicle_seats__enterTime:r=0.5
+  vehicle_seats__exitTime:r=0.5
+  vehicle_free_look__zoomIn:r=1.5
+  item__iconOffset:p2=0.0, -0.2
+  item__iconScale:r=1.15
+  item__iconYaw:r=25.0
+  item__iconPitch:r=-3.0
+  item__iconRoll:r=15.0
+  item__lightZenith:r=180.0
+  item__lightAzimuth:r=140.0
+  fatal_explosion_fire__ttl:r=30.0
+  vehicle_kill_assist__stat:t="bikeKillAssists"
+  vehicle_kill_assist__crewStat:t="bikeKillAssistsAsCrew"
+  vehicle_kill_assist__engineerStat:t="builtGunBikeKillAssists"
+  vehicle_kill_assist__time:r=20.0
+  vehicle_kill__award:t="bikeKill"
+  vehicle_kill__stat:t="bikeKills"
+  vehicle_kill__crewStat:t="crewBikeKillAssists"
+  vehicle_kill__engineerStat:t="builtGunBikeKills"
+
+  "wheelsSpecialOrder:tag"{
+  }
+
+  "fatal_explosion_fx__fx:array"{
+
+    "fx:object"{
+
+      "dmParts:array"{
+      }
+
+      "fx:array"{
+
+        "fx:object"{
+          name:t="tank_fire_medium_template"
+          emitter:t="emtr_fire_engine"
+        }
+
+        "fx:object"{
+          name:t="tank_fire_small_template"
+          emitter:t="emtr_fire_small_dmg_01"
+        }
+
+        "fx:object"{
+          name:t="tank_fire_small_template"
+          emitter:t="emtr_fire_small_dmg_02"
+        }
+
+        "fx:object"{
+          name:t="tank_fire_small_template"
+          emitter:t="emtr_fire_small_dmg_03"
+        }
+
+        "fx:object"{
+          name:t="tank_fire_small_template"
+          emitter:t="emtr_fire_small_dmg_04"
+        }
+
+        "fx:object"{
+          name:t="tank_fire_small_template"
+          emitter:t="emtr_fire_small_dmg_05"
+        }
+
+        "fx:object"{
+          name:t="tank_fire_small_template"
+          emitter:t="emtr_fire_small_dmg_06"
+        }
+
+        "fx:object"{
+          name:t="tank_fire_small_template"
+          emitter:t="emtr_fire_small_dmg_07"
+        }
+
+        "fx:object"{
+          name:t="tank_fire_small_template"
+          emitter:t="emtr_fire_small_dmg_08"
+        }
+
+        "fx:object"{
+          name:t="tank_fire_small_template"
+          emitter:t="emtr_fire_small_dmg_09"
+        }
+
+        "fx:object"{
+          name:t="tank_fire_small_template"
+          emitter:t="emtr_fire_small_dmg_10"
+        }
+
+        "fx:object"{
+          name:t="tank_fire_small_template"
+          emitter:t="emtr_fire_small_dmg_11"
+        }
+
+        "fx:object"{
+          name:t="tank_fire_small_template"
+          emitter:t="emtr_fire_small_dmg_12"
+        }
+
+        "fx:object"{
+          name:t="tank_fire_small_template"
+          emitter:t="emtr_fire_small_dmg_13"
+        }
+
+        "fx:object"{
+          name:t="tank_fire_small_template"
+          emitter:t="emtr_fire_small_dmg_14"
+        }
+
+        "fx:object"{
+          name:t="tank_fire_small_template"
+          emitter:t="emtr_fire_small_dmg_15"
+        }
+
+        "fx:object"{
+          name:t="tank_fire_small_template"
+          emitter:t="emtr_fire_small_dmg_16"
+        }
+      }
+    }
+
+    "fx:object"{
+
+      "dmParts:array"{
+      }
+
+      "fx:array"{
+
+        "fx:object"{
+          name:t="tank_smoke_small_template"
+          emitter:t="emtr_fire_ammo"
+        }
+
+        "fx:object"{
+          name:t="tank_smoke_small_template"
+          emitter:t="emtr_fire_ammo_01"
+        }
+
+        "fx:object"{
+          name:t="tank_smoke_small_template"
+          emitter:t="emtr_fire_ammo_02"
+        }
+      }
+    }
+  }
+
+  "destroyed_fx__fx:array"{
+
+    "fx:object"{
+
+      "dmParts:array"{
+      }
+
+      "fx:array"{
+
+        "fx:object"{
+          name:t="tank_smoke_medium_destroyed_template"
+          emitter:t="emtr_fire_dmg"
+        }
+
+        "fx:object"{
+          name:t="tank_smoke_destroyed_template"
+          emitter:t="emtr_fire_ammo"
+        }
+
+        "fx:object"{
+          name:t="tank_smoke_destroyed_template"
+          emitter:t="emtr_fire_ammo_01"
+        }
+
+        "fx:object"{
+          name:t="tank_smoke_destroyed_template"
+          emitter:t="emtr_fire_ammo_02"
+        }
+      }
+    }
+  }
+
+  "isSimpleTurretCrosshair:b"{
+    _tags:t="gameClient"
+    value:b=yes
+  }
+
+  "last_driver:eid"{
+  }
+
+  cockpit_animchar_res_preload{
+    _tags:t="gameClient"
+  }
+
+  "animchar__objTexReplace:object"{
+  }
+
+  "ownedBySquad:eid"{
+  }
+
+  "ownedByPlayer:eid"{
+  }
+
+  "vehicle_seats__canAcquireControls:shared:object"{
+
+    "driver:object"{
+      movement:b=yes
+      turrets:b=yes
+    }
+
+    "commander:object"{
+      movement:b=yes
+      turrets:b=yes
+      camera:b=yes
+    }
+
+    "passenger1:object"{
+      movement:b=yes
+      camera:b=yes
+    }
+  }
+
+  "vehicle_seats__seatTemplates:shared:object"{
+    default:t="bike_seat_fire_ready"
+    driver:t="bike_seat_driver"
+    commander:t="bike_seat_commander"
+  }
+
+  _group{
+    _tags:t="server"
+
+    "dependent_templates:ecs::TemplatesListToInstantiate"{
+    }
+
+    "dependent_templates_list_shared:shared:list<t>"{
+      template_name:t="bike_seat_fire_ready"
+      template_name:t="bike_seat_driver"
+      template_name:t="bike_seat_commander"
+    }
+  }
+
+  _group{
+    vehicle_anim__steeringDeflectionLimit:p2=1.0, 0.0
+    _tags:t="render"
+  }
+
+  _group{
+    _tags:t="server"
+    friendly_fire__penaltyCooldown:r=5.0
+    friendly_fire__damageThreshold:r=5.0
+
+    "friendly_fire__lastPenaltyTime:object"{
+    }
+  }
+
+  "bike:tag"{
+  }
+
+  "dm_parts_repair_names:list<t>"{
+    part:t="part:t="
+    part:t="drive_turret_h"
+    part:t="drive_turret_v"
+    part:t="cannon_breech"
+    part:t="engine"
+    part:t="transmission"
+    part:t="gun_barrel"
+    part:t="gun_barrel_01"
+    part:t="gun_barrel_02"
+    part:t="gun_barrel_03"
+    part:t="gun_barrel_04"
+    part:t="gun_barrel_05"
+    part:t="track_r"
+    part:t="track_l"
+    part:t="track_r_01"
+    part:t="track_l_01"
+    part:t="wheel_l_back"
+    part:t="wheel_l_front"
+    part:t="wheel_l_drive"
+    part:t="wheel_r_back"
+    part:t="wheel_r_front"
+    part:t="wheel_r_drive"
+    part:t="wheel_r_01"
+    part:t="wheel_r_02"
+    part:t="wheel_r_03"
+    part:t="wheel_r_04"
+    part:t="wheel_r_05"
+    part:t="wheel_r_06"
+    part:t="wheel_r_07"
+    part:t="wheel_r_08"
+    part:t="wheel_l_01"
+    part:t="wheel_l_02"
+    part:t="wheel_l_03"
+    part:t="wheel_l_04"
+    part:t="wheel_l_05"
+    part:t="wheel_l_06"
+    part:t="wheel_l_07"
+    part:t="wheel_l_08"
+  }
+
+  "dm_parts__repairGroups:object"{
+  }
+
+  "dm_phys_parts__wheelsPartIds:list<i>"{
+  }
+}
+
+bike_camera_setup{
+  _use:t="tank_camera_setup"
+  camName:t="bike_fps_cam"
+
+  "camNames:array"{
+    camNames:t="bike_fps_cam"
+  }
+
+  "defaultCameraTypes:shared:object"{
+    driver:t="commander"
+    commander:t="commander"
+    passenger1:t="commander"
+  }
+}
+
+bike_seat_fire_ready{
+  _use:t="vehicle_seat_fire_ready"
+  vehicle_seat__springConst:p3=70.0, 100.0, 15.0
+  vehicle_seat__springDump:p3=8.0, 3.0, 2.0
+  seat__useAimAngleLimits:b=no
+  seat__aimAngleLimits:p4=0.0, 0.0, 0.0, 0.0
+  seat__bindCamera:b=no
+
+  "seat__hideCrosshair:tag"{
+  }
+}
+
+bike_seat_commander{
+  _use:t="vehicle_seat_commander"
+  vehicle_seat__springConst:p3=30.0, 100.0, 25.0
+  vehicle_seat__springDump:p3=5.0, 3.0, 2.0
+  seat__useAimAngleLimits:b=no
+  seat__aimAngleLimits:p4=0.0, 0.0, 0.0, 0.0
+  seat__bindCamera:b=no
+}
+
+bike_seat_driver{
+  _use:t="base_vehicle_seat"
+  seats_order__canPlaceManually:b=yes
+  seat_anim__upper:t="drive_driver"
+  seat_anim__lower:t="drive_driver"
+  vehicle_seat__springInverseRoll:b=yes
+  vehicle_seat__springConst:p3=30.0, 100.0, 25.0
+  vehicle_seat__springDump:p3=5.0, 3.0, 2.0
+  seat__useAimAngleLimits:b=no
+  seat__aimAngleLimits:p4=0.0, 0.0, 0.0, 0.0
+  seat__bindCamera:b=no
+
+  "commanderSeat:tag"{
+  }
+}
+
+bike_phys_mods{
+  vehicle_mods__extraMass:r=0.0
+  vehicle_mods__maxMomentMult:r=1.0
+  vehicle_mods__maxBrakeForceMult:r=1.0
+  vehicle_mods__suspensionDampeningMult:r=1.0
+  vehicle_mods__suspensionRestingMult:r=1.0
+  vehicle_mods__suspensionMinLimitMult:r=1.0
+  vehicle_mods__suspensionMaxLimitMult:r=1.0
+}
+
+bike_mods{
+  _use:t="bike_phys_mods"
+
+  "vehicle_mods__maxHorDriveMult:r"{
+    _tags:t="server"
+    value:r=1.0
+  }
+
+  "vehicle_mods__maxVerDriveMult:r"{
+    _tags:t="server"
+    value:r=1.0
+  }
+}

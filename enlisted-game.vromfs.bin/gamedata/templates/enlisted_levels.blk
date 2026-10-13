@@ -1,0 +1,2430 @@
+tunisia_level{
+  _use:t="level"
+  level__day:i=21
+  level__month:i=6
+
+  "level__weatherChoice:object"{
+    weather_clear_a:r=2.0
+    weather_cloudy_a:r=0.5
+    weather_cloudy_b:r=0.5
+
+    "weather_cloudy_c:object"{
+      weight:r=0.5
+
+      "level__timeVec:array"{
+        level__timeVec:r=7.1
+        level__timeVec:r=16.7
+        level__timeVec:r=17.4
+      }
+    }
+
+    "weather_cloudy_sunset_a:object"{
+      weight:r=0.5
+
+      "level__timeVec:array"{
+        level__timeVec:r=5.5
+        level__timeVec:r=17.4
+        level__timeVec:r=19.0
+      }
+    }
+
+    "weather_cloudy_sunset_b:object"{
+      weight:r=0.5
+
+      "level__timeVec:array"{
+        level__timeVec:r=5.0
+        level__timeVec:r=17.4
+        level__timeVec:r=19.0
+      }
+    }
+  }
+
+  "level__timeVec:array"{
+    level__timeVec:r=7.1
+    level__timeVec:r=8.5
+    level__timeVec:r=15.5
+    level__timeVec:r=17.0
+    level__timeVec:r=17.4
+  }
+}
+
+berlin_level{
+  _use:t="level"
+
+  "level__weatherChoice:object"{
+    weather_clear_a:r=0.5
+    weather_cloudy_a:r=2.0
+    weather_cloudy_b:r=2.0
+
+    "weather_cloudy_c:object"{
+      weight:r=0.5
+
+      "level__timeVec:array"{
+        level__timeVec:r=7.5
+        level__timeVec:r=16.7
+        level__timeVec:r=17.4
+      }
+    }
+
+    "weather_overcast_a:object"{
+      weight:r=0.1
+      cloudsHoleEnabled:b=no
+
+      "level__timeVec:array"{
+        level__timeVec:r=8.5
+        level__timeVec:r=15.5
+        level__timeVec:r=17.0
+      }
+    }
+
+    "weather_overcast_b:object"{
+      weight:r=0.1
+
+      "level__timeVec:array"{
+        level__timeVec:r=7.1
+        level__timeVec:r=10.0
+        level__timeVec:r=15.5
+        level__timeVec:r=17.4
+      }
+    }
+
+    "weather_cloudy_sunset_a:object"{
+      weight:r=0.5
+
+      "level__timeVec:array"{
+        level__timeVec:r=7.1
+        level__timeVec:r=16.5
+        level__timeVec:r=17.4
+      }
+    }
+
+    "weather_cloudy_sunset_b:object"{
+      weight:r=0.5
+
+      "level__timeVec:array"{
+        level__timeVec:r=7.1
+        level__timeVec:r=17.4
+      }
+    }
+
+    "weather_poor_a:object"{
+      weight:r=0.5
+      cloudsHoleEnabled:b=no
+
+      "level__timeVec:array"{
+        level__timeVec:r=7.1
+        level__timeVec:r=8.5
+        level__timeVec:r=15.5
+        level__timeVec:r=17.0
+      }
+
+      "entities:array"{
+
+        "entity:object"{
+          template:t="camera_rain_heavy_template"
+
+          "components:object"{
+            far_rain__speed:r=1.0
+            rain_ripples__size:r=0.04
+            drop_splashes__volumetricSplashScale:r=0.5
+            far_rain__wind:r=8.0
+            far_rain__density:r=10.0
+            drop_splashes__spriteSplashScale:r=7.25
+            drop_splashes__iterationTime:r=2.0
+            far_rain__length:r=1.0
+            wetness__strength:r=0.4
+            far_rain__alpha:r=1.0
+            puddles__growthLimit:r=0.03
+            far_rain__width:r=1.0
+            puddles__growthRate:r=0.2
+            far_rain__alpha_fade_speed_begin:r=150.0
+            far_rain__alpha_fade_speed_end:r=400.0
+            drop_splashes__distance:r=20.0
+          }
+        }
+
+        "entity:object"{
+          template:t="lightning_animchar_manager"
+        }
+
+        "entity:object"{
+          template:t="lightning_volumetric"
+        }
+
+        "entity:object"{
+          template:t="lightning_panorama"
+        }
+      }
+    }
+  }
+
+  "level__timeVec:array"{
+    level__timeVec:r=7.1
+    level__timeVec:r=8.5
+    level__timeVec:r=15.5
+    level__timeVec:r=17.0
+    level__timeVec:r=17.4
+  }
+}
+
+stalingrad_level{
+  _use:t="level"
+
+  "level__weatherChoice:object"{
+    weather_clear_a:r=1.0
+    weather_cloudy_a:r=2.0
+    weather_cloudy_b:r=2.0
+    weather_overcast_a:r=0.1
+
+    "weather_cloudy_c:object"{
+      weight:r=0.5
+
+      "level__timeVec:array"{
+        level__timeVec:r=7.1
+        level__timeVec:r=16.7
+        level__timeVec:r=17.0
+      }
+    }
+
+    "weather_overcast_b:object"{
+      weight:r=0.1
+      cloudsHoleEnabled:b=no
+
+      "level__timeVec:array"{
+        level__timeVec:r=7.1
+        level__timeVec:r=10.0
+        level__timeVec:r=15.5
+        level__timeVec:r=17.4
+      }
+    }
+
+    "weather_cloudy_sunset_a:object"{
+      weight:r=0.5
+
+      "level__timeVec:array"{
+        level__timeVec:r=7.1
+        level__timeVec:r=17.0
+      }
+    }
+
+    "weather_cloudy_sunset_b:object"{
+      weight:r=0.5
+
+      "level__timeVec:array"{
+        level__timeVec:r=7.1
+        level__timeVec:r=17.4
+      }
+    }
+
+    "weather_poor_a:object"{
+      weight:r=0.5
+      cloudsHoleEnabled:b=no
+
+      "entities:array"{
+
+        "entity:object"{
+          template:t="camera_rain_heavy_template"
+
+          "components:object"{
+            far_rain__speed:r=1.0
+            rain_ripples__size:r=0.04
+            drop_splashes__volumetricSplashScale:r=0.5
+            far_rain__wind:r=8.0
+            far_rain__density:r=10.0
+            drop_splashes__spriteSplashScale:r=7.25
+            drop_splashes__iterationTime:r=2.0
+            far_rain__length:r=1.0
+            wetness__strength:r=0.4
+            far_rain__alpha:r=1.0
+            puddles__growthLimit:r=0.03
+            far_rain__width:r=1.0
+            puddles__growthRate:r=0.2
+            far_rain__alpha_fade_speed_begin:r=150.0
+            far_rain__alpha_fade_speed_end:r=400.0
+            drop_splashes__distance:r=20.0
+          }
+        }
+
+        "entity:object"{
+          template:t="lightning_animchar_manager"
+        }
+
+        "entity:object"{
+          template:t="lightning_volumetric"
+        }
+
+        "entity:object"{
+          template:t="lightning_panorama"
+        }
+      }
+    }
+  }
+
+  "level__timeVec:array"{
+    level__timeVec:r=7.0
+    level__timeVec:r=8.5
+    level__timeVec:r=15.5
+    level__timeVec:r=17.0
+  }
+}
+
+stalingrad_tractor_plant_level{
+  _use:t="level"
+
+  "level__weatherChoice:object"{
+
+    "weather_cloudy_a:object"{
+      weight:r=1.0
+
+      "level__timeVec:array"{
+        level__timeVec:r=7.5
+        level__timeVec:r=16.5
+      }
+    }
+
+    "weather_cloudy_b:object"{
+      weight:r=1.0
+
+      "level__timeVec:array"{
+        level__timeVec:r=8.0
+        level__timeVec:r=16.0
+      }
+    }
+
+    "weather_cloudy_sunset_a:object"{
+      weight:r=0.5
+
+      "level__timeVec:array"{
+        level__timeVec:r=17.0
+      }
+    }
+
+    "weather_cloudy_sunset_b:object"{
+      weight:r=0.5
+
+      "level__timeVec:array"{
+        level__timeVec:r=7.1
+        level__timeVec:r=17.2
+      }
+    }
+
+    "weather_poor_a:object"{
+      weight:r=1.0
+      cloudsHoleEnabled:b=no
+
+      "level__timeVec:array"{
+        level__timeVec:r=8.5
+        level__timeVec:r=15.5
+      }
+
+      "entities:array"{
+
+        "entity:object"{
+          template:t="camera_snow_light_template"
+        }
+      }
+    }
+
+    "weather_poor_b:object"{
+      weight:r=1.0
+      cloudsHoleEnabled:b=no
+
+      "level__timeVec:array"{
+        level__timeVec:r=8.5
+        level__timeVec:r=16.0
+      }
+
+      "entities:array"{
+
+        "entity:object"{
+          template:t="camera_snow_heavy_template"
+        }
+      }
+    }
+  }
+
+  "level__timeVec:array"{
+    level__timeVec:r=8.0
+  }
+}
+
+volokolamsk_level{
+  _use:t="level"
+
+  "level__weatherChoice:object"{
+    weather_clear_a:r=0.5
+    weather_cloudy_a:r=1.0
+    weather_cloudy_b:r=1.0
+
+    "weather_cloudy_c:object"{
+      weight:r=0.5
+
+      "level__timeVec:array"{
+        level__timeVec:r=7.1
+        level__timeVec:r=16.7
+        level__timeVec:r=17.4
+      }
+    }
+
+    "weather_overcast_a:object"{
+      weight:r=0.1
+      cloudsHoleEnabled:b=no
+
+      "level__timeVec:array"{
+        level__timeVec:r=7.1
+        level__timeVec:r=8.5
+        level__timeVec:r=15.5
+        level__timeVec:r=17.0
+      }
+    }
+
+    "weather_overcast_b:object"{
+      weight:r=0.1
+      cloudsHoleEnabled:b=no
+
+      "level__timeVec:array"{
+        level__timeVec:r=7.1
+        level__timeVec:r=10.0
+        level__timeVec:r=15.5
+        level__timeVec:r=17.4
+      }
+    }
+
+    "weather_cloudy_sunset_a:object"{
+      weight:r=0.5
+
+      "level__timeVec:array"{
+        level__timeVec:r=7.1
+        level__timeVec:r=16.5
+        level__timeVec:r=17.4
+      }
+    }
+
+    "weather_cloudy_sunset_b:object"{
+      weight:r=0.5
+
+      "level__timeVec:array"{
+        level__timeVec:r=7.1
+        level__timeVec:r=17.4
+      }
+    }
+  }
+
+  "level__timeVec:array"{
+    level__timeVec:r=7.1
+    level__timeVec:r=8.5
+    level__timeVec:r=15.5
+    level__timeVec:r=16.5
+    level__timeVec:r=17.4
+  }
+}
+
+rzhev_level{
+  _use:t="level"
+
+  "level__weatherChoice:object"{
+    weather_clear_a:r=0.5
+    weather_cloudy_a:r=1.0
+    weather_cloudy_b:r=1.0
+
+    "weather_cloudy_c:object"{
+      weight:r=5.0
+
+      "level__timeVec:array"{
+        level__timeVec:r=6.8
+        level__timeVec:r=7.2
+        level__timeVec:r=16.7
+        level__timeVec:r=17.3
+      }
+    }
+
+    "weather_overcast_a:object"{
+      weight:r=4.0
+
+      "level__timeVec:array"{
+        level__timeVec:r=8.6
+        level__timeVec:r=9.5
+        level__timeVec:r=15.5
+        level__timeVec:r=16.2
+      }
+    }
+
+    "weather_overcast_b:object"{
+      weight:r=2.0
+
+      "level__timeVec:array"{
+        level__timeVec:r=7.8
+        level__timeVec:r=9.2
+        level__timeVec:r=15.5
+        level__timeVec:r=16.2
+      }
+
+      "entities:array"{
+
+        "entity:object"{
+          template:t="camera_snow_heavy_template"
+
+          "components:object"{
+            snow__speed:r=0.1
+            snow__density:r=1.0
+            snow__width:r=2.0
+          }
+        }
+
+        "entity:object"{
+          template:t="volfog_snow_affect"
+
+          "components:object"{
+            volfog_snow__maxIntensityRange:p2=0.5, 1.0
+            volfog_snow__intensitySpeed:r=0.1
+            volfog_snow__intensityChangeTime:r=0.0
+          }
+        }
+      }
+    }
+
+    "weather_poor_a:object"{
+      weight:r=2.0
+      cloudsHoleEnabled:b=no
+
+      "level__timeVec:array"{
+        level__timeVec:r=8.0
+        level__timeVec:r=9.0
+        level__timeVec:r=15.5
+      }
+
+      "entities:array"{
+
+        "entity:object"{
+          template:t="camera_snow_heavy_template"
+        }
+
+        "entity:object"{
+          template:t="volfog_snow_affect"
+
+          "components:object"{
+            volfog_snow__intensitySpeed:r=0.1
+            volfog_snow__intensityChangeTime:r=0.0
+            volfog_snow__maxIntensityRange:p2=1.5, 1.8
+          }
+        }
+
+        "entity:object"{
+          template:t="blizzard_sound"
+        }
+      }
+    }
+
+    "weather_cloudy_sunset_a:object"{
+      weight:r=6.0
+
+      "level__timeVec:array"{
+        level__timeVec:r=7.2
+        level__timeVec:r=8.0
+        level__timeVec:r=16.2
+        level__timeVec:r=17.0
+      }
+    }
+
+    "weather_cloudy_sunset_b:object"{
+      weight:r=6.0
+
+      "level__timeVec:array"{
+        level__timeVec:r=7.2
+        level__timeVec:r=8.0
+        level__timeVec:r=16.2
+        level__timeVec:r=17.0
+      }
+    }
+  }
+
+  "level__timeVec:array"{
+    level__timeVec:r=7.2
+    level__timeVec:r=8.5
+    level__timeVec:r=15.5
+    level__timeVec:r=16.5
+    level__timeVec:r=17.0
+  }
+}
+
+normandy_level{
+  _use:t="level"
+
+  "level__weatherChoice:object"{
+    weather_clear_a:r=0.5
+    weather_cloudy_a:r=1.0
+    weather_cloudy_b:r=1.0
+
+    "weather_cloudy_c:object"{
+      weight:r=0.5
+
+      "level__timeVec:array"{
+        level__timeVec:r=7.1
+        level__timeVec:r=16.7
+        level__timeVec:r=17.4
+      }
+    }
+
+    "weather_overcast_a:object"{
+      weight:r=0.1
+
+      "level__timeVec:array"{
+        level__timeVec:r=7.1
+        level__timeVec:r=8.5
+        level__timeVec:r=15.5
+        level__timeVec:r=17.0
+      }
+    }
+
+    "weather_overcast_b:object"{
+      weight:r=0.1
+      cloudsHoleEnabled:b=no
+
+      "level__timeVec:array"{
+        level__timeVec:r=7.1
+        level__timeVec:r=10.0
+        level__timeVec:r=15.5
+        level__timeVec:r=17.4
+      }
+    }
+
+    "weather_cloudy_sunset_a:object"{
+      weight:r=1.5
+
+      "level__timeVec:array"{
+        level__timeVec:r=7.1
+        level__timeVec:r=17.0
+      }
+    }
+
+    "weather_cloudy_sunset_b:object"{
+      weight:r=0.5
+
+      "level__timeVec:array"{
+        level__timeVec:r=7.1
+        level__timeVec:r=17.5
+      }
+    }
+
+    "weather_poor_a:object"{
+      weight:r=0.5
+      cloudsHoleEnabled:b=no
+
+      "entities:array"{
+
+        "entity:object"{
+          template:t="camera_rain_heavy_template"
+
+          "components:object"{
+            far_rain__speed:r=1.0
+            rain_ripples__size:r=0.04
+            drop_splashes__volumetricSplashScale:r=0.5
+            far_rain__wind:r=8.0
+            far_rain__density:r=10.0
+            drop_splashes__spriteSplashScale:r=7.25
+            drop_splashes__iterationTime:r=2.0
+            far_rain__length:r=1.0
+            wetness__strength:r=0.4
+            far_rain__alpha:r=1.0
+            puddles__growthLimit:r=0.03
+            far_rain__width:r=1.0
+            puddles__growthRate:r=0.2
+            far_rain__alpha_fade_speed_begin:r=150.0
+            far_rain__alpha_fade_speed_end:r=400.0
+            drop_splashes__distance:r=20.0
+          }
+        }
+
+        "entity:object"{
+          template:t="lightning_animchar_manager"
+        }
+
+        "entity:object"{
+          template:t="lightning_volumetric"
+        }
+
+        "entity:object"{
+          template:t="lightning_panorama"
+        }
+      }
+    }
+  }
+
+  "level__timeVec:array"{
+    level__timeVec:r=7.1
+    level__timeVec:r=8.5
+    level__timeVec:r=15.5
+    level__timeVec:r=17.0
+    level__timeVec:r=17.4
+  }
+}
+
+normandy_level_no_rain{
+  _use:t="level"
+
+  "level__weatherChoice:object"{
+    weather_clear_a:r=0.5
+    weather_cloudy_a:r=1.0
+    weather_cloudy_b:r=1.0
+
+    "weather_cloudy_c:object"{
+      weight:r=0.5
+
+      "level__timeVec:array"{
+        level__timeVec:r=7.1
+        level__timeVec:r=16.7
+        level__timeVec:r=17.4
+      }
+    }
+
+    "weather_overcast_a:object"{
+      weight:r=0.1
+
+      "level__timeVec:array"{
+        level__timeVec:r=7.1
+        level__timeVec:r=8.5
+        level__timeVec:r=15.5
+        level__timeVec:r=17.0
+      }
+    }
+
+    "weather_overcast_b:object"{
+      weight:r=0.1
+      cloudsHoleEnabled:b=no
+
+      "level__timeVec:array"{
+        level__timeVec:r=7.1
+        level__timeVec:r=10.0
+        level__timeVec:r=15.5
+        level__timeVec:r=17.4
+      }
+    }
+
+    "weather_cloudy_sunset_a:object"{
+      weight:r=1.5
+
+      "level__timeVec:array"{
+        level__timeVec:r=7.1
+        level__timeVec:r=17.0
+      }
+    }
+
+    "weather_cloudy_sunset_b:object"{
+      weight:r=0.5
+
+      "level__timeVec:array"{
+        level__timeVec:r=7.1
+        level__timeVec:r=17.5
+      }
+    }
+  }
+
+  "level__timeVec:array"{
+    level__timeVec:r=7.1
+    level__timeVec:r=8.5
+    level__timeVec:r=15.5
+    level__timeVec:r=17.0
+    level__timeVec:r=17.4
+  }
+}
+
+normandy_level_winter{
+  _use:t="level"
+
+  "level__weatherChoice:object"{
+    weather_clear_a:r=0.5
+    weather_cloudy_a:r=1.0
+    weather_cloudy_b:r=1.0
+
+    "weather_cloudy_c:object"{
+      weight:r=5.0
+
+      "level__timeVec:array"{
+        level__timeVec:r=7.1
+        level__timeVec:r=18.0
+      }
+    }
+
+    "weather_overcast_a:object"{
+      weight:r=4.0
+
+      "level__timeVec:array"{
+        level__timeVec:r=7.8
+        level__timeVec:r=9.2
+        level__timeVec:r=16.5
+        level__timeVec:r=17.0
+      }
+
+      "entities:array"{
+
+        "entity:object"{
+          template:t="camera_snow_heavy_template"
+
+          "components:object"{
+            snow__speed:r=0.05
+            snow__density:r=2.0
+            snow__width:r=2.0
+          }
+        }
+
+        "entity:object"{
+          template:t="volfog_snow_affect"
+
+          "components:object"{
+            volfog_snow__maxIntensityRange:p2=1.0, 1.2
+            volfog_snow__intensitySpeed:r=0.1
+            volfog_snow__intensityChangeTime:r=0.0
+          }
+        }
+      }
+    }
+
+    "weather_overcast_b:object"{
+      weight:r=4.0
+
+      "level__timeVec:array"{
+        level__timeVec:r=7.8
+        level__timeVec:r=9.2
+        level__timeVec:r=16.5
+        level__timeVec:r=17.0
+      }
+
+      "entities:array"{
+
+        "entity:object"{
+          template:t="camera_snow_heavy_template"
+
+          "components:object"{
+            snow__speed:r=0.1
+            snow__density:r=1.0
+            snow__width:r=2.0
+          }
+        }
+
+        "entity:object"{
+          template:t="volfog_snow_affect"
+
+          "components:object"{
+            volfog_snow__maxIntensityRange:p2=0.5, 1.0
+            volfog_snow__intensitySpeed:r=0.1
+            volfog_snow__intensityChangeTime:r=0.0
+          }
+        }
+      }
+    }
+
+    "weather_poor_a:object"{
+      weight:r=2.0
+      cloudsHoleEnabled:b=no
+
+      "level__timeVec:array"{
+        level__timeVec:r=8.0
+        level__timeVec:r=9.0
+        level__timeVec:r=15.5
+      }
+
+      "entities:array"{
+
+        "entity:object"{
+          template:t="camera_snow_heavy_template"
+        }
+
+        "entity:object"{
+          template:t="volfog_snow_affect"
+
+          "components:object"{
+            volfog_snow__intensitySpeed:r=0.1
+            volfog_snow__intensityChangeTime:r=0.0
+            volfog_snow__maxIntensityRange:p2=1.5, 1.8
+          }
+        }
+
+        "entity:object"{
+          template:t="blizzard_sound"
+        }
+      }
+    }
+
+    "weather_cloudy_sunset_a:object"{
+      weight:r=1.0
+
+      "level__timeVec:array"{
+        level__timeVec:r=7.1
+        level__timeVec:r=7.5
+        level__timeVec:r=16.5
+        level__timeVec:r=17.0
+      }
+    }
+
+    "weather_cloudy_sunset_b:object"{
+      weight:r=1.0
+
+      "level__timeVec:array"{
+        level__timeVec:r=7.1
+        level__timeVec:r=7.5
+        level__timeVec:r=16.5
+        level__timeVec:r=17.0
+      }
+    }
+  }
+
+  "level__timeVec:array"{
+    level__timeVec:r=7.2
+    level__timeVec:r=8.5
+    level__timeVec:r=15.5
+    level__timeVec:r=16.5
+    level__timeVec:r=17.0
+  }
+}
+
+normandy_level_night{
+  _use:t="level"
+
+  "level__weatherChoice:object"{
+    weather_clear_night_a:r=1.0
+    weather_clear_night_b:r=1.0
+    weather_clear_night_c:r=1.0
+
+    "weather_cloudy_c:object"{
+      weight:r=0.5
+
+      "level__timeVec:array"{
+        level__timeVec:r=22.0
+        level__timeVec:r=23.0
+        level__timeVec:r=24.0
+      }
+    }
+
+    "weather_clear_night_a:object"{
+      weight:r=1.0
+      cloudsHoleEnabled:b=no
+
+      "level__timeVec:array"{
+        level__timeVec:r=22.0
+        level__timeVec:r=23.0
+        level__timeVec:r=24.0
+      }
+    }
+
+    "weather_clear_night_b:object"{
+      weight:r=1.0
+      cloudsHoleEnabled:b=no
+
+      "level__timeVec:array"{
+        level__timeVec:r=23.5
+        level__timeVec:r=24.0
+        level__timeVec:r=1.0
+      }
+    }
+
+    "weather_clear_night_c:object"{
+      weight:r=1.0
+      cloudsHoleEnabled:b=no
+
+      "level__timeVec:array"{
+        level__timeVec:r=23.5
+        level__timeVec:r=24.0
+        level__timeVec:r=1.0
+      }
+    }
+  }
+
+  "level__timeVec:array"{
+    level__timeVec:r=22.0
+    level__timeVec:r=23.0
+    level__timeVec:r=24.0
+  }
+}
+
+normandy_level_tutorial{
+  _use:t="level"
+
+  "level__weatherChoice:object"{
+    weather_cloudy_a:r=1.0
+  }
+
+  "level__timeVec:array"{
+    level__timeVec:r=10.0
+  }
+}
+
+pacific_level{
+  _use:t="level"
+
+  "level__weatherChoice:object"{
+    weather_clear_a:r=1.0
+    weather_clear_b:r=1.0
+    weather_cloudy_a:r=1.0
+    weather_cloudy_b:r=1.0
+
+    "weather_cloudy_c:object"{
+      weight:r=1.0
+
+      "level__timeVec:array"{
+        level__timeVec:r=8.0
+        level__timeVec:r=16.5
+      }
+    }
+
+    "weather_cloudy_d:object"{
+      weight:r=1.0
+
+      "level__timeVec:array"{
+        level__timeVec:r=7.1
+        level__timeVec:r=17.4
+      }
+    }
+
+    "weather_cloudy_sunset_a:object"{
+      weight:r=1.0
+
+      "level__timeVec:array"{
+        level__timeVec:r=7.2
+        level__timeVec:r=16.5
+        level__timeVec:r=17.2
+      }
+    }
+
+    "weather_cloudy_sunset_b:object"{
+      weight:r=1.0
+
+      "level__timeVec:array"{
+        level__timeVec:r=7.2
+        level__timeVec:r=16.5
+        level__timeVec:r=17.2
+      }
+    }
+
+    "weather_overcast_a:object"{
+      weight:r=0.1
+      cloudsHoleEnabled:b=no
+
+      "level__timeVec:array"{
+        level__timeVec:r=8.5
+        level__timeVec:r=15.2
+      }
+    }
+  }
+
+  "level__timeVec:array"{
+    level__timeVec:r=7.1
+    level__timeVec:r=8.0
+    level__timeVec:r=16.0
+    level__timeVec:r=17.0
+    level__timeVec:r=17.2
+  }
+}
+
+pacific_level_b{
+  _use:t="level"
+
+  "level__weatherChoice:object"{
+    weather_clear_a:r=1.0
+    weather_cloudy_a:r=1.0
+    weather_cloudy_b:r=1.0
+
+    "weather_clear_b:object"{
+      weight:r=1.0
+
+      "level__timeVec:array"{
+        level__timeVec:r=7.5
+        level__timeVec:r=8.0
+        level__timeVec:r=10.0
+        level__timeVec:r=11.5
+        level__timeVec:r=13.0
+        level__timeVec:r=16.0
+        level__timeVec:r=16.5
+      }
+    }
+
+    "weather_cloudy_c:object"{
+      weight:r=1.0
+
+      "level__timeVec:array"{
+        level__timeVec:r=7.5
+        level__timeVec:r=8.0
+        level__timeVec:r=16.0
+        level__timeVec:r=16.5
+      }
+    }
+
+    "weather_cloudy_sunset_b:object"{
+      weight:r=1.0
+
+      "level__timeVec:array"{
+        level__timeVec:r=7.5
+        level__timeVec:r=8.0
+        level__timeVec:r=14.0
+        level__timeVec:r=15.0
+        level__timeVec:r=16.0
+        level__timeVec:r=16.5
+      }
+    }
+  }
+}
+
+pacific_level_c{
+  _use:t="level"
+
+  "level__weatherChoice:object"{
+
+    "weather_clear_feather_a:object"{
+      weight:r=1.0
+
+      "level__timeVec:array"{
+        level__timeVec:r=6.5
+        level__timeVec:r=14.0
+        level__timeVec:r=18.1
+      }
+
+      "entities:array"{
+
+        "entity:object"{
+          template:t="wind"
+
+          "components:object"{
+            dyn_wind__cumulus_alt_multiplier:r=15.0
+            dyn_wind__strata_alt_multiplier:r=25.0
+            wind__strength:r=3.0
+            wind__noiseStrength:r=1.5
+            wind__noiseSpeed:r=1.5
+            wind__noiseScale:r=15.0
+          }
+        }
+      }
+    }
+
+    "weather_clear_feather_b:object"{
+      weight:r=1.0
+
+      "level__timeVec:array"{
+        level__timeVec:r=7.0
+        level__timeVec:r=16.0
+        level__timeVec:r=17.8
+      }
+
+      "entities:array"{
+
+        "entity:object"{
+          template:t="wind"
+
+          "components:object"{
+            dyn_wind__cumulus_alt_multiplier:r=15.0
+            dyn_wind__strata_alt_multiplier:r=25.0
+            wind__strength:r=3.0
+            wind__noiseStrength:r=1.5
+            wind__noiseSpeed:r=1.5
+            wind__noiseScale:r=15.0
+          }
+        }
+      }
+    }
+
+    "weather_cloudy_sunset_feather_a:object"{
+      weight:r=1.0
+
+      "level__timeVec:array"{
+        level__timeVec:r=6.3
+        level__timeVec:r=17.8
+        level__timeVec:r=18.3
+      }
+
+      "entities:array"{
+
+        "entity:object"{
+          template:t="wind"
+
+          "components:object"{
+            dyn_wind__cumulus_alt_multiplier:r=20.0
+            dyn_wind__strata_alt_multiplier:r=30.0
+            wind__strength:r=4.0
+            wind__noiseStrength:r=1.5
+            wind__noiseSpeed:r=1.5
+            wind__noiseScale:r=15.0
+          }
+        }
+      }
+    }
+
+    "weather_cloudy_feather_a:object"{
+      weight:r=1.0
+
+      "level__timeVec:array"{
+        level__timeVec:r=6.8
+        level__timeVec:r=16.0
+        level__timeVec:r=18.1
+      }
+
+      "entities:array"{
+
+        "entity:object"{
+          template:t="wind"
+
+          "components:object"{
+            dyn_wind__cumulus_alt_multiplier:r=20.0
+            dyn_wind__strata_alt_multiplier:r=30.0
+            wind__strength:r=4.0
+            wind__noiseStrength:r=1.5
+            wind__noiseSpeed:r=1.5
+            wind__noiseScale:r=15.0
+          }
+        }
+      }
+    }
+
+    "weather_cloudy_b:object"{
+      weight:r=1.0
+
+      "level__timeVec:array"{
+        level__timeVec:r=6.8
+        level__timeVec:r=16.0
+        level__timeVec:r=18.1
+      }
+
+      "entities:array"{
+
+        "entity:object"{
+          template:t="wind"
+
+          "components:object"{
+            dyn_wind__cumulus_alt_multiplier:r=20.0
+            dyn_wind__strata_alt_multiplier:r=30.0
+            wind__strength:r=2.0
+            wind__noiseStrength:r=1.5
+            wind__noiseSpeed:r=1.5
+            wind__noiseScale:r=15.0
+          }
+        }
+      }
+    }
+
+    "weather_overcast_a:object"{
+      weight:r=1.0
+
+      "level__timeVec:array"{
+        level__timeVec:r=8.0
+        level__timeVec:r=16.3
+      }
+
+      "entities:array"{
+
+        "entity:object"{
+          template:t="wind"
+
+          "components:object"{
+            dyn_wind__cumulus_alt_multiplier:r=20.0
+            dyn_wind__strata_alt_multiplier:r=30.0
+            wind__strength:r=4.0
+            wind__noiseStrength:r=1.5
+            wind__noiseSpeed:r=1.5
+            wind__noiseScale:r=15.0
+          }
+        }
+      }
+    }
+
+    "weather_overcast_b:object"{
+      weight:r=1.0
+
+      "level__timeVec:array"{
+        level__timeVec:r=8.7
+        level__timeVec:r=17.7
+      }
+
+      "entities:array"{
+
+        "entity:object"{
+          template:t="wind"
+
+          "components:object"{
+            dyn_wind__cumulus_alt_multiplier:r=20.0
+            dyn_wind__strata_alt_multiplier:r=30.0
+            wind__strength:r=4.0
+            wind__noiseStrength:r=1.5
+            wind__noiseSpeed:r=1.5
+            wind__noiseScale:r=15.0
+          }
+        }
+      }
+    }
+
+    "weather_poor_a:object"{
+      weight:r=1.0
+
+      "level__timeVec:array"{
+        level__timeVec:r=5.8
+        level__timeVec:r=7.5
+        level__timeVec:r=16.4
+        level__timeVec:r=18.4
+      }
+
+      "entities:array"{
+
+        "entity:object"{
+          template:t="camera_rain_heavy_template"
+
+          "components:object"{
+            far_rain__speed:r=1.0
+            rain_ripples__size:r=0.1
+            drop_splashes__volumetricSplashScale:r=0.5
+            far_rain__wind:r=8.0
+            far_rain__density:r=100.0
+            drop_splashes__spriteSplashScale:r=7.25
+            drop_splashes__iterationTime:r=2.0
+            far_rain__length:r=1.0
+            wetness__strength:r=0.4
+            far_rain__alpha:r=1.0
+            puddles__growthLimit:r=0.03
+            far_rain__width:r=1.5
+            puddles__growthRate:r=0.5
+            far_rain__alpha_fade_speed_begin:r=150.0
+            far_rain__alpha_fade_speed_end:r=400.0
+            drop_splashes__distance:r=20.0
+          }
+        }
+
+        "entity:object"{
+          template:t="lightning_animchar_manager"
+        }
+
+        "entity:object"{
+          template:t="lightning_volumetric"
+        }
+
+        "entity:object"{
+          template:t="lightning_panorama"
+        }
+
+        "entity:object"{
+          template:t="camera_storm_green_template"
+        }
+
+        "entity:object"{
+          template:t="wind"
+
+          "components:object"{
+            wind__strength:r=6.0
+            wind__noiseStrength:r=6.0
+            wind__noiseSpeed:r=0.8
+            wind__noiseScale:r=25.0
+            dyn_wind__cumulus_alt_multiplier:r=40.0
+            dyn_wind__strata_alt_multiplier:r=45.0
+          }
+        }
+      }
+    }
+
+    "weather_poor_b:object"{
+      weight:r=1.0
+
+      "level__timeVec:array"{
+        level__timeVec:r=5.6
+        level__timeVec:r=6.5
+        level__timeVec:r=17.0
+        level__timeVec:r=18.4
+      }
+
+      "entities:array"{
+
+        "entity:object"{
+          template:t="camera_rain_heavy_template"
+
+          "components:object"{
+            far_rain__speed:r=1.0
+            rain_ripples__size:r=0.1
+            drop_splashes__volumetricSplashScale:r=0.5
+            far_rain__wind:r=8.0
+            far_rain__density:r=100.0
+            drop_splashes__spriteSplashScale:r=7.25
+            drop_splashes__iterationTime:r=2.0
+            far_rain__length:r=1.0
+            wetness__strength:r=0.4
+            far_rain__alpha:r=1.0
+            puddles__growthLimit:r=0.03
+            far_rain__width:r=1.5
+            puddles__growthRate:r=0.5
+            far_rain__alpha_fade_speed_begin:r=150.0
+            far_rain__alpha_fade_speed_end:r=400.0
+            drop_splashes__distance:r=20.0
+          }
+        }
+
+        "entity:object"{
+          template:t="lightning_animchar_manager"
+        }
+
+        "entity:object"{
+          template:t="lightning_volumetric"
+        }
+
+        "entity:object"{
+          template:t="lightning_panorama"
+        }
+
+        "entity:object"{
+          template:t="camera_storm_green_template"
+        }
+
+        "entity:object"{
+          template:t="wind"
+
+          "components:object"{
+            wind__strength:r=6.0
+            wind__noiseStrength:r=6.0
+            wind__noiseSpeed:r=0.8
+            wind__noiseScale:r=25.0
+            dyn_wind__cumulus_alt_multiplier:r=40.0
+            dyn_wind__strata_alt_multiplier:r=45.0
+          }
+        }
+      }
+    }
+  }
+}
+
+poor_heavy_level{
+  _use:t="level"
+
+  "level__weatherChoice:object"{
+
+    "weather_poor_heavy_a:object"{
+      weight:r=1.0
+      cloudsHoleEnabled:b=no
+    }
+  }
+
+  "level__timeVec:array"{
+    level__timeVec:r=8.0
+  }
+}
+
+zombie_level_night{
+  _use:t="level"
+
+  "level__weatherChoice:object"{
+    weather_zombie_night_a:r=1.0
+
+    "weather_zombie_night_a:object"{
+      weight:r=0.5
+
+      "level__timeVec:array"{
+        level__timeVec:r=1.344
+      }
+    }
+
+    "weather_zombie_night_a:object"{
+      weight:r=1.0
+      cloudsHoleEnabled:b=no
+
+      "level__timeVec:array"{
+        level__timeVec:r=1.344
+      }
+    }
+  }
+
+  "level__timeVec:array"{
+    level__timeVec:r=1.344
+  }
+}
+
+zombie_level_evening{
+  _use:t="level"
+
+  "level__weatherChoice:object"{
+    weather_cloudy_sunset_b:r=1.0
+
+    "weather_cloudy_sunset_b:object"{
+      weight:r=1.0
+      cloudsHoleEnabled:b=yes
+
+      "level__timeVec:array"{
+        level__timeVec:r=18.4
+      }
+    }
+  }
+
+  "level__timeVec:array"{
+    level__timeVec:r=18.4
+  }
+}
+
+zombie_level_changed_weather{
+  _use:t="level"
+
+  "level__weatherChoice:object"{
+    weather_zombie_night_a:r=1.0
+
+    "weather_zombie_night_a:object"{
+      weight:r=1.0
+
+      "level__timeVec:array"{
+        level__timeVec:r=1.344
+      }
+
+      "entities:array"{
+
+        "entity:object"{
+          template:t="camera_rain_heavy_template"
+
+          "components:object"{
+            far_rain__speed:r=1.0
+            rain_ripples__size:r=0.04
+            drop_splashes__volumetricSplashScale:r=0.5
+            far_rain__wind:r=8.0
+            far_rain__density:r=10.0
+            drop_splashes__spriteSplashScale:r=7.25
+            drop_splashes__iterationTime:r=2.0
+            far_rain__length:r=1.0
+            wetness__strength:r=0.4
+            far_rain__alpha:r=1.0
+            puddles__growthLimit:r=0.03
+            far_rain__width:r=1.0
+            puddles__growthRate:r=0.2
+            far_rain__alpha_fade_speed_begin:r=150.0
+            far_rain__alpha_fade_speed_end:r=400.0
+            drop_splashes__distance:r=20.0
+          }
+        }
+
+        "entity:object"{
+          template:t="lightning_animchar_manager"
+        }
+
+        "entity:object"{
+          template:t="lightning_volumetric"
+        }
+
+        "entity:object"{
+          template:t="lightning_panorama"
+        }
+      }
+    }
+  }
+
+  "weather_zombie_night_a:object"{
+    weight:r=0.1
+    cloudsHoleEnabled:b=no
+
+    "level__timeVec:array"{
+      level__timeVec:r=1.344
+    }
+  }
+
+  "level__timeVec:array"{
+    level__timeVec:r=1.344
+  }
+}
+
+zombie_level_tropical_storm_weather{
+  _use:t="level"
+
+  "level__weatherChoice:object"{
+    weather_zombie_night_a:r=1.0
+
+    "weather_zombie_night_a:object"{
+      weight:r=1.0
+
+      "level__timeVec:array"{
+        level__timeVec:r=7.15
+      }
+
+      "entities:array"{
+
+        "entity:object"{
+          template:t="camera_rain_heavy_template"
+
+          "components:object"{
+            far_rain__speed:r=1.0
+            rain_ripples__size:r=0.1
+            drop_splashes__volumetricSplashScale:r=0.5
+            far_rain__wind:r=8.0
+            far_rain__density:r=100.0
+            drop_splashes__spriteSplashScale:r=7.25
+            drop_splashes__iterationTime:r=2.0
+            far_rain__length:r=1.0
+            wetness__strength:r=0.4
+            far_rain__alpha:r=1.0
+            puddles__growthLimit:r=0.03
+            far_rain__width:r=1.5
+            puddles__growthRate:r=0.5
+            far_rain__alpha_fade_speed_begin:r=150.0
+            far_rain__alpha_fade_speed_end:r=400.0
+            drop_splashes__distance:r=20.0
+          }
+        }
+
+        "entity:object"{
+          template:t="lightning_animchar_manager"
+        }
+
+        "entity:object"{
+          template:t="lightning_volumetric"
+        }
+
+        "entity:object"{
+          template:t="lightning_panorama"
+        }
+
+        "entity:object"{
+          template:t="camera_storm_green_template"
+        }
+
+        "entity:object"{
+          template:t="wind"
+
+          "components:object"{
+            wind__strength:r=9.0
+            wind__noiseStrength:r=6.0
+            wind__noiseSpeed:r=1.3
+            wind__noiseScale:r=16.0
+            dyn_wind__cumulus_alt_multiplier:r=0.0
+            dyn_wind__strata_alt_multiplier:r=0.0
+          }
+        }
+      }
+    }
+  }
+}
+
+berlin_seelow_heights_a{
+  _use:t="level"
+
+  "level__weatherChoice:object"{
+
+    "weather_clear_feather_a:object"{
+      weight:r=1.0
+
+      "level__timeVec:array"{
+        level__timeVec:r=6.5
+        level__timeVec:r=14.0
+        level__timeVec:r=18.1
+      }
+
+      "entities:array"{
+
+        "entity:object"{
+          template:t="wind"
+
+          "components:object"{
+            dyn_wind__cumulus_alt_multiplier:r=15.0
+            dyn_wind__strata_alt_multiplier:r=25.0
+            wind__strength:r=3.0
+            wind__noiseStrength:r=1.5
+            wind__noiseSpeed:r=1.5
+            wind__noiseScale:r=15.0
+          }
+        }
+      }
+    }
+
+    "weather_clear_feather_b:object"{
+      weight:r=1.0
+
+      "level__timeVec:array"{
+        level__timeVec:r=7.0
+        level__timeVec:r=16.0
+        level__timeVec:r=17.8
+      }
+
+      "entities:array"{
+
+        "entity:object"{
+          template:t="wind"
+
+          "components:object"{
+            dyn_wind__cumulus_alt_multiplier:r=15.0
+            dyn_wind__strata_alt_multiplier:r=25.0
+            wind__strength:r=3.0
+            wind__noiseStrength:r=1.5
+            wind__noiseSpeed:r=1.5
+            wind__noiseScale:r=15.0
+          }
+        }
+      }
+    }
+
+    "weather_cloudy_sunset_feather_a:object"{
+      weight:r=1.0
+
+      "level__timeVec:array"{
+        level__timeVec:r=6.3
+        level__timeVec:r=17.8
+        level__timeVec:r=18.3
+      }
+
+      "entities:array"{
+
+        "entity:object"{
+          template:t="wind"
+
+          "components:object"{
+            dyn_wind__cumulus_alt_multiplier:r=20.0
+            dyn_wind__strata_alt_multiplier:r=30.0
+            wind__strength:r=4.0
+            wind__noiseStrength:r=1.5
+            wind__noiseSpeed:r=1.5
+            wind__noiseScale:r=15.0
+          }
+        }
+      }
+    }
+
+    "weather_cloudy_feather_a:object"{
+      weight:r=1.0
+
+      "level__timeVec:array"{
+        level__timeVec:r=6.8
+        level__timeVec:r=16.0
+        level__timeVec:r=18.1
+      }
+
+      "entities:array"{
+
+        "entity:object"{
+          template:t="wind"
+
+          "components:object"{
+            dyn_wind__cumulus_alt_multiplier:r=20.0
+            dyn_wind__strata_alt_multiplier:r=30.0
+            wind__strength:r=4.0
+            wind__noiseStrength:r=1.5
+            wind__noiseSpeed:r=1.5
+            wind__noiseScale:r=15.0
+          }
+        }
+      }
+    }
+
+    "weather_cloudy_b:object"{
+      weight:r=1.0
+
+      "level__timeVec:array"{
+        level__timeVec:r=6.8
+        level__timeVec:r=16.0
+        level__timeVec:r=18.1
+      }
+
+      "entities:array"{
+
+        "entity:object"{
+          template:t="wind"
+
+          "components:object"{
+            dyn_wind__cumulus_alt_multiplier:r=15.0
+            dyn_wind__strata_alt_multiplier:r=25.0
+            wind__strength:r=3.0
+            wind__noiseStrength:r=1.5
+            wind__noiseSpeed:r=1.5
+            wind__noiseScale:r=15.0
+          }
+        }
+      }
+    }
+
+    "weather_overcast_a:object"{
+      weight:r=1.0
+
+      "level__timeVec:array"{
+        level__timeVec:r=7.6
+        level__timeVec:r=16.3
+      }
+
+      "entities:array"{
+
+        "entity:object"{
+          template:t="wind"
+
+          "components:object"{
+            dyn_wind__cumulus_alt_multiplier:r=20.0
+            dyn_wind__strata_alt_multiplier:r=30.0
+            wind__strength:r=4.0
+            wind__noiseStrength:r=1.5
+            wind__noiseSpeed:r=1.5
+            wind__noiseScale:r=15.0
+          }
+        }
+      }
+    }
+
+    "weather_overcast_b:object"{
+      weight:r=1.0
+
+      "level__timeVec:array"{
+        level__timeVec:r=7.7
+        level__timeVec:r=17.7
+      }
+
+      "entities:array"{
+
+        "entity:object"{
+          template:t="wind"
+
+          "components:object"{
+            dyn_wind__cumulus_alt_multiplier:r=20.0
+            dyn_wind__strata_alt_multiplier:r=30.0
+            wind__strength:r=4.0
+            wind__noiseStrength:r=1.5
+            wind__noiseSpeed:r=1.5
+            wind__noiseScale:r=15.0
+          }
+        }
+      }
+    }
+
+    "weather_poor_a:object"{
+      weight:r=1.0
+
+      "level__timeVec:array"{
+        level__timeVec:r=5.8
+        level__timeVec:r=7.5
+        level__timeVec:r=16.4
+        level__timeVec:r=18.4
+      }
+
+      "entities:array"{
+
+        "entity:object"{
+          template:t="camera_rain_heavy_template"
+
+          "components:object"{
+            far_rain__speed:r=1.0
+            rain_ripples__size:r=0.1
+            drop_splashes__volumetricSplashScale:r=0.5
+            far_rain__wind:r=8.0
+            far_rain__density:r=100.0
+            drop_splashes__spriteSplashScale:r=7.25
+            drop_splashes__iterationTime:r=2.0
+            far_rain__length:r=1.0
+            wetness__strength:r=0.4
+            far_rain__alpha:r=1.0
+            puddles__growthLimit:r=0.03
+            far_rain__width:r=1.5
+            puddles__growthRate:r=0.5
+            far_rain__alpha_fade_speed_begin:r=150.0
+            far_rain__alpha_fade_speed_end:r=400.0
+            drop_splashes__distance:r=20.0
+          }
+        }
+
+        "entity:object"{
+          template:t="lightning_animchar_manager"
+        }
+
+        "entity:object"{
+          template:t="lightning_volumetric"
+        }
+
+        "entity:object"{
+          template:t="lightning_panorama"
+        }
+
+        "entity:object"{
+          template:t="camera_storm_green_template"
+        }
+
+        "entity:object"{
+          template:t="wind"
+
+          "components:object"{
+            wind__strength:r=5.0
+            wind__noiseStrength:r=5.0
+            wind__noiseSpeed:r=0.8
+            wind__noiseScale:r=25.0
+            dyn_wind__cumulus_alt_multiplier:r=40.0
+            dyn_wind__strata_alt_multiplier:r=45.0
+          }
+        }
+      }
+    }
+
+    "weather_poor_b:object"{
+      weight:r=1.0
+
+      "level__timeVec:array"{
+        level__timeVec:r=5.6
+        level__timeVec:r=6.5
+        level__timeVec:r=17.0
+        level__timeVec:r=18.4
+      }
+
+      "entities:array"{
+
+        "entity:object"{
+          template:t="camera_rain_heavy_template"
+
+          "components:object"{
+            far_rain__speed:r=1.0
+            rain_ripples__size:r=0.1
+            drop_splashes__volumetricSplashScale:r=0.5
+            far_rain__wind:r=8.0
+            far_rain__density:r=100.0
+            drop_splashes__spriteSplashScale:r=7.25
+            drop_splashes__iterationTime:r=2.0
+            far_rain__length:r=1.0
+            wetness__strength:r=0.4
+            far_rain__alpha:r=1.0
+            puddles__growthLimit:r=0.03
+            far_rain__width:r=1.5
+            puddles__growthRate:r=0.5
+            far_rain__alpha_fade_speed_begin:r=150.0
+            far_rain__alpha_fade_speed_end:r=400.0
+            drop_splashes__distance:r=20.0
+          }
+        }
+
+        "entity:object"{
+          template:t="lightning_animchar_manager"
+        }
+
+        "entity:object"{
+          template:t="lightning_volumetric"
+        }
+
+        "entity:object"{
+          template:t="lightning_panorama"
+        }
+
+        "entity:object"{
+          template:t="camera_storm_green_template"
+        }
+
+        "entity:object"{
+          template:t="wind"
+
+          "components:object"{
+            wind__strength:r=5.0
+            wind__noiseStrength:r=5.0
+            wind__noiseSpeed:r=0.8
+            wind__noiseScale:r=25.0
+            dyn_wind__cumulus_alt_multiplier:r=40.0
+            dyn_wind__strata_alt_multiplier:r=45.0
+          }
+        }
+      }
+    }
+  }
+}
+
+manchuria_level{
+  _use:t="level"
+
+  "level__weatherChoice:object"{
+
+    "weather_cloudy_a:object"{
+      weight:r=1.0
+
+      "level__timeVec:array"{
+        level__timeVec:r=5.0
+        level__timeVec:r=6.0
+        level__timeVec:r=18.0
+        level__timeVec:r=18.5
+        level__timeVec:r=19.4
+      }
+
+      "entities:array"{
+
+        "entity:object"{
+          template:t="wind"
+
+          "components:object"{
+            dyn_wind__cumulus_alt_multiplier:r=15.0
+            dyn_wind__strata_alt_multiplier:r=25.0
+            wind__strength:r=3.5
+            wind__noiseStrength:r=1.5
+            wind__noiseSpeed:r=1.5
+            wind__noiseScale:r=20.0
+          }
+        }
+      }
+    }
+
+    "weather_cloudy_b:object"{
+      weight:r=1.0
+
+      "level__timeVec:array"{
+        level__timeVec:r=5.0
+        level__timeVec:r=6.0
+        level__timeVec:r=18.0
+        level__timeVec:r=18.5
+        level__timeVec:r=19.4
+      }
+
+      "entities:array"{
+
+        "entity:object"{
+          template:t="wind"
+
+          "components:object"{
+            dyn_wind__cumulus_alt_multiplier:r=15.0
+            dyn_wind__strata_alt_multiplier:r=25.0
+            wind__strength:r=3.5
+            wind__noiseStrength:r=1.5
+            wind__noiseSpeed:r=1.5
+            wind__noiseScale:r=20.0
+          }
+        }
+      }
+    }
+
+    "weather_overcast_a:object"{
+      weight:r=0.5
+
+      "level__timeVec:array"{
+        level__timeVec:r=7.1
+        level__timeVec:r=8.5
+        level__timeVec:r=15.5
+        level__timeVec:r=17.0
+      }
+
+      "entities:array"{
+
+        "entity:object"{
+          template:t="wind"
+
+          "components:object"{
+            dyn_wind__cumulus_alt_multiplier:r=15.0
+            dyn_wind__strata_alt_multiplier:r=25.0
+            wind__strength:r=2.5
+            wind__noiseStrength:r=1.5
+            wind__noiseSpeed:r=1.5
+            wind__noiseScale:r=25.0
+          }
+        }
+      }
+    }
+
+    "weather_overcast_b:object"{
+      weight:r=0.8
+
+      "level__timeVec:array"{
+        level__timeVec:r=7.1
+        level__timeVec:r=10.0
+        level__timeVec:r=16.8
+        level__timeVec:r=17.4
+      }
+
+      "entities:array"{
+
+        "entity:object"{
+          template:t="wind"
+
+          "components:object"{
+            dyn_wind__cumulus_alt_multiplier:r=15.0
+            dyn_wind__strata_alt_multiplier:r=25.0
+            wind__strength:r=3.5
+            wind__noiseStrength:r=1.5
+            wind__noiseSpeed:r=1.5
+            wind__noiseScale:r=20.0
+          }
+        }
+      }
+    }
+
+    "weather_cloudy_sunset_a:object"{
+      weight:r=1.0
+
+      "level__timeVec:array"{
+        level__timeVec:r=17.6
+        level__timeVec:r=18.2
+      }
+
+      "entities:array"{
+
+        "entity:object"{
+          template:t="wind"
+
+          "components:object"{
+            dyn_wind__cumulus_alt_multiplier:r=15.0
+            dyn_wind__strata_alt_multiplier:r=25.0
+            wind__strength:r=2.5
+            wind__noiseStrength:r=1.5
+            wind__noiseSpeed:r=1.5
+            wind__noiseScale:r=25.0
+          }
+        }
+      }
+    }
+
+    "weather_poor_a:object"{
+      weight:r=0.3
+
+      "level__timeVec:array"{
+        level__timeVec:r=5.8
+        level__timeVec:r=6.5
+        level__timeVec:r=16.4
+        level__timeVec:r=18.2
+      }
+
+      "entities:array"{
+
+        "entity:object"{
+          template:t="camera_rain_heavy_template"
+
+          "components:object"{
+            far_rain__speed:r=1.0
+            rain_ripples__size:r=0.1
+            drop_splashes__volumetricSplashScale:r=0.5
+            far_rain__wind:r=8.0
+            far_rain__density:r=100.0
+            drop_splashes__spriteSplashScale:r=7.25
+            drop_splashes__iterationTime:r=2.0
+            far_rain__length:r=1.0
+            wetness__strength:r=0.4
+            far_rain__alpha:r=1.0
+            puddles__growthLimit:r=0.03
+            far_rain__width:r=1.5
+            puddles__growthRate:r=0.5
+            far_rain__alpha_fade_speed_begin:r=150.0
+            far_rain__alpha_fade_speed_end:r=400.0
+            drop_splashes__distance:r=20.0
+          }
+        }
+
+        "entity:object"{
+          template:t="lightning_animchar_manager"
+        }
+
+        "entity:object"{
+          template:t="lightning_volumetric"
+        }
+
+        "entity:object"{
+          template:t="lightning_panorama"
+        }
+
+        "entity:object"{
+          template:t="camera_storm_green_template"
+        }
+
+        "entity:object"{
+          template:t="wind"
+
+          "components:object"{
+            wind__strength:r=5.0
+            wind__noiseStrength:r=2.0
+            wind__noiseSpeed:r=1.5
+            wind__noiseScale:r=25.0
+            dyn_wind__cumulus_alt_multiplier:r=40.0
+            dyn_wind__strata_alt_multiplier:r=45.0
+          }
+        }
+      }
+    }
+  }
+}
+
+cloudy_level{
+  _use:t="level"
+
+  "level__weatherChoice:object"{
+
+    "weather_overcast_c:object"{
+      weight:r=0.8
+
+      "level__timeVec:array"{
+        level__timeVec:r=17.4
+      }
+
+      "entities:array"{
+
+        "entity:object"{
+          template:t="camera_rain_heavy_template"
+
+          "components:object"{
+            far_rain__speed:r=1.0
+            rain_ripples__size:r=0.1
+            drop_splashes__volumetricSplashScale:r=0.5
+            far_rain__wind:r=8.0
+            far_rain__density:r=100.0
+            drop_splashes__spriteSplashScale:r=7.25
+            drop_splashes__iterationTime:r=2.0
+            far_rain__length:r=1.0
+            wetness__strength:r=0.4
+            far_rain__alpha:r=1.0
+            puddles__growthLimit:r=0.03
+            far_rain__width:r=1.5
+            puddles__growthRate:r=0.5
+            far_rain__alpha_fade_speed_begin:r=150.0
+            far_rain__alpha_fade_speed_end:r=400.0
+            drop_splashes__distance:r=20.0
+          }
+        }
+
+        "entity:object"{
+          template:t="wind"
+
+          "components:object"{
+            wind__strength:r=5.0
+            wind__noiseStrength:r=2.0
+            wind__noiseSpeed:r=2.0
+            wind__noiseScale:r=25.0
+            dyn_wind__cumulus_alt_multiplier:r=5.5
+            dyn_wind__strata_alt_multiplier:r=5.5
+            wind__dir:r=0.0
+          }
+        }
+      }
+    }
+  }
+}
+
+omaha_beach_level{
+  _use:t="level"
+
+  "level__weatherChoice:object"{
+
+    "weather_overcast_b:object"{
+      weight:r=0.1
+
+      "level__timeVec:array"{
+        level__timeVec:r=17.0
+        level__timeVec:r=18.0
+        level__timeVec:r=5.6
+      }
+
+      "entities:array"{
+
+        "entity:object"{
+          template:t="wind"
+
+          "components:object"{
+            dyn_wind__cumulus_alt_multiplier:r=15.0
+            dyn_wind__strata_alt_multiplier:r=25.0
+            wind__strength:r=4.0
+            wind__dir:r=0.0
+            wind__noiseStrength:r=1.5
+            wind__noiseSpeed:r=1.5
+            wind__noiseScale:r=15.0
+          }
+        }
+      }
+    }
+
+    "weather_overcast_c:object"{
+      weight:r=1.5
+
+      "level__timeVec:array"{
+        level__timeVec:r=7.0
+        level__timeVec:r=8.5
+        level__timeVec:r=12.0
+        level__timeVec:r=17.0
+      }
+
+      "entities:array"{
+
+        "entity:object"{
+          template:t="wind"
+
+          "components:object"{
+            dyn_wind__cumulus_alt_multiplier:r=15.0
+            dyn_wind__strata_alt_multiplier:r=25.0
+            wind__strength:r=4.0
+            wind__dir:r=0.0
+            wind__noiseStrength:r=1.5
+            wind__noiseSpeed:r=1.5
+            wind__noiseScale:r=15.0
+          }
+        }
+      }
+    }
+
+    "weather_overcast_d:object"{
+      weight:r=1.0
+
+      "level__timeVec:array"{
+        level__timeVec:r=10.0
+        level__timeVec:r=12.0
+        level__timeVec:r=16.0
+      }
+
+      "entities:array"{
+
+        "entity:object"{
+          template:t="wind"
+
+          "components:object"{
+            dyn_wind__cumulus_alt_multiplier:r=15.0
+            dyn_wind__strata_alt_multiplier:r=25.0
+            wind__strength:r=4.0
+            wind__noiseStrength:r=1.5
+            wind__noiseSpeed:r=1.5
+            wind__noiseScale:r=15.0
+          }
+        }
+      }
+    }
+
+    "weather_poor_b:object"{
+      weight:r=0.5
+
+      "level__timeVec:array"{
+        level__timeVec:r=18.0
+        level__timeVec:r=17.0
+        level__timeVec:r=12.0
+      }
+
+      "entities:array"{
+
+        "entity:object"{
+          template:t="wind"
+
+          "components:object"{
+            dyn_wind__cumulus_alt_multiplier:r=15.0
+            dyn_wind__strata_alt_multiplier:r=25.0
+            wind__strength:r=4.0
+            wind__dir:r=0.0
+            wind__noiseStrength:r=1.5
+            wind__noiseSpeed:r=1.5
+            wind__noiseScale:r=15.0
+          }
+        }
+      }
+    }
+
+    "weather_poor_heavy_a:object"{
+      weight:r=0.5
+
+      "level__timeVec:array"{
+        level__timeVec:r=7.0
+        level__timeVec:r=8.0
+        level__timeVec:r=12.0
+      }
+
+      "entities:array"{
+
+        "entity:object"{
+          template:t="wind"
+
+          "components:object"{
+            dyn_wind__cumulus_alt_multiplier:r=15.0
+            dyn_wind__strata_alt_multiplier:r=25.0
+            wind__strength:r=5.0
+            wind__dir:r=0.0
+            wind__noiseStrength:r=1.5
+            wind__noiseSpeed:r=1.5
+            wind__noiseScale:r=15.0
+          }
+        }
+      }
+    }
+
+    "weather_cloudy_c:object"{
+      weight:r=0.05
+
+      "level__timeVec:array"{
+        level__timeVec:r=5.0
+        level__timeVec:r=5.5
+      }
+
+      "entities:array"{
+
+        "entity:object"{
+          template:t="wind"
+
+          "components:object"{
+            dyn_wind__cumulus_alt_multiplier:r=15.0
+            dyn_wind__strata_alt_multiplier:r=25.0
+            wind__strength:r=4.0
+            wind__dir:r=0.0
+            wind__noiseStrength:r=1.5
+            wind__noiseSpeed:r=2.0
+            wind__noiseScale:r=25.0
+          }
+        }
+      }
+    }
+
+    "weather_cloudy_sunset_a:object"{
+      weight:r=0.05
+
+      "level__timeVec:array"{
+        level__timeVec:r=6.0
+        level__timeVec:r=6.5
+      }
+
+      "entities:array"{
+
+        "entity:object"{
+          template:t="wind"
+
+          "components:object"{
+            dyn_wind__cumulus_alt_multiplier:r=15.0
+            dyn_wind__strata_alt_multiplier:r=25.0
+            wind__strength:r=4.0
+            wind__dir:r=0.0
+            wind__noiseStrength:r=1.0
+            wind__noiseSpeed:r=1.0
+            wind__noiseScale:r=25.0
+          }
+        }
+      }
+    }
+
+    "weather_poor_a:object"{
+      weight:r=0.5
+
+      "level__timeVec:array"{
+        level__timeVec:r=5.8
+        level__timeVec:r=6.5
+        level__timeVec:r=7.0
+        level__timeVec:r=10.0
+      }
+
+      "entities:array"{
+
+        "entity:object"{
+          template:t="camera_rain_heavy_template"
+
+          "components:object"{
+            far_rain__speed:r=1.0
+            rain_ripples__size:r=0.1
+            drop_splashes__volumetricSplashScale:r=0.5
+            far_rain__wind:r=8.0
+            far_rain__density:r=100.0
+            drop_splashes__spriteSplashScale:r=7.25
+            drop_splashes__iterationTime:r=2.0
+            far_rain__length:r=1.0
+            wetness__strength:r=0.4
+            far_rain__alpha:r=1.0
+            puddles__growthLimit:r=0.03
+            far_rain__width:r=1.5
+            puddles__growthRate:r=0.5
+            far_rain__alpha_fade_speed_begin:r=150.0
+            far_rain__alpha_fade_speed_end:r=400.0
+            drop_splashes__distance:r=20.0
+          }
+        }
+
+        "entity:object"{
+          template:t="lightning_animchar_manager"
+        }
+
+        "entity:object"{
+          template:t="lightning_volumetric"
+        }
+
+        "entity:object"{
+          template:t="lightning_panorama"
+        }
+
+        "entity:object"{
+          template:t="camera_storm_green_template"
+        }
+
+        "entity:object"{
+          template:t="wind"
+
+          "components:object"{
+            wind__strength:r=5.0
+            wind__noiseStrength:r=2.0
+            wind__dir:r=0.0
+            wind__noiseSpeed:r=1.5
+            wind__noiseScale:r=25.0
+            dyn_wind__cumulus_alt_multiplier:r=40.0
+            dyn_wind__strata_alt_multiplier:r=45.0
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,22 @@
+team_generic{
+  _replicated:t="team__memberCount"
+  _tracked:t="team__memberCount"
+  team__memberCount:r=0.0
+  team__id:i=-1
+  team__locked:b=no
+  team__capacity:i=-1
+  team__shouldReduceBotsCount:b=no
+  team__maxBotsToSpawn:i=-1
+  team__maxMembersCount:i=-1
+  _use:t="replicating"
+
+  "team__memberEids:list<eid>"{
+  }
+
+  "teamTag:tag"{
+  }
+}
+
+team_member_count_limit{
+  team__maxMembersCountLimit:i=10
+}
